@@ -85,12 +85,12 @@ vercel --prod
 Make sure all image paths start with `/` for production:
 ```html
 <!-- ✅ Correct -->
-<img src="/images/logo.png" alt="Logo">
+<img src="/images/logo.webp" alt="Logo">
 <img src="/public/images/student.jpg" alt="Student">
 
 <!-- ❌ Wrong -->
-<img src="images/logo.png" alt="Logo">
-<img src="../images/logo.png" alt="Logo">
+<img src="images/logo.webp" alt="Logo">
+<img src="../images/logo.webp" alt="Logo">
 ```
 
 ### ✅ Build Test

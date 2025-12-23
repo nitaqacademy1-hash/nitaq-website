@@ -51,7 +51,7 @@ For **EVERY HTML page**, add these meta tags in the `<head>` section:
     <meta property="og:url" content="https://nitaq-training-center.vercel.app/ielts-course.html">
     <meta property="og:title" content="IELTS Coaching in Sharjah | Nitaq Training Center">
     <meta property="og:description" content="Best IELTS coaching in Sharjah with expert trainers. Achieve your target score.">
-    <meta property="og:image" content="https://nitaq-training-center.vercel.app/images/logo.png">
+    <meta property="og:image" content="https://nitaq-training-center.vercel.app/images/logo.webp">
     <meta property="og:site_name" content="Nitaq Training Center">
     <meta property="og:locale" content="en_AE">
     
@@ -60,7 +60,7 @@ For **EVERY HTML page**, add these meta tags in the `<head>` section:
     <meta name="twitter:url" content="https://nitaq-training-center.vercel.app/ielts-course.html">
     <meta name="twitter:title" content="IELTS Coaching in Sharjah | Nitaq Training Center">
     <meta name="twitter:description" content="Best IELTS coaching in Sharjah with expert trainers.">
-    <meta name="twitter:image" content="https://nitaq-training-center.vercel.app/images/logo.png">
+    <meta name="twitter:image" content="https://nitaq-training-center.vercel.app/images/logo.webp">
     
     <!-- Geo Tags for Local SEO -->
     <meta name="geo.region" content="AE-SH">
@@ -148,8 +148,8 @@ For **EVERY HTML page**, add these meta tags in the `<head>` section:
   "name": "Nitaq Training Center",
   "description": "Premier training center in Sharjah offering IELTS, SAT, GRE, GMAT preparation, language courses, and technology training.",
   "url": "https://nitaq-training-center.vercel.app",
-  "logo": "https://nitaq-training-center.vercel.app/images/logo.png",
-  "image": "https://nitaq-training-center.vercel.app/images/logo.png",
+  "logo": "https://nitaq-training-center.vercel.app/images/logo.webp",
+  "image": "https://nitaq-training-center.vercel.app/images/logo.webp",
   "telephone": "+971545723181",
   "email": "info@nitaq.ae",
   "address": {
@@ -255,8 +255,8 @@ Add this to your contact section or about page:
 
 ### 2. **Image ALT Tags** (All images)
 ```html
-<img src="/images/ielts.png" alt="IELTS coaching in Sharjah - Nitaq Training Center">
-<img src="/images/logo.png" alt="Nitaq Training Center Sharjah logo">
+<img src="/images/ielts.webp" alt="IELTS coaching in Sharjah - Nitaq Training Center">
+<img src="/images/logo.webp" alt="Nitaq Training Center Sharjah logo">
 <img src="/images/student.jpg" alt="Students learning at Nitaq Training Center Sharjah">
 ```
 

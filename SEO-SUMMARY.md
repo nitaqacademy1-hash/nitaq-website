@@ -42,7 +42,7 @@ For each HTML file, add the SEO meta tags in the `<head>` section.
     <meta property="og:url" content="https://nitaq-training-center.vercel.app/ielts-course.html">
     <meta property="og:title" content="IELTS Coaching in Sharjah | Nitaq Training Center">
     <meta property="og:description" content="Best IELTS coaching in Sharjah with expert trainers. Achieve your target score.">
-    <meta property="og:image" content="https://nitaq-training-center.vercel.app/images/logo.png">
+    <meta property="og:image" content="https://nitaq-training-center.vercel.app/images/logo.webp">
     
     <!-- Geo Tags -->
     <meta name="geo.region" content="AE-SH">
@@ -91,10 +91,10 @@ Find all `<img>` tags and add descriptive ALT text:
 
 ```html
 <!-- Before -->
-<img src="/images/ielts.png" alt="IELTS">
+<img src="/images/ielts.webp" alt="IELTS">
 
 <!-- After -->
-<img src="/images/ielts.png" alt="IELTS coaching in Sharjah - Nitaq Training Center">
+<img src="/images/ielts.webp" alt="IELTS coaching in Sharjah - Nitaq Training Center">
 ```
 
 ---
