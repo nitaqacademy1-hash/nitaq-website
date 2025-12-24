@@ -1339,3 +1339,27 @@ header {
         max-width: 1600px;
     }
 }
+
+/* Contact Section */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+@media (max-width: 968px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    /* Show contact info first, then form on mobile */
+    .contact-info {
+        order: 1;
+    }
+
+    .contact-form {
+        order: 2;
+    }
+}
