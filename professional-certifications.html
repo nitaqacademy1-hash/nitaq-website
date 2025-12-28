@@ -87,11 +87,52 @@
 
     <main>
         <!-- Page Hero -->
-        <section class="hero" style="min-height: 50vh; padding-top: 120px;">
-            <div class="container">
+        <section class="hero"
+            style="min-height: 55vh; padding-top: 120px; position: relative; overflow: hidden; background: linear-gradient(135deg, rgba(46, 125, 50, 0.08) 0%, rgba(102, 187, 106, 0.05) 50%, rgba(43, 187, 173, 0.08) 100%), repeating-linear-gradient(45deg, transparent, transparent 60px, rgba(46, 125, 50, 0.02) 60px, rgba(46, 125, 50, 0.02) 120px); display: flex; flex-direction: column; justify-content: center;">
+
+            <!-- Decorative Elements -->
+            <div
+                style="position: absolute; top: 30px; right: 8%; width: 280px; height: 280px; background: radial-gradient(circle, rgba(102, 187, 106, 0.15), transparent); border-radius: 50%; opacity: 0.6;">
+            </div>
+            <div
+                style="position: absolute; bottom: -80px; left: 5%; width: 350px; height: 350px; background: radial-gradient(circle, rgba(43, 187, 173, 0.12), transparent); border-radius: 50%; opacity: 0.6;">
+            </div>
+
+            <!-- Icons - Floating -->
+            <div
+                style="position: absolute; top: 15%; right: 15%; font-size: 3rem; opacity: 0.15; transform: rotate(-15deg);">
+                💼</div>
+            <div
+                style="position: absolute; top: 25%; left: 12%; font-size: 2.5rem; opacity: 0.12; transform: rotate(12deg);">
+                📈</div>
+            <div
+                style="position: absolute; bottom: 20%; right: 20%; font-size: 2.8rem; opacity: 0.13; transform: rotate(-8deg);">
+                🤝</div>
+            <div
+                style="position: absolute; top: 35%; right: 25%; font-size: 2.2rem; opacity: 0.1; transform: rotate(20deg);">
+                📊</div>
+            <div
+                style="position: absolute; bottom: 25%; left: 18%; font-size: 2.6rem; opacity: 0.11; transform: rotate(-12deg);">
+                🏆</div>
+
+            <!-- Geometric Patterns -->
+            <svg style="position: absolute; top: 10%; left: 8%; opacity: 0.08; width: 120px; height: 120px;"
+                viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="40" fill="none" stroke="var(--primary-color)" stroke-width="2" />
+                <circle cx="50" cy="50" r="30" fill="none" stroke="var(--accent-color)" stroke-width="1.5" />
+                <circle cx="50" cy="50" r="20" fill="none" stroke="var(--primary-color)" stroke-width="1" />
+            </svg>
+
+            <svg style="position: absolute; bottom: 15%; right: 12%; opacity: 0.07; width: 100px; height: 100px;"
+                viewBox="0 0 100 100">
+                <polygon points="50,15 90,85 10,85" fill="none" stroke="var(--accent-color)" stroke-width="2" />
+                <polygon points="50,30 75,70 25,70" fill="none" stroke="var(--primary-color)" stroke-width="1.5" />
+            </svg>
+
+            <div class="container" style="position: relative; z-index: 2; text-align: center;">
                 <h1 style="font-size: 3.5rem; margin-bottom: 20px;">Professional <span
                         class="text-gradient">Certifications</span></h1>
-                <p style="font-size: 1.2rem; color: var(--text-gray); max-width: 600px;">
+                <p style="font-size: 1.2rem; color: var(--text-gray); max-width: 600px; margin: 0 auto;">
                     Elevate your career with industry-recognized certifications and practical training programs.
                 </p>
             </div>
@@ -104,23 +145,56 @@
 
                     <div class="course-card-box">
                         <div class="course-img">
-                            <img src="images/course-corporate.webp" alt="Finance Courses">
+                            <img src="images/CHRM.webp" alt="ACCA Course">
                         </div>
                         <div class="course-content">
-                            <h3>Finance Courses</h3>
-                            <p>ACCA, CMA, CPA & More</p>
-                            <a href="finance-courses.html" class="btn-read-more">Read More →</a>
+                            <h3>ACCA</h3>
+                            <p>Association of Chartered Certified Accountants</p>
+                            <a href="acca-course.html" class="btn-read-more">Read More →</a>
                         </div>
                     </div>
 
                     <div class="course-card-box">
                         <div class="course-img">
-                            <img src="images/UAE-VAT.webp" alt="UAE VAT & Corporate Tax">
+                            <img src="images/GHRM.webp" alt="CMA Course">
                         </div>
                         <div class="course-content">
-                            <h3>UAE VAT & Corporate Tax</h3>
-                            <p>Master local tax regulations</p>
-                            <a href="uae-vat-tax.html" class="btn-read-more">Read More →</a>
+                            <h3>CMA</h3>
+                            <p>Certified Management Accountant</p>
+                            <a href="cma-course.html" class="btn-read-more">Read More →</a>
+                        </div>
+                    </div>
+
+                    <div class="course-card-box">
+                        <div class="course-img">
+                            <img src="images/course-marketing.webp" alt="CPA Course">
+                        </div>
+                        <div class="course-content">
+                            <h3>CPA</h3>
+                            <p>Certified Public Accountant</p>
+                            <a href="cpa-course.html" class="btn-read-more">Read More →</a>
+                        </div>
+                    </div>
+
+                    <div class="course-card-box">
+                        <div class="course-img">
+                            <img src="images/UAE-VAT.webp" alt="UAE VAT">
+                        </div>
+                        <div class="course-content">
+                            <h3>UAE VAT</h3>
+                            <p>Master Value Added Tax regulations</p>
+                            <a href="uae-vat.html" class="btn-read-more">Read More →</a>
+                        </div>
+                    </div>
+
+                    <div class="course-card-box">
+                        <div class="course-img">
+                            <img src="images/UAE-VAT.webp" alt="UAE Corporate Tax">
+                        </div>
+                        <div class="course-content">
+                            <h3>UAE Corporate Tax</h3>
+                            <p>Master Corporate Tax framework</p>
+                            <a href="uae-corporate-tax.html" class="btn-read-more">Read More →</a>
                         </div>
                     </div>
 
@@ -245,7 +319,8 @@
             <div class="footer-content">
                 <div class="footer-brand">
                     <a href="index.html" class="logo">
-                        <img src="images/logo1.webp" alt="Nitaq" style="height: 50px; width: auto; object-fit: contain;">
+                        <img src="images/logo1.webp" alt="Nitaq"
+                            style="height: 50px; width: auto; object-fit: contain;">
                     </a>
                     <p>Empowering the next generation of professionals in the UAE.</p>
                 </div>
