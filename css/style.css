@@ -1231,7 +1231,7 @@ header {
     .hero-content {
         grid-template-columns: 1fr;
         text-align: center;
-        padding-top: 40px;
+        padding-top: 100px;
     }
 
     .hero-text h1 {
