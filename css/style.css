@@ -1310,6 +1310,39 @@ header {
         gap: 20px;
         text-align: center;
     }
+
+    /* Mobile-only Testimonial Fixes */
+    .testimonial-poster {
+        padding: 40px 20px;
+        margin-top: 40px;
+    }
+
+    .quote-mark {
+        font-size: 4rem;
+        margin-bottom: -10px;
+    }
+
+    .testimonial-text {
+        font-size: 1.125rem;
+        /* ≈ 18px */
+        line-height: 1.6;
+        margin-bottom: 30px;
+    }
+
+    .author-img {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 10px;
+    }
+
+    .testimonial-author h4 {
+        font-size: 1.1rem;
+        margin-bottom: 5px;
+    }
+
+    .testimonial-author p {
+        font-size: 0.9rem;
+    }
 }
 
 @media (max-width: 480px) {
