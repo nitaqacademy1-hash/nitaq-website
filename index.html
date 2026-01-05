@@ -113,7 +113,11 @@
               </g>
             </svg>
 
-            <img src="images/about-interior.webp" alt="Student" class="hero-img-main">
+            <div class="hero-slider">
+              <img src="images/home.webp" alt="Student 1" class="hero-img-main active">
+              <img src="images/whatsapp_1.webp" alt="Student 2" class="hero-img-main">
+              <img src="images/whatsapp_2.webp" alt="Student 3" class="hero-img-main">
+            </div>
 
             <!-- Floating Elements -->
             <div class="floating-card fc-1">
@@ -476,7 +480,19 @@
       });
     }
 
+    // Hero Image Slider Logic
+    const heroImages = document.querySelectorAll('.hero-slider .hero-img-main');
+    let currentImageIndex = 0;
 
+    function nextImage() {
+      heroImages[currentImageIndex].classList.remove('active');
+      currentImageIndex = (currentImageIndex + 1) % heroImages.length;
+      heroImages[currentImageIndex].classList.add('active');
+    }
+
+    if (heroImages.length > 0) {
+      setInterval(nextImage, 3000);
+    }
   </script>
   <script src="js/main.js"></script>
   <script type="application/ld+json">
