@@ -45,12 +45,33 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <!-- Preload Critical Assets -->
+  <link rel="preload" href="https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLDz7Z1xlFQ.woff2" as="font"
+    type="font/woff2" crossorigin>
+  <link rel="preload" href="https://fonts.gstatic.com/s/inter/v12/UcCO3FwrX2iL9_CnrobcxBCeWGY.woff2" as="font"
+    type="font/woff2" crossorigin>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- Course Schema -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "IELTS Preparation Course",
+      "description": "Achieve your target IELTS band score in Sharjah. Comprehensive training for Academic and General Training modules.",
+      "provider": {
+        "@type": "EducationalOrganization",
+        "name": "Nitaq Training Center",
+        "sameAs": "https://nitaq-training-center.vercel.app"
+      }
+    }
+    </script>
 </head>
 
 <body>
@@ -59,7 +80,8 @@
   <header>
     <div class="container nav-wrapper">
       <a href="index.html" class="logo">
-        <img src="images/logo1.webp" alt="Nitaq Logo" style="height: 70px; width: auto; object-fit: contain;">
+        <img src="images/logo1.webp" alt="Nitaq Logo" width="180" height="70"
+          style="height: 70px; width: auto; object-fit: contain;" fetchpriority="high">
       </a>
       <nav class="nav-links">
         <a href="index.html">Home</a>
@@ -518,7 +540,7 @@
       }
     }
   </style>
-  <script src="js/main.js"></script>
+  <script src="js/main.js" defer></script>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",

@@ -45,6 +45,13 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <!-- Preload Critical Assets -->
+  <link rel="preload" href="https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLDz7Z1xlFQ.woff2" as="font"
+    type="font/woff2" crossorigin>
+  <link rel="preload" href="https://fonts.gstatic.com/s/inter/v12/UcCO3FwrX2iL9_CnrobcxBCeWGY.woff2" as="font"
+    type="font/woff2" crossorigin>
+  <link rel="preload" href="images/home.webp" as="image" fetchpriority="high">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -59,7 +66,8 @@
   <header>
     <div class="container nav-wrapper">
       <a href="index.html" class="logo">
-        <img src="images/logo1.webp" alt="Nitaq Logo" style="height: 70px; width: auto; object-fit: contain;">
+        <img src="images/logo1.webp" alt="Nitaq Logo" width="180" height="70"
+          style="height: 70px; width: auto; object-fit: contain;" fetchpriority="high">
       </a>
       <button class="mobile-menu-btn" aria-label="Toggle Menu">
         <span></span>
@@ -115,9 +123,12 @@
             </svg>
 
             <div class="hero-slider">
-              <img src="images/home.webp" alt="Student 1" class="hero-img-main active">
-              <img src="images/whatsapp_1.webp" alt="Student 2" class="hero-img-main">
-              <img src="images/whatsapp_2.webp" alt="Student 3" class="hero-img-main">
+              <img src="images/home.webp" alt="Student 1" class="hero-img-main active" width="600" height="600"
+                fetchpriority="high" decoding="async">
+              <img src="images/whatsapp_1.webp" alt="Student 2" class="hero-img-main" width="600" height="600"
+                loading="lazy" decoding="async">
+              <img src="images/whatsapp_2.webp" alt="Student 3" class="hero-img-main" width="600" height="600"
+                loading="lazy" decoding="async">
             </div>
 
             <!-- Floating Elements -->
@@ -289,19 +300,19 @@
           TRUSTED BY LEADING ORGANIZATIONS</p>
         <div class="trust-grid">
           <div class="trust-badge">
-            <img src="images/ielts.webp" alt="IELTS">
+            <img src="images/ielts.webp" alt="IELTS" width="100" height="40" loading="lazy">
           </div>
           <div class="trust-badge">
-            <img src="images/toefl.webp" alt="TOEFL">
+            <img src="images/toefl.webp" alt="TOEFL" width="100" height="40" loading="lazy">
           </div>
           <div class="trust-badge">
-            <img src="images/pte.webp" alt="PTE">
+            <img src="images/pte.webp" alt="PTE" width="100" height="40" loading="lazy">
           </div>
           <div class="trust-badge">
-            <img src="images/british-council.webp" alt="British Council">
+            <img src="images/british-council.webp" alt="British Council" width="150" height="40" loading="lazy">
           </div>
           <div class="trust-badge">
-            <img src="images/spea.webp" alt="SPEA">
+            <img src="images/spea.webp" alt="SPEA" width="100" height="40" loading="lazy">
           </div>
         </div>
       </div>
@@ -316,7 +327,7 @@
           <p class="testimonial-text">Nitaq transformed my career. The practical training and expert guidance helped me
             secure my dream job in Sharjah.</p>
           <div class="testimonial-author">
-            <img src="images/student1.webp" alt="Sarah Ahmed" class="author-img">
+            <img src="images/student1.webp" alt="Sarah Ahmed" class="author-img" width="80" height="80" loading="lazy">
             <h4>Sarah Ahmed</h4>
             <p style="color: rgba(255,255,255,0.7);">Marketing Specialist</p>
           </div>
@@ -378,7 +389,8 @@
       <div class="footer-content">
         <div class="footer-brand">
           <a href="index.html" class="logo">
-            <img src="images/logo1.webp" alt="Nitaq" style="height: 50px; width: auto; object-fit: contain;">
+            <img src="images/logo1.webp" alt="Nitaq" width="130" height="50"
+              style="height: 50px; width: auto; object-fit: contain;" loading="lazy">
           </a>
           <p>Empowering the next generation of professionals in the UAE.</p>
         </div>
@@ -451,66 +463,7 @@
   <!-- Enquiry Modal -->
 
 
-  <script>
-    // Mobile Menu Logic
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    const navLinks = document.querySelector('.nav-links');
-    const overlay = document.querySelector('.mobile-nav-overlay');
-
-    function toggleMenu() {
-      if (mobileMenuBtn && navLinks && overlay) {
-        mobileMenuBtn.classList.toggle('active');
-        navLinks.classList.toggle('active');
-        overlay.classList.toggle('active');
-        document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
-      }
-    }
-
-    if (mobileMenuBtn) {
-      mobileMenuBtn.addEventListener('click', toggleMenu);
-    }
-
-    if (overlay) {
-      overlay.addEventListener('click', toggleMenu);
-    }
-
-    // Close menu when a link is clicked
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      link.addEventListener('click', () => {
-        if (navLinks && navLinks.classList.contains('active') && !link.classList.contains('dropbtn')) {
-          toggleMenu();
-        }
-      });
-    });
-
-    // Mobile Dropdown Toggle
-    const dropdown = document.querySelector('.dropdown');
-    const dropbtn = document.querySelector('.dropbtn');
-
-    if (dropbtn) {
-      dropbtn.addEventListener('click', function (e) {
-        if (window.innerWidth <= 968) {
-          e.preventDefault();
-          dropdown.classList.toggle('active');
-        }
-      });
-    }
-
-    // Hero Image Slider Logic
-    const heroImages = document.querySelectorAll('.hero-slider .hero-img-main');
-    let currentImageIndex = 0;
-
-    function nextImage() {
-      heroImages[currentImageIndex].classList.remove('active');
-      currentImageIndex = (currentImageIndex + 1) % heroImages.length;
-      heroImages[currentImageIndex].classList.add('active');
-    }
-
-    if (heroImages.length > 0) {
-      setInterval(nextImage, 3000);
-    }
-  </script>
-  <script src="js/main.js"></script>
+  <script src="js/main.js" defer></script>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",

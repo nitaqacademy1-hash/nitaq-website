@@ -44,6 +44,12 @@
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- Preload Critical Assets -->
+    <link rel="preload" href="https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLDz7Z1xlFQ.woff2" as="font"
+        type="font/woff2" crossorigin>
+    <link rel="preload" href="https://fonts.gstatic.com/s/inter/v12/UcCO3FwrX2iL9_CnrobcxBCeWGY.woff2" as="font"
+        type="font/woff2" crossorigin>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -58,7 +64,8 @@
     <header>
         <div class="container nav-wrapper">
             <a href="index.html" class="logo">
-                <img src="images/logo1.webp" alt="Nitaq Logo" style="height: 70px; width: auto; object-fit: contain;">
+                <img src="images/logo1.webp" alt="Nitaq Logo" width="180" height="70"
+                    style="height: 70px; width: auto; object-fit: contain;" fetchpriority="high">
             </a>
             <button class="mobile-menu-btn" aria-label="Toggle Menu">
                 <span></span>
@@ -256,8 +263,8 @@
             <div class="footer-content">
                 <div class="footer-brand">
                     <a href="index.html" class="logo">
-                        <img src="images/logo1.webp" alt="Nitaq"
-                            style="height: 50px; width: auto; object-fit: contain;">
+                        <img src="images/logo1.webp" alt="Nitaq" width="130" height="50"
+                            style="height: 50px; width: auto; object-fit: contain;" loading="lazy">
                     </a>
                     <p>Empowering the next generation of professionals in the UAE.</p>
                 </div>
@@ -348,50 +355,7 @@
         }
     </style>
 
-    <script>
-        // Mobile Menu Logic
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const navLinks = document.querySelector('.nav-links');
-        const overlay = document.querySelector('.mobile-nav-overlay');
-
-        function toggleMenu() {
-            if (mobileMenuBtn && navLinks && overlay) {
-                mobileMenuBtn.classList.toggle('active');
-                navLinks.classList.toggle('active');
-                overlay.classList.toggle('active');
-                document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
-            }
-        }
-
-        if (mobileMenuBtn) {
-            mobileMenuBtn.addEventListener('click', toggleMenu);
-        }
-
-        if (overlay) {
-            overlay.addEventListener('click', toggleMenu);
-        }
-
-        // Close menu when a link is clicked
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                if (navLinks && navLinks.classList.contains('active') && !link.classList.contains('dropbtn')) {
-                    toggleMenu();
-                }
-            });
-        });
-
-        // Mobile Dropdown Toggle
-        const dropdown = document.querySelector('.dropdown');
-        const dropbtn = document.querySelector('.dropbtn');
-
-        if (dropbtn) {
-            dropbtn.addEventListener('click', function (e) {
-                if (window.innerWidth <= 968) {
-                    e.preventDefault();
-                    dropdown.classList.toggle('active');
-                }
-            });
-        }
-    </script>
+    <script src="js/main.js" defer></script>
+</body>
 
 </html>
