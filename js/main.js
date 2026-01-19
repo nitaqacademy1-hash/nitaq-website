@@ -80,3 +80,115 @@ function nextImage() {
 if (heroImages.length > 0) {
     setInterval(nextImage, 4000);
 }
+
+/* --- Google Translate & Language Logic --- */
+
+// Initialize Google Translate
+// Initialize Google Translate
+window.googleTranslateElementInit = function () {
+    new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,ar',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        autoDisplay: false
+    }, 'google_translate_element');
+};
+
+// Load Google Translate Script
+(function () {
+    var gtScript = document.createElement('script');
+    gtScript.type = 'text/javascript';
+    gtScript.async = true;
+    gtScript.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gtScript, s);
+})();
+
+document.addEventListener('DOMContentLoaded', function () {
+    const langSwitcher = document.getElementById('lang-toggle');
+    const html = document.documentElement;
+
+    // Check for saved language state on load
+    function checkInitialState() {
+        const cookies = document.cookie.split(';');
+        let isArabic = false;
+
+        cookies.forEach(c => {
+            if (c.trim().startsWith('googtrans=') && c.includes('/ar')) {
+                isArabic = true;
+            }
+        });
+
+        if (isArabic) {
+            updateUI('ar');
+        } else {
+            updateUI('en');
+        }
+    }
+
+    // Update UI (RTL/LTR and Switcher Text)
+    function updateUI(lang) {
+        if (lang === 'ar') {
+            html.setAttribute('dir', 'rtl');
+            html.lang = 'ar';
+            if (langSwitcher) langSwitcher.innerHTML = '<span class="notranslate">English | <strong>العربية</strong></span>';
+        } else {
+            html.setAttribute('dir', 'ltr');
+            html.lang = 'en';
+            if (langSwitcher) langSwitcher.innerHTML = '<span class="notranslate"><strong>English</strong> | العربية</span>';
+        }
+    }
+
+    // Handle Switcher Click
+    if (langSwitcher) {
+        langSwitcher.addEventListener('click', function (e) {
+            e.preventDefault();
+            console.log('Language switcher clicked');
+
+            // Check if running on file protocol
+            if (window.location.protocol === 'file:') {
+                alert('Attention: Google Translate does NOT work on local files (file://). Please run this project on a local server (e.g., using "npm run dev" or Live Server extension).');
+                return;
+            }
+
+            const currentDir = html.getAttribute('dir');
+            const targetLang = currentDir === 'rtl' ? 'en' : 'ar';
+
+            console.log('Switching to:', targetLang);
+            updateUI(targetLang); // Update UI immediately so user sees reaction
+
+            // Function to change language
+            function triggerTranslation() {
+                const combo = document.querySelector('.goog-te-combo');
+                if (combo) {
+                    combo.value = targetLang;
+                    combo.dispatchEvent(new Event('change'));
+                    combo.dispatchEvent(new Event('input'));
+                }
+            }
+
+            const combo = document.querySelector('.goog-te-combo');
+            if (!combo) {
+                // Poll for the combo box for a few seconds
+                let attempts = 0;
+                const interval = setInterval(() => {
+                    const c = document.querySelector('.goog-te-combo');
+                    if (c) {
+                        clearInterval(interval);
+                        triggerTranslation();
+                    }
+                    attempts++;
+                    if (attempts > 50) clearInterval(interval); // Stop after 5 seconds
+                }, 100);
+            } else {
+                triggerTranslation();
+            }
+
+            // Fallback for cookie if JS switch doesn't persist
+            document.cookie = `googtrans=/en/${targetLang}; path=/`;
+        });
+    }
+
+    // Run initial check
+    checkInitialState();
+});

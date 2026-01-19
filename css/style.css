@@ -1451,3 +1451,133 @@ header {
         order: 2;
     }
 }
+
+/* =========================================
+   Google Translate & RTL Support 
+   ========================================= */
+
+/* Hide Google Translate Toolbars & Branding */
+.goog-te-banner-frame,
+.goog-te-gadget-simple img,
+.goog-te-gadget-icon,
+.goog-logo-link {
+    display: none !important;
+}
+
+#google_translate_element {
+    visibility: hidden;
+    position: absolute;
+    top: -9999px;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+}
+
+.goog-te-gadget {
+    color: transparent !important;
+}
+
+.goog-te-gadget .goog-te-combo {
+    color: black !important;
+}
+
+/* Fix body shift caused by Google Translate */
+body {
+    top: 0 !important;
+}
+
+/* Language Switcher Link */
+.lang-switcher {
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-left: 20px;
+    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 8px 16px;
+    border-radius: 20px;
+    background: transparent;
+}
+
+.lang-switcher:hover {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    background: rgba(46, 125, 50, 0.05);
+}
+
+/* Mobile Language Switcher Styles */
+@media (max-width: 968px) {
+    .lang-switcher {
+        margin: 10px auto;
+        /* Center in mobile menu */
+        display: flex;
+        width: fit-content;
+    }
+}
+
+/* --- RTL Support --- */
+html[dir="rtl"] {
+    direction: rtl;
+    text-align: right;
+}
+
+html[dir="rtl"] body {
+    text-align: right;
+}
+
+/* Flip arrows in RTL */
+html[dir="rtl"] .program-link span,
+html[dir="rtl"] .btn-read-more span,
+html[dir="rtl"] .program-link svg {
+    transform: rotate(180deg);
+    display: inline-block;
+}
+
+/* Alignments */
+html[dir="rtl"] h1,
+html[dir="rtl"] h2,
+html[dir="rtl"] h3,
+html[dir="rtl"] h4,
+html[dir="rtl"] h5,
+html[dir="rtl"] h6,
+html[dir="rtl"] p,
+html[dir="rtl"] .footer-brand p,
+html[dir="rtl"] .hero-text,
+html[dir="rtl"] .program-graphic-card,
+html[dir="rtl"] .contact-info,
+html[dir="rtl"] .nav-links a {
+    text-align: right;
+}
+
+/* Header & Nav in RTL */
+html[dir="rtl"] .lang-switcher {
+    margin-left: 0;
+    margin-right: 20px;
+}
+
+/* Inputs & Forms RTL */
+html[dir="rtl"] input,
+html[dir="rtl"] textarea,
+html[dir="rtl"] select {
+    text-align: right;
+    direction: rtl;
+}
+
+/* Mobile Menu RTL */
+@media (max-width: 968px) {
+    html[dir="rtl"] .nav-links {
+        text-align: right;
+    }
+
+    /* Move hamburger to left */
+    html[dir="rtl"] .mobile-menu-btn {
+        margin-right: auto;
+        margin-left: 0;
+        order: -1;
+        /* Might need flex order adjustment if it's in a flex container */
+    }
+}
