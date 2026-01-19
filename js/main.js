@@ -108,26 +108,47 @@ document.addEventListener('DOMContentLoaded', function () {
     const langSwitcher = document.getElementById('lang-toggle');
     const html = document.documentElement;
 
+    // Inject Loader HTML
+    const loaderHTML = `
+        <div id="lang-loader">
+            <div class="loader-spinner"></div>
+        </div>
+    `;
+    document.body.insertAdjacentHTML('beforeend', loaderHTML);
+    const loader = document.getElementById('lang-loader');
+
     // Check for saved language state on load
     function checkInitialState() {
         const cookies = document.cookie.split(';');
         let isArabic = false;
+        let hasCookie = false;
 
         cookies.forEach(c => {
-            if (c.trim().startsWith('googtrans=') && c.includes('/ar')) {
-                isArabic = true;
+            if (c.trim().startsWith('googtrans=')) {
+                hasCookie = true;
+                if (c.includes('/ar')) isArabic = true;
             }
         });
 
         if (isArabic) {
-            updateUI('ar');
+            updateUI('ar', false); // Initial load, no loader needed usually
         } else {
-            updateUI('en');
+            updateUI('en', false);
         }
+
+        // If cookie says Arabic, but UI was English, we might want to mask? 
+        // But usually Google handles the initial translate fast enough.
     }
 
     // Update UI (RTL/LTR and Switcher Text)
-    function updateUI(lang) {
+    function updateUI(lang, showLoader = true) {
+        if (showLoader && loader) {
+            loader.classList.add('active');
+            setTimeout(() => {
+                loader.classList.remove('active');
+            }, 1000); // 1 second mask to hide the transition
+        }
+
         if (lang === 'ar') {
             html.setAttribute('dir', 'rtl');
             html.lang = 'ar';
@@ -155,37 +176,23 @@ document.addEventListener('DOMContentLoaded', function () {
             const targetLang = currentDir === 'rtl' ? 'en' : 'ar';
 
             console.log('Switching to:', targetLang);
-            updateUI(targetLang); // Update UI immediately so user sees reaction
+            console.log('Switching to:', targetLang);
 
-            // Function to change language
-            function triggerTranslation() {
-                const combo = document.querySelector('.goog-te-combo');
-                if (combo) {
-                    combo.value = targetLang;
-                    combo.dispatchEvent(new Event('change'));
-                    combo.dispatchEvent(new Event('input'));
-                }
+            // Show loader immediately
+            if (document.getElementById('lang-loader')) {
+                document.getElementById('lang-loader').classList.add('active');
             }
 
-            const combo = document.querySelector('.goog-te-combo');
-            if (!combo) {
-                // Poll for the combo box for a few seconds
-                let attempts = 0;
-                const interval = setInterval(() => {
-                    const c = document.querySelector('.goog-te-combo');
-                    if (c) {
-                        clearInterval(interval);
-                        triggerTranslation();
-                    }
-                    attempts++;
-                    if (attempts > 50) clearInterval(interval); // Stop after 5 seconds
-                }, 100);
-            } else {
-                triggerTranslation();
-            }
-
-            // Fallback for cookie if JS switch doesn't persist
+            // Set the Google Translate cookie
+            // We set it for both domain root and current path to be safe
             document.cookie = `googtrans=/en/${targetLang}; path=/`;
+            document.cookie = `googtrans=/en/${targetLang}; path=${window.location.pathname}`;
+
+            // Reload the page to apply changes cleanly
+            // This is often the most robust way to ensure Google Translate applies full DOM changes for RTL
+            setTimeout(() => {
+                window.location.reload();
+            }, 500); // 500ms delay to let the loader appear and cookie set
         });
     }
 
