@@ -23,8 +23,8 @@ const AIRoboticsKids = () => {
             </div>
             <div className="content-card">
                 <h2>Fun <span className="text-gradient">Learning Tracks</span></h2>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '25px', marginTop: '30px' }}>
-                    <div className="feature-item" style={{ textAlign: 'left', borderTop: '4px solid var(--primary-color)' }}>
+                <div className="tracks-grid">
+                    <div className="feature-item" style={{ borderTop: '4px solid var(--primary-color)' }}>
                         <h3 style={{ color: 'var(--primary-color)', marginBottom: '10px' }}>Creative Coding</h3>
                         <p style={{ color: 'var(--text-gray)', fontSize: '0.85rem', marginBottom: '15px', fontWeight: 600 }}>Logic | Software</p>
                         <ul className="styled-list">
@@ -34,7 +34,7 @@ const AIRoboticsKids = () => {
                             <li>Understanding algorithms and logic</li>
                         </ul>
                     </div>
-                    <div className="feature-item" style={{ textAlign: 'left', borderTop: '4px solid var(--accent-color)' }}>
+                    <div className="feature-item" style={{ borderTop: '4px solid var(--accent-color)' }}>
                         <h3 style={{ color: 'var(--accent-color)', marginBottom: '10px' }}>Robotics Engineering</h3>
                         <p style={{ color: 'var(--text-gray)', fontSize: '0.85rem', marginBottom: '15px', fontWeight: 600 }}>Building | Hardware</p>
                         <ul className="styled-list">
@@ -55,7 +55,7 @@ const AIRoboticsKids = () => {
                     <li><strong>Future-Proof Skills:</strong> Building a foundation in STEM that lasts a lifetime.</li>
                 </ul>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '30px', marginBottom: '30px' }}>
+            <div className="outcomes-grid">
                 <div className="content-card" style={{ marginBottom: 0 }}>
                     <h3 style={{ fontSize: '1.4rem' }}>Ideal For</h3>
                     <ul className="styled-list">

@@ -7,7 +7,7 @@ const ProfessionalCertifications = () => {
             <section className="listing-hero">
                 <div className="container">
                     <div className="listing-hero-content">
-                        <nav style={{ marginBottom: '25px', display: 'flex', justifyContent: 'center', gap: '8px', fontSize: '0.95rem', color: '#64748b' }}>
+                        <nav className="listing-hero-nav">
                             <Link to="/" style={{ color: 'var(--primary-color)', fontWeight: 600 }}>Home</Link> /
                             <span>Professional Certifications</span>
                         </nav>

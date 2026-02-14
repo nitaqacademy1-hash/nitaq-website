@@ -34,9 +34,9 @@ const SATCourse = () => {
             {/* SAT Tracks */}
             <div className="content-card">
                 <h2>Our SAT <span className="text-gradient">Tracks</span></h2>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '25px', marginTop: '30px' }}>
+                <div className="tracks-grid">
 
-                    <div className="feature-item" style={{ textAlign: 'left', borderTop: '4px solid var(--primary-color)' }}>
+                    <div className="feature-item" style={{ borderTop: '4px solid var(--primary-color)' }}>
                         <h3 style={{ color: 'var(--primary-color)', marginBottom: '10px' }}>SAT Intensive</h3>
                         <p style={{ color: 'var(--text-gray)', fontSize: '0.85rem', marginBottom: '15px', fontWeight: 600 }}>50 Hours | Comprehensive</p>
                         <ul className="styled-list">
@@ -47,7 +47,7 @@ const SATCourse = () => {
                         </ul>
                     </div>
 
-                    <div className="feature-item" style={{ textAlign: 'left', borderTop: '4px solid var(--accent-color)' }}>
+                    <div className="feature-item" style={{ borderTop: '4px solid var(--accent-color)' }}>
                         <h3 style={{ color: 'var(--accent-color)', marginBottom: '10px' }}>SAT Standard</h3>
                         <p style={{ color: 'var(--text-gray)', fontSize: '0.85rem', marginBottom: '15px', fontWeight: 600 }}>30 Hours | Foundation</p>
                         <ul className="styled-list">
@@ -58,7 +58,7 @@ const SATCourse = () => {
                         </ul>
                     </div>
 
-                    <div className="feature-item" style={{ textAlign: 'left', borderTop: '4px solid var(--primary-color)' }}>
+                    <div className="feature-item" style={{ borderTop: '4px solid var(--primary-color)' }}>
                         <h3 style={{ color: 'var(--primary-color)', marginBottom: '10px' }}>SAT Express</h3>
                         <p style={{ color: 'var(--text-gray)', fontSize: '0.85rem', marginBottom: '15px', fontWeight: 600 }}>20 Hours | Fast-Track</p>
                         <ul className="styled-list">
@@ -86,7 +86,7 @@ const SATCourse = () => {
             </div>
 
             {/* Outcomes & Path */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '30px', marginBottom: '30px' }}>
+            <div className="outcomes-grid">
                 <div className="content-card" style={{ marginBottom: 0 }}>
                     <h3 style={{ fontSize: '1.4rem' }}>Ideal For</h3>
                     <ul className="styled-list">

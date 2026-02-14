@@ -36,9 +36,9 @@ const SpokenEnglish = () => {
             {/* English Programs */}
             <div className="content-card">
                 <h2>Our English <span className="text-gradient">Programs</span></h2>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '25px', marginTop: '30px' }}>
+                <div className="tracks-grid">
 
-                    <div className="feature-item" style={{ textAlign: 'left', borderTop: '4px solid var(--primary-color)' }}>
+                    <div className="feature-item" style={{ borderTop: '4px solid var(--primary-color)' }}>
                         <h3 style={{ color: 'var(--primary-color)', marginBottom: '10px' }}>General Spoken English</h3>
                         <p style={{ color: 'var(--text-gray)', fontSize: '0.85rem', marginBottom: '15px', fontWeight: 600 }}>Fluency | Confidence</p>
                         <ul className="styled-list">
@@ -49,7 +49,7 @@ const SpokenEnglish = () => {
                         </ul>
                     </div>
 
-                    <div className="feature-item" style={{ textAlign: 'left', borderTop: '4px solid var(--accent-color)' }}>
+                    <div className="feature-item" style={{ borderTop: '4px solid var(--accent-color)' }}>
                         <h3 style={{ color: 'var(--accent-color)', marginBottom: '10px' }}>Business English</h3>
                         <p style={{ color: 'var(--text-gray)', fontSize: '0.85rem', marginBottom: '15px', fontWeight: 600 }}>Professional | Career</p>
                         <ul className="styled-list">
@@ -60,7 +60,7 @@ const SpokenEnglish = () => {
                         </ul>
                     </div>
 
-                    <div className="feature-item" style={{ textAlign: 'left', borderTop: '4px solid var(--primary-color)' }}>
+                    <div className="feature-item" style={{ borderTop: '4px solid var(--primary-color)' }}>
                         <h3 style={{ color: 'var(--primary-color)', marginBottom: '10px' }}>English for Kids</h3>
                         <p style={{ color: 'var(--text-gray)', fontSize: '0.85rem', marginBottom: '15px', fontWeight: 600 }}>Foundation | Immersion</p>
                         <ul className="styled-list">
@@ -88,7 +88,7 @@ const SpokenEnglish = () => {
             </div>
 
             {/* Outcomes & Path */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '30px', marginBottom: '30px' }}>
+            <div className="outcomes-grid">
                 <div className="content-card" style={{ marginBottom: 0 }}>
                     <h3 style={{ fontSize: '1.4rem' }}>Ideal For</h3>
                     <ul className="styled-list">

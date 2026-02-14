@@ -36,9 +36,9 @@ const GMATCourse = () => {
             {/* GMAT Programs */}
             <div className="content-card">
                 <h2>Our GMAT <span className="text-gradient">Programs</span></h2>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '25px', marginTop: '30px' }}>
+                <div className="tracks-grid">
 
-                    <div className="feature-item" style={{ textAlign: 'left', borderTop: '4px solid var(--primary-color)' }}>
+                    <div className="feature-item" style={{ borderTop: '4px solid var(--primary-color)' }}>
                         <h3 style={{ color: 'var(--primary-color)', marginBottom: '10px' }}>GMAT Intensive</h3>
                         <p style={{ color: 'var(--text-gray)', fontSize: '0.85rem', marginBottom: '15px', fontWeight: 600 }}>Full Course | Online/Offline</p>
                         <ul className="styled-list">
@@ -49,7 +49,7 @@ const GMATCourse = () => {
                         </ul>
                     </div>
 
-                    <div className="feature-item" style={{ textAlign: 'left', borderTop: '4px solid var(--accent-color)' }}>
+                    <div className="feature-item" style={{ borderTop: '4px solid var(--accent-color)' }}>
                         <h3 style={{ color: 'var(--accent-color)', marginBottom: '10px' }}>GMAT Standard</h3>
                         <p style={{ color: 'var(--text-gray)', fontSize: '0.85rem', marginBottom: '15px', fontWeight: 600 }}>Flexible | Online/Offline</p>
                         <ul className="styled-list">
@@ -60,7 +60,7 @@ const GMATCourse = () => {
                         </ul>
                     </div>
 
-                    <div className="feature-item" style={{ textAlign: 'left', borderTop: '4px solid var(--primary-color)' }}>
+                    <div className="feature-item" style={{ borderTop: '4px solid var(--primary-color)' }}>
                         <h3 style={{ color: 'var(--primary-color)', marginBottom: '10px' }}>GMAT Express</h3>
                         <p style={{ color: 'var(--text-gray)', fontSize: '0.85rem', marginBottom: '15px', fontWeight: 600 }}>Modular | Fast-Track</p>
                         <ul className="styled-list">
@@ -88,7 +88,7 @@ const GMATCourse = () => {
             </div>
 
             {/* Outcomes & Path */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '30px', marginBottom: '30px' }}>
+            <div className="outcomes-grid">
                 <div className="content-card" style={{ marginBottom: 0 }}>
                     <h3 style={{ fontSize: '1.4rem' }}>University Path</h3>
                     <ul className="styled-list">

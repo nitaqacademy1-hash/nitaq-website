@@ -36,8 +36,8 @@ const AcademicExcellenceCourse = () => {
             {/* Academic Programs */}
             <div className="content-card">
                 <h2>Our <span className="text-gradient">Excellence Tracks</span></h2>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '25px', marginTop: '30px' }}>
-                    <div className="feature-item" style={{ textAlign: 'left', borderTop: '4px solid var(--primary-color)' }}>
+                <div className="tracks-grid">
+                    <div className="feature-item" style={{ borderTop: '4px solid var(--primary-color)' }}>
                         <h3 style={{ color: 'var(--primary-color)', marginBottom: '10px' }}>Complete Program</h3>
                         <p style={{ color: 'var(--text-gray)', fontSize: '0.85rem', marginBottom: '15px', fontWeight: 600 }}>All Subjects | Annual</p>
                         <ul className="styled-list" style={{ display: 'block' }}>
@@ -48,7 +48,7 @@ const AcademicExcellenceCourse = () => {
                         </ul>
                     </div>
 
-                    <div className="feature-item" style={{ textAlign: 'left', borderTop: '4px solid var(--accent-color)' }}>
+                    <div className="feature-item" style={{ borderTop: '4px solid var(--accent-color)' }}>
                         <h3 style={{ color: 'var(--accent-color)', marginBottom: '10px' }}>Subject-Specific</h3>
                         <p style={{ color: 'var(--text-gray)', fontSize: '0.85rem', marginBottom: '15px', fontWeight: 600 }}>Targeted | Flexible</p>
                         <ul className="styled-list" style={{ display: 'block' }}>
@@ -59,7 +59,7 @@ const AcademicExcellenceCourse = () => {
                         </ul>
                     </div>
 
-                    <div className="feature-item" style={{ textAlign: 'left', borderTop: '4px solid var(--primary-color)' }}>
+                    <div className="feature-item" style={{ borderTop: '4px solid var(--primary-color)' }}>
                         <h3 style={{ color: 'var(--primary-color)', marginBottom: '10px' }}>Exam Booster</h3>
                         <p style={{ color: 'var(--text-gray)', fontSize: '0.85rem', marginBottom: '15px', fontWeight: 600 }}>Intensive | Revision</p>
                         <ul className="styled-list" style={{ display: 'block' }}>
@@ -86,7 +86,7 @@ const AcademicExcellenceCourse = () => {
             </div>
 
             {/* Outcomes & Path */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '30px', marginBottom: '30px' }}>
+            <div className="outcomes-grid">
                 <div className="content-card" style={{ marginBottom: 0 }}>
                     <h3 style={{ fontSize: '1.4rem' }}>Learning Outcomes</h3>
                     <ul className="card-list" style={{ gridTemplateColumns: '1fr' }}>
