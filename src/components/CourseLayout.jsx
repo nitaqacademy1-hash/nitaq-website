@@ -36,9 +36,9 @@ const CourseLayout = ({ title, subtitle, infoData, children }) => {
                                     {Object.entries(infoData).map(([label, value]) => (
                                         <div key={label} className="course-stats-item">
                                             <div className="course-stats-dot"></div>
-                                            <div>
-                                                <span style={{ display: 'block', fontSize: '0.8rem', fontWeight: 700, color: '#aaa', textTransform: 'uppercase', letterSpacing: '0.5px' }}>{label}</span>
-                                                <span style={{ display: 'block', fontSize: '1.1rem', fontWeight: 600, color: 'var(--text-dark)' }}>{value}</span>
+                                            <div className="course-stats-info">
+                                                <span className="course-stats-label">{label}</span>
+                                                <span className="course-stats-value">{value}</span>
                                             </div>
                                         </div>
                                     ))}

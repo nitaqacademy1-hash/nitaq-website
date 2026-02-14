@@ -2267,12 +2267,33 @@ textarea:focus {
     gap: 15px;
 }
 
+.course-stats-info {
+    flex-grow: 1;
+}
+
+.course-stats-label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #aaa;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.course-stats-value {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
 .course-stats-dot {
     width: 8px;
     height: 8px;
     background: var(--primary-color);
     border-radius: 50%;
     margin-top: 8px;
+    flex-shrink: 0;
 }
 
 .course-main-layout {
@@ -2377,6 +2398,34 @@ textarea:focus {
 
     .premium-cta {
         padding: 80px 0;
+    }
+
+    .course-stats-info {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        flex-wrap: wrap;
+        text-align: left;
+    }
+
+    .course-stats-label,
+    .course-stats-value {
+        display: inline;
+        font-size: 0.95rem !important;
+        margin: 0;
+    }
+
+    .course-stats-label {
+        color: #777;
+        /* Slightly darker for better contrast when inline */
+    }
+
+    .course-stats-label::after {
+        content: ':';
+    }
+
+    .course-stats-dot {
+        margin-top: 6px;
     }
 }
 
