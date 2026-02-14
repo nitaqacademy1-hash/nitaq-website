@@ -1,43 +1,16 @@
-# Nitaq Training Center - Static Website
+# React + Vite
 
-This is the pure static version of the Nitaq Training Center website. It requires no build tools, no Node.js, and no installation.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## 📁 Project Structure
+Currently, two official plugins are available:
 
-```
-/
-├── index.html           # Homepage
-├── about.html           # About page
-├── css/
-│   └── style.css        # Main stylesheet
-├── js/
-│   └── main.js          # Animations and logic
-├── images/              # All image assets
-└── [other html files]   # Course pages
-```
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## 🚀 How to Run
+## React Compiler
 
-### Option 1: Direct Open
-Simply double-click `index.html` to open it in your browser.
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-### Option 2: Local Server (Recommended)
-If you have Python installed:
-```bash
-python3 -m http.server
-```
-Then open `http://localhost:8000`
+## Expanding the ESLint configuration
 
-## 📝 Editing
-
-- **Content**: Edit the `.html` files directly.
-- **Styles**: Edit `css/style.css`.
-- **Scripts**: Edit `js/main.js`.
-
-## 🌐 Deployment
-
-Upload all files in this folder to any static hosting provider:
-- GitHub Pages
-- Netlify (drag and drop)
-- Vercel
-- Shared Hosting (cPanel/FTP)
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
