@@ -2022,6 +2022,39 @@ header.scrolled {
     }
 }
 
+/* =========================================
+   Google Translate & RTL Support 
+   ========================================= */
+
+/* Hide Google Translate Toolbars & Branding */
+.goog-te-banner-frame,
+.goog-te-gadget-simple img,
+.goog-te-gadget-icon,
+.goog-logo-link {
+    display: none !important;
+}
+
+#google_translate_element {
+    visibility: hidden;
+    position: absolute;
+    top: -9999px;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+}
+
+.goog-te-gadget {
+    color: transparent !important;
+}
+
+.goog-te-gadget .goog-te-combo {
+    color: black !important;
+}
+
+/* Fix body shift caused by Google Translate */
+body {
+    top: 0 !important;
+}
 
 /* Language Switcher Link unified with nav-links */
 
