@@ -1,4 +1,5 @@
 import CourseLayout from '../../components/CourseLayout';
+import WhyNitaq from '../../components/WhyNitaq';
 const SATCourse = () => {
     const infoData = {
         "Programs": "3 Options",
@@ -106,8 +107,8 @@ const SATCourse = () => {
                     </ul>
                 </div>
             </div>
+            <WhyNitaq />
         </CourseLayout>
     );
 };
-
 export default SATCourse;

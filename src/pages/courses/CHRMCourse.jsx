@@ -1,4 +1,5 @@
 import CourseLayout from '../../components/CourseLayout';
+import WhyNitaq from '../../components/WhyNitaq';
 const CHRMCourse = () => {
     const infoData = {
         "Level": "HR Professionals",
@@ -75,6 +76,7 @@ const CHRMCourse = () => {
                     </ul>
                 </div>
             </div>
+            <WhyNitaq />
         </CourseLayout>
     );
 };

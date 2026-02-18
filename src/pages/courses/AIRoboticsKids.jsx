@@ -1,4 +1,5 @@
 import CourseLayout from '../../components/CourseLayout';
+import WhyNitaq from '../../components/WhyNitaq';
 const AIRoboticsKids = () => {
     const infoData = {
         "Age Group": "8-15 Years",
@@ -75,6 +76,7 @@ const AIRoboticsKids = () => {
                     </ul>
                 </div>
             </div>
+            <WhyNitaq />
         </CourseLayout>
     );
 };

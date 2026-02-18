@@ -1,4 +1,5 @@
 import CourseLayout from '../../components/CourseLayout';
+import WhyNitaq from '../../components/WhyNitaq';
 const TOEFLCourse = () => {
     const infoData = {
         "Test Type": "Internet-Based (iBT)",
@@ -78,6 +79,7 @@ const TOEFLCourse = () => {
                     </ul>
                 </div>
             </div>
+            <WhyNitaq />
         </CourseLayout>
     );
 };

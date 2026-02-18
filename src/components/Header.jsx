@@ -74,7 +74,7 @@ const Header = () => {
         <>
             <div id="google_translate_element" style={{ display: 'none' }}></div>
 
-            <header className={isScrolled ? 'scrolled' : ''}>
+            <header className={`${isScrolled ? 'scrolled' : ''} ${location.pathname === '/' && !isScrolled ? 'home-top-header' : ''}`.trim()}>
                 <div className="container nav-wrapper">
                     <Link to="/" className="logo" onClick={closeMenu}>
                         <img

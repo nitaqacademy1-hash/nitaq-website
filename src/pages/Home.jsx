@@ -1,83 +1,65 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import ContactForm from '../components/ContactForm';
 
 const Home = () => {
-    const [currentImageIndex, setCurrentImageIndex] = useState(0);
-    const images = ['/images/h1.webp', '/images/h2.webp', '/images/h3.webp', '/images/h4.webp'];
+    const excellenceSlides = [
+        {
+            title: <>Empowering <span className="text-gradient">Professional Excellence</span></>,
+            subtitle: "Sharjah's premier hub for growth. We bridge the gap between ambition and achievement through expert-led, industry-aligned training."
+        },
+        {
+            title: <>Master <span className="text-gradient">Future-Ready Skills</span></>,
+            subtitle: "Stay ahead of the curve with our cutting-edge curriculum. From AI to Finance, we provide the tools you need to succeed in a digital economy."
+        },
+        {
+            title: <>Global <span className="text-gradient">Recognition & Success</span></>,
+            subtitle: "Join thousands of successful alumni. Our certifications are recognized by leading employers worldwide, opening doors to global opportunities."
+        }
+    ];
+
+    const [currentExcellenceSlide, setCurrentExcellenceSlide] = useState(0);
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-        }, 4000);
+            setCurrentExcellenceSlide((prev) => (prev + 1) % excellenceSlides.length);
+        }, 5000);
         return () => clearInterval(interval);
-    }, [images.length]);
+    }, [excellenceSlides.length]);
 
     return (
         <main>
             {/* Hero Section */}
-            <section className="hero-graphic">
+            <section className="hero-graphic home-hero">
                 <div className="container">
-                    <div className="hero-content">
-                        <div className="hero-text">
-                            <h1>Shaping <span className="text-gradient">Future-Ready Minds</span> for a Changing World</h1>
-                            <p style={{ fontSize: '1.25rem', color: 'var(--text-gray)', marginBottom: '20px', maxWidth: '500px' }}>
-                                Academic excellence and career-ready skills for a confident future.
+                    <div className="hero-content home-hero-content">
+                        <div className="hero-text home-hero-text">
+                            <span className="home-hero-kicker">NITAQ TRAINING INSTITUTE</span>
+                            <h1>
+                                Build a <span className="text-gradient">future-ready career</span> with industry-led learning
+                            </h1>
+                            <p>
+                                Hands-on courses, globally relevant curriculum, and expert mentors that help you move from learning to real career outcomes.
                             </p>
-                            <p style={{ fontSize: '1.1rem', color: 'var(--accent-color)', fontWeight: 600, marginBottom: '40px' }}>
-                                Book a free demo now & experience learning that delivers real outcomes.
-                            </p>
-                            <div style={{ display: 'flex', gap: '20px' }}>
+                            <div className="home-hero-actions">
                                 <a href="#programs" className="btn btn-primary">Explore Courses</a>
-                                <Link to="/enquiry" className="btn btn-secondary" style={{ border: '2px solid var(--text-gray)', color: 'var(--text-dark)' }}>Enquiry</Link>
+                                <Link to="/enquiry" className="btn home-hero-btn-secondary">Book Free Demo</Link>
                             </div>
                         </div>
-                        <div className="hero-visual">
-                            {/* Abstract SVG Blob */}
-                            <svg className="blob-shape" width="600" height="600" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-                                <g transform="translate(300,300)">
-                                    <path d="M146.4,-168.6C186.5,-128.9,213.6,-78.6,218.6,-26.3C223.6,26,206.5,80.3,173.6,122.9C140.7,165.5,92,196.4,39.4,209.6C-13.2,222.8,-69.7,218.3,-116.3,189.3C-162.9,160.3,-199.6,106.8,-211.8,47.2C-224,-12.4,-211.7,-78.1,-178.6,-124.8C-145.5,-171.5,-91.6,-199.2,-39.8,-198.8C12,-198.4,63.9,-170,106.3,-208.3" fill="#66BB6A" fillOpacity="0.1" />
-                                </g>
-                            </svg>
 
-                            <div className="hero-slider">
-                                {images.map((img, index) => (
-                                    <img
-                                        key={index}
-                                        src={img}
-                                        alt={`Student ${index + 1}`}
-                                        className={`hero-img-main ${index === currentImageIndex ? 'active' : ''}`}
-                                        width="600"
-                                        height="600"
-                                        fetchPriority={index === 0 ? "high" : "low"}
-                                    />
-                                ))}
-                            </div>
-
-                            {/* Floating Elements */}
-                            <div className="floating-card fc-1">
-                                <div className="icon-box">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                        <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
-                                        <path d="M6 12v5c3 3 9 3 12 0v-5" />
-                                    </svg>
-                                </div>
-                                <div>
-                                    <h4 style={{ fontSize: '0.9rem', margin: 0 }}>Certified</h4>
-                                    <p style={{ fontSize: '0.8rem', margin: 0, color: 'var(--text-gray)' }}>Global Recognition</p>
-                                </div>
-                            </div>
-
-                            <div className="floating-card fc-2">
-                                <div className="icon-box" style={{ color: 'var(--accent-color)' }}>
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                        <path d="M12 20h9" />
-                                        <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
-                                    </svg>
-                                </div>
-                                <div>
-                                    <h4 style={{ fontSize: '0.9rem', margin: 0 }}>Practical</h4>
-                                    <p style={{ fontSize: '0.8rem', margin: 0, color: 'var(--text-gray)' }}>Hands-on Learning</p>
-                                </div>
+                        <div className="home-hero-visual">
+                            <div className="home-hero-glow"></div>
+                            <div className="home-hero-card">
+                                <img
+                                    src="/images/hero-professional.webp"
+                                    alt="Nitaq professional training hero"
+                                    className="home-hero-image"
+                                    width="640"
+                                    height="760"
+                                    loading="eager"
+                                />
+                                <div className="home-hero-chip chip-top">Live mentor sessions</div>
+                                <div className="home-hero-chip chip-bottom">Placement-oriented tracks</div>
                             </div>
                         </div>
                     </div>
@@ -87,18 +69,22 @@ const Home = () => {
             {/* About Nitaq Section - Poster Style */}
             <section className="section-padding" style={{ paddingBottom: 0 }}>
                 <div className="container">
-                    <div className="testimonial-poster" style={{ background: 'var(--bg-dark)', marginTop: 0 }}>
-                        <div className="poster-graphic" style={{ background: 'radial-gradient(circle, rgba(102, 187, 106, 0.15) 0%, transparent 70%)' }}></div>
+                    <div className="testimonial-poster professional-excellence-section">
+                        <div className="poster-graphic excellence-graphic"></div>
 
-                        <h2 style={{ fontSize: '3.5rem', color: 'white', marginBottom: '25px', position: 'relative', zIndex: 1 }}>
-                            Empowering <span className="text-gradient">Professional Excellence</span>
-                        </h2>
+                        <div className="excellence-slider">
+                            {excellenceSlides.map((slide, index) => (
+                                <div
+                                    key={index}
+                                    className={`excellence-slide ${index === currentExcellenceSlide ? 'active' : ''}`}
+                                >
+                                    <h2 className="poster-title">{slide.title}</h2>
+                                    <p className="poster-subtitle">{slide.subtitle}</p>
+                                </div>
+                            ))}
+                        </div>
 
-                        <p style={{ fontSize: '1.3rem', color: 'var(--text-muted)', maxWidth: '900px', margin: '0 auto 40px', position: 'relative', zIndex: 1, lineHeight: 1.6 }}>
-                            Nitaq Training Center is Sharjah's premier hub for professional growth. We bridge the gap between ambition and achievement through expert-led, industry-aligned training designed for modern learners.
-                        </p>
-
-                        <div style={{ display: 'flex', gap: '60px', justifyContent: 'center', position: 'relative', zIndex: 1, flexWrap: 'wrap' }}>
+                        <div className="poster-stats">
                             <div className="stat-box">
                                 <span className="stat-number">40+</span>
                                 <span className="stat-label">Programs</span>
@@ -304,21 +290,7 @@ const Home = () => {
                         </div>
 
                         <div className="contact-form" style={{ background: 'white', padding: '40px', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-card)' }}>
-                            <form>
-                                <div style={{ marginBottom: '20px' }}>
-                                    <label style={{ display: 'block', marginBottom: '8px', fontWeight: 500 }}>Full Name</label>
-                                    <input type="text" placeholder="John Doe" style={{ width: '100%', padding: '15px', border: '1px solid #eee', borderRadius: '10px', fontFamily: 'inherit' }} />
-                                </div>
-                                <div style={{ marginBottom: '20px' }}>
-                                    <label style={{ display: 'block', marginBottom: '8px', fontWeight: 500 }}>Email Address</label>
-                                    <input type="email" placeholder="john@example.com" style={{ width: '100%', padding: '15px', border: '1px solid #eee', borderRadius: '10px', fontFamily: 'inherit' }} />
-                                </div>
-                                <div style={{ marginBottom: '30px' }}>
-                                    <label style={{ display: 'block', marginBottom: '8px', fontWeight: 500 }}>Message</label>
-                                    <textarea placeholder="I'm interested in..." style={{ width: '100%', padding: '15px', border: '1px solid #eee', borderRadius: '10px', fontFamily: 'inherit', minHeight: '100px' }}></textarea>
-                                </div>
-                                <button type="submit" className="btn btn-primary" style={{ width: '100%' }}>Send Message</button>
-                            </form>
+                            <ContactForm />
                         </div>
                     </div>
                 </div>

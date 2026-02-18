@@ -1,4 +1,5 @@
 import CourseLayout from '../../components/CourseLayout';
+import WhyNitaq from '../../components/WhyNitaq';
 const CPCDCourse = () => {
     const infoData = {
         "Level": "HR & Management",
@@ -75,6 +76,7 @@ const CPCDCourse = () => {
                     </ul>
                 </div>
             </div>
+            <WhyNitaq />
         </CourseLayout>
     );
 };

@@ -1,26 +1,8 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Clock, MessageSquare } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock } from 'lucide-react';
+import ContactForm from '../components/ContactForm';
 
 const Contact = () => {
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        phone: '',
-        subject: '',
-        message: ''
-    });
-
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData(prev => ({ ...prev, [name]: value }));
-    };
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        alert('Thank you! Your message has been sent successfully.');
-        setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
-    };
 
     return (
         <main>
@@ -122,33 +104,7 @@ const Contact = () => {
                                     <p style={{ color: '#64748b' }}>Fill out the form below and our team will respond within 24 hours.</p>
                                 </div>
 
-                                <form onSubmit={handleSubmit} style={{ display: 'grid', gap: '20px' }}>
-                                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
-                                        <div>
-                                            <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, color: '#334155', marginBottom: '8px' }}>Full Name</label>
-                                            <input type="text" name="name" value={formData.name} onChange={handleChange} required placeholder="John Doe" style={{ width: '100%', padding: '14px 20px', borderRadius: '12px', border: '1px solid #e2e8f0', background: '#f8fafc', fontSize: '1rem' }} />
-                                        </div>
-                                        <div>
-                                            <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, color: '#334155', marginBottom: '8px' }}>Email Address</label>
-                                            <input type="email" name="email" value={formData.email} onChange={handleChange} required placeholder="john@example.com" style={{ width: '100%', padding: '14px 20px', borderRadius: '12px', border: '1px solid #e2e8f0', background: '#f8fafc', fontSize: '1rem' }} />
-                                        </div>
-                                    </div>
-                                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
-                                        <div>
-                                            <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, color: '#334155', marginBottom: '8px' }}>Phone Number</label>
-                                            <input type="tel" name="phone" value={formData.phone} onChange={handleChange} required placeholder="+971 5X XXX XXXX" style={{ width: '100%', padding: '14px 20px', borderRadius: '12px', border: '1px solid #e2e8f0', background: '#f8fafc', fontSize: '1rem' }} />
-                                        </div>
-                                        <div>
-                                            <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, color: '#334155', marginBottom: '8px' }}>Subject</label>
-                                            <input type="text" name="subject" value={formData.subject} onChange={handleChange} required placeholder="How can we help?" style={{ width: '100%', padding: '14px 20px', borderRadius: '12px', border: '1px solid #e2e8f0', background: '#f8fafc', fontSize: '1rem' }} />
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, color: '#334155', marginBottom: '8px' }}>Your Message</label>
-                                        <textarea name="message" value={formData.message} onChange={handleChange} required rows="5" placeholder="Write your message here..." style={{ width: '100%', padding: '14px 20px', borderRadius: '12px', border: '1px solid #e2e8f0', background: '#f8fafc', fontSize: '1rem', resize: 'vertical' }}></textarea>
-                                    </div>
-                                    <button type="submit" className="btn btn-primary" style={{ width: '100%', marginTop: '10px' }}>Send Message Now</button>
-                                </form>
+                                <ContactForm />
                             </div>
                         </div>
 

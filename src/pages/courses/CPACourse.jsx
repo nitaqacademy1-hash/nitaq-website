@@ -1,4 +1,5 @@
 import CourseLayout from '../../components/CourseLayout';
+import WhyNitaq from '../../components/WhyNitaq';
 const CPACourse = () => {
     const infoData = {
         "Qualification": "CPA (US) Preparation",
@@ -74,6 +75,7 @@ const CPACourse = () => {
                     </ul>
                 </div>
             </div>
+            <WhyNitaq />
         </CourseLayout>
     );
 };

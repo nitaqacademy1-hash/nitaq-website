@@ -1,4 +1,5 @@
 import CourseLayout from '../../components/CourseLayout';
+import WhyNitaq from '../../components/WhyNitaq';
 const DataManagementCourse = () => {
     const infoData = {
         "Level": "Professional",
@@ -75,6 +76,7 @@ const DataManagementCourse = () => {
                     </ul>
                 </div>
             </div>
+            <WhyNitaq />
         </CourseLayout>
     );
 };
