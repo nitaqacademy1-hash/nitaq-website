@@ -27,6 +27,21 @@ const Home = () => {
         return () => clearInterval(interval);
     }, [excellenceSlides.length]);
 
+    const heroImages = [
+        '/images/hero-professional.webp',
+        '/images/h1.webp',
+        '/images/trainer1.webp'
+    ];
+
+    const [currentHeroImage, setCurrentHeroImage] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentHeroImage((prev) => (prev + 1) % heroImages.length);
+        }, 3000);
+        return () => clearInterval(interval);
+    }, [heroImages.length]);
+
     return (
         <main>
             {/* Hero Section */}
@@ -50,14 +65,25 @@ const Home = () => {
                         <div className="home-hero-visual">
                             <div className="home-hero-glow"></div>
                             <div className="home-hero-card">
-                                <img
-                                    src="/images/hero-professional.webp"
-                                    alt="Nitaq professional training hero"
-                                    className="home-hero-image"
-                                    width="640"
-                                    height="760"
-                                    loading="eager"
-                                />
+                                {heroImages.map((img, index) => (
+                                    <img
+                                        key={index}
+                                        src={img}
+                                        alt={`Nitaq professional training hero ${index + 1}`}
+                                        className={`home-hero-image ${index === currentHeroImage ? 'active' : ''}`}
+                                        width="640"
+                                        height="760"
+                                        loading={index === 0 ? "eager" : "lazy"}
+                                        style={{
+                                            position: index === 0 ? 'relative' : 'absolute',
+                                            top: 0,
+                                            left: 0,
+                                            opacity: index === currentHeroImage ? 1 : 0,
+                                            transition: 'opacity 0.8s ease-in-out',
+                                            visibility: index === currentHeroImage ? 'visible' : 'hidden'
+                                        }}
+                                    />
+                                ))}
                                 <div className="home-hero-chip chip-top">Live mentor sessions</div>
                                 <div className="home-hero-chip chip-bottom">Placement-oriented tracks</div>
                             </div>
