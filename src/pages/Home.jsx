@@ -36,10 +36,10 @@ const Home = () => {
                         <div className="hero-text home-hero-text">
                             <span className="home-hero-kicker">NITAQ TRAINING INSTITUTE</span>
                             <h1>
-                                Build a <span className="text-gradient">future-ready career</span> with industry-led learning
+                                Empowering <span className="text-gradient">Future-Ready</span> Minds
                             </h1>
                             <p>
-                                Hands-on courses, globally relevant curriculum, and expert mentors that help you move from learning to real career outcomes.
+                                Sharjah's premier hub for professional growth, bridging the gap between ambition and achievement through expert-led training.
                             </p>
                             <div className="home-hero-actions">
                                 <a href="#programs" className="btn btn-primary">Explore Courses</a>
