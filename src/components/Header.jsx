@@ -35,44 +35,9 @@ const Header = () => {
     };
 
 
-    const [currentLang, setCurrentLang] = useState('en');
-
-    useEffect(() => {
-        // Find existing google translate cookie on load
-        const getCookie = (name) => {
-            const value = `; ${document.cookie}`;
-            const parts = value.split(`; ${name}=`);
-            if (parts.length === 2) return parts.pop().split(';').shift();
-        };
-
-        const langCookie = getCookie('googtrans');
-        if (langCookie && langCookie.includes('ar')) {
-            setCurrentLang('ar');
-        } else {
-            setCurrentLang('en');
-        }
-    }, []);
-
-    const toggleLanguage = () => {
-        const newLang = currentLang === 'en' ? 'ar' : 'en';
-
-        // Find the google translate select element
-        const selectElement = document.querySelector('.goog-te-combo');
-        if (selectElement) {
-            selectElement.value = newLang;
-            selectElement.dispatchEvent(new Event('change'));
-            setCurrentLang(newLang);
-        } else {
-            // Fallback: set cookie directly if element isn't ready
-            document.cookie = `googtrans=/en/${newLang}; path=/`;
-            document.cookie = `googtrans=/en/${newLang}; path=/; domain=.${window.location.hostname}`;
-            window.location.reload();
-        }
-    };
 
     return (
         <>
-            <div id="google_translate_element" style={{ display: 'none' }}></div>
 
             <header className={`${isScrolled ? 'scrolled' : ''} ${location.pathname === '/' && !isScrolled ? 'home-top-header' : ''}`.trim()}>
                 <div className="container nav-wrapper">
@@ -153,17 +118,6 @@ const Header = () => {
                         <Link to="/contact" className={location.pathname === '/contact' ? 'active' : ''} onClick={closeMenu}>Contact</Link>
                         <a href="tel:+971545723181" className="btn btn-primary mobile-only-btn">Call Us</a>
 
-                        <button
-                            onClick={toggleLanguage}
-                            className="lang-switcher"
-                            style={{ background: 'none', border: 'none', cursor: 'pointer', outline: 'none' }}
-                        >
-                            <span className="notranslate" style={{ pointerEvents: 'none' }}>
-                                <strong style={{ color: currentLang === 'en' ? 'var(--primary-color)' : 'inherit' }}>English</strong>
-                                {' '}|{' '}
-                                <span style={{ color: currentLang === 'ar' ? 'var(--primary-color)' : 'inherit' }}>العربية</span>
-                            </span>
-                        </button>
                     </nav>
 
                     <a href="tel:+971545723181" className="btn btn-primary desktop-only-btn">Call Us</a>
