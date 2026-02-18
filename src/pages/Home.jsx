@@ -38,7 +38,7 @@ const Home = () => {
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentHeroImage((prev) => (prev + 1) % heroImages.length);
-        }, 3000);
+        }, 5000); // Slower cycle: 5 seconds
         return () => clearInterval(interval);
     }, [heroImages.length]);
 
@@ -79,8 +79,9 @@ const Home = () => {
                                             top: 0,
                                             left: 0,
                                             opacity: index === currentHeroImage ? 1 : 0,
-                                            transition: 'opacity 0.8s ease-in-out',
-                                            visibility: index === currentHeroImage ? 'visible' : 'hidden'
+                                            transition: 'opacity 2s ease-in-out', // Much slower transition
+                                            zIndex: index === currentHeroImage ? 2 : 1,
+                                            pointerEvents: index === currentHeroImage ? 'auto' : 'none'
                                         }}
                                     />
                                 ))}
