@@ -43,12 +43,15 @@ import AcademicExcellenceCourse from './pages/courses/AcademicExcellenceCourse';
 import FoundationJEECourse from './pages/courses/FoundationJEECourse';
 import AIRoboticsKids from './pages/courses/AIRoboticsKids';
 
+import DynamicPopup from './components/DynamicPopup';
+
 function App() {
   return (
     <Router>
       <ScrollToTop />
       <ScrollToHashElement />
       <Header />
+      <DynamicPopup />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
