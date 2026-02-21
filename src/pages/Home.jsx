@@ -49,7 +49,7 @@ const Home = () => {
                 <div className="container">
                     <div className="hero-content home-hero-content">
                         <div className="hero-text home-hero-text">
-                            <span className="home-hero-kicker">NITAQ TRAINING INSTITUTE</span>
+                            <span className="home-hero-kicker">NITAQ TRAINING INSTITUTE.</span>
                             <h1>
                                 Empowering <span className="text-gradient">Future-Ready</span> Minds
                             </h1>
