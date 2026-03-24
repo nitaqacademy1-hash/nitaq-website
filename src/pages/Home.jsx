@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import ContactForm from '../components/ContactForm';
+import SEO from '../components/SEO';
 
 const Home = () => {
     const excellenceSlides = [
@@ -44,6 +45,11 @@ const Home = () => {
 
     return (
         <main>
+            <SEO 
+                title="Nitaq Academy Sharjah | IELTS, ACCA, AI & Language Courses" 
+                description="Top-rated training academy in Sharjah offering IELTS, TOEFL, ACCA, CMA, AI & language courses. Expert tutors, flexible timing. Enroll today at Nitaq Academy." 
+                path="/"
+            />
             {/* Hero Section */}
             <section className="hero-graphic home-hero">
                 <div className="container">

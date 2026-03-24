@@ -1,8 +1,15 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import SEO from './SEO';
 
 const CourseLayout = ({ title, subtitle, infoData, children }) => {
+    const location = useLocation();
     return (
         <main>
+            <SEO 
+                title={`${title.split(' - ')[0]} Course Sharjah | Nitaq Academy`}
+                description={subtitle}
+                path={location.pathname}
+            />
             {/* Page Hero */}
             <section className="course-hero">
                 {/* Decorative background elements */}

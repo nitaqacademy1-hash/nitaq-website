@@ -1,8 +1,14 @@
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 
 const About = () => {
     return (
         <main>
+            <SEO 
+                title="About Nitaq Academy | Leading Training Center in Sharjah" 
+                description="Discover Nitaq Academy's mission to empower professionals and students in Sharjah with world-class education and certifications." 
+                path="/about"
+            />
             {/* Premium Page Hero */}
             <section className="page-hero">
                 <div className="poster-graphic" style={{ opacity: 0.4 }}></div>

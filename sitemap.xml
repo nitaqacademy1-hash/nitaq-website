@@ -6,7 +6,7 @@
 
     <!-- Homepage -->
     <url>
-        <loc>https://nitaq-training-center.vercel.app/</loc>
+        <loc>https://www.nitaqacademy.com/</loc>
         <lastmod>2026-01-06</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
@@ -14,75 +14,75 @@
 
     <!-- Main Pages -->
     <url>
-        <loc>https://nitaq-training-center.vercel.app/about.html</loc>
+        <loc>https://www.nitaqacademy.com/about</loc>
         <lastmod>2026-01-06</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://nitaq-training-center.vercel.app/enquiry.html</loc>
+        <loc>https://www.nitaqacademy.com/enquiry</loc>
         <lastmod>2026-01-06</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://nitaq-training-center.vercel.app/test-preparations.html</loc>
+        <loc>https://www.nitaqacademy.com/test-preparations</loc>
         <lastmod>2026-01-06</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://nitaq-training-center.vercel.app/professional-certifications.html</loc>
+        <loc>https://www.nitaqacademy.com/professional-certifications</loc>
         <lastmod>2026-01-06</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://nitaq-training-center.vercel.app/language-trainings.html</loc>
+        <loc>https://www.nitaqacademy.com/language-trainings</loc>
         <lastmod>2026-01-06</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://nitaq-training-center.vercel.app/corporate-trainings.html</loc>
+        <loc>https://www.nitaqacademy.com/corporate-trainings</loc>
         <lastmod>2026-01-06</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
 
     <!-- Test Preparation Courses -->
-    <url><loc>https://nitaq-training-center.vercel.app/academic-excellence.html</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://nitaq-training-center.vercel.app/foundation-jee-neet.html</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://nitaq-training-center.vercel.app/sat-preparation.html</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://nitaq-training-center.vercel.app/gmat-preparation.html</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://nitaq-training-center.vercel.app/gre-preparation.html</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://nitaq-training-center.vercel.app/ielts-course.html</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://nitaq-training-center.vercel.app/pte-course.html</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://nitaq-training-center.vercel.app/toefl-course.html</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://nitaq-training-center.vercel.app/ai-robotics-kids.html</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://www.nitaqacademy.com/academic-excellence</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://www.nitaqacademy.com/foundation-jee-neet</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://www.nitaqacademy.com/sat-preparation</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://www.nitaqacademy.com/gmat-preparation</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://www.nitaqacademy.com/gre-preparation</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://www.nitaqacademy.com/ielts-course</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://www.nitaqacademy.com/pte-course</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://www.nitaqacademy.com/toefl-course</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://www.nitaqacademy.com/ai-robotics-kids</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
     <!-- Professional Certifications -->
-    <url><loc>https://nitaq-training-center.vercel.app/acca-course.html</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://nitaq-training-center.vercel.app/cma-course.html</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://nitaq-training-center.vercel.app/cpa-course.html</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://nitaq-training-center.vercel.app/uae-vat.html</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://nitaq-training-center.vercel.app/uae-corporate-tax.html</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://nitaq-training-center.vercel.app/ai-course.html</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://nitaq-training-center.vercel.app/power-bi-excel.html</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://nitaq-training-center.vercel.app/chrm.html</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://nitaq-training-center.vercel.app/hrm-courses.html</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://nitaq-training-center.vercel.app/sales-negotiations.html</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://nitaq-training-center.vercel.app/marketing-training.html</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://nitaq-training-center.vercel.app/data-management.html</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://nitaq-training-center.vercel.app/soft-skills.html</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://nitaq-training-center.vercel.app/finance-courses.html</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://nitaq-training-center.vercel.app/cpcd-courses.html</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://www.nitaqacademy.com/acca-course</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://www.nitaqacademy.com/cma-course</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://www.nitaqacademy.com/cpa-course</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://www.nitaqacademy.com/uae-vat</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://www.nitaqacademy.com/uae-corporate-tax</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://www.nitaqacademy.com/ai-course</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://www.nitaqacademy.com/power-bi-excel</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://www.nitaqacademy.com/chrm</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://www.nitaqacademy.com/hrm-courses</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://www.nitaqacademy.com/sales-negotiations</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://www.nitaqacademy.com/marketing-training</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://www.nitaqacademy.com/data-management</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://www.nitaqacademy.com/soft-skills</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://www.nitaqacademy.com/finance-courses</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://www.nitaqacademy.com/cpcd-courses</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
     <!-- Language Training Courses -->
-    <url><loc>https://nitaq-training-center.vercel.app/spoken-arabic.html</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://nitaq-training-center.vercel.app/spoken-english.html</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://nitaq-training-center.vercel.app/french.html</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://nitaq-training-center.vercel.app/german.html</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://nitaq-training-center.vercel.app/spanish.html</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://www.nitaqacademy.com/spoken-arabic</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://www.nitaqacademy.com/spoken-english</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://www.nitaqacademy.com/french</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://www.nitaqacademy.com/german</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://www.nitaqacademy.com/spanish</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
 </urlset>

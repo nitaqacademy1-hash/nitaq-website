@@ -1,5 +1,6 @@
 import CourseLayout from '../../components/CourseLayout';
 import WhyNitaq from '../../components/WhyNitaq';
+import SEO from '../../components/SEO';
 
 const IELTSCourse = () => {
     const infoData = {
@@ -12,7 +13,13 @@ const IELTSCourse = () => {
     };
 
     return (
-        <CourseLayout
+        <>
+            <SEO 
+                title="IELTS Preparation Course Sharjah | Band 7+ Guaranteed | Nitaq Academy" 
+                description="Achieve IELTS Band 7+ with Nitaq Academy's expert-led preparation course in Sharjah. Flexible batches, mock tests & proven strategies for Academic and General modules." 
+                path="/ielts-course"
+            />
+            <CourseLayout
             title="IELTS - International English Language Testing System"
             subtitle="Achieve your target band score with strategic preparation for both Academic and General Training modules."
             infoData={infoData}
@@ -111,6 +118,7 @@ const IELTSCourse = () => {
 
             <WhyNitaq />
         </CourseLayout>
+        </>
     );
 };
 

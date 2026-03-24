@@ -1,11 +1,17 @@
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 import ContactForm from '../components/ContactForm';
+import SEO from '../components/SEO';
 
 const Contact = () => {
 
     return (
         <main>
+            <SEO 
+                title="Contact Nitaq Academy Sharjah | Get in Touch" 
+                description="Have questions about our courses? Contact Nitaq Academy in Sharjah for admissions, course details, and corporate training enquiries." 
+                path="/contact"
+            />
             {/* Premium Light Page Hero */}
             <section className="listing-hero">
                 <div className="container">

@@ -10,7 +10,7 @@ Disallow: /.git/
 Disallow: /node_modules/
 
 # Sitemap location
-Sitemap: https://nitaq-training-center.vercel.app/sitemap.xml
+Sitemap: https://www.nitaqacademy.com/sitemap.xml
 
 # Crawl-delay (optional, helps prevent server overload)
 Crawl-delay: 1

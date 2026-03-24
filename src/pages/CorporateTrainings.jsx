@@ -1,8 +1,14 @@
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 
 const CorporateTrainings = () => {
     return (
         <main>
+            <SEO 
+                title="Corporate Training Solutions Sharjah UAE | Nitaq Academy" 
+                description="Customized training programs for organizations in the UAE. Upskill your employees with HR, Sales, IT, and Finance certifications at Nitaq Academy." 
+                path="/corporate-trainings"
+            />
             {/* Premium Light Page Hero */}
             <section className="listing-hero">
                 <div className="container">

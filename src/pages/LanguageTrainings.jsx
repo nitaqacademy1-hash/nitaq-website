@@ -1,8 +1,14 @@
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 
 const LanguageTrainings = () => {
     return (
         <main>
+            <SEO 
+                title="Language Training Classes Sharjah | English, Arabic, French, Spanish | Nitaq Academy" 
+                description="Learn new languages with certified trainers in Sharjah. Our language courses include Spoken English, Arabic, French, German, and Spanish for all levels." 
+                path="/language-trainings"
+            />
             {/* Premium Light Page Hero */}
             <section className="listing-hero">
                 <div className="container">

@@ -1,8 +1,14 @@
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 
 const ProfessionalCertifications = () => {
     return (
         <main>
+            <SEO 
+                title="Professional Certification Courses Sharjah | ACCA, CMA, CPA, Tax | Nitaq Academy" 
+                description="Gain globally recognized professional certifications in Sharjah. Expert tuition for ACCA, CMA, CPA, UAE VAT, and Corporate Tax courses." 
+                path="/professional-certifications"
+            />
             {/* Premium Light Page Hero */}
             <section className="listing-hero">
                 <div className="container">
