@@ -120,8 +120,20 @@ const Header = () => {
 
                     </nav>
 
-                    <a href="tel:+971545723181" className="btn btn-primary desktop-only-btn">Call Us</a>
-                </div>
+                    <a
+                        href="tel:+971545723181"
+                        className="btn btn-primary desktop-only-btn"
+                        onClick={() => {
+                            if (window.gtag) {
+                                window.gtag('event', 'call_click_home', {
+                                    event_category: 'contact',
+                                    event_label: 'call_button_home'
+                                });
+                            }
+                        }}
+                    >
+                        Call Us
+                    </a>                </div>
             </header>
 
             {isMenuOpen && (
