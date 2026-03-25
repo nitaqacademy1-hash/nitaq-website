@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import ContactForm from '../components/ContactForm';
 import SEO from '../components/SEO';
 import { trackEvent, ANALYTICS_EVENTS } from '../utils/analytics';
