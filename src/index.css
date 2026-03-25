@@ -2939,7 +2939,7 @@ textarea:focus {
 .floating-whatsapp {
     position: fixed;
     bottom: 30px;
-    right: 30px;
+    left: 30px;
     width: 65px;
     height: 65px;
     background-color: #25d366;
@@ -2977,7 +2977,7 @@ textarea:focus {
 @media (max-width: 768px) {
     .floating-whatsapp {
         bottom: 20px;
-        right: 20px;
+        left: 20px;
         width: 55px;
         height: 55px;
     }
