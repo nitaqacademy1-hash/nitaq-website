@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { trackEvent, ANALYTICS_EVENTS } from '../utils/analytics';
 
 const ContactForm = ({ mode = 'contact' }) => {
     const [formData, setFormData] = useState({
@@ -45,6 +46,10 @@ const ContactForm = ({ mode = 'contact' }) => {
 
             // Since we use no-cors, we assume success if no error is thrown
             setStatus({ type: 'success', message: 'Thank you! Your message has been sent successfully.' });
+            
+            // Track successful submission
+            trackEvent(ANALYTICS_EVENTS.FORM, `form_submit_${mode}`);
+
             setFormData({
                 name: '',
                 email: '',

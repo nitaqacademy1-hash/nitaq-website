@@ -1,5 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import SEO from './SEO';
+import { trackEvent, ANALYTICS_EVENTS } from '../utils/analytics';
 
 const CourseLayout = ({ title, subtitle, infoData, children }) => {
     const location = useLocation();
@@ -31,8 +32,21 @@ const CourseLayout = ({ title, subtitle, infoData, children }) => {
                             </p>
 
                             <div className="course-hero-actions">
-                                <a href="https://wa.me/971545723181" className="btn btn-primary">Enroll Today</a>
-                                <a href="tel:+971545723181" className="btn" style={{ background: '#f0f0f0', color: 'var(--text-dark)' }}>Speak to Advisor</a>
+                                <a 
+                                    href="https://wa.me/971545723181" 
+                                    className="btn btn-primary"
+                                    onClick={() => trackEvent(ANALYTICS_EVENTS.WHATSAPP, `enroll_${title.split(' - ')[0].toLowerCase().replace(/\s+/g, '_')}`)}
+                                >
+                                    Enroll Today
+                                </a>
+                                <a 
+                                    href="tel:+971545723181" 
+                                    className="btn" 
+                                    style={{ background: '#f0f0f0', color: 'var(--text-dark)' }}
+                                    onClick={() => trackEvent(ANALYTICS_EVENTS.CALL, `advisor_${title.split(' - ')[0].toLowerCase().replace(/\s+/g, '_')}`)}
+                                >
+                                    Speak to Advisor
+                                </a>
                             </div>
                         </div>
 
@@ -76,7 +90,14 @@ const CourseLayout = ({ title, subtitle, infoData, children }) => {
                         Join a community of focused learners and build your future with Nitaq Training Center. Expert guidance is just a click away.
                     </p>
                     <div style={{ display: 'flex', gap: '20px', justifyContent: 'center', flexWrap: 'wrap' }}>
-                        <a href="https://wa.me/971545723181" className="btn btn-primary" style={{ padding: '20px 45px' }}>Enquire via WhatsApp</a>
+                        <a 
+                            href="https://wa.me/971545723181" 
+                            className="btn btn-primary" 
+                            style={{ padding: '20px 45px' }}
+                            onClick={() => trackEvent(ANALYTICS_EVENTS.WHATSAPP, `bottom_cta_${title.split(' - ')[0].toLowerCase().replace(/\s+/g, '_')}`)}
+                        >
+                            Enquire via WhatsApp
+                        </a>
                         <Link to="/enquiry" className="btn btn-white" style={{ background: 'white', color: '#1a1a1a', padding: '20px 45px' }}>Book Free Demo</Link>
                     </div>
                 </div>

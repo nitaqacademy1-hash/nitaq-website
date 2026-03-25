@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+import { trackEvent, ANALYTICS_EVENTS } from '../utils/analytics';
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -116,21 +117,20 @@ const Header = () => {
                         </div>
 
                         <Link to="/contact" className={location.pathname === '/contact' ? 'active' : ''} onClick={closeMenu}>Contact</Link>
-                        <a href="tel:+971545723181" className="btn btn-primary mobile-only-btn">Call Us</a>
+                        <a 
+                            href="tel:+971545723181" 
+                            className="btn btn-primary mobile-only-btn"
+                            onClick={() => trackEvent(ANALYTICS_EVENTS.CALL, 'header_mobile')}
+                        >
+                            Call Us
+                        </a>
 
                     </nav>
 
                     <a
                         href="tel:+971545723181"
                         className="btn btn-primary desktop-only-btn"
-                        onClick={() => {
-                            if (window.gtag) {
-                                window.gtag('event', 'call_click_home', {
-                                    event_category: 'contact',
-                                    event_label: 'call_button_home'
-                                });
-                            }
-                        }}
+                        onClick={() => trackEvent(ANALYTICS_EVENTS.CALL, 'header_desktop')}
                     >
                         Call Us
                     </a>                </div>

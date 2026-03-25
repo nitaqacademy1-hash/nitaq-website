@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
+import { trackEvent, ANALYTICS_EVENTS } from '../utils/analytics';
 
 const TestPreparations = () => {
     return (
@@ -122,7 +123,14 @@ const TestPreparations = () => {
                         </p>
                         <div style={{ display: 'flex', gap: '20px', justifyContent: 'center', flexWrap: 'wrap' }}>
                             <Link to="/enquiry" className="btn btn-primary">Start Preparation</Link>
-                            <a href="https://wa.me/971545723181" className="btn" style={{ background: '#f1f5f9', color: '#1e293b' }}>Consul an expert</a>
+                            <a 
+                                href="https://wa.me/971545723181" 
+                                className="btn" 
+                                style={{ background: '#f1f5f9', color: '#1e293b' }}
+                                onClick={() => trackEvent(ANALYTICS_EVENTS.WHATSAPP, 'listing_test_prep')}
+                            >
+                                Consult an expert
+                            </a>
                         </div>
                     </div>
                 </div>

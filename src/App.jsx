@@ -44,6 +44,7 @@ import FoundationJEECourse from './pages/courses/FoundationJEECourse';
 import AIRoboticsKids from './pages/courses/AIRoboticsKids';
 
 import DynamicPopup from './components/DynamicPopup';
+import FloatingWhatsApp from './components/FloatingWhatsApp';
 
 function App() {
   return (
@@ -93,6 +94,7 @@ function App() {
         {/* Placeholder routes for other pages to be migrated */}
         <Route path="*" element={<Home />} />
       </Routes>
+      <FloatingWhatsApp />
       <Footer />
     </Router>
   );

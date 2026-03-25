@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
+import { trackEvent, ANALYTICS_EVENTS } from '../utils/analytics';
 
 const LanguageTrainings = () => {
     return (
@@ -148,7 +149,14 @@ const LanguageTrainings = () => {
                         </p>
                         <div style={{ display: 'flex', gap: '20px', justifyContent: 'center', flexWrap: 'wrap' }}>
                             <Link to="/enquiry" className="btn btn-primary">Enroll Now</Link>
-                            <a href="https://wa.me/971545723181" className="btn" style={{ background: '#f1f5f9', color: '#1e293b' }}>Ask a Question</a>
+                            <a 
+                                href="https://wa.me/971545723181" 
+                                className="btn" 
+                                style={{ background: '#f1f5f9', color: '#1e293b' }}
+                                onClick={() => trackEvent(ANALYTICS_EVENTS.WHATSAPP, 'listing_languages')}
+                            >
+                                Ask a Question
+                            </a>
                         </div>
                     </div>
                 </div>

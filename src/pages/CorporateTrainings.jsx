@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
+import { trackEvent, ANALYTICS_EVENTS } from '../utils/analytics';
 
 const CorporateTrainings = () => {
     return (
@@ -77,7 +78,13 @@ const CorporateTrainings = () => {
                                         <option>Other</option>
                                     </select>
                                 </div>
-                                <button className="btn btn-primary" style={{ width: '100%', marginTop: '10px' }}>Get Free Consultation</button>
+                                <button 
+                                    className="btn btn-primary" 
+                                    style={{ width: '100%', marginTop: '10px' }}
+                                    onClick={() => trackEvent(ANALYTICS_EVENTS.FORM, 'corporate_consultation_click')}
+                                >
+                                    Get Free Consultation
+                                </button>
                             </form>
                         </div>
 

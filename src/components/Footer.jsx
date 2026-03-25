@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { trackEvent, ANALYTICS_EVENTS } from '../utils/analytics';
 
 const Footer = () => {
     return (
@@ -54,7 +55,15 @@ const Footer = () => {
                         <div>
                             <h4>Get in Touch</h4>
                             <li style={{ fontSize: '0.95rem' }}>Office 103, Floor F1,<br />Abu Khamseen Tower,<br />Al Majaz 3, Sharjah</li>
-                            <li style={{ fontSize: '0.95rem', marginTop: '10px' }}>+971 54 572 3181</li>
+                            <li style={{ fontSize: '0.95rem', marginTop: '10px' }}>
+                                <a 
+                                    href="tel:+971545723181" 
+                                    onClick={() => trackEvent(ANALYTICS_EVENTS.CALL, 'footer_phone')}
+                                    style={{ color: 'inherit', textDecoration: 'none' }}
+                                >
+                                    +971 54 572 3181
+                                </a>
+                            </li>
                         </div>
                     </div>
                 </div>

@@ -1,7 +1,6 @@
-import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import ContactForm from '../components/ContactForm';
 import SEO from '../components/SEO';
+import { trackEvent, ANALYTICS_EVENTS } from '../utils/analytics';
 
 const Home = () => {
     const excellenceSlides = [
@@ -318,7 +317,15 @@ const Home = () => {
 
                             <div style={{ marginBottom: '30px' }}>
                                 <h4 style={{ marginBottom: '10px' }}>Call Us</h4>
-                                <p style={{ color: 'var(--text-gray)' }}>+971 54 572 3181</p>
+                                <p style={{ color: 'var(--text-gray)' }}>
+                                    <a 
+                                        href="tel:+971545723181" 
+                                        onClick={() => trackEvent(ANALYTICS_EVENTS.CALL, 'home_contact_section')}
+                                        style={{ color: 'inherit', textDecoration: 'none' }}
+                                    >
+                                        +971 54 572 3181
+                                    </a>
+                                </p>
                             </div>
                         </div>
 
