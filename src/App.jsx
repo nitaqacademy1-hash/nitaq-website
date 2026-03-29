@@ -99,10 +99,17 @@ function App() {
         {/* Placeholder routes for other pages to be migrated */}
         <Route path="*" element={<Home />} />
       </Routes>
-      <FloatingWhatsApp />
+      <FloatingWhatsAppCondition />
       <Footer />
     </Router>
   );
 }
+
+// Helper components to conditionally render layout elements
+const FloatingWhatsAppCondition = () => {
+  const location = useLocation();
+  const isIgPage = location.pathname.startsWith('/ig/');
+  return !isIgPage ? <FloatingWhatsApp /> : null;
+};
 
 export default App;

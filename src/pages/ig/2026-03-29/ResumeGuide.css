@@ -1,5 +1,10 @@
 /* ResumeGuide.css */
 
+/* Hide chat widgets and floating buttons */
+#zsiq_float, #zsiq_chatctl, .zsiq_float, .zsiq_theme1, #whatsapp-widget {
+    display: none !important;
+}
+
 .ig-landing-page {
     background: #ffffff;
     min-height: 100vh;

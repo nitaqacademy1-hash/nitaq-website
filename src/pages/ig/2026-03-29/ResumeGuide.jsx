@@ -1,9 +1,37 @@
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../../../components/SEO';
 import { trackEvent, ANALYTICS_EVENTS } from '../../../utils/analytics';
 import './ResumeGuide.css';
 
 const ResumeGuide = () => {
+    useEffect(() => {
+        // Function to hide Zoho chatbot
+        const hideZoho = () => {
+            const zohoIds = ['zsiq_float', 'zsiq_chatctl', 'zsiqscript'];
+            zohoIds.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.style.setProperty('display', 'none', 'important');
+            });
+            // Also look for class-based controls
+            const widgets = document.querySelectorAll('.zsiq_float, .zsiq_theme1');
+            widgets.forEach(el => el.style.setProperty('display', 'none', 'important'));
+        };
+
+        hideZoho();
+        // Zoho might load late, so check again
+        const interval = setInterval(hideZoho, 1000);
+        
+        return () => {
+            clearInterval(interval);
+            // Show it back when leaving
+            const zohoIds = ['zsiq_float', 'zsiq_chatctl'];
+            zohoIds.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.style.setProperty('display', 'block');
+            });
+        };
+    }, []);
     const prompts = [
         {
             id: 1,
