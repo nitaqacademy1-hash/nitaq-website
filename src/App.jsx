@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './pages/Home';
 import Footer from './components/Footer';
@@ -45,13 +45,14 @@ import AIRoboticsKids from './pages/courses/AIRoboticsKids';
 
 import DynamicPopup from './components/DynamicPopup';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
+import ResumeGuide from './pages/ig/2026-03-29/ResumeGuide';
 
 function App() {
   return (
     <Router>
       <ScrollToTop />
       <ScrollToHashElement />
-      <Header />
+      <HeaderCondition />
       <DynamicPopup />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -91,13 +92,36 @@ function App() {
         <Route path="/academic-excellence" element={<AcademicExcellenceCourse />} />
         <Route path="/foundation-jee-neet" element={<FoundationJEECourse />} />
         <Route path="/ai-robotics-kids" element={<AIRoboticsKids />} />
+        
+        {/* IG Landing Pages */}
+        <Route path="/ig/2026-03-29" element={<ResumeGuide />} />
+
         {/* Placeholder routes for other pages to be migrated */}
         <Route path="*" element={<Home />} />
       </Routes>
-      <FloatingWhatsApp />
-      <Footer />
+      <FloatingWhatsAppCondition />
+      <FooterCondition />
     </Router>
   );
 }
+
+// Helper components to conditionally render layout elements
+const HeaderCondition = () => {
+  const location = useLocation();
+  const isIgPage = location.pathname.startsWith('/ig/');
+  return !isIgPage ? <Header /> : null;
+};
+
+const FooterCondition = () => {
+  const location = useLocation();
+  const isIgPage = location.pathname.startsWith('/ig/');
+  return !isIgPage ? <Footer /> : null;
+};
+
+const FloatingWhatsAppCondition = () => {
+  const location = useLocation();
+  const isIgPage = location.pathname.startsWith('/ig/');
+  return !isIgPage ? <FloatingWhatsApp /> : null;
+};
 
 export default App;
