@@ -52,7 +52,7 @@ function App() {
     <Router>
       <ScrollToTop />
       <ScrollToHashElement />
-      <HeaderCondition />
+      <Header />
       <DynamicPopup />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -99,29 +99,10 @@ function App() {
         {/* Placeholder routes for other pages to be migrated */}
         <Route path="*" element={<Home />} />
       </Routes>
-      <FloatingWhatsAppCondition />
-      <FooterCondition />
+      <FloatingWhatsApp />
+      <Footer />
     </Router>
   );
 }
-
-// Helper components to conditionally render layout elements
-const HeaderCondition = () => {
-  const location = useLocation();
-  const isIgPage = location.pathname.startsWith('/ig/');
-  return !isIgPage ? <Header /> : null;
-};
-
-const FooterCondition = () => {
-  const location = useLocation();
-  const isIgPage = location.pathname.startsWith('/ig/');
-  return !isIgPage ? <Footer /> : null;
-};
-
-const FloatingWhatsAppCondition = () => {
-  const location = useLocation();
-  const isIgPage = location.pathname.startsWith('/ig/');
-  return !isIgPage ? <FloatingWhatsApp /> : null;
-};
 
 export default App;
