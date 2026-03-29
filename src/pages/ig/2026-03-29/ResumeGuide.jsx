@@ -54,7 +54,7 @@ const ResumeGuide = () => {
             <div className="nitaq-stripe">
                 <div className="container stripe-content">
                     <span>🚀 Master Professional Skills with Nitaq Academy</span>
-                    <Link to="/professional-certifications" className="stripe-link">
+                    <Link to="/#ourprogram" className="stripe-link">
                         Explore Courses <span className="arrow">→</span>
                     </Link>
                 </div>
@@ -108,7 +108,7 @@ const ResumeGuide = () => {
                         <h2>Ready to <span className="text-gradient">Upgrade</span> Your Career?</h2>
                         <p>Our professional certification courses are designed to help you master the skills that employers are looking for TODAY.</p>
                         <div className="cta-buttons">
-                            <Link to="/professional-certifications" className="btn btn-primary">
+                            <Link to="/#ourprogram" className="btn btn-primary">
                                 View Professional Courses
                             </Link>
                             <a 
