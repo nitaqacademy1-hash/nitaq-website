@@ -116,6 +116,7 @@ const Header = () => {
                             </div>
                         </div>
 
+                        <Link to="/webinar/ai" className={location.pathname === '/webinar/ai' ? 'active' : ''} onClick={closeMenu}>Webinar</Link>
                         <Link to="/contact" className={location.pathname === '/contact' ? 'active' : ''} onClick={closeMenu}>Contact</Link>
                         <a 
                             href="tel:+971545723181" 

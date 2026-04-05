@@ -101,6 +101,7 @@ function App() {
         {/* Webinar Landing Pages */}
         <Route path="/webinar/ai" element={<AIWebinar />} />
         <Route path="/webinar/ai/thank-you" element={<AIWebinarThankYou />} />
+        <Route path="/webinar" element={<AIWebinar />} />
 
         {/* Placeholder routes for other pages to be migrated */}
         <Route path="*" element={<Home />} />
