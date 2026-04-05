@@ -46,6 +46,8 @@ import AIRoboticsKids from './pages/courses/AIRoboticsKids';
 import DynamicPopup from './components/DynamicPopup';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
 import ResumeGuide from './pages/ig/2026-03-29/ResumeGuide';
+import AIWebinar from './pages/webinar/AIWebinar';
+import AIWebinarThankYou from './pages/webinar/AIWebinarThankYou';
 
 function App() {
   return (
@@ -96,6 +98,10 @@ function App() {
         {/* IG Landing Pages */}
         <Route path="/ig/2026-03-29" element={<ResumeGuide />} />
 
+        {/* Webinar Landing Pages */}
+        <Route path="/webinar/ai" element={<AIWebinar />} />
+        <Route path="/webinar/ai/thank-you" element={<AIWebinarThankYou />} />
+
         {/* Placeholder routes for other pages to be migrated */}
         <Route path="*" element={<Home />} />
       </Routes>
@@ -109,7 +115,8 @@ function App() {
 const FloatingWhatsAppCondition = () => {
   const location = useLocation();
   const isIgPage = location.pathname.startsWith('/ig/');
-  return !isIgPage ? <FloatingWhatsApp /> : null;
+  const isWebinarPage = location.pathname.startsWith('/webinar/');
+  return (!isIgPage && !isWebinarPage) ? <FloatingWhatsApp /> : null;
 };
 
 export default App;
