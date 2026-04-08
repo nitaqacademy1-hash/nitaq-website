@@ -189,7 +189,7 @@ export default function AIWebinar() {
                 </p>
 
                 <div className="w-hero__host">
-                  <img src="/images/mohammed marwan.jpeg" alt="Eng. Mohamed Marwan Shahin" className="w-hero__host-img" />
+                  <img src="/images/mohammed-marwan.jpeg" alt="Eng. Mohamed Marwan Shahin" className="w-hero__host-img" />
                   <div className="w-hero__host-text">
                     Hosted by <strong>Eng. Mohamed Marwan Shahin</strong>
                     <span>AI Trainer & Tech Expert</span>
@@ -382,7 +382,7 @@ export default function AIWebinar() {
               <div className="w-speaker__image-col">
                 <div className="w-speaker__avatar-wrap">
                   <img 
-                    src="/images/mohammed marwan.jpeg" 
+                    src="/images/mohammed-marwan.jpeg" 
                     alt="Eng. Mohamed Marwan Shahin" 
                     className="w-speaker__img"
                   />
