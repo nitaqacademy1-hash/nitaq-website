@@ -39,7 +39,51 @@ export default function AIWebinar() {
   const [submitting, setSubmitting] = useState(false);
   const [statsVis, setStatsVis]     = useState(false);
 
+  // 1. UTM Tracking State Container
+  const [utmData, setUtmData] = useState({
+    utm_source: '',
+    utm_medium: '',
+    utm_campaign: '',
+    utm_content: ''
+  });
+
   useEffect(() => {
+    // 2. Extract UTMs on page load
+    try {
+      const urlParams = new URLSearchParams(window.location.search);
+      const extractedUtm = {
+        utm_source: urlParams.get('utm_source') || '',
+        utm_medium: urlParams.get('utm_medium') || '',
+        utm_campaign: urlParams.get('utm_campaign') || '',
+        utm_content: urlParams.get('utm_content') || ''
+      };
+
+      // 3. Determine if we have any URL UTMs
+      const hasUrlUtm = Object.values(extractedUtm).some(val => val !== '');
+      
+      let finalUtm;
+      if (hasUrlUtm) {
+        // Prioritize URL, persist to localStorage
+        finalUtm = extractedUtm;
+        localStorage.setItem('nitaq_ai_webinar_utm', JSON.stringify(finalUtm));
+        console.log('[UTM Tracker] Captured from URL & Saved to Storage:', finalUtm);
+      } else {
+        // Fallback to localStorage
+        const stored = localStorage.getItem('nitaq_ai_webinar_utm');
+        if (stored) {
+          finalUtm = JSON.parse(stored);
+          console.log('[UTM Tracker] No URL params. Restored from Storage:', finalUtm);
+        } else {
+          finalUtm = extractedUtm; // Empty strings
+          console.log('[UTM Tracker] No URL params and Storage is empty.');
+        }
+      }
+      
+      setUtmData(finalUtm);
+    } catch (err) {
+      console.warn('[UTM Tracker] Failed to process UTMs. Continuing without them.', err);
+    }
+
     const obs = new IntersectionObserver(
       ([e]) => { if (e.isIntersecting) setStatsVis(true); },
       { threshold: 0.3 }
@@ -82,6 +126,14 @@ export default function AIWebinar() {
       formData.append('Email', form.email);
       formData.append('Timestamp', new Date().toLocaleString());
       formData.append('Campaign', 'AI Webinar April 11');
+      
+      // Append UTM parameter data to the payload
+      formData.append('utm_source', utmData.utm_source);
+      formData.append('utm_medium', utmData.utm_medium);
+      formData.append('utm_campaign', utmData.utm_campaign);
+      formData.append('utm_content', utmData.utm_content);
+
+      console.log('[Form Submission] Sending data with UTMs:', Object.fromEntries(formData.entries()));
 
       // Attempt background submission
       fetch(scriptUrl, { method: 'POST', body: formData, mode: 'no-cors' });
@@ -420,6 +472,12 @@ export default function AIWebinar() {
               </div>
 
               <form id="webinar-form" onSubmit={handleSubmit} noValidate>
+                {/* Hidden Fields for UTMs */}
+                <input type="hidden" name="utm_source" value={utmData.utm_source} />
+                <input type="hidden" name="utm_medium" value={utmData.utm_medium} />
+                <input type="hidden" name="utm_campaign" value={utmData.utm_campaign} />
+                <input type="hidden" name="utm_content" value={utmData.utm_content} />
+
                 <div className="w-field">
                   <label htmlFor="f-name">Full Name <span className="req">*</span></label>
                   <input id="f-name" type="text" placeholder="e.g. Ahmed Al Rashid" value={form.name} onChange={set('name')} className={errors.name?'is-error':''} autoComplete="name" />
