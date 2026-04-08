@@ -248,7 +248,43 @@
   font-weight: 400;
   color: var(--w-slate-500);
   line-height: 1.75;
+  margin-bottom: 24px;
+}
+
+/* Host Info */
+.w-hero__host {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--w-slate-50);
+  border: 1px solid var(--w-slate-200);
+  padding: 8px 16px 8px 8px;
+  border-radius: 100px;
   margin-bottom: 28px;
+}
+
+.w-hero__host-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.w-hero__host-text {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.85rem;
+  line-height: 1.3;
+}
+
+.w-hero__host-text strong {
+  color: var(--w-slate-900);
+  font-weight: 600;
+}
+
+.w-hero__host-text span {
+  color: var(--w-slate-500);
+  font-size: 0.75rem;
 }
 
 /* Meta chips */

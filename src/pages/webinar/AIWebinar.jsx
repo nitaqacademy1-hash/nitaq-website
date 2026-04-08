@@ -188,6 +188,14 @@ export default function AIWebinar() {
                   and increase productivity — without technical knowledge.
                 </p>
 
+                <div className="w-hero__host">
+                  <img src="/images/mohammed marwan.jpeg" alt="Eng. Mohamed Marwan Shahin" className="w-hero__host-img" />
+                  <div className="w-hero__host-text">
+                    Hosted by <strong>Eng. Mohamed Marwan Shahin</strong>
+                    <span>AI Trainer & Tech Expert</span>
+                  </div>
+                </div>
+
                 <div className="w-hero__meta">
                   {[
                     [<Icon.Calendar />, 'April 11, 2025'],
