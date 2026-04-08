@@ -367,6 +367,57 @@ export default function AIWebinar() {
           </div>
         </section>
 
+        {/* ═══ SPEAKER DETAILS ═══ */}
+        <section className="w-section w-speaker">
+          <div className="w-container">
+            <div className="w-speaker__card">
+              <div className="w-speaker__image-col">
+                <div className="w-speaker__avatar-wrap">
+                  {/* Using a clear avatar placeholder. User can later swap with actual image */}
+                  <img 
+                    src="https://ui-avatars.com/api/?name=Mohamed+Marwan+Shahin&background=2E7D32&color=fff&size=250&font-size=0.33" 
+                    alt="Eng. Mohamed Marwan Shahin" 
+                    className="w-speaker__img"
+                  />
+                  <div className="w-speaker__badge">13+ Yrs Exp</div>
+                </div>
+              </div>
+              <div className="w-speaker__content-col">
+                <div className="w-overline">Meet Your Expert Instructor</div>
+                <h2 className="w-speaker__name">Eng. Mohamed Marwan Shahin</h2>
+                <p className="w-speaker__title">Artificial Intelligence Trainer & Emerging Technology Expert</p>
+                
+                <p className="w-speaker__bio">
+                  Conducted <strong>10K+ training hours</strong> for more than <strong>10K+ participants</strong> globally. 
+                  A highly skilled professional instructor specializing in cutting-edge technologies with a dynamic 
+                  personality and engaging teaching style.
+                </p>
+
+                <div className="w-speaker__creds">
+                  <div className="w-speaker__cred-col">
+                    <h4 className="w-speaker__cred-th">Education & Certifications</h4>
+                    <ul className="w-speaker__list">
+                      <li><Icon.Target /> Master Degree of Artificial Intelligence (2023)</li>
+                      <li><Icon.Target /> Microsoft MCT & Certified ILM Trainer</li>
+                      <li><Icon.Target /> Certified AI & Data Science Practitioner</li>
+                      <li><Icon.Target /> Certified IoT Practitioner</li>
+                    </ul>
+                  </div>
+                  <div className="w-speaker__cred-col">
+                    <h4 className="w-speaker__cred-th">Key Expertise</h4>
+                    <ul className="w-speaker__list">
+                      <li><Icon.Zap /> Machine & Deep Learning</li>
+                      <li><Icon.Zap /> Data Science & Python</li>
+                      <li><Icon.Zap /> Business Intelligence (Power BI, Tableau)</li>
+                      <li><Icon.Zap /> Automation (RPA/UiPath, DataRobot)</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* ═══ WHO IS THIS FOR ═══ */}
         <section className="w-section w-who">
           <div className="w-container">
