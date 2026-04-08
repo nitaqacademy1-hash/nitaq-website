@@ -68,10 +68,35 @@ export default function AIWebinar() {
     const errs = validate();
     if (Object.keys(errs).length) { setErrors(errs); return; }
     setSubmitting(true);
+    
     trackEvent('webinar_registration', 'AI Webinar – April 11');
     fbq('track', 'Lead');
-    await new Promise(r => setTimeout(r, 800));
-    navigate('/webinar/ai-for-business/thank-you', { state: { name: form.name } });
+
+    try {
+      // Integration with Google Sheets via Apps Script
+      const scriptUrl = 'https://script.google.com/macros/s/AKfycbzBI__xo5BTS9TbODjs2G2WkzOnSjFgdjUynAFcAhJGrhgsbr8ib-MVpR0vTM46OUKL/exec'; 
+      
+      const formData = new FormData();
+      formData.append('Name', form.name);
+      formData.append('Phone', form.phone);
+      formData.append('Email', form.email);
+      formData.append('Timestamp', new Date().toLocaleString());
+      formData.append('Campaign', 'AI Webinar April 11');
+
+      // Attempt background submission
+      fetch(scriptUrl, { method: 'POST', body: formData, mode: 'no-cors' });
+      
+      // Delay slightly for UX/FB Pixel to fire
+      await new Promise(r => setTimeout(r, 1000));
+      
+      navigate('/webinar/ai/thank-you', { state: { name: form.name } });
+    } catch (error) {
+      console.error('Submission error:', error);
+      // Still navigate so user isn't stuck
+      navigate('/webinar/ai/thank-you', { state: { name: form.name } });
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const set = (key) => (ev) => {
