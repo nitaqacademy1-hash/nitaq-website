@@ -373,9 +373,8 @@ export default function AIWebinar() {
             <div className="w-speaker__card">
               <div className="w-speaker__image-col">
                 <div className="w-speaker__avatar-wrap">
-                  {/* Using a clear avatar placeholder. User can later swap with actual image */}
                   <img 
-                    src="https://ui-avatars.com/api/?name=Mohamed+Marwan+Shahin&background=2E7D32&color=fff&size=250&font-size=0.33" 
+                    src="/images/mohammed marwan.jpeg" 
                     alt="Eng. Mohamed Marwan Shahin" 
                     className="w-speaker__img"
                   />
