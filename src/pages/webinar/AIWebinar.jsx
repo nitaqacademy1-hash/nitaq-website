@@ -30,14 +30,14 @@ const Icon = {
 };
 
 export default function AIWebinar() {
-  const navigate  = useNavigate();
-  const formRef   = useRef(null);
-  const statsRef  = useRef(null);
+  const navigate = useNavigate();
+  const formRef = useRef(null);
+  const statsRef = useRef(null);
 
-  const [form, setForm]             = useState({ name:'', phone:'', email:'' });
-  const [errors, setErrors]         = useState({});
+  const [form, setForm] = useState({ name: '', phone: '', email: '' });
+  const [errors, setErrors] = useState({});
   const [submitting, setSubmitting] = useState(false);
-  const [statsVis, setStatsVis]     = useState(false);
+  const [statsVis, setStatsVis] = useState(false);
 
   // 1. UTM Tracking State Container
   const [utmData, setUtmData] = useState({
@@ -60,7 +60,7 @@ export default function AIWebinar() {
 
       // 3. Determine if we have any URL UTMs
       const hasUrlUtm = Object.values(extractedUtm).some(val => val !== '');
-      
+
       let finalUtm;
       if (hasUrlUtm) {
         // Prioritize URL, persist to localStorage
@@ -78,7 +78,7 @@ export default function AIWebinar() {
           console.log('[UTM Tracker] No URL params and Storage is empty.');
         }
       }
-      
+
       setUtmData(finalUtm);
     } catch (err) {
       console.warn('[UTM Tracker] Failed to process UTMs. Continuing without them.', err);
@@ -93,11 +93,11 @@ export default function AIWebinar() {
   }, []);
 
   const scrollToForm = () =>
-    formRef.current?.scrollIntoView({ behavior:'smooth', block:'center' });
+    formRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
   const validate = () => {
     const e = {};
-    if (!form.name.trim())  e.name  = 'Please enter your name';
+    if (!form.name.trim()) e.name = 'Please enter your name';
     if (!form.phone.trim()) e.phone = 'Please enter your phone number';
     else if (!/^\+?[\d\s\-(). ]{7,15}$/.test(form.phone.trim()))
       e.phone = 'Please enter a valid phone number';
@@ -112,21 +112,21 @@ export default function AIWebinar() {
     const errs = validate();
     if (Object.keys(errs).length) { setErrors(errs); return; }
     setSubmitting(true);
-    
+
     trackEvent('webinar_registration', 'AI Webinar – April 11');
     fbq('track', 'Lead');
 
     try {
       // Integration with Google Sheets via Apps Script
-      const scriptUrl = 'https://script.google.com/macros/s/AKfycbx3vT8TfQGzd7GggowBL3RSfz63xdFs357YezD8h0AjlcZEHc1vKtn6I7d5eDDixDbw2w/exec'; 
-      
+      const scriptUrl = 'https://script.google.com/macros/s/AKfycbw2HPMan48xQkPOhLWSRocv54BCX8BJ5eI2kBMqdaLtvRZxA_CNEQVhaDmDQ1hJLRtBoQ/exec';
+
       const formData = new FormData();
       formData.append('Name', form.name);
       formData.append('Phone', form.phone);
       formData.append('Email', form.email);
       formData.append('Timestamp', new Date().toLocaleString());
       formData.append('Campaign', 'AI Webinar April 11');
-      
+
       // Append UTM parameter data to the payload
       formData.append('utm_source', utmData.utm_source);
       formData.append('utm_medium', utmData.utm_medium);
@@ -137,10 +137,10 @@ export default function AIWebinar() {
 
       // Attempt background submission
       fetch(scriptUrl, { method: 'POST', body: formData, mode: 'no-cors' });
-      
+
       // Delay slightly for UX/FB Pixel to fire
       await new Promise(r => setTimeout(r, 1000));
-      
+
       navigate('/webinar/ai/thank-you', { state: { name: form.name } });
     } catch (error) {
       console.error('Submission error:', error);
@@ -199,8 +199,8 @@ export default function AIWebinar() {
                 <div className="w-hero__meta">
                   {[
                     [<Icon.Calendar />, 'April 11, 2025'],
-                    [<Icon.Clock />,    '7:30 PM UAE'],
-                    [<Icon.Bolt />,     '60–75 min'],
+                    [<Icon.Clock />, '7:30 PM UAE'],
+                    [<Icon.Bolt />, '60–75 min'],
                   ].map(([icon, label], i) => (
                     <span key={i} className="w-chip">{icon}{label}</span>
                   ))}
@@ -233,10 +233,10 @@ export default function AIWebinar() {
                   <div className="w-info-card__divider" />
                   <ul className="w-info-card__rows">
                     {[
-                      [<Icon.Calendar />, 'Date',     'April 11, 2025'],
-                      [<Icon.Clock />,    'Time',     '7:30 PM (UAE)'],
-                      [<Icon.Bolt />,     'Duration', '60–75 min'],
-                      [<Icon.Chart />,    'Format',   'Live Online'],
+                      [<Icon.Calendar />, 'Date', 'April 11, 2025'],
+                      [<Icon.Clock />, 'Time', '7:30 PM (UAE)'],
+                      [<Icon.Bolt />, 'Duration', '60–75 min'],
+                      [<Icon.Chart />, 'Format', 'Live Online'],
                     ].map(([icon, label, val], i) => (
                       <li key={i} className="w-info-card__row">
                         <span className="w-info-card__row-icon">{icon}</span>
@@ -247,8 +247,8 @@ export default function AIWebinar() {
                   </ul>
                   <div className="w-info-card__divider" />
                   <div className="w-info-card__price">
-                    <span className="w-price-old" style={{fontSize:'0.88rem'}}>AED 299</span>
-                    <span className="w-price-free" style={{fontSize:'1.5rem'}}>FREE</span>
+                    <span className="w-price-old" style={{ fontSize: '0.88rem' }}>AED 299</span>
+                    <span className="w-price-free" style={{ fontSize: '1.5rem' }}>FREE</span>
                   </div>
                   <button className="w-btn w-btn--primary w-btn--full" onClick={scrollToForm}>
                     Secure My Spot
@@ -271,9 +271,9 @@ export default function AIWebinar() {
             </div>
             <div className="w-problem__grid">
               {[
-                { Ic: Icon.Repeat,    title:'Repetitive Tasks',        desc:'Your team spends hours on tasks that could be automated — draining time and morale.' },
-                { Ic: Icon.Clock2,    title:'Time-Heavy Operations',   desc:'Manual processes eat into your most productive hours every single day.' },
-                { Ic: Icon.TrendDown, title:'Slow Growth',             desc:'Without automation, scaling becomes harder, slower, and more expensive.' },
+                { Ic: Icon.Repeat, title: 'Repetitive Tasks', desc: 'Your team spends hours on tasks that could be automated — draining time and morale.' },
+                { Ic: Icon.Clock2, title: 'Time-Heavy Operations', desc: 'Manual processes eat into your most productive hours every single day.' },
+                { Ic: Icon.TrendDown, title: 'Slow Growth', desc: 'Without automation, scaling becomes harder, slower, and more expensive.' },
               ].map(({ Ic, title, desc }) => (
                 <div key={title} className="w-problem__card">
                   <div className="w-problem__card-icon"><Ic /></div>
@@ -294,10 +294,10 @@ export default function AIWebinar() {
           <div className="w-container">
             <div className="w-stats__grid">
               {[
-                { val:'80%', label:'of business leaders say AI saves significant time' },
-                { val:'40%', label:'average reduction in operational costs with AI' },
-                { val:'10+', label:'hours saved per employee weekly' },
-                { val:'3×',  label:'faster decision-making with AI insights' },
+                { val: '80%', label: 'of business leaders say AI saves significant time' },
+                { val: '40%', label: 'average reduction in operational costs with AI' },
+                { val: '10+', label: 'hours saved per employee weekly' },
+                { val: '3×', label: 'faster decision-making with AI insights' },
               ].map(({ val, label }) => (
                 <div key={val} className={`w-stat ${statsVis ? 'visible' : ''}`}>
                   <div className="w-stat__val">{val}</div>
@@ -318,14 +318,14 @@ export default function AIWebinar() {
             </div>
             <div className="w-benefits__grid">
               {[
-                { Ic: Icon.Zap,     bg:'rgba(46, 125, 50, 0.06)',  color:'#2E7D32', title:'Save 10+ Hours Per Week',    desc:'Discover AI tools that eliminate repetitive tasks and free up your team for strategic work.' },
-                { Ic: Icon.Cog,     bg:'rgba(16,185,129,0.06)', color:'#10B981', title:'Automate Business Tasks',    desc:'Build automated workflows that run around the clock — from comms to reporting.' },
-                { Ic: Icon.TrendUp, bg:'rgba(59,130,246,0.06)', color:'#3B82F6', title:'Improve Team Productivity',  desc:'Equip your team with AI skills that multiply output — no extra headcount needed.' },
-                { Ic: Icon.Dollar,  bg:'rgba(245,158,11,0.06)', color:'#F59E0B', title:'Reduce Operational Costs',   desc:'Cut overhead by automating processes that currently require significant manual effort.' },
-                { Ic: Icon.Target,  bg:'rgba(239,68,68,0.06)', color:'#EF4444', title:'Make Smarter Decisions',     desc:'Use AI to analyse trends, forecast outcomes, and make data-driven decisions faster.' },
+                { Ic: Icon.Zap, bg: 'rgba(46, 125, 50, 0.06)', color: '#2E7D32', title: 'Save 10+ Hours Per Week', desc: 'Discover AI tools that eliminate repetitive tasks and free up your team for strategic work.' },
+                { Ic: Icon.Cog, bg: 'rgba(16,185,129,0.06)', color: '#10B981', title: 'Automate Business Tasks', desc: 'Build automated workflows that run around the clock — from comms to reporting.' },
+                { Ic: Icon.TrendUp, bg: 'rgba(59,130,246,0.06)', color: '#3B82F6', title: 'Improve Team Productivity', desc: 'Equip your team with AI skills that multiply output — no extra headcount needed.' },
+                { Ic: Icon.Dollar, bg: 'rgba(245,158,11,0.06)', color: '#F59E0B', title: 'Reduce Operational Costs', desc: 'Cut overhead by automating processes that currently require significant manual effort.' },
+                { Ic: Icon.Target, bg: 'rgba(239,68,68,0.06)', color: '#EF4444', title: 'Make Smarter Decisions', desc: 'Use AI to analyse trends, forecast outcomes, and make data-driven decisions faster.' },
               ].map(({ Ic, bg, color, title, desc }) => (
                 <div key={title} className="w-benefit">
-                  <div className="w-benefit__icon" style={{background:bg, color}}><Ic /></div>
+                  <div className="w-benefit__icon" style={{ background: bg, color }}><Ic /></div>
                   <h3>{title}</h3>
                   <p>{desc}</p>
                 </div>
@@ -340,17 +340,17 @@ export default function AIWebinar() {
             <div className="w-learn__inner">
               <div>
                 <div className="w-overline">Agenda</div>
-                <h2 className="w-h2" style={{marginBottom:'6px'}}>What You'll Learn</h2>
-                <p className="w-subtitle" style={{margin:'0 0 32px'}}>
+                <h2 className="w-h2" style={{ marginBottom: '6px' }}>What You'll Learn</h2>
+                <p className="w-subtitle" style={{ margin: '0 0 32px' }}>
                   A structured, practical session built for business leaders — not technical teams.
                 </p>
                 <ul className="w-learn__list">
                   {[
-                    { n:'01', t:'Practical AI Tools for Business',  s:'ChatGPT, Claude, Gemini — how to use them effectively in operations.' },
-                    { n:'02', t:'Real-World Use Cases',             s:'Operations, marketing, communication, and customer service automation.' },
-                    { n:'03', t:'Automating Daily Workflows',       s:'Step-by-step examples of workflows you can automate this week.' },
-                    { n:'04', t:'AI Implementation Roadmap',        s:'A clear approach to integrating AI without disruption or high costs.' },
-                    { n:'05', t:'Common Mistakes to Avoid',         s:'What most businesses get wrong and how to ensure ROI from day one.' },
+                    { n: '01', t: 'Practical AI Tools for Business', s: 'ChatGPT, Claude, Gemini — how to use them effectively in operations.' },
+                    { n: '02', t: 'Real-World Use Cases', s: 'Operations, marketing, communication, and customer service automation.' },
+                    { n: '03', t: 'Automating Daily Workflows', s: 'Step-by-step examples of workflows you can automate this week.' },
+                    { n: '04', t: 'AI Implementation Roadmap', s: 'A clear approach to integrating AI without disruption or high costs.' },
+                    { n: '05', t: 'Common Mistakes to Avoid', s: 'What most businesses get wrong and how to ensure ROI from day one.' },
                   ].map(({ n, t, s }) => (
                     <li key={n} className="w-learn__item">
                       <span className="w-learn__num">{n}</span>
@@ -365,8 +365,8 @@ export default function AIWebinar() {
               <div className="w-sticky">
                 <div className="w-price-card">
                   <div className="w-price-card__price">
-                    <span className="w-price-old" style={{fontSize:'0.9rem'}}>AED 299</span>
-                    <span className="w-price-free" style={{fontSize:'2rem'}}>FREE</span>
+                    <span className="w-price-old" style={{ fontSize: '0.9rem' }}>AED 299</span>
+                    <span className="w-price-free" style={{ fontSize: '2rem' }}>FREE</span>
                   </div>
                   <p>Get a full AI business playbook — completely free and live.</p>
                   <button className="w-btn w-btn--primary w-btn--full" onClick={scrollToForm}>
@@ -385,9 +385,9 @@ export default function AIWebinar() {
             <div className="w-speaker__card">
               <div className="w-speaker__image-col">
                 <div className="w-speaker__avatar-wrap">
-                  <img 
-                    src="/images/mohammed-marwan.jpeg" 
-                    alt="Eng. Mohamed Marwan Shahin" 
+                  <img
+                    src="/images/mohammed-marwan.jpeg"
+                    alt="Eng. Mohamed Marwan Shahin"
                     className="w-speaker__img"
                   />
                   <div className="w-speaker__badge">13+ Yrs Exp</div>
@@ -397,10 +397,10 @@ export default function AIWebinar() {
                 <div className="w-overline">Meet Your Expert Instructor</div>
                 <h2 className="w-speaker__name">Eng. Mohamed Marwan Shahin</h2>
                 <p className="w-speaker__title">Artificial Intelligence Trainer & Emerging Technology Expert</p>
-                
+
                 <p className="w-speaker__bio">
-                  Conducted <strong>10K+ training hours</strong> for more than <strong>10K+ participants</strong> globally. 
-                  A highly skilled professional instructor specializing in cutting-edge technologies with a dynamic 
+                  Conducted <strong>10K+ training hours</strong> for more than <strong>10K+ participants</strong> globally.
+                  A highly skilled professional instructor specializing in cutting-edge technologies with a dynamic
                   personality and engaging teaching style.
                 </p>
 
@@ -439,11 +439,11 @@ export default function AIWebinar() {
             </div>
             <div className="w-who__grid">
               {[
-                { Ic: Icon.Building, role:'Business Owners',     desc:'Scale operations with AI' },
-                { Ic: Icon.Settings, role:'COO / Ops Managers',  desc:'Optimise workflows and cut costs' },
-                { Ic: Icon.Rocket,   role:'Startup Founders',    desc:'Build lean, AI-powered teams' },
-                { Ic: Icon.Users,    role:'Team Leaders',        desc:'Boost team output and performance' },
-                { Ic: Icon.Chart,    role:'Decision Makers',     desc:'Lead with data-driven insights' },
+                { Ic: Icon.Building, role: 'Business Owners', desc: 'Scale operations with AI' },
+                { Ic: Icon.Settings, role: 'COO / Ops Managers', desc: 'Optimise workflows and cut costs' },
+                { Ic: Icon.Rocket, role: 'Startup Founders', desc: 'Build lean, AI-powered teams' },
+                { Ic: Icon.Users, role: 'Team Leaders', desc: 'Boost team output and performance' },
+                { Ic: Icon.Chart, role: 'Decision Makers', desc: 'Lead with data-driven insights' },
               ].map(({ Ic, role, desc }) => (
                 <div key={role} className="w-who__card">
                   <div className="w-who__card-icon"><Ic /></div>
@@ -464,9 +464,9 @@ export default function AIWebinar() {
             </div>
             <div className="w-proof__stats">
               {[
-                { fig:'77%',    text:'of devices already use AI in some form',                  src:'Forbes, 2024' },
-                { fig:'$15.7T', text:'AI\'s projected contribution to the global economy by 2030', src:'PwC Report' },
-                { fig:'64%',    text:'of businesses say AI increases overall productivity',     src:'McKinsey, 2024' },
+                { fig: '77%', text: 'of devices already use AI in some form', src: 'Forbes, 2024' },
+                { fig: '$15.7T', text: 'AI\'s projected contribution to the global economy by 2030', src: 'PwC Report' },
+                { fig: '64%', text: 'of businesses say AI increases overall productivity', src: 'McKinsey, 2024' },
               ].map(({ fig, text, src }) => (
                 <div key={fig} className="w-proof__stat">
                   <div className="w-proof__stat-val">{fig}</div>
@@ -477,9 +477,9 @@ export default function AIWebinar() {
             </div>
             <div className="w-proof__quotes">
               {[
-                { q:'"We reduced reporting time by 6 hours a week after implementing the AI workflows from this training."',   name:'Operations Director', co:'Dubai Trading Co.' },
-                { q:'"Finally understood how to apply AI practically without needing a technical team."',                        name:'CEO & Founder',       co:'UAE Startup' },
-                { q:'"The ROI was clear within the first month. Our team now produces twice the output."',                       name:'COO',                 co:'Abu Dhabi Services' },
+                { q: '"We reduced reporting time by 6 hours a week after implementing the AI workflows from this training."', name: 'Operations Director', co: 'Dubai Trading Co.' },
+                { q: '"Finally understood how to apply AI practically without needing a technical team."', name: 'CEO & Founder', co: 'UAE Startup' },
+                { q: '"The ROI was clear within the first month. Our team now produces twice the output."', name: 'COO', co: 'Abu Dhabi Services' },
               ].map(({ q, name, co }) => (
                 <div key={name} className="w-quote">
                   <div className="w-quote__stars">★★★★★</div>
@@ -527,8 +527,8 @@ export default function AIWebinar() {
             <div className="w-form-card">
               <div className="w-form-card__head">
                 <div className="w-form-card__price">
-                  <span className="w-price-old" style={{fontSize:'0.88rem'}}>AED 299</span>
-                  <span className="w-price-free" style={{fontSize:'1.35rem'}}>FREE</span>
+                  <span className="w-price-old" style={{ fontSize: '0.88rem' }}>AED 299</span>
+                  <span className="w-price-free" style={{ fontSize: '1.35rem' }}>FREE</span>
                 </div>
                 <div className="w-form-card__date">April 11 · 7:30 PM UAE</div>
               </div>
@@ -542,12 +542,12 @@ export default function AIWebinar() {
 
                 <div className="w-field">
                   <label htmlFor="f-name">Full Name <span className="req">*</span></label>
-                  <input id="f-name" type="text" placeholder="e.g. Ahmed Al Rashid" value={form.name} onChange={set('name')} className={errors.name?'is-error':''} autoComplete="name" />
+                  <input id="f-name" type="text" placeholder="e.g. Ahmed Al Rashid" value={form.name} onChange={set('name')} className={errors.name ? 'is-error' : ''} autoComplete="name" />
                   {errors.name && <span className="w-field__error">{errors.name}</span>}
                 </div>
                 <div className="w-field">
                   <label htmlFor="f-phone">Phone Number <span className="req">*</span> <em>We'll send details here</em></label>
-                  <div className={`w-phone-wrap${errors.phone?' is-error':''}`}>
+                  <div className={`w-phone-wrap${errors.phone ? ' is-error' : ''}`}>
                     <span className="w-phone-wrap__prefix">+971</span>
                     <input id="f-phone" type="tel" placeholder="50 000 0000" value={form.phone} onChange={set('phone')} autoComplete="tel" />
                   </div>
@@ -555,7 +555,7 @@ export default function AIWebinar() {
                 </div>
                 <div className="w-field">
                   <label htmlFor="f-email">Email Address <span className="req">*</span></label>
-                  <input id="f-email" type="email" placeholder="you@company.com" value={form.email} onChange={set('email')} className={errors.email?'is-error':''} autoComplete="email" />
+                  <input id="f-email" type="email" placeholder="you@company.com" value={form.email} onChange={set('email')} className={errors.email ? 'is-error' : ''} autoComplete="email" />
                   {errors.email && <span className="w-field__error">{errors.email}</span>}
                 </div>
                 <button id="submit-btn" type="submit" className="w-btn w-btn--primary w-btn--full" disabled={submitting}>
