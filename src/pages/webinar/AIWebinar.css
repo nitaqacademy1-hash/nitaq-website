@@ -376,6 +376,46 @@
   margin-bottom: 24px;
 }
 
+.w-info-card__host {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.w-info-card__host img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.w-info-card__host-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.w-info-card__host-text .label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--w-slate-400);
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.w-info-card__host-text strong {
+  font-size: 0.95rem;
+  color: var(--w-slate-900);
+  font-weight: 700;
+}
+
+.w-info-card__host-text .title {
+  font-size: 0.75rem;
+  color: var(--w-slate-500);
+}
+
 .w-info-card__brand {
   font-size: 1.05rem;
   font-weight: 600;

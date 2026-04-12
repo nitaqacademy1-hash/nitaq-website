@@ -48,6 +48,8 @@ import FloatingWhatsApp from './components/FloatingWhatsApp';
 import ResumeGuide from './pages/ig/2026-03-29/ResumeGuide';
 import AIWebinar from './pages/webinar/AIWebinar';
 import AIWebinarThankYou from './pages/webinar/AIWebinarThankYou';
+import CounselorsOrientation from './pages/webinar/CounselorsOrientation';
+import CounselorsOrientationThankYou from './pages/webinar/CounselorsOrientationThankYou';
 
 function App() {
   return (
@@ -102,6 +104,10 @@ function App() {
         <Route path="/webinar/ai" element={<AIWebinar />} />
         <Route path="/webinar/ai/thank-you" element={<AIWebinarThankYou />} />
         <Route path="/webinar" element={<AIWebinar />} />
+        
+        {/* Counselors Orientation Landing Pages */}
+        <Route path="/webinar/counselors" element={<CounselorsOrientation />} />
+        <Route path="/webinar/counselors/thank-you" element={<CounselorsOrientationThankYou />} />
 
         {/* Placeholder routes for other pages to be migrated */}
         <Route path="*" element={<Home />} />

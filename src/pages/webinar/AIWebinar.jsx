@@ -222,9 +222,13 @@ export default function AIWebinar() {
 
               <div>
                 <div className="w-info-card">
-                  <div className="w-info-card__head">
-                    <span className="w-info-card__brand">Nitaq Academy</span>
-                    <span className="w-info-card__tag">Professional Training · UAE</span>
+                  <div className="w-info-card__host">
+                    <img src="/images/mohammed-marwan.jpeg" alt="Eng. Mohamed Marwan Shahin" />
+                    <div className="w-info-card__host-text">
+                      <span className="label">Hosted By</span>
+                      <strong>Eng. Mohamed Marwan Shahin</strong>
+                      <span className="title">AI & Emerging Tech Expert</span>
+                    </div>
                   </div>
                   <div className="w-info-card__divider" />
                   <ul className="w-info-card__rows">
