@@ -24,7 +24,7 @@ export default function CounselorsOrientation() {
   const navigate  = useNavigate();
   const formRef   = useRef(null);
 
-  const [form, setForm]             = useState({ name:'', phone:'', email:'' });
+  const [form, setForm]             = useState({ name:'', designation:'', school:'', phone:'', email:'' });
   const [errors, setErrors]         = useState({});
   const [submitting, setSubmitting] = useState(false);
 
@@ -68,6 +68,8 @@ export default function CounselorsOrientation() {
   const validate = () => {
     const e = {};
     if (!form.name.trim())  e.name  = 'Please enter your name';
+    if (!form.designation.trim()) e.designation = 'Please enter your designation';
+    if (!form.school.trim())      e.school = 'Please enter your school name';
     if (!form.phone.trim()) e.phone = 'Please enter your phone number';
     else if (!/^\+?[\d\s\-(). ]{7,15}$/.test(form.phone.trim()))
       e.phone = 'Please enter a valid phone number';
@@ -91,6 +93,8 @@ export default function CounselorsOrientation() {
       
       const formData = new FormData();
       formData.append('Name', form.name);
+      formData.append('Designation', form.designation);
+      formData.append('School', form.school);
       formData.append('Phone', form.phone);
       formData.append('Email', form.email);
       formData.append('Timestamp', new Date().toLocaleString());
@@ -264,6 +268,16 @@ export default function CounselorsOrientation() {
                   <label htmlFor="f-name">Full Name <span className="req">*</span></label>
                   <input id="f-name" type="text" placeholder="e.g. Ahmed Al Rashid" value={form.name} onChange={set('name')} className={errors.name?'is-error':''} autoComplete="name" />
                   {errors.name && <span className="w-field__error">{errors.name}</span>}
+                </div>
+                <div className="w-field">
+                  <label htmlFor="f-designation">Designation <span className="req">*</span></label>
+                  <input id="f-designation" type="text" placeholder="e.g. School Counselor" value={form.designation} onChange={set('designation')} className={errors.designation?'is-error':''} />
+                  {errors.designation && <span className="w-field__error">{errors.designation}</span>}
+                </div>
+                <div className="w-field">
+                  <label htmlFor="f-school">School <span className="req">*</span></label>
+                  <input id="f-school" type="text" placeholder="e.g. International School" value={form.school} onChange={set('school')} className={errors.school?'is-error':''} />
+                  {errors.school && <span className="w-field__error">{errors.school}</span>}
                 </div>
                 <div className="w-field">
                   <label htmlFor="f-phone">Phone Number <span className="req">*</span></label>
