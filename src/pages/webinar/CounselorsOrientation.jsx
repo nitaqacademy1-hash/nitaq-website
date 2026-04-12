@@ -89,7 +89,7 @@ export default function CounselorsOrientation() {
     fbq('track', 'Lead');
 
     try {
-      const scriptUrl = 'https://script.google.com/macros/s/AKfycbx3vT8TfQGzd7GggowBL3RSfz63xdFs357YezD8h0AjlcZEHc1vKtn6I7d5eDDixDbw2w/exec'; 
+      const scriptUrl = 'https://script.google.com/macros/s/AKfycbx7bqJTFnj4OgyCY1dLqI1FQizHRN6PQ84d3tbGkg0P2QeB1qZsNFhjez3x1xI9l16h/exec'; 
       
       const formData = new FormData();
       formData.append('Name', form.name);
