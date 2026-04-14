@@ -85,7 +85,7 @@ export default function CounselorsOrientation() {
     if (Object.keys(errs).length) { setErrors(errs); return; }
     setSubmitting(true);
     
-    trackEvent('counselor_orientation_reg', 'Counselors Orientation – April 14');
+    trackEvent('counselor_orientation_reg', 'Counselors Orientation – April 15');
     fbq('track', 'Lead');
 
     try {
@@ -98,7 +98,7 @@ export default function CounselorsOrientation() {
       formData.append('Phone', form.phone);
       formData.append('Email', form.email);
       formData.append('Timestamp', new Date().toLocaleString());
-      formData.append('Campaign', 'Counselors Orientation April 14');
+      formData.append('Campaign', 'Counselors Orientation April 15');
       
       // Append UTMs
       formData.append('utm_source', utmData.utm_source);
@@ -127,7 +127,7 @@ export default function CounselorsOrientation() {
     <>
       <Helmet>
         <title>Counselors Orientation | Growth Opportunities | Nitaq Academy</title>
-        <meta name="description" content="Exclusive orientation for school counselors to explore growth opportunities and student impact. Join Nitaq Academy on April 14." />
+        <meta name="description" content="Exclusive orientation for school counselors to explore growth opportunities and student impact. Join Nitaq Academy on April 15." />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -157,7 +157,7 @@ export default function CounselorsOrientation() {
 
                 <div className="w-hero__meta">
                   {[
-                    [<Icon.Calendar />, 'April 14, 2026'],
+                    [<Icon.Calendar />, 'April 15, 2026'],
                     [<Icon.Clock />,    '07:00 PM UAE'],
                     [<Icon.Bolt />,     'Exclusive'],
                   ].map(([icon, label], i) => (
@@ -185,7 +185,7 @@ export default function CounselorsOrientation() {
                   <div className="w-info-card__divider" />
                   <ul className="w-info-card__rows">
                     {[
-                      [<Icon.Calendar />, 'Date',     'April 14, 2026'],
+                      [<Icon.Calendar />, 'Date',     'April 15, 2026'],
                       [<Icon.Clock />,    'Time',     '07:00 PM (UAE)'],
                       [<Icon.Bolt />,     'Duration', 'Exclusive Session'],
                       [<Icon.Chart />,    'Format',   'Live / In-Person'],
@@ -243,14 +243,14 @@ export default function CounselorsOrientation() {
             <div className="w-header">
               <div className="w-overline">Registration</div>
               <h2 className="w-h2">Be a Part of the Orientation</h2>
-              <p className="w-subtitle">April 14, 2026 · We look forward to welcoming you.</p>
+              <p className="w-subtitle">April 15, 2026 · We look forward to welcoming you.</p>
             </div>
             <div className="w-form-card">
               <div className="w-form-card__head">
                 <div className="w-form-card__host" style={{border:'none', background:'none', padding:0, margin:0}}>
                    <strong>Exclusive Orientation</strong>
                 </div>
-                <div className="w-form-card__date">April 14 · 7:00 PM UAE</div>
+                <div className="w-form-card__date">April 15 · 7:00 PM UAE</div>
               </div>
 
               <p style={{textAlign:'center', fontSize:'0.9rem', color:'#64748b', marginBottom:'24px'}}>
