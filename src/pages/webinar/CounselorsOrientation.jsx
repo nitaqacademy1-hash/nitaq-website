@@ -188,7 +188,7 @@ export default function CounselorsOrientation() {
                       [<Icon.Calendar />, 'Date',     'April 15, 2026'],
                       [<Icon.Clock />,    'Time',     '07:00 PM (UAE)'],
                       [<Icon.Bolt />,     'Duration', 'Exclusive Session'],
-                      [<Icon.Chart />,    'Format',   'Live / In-Person'],
+                      [<Icon.Chart />,    'Format',   'Online Session'],
                     ].map(([icon, label, val], i) => (
                       <li key={i} className="w-info-card__row">
                         <span className="w-info-card__row-icon">{icon}</span>

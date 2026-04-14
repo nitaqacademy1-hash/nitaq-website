@@ -113,7 +113,7 @@ export default function AIWebinar() {
     if (Object.keys(errs).length) { setErrors(errs); return; }
     setSubmitting(true);
 
-    trackEvent('webinar_registration', 'AI Webinar – April 11');
+    trackEvent('webinar_registration', 'AI Webinar – Every Sunday');
     fbq('track', 'Lead');
 
     try {
@@ -125,7 +125,7 @@ export default function AIWebinar() {
       formData.append('Phone', form.phone);
       formData.append('Email', form.email);
       formData.append('Timestamp', new Date().toLocaleString());
-      formData.append('Campaign', 'AI Webinar April 11');
+      formData.append('Campaign', 'AI Webinar Every Sunday');
 
       // Append UTM parameter data to the payload
       formData.append('utm_source', utmData.utm_source);
@@ -160,7 +160,7 @@ export default function AIWebinar() {
     <>
       <Helmet>
         <title>Free AI Webinar — Improve Business Efficiency | Nitaq Academy</title>
-        <meta name="description" content="Join Nitaq Academy's free live webinar on April 11 and learn how to use AI to automate workflows, reduce costs, and boost productivity." />
+        <meta name="description" content="Join Nitaq Academy's free live webinar Every Sunday and learn how to use AI to automate workflows, reduce costs, and boost productivity." />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -176,7 +176,7 @@ export default function AIWebinar() {
               <div className="w-hero__copy">
                 <div className="w-hero__kicker">
                   <span className="w-hero__kicker-dot" />
-                  Live Webinar · April 11, 2025
+                  Live Webinar · Every Sunday
                 </div>
 
                 <h1 className="w-hero__h1">
@@ -198,7 +198,7 @@ export default function AIWebinar() {
 
                 <div className="w-hero__meta">
                   {[
-                    [<Icon.Calendar />, 'April 11, 2025'],
+                    [<Icon.Calendar />, 'Every Sunday'],
                     [<Icon.Clock />, '7:30 PM UAE'],
                     [<Icon.Bolt />, '60–75 min'],
                   ].map(([icon, label], i) => (
@@ -233,7 +233,7 @@ export default function AIWebinar() {
                   <div className="w-info-card__divider" />
                   <ul className="w-info-card__rows">
                     {[
-                      [<Icon.Calendar />, 'Date', 'April 11, 2025'],
+                      [<Icon.Calendar />, 'Date', 'Every Sunday'],
                       [<Icon.Clock />, 'Time', '7:30 PM (UAE)'],
                       [<Icon.Bolt />, 'Duration', '60–75 min'],
                       [<Icon.Chart />, 'Format', 'Live Online'],
@@ -530,7 +530,7 @@ export default function AIWebinar() {
                   <span className="w-price-old" style={{ fontSize: '0.88rem' }}>AED 299</span>
                   <span className="w-price-free" style={{ fontSize: '1.35rem' }}>FREE</span>
                 </div>
-                <div className="w-form-card__date">April 11 · 7:30 PM UAE</div>
+                <div className="w-form-card__date">Every Sunday · 7:30 PM UAE</div>
               </div>
 
               <form id="webinar-form" onSubmit={handleSubmit} noValidate>
