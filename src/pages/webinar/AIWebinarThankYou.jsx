@@ -6,7 +6,7 @@ import './AIWebinar.css';
 
 const fbq = (...a) => { if (window.fbq) window.fbq(...a); };
 const WA_NUMBER  = '971XXXXXXXXX'; // ← replace with real number
-const WA_MESSAGE = encodeURIComponent('Hi, I registered for the AI webinar on April 11. Please send me the joining details.');
+const WA_MESSAGE = encodeURIComponent('Hi, I registered for the AI webinar on Sunday. Please send me the joining details.');
 
 export default function AIWebinarThankYou() {
   const { state } = useLocation();
@@ -38,14 +38,14 @@ export default function AIWebinarThankYou() {
             <h1 className="w-ty__title">You're in, {firstName}!</h1>
             <p className="w-ty__sub">
               You've successfully registered for the <strong>AI for Business Efficiency</strong> webinar
-              on <strong>April 11 at 7:30 PM (UAE)</strong>.
+              on <strong>Sunday at 7:30 PM (UAE)</strong>.
             </p>
 
             <div className="w-ty__steps">
               {[
                 { n:'1', t:'Check your messages',       d:'We\'ll send the webinar join link before the session.' },
                 { n:'2', t:'Join the WhatsApp group',    d:'Get reminders, updates, and exclusive pre-session materials.' },
-                { n:'3', t:'Show up on April 11',        d:'7:30 PM UAE — live, interactive, and packed with value.' },
+                { n:'3', t:'Show up on Sunday',        d:'7:30 PM UAE — live, interactive, and packed with value.' },
               ].map(({ n, t, d }) => (
                 <div key={n} className="w-ty__step">
                   <div className="w-ty__step-num">{n}</div>
@@ -61,7 +61,7 @@ export default function AIWebinarThankYou() {
 
             <a
               id="ty-wa-btn"
-              href={`https://chat.whatsapp.com/DPhc1m4LvMCLtnmq1mTSKk?mode=gi_t`}
+              href="https://chat.whatsapp.com/EH5V7ghD8My8WodBW2y3ho"
               target="_blank"
               rel="noopener noreferrer"
               className="w-btn w-btn--wa w-btn--full"
@@ -73,7 +73,7 @@ export default function AIWebinarThankYou() {
 
             <div className="w-ty__reminder">
               {[
-                [<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>, 'April 11, 2025'],
+                [<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>, 'Sunday'],
                 [<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>, '7:30 PM (UAE)'],
                 [<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" /><path d="M8 21h8m-4-4v4" /></svg>, 'Live Online'],
               ].map(([icon, text], i) => (
