@@ -118,7 +118,7 @@ export default function AIWebinar() {
 
     try {
       // Integration with Google Sheets via Apps Script
-      const scriptUrl = 'https://script.google.com/macros/s/AKfycbw2HPMan48xQkPOhLWSRocv54BCX8BJ5eI2kBMqdaLtvRZxA_CNEQVhaDmDQ1hJLRtBoQ/exec';
+      const scriptUrl = 'https://script.google.com/macros/s/AKfycbypePVv5qYix3g-vv4YECqwixN2ceA_3KwlCLfcjPW40j5CsjmBgyQula_IXaRDi_d58w/exec';
 
       const formData = new FormData();
       formData.append('Name', form.name);
