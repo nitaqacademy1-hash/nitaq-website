@@ -175,11 +175,11 @@ export default function CounselorsOrientation() {
               <div>
                 <div className="w-info-card">
                   <div className="w-info-card__host">
-                    <img src="https://ui-avatars.com/api/?name=Nitaq+Academy&background=2E7D32&color=fff&size=100" alt="Nitaq Academy" />
+                    <img src="/images/syed-abbas.jpeg" alt="Syed Abbas" />
                     <div className="w-info-card__host-text">
-                      <span className="label">Host</span>
-                      <strong>Nitaq Academy</strong>
-                      <span className="title">Professional Training UAE</span>
+                      <span className="label">Speaker</span>
+                      <strong>Syed Abbas</strong>
+                      <span className="title">ILM Approved Master Practitioner</span>
                     </div>
                   </div>
                   <div className="w-info-card__divider" />
@@ -205,6 +205,32 @@ export default function CounselorsOrientation() {
                 </div>
               </div>
 
+            </div>
+          </div>
+        </section>
+
+        {/* ═══ SPEAKER DETAILS ═══ */}
+        <section className="w-section w-speaker">
+          <div className="w-container">
+            <div className="w-speaker__card">
+              <div className="w-speaker__image-col">
+                <div className="w-speaker__avatar-wrap">
+                  <img 
+                    src="/images/syed-abbas.jpeg" 
+                    alt="Syed Abbas" 
+                    className="w-speaker__img"
+                  />
+                  <div className="w-speaker__badge">ILM Approved</div>
+                </div>
+              </div>
+              <div className="w-speaker__content-col">
+                <div className="w-overline">Meet Your Expert Speaker</div>
+                <h2 className="w-speaker__name">Syed Abbas</h2>
+                <p className="w-speaker__title">ILM Approved Master Practitioner in Emotional Intelligence</p>
+                <p className="w-speaker__bio" style={{marginBottom: 0}}>
+                  An expert in emotional intelligence and professional development. Syed brings extensive experience in empowering educators and professionals to create meaningful impact, improve communication, and unlock new growth opportunities. Join this exclusive session to learn proven pathways for elevating both counselor roles and student outcomes.
+                </p>
+              </div>
             </div>
           </div>
         </section>
