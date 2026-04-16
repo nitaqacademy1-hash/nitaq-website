@@ -44,7 +44,7 @@ import FoundationJEECourse from './pages/courses/FoundationJEECourse';
 import AIRoboticsKids from './pages/courses/AIRoboticsKids';
 
 import DynamicPopup from './components/DynamicPopup';
-import CounselorsPopup from './components/CounselorsPopup';
+
 import FloatingWhatsApp from './components/FloatingWhatsApp';
 import ResumeGuide from './pages/ig/2026-03-29/ResumeGuide';
 import AIWebinar from './pages/webinar/AIWebinar';
@@ -59,7 +59,7 @@ function App() {
       <ScrollToHashElement />
       <Header />
       <DynamicPopup />
-      <CounselorsPopup />
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
