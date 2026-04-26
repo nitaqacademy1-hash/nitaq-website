@@ -44,6 +44,16 @@ import FoundationJEECourse from './pages/courses/FoundationJEECourse';
 import AIRoboticsKids from './pages/courses/AIRoboticsKids';
 import Courses from './pages/Courses';
 import SatCoachingSharjah from './pages/article/SatCoachingSharjah';
+import SatScore1300Guide from './pages/article/SatScore1300Guide';
+import SatVsIeltsGuide from './pages/article/SatVsIeltsGuide';
+import CommonSatMistakes from './pages/article/CommonSatMistakes';
+import IeltsDubaiGuide from './pages/article/IeltsDubaiGuide';
+import IeltsBandScoreTips from './pages/article/IeltsBandScoreTips';
+import ProfessionalCoursesSharjah from './pages/article/ProfessionalCoursesSharjah';
+import AccaCoachingUae from './pages/article/AccaCoachingUae';
+import AiCoursesSharjah from './pages/article/AiCoursesSharjah';
+import BestTrainingInstituteSharjah from './pages/article/BestTrainingInstituteSharjah';
+import ChooseRightCourseUae from './pages/article/ChooseRightCourseUae';
 
 import TermsAndConditions from './pages/legal/TermsAndConditions';
 import PrivacyPolicy from './pages/legal/PrivacyPolicy';
@@ -107,6 +117,16 @@ function App() {
         
         {/* Articles */}
         <Route path="/article/sat-coaching-sharjah" element={<SatCoachingSharjah />} />
+        <Route path="/article/sat-score-1300-guide" element={<SatScore1300Guide />} />
+        <Route path="/article/sat-vs-ielts-guide" element={<SatVsIeltsGuide />} />
+        <Route path="/article/common-sat-mistakes" element={<CommonSatMistakes />} />
+        <Route path="/article/ielts-dubai-guide" element={<IeltsDubaiGuide />} />
+        <Route path="/article/improve-ielts-band-score" element={<IeltsBandScoreTips />} />
+        <Route path="/article/professional-courses-sharjah-growth" element={<ProfessionalCoursesSharjah />} />
+        <Route path="/article/acca-coaching-uae-benefits" element={<AccaCoachingUae />} />
+        <Route path="/article/ai-courses-sharjah-essential" element={<AiCoursesSharjah />} />
+        <Route path="/article/best-training-institute-sharjah" element={<BestTrainingInstituteSharjah />} />
+        <Route path="/article/choose-right-course-uae" element={<ChooseRightCourseUae />} />
         
         {/* IG Landing Pages */}
         <Route path="/ig/2026-03-29" element={<ResumeGuide />} />

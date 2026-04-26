@@ -47,6 +47,14 @@ const Footer = () => {
                             <Link to="/toefl-course">TOEFL</Link>
                         </div>
                         <div>
+                            <h4>Articles & Insights</h4>
+                            <Link to="/article/sat-score-1300-guide">SAT 1300+ Guide</Link>
+                            <Link to="/article/common-sat-mistakes">Common SAT Mistakes</Link>
+                            <Link to="/article/ielts-dubai-guide">IELTS Dubai Guide</Link>
+                            <Link to="/article/ai-courses-sharjah-essential">AI for 2026</Link>
+                            <Link to="/article/professional-courses-sharjah-growth">Career Growth Tips</Link>
+                        </div>
+                        <div>
                             <h4>Support</h4>
                             <Link to="/contact">Contact Us</Link>
                             <Link to="/enquiry">Enrolment Form</Link>
