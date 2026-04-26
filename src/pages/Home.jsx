@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import ContactForm from '../components/ContactForm';
 import SEO from '../components/SEO';
 import { trackEvent, ANALYTICS_EVENTS } from '../utils/analytics';
-import { Calendar, ArrowRight } from 'lucide-react';
+import { Calendar, ArrowRight, ExternalLink } from 'lucide-react';
 
 const homeArticles = [
     {
@@ -12,6 +12,8 @@ const homeArticles = [
         excerpt: "Master the SAT with Sharjah's most effective strategies. Learn about the digital format and proven techniques to boost your score.",
         category: "Test Prep",
         path: "/article/sat-coaching-sharjah",
+        coursePath: "/sat-preparation",
+        courseLabel: "SAT Course",
         date: "Apr 26, 2026",
         image: "/images/h1.webp"
     },
@@ -21,6 +23,8 @@ const homeArticles = [
         excerpt: "Discover the specific roadmap used by Sharjah's top students to break the 1300 barrier and secure university admissions.",
         category: "Test Prep",
         path: "/article/sat-score-1300-guide",
+        coursePath: "/sat-preparation",
+        courseLabel: "SAT Course",
         date: "Apr 25, 2026",
         image: "/images/h2.webp"
     },
@@ -30,6 +34,8 @@ const homeArticles = [
         excerpt: "Explore the best training pathways in Dubai for achieving your target band score for university or immigration.",
         category: "Languages",
         path: "/article/ielts-dubai-guide",
+        coursePath: "/ielts-course",
+        courseLabel: "IELTS Course",
         date: "Apr 24, 2026",
         image: "/images/h3.webp"
     }
@@ -633,20 +639,31 @@ const Home = () => {
 
                     <div className="articles-grid">
                         {homeArticles.map((article) => (
-                            <Link to={article.path} key={article.id} className="article-card">
-                                <div className="article-card-image">
-                                    <img src={article.image} alt={article.title} />
-                                    <span className="article-card-badge">{article.category}</span>
-                                </div>
+                            <div key={article.id} className="article-card">
+                                <Link to={article.path} className="article-card-image-link">
+                                    <div className="article-card-image">
+                                        <img src={article.image} alt={article.title} />
+                                        <span className="article-card-badge">{article.category}</span>
+                                    </div>
+                                </Link>
                                 <div className="article-card-content">
                                     <div className="article-card-meta">
                                         <span><Calendar size={14} /> {article.date}</span>
                                     </div>
-                                    <h3>{article.title}</h3>
+                                    <Link to={article.path} className="article-title-link">
+                                        <h3>{article.title}</h3>
+                                    </Link>
                                     <p>{article.excerpt}</p>
-                                    <div className="read-more-btn">Read More <ArrowRight size={16} /></div>
+                                    <div className="article-card-actions">
+                                        <Link to={article.path} className="read-more-inline">
+                                            Read More <ArrowRight size={16} />
+                                        </Link>
+                                        <Link to={article.coursePath} className="card-course-btn">
+                                            {article.courseLabel} <ExternalLink size={14} />
+                                        </Link>
+                                    </div>
                                 </div>
-                            </Link>
+                            </div>
                         ))}
                     </div>
                 </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
-import { ChevronRight, Calendar, User, ArrowRight } from 'lucide-react';
+import { Bookmark, Calendar, User, ArrowRight, ExternalLink } from 'lucide-react';
 
 const articles = [
     {
@@ -10,6 +10,8 @@ const articles = [
         excerpt: "Master the SAT with Sharjah's most effective strategies. Learn about the digital format, latest curriculum changes, and proven techniques to boost your score.",
         category: "Test Prep",
         path: "/article/sat-coaching-sharjah",
+        coursePath: "/sat-preparation",
+        courseLabel: "SAT Course",
         date: "Apr 26, 2026",
         image: "/images/h1.webp"
     },
@@ -19,6 +21,8 @@ const articles = [
         excerpt: "Achieving a competitive target score requires more than just practice. Discover the specific roadmap used by Sharjah's top students to break the 1300 barrier.",
         category: "Test Prep",
         path: "/article/sat-score-1300-guide",
+        coursePath: "/sat-preparation",
+        courseLabel: "SAT Course",
         date: "Apr 25, 2026",
         image: "/images/h2.webp"
     },
@@ -28,6 +32,8 @@ const articles = [
         excerpt: "Whether for university admission or immigration, mastering the IELTS is essential. Explore the best training pathways in Dubai for achieving Your target band score.",
         category: "Languages",
         path: "/article/ielts-dubai-guide",
+        coursePath: "/ielts-course",
+        courseLabel: "IELTS Course",
         date: "Apr 24, 2026",
         image: "/images/h3.webp"
     },
@@ -37,6 +43,8 @@ const articles = [
         excerpt: "Understanding the difference between academic and language proficiency tests is crucial. We break down which exam fits your specific international education goals.",
         category: "Test Prep",
         path: "/article/sat-vs-ielts-guide",
+        coursePath: "/course",
+        courseLabel: "Explore All",
         date: "Apr 23, 2026",
         image: "/images/h1.webp"
     },
@@ -46,6 +54,8 @@ const articles = [
         excerpt: "Global finance is evolving. Discover why the ACCA qualification remains the gold standard for finance professionals in the UAE and how to pass your exams.",
         category: "Finance",
         path: "/article/acca-coaching-uae-benefits",
+        coursePath: "/acca-course",
+        courseLabel: "ACCA Course",
         date: "Apr 22, 2026",
         image: "/images/h2.webp"
     },
@@ -55,6 +65,8 @@ const articles = [
         excerpt: "AI is no longer the future—it's the present. Learn why professionals in Sharjah are rushing to gain AI skills to stay competitive in the 2026 job market.",
         category: "Technology",
         path: "/article/ai-courses-sharjah-essential",
+        coursePath: "/ai-course",
+        courseLabel: "AI Course",
         date: "Apr 21, 2026",
         image: "/images/h3.webp"
     },
@@ -64,6 +76,8 @@ const articles = [
         excerpt: "Small errors can cost big points. Identify the most frequent pitfalls students face in the UAE and how our expert coaching helps you navigate them.",
         category: "Test Prep",
         path: "/article/common-sat-mistakes",
+        coursePath: "/sat-preparation",
+        courseLabel: "SAT Course",
         date: "Apr 20, 2026",
         image: "/images/h1.webp"
     },
@@ -73,6 +87,8 @@ const articles = [
         excerpt: "Stuck at a Band 6? Our IELTS specialists share high-impact strategies to help you reach a Band 7.5 or 8.0 through targeted practice and feedback.",
         category: "Languages",
         path: "/article/improve-ielts-band-score",
+        coursePath: "/ielts-course",
+        courseLabel: "IELTS Course",
         date: "Apr 19, 2026",
         image: "/images/h2.webp"
     },
@@ -82,6 +98,8 @@ const articles = [
         excerpt: "Sharjah is a hub for professional development. Explore the courses that are currently driving the most significant salary increases and career jumps in the UAE.",
         category: "Professional",
         path: "/article/professional-courses-sharjah-growth",
+        coursePath: "/professional-certifications",
+        courseLabel: "View Courses",
         date: "Apr 18, 2026",
         image: "/images/h3.webp"
     },
@@ -91,6 +109,8 @@ const articles = [
         excerpt: "Not all certificates are equal. Learn what to look for in a training institute—from accreditation to trainer expertise—to ensure your education is an investment.",
         category: "Guidelines",
         path: "/article/best-training-institute-sharjah",
+        coursePath: "/course",
+        courseLabel: "Find Courses",
         date: "Apr 17, 2026",
         image: "/images/h1.webp"
     },
@@ -100,6 +120,8 @@ const articles = [
         excerpt: "Matching your skills to market demand is the key to success. This guide helps you navigate the UAE's educational landscape to find your perfect fit.",
         category: "Guidelines",
         path: "/article/choose-right-course-uae",
+        coursePath: "/course",
+        courseLabel: "Career Paths",
         date: "Apr 16, 2026",
         image: "/images/h2.webp"
     }
@@ -117,8 +139,8 @@ const Articles = () => {
             {/* Hero Section */}
             <section className="articles-hero">
                 <div className="container">
-                    <span className="badge">Insights & Education</span>
-                    <h1>Articles & <span className="text-gradient">Resources</span></h1>
+                    <span className="badge">Knowledge Hub</span>
+                    <h1>Insights & <span className="text-gradient">Resources</span></h1>
                     <p>Expert perspectives on test preparation, professional growth, and academic excellence in the UAE.</p>
                 </div>
             </section>
@@ -128,23 +150,33 @@ const Articles = () => {
                 <div className="container">
                     <div className="articles-grid">
                         {articles.map((article) => (
-                            <Link to={article.path} key={article.id} className="article-card">
-                                <div className="article-card-image">
-                                    <img src={article.image} alt={article.title} />
-                                    <span className="article-card-badge">{article.category}</span>
-                                </div>
+                            <div key={article.id} className="article-card">
+                                <Link to={article.path} className="article-card-image-link">
+                                    <div className="article-card-image">
+                                        <img src={article.image} alt={article.title} />
+                                        <span className="article-card-badge">{article.category}</span>
+                                    </div>
+                                </Link>
                                 <div className="article-card-content">
                                     <div className="article-card-meta">
                                         <span><Calendar size={14} /> {article.date}</span>
-                                        <span><User size={14} /> Nitaq Editorial</span>
+                                        <span><User size={14} /> Nitaq Academy</span>
                                     </div>
-                                    <h3>{article.title}</h3>
+                                    <Link to={article.path} className="article-title-link">
+                                        <h3>{article.title}</h3>
+                                    </Link>
                                     <p>{article.excerpt}</p>
-                                    <div className="read-more-btn">
-                                        Read Article <ArrowRight size={16} />
+                                    
+                                    <div className="article-card-actions">
+                                        <Link to={article.path} className="read-more-inline">
+                                            Read Article <ArrowRight size={16} />
+                                        </Link>
+                                        <Link to={article.coursePath} className="card-course-btn">
+                                            {article.courseLabel} <ExternalLink size={14} />
+                                        </Link>
                                     </div>
                                 </div>
-                            </Link>
+                            </div>
                         ))}
                     </div>
                 </div>

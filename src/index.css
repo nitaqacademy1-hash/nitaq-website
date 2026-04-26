@@ -3923,8 +3923,12 @@ textarea:focus {
     font-weight: 700; 
     transition: color 0.3s ease; 
 }
-.article-card:hover .article-card-content h3 { 
-    color: var(--primary-color); 
+.article-title-link {
+    text-decoration: none;
+    display: block;
+}
+.article-title-link:hover h3 {
+    color: var(--primary-color);
 }
 .article-card-content p { 
     color: #64748b; 
@@ -3934,18 +3938,45 @@ textarea:focus {
     flex-grow: 1; 
 }
 
-.read-more-btn { 
+.article-card-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    border-top: 1px solid #f1f5f9;
+    margin-top: auto;
+}
+
+.read-more-inline { 
     display: flex; 
     align-items: center; 
-    gap: 8px; 
+    gap: 6px; 
     font-weight: 700; 
     color: var(--primary-color); 
-    font-size: 0.9rem; 
-    margin-top: auto; 
+    font-size: 0.85rem; 
     transition: gap 0.3s ease; 
+    text-decoration: none;
 }
-.article-card:hover .read-more-btn { 
-    gap: 14px; 
+.read-more-inline:hover { 
+    gap: 12px; 
+}
+
+.card-course-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(46, 125, 50, 0.1);
+    color: var(--primary-color);
+    padding: 8px 14px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+.card-course-btn:hover {
+    background: var(--primary-color);
+    color: white;
 }
 
 @media (max-width: 768px) {
