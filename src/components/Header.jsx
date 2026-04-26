@@ -118,7 +118,7 @@ const Header = () => {
 
                         <Link to="/contact" className={location.pathname === '/contact' ? 'active' : ''} onClick={closeMenu}>Contact</Link>
                         <a 
-                            href="tel:+971545723181" 
+                            href="tel:+97165798313" 
                             className="btn btn-primary mobile-only-btn"
                             onClick={() => trackEvent(ANALYTICS_EVENTS.CALL, 'header_mobile')}
                         >
@@ -128,7 +128,7 @@ const Header = () => {
                     </nav>
 
                     <a
-                        href="tel:+971545723181"
+                        href="tel:+97165798313"
                         className="btn btn-primary desktop-only-btn"
                         onClick={() => trackEvent(ANALYTICS_EVENTS.CALL, 'header_desktop')}
                     >

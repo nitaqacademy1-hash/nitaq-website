@@ -107,6 +107,13 @@ const SATCourse = () => {
                     </ul>
                 </div>
             </div>
+            <div className="content-card" style={{ background: '#f8fafc', border: '1px solid #e2e8f0' }}>
+                <h3 style={{ fontSize: '1.4rem' }}>Study Resources</h3>
+                <p style={{ marginBottom: '15px', color: '#475569' }}>Looking for more tips? Read our comprehensive guide on scoring higher.</p>
+                <Link to="/article/sat-coaching-sharjah" style={{ color: 'var(--primary-color)', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
+                    Read: SAT Coaching in Sharjah Guide <span>→</span>
+                </Link>
+            </div>
             <WhyNitaq />
         </CourseLayout>
     );

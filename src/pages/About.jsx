@@ -18,11 +18,10 @@ const About = () => {
                             Our Journey
                         </div>
                         <h1>
-                            Shaping the Future of <br />
-                            <span className="text-gradient">Professional Education</span>
+                            About <span className="text-gradient">Nitaq Academy</span>
                         </h1>
                         <p>
-                            Nitaq Academy – Center for Excellence is Sharjah's premier hub for academic success, professional growth, and future-focused learning.
+                            Empowering students and professionals in Sharjah with world-class education, career-focused training, and globally recognized certifications.
                         </p>
                     </div>
                 </div>
@@ -34,31 +33,35 @@ const About = () => {
                     <div className="feature-block">
                         <div className="feature-content">
                             <h2 style={{ fontSize: '3rem', marginBottom: '30px', lineHeight: 1.2 }}>
-                                Building Skills, <span className="text-gradient">Empowering Lives</span>
+                                Building Skills, <span className="text-gradient">Empowering Outcomes</span>
                             </h2>
                             <p style={{ fontSize: '1.2rem', color: 'var(--text-gray)', marginBottom: '25px', lineHeight: 1.8 }}>
-                                Located in the prestigious Abu Khamseen Tower in Sharjah, Nitaq Academy was founded on the belief that education should be practical, accessible, and life-changing.
+                                <strong>Nitaq Academy</strong> is a premier training institute in Sharjah for professional and academic excellence. We are dedicated to delivering job-ready skills and university preparation that helps students and professionals excel globally. 
                             </p>
                             <p style={{ fontSize: '1.1rem', color: 'var(--text-gray)', marginBottom: '35px', lineHeight: 1.7 }}>
-                                From Grades 8 to 12 international curricula to high-demand professional certifications like ACCA and UAE Corporate Tax, we provide a holistic environment where every student is mentored for global success.
+                                Registered as <strong>Nitaq Supportive Education L.L.C</strong>, Sharjah, UAE, we specialize in high-impact programs including SAT score improvement, IELTS band score training, and industry-recognized certifications like ACCA.
                             </p>
 
                             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '30px', marginBottom: '40px' }}>
                                 <div className="about-feature" style={{ padding: '20px', background: 'var(--bg-light)', borderRadius: '16px', border: 'none' }}>
                                     <h4 style={{ color: 'var(--primary-color)', marginBottom: '8px' }}>Global Impact</h4>
-                                    <p style={{ fontSize: '0.9rem', color: 'var(--text-gray)', margin: 0 }}>Partnerships with leading certification bodies worldwide.</p>
+                                    <p style={{ fontSize: '0.9rem', color: 'var(--text-gray)', margin: 0 }}>
+                                        Our curriculum follows international standards through partnerships with global bodies, ensuring your certifications open doors to universities and employers worldwide.
+                                    </p>
                                 </div>
                                 <div className="about-feature" style={{ padding: '20px', background: 'var(--bg-light)', borderRadius: '16px', border: 'none' }}>
                                     <h4 style={{ color: 'var(--primary-color)', marginBottom: '8px' }}>Local Expertise</h4>
-                                    <p style={{ fontSize: '0.9rem', color: 'var(--text-gray)', margin: 0 }}>Deep understanding of the UAE job market and regulations.</p>
+                                    <p style={{ fontSize: '0.9rem', color: 'var(--text-gray)', margin: 0 }}>
+                                        As a homegrown expert in the UAE education sector, we tailor our training to meet the specific regulatory and commercial requirements of the local job market.
+                                    </p>
                                 </div>
                             </div>
                         </div>
                         <div className="feature-img">
                             <div style={{ position: 'absolute', top: '20px', right: '-20px', width: '100%', height: '100%', border: '2px solid rgba(46, 125, 50, 0.1)', borderRadius: '30px', zIndex: 0 }}></div>
                             <img
-                                src="/images/about-interior.webp"
-                                alt="Nitaq Academy Interior"
+                                src="/images/h1.webp"
+                                alt="Our Learning Environment"
                                 style={{ width: '100%', height: '100%', minHeight: '400px', objectFit: 'cover', borderRadius: '30px', position: 'relative', zIndex: 1, boxShadow: '0 30px 60px rgba(0,0,0,0.1)' }}
                             />
                         </div>
@@ -102,41 +105,41 @@ const About = () => {
             <section className="section-padding" style={{ background: 'var(--bg-white)' }}>
                 <div className="container">
                     <div style={{ textAlign: 'center', marginBottom: '80px' }}>
-                        <h2 className="hero-text-h1" style={{ fontSize: '3.5rem', lineHeight: 1.1, marginBottom: '20px' }}>Why <span className="text-gradient">Nitaq?</span></h2>
+                        <h2 className="hero-text-h1" style={{ fontSize: '3.5rem', lineHeight: 1.1, marginBottom: '20px' }}>Why <span className="text-gradient">Nitaq Academy?</span></h2>
                         <p style={{ fontSize: '1.2rem', color: 'var(--text-gray)', maxWidth: '700px', margin: '0 auto' }}>Experience excellence in education with our modern approach to learning.</p>
                     </div>
 
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '30px' }}>
                         {[
                             {
-                                title: "Academic Results",
-                                desc: "Structured coaching that helps learners consistently excel across CBSE, GCSE/IGCSE, AS/A Levels, and IB curricula.",
+                                title: "Proven SAT & IELTS Success",
+                                desc: "Focused coaching that helps students achieve significant score improvements and target band scores for global university admissions.",
                                 icon: "M22 11.08V12a10 10 0 1 1-5.93-9.14"
                             },
                             {
-                                title: "Personalized Paths",
-                                desc: "Every learner receives customized attention and a curriculum aligned specifically with their career or academic goals.",
+                                title: "Industry-Relevant Skills",
+                                desc: "Practical training in professional courses like ACCA and UAE Corporate Tax designed to make you job-ready for the competitive UAE market.",
                                 icon: "M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
                             },
                             {
-                                title: "Interactive Teaching",
-                                desc: "Complex concepts made simple through engaging, practical, and experiential teaching methods that stick.",
+                                title: "Expert-Led Faculty",
+                                desc: "Learn from instructors with certified backgrounds and deep expertise in international curricula and professional certifications.",
+                                icon: "M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
+                            },
+                            {
+                                title: "Modern Learning Environment",
+                                desc: "Our Sharjah center provides a collaborative, tech-enabled space that fosters concentration and inspires academic excellence.",
                                 icon: "M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"
                             },
                             {
-                                title: "Comprehensive Support",
-                                desc: "Past papers, exam-style worksheets, and strategic confidence-building sessions for all major international exams.",
-                                icon: "M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-                            },
-                            {
-                                title: "24/7 Assistance",
-                                desc: "Dedicated academic assistance and doubt-solving support whenever students need help, even outside class hours.",
+                                title: "Personalized Mentorship",
+                                desc: "Every learner receives individual attention and customized study plans to ensure they reach their full potential and career goals.",
                                 icon: "M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"
                             },
                             {
-                                title: "Expert Faculty",
-                                desc: "Instructors with certified backgrounds and extensive academic expertise in the UAE, UK, and international education systems.",
-                                icon: "M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
+                                title: "Career & Academic Support",
+                                desc: "Beyond teaching, we offer comprehensive exam-readiness support, performance tracking, and strategic advice for future growth.",
+                                icon: "M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
                             }
                         ].map((item, idx) => (
                             <div key={idx} style={{
@@ -176,13 +179,13 @@ const About = () => {
                 <div className="container">
                     <div className="testimonial-poster" style={{ background: 'var(--gradient-primary)', borderRadius: '40px', padding: '100px 60px' }}>
                         <div className="poster-graphic" style={{ background: 'radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%)' }}></div>
-                        <h2 style={{ fontSize: '3rem', color: 'white', marginBottom: '30px', position: 'relative', zIndex: 1 }}>Ready to join our community?</h2>
+                        <h2 style={{ fontSize: '3rem', color: 'white', marginBottom: '30px', position: 'relative', zIndex: 1 }}>Start Your Learning Journey with Nitaq Academy Today</h2>
                         <p style={{ fontSize: '1.2rem', color: 'rgba(255,255,255,0.9)', maxWidth: '600px', margin: '0 auto 50px', position: 'relative', zIndex: 1, lineHeight: 1.6 }}>
-                            Take the first step towards academic and professional success today.
+                            Unlock your full potential with Sharjah's leading training institute for academic and professional success.
                         </p>
                         <div style={{ position: 'relative', zIndex: 1, display: 'flex', gap: '20px', justifyContent: 'center', flexWrap: 'wrap' }}>
-                            <Link to="/enquiry" className="btn btn-primary" style={{ background: 'white', color: 'var(--primary-color)', padding: '20px 45px' }}>Book a Free Demo</Link>
-                            <Link to="/contact" className="btn btn-secondary" style={{ border: '2px solid white', color: 'white', padding: '20px 45px' }}>Contact Us</Link>
+                            <Link to="/enquiry" className="btn btn-primary" style={{ background: 'white', color: 'var(--primary-color)', padding: '20px 45px' }}>Enroll Now</Link>
+                            <Link to="/contact" className="btn btn-secondary" style={{ border: '2px solid white', color: 'white', padding: '20px 45px' }}>Speak with Advisor</Link>
                         </div>
                     </div>
                 </div>

@@ -47,7 +47,7 @@ const Contact = () => {
                                     </div>
                                     <div>
                                         <h4 style={{ fontSize: '1.2rem', color: '#0f172a', marginBottom: '5px' }}>Our Address</h4>
-                                        <p style={{ color: '#64748b', lineHeight: 1.5 }}>Office 402, Al Qasimi Building,<br />Al Majaz 3, Sharjah, UAE</p>
+                                        <p style={{ color: '#64748b', lineHeight: 1.5 }}>Office 103, Floor F1, Abu Khamseen Tower,<br />Al Majaz 3, Sharjah, UAE<br /><span style={{ fontSize: '0.85rem' }}>Registered as Nitaq Supportive Education L.L.C</span></p>
                                     </div>
                                 </div>
 
@@ -58,8 +58,8 @@ const Contact = () => {
                                     <div>
                                         <h4 style={{ fontSize: '1.2rem', color: '#0f172a', marginBottom: '5px' }}>Contact Numbers</h4>
                                         <p style={{ color: '#64748b', lineHeight: 1.5 }}>
-                                            <a href="tel:+971545723181">+971 54 572 3181</a><br />
-                                            <a href="tel:+97165500000">+971 6 550 0000</a>
+                                            <a href="tel:+971545723181">+971 54 572 3181</a> (Mobile)<br />
+                                            <a href="tel:+97165798313">+971 6 579 8313</a> (Telephone)
                                         </p>
                                     </div>
                                 </div>

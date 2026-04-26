@@ -40,7 +40,7 @@ const CourseLayout = ({ title, subtitle, infoData, children }) => {
                                     Enroll Today
                                 </a>
                                 <a 
-                                    href="tel:+971545723181" 
+                                    href="tel:+97165798313" 
                                     className="btn" 
                                     style={{ background: '#f0f0f0', color: 'var(--text-dark)' }}
                                     onClick={() => trackEvent(ANALYTICS_EVENTS.CALL, `advisor_${title.split(' - ')[0].toLowerCase().replace(/\s+/g, '_')}`)}

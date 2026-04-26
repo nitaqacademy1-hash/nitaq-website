@@ -42,6 +42,11 @@ import GRECourse from './pages/courses/GRECourse';
 import AcademicExcellenceCourse from './pages/courses/AcademicExcellenceCourse';
 import FoundationJEECourse from './pages/courses/FoundationJEECourse';
 import AIRoboticsKids from './pages/courses/AIRoboticsKids';
+import Courses from './pages/Courses';
+import SatCoachingSharjah from './pages/article/SatCoachingSharjah';
+
+import TermsAndConditions from './pages/legal/TermsAndConditions';
+import PrivacyPolicy from './pages/legal/PrivacyPolicy';
 
 import DynamicPopup from './components/DynamicPopup';
 
@@ -98,6 +103,10 @@ function App() {
         <Route path="/academic-excellence" element={<AcademicExcellenceCourse />} />
         <Route path="/foundation-jee-neet" element={<FoundationJEECourse />} />
         <Route path="/ai-robotics-kids" element={<AIRoboticsKids />} />
+        <Route path="/course" element={<Courses />} />
+        
+        {/* Articles */}
+        <Route path="/article/sat-coaching-sharjah" element={<SatCoachingSharjah />} />
         
         {/* IG Landing Pages */}
         <Route path="/ig/2026-03-29" element={<ResumeGuide />} />
@@ -110,6 +119,10 @@ function App() {
         {/* Counselors Orientation Landing Pages */}
         <Route path="/webinar/counselors" element={<CounselorsOrientation />} />
         <Route path="/webinar/counselors/thank-you" element={<CounselorsOrientationThankYou />} />
+
+        {/* Legal Pages */}
+        <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
 
         {/* Placeholder routes for other pages to be migrated */}
         <Route path="*" element={<Home />} />
