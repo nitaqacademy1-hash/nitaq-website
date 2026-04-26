@@ -107,8 +107,8 @@ const CommonSatMistakes = () => {
                             <div className="enroll-sidebar-card">
                                 <h3>Don't Make These Mistakes</h3>
                                 <p>Get personalized coaching to ensure you stay on track for a high SAT score.</p>
-                                <Link to="/contact" className="btn btn-primary w-100 mb-15">Contact Our Experts</Link>
-                                <a href="tel:+97165798313" className="btn btn-outline w-100">Call +971 6 579 8313</a>
+                                <Link to="/sat-preparation" className="btn btn-primary w-100 mb-15">View SAT Course</Link>
+                                <a href="tel:+97165798313" className="btn btn-outline w-100">Call Now</a>
                             </div>
                         </aside>
                     </div>
