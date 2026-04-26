@@ -3,6 +3,37 @@ import { Link } from 'react-router-dom';
 import ContactForm from '../components/ContactForm';
 import SEO from '../components/SEO';
 import { trackEvent, ANALYTICS_EVENTS } from '../utils/analytics';
+import { Calendar, ArrowRight } from 'lucide-react';
+
+const homeArticles = [
+    {
+        id: 1,
+        title: "SAT Coaching in Sharjah: A Complete Guide to Scoring Higher in 2026",
+        excerpt: "Master the SAT with Sharjah's most effective strategies. Learn about the digital format and proven techniques to boost your score.",
+        category: "Test Prep",
+        path: "/article/sat-coaching-sharjah",
+        date: "Apr 26, 2026",
+        image: "/images/h1.webp"
+    },
+    {
+        id: 2,
+        title: "How to Score 1300+ on the SAT in 2026",
+        excerpt: "Discover the specific roadmap used by Sharjah's top students to break the 1300 barrier and secure university admissions.",
+        category: "Test Prep",
+        path: "/article/sat-score-1300-guide",
+        date: "Apr 25, 2026",
+        image: "/images/h2.webp"
+    },
+    {
+        id: 3,
+        title: "IELTS Training in Dubai: Your Guide to Academic Success",
+        excerpt: "Explore the best training pathways in Dubai for achieving your target band score for university or immigration.",
+        category: "Languages",
+        path: "/article/ielts-dubai-guide",
+        date: "Apr 24, 2026",
+        image: "/images/h3.webp"
+    }
+];
 
 const Home = () => {
     const excellenceSlides = [
@@ -586,8 +617,40 @@ const Home = () => {
             </section>
 
 
+            {/* Latest Articles Section */}
+            <section className="home-articles-section" style={{ padding: '80px 0', background: '#fff' }}>
+                <div className="container">
+                    <div className="section-header-flex">
+                        <div>
+                            <span className="badge-primary">Latest Insights</span>
+                            <h2>Educational <span className="text-gradient">Resources & Guides</span></h2>
+                            <p>Expert tips and updates to help you excel academically and professionally.</p>
+                        </div>
+                        <Link to="/articles" className="btn-outline-primary">
+                            View All Articles <ArrowRight size={18} />
+                        </Link>
+                    </div>
 
-            {/* Google Reviews Section */}
+                    <div className="articles-grid">
+                        {homeArticles.map((article) => (
+                            <Link to={article.path} key={article.id} className="article-card">
+                                <div className="article-card-image">
+                                    <img src={article.image} alt={article.title} />
+                                    <span className="article-card-badge">{article.category}</span>
+                                </div>
+                                <div className="article-card-content">
+                                    <div className="article-card-meta">
+                                        <span><Calendar size={14} /> {article.date}</span>
+                                    </div>
+                                    <h3>{article.title}</h3>
+                                    <p>{article.excerpt}</p>
+                                    <div className="read-more-btn">Read More <ArrowRight size={16} /></div>
+                                </div>
+                            </Link>
+                        ))}
+                    </div>
+                </div>
+            </section>
             <section className="google-reviews-section">
                 <div className="container">
                     <div className="reviews-header text-center">

@@ -53,6 +53,7 @@ const Footer = () => {
                             <Link to="/article/ielts-dubai-guide">IELTS Dubai Guide</Link>
                             <Link to="/article/ai-courses-sharjah-essential">AI for 2026</Link>
                             <Link to="/article/professional-courses-sharjah-growth">Career Growth Tips</Link>
+                            <Link to="/articles" style={{ fontWeight: 'bold', color: 'var(--primary-color)' }}>View All Articles →</Link>
                         </div>
                         <div>
                             <h4>Support</h4>

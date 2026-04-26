@@ -43,6 +43,7 @@ import AcademicExcellenceCourse from './pages/courses/AcademicExcellenceCourse';
 import FoundationJEECourse from './pages/courses/FoundationJEECourse';
 import AIRoboticsKids from './pages/courses/AIRoboticsKids';
 import Courses from './pages/Courses';
+import Articles from './pages/Articles';
 import SatCoachingSharjah from './pages/article/SatCoachingSharjah';
 import SatScore1300Guide from './pages/article/SatScore1300Guide';
 import SatVsIeltsGuide from './pages/article/SatVsIeltsGuide';
@@ -114,6 +115,7 @@ function App() {
         <Route path="/foundation-jee-neet" element={<FoundationJEECourse />} />
         <Route path="/ai-robotics-kids" element={<AIRoboticsKids />} />
         <Route path="/course" element={<Courses />} />
+        <Route path="/articles" element={<Articles />} />
         
         {/* Articles */}
         <Route path="/article/sat-coaching-sharjah" element={<SatCoachingSharjah />} />
