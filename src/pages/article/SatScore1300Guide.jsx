@@ -110,6 +110,10 @@ const SatScore1300Guide = () => {
                                 <li>Time-management drills designed for high-stress conditions</li>
                             </ul>
 
+                            <div className="article-inline-cta">
+                                <p>👉 <strong>Get your target score:</strong> <Link to="/sat-preparation">Join SAT Preparation in Sharjah</Link> and master the techniques top students use.</p>
+                            </div>
+
                             <h2>Final Thoughts</h2>
                             <p>
                                 Scoring 1300+ is an achievable goal with the right mindset and resources. By starting early and committing to a structured preparation plan, students in Sharjah can secure their academic futures and open doors to premier global institutions.

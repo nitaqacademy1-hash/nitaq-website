@@ -9,7 +9,7 @@ const homeArticles = [
     {
         id: 1,
         title: "SAT Coaching in Sharjah: A Complete Guide to Scoring Higher in 2026",
-        excerpt: "Master the SAT with Sharjah's most effective strategies. Learn about the digital format and proven techniques to boost your score.",
+        excerpt: "Discover proven SAT coaching strategies in Sharjah and learn how structured preparation can help you achieve higher scores and secure admission to top universities.",
         category: "Test Prep",
         path: "/article/sat-coaching-sharjah",
         coursePath: "/sat-preparation",
@@ -20,7 +20,7 @@ const homeArticles = [
     {
         id: 2,
         title: "How to Score 1300+ on the SAT in 2026",
-        excerpt: "Discover the specific roadmap used by Sharjah's top students to break the 1300 barrier and secure university admissions.",
+        excerpt: "Unlock your academic potential with advanced SAT preparation in Sharjah. This guide breakdown the roadmap top achievers use to secure scores of 1300 and beyond.",
         category: "Test Prep",
         path: "/article/sat-score-1300-guide",
         coursePath: "/sat-preparation",
@@ -31,12 +31,45 @@ const homeArticles = [
     {
         id: 3,
         title: "IELTS Training in Dubai: Your Guide to Academic Success",
-        excerpt: "Explore the best training pathways in Dubai for achieving your target band score for university or immigration.",
+        excerpt: "Excel in your language proficiency goals with comprehensive IELTS training in Dubai. Learn the specific techniques required to secure high band scores for global migration.",
         category: "Languages",
         path: "/article/ielts-dubai-guide",
         coursePath: "/ielts-course",
         courseLabel: "IELTS Course",
         date: "Apr 24, 2026",
+        image: "/images/h3.webp"
+    },
+    {
+        id: 4,
+        title: "AI Courses in Sharjah: Why Mastering AI is Essential",
+        excerpt: "Future-proof your career with professional AI courses in Sharjah. Master the latest artificial intelligence tools to stay competitive in the UAE's evolving job market.",
+        category: "Technology",
+        path: "/article/ai-courses-sharjah-essential",
+        coursePath: "/ai-course",
+        courseLabel: "AI Course",
+        date: "Apr 23, 2026",
+        image: "/images/h1.webp"
+    },
+    {
+        id: 5,
+        title: "ACCA Coaching in UAE: Benefits of Certification in 2026",
+        excerpt: "Accelerate your finance career with premier ACCA coaching in UAE. Gain the global professional certification needed to lead and excel in the accounting industry.",
+        category: "Finance",
+        path: "/article/acca-coaching-uae-benefits",
+        coursePath: "/acca-course",
+        courseLabel: "ACCA Course",
+        date: "Apr 22, 2026",
+        image: "/images/h2.webp"
+    },
+    {
+        id: 6,
+        title: "Professional Courses in Sharjah: Career Growth Guide",
+        excerpt: "Explore high-demand professional courses in Sharjah designed to drive career growth and salary increases in any sector across the UAE.",
+        category: "Professional",
+        path: "/article/professional-courses-sharjah-growth",
+        coursePath: "/professional-certifications",
+        courseLabel: "View Courses",
+        date: "Apr 21, 2026",
         image: "/images/h3.webp"
     }
 ];
@@ -629,8 +662,8 @@ const Home = () => {
                     <div className="section-header-flex">
                         <div>
                             <span className="badge-primary">Latest Insights</span>
-                            <h2>Educational <span className="text-gradient">Resources & Guides</span></h2>
-                            <p>Expert tips and updates to help you excel academically and professionally.</p>
+                            <h2>Latest Articles on SAT, IELTS & <span className="text-gradient">Career Training in Sharjah</span></h2>
+                            <p>Explore expert insights, preparation strategies, and career-focused guidance to help you succeed academically and professionally in the UAE.</p>
                         </div>
                         <Link to="/articles" className="btn-outline-primary">
                             View All Articles <ArrowRight size={18} />

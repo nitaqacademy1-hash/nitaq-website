@@ -1,14 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
-import { Bookmark, Calendar, User, ArrowRight, ExternalLink } from 'lucide-react';
+import { Calendar, User, ArrowRight, ExternalLink, Filter, Search } from 'lucide-react';
 
 const articles = [
     {
         id: 1,
         title: "SAT Coaching in Sharjah: A Complete Guide to Scoring Higher in 2026",
-        excerpt: "Master the SAT with Sharjah's most effective strategies. Learn about the digital format, latest curriculum changes, and proven techniques to boost your score.",
-        category: "Test Prep",
+        excerpt: "Discover proven SAT coaching strategies in Sharjah and learn how structured preparation can help you achieve higher scores and secure admission to top universities.",
+        category: "SAT Preparation",
         path: "/article/sat-coaching-sharjah",
         coursePath: "/sat-preparation",
         courseLabel: "SAT Course",
@@ -18,8 +18,8 @@ const articles = [
     {
         id: 2,
         title: "How to Score 1300+ on the SAT in 2026",
-        excerpt: "Achieving a competitive target score requires more than just practice. Discover the specific roadmap used by Sharjah's top students to break the 1300 barrier.",
-        category: "Test Prep",
+        excerpt: "Unlock your academic potential with advanced SAT preparation in Sharjah. This guide breakdown the roadmap top achievers use to secure scores of 1300 and beyond.",
+        category: "SAT Preparation",
         path: "/article/sat-score-1300-guide",
         coursePath: "/sat-preparation",
         courseLabel: "SAT Course",
@@ -28,9 +28,9 @@ const articles = [
     },
     {
         id: 3,
-        title: "IELTS Training in Dubai: Your Guide to Academic and Career Success",
-        excerpt: "Whether for university admission or immigration, mastering the IELTS is essential. Explore the best training pathways in Dubai for achieving Your target band score.",
-        category: "Languages",
+        title: "IELTS Training in Dubai: Your Guide to Academic Success",
+        excerpt: "Excel in your language proficiency goals with comprehensive IELTS training in Dubai. Learn the specific techniques required to secure high band scores for global migration.",
+        category: "IELTS Training",
         path: "/article/ielts-dubai-guide",
         coursePath: "/ielts-course",
         courseLabel: "IELTS Course",
@@ -40,8 +40,8 @@ const articles = [
     {
         id: 4,
         title: "SAT vs IELTS: Which Exam Do You Need for Studying Abroad?",
-        excerpt: "Understanding the difference between academic and language proficiency tests is crucial. We break down which exam fits your specific international education goals.",
-        category: "Test Prep",
+        excerpt: "Understanding the difference between academic and language proficiency tests in the UAE is crucial. We break down which exam fits your specific international goals.",
+        category: "SAT Preparation",
         path: "/article/sat-vs-ielts-guide",
         coursePath: "/course",
         courseLabel: "Explore All",
@@ -50,9 +50,9 @@ const articles = [
     },
     {
         id: 5,
-        title: "ACCA Coaching in UAE: Benefits of Professional Certification in 2026",
-        excerpt: "Global finance is evolving. Discover why the ACCA qualification remains the gold standard for finance professionals in the UAE and how to pass your exams.",
-        category: "Finance",
+        title: "ACCA Coaching in UAE: Benefits of Certification in 2026",
+        excerpt: "Accelerate your finance career with premier ACCA coaching in UAE. Gain the global professional certification needed to lead and excel in the accounting industry.",
+        category: "Career & Courses",
         path: "/article/acca-coaching-uae-benefits",
         coursePath: "/acca-course",
         courseLabel: "ACCA Course",
@@ -61,9 +61,9 @@ const articles = [
     },
     {
         id: 6,
-        title: "AI Courses in Sharjah: Why Mastering Artificial Intelligence is Essential",
-        excerpt: "AI is no longer the future—it's the present. Learn why professionals in Sharjah are rushing to gain AI skills to stay competitive in the 2026 job market.",
-        category: "Technology",
+        title: "AI Courses in Sharjah: Why Mastering AI is Essential",
+        excerpt: "Future-proof your career with professional AI courses in Sharjah. Master the latest artificial intelligence tools to stay competitive in the UAE's job market.",
+        category: "Career & Courses",
         path: "/article/ai-courses-sharjah-essential",
         coursePath: "/ai-course",
         courseLabel: "AI Course",
@@ -73,8 +73,8 @@ const articles = [
     {
         id: 7,
         title: "Common SAT Mistakes Students in UAE Make & How to Avoid Them",
-        excerpt: "Small errors can cost big points. Identify the most frequent pitfalls students face in the UAE and how our expert coaching helps you navigate them.",
-        category: "Test Prep",
+        excerpt: "Small errors can cost big points on your exam. Identify the most frequent pitfalls students face in the UAE and how our expert SAT coaching helps you navigate them.",
+        category: "SAT Preparation",
         path: "/article/common-sat-mistakes",
         coursePath: "/sat-preparation",
         courseLabel: "SAT Course",
@@ -83,9 +83,9 @@ const articles = [
     },
     {
         id: 8,
-        title: "How to Improve Your IELTS Band Score: Expert Strategies for 2026",
-        excerpt: "Stuck at a Band 6? Our IELTS specialists share high-impact strategies to help you reach a Band 7.5 or 8.0 through targeted practice and feedback.",
-        category: "Languages",
+        title: "How to Improve Your IELTS Band Score: Expert Strategies",
+        excerpt: "Stuck at a lower band? Our IELTS specialists in Sharjah share high-impact strategies to help you reach a Band 7.5 or 8.0 through targeted practice and feedback.",
+        category: "IELTS Training",
         path: "/article/improve-ielts-band-score",
         coursePath: "/ielts-course",
         courseLabel: "IELTS Course",
@@ -94,9 +94,9 @@ const articles = [
     },
     {
         id: 9,
-        title: "Professional Courses in Sharjah: Career Growth in a Global Market",
-        excerpt: "Sharjah is a hub for professional development. Explore the courses that are currently driving the most significant salary increases and career jumps in the UAE.",
-        category: "Professional",
+        title: "Professional Courses in Sharjah: Career Growth Guide",
+        excerpt: "Sharjah is a hub for professional development. Explore the courses that are currently driving the most significant career jumps and salary growth in the UAE.",
+        category: "Career & Courses",
         path: "/article/professional-courses-sharjah-growth",
         coursePath: "/professional-certifications",
         courseLabel: "View Courses",
@@ -105,9 +105,9 @@ const articles = [
     },
     {
         id: 10,
-        title: "Choosing the Best Training Institute in Sharjah for Your Career",
-        excerpt: "Not all certificates are equal. Learn what to look for in a training institute—from accreditation to trainer expertise—to ensure your education is an investment.",
-        category: "Guidelines",
+        title: "Best Training Institute in Sharjah for Your Career",
+        excerpt: "Not all certificates are equal in the UAE. Learn what to look for in a training institute in Sharjah—from accreditation to expertise—to ensure your education is an investment.",
+        category: "Career & Courses",
         path: "/article/best-training-institute-sharjah",
         coursePath: "/course",
         courseLabel: "Find Courses",
@@ -116,9 +116,9 @@ const articles = [
     },
     {
         id: 11,
-        title: "Choose the Right Course in UAE: A Guide to Academic Excellence",
-        excerpt: "Matching your skills to market demand is the key to success. This guide helps you navigate the UAE's educational landscape to find your perfect fit.",
-        category: "Guidelines",
+        title: "Choose the Right Course in UAE: A Guide to Excellence",
+        excerpt: "Matching your skills to market demand is the key to success. This guide helps you navigate the UAE's academic landscape to find your perfect fit for professional growth.",
+        category: "Career & Courses",
         path: "/article/choose-right-course-uae",
         coursePath: "/course",
         courseLabel: "Career Paths",
@@ -127,21 +127,72 @@ const articles = [
     }
 ];
 
+const categories = ["All", "SAT Preparation", "IELTS Training", "Career & Courses"];
+
 const Articles = () => {
+    const [activeCategory, setActiveCategory] = useState("All");
+
+    const filteredArticles = activeCategory === "All" 
+        ? articles 
+        : articles.filter(article => article.category === activeCategory);
+
     return (
         <main className="articles-page">
             <SEO 
-                title="Articles & Insights | Nitaq Academy Sharjah"
-                description="Explore expert guides, preparation tips, and career insights from Nitaq Academy. Stay updated with the latest in SAT, IELTS, and professional training in the UAE."
+                title="Articles & Educational Guides | Nitaq Academy Sharjah"
+                description="Expert SAT coaching Sharjah, IELTS training UAE, and professional career insights from Nitaq Academy - the leading training institute in Sharjah. Stay ahead with our guides."
                 path="/articles"
             />
 
             {/* Hero Section */}
             <section className="articles-hero">
                 <div className="container">
-                    <span className="badge">Knowledge Hub</span>
-                    <h1>Insights & <span className="text-gradient">Resources</span></h1>
-                    <p>Expert perspectives on test preparation, professional growth, and academic excellence in the UAE.</p>
+                    <span className="badge">Leading Training Institute in Sharjah</span>
+                    <h1>Educational <span className="text-gradient">Insights & Guides</span></h1>
+                    <p>Stay updated with expert perspectives on test preparation, professional certifications, and academic excellence in the UAE.</p>
+                </div>
+            </section>
+
+            {/* SEO Intro Content */}
+            <section className="articles-intro-section">
+                <div className="container">
+                    <div className="articles-intro-card">
+                        <h2>Your Hub for <span className="text-gradient">Academic & Professional Growth</span></h2>
+                        <p>
+                            Welcome to the Nitaq Academy insights portal, the premier resource for students and professionals seeking a <strong>training institute in Sharjah</strong> that delivers real results. Our expert-curated articles are designed to bridge the gap between classroom learning and career success in the dynamic UAE market.
+                        </p>
+                        <p>
+                            Whether you are looking for high-impact <strong>SAT coaching in Sharjah</strong> to secure admission to top global universities, or specialized <strong>IELTS training in UAE</strong> to achieve your target band scores for migration and study, our guides provide actionable strategies and proven techniques. We also explore the latest trends in professional certifications, including AI, ACCA, and corporate training, ensuring you stay competitive in the 2026 job market.
+                        </p>
+                        <div className="quick-links-row">
+                            <Link to="/sat-preparation" className="quick-link-item">👉 Explore SAT Coaching in Sharjah</Link>
+                            <Link to="/ielts-course" className="quick-link-item">👉 Join IELTS Training in Dubai</Link>
+                            <Link to="/course" className="quick-link-item">👉 Browse All Courses in UAE</Link>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Category Filter */}
+            <section className="category-filter-section">
+                <div className="container">
+                    <div className="filter-wrapper">
+                        <div className="filter-label">
+                            <Filter size={18} />
+                            <span>Filter by Interest:</span>
+                        </div>
+                        <div className="filter-buttons">
+                            {categories.map(cat => (
+                                <button 
+                                    key={cat} 
+                                    className={`filter-btn ${activeCategory === cat ? 'active' : ''}`}
+                                    onClick={() => setActiveCategory(cat)}
+                                >
+                                    {cat}
+                                </button>
+                            ))}
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -149,7 +200,7 @@ const Articles = () => {
             <section className="articles-grid-section">
                 <div className="container">
                     <div className="articles-grid">
-                        {articles.map((article) => (
+                        {filteredArticles.map((article) => (
                             <div key={article.id} className="article-card">
                                 <Link to={article.path} className="article-card-image-link">
                                     <div className="article-card-image">
@@ -160,7 +211,7 @@ const Articles = () => {
                                 <div className="article-card-content">
                                     <div className="article-card-meta">
                                         <span><Calendar size={14} /> {article.date}</span>
-                                        <span><User size={14} /> Nitaq Academy</span>
+                                        <span><User size={14} /> Nitaq Editorial</span>
                                     </div>
                                     <Link to={article.path} className="article-title-link">
                                         <h3>{article.title}</h3>
@@ -169,7 +220,7 @@ const Articles = () => {
                                     
                                     <div className="article-card-actions">
                                         <Link to={article.path} className="read-more-inline">
-                                            Read Article <ArrowRight size={16} />
+                                            Read Guide <ArrowRight size={16} />
                                         </Link>
                                         <Link to={article.coursePath} className="card-course-btn">
                                             {article.courseLabel} <ExternalLink size={14} />
@@ -178,6 +229,22 @@ const Articles = () => {
                                 </div>
                             </div>
                         ))}
+                    </div>
+
+                    {filteredArticles.length === 0 && (
+                        <div className="no-results text-center">
+                            <p>No articles found in this category. Please try another one.</p>
+                        </div>
+                    )}
+
+                    {/* Bottom CTA for SEO Hub */}
+                    <div className="articles-bottom-cta">
+                        <h3>Ready to Start Your Journey?</h3>
+                        <p>Join thousands of successful students at the most trusted training institute in Sharjah.</p>
+                        <div className="cta-buttons">
+                            <Link to="/contact" className="btn btn-primary">Book Free Consultation</Link>
+                            <Link to="/courses" className="btn btn-outline">Explore Course Catalog</Link>
+                        </div>
                     </div>
                 </div>
             </section>
