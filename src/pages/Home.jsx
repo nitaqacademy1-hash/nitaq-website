@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import ContactForm from '../components/ContactForm';
 import SEO from '../components/SEO';
 import { trackEvent, ANALYTICS_EVENTS } from '../utils/analytics';
-import { Calendar, ArrowRight, ExternalLink } from 'lucide-react';
+import { Calendar, ArrowRight, ExternalLink, ChevronLeft, ChevronRight } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const homeArticles = [
     {
@@ -91,6 +92,15 @@ const Home = () => {
     ];
 
     const [currentExcellenceSlide, setCurrentExcellenceSlide] = useState(0);
+    const [articleIndex, setArticleIndex] = useState(0);
+
+    const nextArticles = () => {
+        setArticleIndex((prev) => (prev + 3 >= homeArticles.length ? 0 : prev + 3));
+    };
+
+    const prevArticles = () => {
+        setArticleIndex((prev) => (prev - 3 < 0 ? Math.max(0, homeArticles.length - 3) : prev - 3));
+    };
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -665,39 +675,62 @@ const Home = () => {
                             <h2>Latest Articles on SAT, IELTS & <span className="text-gradient">Career Training in Sharjah</span></h2>
                             <p>Explore expert insights, preparation strategies, and career-focused guidance to help you succeed academically and professionally in the UAE.</p>
                         </div>
-                        <Link to="/articles" className="btn-outline-primary">
-                            View All Articles <ArrowRight size={18} />
-                        </Link>
+                        <div className="articles-controls-wrapper" style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+                            <Link to="/articles" className="btn-outline-primary">
+                                View All Articles <ArrowRight size={18} />
+                            </Link>
+                            <div className="slider-nav-btns" style={{ display: 'flex', gap: '8px' }}>
+                                <button onClick={prevArticles} className="slider-arrow-btn" aria-label="Previous articles">
+                                    <ChevronLeft size={20} />
+                                </button>
+                                <button onClick={nextArticles} className="slider-arrow-btn" aria-label="Next articles">
+                                    <ChevronRight size={20} />
+                                </button>
+                            </div>
+                        </div>
                     </div>
 
-                    <div className="articles-grid">
-                        {homeArticles.map((article) => (
-                            <div key={article.id} className="article-card">
-                                <Link to={article.path} className="article-card-image-link">
-                                    <div className="article-card-image">
-                                        <img src={article.image} alt={article.title} />
-                                        <span className="article-card-badge">{article.category}</span>
-                                    </div>
-                                </Link>
-                                <div className="article-card-content">
-                                    <div className="article-card-meta">
-                                        <span><Calendar size={14} /> {article.date}</span>
-                                    </div>
-                                    <Link to={article.path} className="article-title-link">
-                                        <h3>{article.title}</h3>
-                                    </Link>
-                                    <p>{article.excerpt}</p>
-                                    <div className="article-card-actions">
-                                        <Link to={article.path} className="read-more-inline">
-                                            Read More <ArrowRight size={16} />
-                                        </Link>
-                                        <Link to={article.coursePath} className="card-course-btn">
-                                            {article.courseLabel} <ExternalLink size={14} />
-                                        </Link>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
+                    <div className="articles-slider-container" style={{ minHeight: '450px' }}>
+                        <div className="articles-grid">
+                            <AnimatePresence mode="wait">
+                                {homeArticles.slice(articleIndex, articleIndex + 3).map((article) => (
+                                    <motion.div 
+                                        key={article.id}
+                                        initial={{ opacity: 0, y: 20 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        exit={{ opacity: 0, y: -20 }}
+                                        transition={{ duration: 0.4 }}
+                                        className="article-card-wrapper"
+                                    >
+                                        <div className="article-card">
+                                            <Link to={article.path} className="article-card-image-link">
+                                                <div className="article-card-image">
+                                                    <img src={article.image} alt={article.title} />
+                                                    <span className="article-card-badge">{article.category}</span>
+                                                </div>
+                                            </Link>
+                                            <div className="article-card-content">
+                                                <div className="article-card-meta">
+                                                    <span><Calendar size={14} /> {article.date}</span>
+                                                </div>
+                                                <Link to={article.path} className="article-title-link">
+                                                    <h3>{article.title}</h3>
+                                                </Link>
+                                                <p>{article.excerpt}</p>
+                                                <div className="article-card-actions">
+                                                    <Link to={article.path} className="read-more-inline">
+                                                        Read More <ArrowRight size={16} />
+                                                    </Link>
+                                                    <Link to={article.coursePath} className="card-course-btn">
+                                                        {article.courseLabel} <ExternalLink size={14} />
+                                                    </Link>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </motion.div>
+                                ))}
+                            </AnimatePresence>
+                        </div>
                     </div>
                 </div>
             </section>
