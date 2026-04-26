@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import CourseLayout from '../../components/CourseLayout';
 import WhyNitaq from '../../components/WhyNitaq';
 const SATCourse = () => {
