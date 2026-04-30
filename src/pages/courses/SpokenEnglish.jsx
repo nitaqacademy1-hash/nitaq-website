@@ -112,48 +112,42 @@ const SpokenEnglish = () => {
             
             {/* FAQ Section */}
             <div className="content-card">
-                <h2>Spoken English <span className="text-gradient">FAQs</span></h2>
+                <h2>SPOKEN ENGLISH <span className="text-gradient">FAQs</span></h2>
                 <div className="faq-accordion-group" style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
                     <details className="faq-accordion">
-                        <summary>What is the Spoken English program?</summary>
+                        <summary>Who should join the Spoken English course?</summary>
                         <div className="faq-accordion-content">
-                            <p>Please contact our counselors for detailed information regarding the Spoken English structure and requirements.</p>
+                            <p>This course is ideal for students, professionals, and beginners who want to improve communication skills.</p>
+                        </div>
+                    </details>
+                    <details className="faq-accordion">
+                        <summary>What will I learn?</summary>
+                        <div className="faq-accordion-content">
+                            <p>You will learn speaking, listening, grammar, vocabulary, and confidence-building techniques.</p>
+                        </div>
+                    </details>
+                    <details className="faq-accordion">
+                        <summary>Is this course suitable for beginners?</summary>
+                        <div className="faq-accordion-content">
+                            <p>Yes, the course is designed for all levels including beginners.</p>
                         </div>
                     </details>
                     <details className="faq-accordion">
                         <summary>How long is the course?</summary>
                         <div className="faq-accordion-content">
-                            <p>The duration varies based on the proficiency level and chosen track. Most programs range from 20 to 50 hours.</p>
+                            <p>The duration typically ranges from 4 to 6 weeks.</p>
                         </div>
                     </details>
                     <details className="faq-accordion">
-                        <summary>What score is required?</summary>
+                        <summary>Will I get speaking practice?</summary>
                         <div className="faq-accordion-content">
-                            <p>Target scores depend on your specific university or professional goals. We provide customized plans to help you reach your required score.</p>
+                            <p>Yes, interactive sessions and real-life conversations are included.</p>
                         </div>
                     </details>
                     <details className="faq-accordion">
-                        <summary>Do you provide mock tests?</summary>
+                        <summary>Is it useful for jobs?</summary>
                         <div className="faq-accordion-content">
-                            <p>Yes, comprehensive mock tests and practice materials are an integral part of all our training programs.</p>
-                        </div>
-                    </details>
-                    <details className="faq-accordion">
-                        <summary>Is online available?</summary>
-                        <div className="faq-accordion-content">
-                            <p>Yes, we offer both interactive online classes and traditional offline in-person training formats.</p>
-                        </div>
-                    </details>
-                    <details className="faq-accordion">
-                        <summary>What is the fee?</summary>
-                        <div className="faq-accordion-content">
-                            <p>Our fees are highly competitive. Please reach out to our admission team for the latest pricing and ongoing offers.</p>
-                        </div>
-                    </details>
-                    <details className="faq-accordion">
-                        <summary>When can I start?</summary>
-                        <div className="faq-accordion-content">
-                            <p>We have flexible intake dates with new batches starting frequently. Contact us to find the next available schedule.</p>
+                            <p>Yes, strong English communication skills are essential for most careers.</p>
                         </div>
                     </details>
                 </div>

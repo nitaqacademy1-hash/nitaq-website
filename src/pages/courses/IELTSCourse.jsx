@@ -119,48 +119,42 @@ const IELTSCourse = () => {
             
             {/* FAQ Section */}
             <div className="content-card">
-                <h2>IELTS   Sharjah | Band 7+ Guaranteed | Nitaq Academy <span className="text-gradient">FAQs</span></h2>
+                <h2>IELTS COURSE <span className="text-gradient">FAQs</span></h2>
                 <div className="faq-accordion-group" style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
                     <details className="faq-accordion">
-                        <summary>What is the IELTS   Sharjah | Band 7+ Guaranteed | Nitaq Academy exam?</summary>
+                        <summary>What is the duration of IELTS coaching in Sharjah?</summary>
                         <div className="faq-accordion-content">
-                            <p>Please contact our counselors for detailed information regarding the IELTS   Sharjah | Band 7+ Guaranteed | Nitaq Academy structure and requirements.</p>
+                            <p>The IELTS course duration usually ranges from 4 to 8 weeks depending on the student’s current level and target band score.</p>
                         </div>
                     </details>
                     <details className="faq-accordion">
-                        <summary>How long is the course?</summary>
+                        <summary>Do you offer Academic and General IELTS training?</summary>
                         <div className="faq-accordion-content">
-                            <p>The duration varies based on the proficiency level and chosen track. Most programs range from 20 to 50 hours.</p>
+                            <p>Yes, both Academic and General IELTS modules are covered based on the student’s requirement.</p>
                         </div>
                     </details>
                     <details className="faq-accordion">
-                        <summary>What score is required?</summary>
+                        <summary>What band score can I achieve?</summary>
                         <div className="faq-accordion-content">
-                            <p>Target scores depend on your specific university or professional goals. We provide customized plans to help you reach your required score.</p>
+                            <p>Most students improve their band score by 1–2 bands with proper training, practice, and feedback.</p>
                         </div>
                     </details>
                     <details className="faq-accordion">
-                        <summary>Do you provide mock tests?</summary>
+                        <summary>Are mock tests included?</summary>
                         <div className="faq-accordion-content">
-                            <p>Yes, comprehensive mock tests and practice materials are an integral part of all our training programs.</p>
+                            <p>Yes, regular mock tests are conducted to evaluate performance and improve exam readiness.</p>
                         </div>
                     </details>
                     <details className="faq-accordion">
-                        <summary>Is online available?</summary>
+                        <summary>Is IELTS training available online?</summary>
                         <div className="faq-accordion-content">
-                            <p>Yes, we offer both interactive online classes and traditional offline in-person training formats.</p>
+                            <p>Yes, flexible online and classroom training options are available across the UAE.</p>
                         </div>
                     </details>
                     <details className="faq-accordion">
-                        <summary>What is the fee?</summary>
+                        <summary>Do you provide speaking practice?</summary>
                         <div className="faq-accordion-content">
-                            <p>Our fees are highly competitive. Please reach out to our admission team for the latest pricing and ongoing offers.</p>
-                        </div>
-                    </details>
-                    <details className="faq-accordion">
-                        <summary>When can I start?</summary>
-                        <div className="faq-accordion-content">
-                            <p>We have flexible intake dates with new batches starting frequently. Contact us to find the next available schedule.</p>
+                            <p>Yes, one-on-one speaking sessions are included to improve fluency and confidence.</p>
                         </div>
                     </details>
                 </div>

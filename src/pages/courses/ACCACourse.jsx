@@ -112,48 +112,42 @@ const ACCACourse = () => {
             
             {/* FAQ Section */}
             <div className="content-card">
-                <h2>ACCA - Association of Chartered Certified Accountants <span className="text-gradient">FAQs</span></h2>
+                <h2>ACCA COURSE <span className="text-gradient">FAQs</span></h2>
                 <div className="faq-accordion-group" style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
                     <details className="faq-accordion">
-                        <summary>What is the ACCA - Association of Chartered Certified Accountants exam?</summary>
+                        <summary>What is ACCA and who should take it?</summary>
                         <div className="faq-accordion-content">
-                            <p>Please contact our counselors for detailed information regarding the ACCA - Association of Chartered Certified Accountants structure and requirements.</p>
+                            <p>ACCA is a globally recognized accounting certification ideal for students pursuing careers in finance and accounting.</p>
                         </div>
                     </details>
                     <details className="faq-accordion">
-                        <summary>How long is the course?</summary>
+                        <summary>How long does it take to complete ACCA?</summary>
                         <div className="faq-accordion-content">
-                            <p>The duration varies based on the proficiency level and chosen track. Most programs range from 20 to 50 hours.</p>
+                            <p>It typically takes 2–3 years depending on the number of papers and student pace.</p>
                         </div>
                     </details>
                     <details className="faq-accordion">
-                        <summary>What score is required?</summary>
+                        <summary>Do you provide coaching for all ACCA papers?</summary>
                         <div className="faq-accordion-content">
-                            <p>Target scores depend on your specific university or professional goals. We provide customized plans to help you reach your required score.</p>
+                            <p>Yes, complete coaching and guidance are provided for all levels.</p>
                         </div>
                     </details>
                     <details className="faq-accordion">
-                        <summary>Do you provide mock tests?</summary>
+                        <summary>Is ACCA valuable in the UAE?</summary>
                         <div className="faq-accordion-content">
-                            <p>Yes, comprehensive mock tests and practice materials are an integral part of all our training programs.</p>
+                            <p>Yes, ACCA professionals are highly in demand in the UAE job market.</p>
                         </div>
                     </details>
                     <details className="faq-accordion">
-                        <summary>Is online available?</summary>
+                        <summary>Do you provide exam preparation support?</summary>
                         <div className="faq-accordion-content">
-                            <p>Yes, we offer both interactive online classes and traditional offline in-person training formats.</p>
+                            <p>Yes, mock exams, revision sessions, and guidance are included.</p>
                         </div>
                     </details>
                     <details className="faq-accordion">
-                        <summary>What is the fee?</summary>
+                        <summary>What career opportunities are available?</summary>
                         <div className="faq-accordion-content">
-                            <p>Our fees are highly competitive. Please reach out to our admission team for the latest pricing and ongoing offers.</p>
-                        </div>
-                    </details>
-                    <details className="faq-accordion">
-                        <summary>When can I start?</summary>
-                        <div className="faq-accordion-content">
-                            <p>We have flexible intake dates with new batches starting frequently. Contact us to find the next available schedule.</p>
+                            <p>Roles include accountant, auditor, financial analyst, and finance manager.</p>
                         </div>
                     </details>
                 </div>

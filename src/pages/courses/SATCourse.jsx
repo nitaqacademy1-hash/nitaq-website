@@ -118,48 +118,42 @@ const SATCourse = () => {
             
             {/* FAQ Section */}
             <div className="content-card">
-                <h2>SAT <span className="text-gradient">FAQs</span></h2>
+                <h2>SAT PREPARATION <span className="text-gradient">FAQs</span></h2>
                 <div className="faq-accordion-group" style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
                     <details className="faq-accordion">
-                        <summary>What is the SAT exam?</summary>
+                        <summary>What is the duration of the SAT course in Sharjah?</summary>
                         <div className="faq-accordion-content">
-                            <p>Please contact our counselors for detailed information regarding the SAT structure and requirements.</p>
+                            <p>The SAT preparation course typically ranges from 20 to 50 hours depending on the learning track. Students can choose intensive, standard, or fast-track options based on their timeline and goals.</p>
                         </div>
                     </details>
                     <details className="faq-accordion">
-                        <summary>How long is the course?</summary>
+                        <summary>Do you provide SAT mock tests?</summary>
                         <div className="faq-accordion-content">
-                            <p>The duration varies based on the proficiency level and chosen track. Most programs range from 20 to 50 hours.</p>
+                            <p>Yes, full-length SAT mock tests are included as part of the program. These tests help students understand the exam pattern and improve time management and accuracy.</p>
                         </div>
                     </details>
                     <details className="faq-accordion">
-                        <summary>What score is required?</summary>
+                        <summary>Who should join this SAT course?</summary>
                         <div className="faq-accordion-content">
-                            <p>Target scores depend on your specific university or professional goals. We provide customized plans to help you reach your required score.</p>
+                            <p>This course is ideal for high school students planning to study abroad, especially in the US or other international universities requiring SAT scores.</p>
                         </div>
                     </details>
                     <details className="faq-accordion">
-                        <summary>Do you provide mock tests?</summary>
+                        <summary>Is the SAT course available online?</summary>
                         <div className="faq-accordion-content">
-                            <p>Yes, comprehensive mock tests and practice materials are an integral part of all our training programs.</p>
+                            <p>Yes, the course is available in both online and offline formats, offering flexibility for students across Sharjah and the UAE.</p>
                         </div>
                     </details>
                     <details className="faq-accordion">
-                        <summary>Is online available?</summary>
+                        <summary>What score can I expect after training?</summary>
                         <div className="faq-accordion-content">
-                            <p>Yes, we offer both interactive online classes and traditional offline in-person training formats.</p>
+                            <p>With consistent practice and guidance, students can significantly improve their scores, with many achieving 1200+ or higher depending on effort and baseline level.</p>
                         </div>
                     </details>
                     <details className="faq-accordion">
-                        <summary>What is the fee?</summary>
+                        <summary>Do you help with SAT registration?</summary>
                         <div className="faq-accordion-content">
-                            <p>Our fees are highly competitive. Please reach out to our admission team for the latest pricing and ongoing offers.</p>
-                        </div>
-                    </details>
-                    <details className="faq-accordion">
-                        <summary>When can I start?</summary>
-                        <div className="faq-accordion-content">
-                            <p>We have flexible intake dates with new batches starting frequently. Contact us to find the next available schedule.</p>
+                            <p>Yes, students receive complete guidance on SAT registration and exam booking processes.</p>
                         </div>
                     </details>
                 </div>

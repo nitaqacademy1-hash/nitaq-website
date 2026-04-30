@@ -103,48 +103,42 @@ const UAEVATCourse = () => {
             
             {/* FAQ Section */}
             <div className="content-card">
-                <h2>UAE VAT <span className="text-gradient">FAQs</span></h2>
+                <h2>UAE VAT COURSE <span className="text-gradient">FAQs</span></h2>
                 <div className="faq-accordion-group" style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
                     <details className="faq-accordion">
-                        <summary>What is the UAE VAT program?</summary>
+                        <summary>Who should take the UAE VAT course?</summary>
                         <div className="faq-accordion-content">
-                            <p>Please contact our counselors for detailed information regarding the UAE VAT structure and requirements.</p>
+                            <p>This course is ideal for accounting professionals, business owners, and finance students looking to understand UAE tax regulations.</p>
                         </div>
                     </details>
                     <details className="faq-accordion">
-                        <summary>How long is the course?</summary>
+                        <summary>What topics are covered in the VAT course?</summary>
                         <div className="faq-accordion-content">
-                            <p>The duration varies based on the proficiency level and chosen track. Most programs range from 20 to 50 hours.</p>
+                            <p>The course covers VAT registration, filing returns, compliance, and real-world case studies.</p>
                         </div>
                     </details>
                     <details className="faq-accordion">
-                        <summary>What score is required?</summary>
+                        <summary>Is prior accounting knowledge required?</summary>
                         <div className="faq-accordion-content">
-                            <p>Target scores depend on your specific university or professional goals. We provide customized plans to help you reach your required score.</p>
+                            <p>Basic accounting knowledge is helpful but not mandatory, as the course starts from fundamentals.</p>
                         </div>
                     </details>
                     <details className="faq-accordion">
-                        <summary>Do you provide mock tests?</summary>
+                        <summary>Is this course useful for jobs in the UAE?</summary>
                         <div className="faq-accordion-content">
-                            <p>Yes, comprehensive mock tests and practice materials are an integral part of all our training programs.</p>
+                            <p>Yes, VAT knowledge is highly in demand in finance and accounting roles across the UAE.</p>
                         </div>
                     </details>
                     <details className="faq-accordion">
-                        <summary>Is online available?</summary>
+                        <summary>Do you provide certification?</summary>
                         <div className="faq-accordion-content">
-                            <p>Yes, we offer both interactive online classes and traditional offline in-person training formats.</p>
+                            <p>Yes, a course completion certificate is provided after successful training.</p>
                         </div>
                     </details>
                     <details className="faq-accordion">
-                        <summary>What is the fee?</summary>
+                        <summary>Is the course practical?</summary>
                         <div className="faq-accordion-content">
-                            <p>Our fees are highly competitive. Please reach out to our admission team for the latest pricing and ongoing offers.</p>
-                        </div>
-                    </details>
-                    <details className="faq-accordion">
-                        <summary>When can I start?</summary>
-                        <div className="faq-accordion-content">
-                            <p>We have flexible intake dates with new batches starting frequently. Contact us to find the next available schedule.</p>
+                            <p>Yes, the training focuses on real-world applications and compliance scenarios.</p>
                         </div>
                     </details>
                 </div>

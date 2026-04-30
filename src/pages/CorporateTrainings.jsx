@@ -92,6 +92,53 @@ const CorporateTrainings = () => {
                 </div>
             </section>
 
+            {/* FAQ Section */}
+            <section className="section-padding" style={{ background: '#f8fafc', borderTop: '1px solid #f1f5f9' }}>
+                <div className="container" style={{ maxWidth: '800px', margin: '0 auto' }}>
+                    <div className="content-card" style={{ background: 'white', padding: '40px', borderRadius: '24px', boxShadow: '0 10px 30px rgba(0,0,0,0.02)' }}>
+                        <h2 style={{ fontSize: '2rem', marginBottom: '25px', textAlign: 'center' }}>Corporate Training <span className="text-gradient">FAQs</span></h2>
+                        <div className="faq-accordion-group" style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+                            <details className="faq-accordion">
+                                <summary>What is corporate training at Nitaq Academy?</summary>
+                                <div className="faq-accordion-content">
+                                    <p>Corporate training programs are customized courses designed to improve employee skills, productivity, and leadership within organizations.</p>
+                                </div>
+                            </details>
+                            <details className="faq-accordion">
+                                <summary>What topics are covered?</summary>
+                                <div className="faq-accordion-content">
+                                    <p>Topics include leadership, communication, finance, HR, digital skills, and business development.</p>
+                                </div>
+                            </details>
+                            <details className="faq-accordion">
+                                <summary>Can training be customized?</summary>
+                                <div className="faq-accordion-content">
+                                    <p>Yes, all programs are tailored to the company’s specific needs and goals.</p>
+                                </div>
+                            </details>
+                            <details className="faq-accordion">
+                                <summary>Is training conducted onsite?</summary>
+                                <div className="faq-accordion-content">
+                                    <p>Yes, training can be conducted onsite or at the institute depending on requirements.</p>
+                                </div>
+                            </details>
+                            <details className="faq-accordion">
+                                <summary>Who can enroll in corporate training?</summary>
+                                <div className="faq-accordion-content">
+                                    <p>Businesses, startups, and organizations looking to upskill their workforce can enroll.</p>
+                                </div>
+                            </details>
+                            <details className="faq-accordion">
+                                <summary>What are the benefits?</summary>
+                                <div className="faq-accordion-content">
+                                    <p>Improved performance, better team collaboration, and enhanced leadership skills.</p>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* Partners Section */}
             <section className="section-padding" style={{ background: '#ffffff', borderTop: '1px solid #f1f5f9' }}>
                 <div className="container" style={{ textAlign: 'center' }}>
