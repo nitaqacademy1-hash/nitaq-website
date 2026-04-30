@@ -3880,9 +3880,56 @@ textarea:focus {
 .badge { display: inline-block; background: rgba(255,255,255,0.1); color: #fff; padding: 6px 16px; border-radius: 50px; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; margin-bottom: 20px; letter-spacing: 1px; }
 
 .articles-grid-section { padding: 80px 0; }
+.outcomes-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; margin-bottom: 40px; }
+
+/* FAQ Accordion */
+details.faq-accordion {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+details.faq-accordion[open] {
+    border-color: var(--primary-color);
+    box-shadow: 0 10px 25px -5px rgba(46, 125, 50, 0.08);
+}
+details.faq-accordion summary {
+    padding: 20px 25px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #1e293b;
+    cursor: pointer;
+    position: relative;
+    list-style: none; /* Hide default triangle */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+details.faq-accordion summary::-webkit-details-marker {
+    display: none;
+}
+details.faq-accordion summary::after {
+    content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%232E7D32" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>');
+    display: block;
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+details.faq-accordion[open] summary::after {
+    transform: rotate(180deg);
+}
+.faq-accordion-content {
+    padding: 0 25px 20px;
+    color: #475569;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
 .articles-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 40px; }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
     .articles-grid { grid-template-columns: 1fr; }
     .articles-hero { padding: 100px 20px 60px; }
 }

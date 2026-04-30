@@ -113,35 +113,49 @@ const ACCACourse = () => {
             {/* FAQ Section */}
             <div className="content-card">
                 <h2>ACCA - Association of Chartered Certified Accountants <span className="text-gradient">FAQs</span></h2>
-                <div className="faq-grid" style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
-                    <div className="faq-item" style={{ background: '#f8fafc', padding: '15px 20px', borderRadius: '10px', borderLeft: '4px solid var(--primary-color)' }}>
-                        <h4 style={{ color: 'var(--primary-color)', marginBottom: '5px', fontSize: '1.1rem' }}>What is ACCA - Association of Chartered Certified Accountants exam?</h4>
-                        <p style={{ margin: 0, fontSize: '0.95rem', color: '#475569' }}>Please contact our counselors for detailed information regarding the ACCA - Association of Chartered Certified Accountants structure and requirements.</p>
-                    </div>
-                    <div className="faq-item" style={{ background: '#f8fafc', padding: '15px 20px', borderRadius: '10px', borderLeft: '4px solid var(--accent-color)' }}>
-                        <h4 style={{ color: 'var(--accent-color)', marginBottom: '5px', fontSize: '1.1rem' }}>How long is the course?</h4>
-                        <p style={{ margin: 0, fontSize: '0.95rem', color: '#475569' }}>The duration varies based on the proficiency level and chosen track. Most programs range from 20 to 50 hours.</p>
-                    </div>
-                    <div className="faq-item" style={{ background: '#f8fafc', padding: '15px 20px', borderRadius: '10px', borderLeft: '4px solid var(--primary-color)' }}>
-                        <h4 style={{ color: 'var(--primary-color)', marginBottom: '5px', fontSize: '1.1rem' }}>What score is required?</h4>
-                        <p style={{ margin: 0, fontSize: '0.95rem', color: '#475569' }}>Target scores depend on your specific university or professional goals. We provide customized plans to help you reach your required score.</p>
-                    </div>
-                    <div className="faq-item" style={{ background: '#f8fafc', padding: '15px 20px', borderRadius: '10px', borderLeft: '4px solid var(--accent-color)' }}>
-                        <h4 style={{ color: 'var(--accent-color)', marginBottom: '5px', fontSize: '1.1rem' }}>Do you provide mock tests?</h4>
-                        <p style={{ margin: 0, fontSize: '0.95rem', color: '#475569' }}>Yes, comprehensive mock tests and practice materials are an integral part of all our training programs.</p>
-                    </div>
-                    <div className="faq-item" style={{ background: '#f8fafc', padding: '15px 20px', borderRadius: '10px', borderLeft: '4px solid var(--primary-color)' }}>
-                        <h4 style={{ color: 'var(--primary-color)', marginBottom: '5px', fontSize: '1.1rem' }}>Is online available?</h4>
-                        <p style={{ margin: 0, fontSize: '0.95rem', color: '#475569' }}>Yes, we offer both interactive online classes and traditional offline in-person training formats.</p>
-                    </div>
-                    <div className="faq-item" style={{ background: '#f8fafc', padding: '15px 20px', borderRadius: '10px', borderLeft: '4px solid var(--accent-color)' }}>
-                        <h4 style={{ color: 'var(--accent-color)', marginBottom: '5px', fontSize: '1.1rem' }}>What is the fee?</h4>
-                        <p style={{ margin: 0, fontSize: '0.95rem', color: '#475569' }}>Our fees are highly competitive. Please reach out to our admission team for the latest pricing and ongoing offers.</p>
-                    </div>
-                    <div className="faq-item" style={{ background: '#f8fafc', padding: '15px 20px', borderRadius: '10px', borderLeft: '4px solid var(--primary-color)' }}>
-                        <h4 style={{ color: 'var(--primary-color)', marginBottom: '5px', fontSize: '1.1rem' }}>When can I start?</h4>
-                        <p style={{ margin: 0, fontSize: '0.95rem', color: '#475569' }}>We have flexible intake dates with new batches starting frequently. Contact us to find the next available schedule.</p>
-                    </div>
+                <div className="faq-accordion-group" style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+                    <details className="faq-accordion">
+                        <summary>What is the ACCA - Association of Chartered Certified Accountants exam?</summary>
+                        <div className="faq-accordion-content">
+                            <p>Please contact our counselors for detailed information regarding the ACCA - Association of Chartered Certified Accountants structure and requirements.</p>
+                        </div>
+                    </details>
+                    <details className="faq-accordion">
+                        <summary>How long is the course?</summary>
+                        <div className="faq-accordion-content">
+                            <p>The duration varies based on the proficiency level and chosen track. Most programs range from 20 to 50 hours.</p>
+                        </div>
+                    </details>
+                    <details className="faq-accordion">
+                        <summary>What score is required?</summary>
+                        <div className="faq-accordion-content">
+                            <p>Target scores depend on your specific university or professional goals. We provide customized plans to help you reach your required score.</p>
+                        </div>
+                    </details>
+                    <details className="faq-accordion">
+                        <summary>Do you provide mock tests?</summary>
+                        <div className="faq-accordion-content">
+                            <p>Yes, comprehensive mock tests and practice materials are an integral part of all our training programs.</p>
+                        </div>
+                    </details>
+                    <details className="faq-accordion">
+                        <summary>Is online available?</summary>
+                        <div className="faq-accordion-content">
+                            <p>Yes, we offer both interactive online classes and traditional offline in-person training formats.</p>
+                        </div>
+                    </details>
+                    <details className="faq-accordion">
+                        <summary>What is the fee?</summary>
+                        <div className="faq-accordion-content">
+                            <p>Our fees are highly competitive. Please reach out to our admission team for the latest pricing and ongoing offers.</p>
+                        </div>
+                    </details>
+                    <details className="faq-accordion">
+                        <summary>When can I start?</summary>
+                        <div className="faq-accordion-content">
+                            <p>We have flexible intake dates with new batches starting frequently. Contact us to find the next available schedule.</p>
+                        </div>
+                    </details>
                 </div>
             </div>
 
