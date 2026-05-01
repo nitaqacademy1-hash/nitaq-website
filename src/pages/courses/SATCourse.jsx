@@ -64,6 +64,7 @@ const SATCourse = () => {
                 path="/sat-preparation-sharjah"
                 courseSchema={courseSchema}
                 faqSchema={faqSchema}
+                ogImage="/images/og-sat.png"
             />
         <CourseLayout
             title="SAT Preparation in Sharjah — Digital SAT Coaching at Nitaq Academy"

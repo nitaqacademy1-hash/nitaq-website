@@ -9,9 +9,10 @@ import { Helmet } from 'react-helmet-async';
  *  - courseSchema: object  — Schema.org Course data (optional)
  *  - faqSchema: array      — Array of { question, answer } pairs (optional)
  */
-const SEO = ({ title, description, path = '', courseSchema = null, faqSchema = null }) => {
+const SEO = ({ title, description, path = '', courseSchema = null, faqSchema = null, ogImage = null }) => {
   const siteUrl = 'https://www.nitaqacademy.com';
   const fullUrl = `${siteUrl}${path}`;
+  const ogImageUrl = ogImage ? `${siteUrl}${ogImage}` : `${siteUrl}/images/logo1.webp`;
 
   const buildCourseJsonLd = (cs) => ({
     '@context': 'https://schema.org',
@@ -70,12 +71,13 @@ const SEO = ({ title, description, path = '', courseSchema = null, faqSchema = n
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:type" content="website" />
-      <meta property="og:image" content={`${siteUrl}/images/logo1.webp`} />
+      <meta property="og:image" content={ogImageUrl} />
 
       {/* Twitter Card */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={ogImageUrl} />
 
       {/* Course JSON-LD */}
       {courseSchema && (
