@@ -18,7 +18,7 @@ const Footer = () => {
                             <h4>Test Preparations</h4>
                             <Link to="/academic-excellence">Academic Excellence</Link>
                             <Link to="/foundation-jee-neet">Foundation JEE/NEET</Link>
-                            <Link to="/sat-preparation">SAT Prep</Link>
+                            <Link to="/sat-preparation-sharjah">SAT Prep</Link>
                             <Link to="/gmat-preparation">GMAT Prep</Link>
                             <Link to="/gre-preparation">GRE Prep</Link>
                             <Link to="/ai-robotics-kids">AI & Robotics for Kids</Link>

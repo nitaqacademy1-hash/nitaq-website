@@ -111,7 +111,7 @@ const SatScore1300Guide = () => {
                             </ul>
 
                             <div className="article-inline-cta">
-                                <p>👉 <strong>Get your target score:</strong> <Link to="/sat-preparation">Join SAT Preparation in Sharjah</Link> and master the techniques top students use.</p>
+                                <p>👉 <strong>Get your target score:</strong> <Link to="/sat-preparation-sharjah">Join SAT Preparation in Sharjah</Link> and master the techniques top students use.</p>
                             </div>
 
                             <h2>Final Thoughts</h2>
@@ -124,7 +124,7 @@ const SatScore1300Guide = () => {
                             <div className="enroll-sidebar-card">
                                 <h3>Achieve Your Target Score</h3>
                                 <p>Join our specialized SAT 1300+ training program and excel in your exams.</p>
-                                <Link to="/sat-preparation" className="btn btn-primary w-100 mb-15">Enroll Today</Link>
+                                <Link to="/sat-preparation-sharjah" className="btn btn-primary w-100 mb-15">Enroll Today</Link>
                                 <a href="tel:+97165798313" className="btn btn-outline w-100">Call Now</a>
                             </div>
                         </aside>

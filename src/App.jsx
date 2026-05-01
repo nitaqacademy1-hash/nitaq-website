@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './pages/Home';
 import Footer from './components/Footer';
@@ -108,7 +108,8 @@ function App() {
         <Route path="/spanish" element={<SpanishCourse />} />
         <Route path="/pte-course" element={<PTECourse />} />
         <Route path="/toefl-course" element={<TOEFLCourse />} />
-        <Route path="/sat-preparation" element={<SATCourse />} />
+        <Route path="/sat-preparation-sharjah" element={<SATCourse />} />
+        <Route path="/sat-preparation" element={<Navigate to="/sat-preparation-sharjah" replace />} />
         <Route path="/gmat-preparation" element={<GMATCourse />} />
         <Route path="/gre-preparation" element={<GRECourse />} />
         <Route path="/academic-excellence" element={<AcademicExcellenceCourse />} />

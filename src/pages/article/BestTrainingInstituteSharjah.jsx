@@ -74,7 +74,7 @@ const BestTrainingInstituteSharjah = () => {
 
                             <h2>Standardizing Excellence in Sharjah</h2>
                             <p>
-                                At Nitaq Academy, we have set a new benchmark for what a training institute should offer. Located in the prestigious Abu Khamseen Tower, we have built our reputation on a commitment to personalized learning. We understand that a student preparing for <Link to="/sat-preparation">SAT coaching in Sharjah</Link> has different needs than a professional seeking <Link to="/acca-course">ACCA certification</Link>.
+                                At Nitaq Academy, we have set a new benchmark for what a training institute should offer. Located in the prestigious Abu Khamseen Tower, we have built our reputation on a commitment to personalized learning. We understand that a student preparing for <Link to="/sat-preparation-sharjah">SAT coaching in Sharjah</Link> has different needs than a professional seeking <Link to="/acca-course">ACCA certification</Link>.
                             </p>
                             <p>Our approach is centered on "Student Outcomes." We don't just complete a syllabus; we ensure that every learner reaches their specific target, whether it's a university band score or a professional promotion.</p>
 

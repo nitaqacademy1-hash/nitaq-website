@@ -23,7 +23,7 @@ const Courses = () => {
             title: "Test Preparations",
             subtitle: "Expert coaching for global entrance exams.",
             courses: [
-                { title: "SAT Prep", image: "/images/sat_v2.webp", link: "/sat-preparation" },
+                { title: "SAT Prep", image: "/images/sat_v2.webp", link: "/sat-preparation-sharjah" },
                 { title: "IELTS Coaching", image: "/images/ielts_v2.webp", link: "/ielts-course" },
                 { title: "TOEFL Prep", image: "/images/toefl_v2.webp", link: "/toefl-course" },
                 { title: "PTE Academic", image: "/images/pte_v2.webp", link: "/pte-course" },

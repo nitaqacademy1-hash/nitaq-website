@@ -76,7 +76,7 @@ const Header = () => {
                                         <Link to="/ielts-course" onClick={closeMenu}>IELTS Preparation</Link>
                                         <Link to="/toefl-course" onClick={closeMenu}>TOEFL Preparation</Link>
                                         <Link to="/pte-course" onClick={closeMenu}>PTE Academic</Link>
-                                        <Link to="/sat-preparation" onClick={closeMenu}>SAT Preparation</Link>
+                                        <Link to="/sat-preparation-sharjah" onClick={closeMenu}>SAT Preparation</Link>
                                         <Link to="/gmat-preparation" onClick={closeMenu}>GMAT Coaching</Link>
                                         <Link to="/gre-preparation" onClick={closeMenu}>GRE Preparation</Link>
                                         <Link to="/foundation-jee-neet" onClick={closeMenu}>Foundation JEE/NEET</Link>

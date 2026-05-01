@@ -66,7 +66,7 @@ const TestPreparations = () => {
                                 <p>Master the Digital SAT with expert guidance, practice tests, and proven score-improvement strategies.</p>
                             </div>
                             <div className="listing-card-footer">
-                                <Link to="/sat-preparation" className="btn-read-more">Learn More →</Link>
+                                <Link to="/sat-preparation-sharjah" className="btn-read-more">Learn More →</Link>
                             </div>
                         </div>
 

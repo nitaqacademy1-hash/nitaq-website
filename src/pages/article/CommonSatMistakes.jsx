@@ -84,7 +84,7 @@ const CommonSatMistakes = () => {
                                 The built-in Desmos calculator is a powerful tool available for the entire Math section. Many students in Sharjah either don't use it enough or don't know how to use its graphing features to quickly solve systems of equations.
                             </p>
                             <p><strong>The Fix:</strong> Practice specifically with the Desmos interface. It can save you significant time on complex functions and coordinate geometry.</p>
-                            <p>Learn more about our <Link to="/sat-preparation">SAT coaching in Sharjah</Link> where we master these tools.</p>
+                            <p>Learn more about our <Link to="/sat-preparation-sharjah">SAT coaching in Sharjah</Link> where we master these tools.</p>
 
                             <h2>Mistake 5: Cramming at the Last Minute</h2>
                             <p>
@@ -98,7 +98,7 @@ const CommonSatMistakes = () => {
                             </p>
 
                             <div className="article-inline-cta">
-                                <p>👉 <strong>Avoid the traps:</strong> <Link to="/sat-preparation">Join SAT Coaching in Sharjah</Link> and learn how to navigate the exam with expert strategies.</p>
+                                <p>👉 <strong>Avoid the traps:</strong> <Link to="/sat-preparation-sharjah">Join SAT Coaching in Sharjah</Link> and learn how to navigate the exam with expert strategies.</p>
                             </div>
 
                             <h2>Conclusion</h2>
@@ -111,7 +111,7 @@ const CommonSatMistakes = () => {
                             <div className="enroll-sidebar-card">
                                 <h3>Don't Make These Mistakes</h3>
                                 <p>Get personalized coaching to ensure you stay on track for a high SAT score.</p>
-                                <Link to="/sat-preparation" className="btn btn-primary w-100 mb-15">View SAT Course</Link>
+                                <Link to="/sat-preparation-sharjah" className="btn btn-primary w-100 mb-15">View SAT Course</Link>
                                 <a href="tel:+97165798313" className="btn btn-outline w-100">Call Now</a>
                             </div>
                         </aside>

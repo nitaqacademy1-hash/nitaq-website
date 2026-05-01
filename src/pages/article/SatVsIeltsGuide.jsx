@@ -76,7 +76,7 @@ const SatVsIeltsGuide = () => {
                             <p>
                                 even in countries like Canada, the UK, or Singapore, a strong SAT score can sometimes substitute for other entrance exams or bolster your application for competitive courses. In Sharjah, many international schools integrate SAT preparation into their curriculum for this reason.
                             </p>
-                            <p>Explore our <Link to="/sat-preparation">SAT Coaching in Sharjah</Link> for more details.</p>
+                            <p>Explore our <Link to="/sat-preparation-sharjah">SAT Coaching in Sharjah</Link> for more details.</p>
 
                             <h2>When Do You Need the IELTS?</h2>
                             <p>

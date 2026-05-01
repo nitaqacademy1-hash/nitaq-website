@@ -13,7 +13,7 @@ const homeArticles = [
         excerpt: "Discover proven SAT coaching strategies in Sharjah and learn how structured preparation can help you achieve higher scores and secure admission to top universities.",
         category: "Test Prep",
         path: "/article/sat-coaching-sharjah",
-        coursePath: "/sat-preparation",
+        coursePath: "/sat-preparation-sharjah",
         courseLabel: "SAT Course",
         date: "Apr 26, 2026",
         image: "/images/h1.webp"
@@ -24,7 +24,7 @@ const homeArticles = [
         excerpt: "Unlock your academic potential with advanced SAT preparation in Sharjah. This guide breakdown the roadmap top achievers use to secure scores of 1300 and beyond.",
         category: "Test Prep",
         path: "/article/sat-score-1300-guide",
-        coursePath: "/sat-preparation",
+        coursePath: "/sat-preparation-sharjah",
         courseLabel: "SAT Course",
         date: "Apr 25, 2026",
         image: "/images/h2.webp"
@@ -142,7 +142,7 @@ const Home = () => {
             title: "SAT Preparation Course",
             desc: "Achieve higher SAT scores with structured coaching, expert guidance, and regular mock tests. Designed for students aiming to study abroad.",
             image: "/images/sat_v2.webp",
-            link: "/sat-preparation",
+            link: "/sat-preparation-sharjah",
             alt: "SAT Coaching in Sharjah"
         },
         {

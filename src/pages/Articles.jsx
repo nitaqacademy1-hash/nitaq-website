@@ -10,7 +10,7 @@ const articles = [
         excerpt: "Discover proven SAT coaching strategies in Sharjah and learn how structured preparation can help you achieve higher scores and secure admission to top universities.",
         category: "SAT Preparation",
         path: "/article/sat-coaching-sharjah",
-        coursePath: "/sat-preparation",
+        coursePath: "/sat-preparation-sharjah",
         courseLabel: "SAT Course",
         date: "Apr 26, 2026",
         image: "/images/h1.webp"
@@ -21,7 +21,7 @@ const articles = [
         excerpt: "Unlock your academic potential with advanced SAT preparation in Sharjah. This guide breakdown the roadmap top achievers use to secure scores of 1300 and beyond.",
         category: "SAT Preparation",
         path: "/article/sat-score-1300-guide",
-        coursePath: "/sat-preparation",
+        coursePath: "/sat-preparation-sharjah",
         courseLabel: "SAT Course",
         date: "Apr 25, 2026",
         image: "/images/h2.webp"
@@ -76,7 +76,7 @@ const articles = [
         excerpt: "Small errors can cost big points on your exam. Identify the most frequent pitfalls students face in the UAE and how our expert SAT coaching helps you navigate them.",
         category: "SAT Preparation",
         path: "/article/common-sat-mistakes",
-        coursePath: "/sat-preparation",
+        coursePath: "/sat-preparation-sharjah",
         courseLabel: "SAT Course",
         date: "Apr 20, 2026",
         image: "/images/h1.webp"
@@ -165,7 +165,7 @@ const Articles = () => {
                             Whether you are looking for high-impact <strong>SAT coaching in Sharjah</strong> to secure admission to top global universities, or specialized <strong>IELTS training in UAE</strong> to achieve your target band scores for migration and study, our guides provide actionable strategies and proven techniques. We also explore the latest trends in professional certifications, including AI, ACCA, and corporate training, ensuring you stay competitive in the 2026 job market.
                         </p>
                         <div className="quick-links-row">
-                            <Link to="/sat-preparation" className="quick-link-item">👉 Explore SAT Coaching in Sharjah</Link>
+                            <Link to="/sat-preparation-sharjah" className="quick-link-item">👉 Explore SAT Coaching in Sharjah</Link>
                             <Link to="/ielts-course" className="quick-link-item">👉 Join IELTS Training in Dubai</Link>
                             <Link to="/course" className="quick-link-item">👉 Browse All Courses in UAE</Link>
                         </div>

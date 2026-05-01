@@ -151,7 +151,7 @@ const SatCoachingSharjah = () => {
                             <p>The objective is to ensure that students are well-prepared to achieve their target scores.</p>
 
                             <div className="article-inline-cta">
-                                <p>👉 <strong>Ready to excel?</strong> <Link to="/sat-preparation">Explore SAT Coaching in Sharjah</Link> and secure your academic future today.</p>
+                                <p>👉 <strong>Ready to excel?</strong> <Link to="/sat-preparation-sharjah">Explore SAT Coaching in Sharjah</Link> and secure your academic future today.</p>
                             </div>
 
                             <h2>Final Thoughts</h2>
@@ -167,7 +167,7 @@ const SatCoachingSharjah = () => {
                             <div className="enroll-sidebar-card">
                                 <h3>Ready to Start?</h3>
                                 <p>Join Sharjah's top-rated SAT coaching program and secure your global future.</p>
-                                <Link to="/sat-preparation" className="btn btn-primary w-100 mb-15">View Course</Link>
+                                <Link to="/sat-preparation-sharjah" className="btn btn-primary w-100 mb-15">View Course</Link>
                                 <a href="tel:+97165798313" className="btn btn-outline w-100">Speak to Expert</a>
                             </div>
                         </aside>
