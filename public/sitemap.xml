@@ -7,97 +7,114 @@
     <!-- Homepage -->
     <url>
         <loc>https://www.nitaqacademy.com/</loc>
-        <lastmod>2026-01-06</lastmod>
+        <lastmod>2026-05-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
 
-    <!-- Main Pages -->
+    <!-- Main Category Pages -->
     <url>
         <loc>https://www.nitaqacademy.com/about</loc>
-        <lastmod>2026-01-06</lastmod>
+        <lastmod>2026-05-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://www.nitaqacademy.com/enquiry</loc>
-        <lastmod>2026-01-06</lastmod>
+        <lastmod>2026-05-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
+        <loc>https://www.nitaqacademy.com/contact</loc>
+        <lastmod>2026-05-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.nitaqacademy.com/course</loc>
+        <lastmod>2026-05-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
         <loc>https://www.nitaqacademy.com/test-preparations</loc>
-        <lastmod>2026-01-06</lastmod>
+        <lastmod>2026-05-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://www.nitaqacademy.com/professional-certifications</loc>
-        <lastmod>2026-01-06</lastmod>
+        <lastmod>2026-05-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://www.nitaqacademy.com/language-trainings</loc>
-        <lastmod>2026-01-06</lastmod>
+        <lastmod>2026-05-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://www.nitaqacademy.com/corporate-trainings</loc>
-        <lastmod>2026-01-06</lastmod>
+        <lastmod>2026-05-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
 
-    <!-- Test Preparation Courses -->
-    <url><loc>https://www.nitaqacademy.com/academic-excellence</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://www.nitaqacademy.com/foundation-jee-neet</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://www.nitaqacademy.com/sat-preparation</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://www.nitaqacademy.com/gmat-preparation</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://www.nitaqacademy.com/gre-preparation</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://www.nitaqacademy.com/ielts-course</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://www.nitaqacademy.com/pte-course</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://www.nitaqacademy.com/toefl-course</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://www.nitaqacademy.com/ai-robotics-kids</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <!-- Test Preparation Course Pages -->
+    <url><loc>https://www.nitaqacademy.com/ielts-course</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.95</priority></url>
+    <url><loc>https://www.nitaqacademy.com/sat-preparation</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.95</priority></url>
+    <url><loc>https://www.nitaqacademy.com/gre-preparation</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://www.nitaqacademy.com/gmat-preparation</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://www.nitaqacademy.com/pte-course</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+    <url><loc>https://www.nitaqacademy.com/toefl-course</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+    <url><loc>https://www.nitaqacademy.com/academic-excellence</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://www.nitaqacademy.com/foundation-jee-neet</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://www.nitaqacademy.com/ai-robotics-kids</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
 
-    <!-- Professional Certifications -->
-    <url><loc>https://www.nitaqacademy.com/acca-course</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://www.nitaqacademy.com/cma-course</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://www.nitaqacademy.com/cpa-course</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://www.nitaqacademy.com/uae-vat</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://www.nitaqacademy.com/uae-corporate-tax</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://www.nitaqacademy.com/ai-course</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://www.nitaqacademy.com/power-bi-excel</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://www.nitaqacademy.com/chrm</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://www.nitaqacademy.com/hrm-courses</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://www.nitaqacademy.com/sales-negotiations</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://www.nitaqacademy.com/marketing-training</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://www.nitaqacademy.com/data-management</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://www.nitaqacademy.com/soft-skills</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://www.nitaqacademy.com/finance-courses</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://www.nitaqacademy.com/cpcd-courses</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <!-- Language Training Course Pages -->
+    <url><loc>https://www.nitaqacademy.com/french</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://www.nitaqacademy.com/german</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://www.nitaqacademy.com/spanish</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://www.nitaqacademy.com/spoken-arabic</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+    <url><loc>https://www.nitaqacademy.com/spoken-english</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
 
-    <!-- Language Training Courses -->
-    <url><loc>https://www.nitaqacademy.com/spoken-arabic</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://www.nitaqacademy.com/spoken-english</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://www.nitaqacademy.com/french</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://www.nitaqacademy.com/german</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://www.nitaqacademy.com/spanish</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://www.nitaqacademy.com/course</loc><lastmod>2026-04-26</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+    <!-- Professional Certification Course Pages -->
+    <url><loc>https://www.nitaqacademy.com/acca-course</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://www.nitaqacademy.com/cma-course</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://www.nitaqacademy.com/cpa-course</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+    <url><loc>https://www.nitaqacademy.com/uae-vat</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+    <url><loc>https://www.nitaqacademy.com/uae-corporate-tax</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+    <url><loc>https://www.nitaqacademy.com/ai-course</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+    <url><loc>https://www.nitaqacademy.com/power-bi-excel</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://www.nitaqacademy.com/hrm-courses</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://www.nitaqacademy.com/chrm</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+    <url><loc>https://www.nitaqacademy.com/finance-courses</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+    <url><loc>https://www.nitaqacademy.com/cpcd-courses</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+
+    <!-- Corporate Training Course Pages -->
+    <url><loc>https://www.nitaqacademy.com/soft-skills-training</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://www.nitaqacademy.com/sales-negotiations</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://www.nitaqacademy.com/marketing-training</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+    <url><loc>https://www.nitaqacademy.com/data-management</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
 
     <!-- Blog Articles & Guides -->
-    <url><loc>https://www.nitaqacademy.com/articles</loc><lastmod>2026-04-26</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://www.nitaqacademy.com/article/sat-coaching-sharjah</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://www.nitaqacademy.com/article/sat-score-1300-guide</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://www.nitaqacademy.com/article/sat-vs-ielts-guide</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://www.nitaqacademy.com/article/common-sat-mistakes</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://www.nitaqacademy.com/article/ielts-dubai-guide</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://www.nitaqacademy.com/article/improve-ielts-band-score</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://www.nitaqacademy.com/article/professional-courses-sharjah-growth</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://www.nitaqacademy.com/article/acca-coaching-uae-benefits</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://www.nitaqacademy.com/article/ai-courses-sharjah-essential</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://www.nitaqacademy.com/article/best-training-institute-sharjah</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://www.nitaqacademy.com/article/choose-right-course-uae</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://www.nitaqacademy.com/articles</loc><lastmod>2026-05-01</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://www.nitaqacademy.com/article/sat-coaching-sharjah</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://www.nitaqacademy.com/article/sat-score-1300-guide</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://www.nitaqacademy.com/article/sat-vs-ielts-guide</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://www.nitaqacademy.com/article/common-sat-mistakes</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://www.nitaqacademy.com/article/ielts-dubai-guide</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://www.nitaqacademy.com/article/improve-ielts-band-score</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://www.nitaqacademy.com/article/professional-courses-sharjah-growth</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://www.nitaqacademy.com/article/acca-coaching-uae-benefits</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://www.nitaqacademy.com/article/ai-courses-sharjah-essential</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://www.nitaqacademy.com/article/best-training-institute-sharjah</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://www.nitaqacademy.com/article/choose-right-course-uae</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+    <!-- Legal Pages -->
+    <url><loc>https://www.nitaqacademy.com/terms-and-conditions</loc><lastmod>2026-05-01</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+    <url><loc>https://www.nitaqacademy.com/privacy-policy</loc><lastmod>2026-05-01</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
 
 </urlset>

@@ -1,8 +1,14 @@
 import { Link } from 'react-router-dom';
+import SEO from '../../components/SEO';
 
 const FinanceCourses = () => {
     return (
         <main>
+            <SEO
+                title="Finance Courses Sharjah | ACCA, CMA, CPA | Nitaq Academy"
+                description="Explore top professional finance certifications at Nitaq Academy Sharjah. We offer expert coaching for ACCA, CMA, and CPA passing guarantee."
+                path="/finance-courses"
+            />
             {/* Premium Light Page Hero */}
             <section className="listing-hero">
                 <div className="container">

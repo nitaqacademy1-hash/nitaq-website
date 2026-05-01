@@ -1,4 +1,5 @@
 import CourseLayout from '../../components/CourseLayout';
+import SEO from '../../components/SEO';
 import WhyNitaq from '../../components/WhyNitaq';
 
 const PTECourse = () => {
@@ -11,7 +12,52 @@ const PTECourse = () => {
         "Authorization": "SPEA Authorized"
     };
 
+
+    const courseSchema = {
+        name: 'PTE Academic Preparation Course Sharjah',
+        description: 'Expert PTE Academic preparation in Sharjah. Covers all 4 sections: Speaking, Writing, Reading, and Listening. Mock tests and AI-scored practice included. SPEA Authorized.',
+        mode: ['onsite', 'online'],
+        educationalLevel: 'Beginner to Advanced',
+        teaches: 'PTE Academic: Speaking, Writing, Reading, Listening, Test-Taking Strategies',
+        inLanguage: 'en',
+    };
+
+    const faqSchema = [
+        {
+            question: 'What is PTE Academic and who needs it?',
+            answer: 'PTE Academic (Pearson Test of English) is a globally recognized English proficiency test accepted by universities and governments in Australia, New Zealand, UK, Canada, and more.',
+        },
+        {
+            question: 'How long is the PTE preparation course at Nitaq?',
+            answer: 'PTE preparation typically takes 4–8 weeks depending on your current English level and target score, with flexible morning, evening, and weekend batches.',
+        },
+        {
+            question: 'What PTE score can I achieve with Nitaq coaching?',
+            answer: 'With consistent practice and expert guidance, most students achieve their target PTE score. Our coaching is designed to help students reach 65+ overall for visa and admission requirements.',
+        },
+        {
+            question: 'Are PTE mock tests included in the Nitaq course?',
+            answer: 'Yes, AI-scored PTE mock tests are included to help you practice the actual computer-delivered exam format.',
+        },
+        {
+            question: 'Is PTE preparation available online in UAE?',
+            answer: 'Yes, online and offline PTE preparation classes are both available at Nitaq Academy with flexible scheduling.',
+        },
+        {
+            question: 'What is the fee for PTE preparation at Nitaq Academy Sharjah?',
+            answer: 'Our PTE course fees are competitive. Call +971 54 572 3181 for the latest PTE course pricing and available batches.',
+        },
+    ];
+
     return (
+        <>
+            <SEO
+                title="PTE Academic Preparation Course Sharjah | PTE Coaching UAE | Nitaq Academy"
+                description="Score high on PTE Academic with Nitaq Academy coaching in Sharjah. Comprehensive Speaking, Writing, Reading & Listening preparation. Online & offline batches. SPEA Authorized."
+                path="/pte-course"
+                courseSchema={courseSchema}
+                faqSchema={faqSchema}
+            />
         <CourseLayout
             title="PTE - Pearson Test of English"
             subtitle="Master the Pearson Test of English with expert-led coaching. Fast results, objective scoring, and proven success strategies."
@@ -161,6 +207,7 @@ const PTECourse = () => {
 
             <WhyNitaq />
         </CourseLayout>
+        </>
     );
 };
 

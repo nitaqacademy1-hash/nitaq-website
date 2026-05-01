@@ -1,4 +1,5 @@
 import CourseLayout from '../../components/CourseLayout';
+import SEO from '../../components/SEO';
 import WhyNitaq from '../../components/WhyNitaq';
 const TOEFLCourse = () => {
     const infoData = {
@@ -9,7 +10,52 @@ const TOEFLCourse = () => {
         "Target": "University Aspirants",
         "Authorization": "SPEA Authorized"
     };
+
+    const courseSchema = {
+        name: 'TOEFL Preparation Course Sharjah',
+        description: 'Expert TOEFL iBT preparation in Sharjah covering all 4 sections: Reading, Listening, Speaking, and Writing. Full-length mock tests and strategic coaching included.',
+        mode: ['onsite', 'online'],
+        educationalLevel: 'Beginner to Advanced',
+        teaches: 'TOEFL iBT: Reading, Listening, Speaking, Writing, Academic Language Skills',
+        inLanguage: 'en',
+    };
+
+    const faqSchema = [
+        {
+            question: 'What is the TOEFL exam and who needs it?',
+            answer: 'TOEFL (Test of English as a Foreign Language) is accepted by 12,000+ universities across 160 countries. It is required for academic admission in the US, Canada, Australia, and Europe.',
+        },
+        {
+            question: 'How long is the TOEFL preparation course at Nitaq?',
+            answer: 'Our TOEFL preparation typically spans 4–8 weeks with flexible morning, evening, and weekend batches available in Sharjah.',
+        },
+        {
+            question: 'What TOEFL score do top universities require?',
+            answer: 'Most universities require a TOEFL score of 80–100+ iBT. Top institutions like Ivy League schools typically require 100–110. We help you target your specific required score.',
+        },
+        {
+            question: 'Are TOEFL mock tests included in Nitaq\'s course?',
+            answer: 'Yes, full-length TOEFL iBT mock tests are conducted regularly to simulate exam conditions and improve your actual performance.',
+        },
+        {
+            question: 'Is TOEFL preparation available online at Nitaq?',
+            answer: 'Yes, online and offline TOEFL preparation classes are both available with flexible scheduling across Sharjah and the UAE.',
+        },
+        {
+            question: 'What is the fee for TOEFL preparation at Nitaq Academy?',
+            answer: 'TOEFL course fees are competitive. Contact us at +971 54 572 3181 for the latest pricing and batch information.',
+        },
+    ];
+
     return (
+        <>
+            <SEO
+                title="TOEFL Preparation Course Sharjah | TOEFL iBT Coaching UAE | Nitaq Academy"
+                description="Ace the TOEFL iBT with Nitaq Academy expert coaching in Sharjah. Reading, Listening, Speaking & Writing preparation with mock tests. SPEA Authorized. Online & offline UAE."
+                path="/toefl-course"
+                courseSchema={courseSchema}
+                faqSchema={faqSchema}
+            />
         <CourseLayout
             title="TOEFL - Test of English as a Foreign Language"
             subtitle="Master the TOEFL iBT with strategic coaching. Unlock your path to North American and global universities."
@@ -131,6 +177,7 @@ const TOEFLCourse = () => {
 
             <WhyNitaq />
         </CourseLayout>
+        </>
     );
 };
 export default TOEFLCourse;

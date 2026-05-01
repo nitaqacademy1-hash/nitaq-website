@@ -1,4 +1,5 @@
 import CourseLayout from '../../components/CourseLayout';
+import SEO from '../../components/SEO';
 import WhyNitaq from '../../components/WhyNitaq';
 const CPCDCourse = () => {
     const infoData = {
@@ -9,7 +10,52 @@ const CPCDCourse = () => {
         "Target": "Professionals & Leaders",
         "Authorization": "SPEA Authorized"
     };
+
+    const courseSchema = {
+        name: 'CPCD Professional Course Sharjah',
+        description: 'Professional CPCD certification coaching in Sharjah. Expert-led preparation for CPCD exams with comprehensive materials, mock tests, and personalized guidance.',
+        mode: ['onsite', 'online'],
+        educationalLevel: 'Beginner to Advanced',
+        teaches: 'CPCD: Professional Development, Certification Preparation, Strategic Competencies',
+        inLanguage: 'en',
+    };
+
+    const faqSchema = [
+        {
+            question: 'What is the CPCD certification?',
+            answer: 'CPCD is a professional certification that validate professional competencies and development skills. Contact our counselors for detailed syllabus and eligibility information.',
+        },
+        {
+            question: 'Who should pursue the CPCD certification?',
+            answer: 'The CPCD is ideal for professionals looking to formalize their competency credentials and advance their careers in management and professional roles.',
+        },
+        {
+            question: 'How long is the CPCD preparation at Nitaq?',
+            answer: 'Duration varies based on your background and the specific CPCD track. Contact us for a customized preparation plan.',
+        },
+        {
+            question: 'Is CPCD training available online in UAE?',
+            answer: 'Yes, both online and offline CPCD preparation classes are available with flexible scheduling at Nitaq Academy Sharjah.',
+        },
+        {
+            question: 'Do you provide mock tests for CPCD?',
+            answer: 'Yes, mock exams and practice materials are included in our CPCD preparation program.',
+        },
+        {
+            question: 'What is the fee for CPCD training at Nitaq Academy?',
+            answer: 'Contact us at +971 54 572 3181 for the latest CPCD course pricing and available batch schedules.',
+        },
+    ];
+
     return (
+        <>
+            <SEO
+                title="CPCD Course Sharjah | Professional CP Training UAE | Nitaq Academy"
+                description="CPCD professional certification training at Nitaq Academy Sharjah. Expert coaching for CPCD exams. Online & offline batches available UAE. SPEA Authorized."
+                path="/cpcd-courses"
+                courseSchema={courseSchema}
+                faqSchema={faqSchema}
+            />
         <CourseLayout
             title="CPCD - Certified Professional in Career Development"
             subtitle="Master the strategies to guide others and yourself toward meaningful career growth."
@@ -128,6 +174,7 @@ const CPCDCourse = () => {
 
             <WhyNitaq />
         </CourseLayout>
+        </>
     );
 };
 export default CPCDCourse;

@@ -1,4 +1,5 @@
 import CourseLayout from '../../components/CourseLayout';
+import SEO from '../../components/SEO';
 import WhyNitaq from '../../components/WhyNitaq';
 
 const SpokenArabic = () => {
@@ -11,7 +12,52 @@ const SpokenArabic = () => {
         "Authorization": "SPEA Authorized & UAE Govt Attested"
     };
 
+
+    const courseSchema = {
+        name: 'Spoken Arabic Course Sharjah',
+        description: 'Conversational Arabic language training in Sharjah for UAE residents, professionals, and expatriates. Learn everyday and business Arabic with expert native-level instructors.',
+        mode: ['onsite', 'online'],
+        educationalLevel: 'Beginner to Advanced',
+        teaches: 'Spoken Arabic: Conversational Skills, UAE Dialect, Business Arabic, Listening Comprehension',
+        inLanguage: 'ar',
+    };
+
+    const faqSchema = [
+        {
+            question: 'Who should join the Spoken Arabic course at Nitaq?',
+            answer: 'Our Spoken Arabic course is ideal for UAE expatriates, professionals, students, and anyone wanting to communicate confidently in Arabic in daily life and business settings.',
+        },
+        {
+            question: 'Is the Arabic course available for complete beginners?',
+            answer: 'Yes, we welcome students with zero prior Arabic knowledge. Our beginner program builds foundational conversational skills step-by-step.',
+        },
+        {
+            question: 'Do you teach Modern Standard Arabic or UAE dialect?',
+            answer: 'We teach both Modern Standard Arabic and UAE/Gulf dialect, tailored to your goals — whether formal communication or everyday conversation.',
+        },
+        {
+            question: 'Is Spoken Arabic training available online in UAE?',
+            answer: 'Yes, online and offline Arabic courses are available with morning, evening, and weekend scheduling options.',
+        },
+        {
+            question: 'How long does it take to become conversational in Arabic?',
+            answer: 'Most beginners achieve basic conversational fluency within 3–6 months of our structured program with consistent practice.',
+        },
+        {
+            question: 'What is the fee for the Spoken Arabic course at Nitaq Academy?',
+            answer: 'Contact us at +971 54 572 3181 for the latest Arabic course fees and available batch schedules in Sharjah.',
+        },
+    ];
+
     return (
+        <>
+            <SEO
+                title="Spoken Arabic Course Sharjah | Arabic Language Training UAE | Nitaq Academy"
+                description="Learn Spoken Arabic at Nitaq Academy Sharjah. Conversational Arabic for UAE daily life, business & culture. Flexible online & offline batches. SPEA Authorized."
+                path="/spoken-arabic"
+                courseSchema={courseSchema}
+                faqSchema={faqSchema}
+            />
         <CourseLayout
             title="Spoken Arabic Course"
             subtitle="Connect with the local culture and community. Master practical Arabic for daily life and business in the UAE."
@@ -155,6 +201,7 @@ const SpokenArabic = () => {
 
             <WhyNitaq />
         </CourseLayout>
+        </>
     );
 };
 

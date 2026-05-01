@@ -1,16 +1,29 @@
-# Nitaq Training Center - Robots.txt
-# Allow all search engines to crawl the site
+# Nitaq Academy - Robots.txt
+# https://www.nitaqacademy.com
 
+# Allow all major search engine crawlers
 User-agent: *
 Allow: /
 
-# Disallow admin or private areas (if any)
+# Disallow private, system, and build paths
 Disallow: /admin/
 Disallow: /.git/
 Disallow: /node_modules/
+Disallow: /dist/
+Disallow: /src/
+Disallow: /*.json$
+Disallow: /404.html
+
+# Allow Googlebot to crawl everything
+User-agent: Googlebot
+Allow: /
+
+# Allow Bingbot
+User-agent: Bingbot
+Allow: /
 
 # Sitemap location
 Sitemap: https://www.nitaqacademy.com/sitemap.xml
 
-# Crawl-delay (optional, helps prevent server overload)
+# Crawl-delay for bots that respect it
 Crawl-delay: 1

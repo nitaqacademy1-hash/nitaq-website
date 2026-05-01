@@ -1,4 +1,5 @@
 import CourseLayout from '../../components/CourseLayout';
+import SEO from '../../components/SEO';
 import WhyNitaq from '../../components/WhyNitaq';
 
 const SpokenEnglish = () => {
@@ -11,7 +12,52 @@ const SpokenEnglish = () => {
         "Authorization": "SPEA Authorized & UAE Govt Attested"
     };
 
+
+    const courseSchema = {
+        name: 'Spoken English Course Sharjah',
+        description: 'Spoken English communication training in Sharjah for professionals, students, and individuals. Build fluency, grammar, pronunciation, and confidence for workplace and daily communication.',
+        mode: ['onsite', 'online'],
+        educationalLevel: 'Beginner to Advanced',
+        teaches: 'Spoken English: Conversational Fluency, Pronunciation, Business English, Presentation Skills',
+        inLanguage: 'en',
+    };
+
+    const faqSchema = [
+        {
+            question: 'Who should join the Spoken English course at Nitaq?',
+            answer: 'This course is ideal for professionals, graduates, housewives, and anyone wanting to improve their English speaking confidence for work, interviews, or daily communication.',
+        },
+        {
+            question: 'How long is the Spoken English course at Nitaq Academy?',
+            answer: 'Duration varies by level and goal. Most programs run 4–12 weeks with flexible morning, evening, and weekend batches.',
+        },
+        {
+            question: 'Do you offer Business English training at Nitaq?',
+            answer: 'Yes, we offer specialized Business English tracks covering workplace communication, presentations, email writing, and professional etiquette.',
+        },
+        {
+            question: 'Is online English speaking training available at Nitaq?',
+            answer: 'Yes, online and offline Spoken English classes are both available across Sharjah and the UAE.',
+        },
+        {
+            question: 'Will this course help with job interviews in UAE?',
+            answer: 'Absolutely. We focus on practical skills including interview preparation, group discussions, and professional presentations.',
+        },
+        {
+            question: 'What is the fee for the Spoken English course at Nitaq?',
+            answer: 'Fees are competitive and vary by batch type and duration. Contact us at +971 54 572 3181 for current pricing.',
+        },
+    ];
+
     return (
+        <>
+            <SEO
+                title="Spoken English Course Sharjah | English Communication Training UAE | Nitaq"
+                description="Improve your Spoken English at Nitaq Academy Sharjah. Build fluency, confidence & professional communication skills. Flexible online & offline English batches UAE."
+                path="/spoken-english"
+                courseSchema={courseSchema}
+                faqSchema={faqSchema}
+            />
         <CourseLayout
             title="Spoken English Course"
             subtitle="Unlock global opportunities. Improve your fluency, confidence, and professional communication skills."
@@ -155,6 +201,7 @@ const SpokenEnglish = () => {
 
             <WhyNitaq />
         </CourseLayout>
+        </>
     );
 };
 

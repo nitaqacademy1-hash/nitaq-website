@@ -1,4 +1,5 @@
 import CourseLayout from '../../components/CourseLayout';
+import SEO from '../../components/SEO';
 import WhyNitaq from '../../components/WhyNitaq';
 
 const AcademicExcellenceCourse = () => {
@@ -11,7 +12,52 @@ const AcademicExcellenceCourse = () => {
         "Authorization": "SPEA Authorized"
     };
 
+
+    const courseSchema = {
+        name: 'Academic Excellence Program Sharjah',
+        description: 'Expert academic tutoring in Sharjah for school students. Covers Mathematics, Science, English, and other core subjects to improve grades, build confidence, and achieve academic excellence.',
+        mode: ['onsite', 'online'],
+        educationalLevel: 'Beginner to Advanced',
+        teaches: 'Mathematics, Science, English, Academic Study Skills, Exam Preparation',
+        inLanguage: 'en',
+    };
+
+    const faqSchema = [
+        {
+            question: 'Who is the Academic Excellence program for?',
+            answer: 'This program is designed for school-age students from Grade 1 to Grade 12 who need subject-specific tutoring, exam preparation, or overall academic support.',
+        },
+        {
+            question: 'What subjects are covered in the Academic Excellence program?',
+            answer: 'We cover Mathematics, Science, English, Arabic, Social Studies, and other core subjects based on major curricula including CBSE, British, American, and IB.',
+        },
+        {
+            question: 'How does the Academic Excellence program help students?',
+            answer: 'The program provides personalized tutoring, targeted exam preparation, doubt-clearing sessions, study skill development, and consistent progress monitoring.',
+        },
+        {
+            question: 'Is Academic Excellence tutoring available online in UAE?',
+            answer: 'Yes, both online and in-person academic tutoring sessions are available with flexible scheduling to fit school timetables.',
+        },
+        {
+            question: 'Can you help with school curriculum-specific tutoring?',
+            answer: 'Yes, we offer tutoring aligned with CBSE, British Curriculum, American Curriculum, and IB programs followed by schools in Sharjah and across the UAE.',
+        },
+        {
+            question: 'What is the fee for Academic Excellence tutoring at Nitaq?',
+            answer: 'Fees vary by grade level and subjects required. Contact us at +971 54 572 3181 for a personalized study plan and pricing.',
+        },
+    ];
+
     return (
+        <>
+            <SEO
+                title="Academic Excellence Program Sharjah | School Tuition UAE | Nitaq Academy"
+                description="Academic Excellence coaching at Nitaq Academy Sharjah. Expert tutoring for school students in Math, Science, English & more. Boost grades & academic performance UAE."
+                path="/academic-excellence"
+                courseSchema={courseSchema}
+                faqSchema={faqSchema}
+            />
         <CourseLayout
             title="Academic Excellence"
             subtitle="Strategic academic support for international students to master their curriculum and excel in every assessment."
@@ -159,6 +205,7 @@ const AcademicExcellenceCourse = () => {
 
             <WhyNitaq />
         </CourseLayout>
+        </>
     );
 };
 

@@ -1,4 +1,5 @@
 import CourseLayout from '../../components/CourseLayout';
+import SEO from '../../components/SEO';
 import WhyNitaq from '../../components/WhyNitaq';
 
 const SpanishCourse = () => {
@@ -11,7 +12,52 @@ const SpanishCourse = () => {
         "Authorization": "SPEA Authorized & UAE Govt Attested"
     };
 
+
+    const courseSchema = {
+        name: 'Spanish Language Course Sharjah',
+        description: 'CEFR-aligned Spanish language courses in Sharjah for all levels (A1–C2). Includes DELE exam preparation. Expert trainers, flexible batches, online & offline.',
+        mode: ['onsite', 'online'],
+        educationalLevel: 'Beginner to Advanced',
+        teaches: 'Spanish Language: Speaking, Listening, Reading, Writing, DELE Exam Preparation',
+        inLanguage: 'es',
+    };
+
+    const faqSchema = [
+        {
+            question: 'What Spanish levels are covered at Nitaq Academy?',
+            answer: 'We cover all CEFR levels from A1 (Beginner) to C2 (Mastery). Classes are tailored to your current proficiency and target level.',
+        },
+        {
+            question: 'How long is the Spanish course in Sharjah?',
+            answer: 'Duration varies by level and track. Express programs run 4–6 weeks; full CEFR paths take several months with flexible batch options.',
+        },
+        {
+            question: 'Do you prepare students for DELE exams?',
+            answer: 'Yes, we offer specialized DELE (Diplomas de Espanol como Lengua Extranjera) exam preparation including mock tests and expert coaching.',
+        },
+        {
+            question: 'Is Spanish training available online in UAE?',
+            answer: 'Yes, online and offline Spanish classes are available with morning, evening, and weekend batch scheduling.',
+        },
+        {
+            question: 'Is the Spanish course suitable for absolute beginners?',
+            answer: 'Absolutely. Our A1 beginner program is designed for zero prior knowledge, taking you step-by-step to conversational fluency.',
+        },
+        {
+            question: 'What is the fee for the Spanish language course at Nitaq?',
+            answer: 'Fees vary by level and batch type. Contact us at +971 54 572 3181 for the latest pricing and ongoing offers.',
+        },
+    ];
+
     return (
+        <>
+            <SEO
+                title="Spanish Language Course Sharjah | DELE Preparation UAE | Nitaq Academy"
+                description="Learn Spanish (A1–C2) at Nitaq Academy Sharjah. DELE exam prep, immersive teaching, flexible online & offline batches. CEFR-aligned curriculum. SPEA Authorized."
+                path="/spanish"
+                courseSchema={courseSchema}
+                faqSchema={faqSchema}
+            />
         <CourseLayout
             title="Spanish Language Course"
             subtitle="Join over 500 million speakers worldwide. Learn Spanish for travel, business, or personal growth."
@@ -161,6 +207,7 @@ const SpanishCourse = () => {
 
             <WhyNitaq />
         </CourseLayout>
+        </>
     );
 };
 

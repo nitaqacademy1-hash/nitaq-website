@@ -1,4 +1,5 @@
 import CourseLayout from '../../components/CourseLayout';
+import SEO from '../../components/SEO';
 import WhyNitaq from '../../components/WhyNitaq';
 
 const ACCACourse = () => {
@@ -11,7 +12,52 @@ const ACCACourse = () => {
         "Authorization": "SPEA Authorized"
     };
 
+
+    const courseSchema = {
+        name: 'ACCA Preparation Course Sharjah',
+        description: 'Comprehensive ACCA coaching in Sharjah covering all levels — Applied Knowledge, Applied Skills, and Strategic Professional modules. Led by experienced ACCA members.',
+        mode: ['onsite', 'online'],
+        educationalLevel: 'Beginner to Advanced',
+        teaches: 'ACCA Qualification: Financial Accounting, Management Accounting, Audit, Strategic Business Reporting',
+        inLanguage: 'en',
+    };
+
+    const faqSchema = [
+        {
+            question: 'What is ACCA and who should take it?',
+            answer: 'ACCA (Association of Chartered Certified Accountants) is a globally recognized accounting qualification ideal for those pursuing finance and accounting careers at international organizations.',
+        },
+        {
+            question: 'How long does it take to complete ACCA?',
+            answer: 'It typically takes 2–3 years to complete all ACCA papers, depending on exemptions granted and your individual study pace.',
+        },
+        {
+            question: 'Do you provide coaching for all ACCA papers at Nitaq?',
+            answer: 'Yes, we provide complete coaching and guidance for all levels — Applied Knowledge, Applied Skills, and Strategic Professional modules.',
+        },
+        {
+            question: 'Is ACCA valuable in the UAE job market?',
+            answer: 'Yes, ACCA professionals are highly sought after in the UAE. Top banks, audit firms, and MNCs actively prefer ACCA-certified candidates.',
+        },
+        {
+            question: 'Do you provide ACCA exam preparation and mock tests?',
+            answer: 'Yes, mock exams, intensive revision sessions, and one-on-one guidance are all included in our ACCA preparation program.',
+        },
+        {
+            question: 'What career opportunities are available after ACCA?',
+            answer: 'ACCA opens doors to roles such as accountant, auditor, financial analyst, finance manager, and CFO in global organizations.',
+        },
+    ];
+
     return (
+        <>
+            <SEO
+                title="ACCA Course Sharjah | Chartered Accountant Coaching UAE | Nitaq Academy"
+                description="ACCA qualification coaching in Sharjah at Nitaq Academy. Expert tutors for all levels — Applied Knowledge, Skills & Strategic Professional. SPEA Authorized. Online & offline."
+                path="/acca-course"
+                courseSchema={courseSchema}
+                faqSchema={faqSchema}
+            />
         <CourseLayout
             title="ACCA - Association of Chartered Certified Accountants"
             subtitle="Become a globally recognized finance professional with our comprehensive ACCA preparation program."
@@ -155,6 +201,7 @@ const ACCACourse = () => {
 
             <WhyNitaq />
         </CourseLayout>
+        </>
     );
 };
 

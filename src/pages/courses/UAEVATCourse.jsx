@@ -1,4 +1,5 @@
 import CourseLayout from '../../components/CourseLayout';
+import SEO from '../../components/SEO';
 import WhyNitaq from '../../components/WhyNitaq';
 
 const UAEVATCourse = () => {
@@ -11,7 +12,52 @@ const UAEVATCourse = () => {
         "Authorization": "SPEA Authorized"
     };
 
+
+    const courseSchema = {
+        name: 'UAE VAT Training Course Sharjah',
+        description: 'Practical UAE VAT training in Sharjah covering VAT registration, filing, compliance, and accounting treatment. Designed for businesses and finance professionals in the UAE.',
+        mode: ['onsite', 'online'],
+        educationalLevel: 'Beginner to Advanced',
+        teaches: 'UAE VAT: Registration, Returns Filing, Compliance, Input Tax, Accounting Treatment',
+        inLanguage: 'en',
+    };
+
+    const faqSchema = [
+        {
+            question: 'Who needs UAE VAT training?',
+            answer: 'UAE VAT training is essential for business owners, accountants, finance managers, and anyone involved in VAT compliance, registration, and filing in the UAE.',
+        },
+        {
+            question: 'What does the UAE VAT course cover at Nitaq?',
+            answer: 'The course covers UAE VAT law, registration process, tax return filing, VAT accounting treatment, input tax recovery, and compliance obligations.',
+        },
+        {
+            question: 'Is Nitaq\'s VAT course suitable for beginners?',
+            answer: 'Yes. Our VAT course starts from basics and progressively covers all aspects of UAE VAT law, making it suitable for both beginners and experienced finance professionals.',
+        },
+        {
+            question: 'Is UAE VAT training available online?',
+            answer: 'Yes, both online and offline UAE VAT training classes are available with flexible scheduling to accommodate working professionals.',
+        },
+        {
+            question: 'Does the VAT course include practical exercises?',
+            answer: 'Yes, the course includes practical examples, case studies, and exercises based on real UAE business scenarios for hands-on understanding.',
+        },
+        {
+            question: 'What is the fee for the UAE VAT course at Nitaq?',
+            answer: 'Contact us at +971 54 572 3181 for the latest VAT course pricing and available batch schedules in Sharjah.',
+        },
+    ];
+
     return (
+        <>
+            <SEO
+                title="UAE VAT Course Sharjah | VAT Training & Certification UAE | Nitaq Academy"
+                description="UAE VAT training at Nitaq Academy Sharjah. Practical VAT compliance, registration, and filing training for businesses & professionals. Online & offline batches. SPEA Authorized."
+                path="/uae-vat"
+                courseSchema={courseSchema}
+                faqSchema={faqSchema}
+            />
         <CourseLayout
             title="UAE VAT Course"
             subtitle="Master UAE Value Added Tax (VAT) regulations, compliance, and practical implementation for your business."
@@ -146,6 +192,7 @@ const UAEVATCourse = () => {
 
             <WhyNitaq />
         </CourseLayout>
+        </>
     );
 };
 

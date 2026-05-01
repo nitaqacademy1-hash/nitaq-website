@@ -1,4 +1,5 @@
 import CourseLayout from '../../components/CourseLayout';
+import SEO from '../../components/SEO';
 import WhyNitaq from '../../components/WhyNitaq';
 
 const AICourse = () => {
@@ -11,7 +12,52 @@ const AICourse = () => {
         "Authorization": "SPEA Authorized"
     };
 
+
+    const courseSchema = {
+        name: 'AI & Technology Course Sharjah',
+        description: 'Professional AI and technology training in Sharjah covering machine learning, data science, Python programming, and AI tools. Ideal for professionals and graduates in UAE.',
+        mode: ['onsite', 'online'],
+        educationalLevel: 'Beginner to Advanced',
+        teaches: 'Artificial Intelligence, Machine Learning, Data Science, Python Programming, AI Tools',
+        inLanguage: 'en',
+    };
+
+    const faqSchema = [
+        {
+            question: 'What AI topics are covered in Nitaq\'s AI course?',
+            answer: 'Our AI course covers machine learning, data science, Python programming, AI tools, natural language processing basics, and practical AI project implementation.',
+        },
+        {
+            question: 'Who should join the AI course at Nitaq Academy?',
+            answer: 'The AI course is ideal for working professionals, graduates, and students looking to upskill in artificial intelligence, data science, and technology.',
+        },
+        {
+            question: 'Is prior coding experience required for the AI course?',
+            answer: 'No prior coding experience is required for beginner tracks. We offer courses from absolute beginner to advanced levels.',
+        },
+        {
+            question: 'Is the AI course available online in UAE?',
+            answer: 'Yes, our AI and technology courses are available both online and offline with flexible batch schedules across the UAE.',
+        },
+        {
+            question: 'What certifications do I get after completing the AI course?',
+            answer: 'Upon completion, you receive a Nitaq Academy certificate. We also guide students for internationally recognized AI and tech certifications.',
+        },
+        {
+            question: 'What is the fee for the AI course at Nitaq Academy Sharjah?',
+            answer: 'AI course fees vary by level and duration. Contact us at +971 54 572 3181 for the latest pricing and upcoming batch schedules.',
+        },
+    ];
+
     return (
+        <>
+            <SEO
+                title="AI & Technology Course Sharjah | Artificial Intelligence Training UAE | Nitaq"
+                description="Master AI and technology at Nitaq Academy Sharjah. Machine learning, data science, Python & professional AI certification training. Flexible online & offline batches UAE."
+                path="/ai-course"
+                courseSchema={courseSchema}
+                faqSchema={faqSchema}
+            />
         <CourseLayout
             title="Basic to Advance A.I Course"
             subtitle="Master the technologies of the future with our comprehensive Artificial Intelligence training."
@@ -155,6 +201,7 @@ const AICourse = () => {
 
             <WhyNitaq />
         </CourseLayout>
+        </>
     );
 };
 

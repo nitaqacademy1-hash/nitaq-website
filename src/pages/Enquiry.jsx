@@ -1,8 +1,14 @@
 import ContactForm from '../components/ContactForm';
+import SEO from '../components/SEO';
 
 const Enquiry = () => {
     return (
         <main style={{ background: 'var(--bg-light)', minHeight: '80vh', display: 'flex', alignItems: 'center', padding: '80px 0' }}>
+            <SEO
+                title="Enquire Now | Nitaq Academy Sharjah"
+                description="Get in touch with Nitaq Academy Sharjah for course details, batch schedules, and fee structures. Enquire now to start your learning journey."
+                path="/enquiry"
+            />
             <div className="container">
                 <div style={{ maxWidth: '600px', margin: '0 auto', background: 'white', padding: '40px', borderRadius: '20px', boxShadow: '0 10px 30px rgba(0,0,0,0.05)' }}>
                     <h1 style={{ textAlign: 'center', marginBottom: '10px', fontSize: '2.5rem' }}>Enquire <span className="text-gradient">Now</span></h1>

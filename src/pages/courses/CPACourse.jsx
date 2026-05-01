@@ -1,4 +1,5 @@
 import CourseLayout from '../../components/CourseLayout';
+import SEO from '../../components/SEO';
 import WhyNitaq from '../../components/WhyNitaq';
 const CPACourse = () => {
     const infoData = {
@@ -9,7 +10,52 @@ const CPACourse = () => {
         "Target": "Accounting Professionals",
         "Authorization": "SPEA Authorized"
     };
+
+    const courseSchema = {
+        name: 'CPA Preparation Course Sharjah',
+        description: 'Comprehensive CPA (Certified Public Accountant) exam coaching in Sharjah. Covers AICPA syllabus including Financial Accounting, Auditing, Regulation, and Business Environment.',
+        mode: ['onsite', 'online'],
+        educationalLevel: 'Beginner to Advanced',
+        teaches: 'CPA: Financial Accounting & Reporting, Auditing, Business Environment, Regulation',
+        inLanguage: 'en',
+    };
+
+    const faqSchema = [
+        {
+            question: 'What is CPA and who should take it?',
+            answer: 'CPA (Certified Public Accountant) is the highest US accounting credential by the AICPA. It is ideal for accountants seeking international recognition in the US, Middle East, and global organizations.',
+        },
+        {
+            question: 'How long is the CPA exam preparation at Nitaq?',
+            answer: 'CPA preparation typically takes 12–18 months to complete all 4 sections. We provide structured module-based coaching with flexible scheduling.',
+        },
+        {
+            question: 'What are the 4 sections of the CPA exam?',
+            answer: 'The CPA exam covers Financial Accounting & Reporting (FAR), Auditing & Attestation (AUD), Business Environment & Concepts (BEC), and Regulation (REG).',
+        },
+        {
+            question: 'Is CPA valuable in the UAE job market?',
+            answer: 'Yes, CPA is highly valued in the UAE, particularly in Big 4 accounting firms, banking, and multinational corporations.',
+        },
+        {
+            question: 'Do you provide CPA mock tests and study materials?',
+            answer: 'Yes, comprehensive CPA mock tests, practice questions, and study materials are included in our preparation program.',
+        },
+        {
+            question: 'What is the fee for CPA preparation at Nitaq Academy?',
+            answer: 'Contact us at +971 54 572 3181 for the latest CPA course pricing and batch schedules in Sharjah.',
+        },
+    ];
+
     return (
+        <>
+            <SEO
+                title="CPA Course Sharjah | Certified Public Accountant Training UAE | Nitaq Academy"
+                description="CPA (Certified Public Accountant) preparation at Nitaq Academy Sharjah. Expert AICPA CPA exam coaching with comprehensive practice materials. SPEA Authorized."
+                path="/cpa-course"
+                courseSchema={courseSchema}
+                faqSchema={faqSchema}
+            />
         <CourseLayout
             title="CPA - Certified Public Accountant"
             subtitle="Secure your future in global finance with our comprehensive US CPA preparation program."
@@ -127,6 +173,7 @@ const CPACourse = () => {
 
             <WhyNitaq />
         </CourseLayout>
+        </>
     );
 };
 export default CPACourse;

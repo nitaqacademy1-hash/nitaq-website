@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import CourseLayout from '../../components/CourseLayout';
 import WhyNitaq from '../../components/WhyNitaq';
+import SEO from '../../components/SEO';
+
 const SATCourse = () => {
     const infoData = {
         "Programs": "3 Options",
@@ -11,8 +13,62 @@ const SATCourse = () => {
         "Authorization": "SPEA Authorized & UAE Govt Attested"
     };
 
+    const courseSchema = {
+        name: 'SAT Preparation Course Sharjah',
+        description: 'Expert SAT preparation in Sharjah for high school students targeting global universities. Covers Digital SAT Math, Reading & Writing with full mock tests. SPEA Authorized.',
+        duration: 'PT50H',
+        mode: ['onsite', 'online'],
+        educationalLevel: 'Secondary',
+        teaches: 'SAT Math, Evidence-Based Reading and Writing, Test-Taking Strategies',
+        inLanguage: 'en',
+    };
+
+    const faqSchema = [
+        {
+            question: 'What is the duration of the SAT course in Sharjah?',
+            answer: 'The SAT preparation course typically ranges from 20 to 50 hours depending on the learning track. Students can choose intensive, standard, or fast-track options based on their timeline and goals.',
+        },
+        {
+            question: 'Do you provide SAT mock tests at Nitaq Academy?',
+            answer: 'Yes, full-length SAT mock tests are included as part of the program. These tests help students understand the exam pattern and improve time management and accuracy.',
+        },
+        {
+            question: 'Who should join the SAT course at Nitaq?',
+            answer: 'This course is ideal for high school students planning to study abroad, especially in the US or other international universities requiring SAT scores.',
+        },
+        {
+            question: 'Is the SAT course available online in UAE?',
+            answer: 'Yes, the course is available in both online and offline formats, offering flexibility for students across Sharjah and the UAE.',
+        },
+        {
+            question: 'What SAT score can I expect after training at Nitaq?',
+            answer: 'With consistent practice and guidance, students can significantly improve their scores, with many achieving 1200+ or higher depending on effort and baseline level.',
+        },
+        {
+            question: 'Do you help with SAT registration in UAE?',
+            answer: 'Yes, students receive complete guidance on SAT registration and exam booking processes.',
+        },
+        {
+            question: 'Is the Digital SAT covered in your preparation course?',
+            answer: 'Yes, our SAT preparation fully covers the Digital SAT format using the latest College Board–approved materials and practice systems.',
+        },
+        {
+            question: 'What is the fee for SAT preparation at Nitaq Academy Sharjah?',
+            answer: 'Our SAT course fees are competitive. Contact us at +971 54 572 3181 for the latest pricing and batch schedules.',
+        },
+    ];
+
     return (
+        <>
+            <SEO
+                title="SAT Preparation Course Sharjah | Digital SAT Coaching UAE | Nitaq Academy"
+                description="Expert SAT preparation in Sharjah with SPEA Authorized trainers. Covers Digital SAT Math, Reading & Writing. Flexible online & offline batches. Score 1200+ with Nitaq Academy."
+                path="/sat-preparation"
+                courseSchema={courseSchema}
+                faqSchema={faqSchema}
+            />
         <CourseLayout
+
             title="SAT Preparation in Sharjah"
             subtitle="Open doors to world-class universities with Nitaq's expert-led SAT Preparation in Sharjah."
             infoData={infoData}
@@ -161,6 +217,7 @@ const SATCourse = () => {
 
             <WhyNitaq />
         </CourseLayout>
+        </>
     );
 };
 export default SATCourse;

@@ -1,4 +1,5 @@
 import CourseLayout from '../../components/CourseLayout';
+import SEO from '../../components/SEO';
 import WhyNitaq from '../../components/WhyNitaq';
 const DataManagementCourse = () => {
     const infoData = {
@@ -9,7 +10,52 @@ const DataManagementCourse = () => {
         "Target": "Data & IT Professionals",
         "Authorization": "SPEA Authorized"
     };
+
+    const courseSchema = {
+        name: 'Data Management Course Sharjah',
+        description: 'Professional data management training in Sharjah covering database administration, SQL, data analysis, data governance, and business intelligence tools for professionals and analysts.',
+        mode: ['onsite', 'online'],
+        educationalLevel: 'Beginner to Advanced',
+        teaches: 'Data Management: SQL, Database Administration, Data Analysis, Business Intelligence, Data Governance',
+        inLanguage: 'en',
+    };
+
+    const faqSchema = [
+        {
+            question: 'Who should attend the Data Management course at Nitaq?',
+            answer: 'The course is ideal for IT professionals, data analysts, database administrators, business intelligence practitioners, and anyone working with large datasets.',
+        },
+        {
+            question: 'What topics are covered in Nitaq\'s Data Management course?',
+            answer: 'The course covers database design, SQL querying, data analysis, data governance, ETL processes, and business intelligence tools usage.',
+        },
+        {
+            question: 'Do I need programming experience for the Data Management course?',
+            answer: 'Basic computer skills are sufficient. No advanced programming experience is required for foundational tracks; advanced tracks may require basic SQL familiarity.',
+        },
+        {
+            question: 'Is Data Management training available online in UAE?',
+            answer: 'Yes, both online and offline data management classes are available with flexible scheduling at Nitaq Academy Sharjah.',
+        },
+        {
+            question: 'What certifications can I pursue after this course?',
+            answer: 'After completing Nitaq\'s Data Management course, we guide students toward industry-recognized certifications in database management and data analytics.',
+        },
+        {
+            question: 'What is the fee for Data Management training at Nitaq Academy?',
+            answer: 'Contact us at +971 54 572 3181 for the latest pricing and available batch schedules for the Data Management course.',
+        },
+    ];
+
     return (
+        <>
+            <SEO
+                title="Data Management Course Sharjah | Database & Analytics Training UAE | Nitaq"
+                description="Data management training at Nitaq Academy Sharjah. Learn database management, data analysis, SQL, and business intelligence tools. Online & offline batches UAE."
+                path="/data-management"
+                courseSchema={courseSchema}
+                faqSchema={faqSchema}
+            />
         <CourseLayout
             title="Certified Data Management Professional"
             subtitle="Harness the power of data. Master the frameworks of governance, quality, and strategy."
@@ -128,6 +174,7 @@ const DataManagementCourse = () => {
 
             <WhyNitaq />
         </CourseLayout>
+        </>
     );
 };
 export default DataManagementCourse;

@@ -1,5 +1,6 @@
 import CourseLayout from '../../components/CourseLayout';
 import WhyNitaq from '../../components/WhyNitaq';
+import SEO from '../../components/SEO';
 
 const GMATCourse = () => {
     const infoData = {
@@ -11,8 +12,58 @@ const GMATCourse = () => {
         "Authorization": "SPEA Authorized & UAE Govt Attested"
     };
 
+    const courseSchema = {
+        name: 'GMAT Preparation Course Sharjah',
+        description: 'Master the GMAT for admission into top-ranked global business schools. Expert GMAT coaching in Sharjah with 10 full-length mock tests, Quant, Verbal, and AWA training.',
+        duration: 'PT50H',
+        mode: ['onsite', 'online'],
+        educationalLevel: 'Graduate',
+        teaches: 'GMAT Quantitative Reasoning, Verbal Reasoning, Analytical Writing Assessment',
+        inLanguage: 'en',
+    };
+
+    const faqSchema = [
+        {
+            question: 'What is the GMAT exam and who should take it?',
+            answer: 'The GMAT (Graduate Management Admission Test) is a globally recognized exam for MBA admission. It evaluates Quantitative Reasoning, Verbal Reasoning, and Analytical Writing. It is the gold standard for admission into MBA programs at top business schools worldwide.',
+        },
+        {
+            question: 'How long is the GMAT preparation course at Nitaq Academy?',
+            answer: 'The duration varies based on the proficiency level and chosen track. Most programs range from 20 to 50 hours across our Intensive, Standard, and Express tracks.',
+        },
+        {
+            question: 'What GMAT score is good for top business schools?',
+            answer: 'Most top MBA programs require a GMAT score of 650–700+. We provide customized study plans to help you reach your target score based on your chosen schools.',
+        },
+        {
+            question: 'Do you provide GMAT mock tests in Sharjah?',
+            answer: 'Yes, comprehensive GMAT mock tests and practice materials are an integral part of all our training programs, including 10 full-length timed tests.',
+        },
+        {
+            question: 'Is GMAT online coaching available at Nitaq?',
+            answer: 'Yes, we offer both interactive online classes and traditional offline in-person GMAT training formats in Sharjah and across the UAE.',
+        },
+        {
+            question: 'What is the fee for GMAT preparation at Nitaq Academy?',
+            answer: 'Our GMAT course fees are highly competitive. Please reach out to our admission team at +971 54 572 3181 for the latest pricing and ongoing offers.',
+        },
+        {
+            question: 'When can I start GMAT coaching at Nitaq?',
+            answer: 'We have flexible intake dates with new batches starting frequently. Contact us to find the next available GMAT batch schedule.',
+        },
+    ];
+
     return (
+        <>
+            <SEO
+                title="GMAT Preparation Course Sharjah | MBA Exam Coaching UAE | Nitaq Academy"
+                description="Master the GMAT with Nitaq Academy's expert coaching in Sharjah. 10 mock tests, Quant, Verbal & AWA training for top MBA admission. SPEA Authorized. Online & offline GMAT prep UAE."
+                path="/gmat-preparation"
+                courseSchema={courseSchema}
+                faqSchema={faqSchema}
+            />
         <CourseLayout
+
             title="GMAT Preparation"
             subtitle="Master the GMAT for admission into top-ranked global business schools with strategic coaching."
             infoData={infoData}
@@ -161,6 +212,7 @@ const GMATCourse = () => {
 
             <WhyNitaq />
         </CourseLayout>
+        </>
     );
 };
 
