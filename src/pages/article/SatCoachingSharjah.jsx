@@ -6,11 +6,7 @@ import { Calendar, User, Clock, ChevronRight } from 'lucide-react';
 const SatCoachingSharjah = () => {
     return (
         <main className="article-details-page">
-            <SEO 
-                title="SAT Coaching in Sharjah: A Complete Guide to Scoring Higher in 2026 | Nitaq Academy"
-                description="Master the SAT in Sharjah with our updated 2026 guide. Learn about SAT structure, common challenges, and effective strategies for success."
-                path="/article/sat-coaching-sharjah"
-            />
+            <SEO />
             
             {/* Breadcrumbs Section */}
             <div className="breadcrumb-wrapper">

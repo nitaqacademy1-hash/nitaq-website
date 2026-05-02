@@ -49,11 +49,7 @@ const Courses = () => {
 
     return (
         <main className="courses-explorer-page">
-            <SEO 
-                title="Our Courses | Nitaq Academy Sharjah"
-                description="Explore all professional certifications, test preparations, and language trainings at Nitaq Academy. Your path to excellence starts here."
-                path="/courses"
-            />
+            <SEO />
             
             <section className="listing-hero">
                 <div className="container">

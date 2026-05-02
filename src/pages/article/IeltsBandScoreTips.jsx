@@ -6,11 +6,7 @@ import { Calendar, User, Clock, ChevronRight } from 'lucide-react';
 const IeltsBandScoreTips = () => {
     return (
         <main className="article-details-page">
-            <SEO 
-                title="How to Improve Your IELTS Band Score with Structured Training | Nitaq Academy"
-                description="Stuck at a 6.0 band score? Learn how to push your IELTS result to 7.5 or 8.0 with structured training techniques focused on the UAE exam standards."
-                path="/article/improve-ielts-band-score"
-            />
+            <SEO />
             
             <div className="breadcrumb-wrapper">
                 <div className="container">

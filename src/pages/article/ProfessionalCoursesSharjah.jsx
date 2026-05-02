@@ -6,11 +6,7 @@ import { Calendar, User, Clock, ChevronRight } from 'lucide-react';
 const ProfessionalCoursesSharjah = () => {
     return (
         <main className="article-details-page">
-            <SEO 
-                title="Why Professional Courses in Sharjah Are Important for Career Growth | Nitaq Academy"
-                description="Discover how professional courses in Sharjah can accelerate your career in the competitive UAE market. Learn about the most in-demand skills and certifications."
-                path="/article/professional-courses-sharjah-growth"
-            />
+            <SEO />
             
             <div className="breadcrumb-wrapper">
                 <div className="container">

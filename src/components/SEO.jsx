@@ -1,18 +1,31 @@
 import { Helmet } from 'react-helmet-async';
+import { useLocation } from 'react-router-dom';
+import { getSeoRoute } from '../seo-routes';
 
 /**
  * SEO component with full structured data support.
- * Props:
- *  - title: string
- *  - description: string
- *  - path: string  (e.g. "/ielts-course")
- *  - courseSchema: object  — Schema.org Course data (optional)
- *  - faqSchema: array      — Array of { question, answer } pairs (optional)
+ * Dynamically infers the current route and looks up all meta tags
+ * centrally from src/seo-routes.js.
  */
-const SEO = ({ title, description, path = '', courseSchema = null, faqSchema = null, ogImage = null }) => {
+const SEO = () => {
+  const location = useLocation();
   const siteUrl = 'https://www.nitaqacademy.com';
-  const fullUrl = `${siteUrl}${path}`;
-  const ogImageUrl = ogImage ? `${siteUrl}${ogImage}` : `${siteUrl}/images/logo1.webp`;
+  
+  // Find SEO data from central directory, or fallback to generic defaults
+  const routeData = getSeoRoute(location.pathname) || {
+    title: "Nitaq Academy Sharjah | IELTS, ACCA, AI & Language Courses",
+    description: "Top-rated training academy in Sharjah offering IELTS, TOEFL, ACCA, CMA, AI & language courses.",
+    canonical: `${siteUrl}${location.pathname}`,
+    ogTitle: "Nitaq Academy Sharjah | IELTS, ACCA, AI & Language Courses",
+    ogDescription: "Top-rated training academy in Sharjah offering IELTS, TOEFL, ACCA, CMA, AI & language courses.",
+    ogImage: "/images/logo1.webp",
+    twitterCard: "summary_large_image",
+    courseSchema: null,
+    faqSchema: null
+  };
+
+  const fullUrl = routeData.canonical || `${siteUrl}${location.pathname}`;
+  const ogImageUrl = routeData.ogImage.startsWith('http') ? routeData.ogImage : `${siteUrl}${routeData.ogImage}`;
 
   const buildCourseJsonLd = (cs) => ({
     '@context': 'https://schema.org',
@@ -62,34 +75,34 @@ const SEO = ({ title, description, path = '', courseSchema = null, faqSchema = n
   return (
     <Helmet>
       {/* Basic Meta Tags */}
-      <title>{title}</title>
-      <meta name="description" content={description} />
+      <title>{routeData.title}</title>
+      <meta name="description" content={routeData.description} />
       <link rel="canonical" href={fullUrl} />
 
       {/* Open Graph Tags for Social Sharing */}
       <meta property="og:url" content={fullUrl} />
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
+      <meta property="og:title" content={routeData.ogTitle || routeData.title} />
+      <meta property="og:description" content={routeData.ogDescription || routeData.description} />
       <meta property="og:type" content="website" />
       <meta property="og:image" content={ogImageUrl} />
 
       {/* Twitter Card */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={description} />
+      <meta name="twitter:card" content={routeData.twitterCard || "summary_large_image"} />
+      <meta name="twitter:title" content={routeData.ogTitle || routeData.title} />
+      <meta name="twitter:description" content={routeData.ogDescription || routeData.description} />
       <meta name="twitter:image" content={ogImageUrl} />
 
       {/* Course JSON-LD */}
-      {courseSchema && (
+      {routeData.courseSchema && (
         <script type="application/ld+json">
-          {JSON.stringify(buildCourseJsonLd(courseSchema))}
+          {JSON.stringify(buildCourseJsonLd(routeData.courseSchema))}
         </script>
       )}
 
       {/* FAQPage JSON-LD */}
-      {faqSchema && faqSchema.length > 0 && (
+      {routeData.faqSchema && routeData.faqSchema.length > 0 && (
         <script type="application/ld+json">
-          {JSON.stringify(buildFaqJsonLd(faqSchema))}
+          {JSON.stringify(buildFaqJsonLd(routeData.faqSchema))}
         </script>
       )}
     </Helmet>

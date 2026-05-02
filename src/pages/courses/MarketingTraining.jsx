@@ -11,51 +11,10 @@ const MarketingTraining = () => {
         "Authorization": "SPEA Authorized"
     };
 
-    const courseSchema = {
-        name: 'Marketing Training Sharjah',
-        description: 'Professional marketing training in Sharjah covering digital marketing, social media strategy, content marketing, SEO basics, branding, and campaign management for business professionals.',
-        mode: ['onsite', 'online'],
-        educationalLevel: 'Beginner to Advanced',
-        teaches: 'Marketing: Digital Marketing, Social Media Strategy, Content Marketing, SEO, Branding, Campaign Management',
-        inLanguage: 'en',
-    };
-
-    const faqSchema = [
-        {
-            question: 'Who should attend Marketing Training at Nitaq Academy?',
-            answer: 'This training is ideal for marketing professionals, business owners, entrepreneurs, communications managers, and anyone seeking to upskill in modern marketing strategies.',
-        },
-        {
-            question: 'What marketing topics are covered at Nitaq?',
-            answer: 'The course covers digital marketing, social media marketing, content strategy, SEO fundamentals, email marketing, brand management, and campaign planning.',
-        },
-        {
-            question: 'Is Marketing Training available online in UAE?',
-            answer: 'Yes, both online and offline marketing training sessions are available with flexible scheduling at Nitaq Academy Sharjah.',
-        },
-        {
-            question: 'Can corporate marketing teams attend this training?',
-            answer: 'Yes, we offer customized marketing training programs for corporate teams tailored to specific business goals and industry sectors.',
-        },
-        {
-            question: 'How long is the Marketing Training program at Nitaq?',
-            answer: 'Program duration varies by content scope. Workshops run 1–2 days; comprehensive programs run 4–8 weeks.',
-        },
-        {
-            question: 'What is the fee for Marketing Training at Nitaq Academy?',
-            answer: 'Contact us at +971 54 572 3181 for the latest marketing training pricing and scheduling options.',
-        },
-    ];
 
     return (
         <>
-            <SEO
-                title="Marketing Training Sharjah | Digital Marketing & Strategy UAE | Nitaq Academy"
-                description="Marketing training at Nitaq Academy Sharjah. Learn digital marketing, branding, social media strategy & campaign management. Online & offline batches across UAE."
-                path="/marketing-training"
-                courseSchema={courseSchema}
-                faqSchema={faqSchema}
-            />
+            <SEO />
         <CourseLayout
             title="Professional Marketing Training"
             subtitle="Master the transition from traditional to digital marketing. Build brands that resonate and convert."

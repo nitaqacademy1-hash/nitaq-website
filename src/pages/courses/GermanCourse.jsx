@@ -13,51 +13,9 @@ const GermanCourse = () => {
     };
 
 
-    const courseSchema = {
-        name: 'German Language Course Sharjah',
-        description: 'CEFR-aligned German language courses in Sharjah for all levels (A1–C2). Covers Goethe and TestDaF exam preparation with expert trainers and flexible scheduling.',
-        mode: ['onsite', 'online'],
-        educationalLevel: 'Beginner to Advanced',
-        teaches: 'German Language: Speaking, Listening, Reading, Writing, Goethe/TestDaF Exam Preparation',
-        inLanguage: 'de',
-    };
-
-    const faqSchema = [
-        {
-            question: 'What German language levels are taught at Nitaq Academy?',
-            answer: 'We teach all CEFR levels from A1 (Beginner) to C2 (Mastery). Each level progressively builds fluency and professional communication in German.',
-        },
-        {
-            question: 'How long is the German course in Sharjah?',
-            answer: 'Duration varies by level. Express programs run a few weeks while full CEFR progressions can take several months, with flexible morning, evening, and weekend batches.',
-        },
-        {
-            question: 'Do you prepare students for Goethe or TestDaF exams?',
-            answer: 'Yes, we offer targeted preparation for Goethe-Zertifikat, TestDaF, and DSH exams, including mock tests and personalized scoring feedback.',
-        },
-        {
-            question: 'Is German language training available online in UAE?',
-            answer: 'Yes, both online and offline German classes are available with flexible morning, evening, and weekend batch options across the UAE.',
-        },
-        {
-            question: 'Is the German course suitable for absolute beginners?',
-            answer: 'Yes. Our A1 program starts from zero knowledge, taking you step-by-step to conversational fluency and beyond.',
-        },
-        {
-            question: 'What is the fee for the German language course at Nitaq?',
-            answer: 'Fees vary by level and batch type. Contact us at +971 54 572 3181 for the latest German course pricing.',
-        },
-    ];
-
     return (
         <>
-            <SEO
-                title="German Language Course Sharjah | Goethe/TestDaF Prep UAE | Nitaq Academy"
-                description="Learn German (A1–C2) at Nitaq Academy Sharjah. Goethe/TestDaF exam prep, immersive teaching, flexible online & offline batches. CEFR-aligned curriculum. SPEA Authorized."
-                path="/german"
-                courseSchema={courseSchema}
-                faqSchema={faqSchema}
-            />
+            <SEO />
         <CourseLayout
             title="German Language Course"
             subtitle="Unlock opportunities in Europe's strongest economy with our expert-led German language programs, designed for students and professionals."

@@ -11,51 +11,10 @@ const AIRoboticsKids = () => {
         "Authorization": "SPEA Authorized"
     };
 
-    const courseSchema = {
-        name: 'AI & Robotics for Kids Sharjah',
-        description: 'Fun and engaging AI and Robotics STEM education for children in Sharjah. Covers coding basics, robotics building, AI concepts, and problem-solving skills for children aged 7–15.',
-        mode: ['onsite', 'online'],
-        educationalLevel: 'Beginner to Advanced',
-        teaches: 'Kids AI & Robotics: Coding Basics, Robotics, AI Concepts, Problem Solving, STEM Projects',
-        inLanguage: 'en',
-    };
-
-    const faqSchema = [
-        {
-            question: 'What age group is the AI & Robotics for Kids course at Nitaq?',
-            answer: 'Our AI & Robotics program is designed for children aged 7–15 years, with age-appropriate content and project complexity at each level.',
-        },
-        {
-            question: 'What will my child learn in the AI & Robotics course?',
-            answer: 'Children will learn coding fundamentals, robotics assembly, basic AI concepts, logical problem solving, and complete hands-on STEM projects.',
-        },
-        {
-            question: 'Is the AI & Robotics course suitable for kids with no tech background?',
-            answer: 'Yes. The course starts from absolute basics in a fun, engaging environment. No prior tech or coding experience is required.',
-        },
-        {
-            question: 'Are there weekend or after-school batch options for kids?',
-            answer: 'Yes, we offer morning, after-school, and weekend batches to fit school timetables and family schedules.',
-        },
-        {
-            question: 'Is online AI & Robotics training available for kids in UAE?',
-            answer: 'Online AI and coding sessions are available. For robotics (requiring physical kits), in-person sessions are recommended.',
-        },
-        {
-            question: 'What is the fee for AI & Robotics for Kids at Nitaq Academy?',
-            answer: 'Fees vary by age group and program level. Contact us at +971 54 572 3181 for the latest pricing and available batches.',
-        },
-    ];
 
     return (
         <>
-            <SEO
-                title="AI & Robotics for Kids Sharjah | STEM Education UAE | Nitaq Academy"
-                description="AI and Robotics training for kids at Nitaq Academy Sharjah. Fun, hands-on STEM education in coding, robotics & artificial intelligence tools for children aged 7–15 in UAE."
-                path="/ai-robotics-kids"
-                courseSchema={courseSchema}
-                faqSchema={faqSchema}
-            />
+            <SEO />
         <CourseLayout
             title="A.I & Robotics for Kids"
             subtitle="Inspiring the next generation of innovators. Learn coding, building, and logical thinking through fun projects."

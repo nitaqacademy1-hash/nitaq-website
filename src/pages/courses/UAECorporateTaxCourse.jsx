@@ -13,51 +13,9 @@ const UAECorporateTaxCourse = () => {
     };
 
 
-    const courseSchema = {
-        name: 'UAE Corporate Tax Training Course Sharjah',
-        description: 'Practical UAE Corporate Tax training in Sharjah for business owners and finance professionals. Covers CT registration, compliance, tax return filing, and exemptions under UAE CT law.',
-        mode: ['onsite', 'online'],
-        educationalLevel: 'Beginner to Advanced',
-        teaches: 'UAE Corporate Tax: Registration, Compliance, Filing, Qualifying Income, Transfer Pricing',
-        inLanguage: 'en',
-    };
-
-    const faqSchema = [
-        {
-            question: 'Who needs UAE Corporate Tax training?',
-            answer: 'UAE Corporate Tax training is essential for business owners, CFOs, accountants, and finance managers responsible for CT compliance, registration, and filing in the UAE.',
-        },
-        {
-            question: 'What does the Corporate Tax course cover at Nitaq?',
-            answer: 'The course covers UAE CT law, registration, qualifying income, tax return preparation, transfer pricing basics, and compliance obligations for businesses.',
-        },
-        {
-            question: 'Is UAE Corporate Tax training suitable for beginners?',
-            answer: 'Yes. The course starts from fundamentals and builds to advanced compliance topics, making it accessible for both beginners and experienced professionals.',
-        },
-        {
-            question: 'Is Corporate Tax training available online at Nitaq?',
-            answer: 'Yes, both online and offline UAE Corporate Tax training is available with flexible batch scheduling for working professionals.',
-        },
-        {
-            question: 'Does the CT course include practical case studies?',
-            answer: 'Yes, the course includes practical exercises and real-world UAE business case studies for hands-on understanding of Corporate Tax obligations.',
-        },
-        {
-            question: 'What is the fee for the UAE Corporate Tax course at Nitaq?',
-            answer: 'Contact us at +971 54 572 3181 for the latest Corporate Tax course pricing and available batch schedules.',
-        },
-    ];
-
     return (
         <>
-            <SEO
-                title="UAE Corporate Tax Course Sharjah | CT Training UAE | Nitaq Academy"
-                description="UAE Corporate Tax training at Nitaq Academy Sharjah. Understand CT compliance, registration & filing for businesses. Practical training for finance professionals. SPEA Authorized."
-                path="/uae-corporate-tax"
-                courseSchema={courseSchema}
-                faqSchema={faqSchema}
-            />
+            <SEO />
         <CourseLayout
             title="UAE Corporate Tax Course"
             subtitle="Master UAE Corporate Tax framework, compliance, and strategic financial planning for sustainable business growth."

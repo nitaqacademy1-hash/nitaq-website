@@ -13,51 +13,9 @@ const SalesNegotiationsCourse = () => {
     };
 
 
-    const courseSchema = {
-        name: 'Sales & Negotiations Training Sharjah',
-        description: 'Professional sales and negotiations training in Sharjah covering consultative selling, negotiation strategies, objection handling, and deal-closing techniques for business professionals.',
-        mode: ['onsite', 'online'],
-        educationalLevel: 'Beginner to Advanced',
-        teaches: 'Sales: Consultative Selling, Negotiation, Objection Handling, Deal Closing, Customer Relationship Management',
-        inLanguage: 'en',
-    };
-
-    const faqSchema = [
-        {
-            question: 'Who should attend Sales & Negotiations Training at Nitaq?',
-            answer: 'This training is designed for sales professionals, business development executives, account managers, entrepreneurs, and anyone looking to improve their negotiation and sales skills.',
-        },
-        {
-            question: 'What topics are covered in the Sales & Negotiations course?',
-            answer: 'The course covers consultative selling, negotiation tactics, objection handling, deal-closing techniques, customer relationship management, and persuasive communication.',
-        },
-        {
-            question: 'Is Sales & Negotiations training available online in UAE?',
-            answer: 'Yes, both online and offline training sessions are available with flexible scheduling at Nitaq Academy Sharjah.',
-        },
-        {
-            question: 'Can this training be customized for corporate teams?',
-            answer: 'Yes, we offer customized corporate sales and negotiations training programs tailored to specific industry needs and team objectives.',
-        },
-        {
-            question: 'How long is the Sales & Negotiations Training at Nitaq?',
-            answer: 'Duration varies based on the depth of content required. Typical programs range from 1–2 day intensive workshops to multi-week comprehensive courses.',
-        },
-        {
-            question: 'What is the fee for Sales & Negotiations Training at Nitaq?',
-            answer: 'Contact us at +971 54 572 3181 for the latest training pricing and scheduling options in Sharjah.',
-        },
-    ];
-
     return (
         <>
-            <SEO
-                title="Sales & Negotiations Training Sharjah | Business Skills UAE | Nitaq Academy"
-                description="Sales and negotiations training at Nitaq Academy Sharjah. Master persuasion, deal-closing, and negotiation strategies for business success. Online & offline batches UAE."
-                path="/sales-negotiations"
-                courseSchema={courseSchema}
-                faqSchema={faqSchema}
-            />
+            <SEO />
         <CourseLayout
             title="Sales & Negotiations"
             subtitle="Master the psychology of persuasion and the strategy of high-stakes negotiation to close bigger deals."

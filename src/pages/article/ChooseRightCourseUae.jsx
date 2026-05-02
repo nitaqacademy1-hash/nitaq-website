@@ -6,11 +6,7 @@ import { Calendar, User, Clock, ChevronRight } from 'lucide-react';
 const ChooseRightCourseUae = () => {
     return (
         <main className="article-details-page">
-            <SEO 
-                title="How to Choose the Right Course in UAE for Your Career Goals | Nitaq Academy"
-                description="Unsure which professional course to take? Use our expert guide to align your skills with the UAE job market and choose the right certification for career success."
-                path="/article/choose-right-course-uae"
-            />
+            <SEO />
             
             <div className="breadcrumb-wrapper">
                 <div className="container">

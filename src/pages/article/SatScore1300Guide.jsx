@@ -6,11 +6,7 @@ import { Calendar, User, Clock, ChevronRight } from 'lucide-react';
 const SatScore1300Guide = () => {
     return (
         <main className="article-details-page">
-            <SEO 
-                title="SAT Coaching in Sharjah: How to Score 1300+ in 2026 | Nitaq Academy"
-                description="Learn the exact strategies to score 1300+ on the Digital SAT in Sharjah. Our 2026 guide covers section-wise tips, timing, and preparation methods."
-                path="/article/sat-score-1300-guide"
-            />
+            <SEO />
             
             <div className="breadcrumb-wrapper">
                 <div className="container">

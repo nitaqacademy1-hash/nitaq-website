@@ -192,11 +192,7 @@ const Home = () => {
 
     return (
         <main>
-            <SEO
-                title="Nitaq Academy Sharjah | IELTS, ACCA, AI & Language Courses"
-                description="Top-rated training academy in Sharjah offering IELTS, TOEFL, ACCA, CMA, AI & language courses. Expert tutors, flexible timing. Enroll today at Nitaq Academy."
-                path="/"
-            />
+            <SEO />
             {/* Hero Section */}
             <section className="hero-minimal">
                 <div className="container">

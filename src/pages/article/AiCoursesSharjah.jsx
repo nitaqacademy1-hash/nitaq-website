@@ -6,11 +6,7 @@ import { Calendar, User, Clock, ChevronRight } from 'lucide-react';
 const AiCoursesSharjah = () => {
     return (
         <main className="article-details-page">
-            <SEO 
-                title="AI Courses in Sharjah: Why Learning AI Is Essential in 2026 | Nitaq Academy"
-                description="Discover why AI literacy is the most critical skill for 2026. Learn about the best AI courses in Sharjah and how Artificial Intelligence is transforming the UAE job market."
-                path="/article/ai-courses-sharjah-essential"
-            />
+            <SEO />
             
             <div className="breadcrumb-wrapper">
                 <div className="container">

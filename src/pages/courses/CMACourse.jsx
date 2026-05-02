@@ -13,51 +13,9 @@ const CMACourse = () => {
     };
 
 
-    const courseSchema = {
-        name: 'CMA Preparation Course Sharjah',
-        description: 'Expert CMA (Certified Management Accountant) coaching in Sharjah. Covers Financial Planning, Performance & Analytics, and Strategic Financial Management. IMA recognized.',
-        mode: ['onsite', 'online'],
-        educationalLevel: 'Beginner to Advanced',
-        teaches: 'CMA: Financial Planning, Performance & Analytics, Strategic Financial Management',
-        inLanguage: 'en',
-    };
-
-    const faqSchema = [
-        {
-            question: 'What is CMA and who should pursue it?',
-            answer: 'CMA (Certified Management Accountant) is a globally recognized certification by IMA, ideal for accounting and finance professionals seeking management-level roles in industry.',
-        },
-        {
-            question: 'How long is the CMA preparation course at Nitaq?',
-            answer: 'CMA preparation typically takes 3–6 months per part (2 parts total). We offer flexible batches to fit working professionals\' schedules.',
-        },
-        {
-            question: 'What does the CMA exam cover?',
-            answer: 'The CMA exam covers two parts: Financial Planning, Performance & Analytics (Part 1) and Strategic Financial Management (Part 2).',
-        },
-        {
-            question: 'Is CMA recognized in the UAE?',
-            answer: 'Yes, the CMA certification is highly valued in the UAE and GCC region, particularly in manufacturing, financial services, and multinational organizations.',
-        },
-        {
-            question: 'Do you provide CMA mock tests and practice questions?',
-            answer: 'Yes, our CMA program includes extensive practice questions, mock exams, and performance reviews aligned with the IMA syllabus.',
-        },
-        {
-            question: 'What is the fee for CMA preparation at Nitaq Academy Sharjah?',
-            answer: 'Our CMA course fees are competitive. Contact us at +971 54 572 3181 for the latest pricing and available batch schedules.',
-        },
-    ];
-
     return (
         <>
-            <SEO
-                title="CMA Course Sharjah | Certified Management Accountant Coaching UAE | Nitaq"
-                description="CMA (Certified Management Accountant) preparation at Nitaq Academy Sharjah. Expert IMA CMA exam coaching. SPEA Authorized. Online & offline batches available UAE."
-                path="/cma-course"
-                courseSchema={courseSchema}
-                faqSchema={faqSchema}
-            />
+            <SEO />
         <CourseLayout
             title="CMA - Certified Management Accountant"
             subtitle="Elevate your career in management accounting and financial management with our expert-led CMA program."

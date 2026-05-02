@@ -72,11 +72,7 @@ const ResumeGuide = () => {
 
     return (
         <main className="ig-landing-page">
-            <SEO 
-                title="Land Your Next Job With A Better Resume | Nitaq Academy"
-                description="Get the best AI prompts to craft a winning resume and land your dream job."
-                path="/ig/2026-03-29"
-            />
+            <SEO />
 
             {/* Sticky Nitaq Stripe */}
             <div className="nitaq-stripe">

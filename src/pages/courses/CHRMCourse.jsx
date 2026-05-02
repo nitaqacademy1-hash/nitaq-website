@@ -11,51 +11,10 @@ const CHRMCourse = () => {
         "Authorization": "SPEA Authorized"
     };
 
-    const courseSchema = {
-        name: 'CHRM - Certified HR Manager Course Sharjah',
-        description: 'CHRM (Certified HR Manager) certification coaching in Sharjah. Builds advanced HR leadership, talent management, organizational development, and strategic HR skills.',
-        mode: ['onsite', 'online'],
-        educationalLevel: 'Beginner to Advanced',
-        teaches: 'CHRM: Strategic HR Management, Talent Management, Organizational Development, HR Leadership',
-        inLanguage: 'en',
-    };
-
-    const faqSchema = [
-        {
-            question: 'What is CHRM and who should pursue it?',
-            answer: 'CHRM (Certified HR Manager) is a professional certification that validates expertise in strategic HR leadership, talent management, and organizational development. It is ideal for experienced HR professionals.',
-        },
-        {
-            question: 'How is CHRM different from basic HRM training?',
-            answer: 'CHRM is an advanced leadership-level certification focused on strategic HR, while basic HRM training covers operational HR skills. CHRM is designed for experienced HR professionals seeking credentialing.',
-        },
-        {
-            question: 'How long is the CHRM preparation course at Nitaq?',
-            answer: 'Duration varies based on your current HR experience and knowledge. Contact us for a customized study plan.',
-        },
-        {
-            question: 'Is CHRM training available online in UAE?',
-            answer: 'Yes, online and offline CHRM training is available with flexible scheduling at Nitaq Academy Sharjah.',
-        },
-        {
-            question: 'Is CHRM recognized by employers in the UAE?',
-            answer: 'Yes, CHRM is recognized by leading employers across the GCC and internationally as a mark of HR leadership excellence.',
-        },
-        {
-            question: 'What is the fee for the CHRM course at Nitaq Academy?',
-            answer: 'Contact us at +971 54 572 3181 for the latest CHRM course pricing and available batch schedules.',
-        },
-    ];
 
     return (
         <>
-            <SEO
-                title="CHRM Course Sharjah | Certified HR Manager Training UAE | Nitaq Academy"
-                description="CHRM (Certified HR Manager) preparation at Nitaq Academy Sharjah. Build strategic HR leadership skills with our expert-led CHRM coaching. Online & offline batches UAE."
-                path="/chrm"
-                courseSchema={courseSchema}
-                faqSchema={faqSchema}
-            />
+            <SEO />
         <CourseLayout
             title="CHRM - Certified Human Resource Manager"
             subtitle="Accelerate your HR career with strategic leadership skills and global best practices."

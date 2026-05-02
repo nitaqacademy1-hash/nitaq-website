@@ -12,51 +12,10 @@ const FrenchCourse = () => {
         "Authorization": "SPEA Authorized & UAE Govt Attested"
     };
 
-    const courseSchema = {
-        name: 'French Language Course Sharjah',
-        description: 'CEFR-aligned French language courses in Sharjah for all levels (A1–C2). Includes DELF/DALF exam preparation. Expert trainers, flexible batches, online & offline. SPEA Authorized.',
-        mode: ['onsite', 'online'],
-        educationalLevel: 'Beginner to Advanced',
-        teaches: 'French Language: Speaking, Listening, Reading, Writing, DELF/DALF Exam Preparation',
-        inLanguage: 'fr',
-    };
-
-    const faqSchema = [
-        {
-            question: 'What French language levels are taught at Nitaq Academy?',
-            answer: 'We teach all CEFR levels from A1 (Beginner) to C2 (Mastery). Whether you are a complete beginner or an advanced learner, we have a program for you.',
-        },
-        {
-            question: 'How long is the French course at Nitaq Academy Sharjah?',
-            answer: 'The duration varies based on your current level and target. Most programs range from a few weeks to several months, with flexible batch scheduling.',
-        },
-        {
-            question: 'Do you prepare students for DELF and DALF exams?',
-            answer: 'Yes, we offer specialized preparation for DELF and DALF official French proficiency exams, including mock tests and personalized feedback.',
-        },
-        {
-            question: 'Is French language training available online in UAE?',
-            answer: 'Yes, both online and offline French language classes are available, with morning, evening, and weekend batch options.',
-        },
-        {
-            question: 'Is the French course suitable for kids and beginners?',
-            answer: 'Absolutely. Our French program caters to kids, beginners, adults, and working professionals at all competency levels.',
-        },
-        {
-            question: 'What is the fee for the French language course at Nitaq?',
-            answer: 'Our French course fees are competitive and vary by level and batch type. Contact us at +971 54 572 3181 for the latest pricing.',
-        },
-    ];
 
     return (
         <>
-            <SEO
-                title="French Language Course Sharjah | DELF/DALF Preparation UAE | Nitaq Academy"
-                description="Learn French at all levels (A1–C2) at Nitaq Academy Sharjah. DELF/DALF exam prep, immersive teaching, flexible online & offline batches. CEFR-aligned curriculum. SPEA Authorized."
-                path="/french"
-                courseSchema={courseSchema}
-                faqSchema={faqSchema}
-            />
+            <SEO />
         <CourseLayout
 
             title="French Language Course"

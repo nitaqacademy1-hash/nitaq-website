@@ -6,11 +6,7 @@ import { Calendar, User, Clock, ChevronRight } from 'lucide-react';
 const BestTrainingInstituteSharjah = () => {
     return (
         <main className="article-details-page">
-            <SEO 
-                title="Best Training Institute in Sharjah for Career & Academic Success | Nitaq Academy"
-                description="Looking for the best training institute in Sharjah? Discover why Nitaq Academy is the leading center for SAT, IELTS, and professional certifications in the UAE."
-                path="/article/best-training-institute-sharjah"
-            />
+            <SEO />
             
             <div className="breadcrumb-wrapper">
                 <div className="container">

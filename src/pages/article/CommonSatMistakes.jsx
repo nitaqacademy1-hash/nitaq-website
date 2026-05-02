@@ -6,11 +6,7 @@ import { Calendar, User, Clock, ChevronRight } from 'lucide-react';
 const CommonSatMistakes = () => {
     return (
         <main className="article-details-page">
-            <SEO 
-                title="Common SAT Mistakes Students in UAE Make & How to Avoid Them | Nitaq Academy"
-                description="Identify and avoid the most common SAT mistakes made by students in Sharjah and Dubai. Expert tips to improve your digital SAT performance."
-                path="/article/common-sat-mistakes"
-            />
+            <SEO />
             
             <div className="breadcrumb-wrapper">
                 <div className="container">

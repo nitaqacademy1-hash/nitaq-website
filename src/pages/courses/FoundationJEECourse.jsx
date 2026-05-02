@@ -13,51 +13,9 @@ const FoundationJEECourse = () => {
     };
 
 
-    const courseSchema = {
-        name: 'JEE/NEET Foundation Course Sharjah',
-        description: 'Expert JEE and NEET foundation coaching in Sharjah for UAE-based Indian students. Covers Physics, Chemistry, Mathematics, and Biology with exam-oriented practice and mock tests.',
-        mode: ['onsite', 'online'],
-        educationalLevel: 'Beginner to Advanced',
-        teaches: 'JEE Foundation: Physics, Chemistry, Mathematics; NEET Foundation: Physics, Chemistry, Biology',
-        inLanguage: 'en',
-    };
-
-    const faqSchema = [
-        {
-            question: 'Who should join the JEE/NEET foundation course at Nitaq?',
-            answer: 'This course is ideal for Indian students in the UAE (Grades 8–12) planning to appear for JEE (engineering) or NEET (medical) entrance exams in India.',
-        },
-        {
-            question: 'What subjects are covered in the JEE/NEET foundation program?',
-            answer: 'For JEE: Physics, Chemistry, and Mathematics. For NEET: Physics, Chemistry, and Biology — all aligned with the Indian entrance exam syllabus.',
-        },
-        {
-            question: 'How early should students start JEE/NEET preparation?',
-            answer: 'Starting from Grade 8 or 9 gives students the best foundation. However, we also offer accelerated preparation for Grade 11–12 students.',
-        },
-        {
-            question: 'Is JEE/NEET coaching available online for UAE students?',
-            answer: 'Yes, online and offline JEE/NEET foundation classes are available with flexible scheduling to accommodate UAE school timetables.',
-        },
-        {
-            question: 'Do you provide JEE/NEET mock tests and previous year papers?',
-            answer: 'Yes, comprehensive mock tests and previous year question paper practice are integral parts of our JEE/NEET preparation program.',
-        },
-        {
-            question: 'What is the fee for JEE/NEET coaching at Nitaq Academy Sharjah?',
-            answer: 'Fees vary by grade level and subjects. Contact us at +971 54 572 3181 for detailed pricing and batch schedules.',
-        },
-    ];
-
     return (
         <>
-            <SEO
-                title="JEE/NEET Foundation Course Sharjah | Indian Entrance Exam Prep UAE | Nitaq"
-                description="JEE and NEET foundation preparation at Nitaq Academy Sharjah. Expert coaching for Indian competitive entrance exams for UAE-based students. Online & offline batches."
-                path="/foundation-jee-neet"
-                courseSchema={courseSchema}
-                faqSchema={faqSchema}
-            />
+            <SEO />
         <CourseLayout
             title="Foundation for JEE/NEET"
             subtitle="Secure your future in engineering and medicine with a rock-solid academic foundation in Math and Science."

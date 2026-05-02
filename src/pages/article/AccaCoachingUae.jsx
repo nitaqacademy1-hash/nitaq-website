@@ -6,11 +6,7 @@ import { Calendar, User, Clock, ChevronRight } from 'lucide-react';
 const AccaCoachingUae = () => {
     return (
         <main className="article-details-page">
-            <SEO 
-                title="ACCA Coaching in UAE: Career Opportunities & Benefits | Nitaq Academy"
-                description="Unlock your potential in finance with ACCA coaching in UAE. Learn about exam benefits, career paths in Dubai/Sharjah, and how to become a certified accountant."
-                path="/article/acca-coaching-uae-benefits"
-            />
+            <SEO />
             
             <div className="breadcrumb-wrapper">
                 <div className="container">

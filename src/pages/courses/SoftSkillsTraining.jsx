@@ -13,51 +13,9 @@ const SoftSkillsTraining = () => {
     };
 
 
-    const courseSchema = {
-        name: 'Soft Skills Training Sharjah',
-        description: 'Professional soft skills development training in Sharjah covering communication, leadership, emotional intelligence, teamwork, and workplace interpersonal skills for career success.',
-        mode: ['onsite', 'online'],
-        educationalLevel: 'Beginner to Advanced',
-        teaches: 'Soft Skills: Communication, Leadership, Emotional Intelligence, Teamwork, Problem Solving, Presentation',
-        inLanguage: 'en',
-    };
-
-    const faqSchema = [
-        {
-            question: 'What soft skills are covered in Nitaq\'s training?',
-            answer: 'The program covers communication, active listening, leadership, emotional intelligence, teamwork, conflict resolution, time management, and presentation skills.',
-        },
-        {
-            question: 'Who should attend Soft Skills Training at Nitaq?',
-            answer: 'This training is ideal for professionals, fresh graduates, team leaders, and anyone looking to improve their workplace effectiveness and career prospects.',
-        },
-        {
-            question: 'Is soft skills training available online in UAE?',
-            answer: 'Yes, both online and offline soft skills training sessions are available with flexible scheduling at Nitaq Academy Sharjah.',
-        },
-        {
-            question: 'Can corporate teams attend Soft Skills training together?',
-            answer: 'Yes, we offer customized corporate soft skills training programs for teams and organizations across the UAE.',
-        },
-        {
-            question: 'How long is the Soft Skills Training program at Nitaq?',
-            answer: 'Program duration varies based on content depth and client requirements. Typical programs run 1–3 days for workshops or 4–8 weeks for comprehensive courses.',
-        },
-        {
-            question: 'What is the fee for Soft Skills Training at Nitaq Academy?',
-            answer: 'Contact us at +971 54 572 3181 for the latest soft skills training pricing and scheduling options.',
-        },
-    ];
-
     return (
         <>
-            <SEO
-                title="Soft Skills Training Sharjah | Communication & Leadership UAE | Nitaq Academy"
-                description="Soft skills training at Nitaq Academy Sharjah. Build communication, leadership, emotional intelligience & teamwork skills for career growth. Online & offline batches UAE."
-                path="/soft-skills-training"
-                courseSchema={courseSchema}
-                faqSchema={faqSchema}
-            />
+            <SEO />
         <CourseLayout
             title="Soft Skills Training"
             subtitle="Master the interpersonal skills that define modern leadership and professional excellence in the automated age."

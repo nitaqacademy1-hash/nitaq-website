@@ -138,11 +138,7 @@ const Articles = () => {
 
     return (
         <main className="articles-page">
-            <SEO 
-                title="Articles & Educational Guides | Nitaq Academy Sharjah"
-                description="Expert SAT coaching Sharjah, IELTS training UAE, and professional career insights from Nitaq Academy - the leading training institute in Sharjah. Stay ahead with our guides."
-                path="/articles"
-            />
+            <SEO />
 
             {/* Hero Section */}
             <section className="articles-hero">

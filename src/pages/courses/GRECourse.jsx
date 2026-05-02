@@ -12,56 +12,10 @@ const GRECourse = () => {
         "Authorization": "SPEA Authorized & UAE Govt Attested"
     };
 
-    const courseSchema = {
-        name: 'GRE Preparation Course Sharjah',
-        description: 'Strategic GRE coaching in Sharjah for graduate school aspirants. Covers Quantitative Reasoning, Verbal Reasoning, and Analytical Writing with 10 full-length mock tests.',
-        duration: 'PT40H',
-        mode: ['onsite', 'online'],
-        educationalLevel: 'Graduate',
-        teaches: 'GRE Quantitative Reasoning, Verbal Reasoning, Analytical Writing',
-        inLanguage: 'en',
-    };
-
-    const faqSchema = [
-        {
-            question: 'What is the GRE exam and who needs it?',
-            answer: 'The GRE (Graduate Record Examination) is the most widely accepted standardized test for admission to master\'s and doctoral programs worldwide. It assesses Verbal Reasoning, Quantitative Reasoning, and Analytical Writing skills.',
-        },
-        {
-            question: 'How long is the GRE preparation course at Nitaq?',
-            answer: 'The duration varies based on the proficiency level and chosen track. Most programs range from 20 to 50 hours across our Intensive, Standard, and Express tracks.',
-        },
-        {
-            question: 'What GRE score is required for top universities?',
-            answer: 'Target scores depend on your specific university and program. Top programs typically require 155+ in Quant and 150+ in Verbal. We provide customized plans to help you reach your required score.',
-        },
-        {
-            question: 'Do you provide GRE mock tests in Sharjah?',
-            answer: 'Yes, comprehensive mock tests and practice materials are an integral part of all our GRE training programs, including 10 full-length tests.',
-        },
-        {
-            question: 'Is GRE online coaching available from Nitaq??',
-            answer: 'Yes, we offer both interactive online classes and traditional offline in-person GRE training formats in Sharjah.',
-        },
-        {
-            question: 'What is the fee for GRE preparation at Nitaq Academy?',
-            answer: 'Our GRE course fees are highly competitive. Please reach out to our admission team at +971 54 572 3181 for the latest pricing and ongoing offers.',
-        },
-        {
-            question: 'When can I start GRE coaching at Nitaq?',
-            answer: 'We have flexible intake dates with new batches starting frequently. Contact us to find the next available GRE batch schedule in Sharjah.',
-        },
-    ];
 
     return (
         <>
-            <SEO
-                title="GRE Preparation Course Sharjah | Graduate School Coaching UAE | Nitaq Academy"
-                description="Score high on the GRE with Nitaq Academy's expert coaching in Sharjah. 10 mock tests, Quant, Verbal & AWA training. SPEA Authorized. Online & offline GRE prep UAE."
-                path="/gre-preparation"
-                courseSchema={courseSchema}
-                faqSchema={faqSchema}
-            />
+            <SEO />
         <CourseLayout
 
             title="GRE Preparation"

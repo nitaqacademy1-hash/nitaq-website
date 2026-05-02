@@ -4,11 +4,7 @@ import SEO from '../../components/SEO';
 const TermsAndConditions = () => {
     return (
         <main className="legal-page section-padding">
-            <SEO 
-                title="Terms & Conditions | Nitaq Academy Sharjah"
-                description="Read the terms and conditions for course enrollment and services at Nitaq Academy, operated by Nitaq Supportive Education L.L.C."
-                path="/terms-and-conditions"
-            />
+            <SEO />
             <div className="container">
                 <div style={{ maxWidth: '800px', margin: '0 auto' }}>
                     <h1 style={{ color: '#2e7d32', marginBottom: '30px' }}>Terms & Conditions</h1>

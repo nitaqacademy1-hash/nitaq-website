@@ -5,11 +5,7 @@ import { trackEvent, ANALYTICS_EVENTS } from '../utils/analytics';
 const CorporateTrainings = () => {
     return (
         <main>
-            <SEO 
-                title="Corporate Training Solutions Sharjah UAE | Nitaq Academy" 
-                description="Customized training programs for organizations in the UAE. Upskill your employees with HR, Sales, IT, and Finance certifications at Nitaq Academy." 
-                path="/corporate-trainings"
-            />
+            <SEO />
             {/* Premium Light Page Hero */}
             <section className="listing-hero">
                 <div className="container">

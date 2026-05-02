@@ -5,11 +5,7 @@ import { trackEvent, ANALYTICS_EVENTS } from '../utils/analytics';
 const LanguageTrainings = () => {
     return (
         <main>
-            <SEO 
-                title="Language Training Classes Sharjah | English, Arabic, French, Spanish | Nitaq Academy" 
-                description="Learn new languages with certified trainers in Sharjah. Our language courses include Spoken English, Arabic, French, German, and Spanish for all levels." 
-                path="/language-trainings"
-            />
+            <SEO />
             {/* Premium Light Page Hero */}
             <section className="listing-hero">
                 <div className="container">

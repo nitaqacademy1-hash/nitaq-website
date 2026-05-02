@@ -6,11 +6,7 @@ import { Calendar, User, Clock, ChevronRight } from 'lucide-react';
 const IeltsDubaiGuide = () => {
     return (
         <main className="article-details-page">
-            <SEO 
-                title="IELTS Coaching in Dubai: A Complete Preparation Guide | Nitaq Academy"
-                description="Your definitive guide to IELTS coaching in Dubai and Sharjah. Learn about the test format, key preparation strategies, and how to achieve a high band score."
-                path="/article/ielts-dubai-guide"
-            />
+            <SEO />
             
             <div className="breadcrumb-wrapper">
                 <div className="container">

@@ -5,11 +5,7 @@ import { trackEvent, ANALYTICS_EVENTS } from '../utils/analytics';
 const TestPreparations = () => {
     return (
         <main>
-            <SEO 
-                title="Test Preparation Courses Sharjah | IELTS, TOEFL, SAT, GRE | Nitaq Academy" 
-                description="Expert coaching for IELTS, TOEFL, SAT, GMAT, and GRE in Sharjah. Boost your scores and secure admissions with Nitaq Academy's proven programs." 
-                path="/test-preparations"
-            />
+            <SEO />
             {/* Premium Light Page Hero */}
             <section className="listing-hero">
                 <div className="container">

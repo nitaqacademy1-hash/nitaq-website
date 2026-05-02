@@ -13,51 +13,9 @@ const PowerBIExcelCourse = () => {
     };
 
 
-    const courseSchema = {
-        name: 'Power BI & Excel Course Sharjah',
-        description: 'Professional Power BI and Advanced Excel training in Sharjah. Learn data visualization, interactive dashboards, pivot tables, and business analytics for data-driven decision making.',
-        mode: ['onsite', 'online'],
-        educationalLevel: 'Beginner to Advanced',
-        teaches: 'Power BI: Dashboards, DAX, Data Modeling; Advanced Excel: Pivot Tables, VBA, Financial Modeling',
-        inLanguage: 'en',
-    };
-
-    const faqSchema = [
-        {
-            question: 'What does the Power BI & Excel course cover at Nitaq?',
-            answer: 'The course covers Power BI dashboards, DAX formulas, data modeling, Power Query, and Advanced Excel features including pivot tables, VLOOKUP, and financial modeling.',
-        },
-        {
-            question: 'Who should join the Power BI & Excel course?',
-            answer: 'This course is ideal for business analysts, finance professionals, managers, and anyone who works with data and wants to create powerful reports and dashboards.',
-        },
-        {
-            question: 'Do I need prior experience for the Power BI course?',
-            answer: 'No prior Power BI experience is needed. The course starts from basics. Basic Excel exposure is helpful but not mandatory.',
-        },
-        {
-            question: 'Is Power BI & Excel training available online in UAE?',
-            answer: 'Yes, both online and offline Power BI and Excel training sessions are available with flexible scheduling at Nitaq Academy.',
-        },
-        {
-            question: 'What certification do I get after completing the course?',
-            answer: 'You receive a Nitaq Academy completion certificate. We also guide students toward Microsoft Power BI certification pathways.',
-        },
-        {
-            question: 'What is the fee for Power BI & Excel training at Nitaq?',
-            answer: 'Contact us at +971 54 572 3181 for the latest Power BI and Excel course pricing and available batches.',
-        },
-    ];
-
     return (
         <>
-            <SEO
-                title="Power BI & Excel Course Sharjah | Data Analytics Training UAE | Nitaq Academy"
-                description="Master Power BI and Advanced Excel at Nitaq Academy Sharjah. Data visualization, dashboards, and analytics training for professionals. Online & offline batches UAE."
-                path="/power-bi-excel"
-                courseSchema={courseSchema}
-                faqSchema={faqSchema}
-            />
+            <SEO />
         <CourseLayout
             title="Power BI & Advanced Excel"
             subtitle="Transform complex data into actionable business insights with industry-leading analytics and visualization tools."

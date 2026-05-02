@@ -11,61 +11,10 @@ const SATCourse = () => {
         "Focus Areas": "Math and English"
     };
 
-    const courseSchema = {
-        name: 'SAT Preparation in Sharjah',
-        description: 'Score 1400+ on the Digital SAT with Nitaq Academy\'s expert coaching in Sharjah. Small batches, mock tests, proven strategies. SPEA Authorized & UAE Govt Attested.',
-        duration: 'PT48H',
-        mode: ['onsite', 'online'],
-        educationalLevel: 'Secondary',
-        teaches: 'Digital SAT Math, Evidence-Based Reading and Writing, Test-Taking Strategies',
-        inLanguage: 'en',
-    };
-
-    const faqSchema = [
-        {
-            question: 'What is the Digital SAT and how is it different from the old SAT?',
-            answer: 'The Digital SAT is the current format of the Scholastic Assessment Test, taken on a laptop using the College Board\'s Bluebook app. Unlike the paper SAT, it is adaptive — meaning the difficulty of the second module adjusts based on your first module performance. Total test time is 2 hours and 14 minutes.',
-        },
-        {
-            question: 'How long does SAT preparation take at Nitaq Academy in Sharjah?',
-            answer: 'Our SAT preparation course runs for 8 to 12 weeks, with three sessions per week. Each session is approximately 90 minutes, covering Reading & Writing strategies, Math concepts, and timed practice. Students who need a faster turnaround can opt for our intensive 4-week crash course with daily sessions.',
-        },
-        {
-            question: 'What SAT score do I need to get into a US university from the UAE?',
-            answer: 'Most US universities accept students with scores between 1200 and 1400. Competitive universities such as NYU, Boston University, and University of Toronto typically expect 1400 or above. Ivy League schools generally require 1500+. Our Sharjah-based coaching program targets a minimum improvement of 150–200 points from your baseline score.',
-        },
-        {
-            question: 'Where are the SAT exam centers in the UAE in 2026?',
-            answer: 'SAT test centers in the UAE are located in Dubai and Abu Dhabi. Students from Sharjah typically travel to Dubai centers to sit the exam. Test dates are announced by the College Board several months in advance, and seats fill quickly — we recommend registering at least 6 to 8 weeks before your preferred date.',
-        },
-        {
-            question: 'Does Nitaq Academy offer online SAT coaching in the UAE?',
-            answer: 'Yes. Nitaq Academy offers both in-person SAT coaching at our Sharjah campus and live online classes for students across Dubai, Abu Dhabi, Ajman, and the wider UAE. Online sessions are conducted in real time with the same instructor, same study materials, and the same mock test schedule as classroom batches.',
-        },
-        {
-            question: 'How much does an SAT preparation course cost in Sharjah?',
-            answer: 'SAT preparation course fees in Sharjah typically range from AED 1,800 to AED 4,000 depending on the course duration, batch size, and whether sessions are group or one-on-one. At Nitaq Academy, we offer flexible payment options and group discounts for students enrolling together. Contact us for the current batch schedule and pricing.',
-        },
-        {
-            question: 'Can I take the SAT more than once in the UAE?',
-            answer: 'Yes, there is no strict limit on how many times you can sit for the SAT. Most students appear two to three times to improve their scores. The College Board\'s SuperScore feature allows many universities to consider your highest section scores across attempts, so retaking the exam is a smart strategy for UAE students targeting top universities.',
-        },
-        {
-            question: 'Are weekend SAT classes available in Sharjah?',
-            answer: 'Yes. Nitaq Academy offers weekend and evening SAT batches specifically designed for school students who cannot attend weekday sessions. Friday and Saturday morning batches are available throughout the year. We also accommodate students with flexible one-on-one scheduling when group batch timings do not suit their school or activity timetable.',
-        },
-    ];
 
     return (
         <>
-            <SEO
-                title="SAT Preparation in Sharjah | Digital SAT Coaching UAE | Nitaq Academy"
-                description="SPEA Authorized SAT coaching in Sharjah. Digital SAT Math, Reading & Writing. Score 1300+. Online & offline batches. Enrol — +971 54 572 3181."
-                path="/sat-preparation-sharjah"
-                courseSchema={courseSchema}
-                faqSchema={faqSchema}
-                ogImage="/images/og-sat.png"
-            />
+            <SEO />
         <CourseLayout
             title="SAT Preparation in Sharjah — Digital SAT Coaching at Nitaq Academy"
             subtitle="Score 1300+ on the Digital SAT with Nitaq Academy's expert coaching in Sharjah."

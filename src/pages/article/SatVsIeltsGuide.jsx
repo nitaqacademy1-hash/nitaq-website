@@ -6,11 +6,7 @@ import { Calendar, User, Clock, ChevronRight } from 'lucide-react';
 const SatVsIeltsGuide = () => {
     return (
         <main className="article-details-page">
-            <SEO 
-                title="SAT vs IELTS: Which Exam Do You Need for Studying Abroad? | Nitaq Academy"
-                description="Confused between SAT and IELTS? Our comprehensive comparison guide helps students in the UAE choose the right exam for their international university applications."
-                path="/article/sat-vs-ielts-guide"
-            />
+            <SEO />
             
             <div className="breadcrumb-wrapper">
                 <div className="container">

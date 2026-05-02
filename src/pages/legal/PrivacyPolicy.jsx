@@ -4,11 +4,7 @@ import SEO from '../../components/SEO';
 const PrivacyPolicy = () => {
     return (
         <main className="legal-page section-padding">
-            <SEO 
-                title="Privacy Policy | Nitaq Academy Sharjah"
-                description="Our privacy policy explains how Nitaq Academy collects, uses, and protects student information in compliance with UAE data protection standards."
-                path="/privacy-policy"
-            />
+            <SEO />
             <div className="container">
                 <div style={{ maxWidth: '850px', margin: '0 auto' }}>
                     <h1 style={{ color: '#2e7d32', marginBottom: '20px' }}>Privacy Policy – Nitaq Academy</h1>
