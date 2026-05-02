@@ -60,7 +60,7 @@ const SATCourse = () => {
         <>
             <SEO
                 title="SAT Preparation in Sharjah | Expert Coaching | Nitaq Academy UAE"
-                description="Score 1400+ on the Digital SAT with Nitaq Academy's expert coaching in Sharjah. Small batches, mock tests, proven strategies. Enrol now — +971 54 572 3181."
+                description="Score 1300+ on the Digital SAT with Nitaq Academy's expert coaching in Sharjah. Small batches, mock tests, proven strategies. Enrol now — +971 54 572 3181."
                 path="/sat-preparation-sharjah"
                 courseSchema={courseSchema}
                 faqSchema={faqSchema}

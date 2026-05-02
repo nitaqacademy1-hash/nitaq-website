@@ -22,18 +22,18 @@ const baseTemplate = readFileSync(join(distDir, 'index.html'), 'utf-8');
 const pages = [
   {
     path: '/sat-preparation-sharjah',
-    title: 'SAT Preparation in Sharjah | Expert Coaching | Nitaq Academy UAE',
-    description: "Score 1400+ on the Digital SAT with Nitaq Academy's expert coaching in Sharjah. Small batches, mock tests, proven strategies. Enrol now — +971 54 572 3181.",
+    title: 'SAT Preparation in Sharjah | Digital SAT Coaching UAE | Nitaq Academy',
+    description: "SPEA Authorized SAT coaching in Sharjah. Digital SAT Math, Reading & Writing. Score 1300+. Online & offline batches. Enrol — +971 54 572 3181.",
     canonical: 'https://www.nitaqacademy.com/sat-preparation-sharjah',
     ogImage: 'https://www.nitaqacademy.com/images/og-sat.png',
     h1: 'SAT Preparation in Sharjah — Digital SAT Coaching at Nitaq Academy',
-    introText: 'The SAT (Scholastic Assessment Test) is a standardised exam used by universities in the United States, Canada, and across the globe to evaluate college readiness. At Nitaq Academy, our SPEA Authorized & UAE Govt Attested coaching programme in Sharjah prepares high-school students to achieve scores of 1400 and above through small-batch expert coaching, full-length mock tests, and proven test-taking strategies.',
+    introText: 'The SAT (Scholastic Assessment Test) is a standardised exam used by universities in the United States, Canada, and across the globe to evaluate college readiness. At Nitaq Academy, our SPEA Authorized & UAE Govt Attested coaching programme in Sharjah prepares high-school students to achieve scores of 1300 and above through small-batch expert coaching, full-length mock tests, and proven test-taking strategies.',
     schema: {
       course: {
         "@context": "https://schema.org",
         "@type": "Course",
         "name": "SAT Preparation in Sharjah",
-        "description": "Score 1400+ on the Digital SAT with Nitaq Academy's expert coaching in Sharjah. Small batches, mock tests, proven strategies. SPEA Authorized & UAE Govt Attested.",
+        "description": "SPEA Authorized SAT coaching in Sharjah. Digital SAT Math, Reading & Writing. Score 1300+. Online & offline batches. Enrol — +971 54 572 3181.",
         "url": "https://www.nitaqacademy.com/sat-preparation-sharjah",
         "provider": {
           "@type": "EducationalOrganization",
@@ -68,45 +68,60 @@ const pages = [
 function generatePageHtml(template, page) {
   let html = template;
 
-  // Replace title
-  html = html.replace(
-    /<title>[^<]*<\/title>/,
-    `<title>${page.title}</title>`
-  );
-
-  // Replace or add meta description
-  if (html.includes('name="description"')) {
-    html = html.replace(
-      /<meta name="description"[^>]*>/,
-      `<meta name="description" content="${page.description}">`
-    );
+  // 1. Replace or Inject Title
+  if (html.includes('<title>')) {
+    html = html.replace(/<title>[^<]*<\/title>/, `<title>${page.title}</title>`);
   } else {
-    html = html.replace('</title>', `</title>\n  <meta name="description" content="${page.description}">`);
+    html = html.replace('</head>', `  <title>${page.title}</title>\n</head>`);
   }
 
-  // Replace canonical
-  html = html.replace(
-    /<link rel="canonical"[^>]*>/,
-    `<link rel="canonical" href="${page.canonical}">`
-  );
-
-  // Replace OG tags
-  html = html.replace(/<meta property="og:url"[^>]*>/, `<meta property="og:url" content="${page.canonical}">`);
-  html = html.replace(/<meta property="og:title"[^>]*>/, `<meta property="og:title" content="${page.title}">`);
-  html = html.replace(/<meta property="og:description"[^>]*>/, `<meta property="og:description" content="${page.description}">`);
-  html = html.replace(/<meta property="og:image"[^>]*>/, `<meta property="og:image" content="${page.ogImage}">`);
-
-  // Add Twitter Card tags if not present
-  if (!html.includes('twitter:card')) {
-    html = html.replace(
-      '</head>',
-      `  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="${page.title}">
-  <meta name="twitter:description" content="${page.description}">
-  <meta name="twitter:image" content="${page.ogImage}">
-</head>`
-    );
+  // 2. Replace or Inject Meta Description
+  if (html.includes('name="description"')) {
+    html = html.replace(/<meta name="description"[^>]*>/, `<meta name="description" content="${page.description}">`);
+  } else {
+    html = html.replace('</head>', `  <meta name="description" content="${page.description}">\n</head>`);
   }
+
+  // 3. Replace or Inject Canonical
+  if (html.includes('rel="canonical"')) {
+    html = html.replace(/<link rel="canonical"[^>]*>/, `<link rel="canonical" href="${page.canonical}">`);
+  } else {
+    html = html.replace('</head>', `  <link rel="canonical" href="${page.canonical}">\n</head>`);
+  }
+
+  // 4. Handle Open Graph Tags (Overwrite home values if they exist)
+  const ogTags = [
+    { property: 'og:url', content: page.canonical },
+    { property: 'og:title', content: page.title },
+    { property: 'og:description', content: page.description },
+    { property: 'og:image', content: page.ogImage }
+  ];
+
+  ogTags.forEach(tag => {
+    const regex = new RegExp(`<meta property="${tag.property}"[^>]*>`, 'i');
+    if (regex.test(html)) {
+      html = html.replace(regex, `<meta property="${tag.property}" content="${tag.content}">`);
+    } else {
+      html = html.replace('</head>', `  <meta property="${tag.property}" content="${tag.content}">\n</head>`);
+    }
+  });
+
+  // 5. Add or Update Twitter Card tags
+  const twitterTags = [
+    { name: 'twitter:card', content: 'summary_large_image' },
+    { name: 'twitter:title', content: page.title },
+    { name: 'twitter:description', content: page.description },
+    { name: 'twitter:image', content: page.ogImage }
+  ];
+
+  twitterTags.forEach(tag => {
+    const regex = new RegExp(`<meta name="${tag.name}"[^>]*>`, 'i');
+    if (regex.test(html)) {
+      html = html.replace(regex, `<meta name="${tag.name}" content="${tag.content}">`);
+    } else {
+      html = html.replace('</head>', `  <meta name="twitter:${tag.name.replace('twitter:', '')}" content="${tag.content}">\n</head>`);
+    }
+  });
 
   // Add page-specific JSON-LD schema (Course + FAQ)
   const schemaScripts = [
