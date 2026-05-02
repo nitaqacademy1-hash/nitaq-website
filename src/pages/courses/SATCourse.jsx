@@ -59,8 +59,8 @@ const SATCourse = () => {
     return (
         <>
             <SEO
-                title="SAT Preparation in Sharjah | Expert Coaching | Nitaq Academy UAE"
-                description="Score 1300+ on the Digital SAT with Nitaq Academy's expert coaching in Sharjah. Small batches, mock tests, proven strategies. Enrol now — +971 54 572 3181."
+                title="SAT Preparation in Sharjah | Digital SAT Coaching UAE | Nitaq Academy"
+                description="SPEA Authorized SAT coaching in Sharjah. Digital SAT Math, Reading & Writing. Score 1300+. Online & offline batches. Enrol — +971 54 572 3181."
                 path="/sat-preparation-sharjah"
                 courseSchema={courseSchema}
                 faqSchema={faqSchema}
@@ -68,7 +68,7 @@ const SATCourse = () => {
             />
         <CourseLayout
             title="SAT Preparation in Sharjah — Digital SAT Coaching at Nitaq Academy"
-            subtitle="Score 1400+ on the Digital SAT with Nitaq Academy's expert coaching in Sharjah."
+            subtitle="Score 1300+ on the Digital SAT with Nitaq Academy's expert coaching in Sharjah."
             infoData={infoData}
         >
 
@@ -76,7 +76,7 @@ const SATCourse = () => {
             <div className="content-card">
                 <div className="overview-text">
                     <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: '#334155' }}>
-                        The SAT (Scholastic Assessment Test) is a standardised exam used by universities in the United States, Canada, and across the globe to evaluate college readiness. The current <strong>Digital SAT</strong> is a computer-adaptive test lasting 2 hours 14 minutes, covering <strong>Reading &amp; Writing</strong> and <strong>Math</strong>. At Nitaq Academy, our SPEA Authorized &amp; UAE Govt Attested coaching programme in <strong>Sharjah</strong> prepares high-school students to achieve scores of 1400 and above through small-batch expert coaching, full-length mock tests, and proven test-taking strategies. Classes are held at our Sharjah campus and are also available live online across the UAE.
+                        The SAT (Scholastic Assessment Test) is a standardised exam used by universities in the United States, Canada, and across the globe to evaluate college readiness. The current <strong>Digital SAT</strong> is a computer-adaptive test lasting 2 hours 14 minutes, covering <strong>Reading &amp; Writing</strong> and <strong>Math</strong>. At Nitaq Academy, our SPEA Authorized &amp; UAE Govt Attested coaching programme in <strong>Sharjah</strong> prepares high-school students to achieve scores of 1300 and above through small-batch expert coaching, full-length mock tests, and proven test-taking strategies. Classes are held at our Sharjah campus and are also available live online across the UAE.
                     </p>
                 </div>
             </div>
