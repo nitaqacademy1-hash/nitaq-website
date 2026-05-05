@@ -105,6 +105,11 @@ function generatePageHtml(template, page) {
           addressCountry: 'AE',
         },
       },
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: '4.9',
+        reviewCount: '24'
+      },
       ...(page.courseSchema.timeRequired && { timeRequired: page.courseSchema.timeRequired }),
       ...(page.courseSchema.courseMode && { courseMode: page.courseSchema.courseMode }),
       ...(page.courseSchema.educationalLevel && { educationalLevel: page.courseSchema.educationalLevel }),
@@ -189,3 +194,32 @@ console.log("==========================================");
 console.log(`🎉 Operations Complete: ${successCount} successful, ${warningCount} warnings.`);
 console.log(`Total Pages Generated: ${successCount + warningCount}`);
 console.log("==========================================");
+
+// ==========================================
+// AUTO-GENERATE SITEMAP.XML
+// ==========================================
+console.log("\n🗺️  Generating automated sitemap.xml...");
+
+const today = new Date().toISOString().split('T')[0];
+let sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+`;
+
+for (const page of seoRoutes) {
+  // Give homepage priority 1.0, courses 0.9, articles 0.7
+  let priority = "0.8";
+  if (page.path === '/') priority = "1.0";
+  else if (page.path.includes('course') || page.path.includes('preparation')) priority = "0.9";
+  else if (page.path.includes('article') || page.path.includes('ig/')) priority = "0.7";
+
+  sitemapXml += `  <url>
+    <loc>${page.canonical}</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>${priority}</priority>
+  </url>\n`;
+}
+sitemapXml += `</urlset>`;
+
+writeFileSync(join(distDir, 'sitemap.xml'), sitemapXml, 'utf-8');
+console.log("✅ Successfully wrote fully matched sitemap.xml to dist/");

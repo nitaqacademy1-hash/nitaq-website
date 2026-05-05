@@ -43,6 +43,11 @@ const SEO = () => {
         addressCountry: 'AE',
       },
     },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.9',
+      reviewCount: '24'
+    },
     ...(cs.duration && { timeRequired: cs.duration }),
     ...(cs.mode && { courseMode: cs.mode }),
     ...(cs.educationalLevel && { educationalLevel: cs.educationalLevel }),
