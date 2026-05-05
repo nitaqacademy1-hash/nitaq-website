@@ -37,6 +37,8 @@ import SpanishCourse from './pages/courses/SpanishCourse';
 import PTECourse from './pages/courses/PTECourse';
 import TOEFLCourse from './pages/courses/TOEFLCourse';
 import SATCourse from './pages/courses/SATCourse';
+import IELTSCourseDubai from './pages/courses/IELTSCourseDubai';
+import SATCourseDubai from './pages/courses/SATCourseDubai';
 import GMATCourse from './pages/courses/GMATCourse';
 import GRECourse from './pages/courses/GRECourse';
 import AcademicExcellenceCourse from './pages/courses/AcademicExcellenceCourse';
@@ -109,6 +111,8 @@ function App() {
         <Route path="/pte-course" element={<PTECourse />} />
         <Route path="/toefl-course" element={<TOEFLCourse />} />
         <Route path="/sat-preparation-sharjah" element={<SATCourse />} />
+        <Route path="/sat-preparation-dubai" element={<SATCourseDubai />} />
+        <Route path="/ielts-coaching-dubai" element={<IELTSCourseDubai />} />
         <Route path="/sat-preparation" element={<Navigate to="/sat-preparation-sharjah" replace />} />
         <Route path="/gmat-preparation" element={<GMATCourse />} />
         <Route path="/gre-preparation" element={<GRECourse />} />

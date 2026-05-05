@@ -432,7 +432,7 @@ const Home = () => {
                 <div className="container">
                     <div className="section-header featured-flex-header">
                         <div>
-                            <h2 style={{ color: '#2e7d32', fontSize: '2.5rem', fontWeight: 800, marginBottom: '10px' }}>Featured Courses</h2>
+                            <h2 style={{ color: '#2e7d32', fontSize: '2.5rem', fontWeight: 800, marginBottom: '10px' }}>Our Popular Courses</h2>
                             <p className="subtitle" style={{ fontSize: '1.1rem', color: '#4b5563', maxWidth: '600px' }}>
                                 Explore our most in-demand programs designed for academic and career excellence.
                             </p>

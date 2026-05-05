@@ -22,6 +22,19 @@ const ProfessionalCertifications = () => {
                 </div>
             </section>
 
+            <section className="section-padding" style={{ paddingBottom: '0' }}>
+                <div className="container">
+                    <div style={{ maxWidth: '900px', margin: '0 auto', color: '#475569', lineHeight: '1.8', fontSize: '1.05rem' }}>
+                        <p style={{ marginBottom: '15px' }}>
+                            In today's hyper-competitive global job market, practical experience must be validated by universally respected professional credentials. Nitaq Academy provides ambitious professionals in the UAE with an elite ecosystem for acquiring world-class business, technical, and financial certifications. Our specialized curriculums are rigorously aligned with the latest industry syllabi across domains such as Finance & Accounting (ACCA, CPA, CMA), Advanced Data Analytics (Power BI), Artificial Intelligence, and essential Human Resources Management (CHRM). By bridging the gap between theoretical knowledge and real-world corporate demands, we empower our candidates to fast-track their corporate mobility and salary potential.
+                        </p>
+                        <p>
+                            Understanding the unique time constraints faced by working adults, our certification programs are intrinsically flexible. We offer interactive hybrid sessions, weekend masterclasses, and corporate on-site training solutions to ensure you can seamlessly upskill without compromising your primary career responsibilities. Beyond just passing exams, our seasoned industry-expert instructors rely heavily on practical case studies involving UAE Corporate Tax, VAT compliance, and real-life operational negotiations, ensuring that the knowledge you acquire on the weekend can be instantly leveraged at your workplace on Monday.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
             {/* Course Grid Section */}
             <section className="listing-grid-container">
                 <div className="container">

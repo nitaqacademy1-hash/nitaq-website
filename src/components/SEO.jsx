@@ -77,6 +77,54 @@ const SEO = () => {
     })),
   });
 
+  const buildBreadcrumbJsonLd = () => {
+    const segments = location.pathname.split('/').filter(Boolean);
+    const itemListElement = [{
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: siteUrl
+    }];
+    
+    let currentPath = '';
+    segments.forEach((segment, index) => {
+      currentPath += `/${segment}`;
+      itemListElement.push({
+        '@type': 'ListItem',
+        position: index + 2,
+        name: segment.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()),
+        item: `${siteUrl}${currentPath}`
+      });
+    });
+
+    return {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement
+    };
+  };
+
+  const buildArticleJsonLd = (doc) => ({
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: doc.title,
+    description: doc.description,
+    image: ogImageUrl,
+    author: {
+      '@type': 'Person',
+      name: 'Nitaq Expert Team'
+    },
+    publisher: {
+      '@type': 'EducationalOrganization',
+      name: 'Nitaq Academy',
+      logo: {
+        '@type': 'ImageObject',
+        url: `${siteUrl}/images/logo1.webp`
+      }
+    },
+    datePublished: '2026-05-01'
+  });
+
   return (
     <Helmet>
       {/* Basic Meta Tags */}
@@ -108,6 +156,52 @@ const SEO = () => {
       {routeData.faqSchema && routeData.faqSchema.length > 0 && (
         <script type="application/ld+json">
           {JSON.stringify(buildFaqJsonLd(routeData.faqSchema))}
+        </script>
+      )}
+
+      {/* Breadcrumbs JSON-LD */}
+      {location.pathname !== '/' && (
+        <script type="application/ld+json">
+          {JSON.stringify(buildBreadcrumbJsonLd())}
+        </script>
+      )}
+
+      {/* LocalBusiness Schema exclusively for Contact page anchor */}
+      {location.pathname === '/contact' && (
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Nitaq Academy",
+            "image": `${siteUrl}/images/logo1.webp`,
+            "@id": `${siteUrl}/contact`,
+            "url": `${siteUrl}/contact`,
+            "telephone": "+971545723181",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Office 103, Floor F1, Abu Khamseen Tower",
+              "addressLocality": "Al Majaz 3",
+              "addressRegion": "Sharjah",
+              "addressCountry": "AE"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 25.3259,
+              "longitude": 55.3857
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.9",
+              "reviewCount": "24"
+            }
+          })}
+        </script>
+      )}
+
+      {/* Article JSON-LD */}
+      {location.pathname.startsWith('/article/') && (
+        <script type="application/ld+json">
+          {JSON.stringify(buildArticleJsonLd(routeData))}
         </script>
       )}
     </Helmet>

@@ -88,7 +88,7 @@ const Footer = () => {
                 </div>
                 <div className="footer-bottom">
                     <div>
-                        <p>&copy; 2025 Nitaq Academy. All rights reserved.</p>
+                        <p>&copy; {new Date().getFullYear()} Nitaq Academy. All rights reserved.</p>
                         <p style={{ fontSize: '0.75rem', color: '#6b7280', marginTop: '5px' }}>
                             Nitaq Academy is operated by Nitaq Supportive Education L.L.C
                         </p>

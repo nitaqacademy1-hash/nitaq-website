@@ -134,6 +134,88 @@ function generatePageHtml(template, page) {
     schemaScripts += `<script type="application/ld+json">${JSON.stringify(faqPayload)}</script>\n  `;
   }
 
+  if (page.path !== '/') {
+    const segments = page.path.split('/').filter(Boolean);
+    const itemListElement = [{
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: 'https://www.nitaqacademy.com'
+    }];
+    
+    let currentPath = '';
+    segments.forEach((segment, index) => {
+      currentPath += `/${segment}`;
+      itemListElement.push({
+        '@type': 'ListItem',
+        position: index + 2,
+        name: segment.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()),
+        item: `https://www.nitaqacademy.com${currentPath}`
+      });
+    });
+
+    const breadcrumbPayload = {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement
+    };
+    schemaScripts += `<script type="application/ld+json">${JSON.stringify(breadcrumbPayload)}</script>\n  `;
+  }
+
+  if (page.path.startsWith('/article/')) {
+    const articlePayload = {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: page.title,
+      description: page.description,
+      image: ogImageUrl,
+      author: {
+        '@type': 'Person',
+        name: 'Nitaq Expert Team'
+      },
+      publisher: {
+        '@type': 'EducationalOrganization',
+        name: 'Nitaq Academy',
+        logo: {
+          '@type': 'ImageObject',
+          url: 'https://www.nitaqacademy.com/images/logo1.webp'
+        }
+      },
+      datePublished: '2026-05-01'
+    };
+    schemaScripts += `<script type="application/ld+json">${JSON.stringify(articlePayload)}</script>\n  `;
+  }
+
+  if (page.path === '/contact') {
+    const localBusinessPayload = {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Nitaq Academy",
+      "image": 'https://www.nitaqacademy.com/images/logo1.webp',
+      "@id": 'https://www.nitaqacademy.com/contact',
+      "url": 'https://www.nitaqacademy.com/contact',
+      "telephone": "+971545723181",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Office 103, Floor F1, Abu Khamseen Tower",
+        "addressLocality": "Al Majaz 3",
+        "addressRegion": "Sharjah",
+        "addressCountry": "AE"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 25.3259,
+        "longitude": 55.3857
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "24"
+      }
+    };
+    schemaScripts += `<script type="application/ld+json">${JSON.stringify(localBusinessPayload)}</script>\n  `;
+  }
+
   if (schemaScripts) {
     html = html.replace('</head>', `  ${schemaScripts}</head>`);
   }

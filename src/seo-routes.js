@@ -1,5 +1,44 @@
 export const seoRoutes = [
   {
+    path: "/ielts-coaching-dubai",
+    title: "IELTS Coaching Dubai | Band 7+ Guaranteed | Nitaq Academy",
+    description: "Achieve IELTS Band 7+ with elite preparation for Dubai residents. Flexible batches, expert trainers, and mock tests for Academic and General modules.",
+    canonical: "https://www.nitaqacademy.com/ielts-coaching-dubai",
+    ogTitle: "IELTS Coaching Dubai | Band 7+ Guaranteed | Nitaq Academy",
+    ogDescription: "Achieve IELTS Band 7+ with elite preparation for Dubai residents.",
+    ogImage: "/images/og/ielts-coaching-dubai.webp",
+    twitterCard: "summary_large_image",
+    courseSchema: {
+        name: 'IELTS Coaching Dubai',
+        description: 'Comprehensive IELTS preparation for Academic and General Training modules tailored for Dubai students.',
+        duration: 'P4W',
+        mode: ['onsite', 'online'],
+        educationalLevel: 'Intermediate to Advanced',
+        teaches: 'IELTS Academic & General Training, Listening, Reading, Writing, Speaking',
+        inLanguage: 'en',
+    }
+  },
+  {
+    path: "/sat-preparation-dubai",
+    title: "SAT Preparation Dubai | 1400+ Guaranteed | Nitaq Academy",
+    description: "Master the Digital SAT with elite coaching accessible from Dubai. Score 1400+ with native strategies, mock tests, and top-tier instructors.",
+    canonical: "https://www.nitaqacademy.com/sat-preparation-dubai",
+    ogTitle: "SAT Preparation Dubai | 1400+ Guaranteed | Nitaq Academy",
+    ogDescription: "Master the Digital SAT with elite coaching accessible from Dubai.",
+    ogImage: "/images/og/sat-preparation-dubai.webp",
+    twitterCard: "summary_large_image",
+    courseSchema: {
+        name: 'SAT Preparation Dubai',
+        description: 'Master the Digital SAT with elite adaptive coaching near Dubai.',
+        duration: 'P8W',
+        mode: ['onsite', 'online'],
+        educationalLevel: 'Intermediate to Advanced',
+        teaches: 'Digital SAT Reading, Writing, and Math',
+        inLanguage: 'en',
+    }
+  },
+
+  {
     path: "/articles",
     title: "Articles & Educational Guides | Nitaq Academy Sharjah",
     description: "Expert SAT coaching Sharjah, IELTS training UAE, and professional career insights from Nitaq Academy - the leading training institute in Sharjah. Stay ahead with our guides.",
@@ -78,7 +117,7 @@ export const seoRoutes = [
     canonical: "https://www.nitaqacademy.com/courses",
     ogTitle: "Our Courses | Nitaq Academy Sharjah",
     ogDescription: "Explore all professional certifications, test preparations, and language trainings at Nitaq Academy. Your path to excellence starts here.",
-    ogImage: "/images/logo1.webp",
+    ogImage: "/images/og/courses.webp",
     twitterCard: "summary_large_image",
     courseSchema: null,
     faqSchema: null
@@ -90,7 +129,7 @@ export const seoRoutes = [
     canonical: "https://www.nitaqacademy.com/test-preparations",
     ogTitle: "Test Preparation Courses Sharjah | IELTS, TOEFL, SAT, GRE | Nitaq Academy",
     ogDescription: "Expert coaching for IELTS, TOEFL, SAT, GMAT, and GRE in Sharjah. Boost your scores and secure admissions with Nitaq Academy's proven programs.",
-    ogImage: "/images/logo1.webp",
+    ogImage: "/images/og/test-preparations.webp",
     twitterCard: "summary_large_image",
     courseSchema: null,
     faqSchema: null
@@ -182,7 +221,7 @@ export const seoRoutes = [
     canonical: "https://www.nitaqacademy.com/toefl-course",
     ogTitle: "TOEFL Preparation Course Sharjah | TOEFL iBT Coaching UAE | Nitaq Academy",
     ogDescription: "Ace the TOEFL iBT with Nitaq Academy expert coaching in Sharjah. Reading, Listening, Speaking & Writing preparation with mock tests. SPEA Authorized. Online & offline UAE.",
-    ogImage: "/images/logo1.webp",
+    ogImage: "/images/og/toefl-course.webp",
     twitterCard: "summary_large_image",
     courseSchema: {
         name: 'TOEFL Preparation Course Sharjah',
@@ -226,7 +265,7 @@ export const seoRoutes = [
     canonical: "https://www.nitaqacademy.com/ielts-course",
     ogTitle: "IELTS Preparation Course Sharjah | Band 7+ Guaranteed | Nitaq Academy",
     ogDescription: "Achieve IELTS Band 7+ with Nitaq Academy's expert-led preparation course in Sharjah. Flexible batches, mock tests & proven strategies for Academic and General modules.",
-    ogImage: "/images/logo1.webp",
+    ogImage: "/images/og/ielts-course.webp",
     twitterCard: "summary_large_image",
     courseSchema: {
         name: 'IELTS Preparation Course Sharjah',
@@ -279,7 +318,7 @@ export const seoRoutes = [
     canonical: "https://www.nitaqacademy.com/gmat-preparation",
     ogTitle: "GMAT Preparation Course Sharjah | MBA Exam Coaching UAE | Nitaq Academy",
     ogDescription: "Master the GMAT with Nitaq Academy's expert coaching in Sharjah. 10 mock tests, Quant, Verbal & AWA training for top MBA admission. SPEA Authorized. Online & offline GMAT prep UAE.",
-    ogImage: "/images/logo1.webp",
+    ogImage: "/images/og/gmat-preparation.webp",
     twitterCard: "summary_large_image",
     courseSchema: {
         name: 'GMAT Preparation Course Sharjah',
@@ -328,7 +367,7 @@ export const seoRoutes = [
     canonical: "https://www.nitaqacademy.com/gre-preparation",
     ogTitle: "GRE Preparation Course Sharjah | Graduate School Coaching UAE | Nitaq Academy",
     ogDescription: "Score high on the GRE with Nitaq Academy's expert coaching in Sharjah. 10 mock tests, Quant, Verbal & AWA training. SPEA Authorized. Online & offline GRE prep UAE.",
-    ogImage: "/images/logo1.webp",
+    ogImage: "/images/og/gre-preparation.webp",
     twitterCard: "summary_large_image",
     courseSchema: {
         name: 'GRE Preparation Course Sharjah',
@@ -430,7 +469,7 @@ export const seoRoutes = [
     canonical: "https://www.nitaqacademy.com/sales-negotiations",
     ogTitle: "Sales & Negotiations Training Sharjah | Business Skills UAE | Nitaq Academy",
     ogDescription: "Sales and negotiations training at Nitaq Academy Sharjah. Master persuasion, deal-closing, and negotiation strategies for business success. Online & offline batches UAE.",
-    ogImage: "/images/logo1.webp",
+    ogImage: "/images/og/sat-preparation-sharjah.webp",
     twitterCard: "summary_large_image",
     courseSchema: {
         name: 'Sales & Negotiations Training Sharjah',
@@ -518,7 +557,7 @@ export const seoRoutes = [
     canonical: "https://www.nitaqacademy.com/cpa-course",
     ogTitle: "CPA Course Sharjah | Certified Public Accountant Training UAE | Nitaq Academy",
     ogDescription: "CPA (Certified Public Accountant) preparation at Nitaq Academy Sharjah. Expert AICPA CPA exam coaching with comprehensive practice materials. SPEA Authorized.",
-    ogImage: "/images/logo1.webp",
+    ogImage: "/images/og/cpa-course.webp",
     twitterCard: "summary_large_image",
     courseSchema: {
         name: 'CPA Preparation Course Sharjah',
@@ -562,7 +601,7 @@ export const seoRoutes = [
     canonical: "https://www.nitaqacademy.com/pte-course",
     ogTitle: "PTE Academic Preparation Course Sharjah | PTE Coaching UAE | Nitaq Academy",
     ogDescription: "Score high on PTE Academic with Nitaq Academy coaching in Sharjah. Comprehensive Speaking, Writing, Reading & Listening preparation. Online & offline batches. SPEA Authorized.",
-    ogImage: "/images/logo1.webp",
+    ogImage: "/images/og/pte-course.webp",
     twitterCard: "summary_large_image",
     courseSchema: {
         name: 'PTE Academic Preparation Course Sharjah',
@@ -650,7 +689,7 @@ export const seoRoutes = [
     canonical: "https://www.nitaqacademy.com/ai-course",
     ogTitle: "AI & Technology Course Sharjah | Artificial Intelligence Training UAE | Nitaq",
     ogDescription: "Master AI and technology at Nitaq Academy Sharjah. Machine learning, data science, Python & professional AI certification training. Flexible online & offline batches UAE.",
-    ogImage: "/images/logo1.webp",
+    ogImage: "/images/og/ai-course.webp",
     twitterCard: "summary_large_image",
     courseSchema: {
         name: 'AI & Technology Course Sharjah',
@@ -782,7 +821,7 @@ export const seoRoutes = [
     canonical: "https://www.nitaqacademy.com/cpcd-courses",
     ogTitle: "CPCD Course Sharjah | Professional CP Training UAE | Nitaq Academy",
     ogDescription: "CPCD professional certification training at Nitaq Academy Sharjah. Expert coaching for CPCD exams. Online & offline batches available UAE. SPEA Authorized.",
-    ogImage: "/images/logo1.webp",
+    ogImage: "/images/og/cpcd-courses.webp",
     twitterCard: "summary_large_image",
     courseSchema: {
         name: 'CPCD Professional Course Sharjah',
@@ -826,7 +865,7 @@ export const seoRoutes = [
     canonical: "https://www.nitaqacademy.com/hrm-courses",
     ogTitle: "HRM Course Sharjah | Human Resource Management Training UAE | Nitaq Academy",
     ogDescription: "Human Resource Management (HRM) training at Nitaq Academy Sharjah. Practical HR skills for professionals. Online & offline batches UAE. SPEA Authorized.",
-    ogImage: "/images/logo1.webp",
+    ogImage: "/images/og/hrm-courses.webp",
     twitterCard: "summary_large_image",
     courseSchema: {
         name: 'Human Resource Management Course Sharjah',
@@ -870,7 +909,7 @@ export const seoRoutes = [
     canonical: "https://www.nitaqacademy.com/french",
     ogTitle: "French Language Course Sharjah | DELF/DALF Preparation UAE | Nitaq Academy",
     ogDescription: "Learn French at all levels (A1–C2) at Nitaq Academy Sharjah. DELF/DALF exam prep, immersive teaching, flexible online & offline batches. CEFR-aligned curriculum. SPEA Authorized.",
-    ogImage: "/images/logo1.webp",
+    ogImage: "/images/og/french.webp",
     twitterCard: "summary_large_image",
     courseSchema: {
         name: 'French Language Course Sharjah',
@@ -914,7 +953,7 @@ export const seoRoutes = [
     canonical: "https://www.nitaqacademy.com/chrm",
     ogTitle: "CHRM Course Sharjah | Certified HR Manager Training UAE | Nitaq Academy",
     ogDescription: "CHRM (Certified HR Manager) preparation at Nitaq Academy Sharjah. Build strategic HR leadership skills with our expert-led CHRM coaching. Online & offline batches UAE.",
-    ogImage: "/images/logo1.webp",
+    ogImage: "/images/og/chrm.webp",
     twitterCard: "summary_large_image",
     courseSchema: {
         name: 'CHRM - Certified HR Manager Course Sharjah',
@@ -1046,7 +1085,7 @@ export const seoRoutes = [
     canonical: "https://www.nitaqacademy.com/cma-course",
     ogTitle: "CMA Course Sharjah | Certified Management Accountant Coaching UAE | Nitaq",
     ogDescription: "CMA (Certified Management Accountant) preparation at Nitaq Academy Sharjah. Expert IMA CMA exam coaching. SPEA Authorized. Online & offline batches available UAE.",
-    ogImage: "/images/logo1.webp",
+    ogImage: "/images/og/cma-course.webp",
     twitterCard: "summary_large_image",
     courseSchema: {
         name: 'CMA Preparation Course Sharjah',
@@ -1090,7 +1129,7 @@ export const seoRoutes = [
     canonical: "https://www.nitaqacademy.com/acca-course",
     ogTitle: "ACCA Course Sharjah | Chartered Accountant Coaching UAE | Nitaq Academy",
     ogDescription: "ACCA qualification coaching in Sharjah at Nitaq Academy. Expert tutors for all levels — Applied Knowledge, Skills & Strategic Professional. SPEA Authorized. Online & offline.",
-    ogImage: "/images/logo1.webp",
+    ogImage: "/images/og/acca-course.webp",
     twitterCard: "summary_large_image",
     courseSchema: {
         name: 'ACCA Preparation Course Sharjah',
@@ -1178,7 +1217,7 @@ export const seoRoutes = [
     canonical: "https://www.nitaqacademy.com/spanish",
     ogTitle: "Spanish Language Course Sharjah | DELE Preparation UAE | Nitaq Academy",
     ogDescription: "Learn Spanish (A1–C2) at Nitaq Academy Sharjah. DELE exam prep, immersive teaching, flexible online & offline batches. CEFR-aligned curriculum. SPEA Authorized.",
-    ogImage: "/images/logo1.webp",
+    ogImage: "/images/og/spanish.webp",
     twitterCard: "summary_large_image",
     courseSchema: {
         name: 'Spanish Language Course Sharjah',
@@ -1222,7 +1261,7 @@ export const seoRoutes = [
     canonical: "https://www.nitaqacademy.com/finance-courses",
     ogTitle: "Finance Courses Sharjah | ACCA, CMA, CPA | Nitaq Academy",
     ogDescription: "Explore top professional finance certifications at Nitaq Academy Sharjah. We offer expert coaching for ACCA, CMA, and CPA passing guarantee.",
-    ogImage: "/images/logo1.webp",
+    ogImage: "/images/og/finance-courses.webp",
     twitterCard: "summary_large_image",
     courseSchema: null,
     faqSchema: null
@@ -1366,7 +1405,7 @@ export const seoRoutes = [
     canonical: "https://www.nitaqacademy.com/german",
     ogTitle: "German Language Course Sharjah | Goethe/TestDaF Prep UAE | Nitaq Academy",
     ogDescription: "Learn German (A1–C2) at Nitaq Academy Sharjah. Goethe/TestDaF exam prep, immersive teaching, flexible online & offline batches. CEFR-aligned curriculum. SPEA Authorized.",
-    ogImage: "/images/logo1.webp",
+    ogImage: "/images/og/german.webp",
     twitterCard: "summary_large_image",
     courseSchema: {
         name: 'German Language Course Sharjah',
@@ -1470,7 +1509,7 @@ export const seoRoutes = [
     canonical: "https://www.nitaqacademy.com/article/choose-right-course-uae",
     ogTitle: "How to Choose the Right Course in UAE for Your Career Goals | Nitaq Academy",
     ogDescription: "Unsure which professional course to take? Use our expert guide to align your skills with the UAE job market and choose the right certification for career success.",
-    ogImage: "/images/logo1.webp",
+    ogImage: "/images/og/article/choose-right-course-uae.webp",
     twitterCard: "summary_large_image",
     courseSchema: null,
     faqSchema: null
@@ -1506,7 +1545,7 @@ export const seoRoutes = [
     canonical: "https://www.nitaqacademy.com/article/ai-courses-sharjah-essential",
     ogTitle: "AI Courses in Sharjah: Why Learning AI Is Essential in 2026 | Nitaq Academy",
     ogDescription: "Discover why AI literacy is the most critical skill for 2026. Learn about the best AI courses in Sharjah and how Artificial Intelligence is transforming the UAE job market.",
-    ogImage: "/images/logo1.webp",
+    ogImage: "/images/og/article/ai-courses-sharjah-essential.webp",
     twitterCard: "summary_large_image",
     courseSchema: null,
     faqSchema: null
@@ -1530,7 +1569,7 @@ export const seoRoutes = [
     canonical: "https://www.nitaqacademy.com/article/professional-courses-sharjah-growth",
     ogTitle: "Why Professional Courses in Sharjah Are Important for Career Growth | Nitaq Academy",
     ogDescription: "Discover how professional courses in Sharjah can accelerate your career in the competitive UAE market. Learn about the most in-demand skills and certifications.",
-    ogImage: "/images/logo1.webp",
+    ogImage: "/images/og/article/professional-courses-sharjah-growth.webp",
     twitterCard: "summary_large_image",
     courseSchema: null,
     faqSchema: null
