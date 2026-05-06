@@ -70,9 +70,9 @@ import AIWebinarThankYou from './pages/webinar/AIWebinarThankYou';
 import CounselorsOrientation from './pages/webinar/CounselorsOrientation';
 import CounselorsOrientationThankYou from './pages/webinar/CounselorsOrientationThankYou';
 
-function App() {
+function AppContent() {
   return (
-    <Router>
+    <>
       <ScrollToTop />
       <ScrollToHashElement />
       <Header />
@@ -156,9 +156,15 @@ function App() {
       </Routes>
       <FloatingWhatsAppCondition />
       <Footer />
-    </Router>
+    </>
   );
 }
+
+function App() {
+  return <AppContent />;
+}
+
+export { AppContent };
 
 // Helper components to conditionally render layout elements
 const FloatingWhatsAppCondition = () => {
