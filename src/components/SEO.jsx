@@ -4,8 +4,7 @@ import { getSeoRoute } from '../seo-routes';
 
 /**
  * SEO component with full structured data support.
- * Dynamically infers the current route and looks up all meta tags
- * centrally from src/seo-routes.js.
+ * Consolidated single-script JSON-LD to prevent duplication errors in Search Console.
  */
 const SEO = () => {
   const location = useLocation();
@@ -27,57 +26,58 @@ const SEO = () => {
   const fullUrl = routeData.canonical || `${siteUrl}${location.pathname}`;
   const ogImageUrl = routeData.ogImage.startsWith('http') ? routeData.ogImage : `${siteUrl}${routeData.ogImage}`;
 
-  const buildCourseJsonLd = (cs) => ({
-    '@context': 'https://schema.org',
-    '@type': 'Course',
-    name: cs.name,
-    description: cs.description,
-    url: fullUrl,
-    provider: {
-      '@type': 'EducationalOrganization',
-      name: 'Nitaq Academy',
-      url: siteUrl,
-      address: {
-        '@type': 'PostalAddress',
-        addressLocality: 'Sharjah',
-        addressCountry: 'AE',
-      },
+  // Schema Builders
+  const schemas = [];
+
+  // 1. Global Organization & WebSite
+  schemas.push({
+    "@context": "https://schema.org",
+    "@type": ["EducationalOrganization", "LocalBusiness"],
+    "@id": `${siteUrl}/#organization`,
+    "name": "Nitaq Academy",
+    "url": siteUrl,
+    "logo": `${siteUrl}/images/logo1.webp`,
+    "description": "Premier training academy in Sharjah offering IELTS, SAT, GRE, GMAT, language courses, AI training and professional certifications.",
+    "telephone": "+971545723181",
+    "email": "info@nitaqacademy.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Al Majaz 3",
+      "addressRegion": "Sharjah",
+      "addressCountry": "AE"
     },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      reviewCount: '24'
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "25.3259",
+      "longitude": "55.3857"
     },
-    ...(cs.duration && { timeRequired: cs.duration }),
-    ...(cs.mode && { courseMode: cs.mode }),
-    ...(cs.educationalLevel && { educationalLevel: cs.educationalLevel }),
-    ...(cs.teaches && { teaches: cs.teaches }),
-    ...(cs.image && { image: cs.image }),
-    ...(cs.inLanguage && { inLanguage: cs.inLanguage }),
-    ...(cs.offers && {
-      offers: {
-        '@type': 'Offer',
-        priceCurrency: 'AED',
-        availability: 'https://schema.org/InStock',
-        ...cs.offers,
-      },
-    }),
+    "sameAs": [
+      "https://www.instagram.com/nitaqacademy",
+      "https://www.facebook.com/nitaqacademy"
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "24"
+    }
   });
 
-  const buildFaqJsonLd = (faqs) => ({
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faqs.map(({ question, answer }) => ({
-      '@type': 'Question',
-      name: question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: answer,
-      },
-    })),
+  schemas.push({
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${siteUrl}/#website`,
+    "url": siteUrl,
+    "name": "Nitaq Academy",
+    "publisher": {"@id": `${siteUrl}/#organization`},
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": `${siteUrl}/course?q={search_term_string}`,
+      "query-input": "required name=search_term_string"
+    }
   });
 
-  const buildBreadcrumbJsonLd = () => {
+  // 2. Breadcrumbs (if not homepage)
+  if (location.pathname !== '/') {
     const segments = location.pathname.split('/').filter(Boolean);
     const itemListElement = [{
       '@type': 'ListItem',
@@ -85,7 +85,6 @@ const SEO = () => {
       name: 'Home',
       item: siteUrl
     }];
-
     let currentPath = '';
     segments.forEach((segment, index) => {
       currentPath += `/${segment}`;
@@ -96,34 +95,66 @@ const SEO = () => {
         item: `${siteUrl}${currentPath}`
       });
     });
-
-    return {
+    schemas.push({
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
-      itemListElement
-    };
-  };
+      'itemListElement': itemListElement
+    });
+  }
 
-  const buildArticleJsonLd = (doc) => ({
-    '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: doc.title,
-    description: doc.description,
-    image: ogImageUrl,
-    author: {
-      '@type': 'Person',
-      name: 'Nitaq Expert Team'
-    },
-    publisher: {
-      '@type': 'EducationalOrganization',
-      name: 'Nitaq Academy',
-      logo: {
-        '@type': 'ImageObject',
-        url: `${siteUrl}/images/logo1.webp`
-      }
-    },
-    datePublished: '2026-05-01'
-  });
+  // 3. Course Schema
+  if (routeData.courseSchema) {
+    const cs = routeData.courseSchema;
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'Course',
+      'name': cs.name,
+      'description': cs.description,
+      'url': fullUrl,
+      'provider': { '@id': `${siteUrl}/#organization` },
+      'aggregateRating': {
+        '@type': 'AggregateRating',
+        'ratingValue': '4.9',
+        'reviewCount': '24'
+      },
+      ...(cs.duration && { timeRequired: cs.duration }),
+      ...(cs.mode && { courseMode: cs.mode }),
+      ...(cs.educationalLevel && { educationalLevel: cs.educationalLevel }),
+      ...(cs.teaches && { teaches: cs.teaches }),
+      ...(cs.image && { image: cs.image }),
+      ...(cs.inLanguage && { inLanguage: cs.inLanguage }),
+    });
+  }
+
+  // 4. FAQPage Schema
+  if (routeData.faqSchema && routeData.faqSchema.length > 0) {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      'mainEntity': routeData.faqSchema.map(({ question, answer }) => ({
+        '@type': 'Question',
+        'name': question,
+        'acceptedAnswer': {
+          '@type': 'Answer',
+          'text': answer,
+        },
+      })),
+    });
+  }
+
+  // 5. Article Schema
+  if (location.pathname.startsWith('/article/')) {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      'headline': routeData.title,
+      'description': routeData.description,
+      'image': ogImageUrl,
+      'author': { '@type': 'Person', 'name': 'Nitaq Expert Team' },
+      'publisher': { '@id': `${siteUrl}/#organization` },
+      'datePublished': '2026-05-01'
+    });
+  }
 
   return (
     <Helmet>
@@ -145,65 +176,13 @@ const SEO = () => {
       <meta name="twitter:description" content={routeData.ogDescription || routeData.description} />
       <meta name="twitter:image" content={ogImageUrl} />
 
-      {/* Course JSON-LD */}
-      {routeData.courseSchema && (
-        <script type="application/ld+json">
-          {JSON.stringify(buildCourseJsonLd(routeData.courseSchema))}
-        </script>
-      )}
-
-      {/* FAQPage JSON-LD */}
-      {routeData.faqSchema && routeData.faqSchema.length > 0 && (
-        <script type="application/ld+json">
-          {JSON.stringify(buildFaqJsonLd(routeData.faqSchema))}
-        </script>
-      )}
-
-      {/* Breadcrumbs JSON-LD */}
-      {location.pathname !== '/' && (
-        <script type="application/ld+json">
-          {JSON.stringify(buildBreadcrumbJsonLd())}
-        </script>
-      )}
-
-      {/* LocalBusiness Schema exclusively for Contact page anchor */}
-      {location.pathname === '/contact' && (
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "LocalBusiness",
-            "name": "Nitaq Academy",
-            "image": `${siteUrl}/images/logo1.webp`,
-            "@id": `${siteUrl}/contact`,
-            "url": `${siteUrl}/contact`,
-            "telephone": "+971545723181",
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "Office 103, Floor F1, Abu Khamseen Tower",
-              "addressLocality": "Al Majaz 3",
-              "addressRegion": "Sharjah",
-              "addressCountry": "AE"
-            },
-            "geo": {
-              "@type": "GeoCoordinates",
-              "latitude": 25.3259,
-              "longitude": 55.3857
-            },
-            "aggregateRating": {
-              "@type": "AggregateRating",
-              "ratingValue": "4.9",
-              "reviewCount": "24"
-            }
-          })}
-        </script>
-      )}
-
-      {/* Article JSON-LD */}
-      {location.pathname.startsWith('/article/') && (
-        <script type="application/ld+json">
-          {JSON.stringify(buildArticleJsonLd(routeData))}
-        </script>
-      )}
+      {/* Structured Data: Consolidated into a single script block using @graph for better Search Console handling */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": schemas
+        })}
+      </script>
     </Helmet>
   );
 };
