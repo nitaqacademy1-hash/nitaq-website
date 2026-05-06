@@ -1,10 +1,10 @@
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
-import { getSeoRoute } from '../seo-routes';
+import { getSeoRoute, seoRoutes } from '../seo-routes';
 
 /**
  * SEO component with full structured data support.
- * Consolidated single-script JSON-LD to prevent duplication errors in Search Console.
+ * Consolidated single-script JSON-LD to prevent duplication and missing field errors.
  */
 const SEO = () => {
   const location = useLocation();
@@ -26,22 +26,29 @@ const SEO = () => {
   const fullUrl = routeData.canonical || `${siteUrl}${location.pathname}`;
   const ogImageUrl = routeData.ogImage.startsWith('http') ? routeData.ogImage : `${siteUrl}${routeData.ogImage}`;
 
+  // Organization ID for linking
+  const orgId = `${siteUrl}/#organization`;
+
   // Schema Builders
   const schemas = [];
 
-  // 1. Global Organization & WebSite
-  schemas.push({
+  // 1. Global Organization 
+  const organizationSchema = {
     "@context": "https://schema.org",
     "@type": ["EducationalOrganization", "LocalBusiness"],
-    "@id": `${siteUrl}/#organization`,
+    "@id": orgId,
     "name": "Nitaq Academy",
     "url": siteUrl,
-    "logo": `${siteUrl}/images/logo1.webp`,
-    "description": "Premier training academy in Sharjah offering IELTS, SAT, GRE, GMAT, language courses, AI training and professional certifications.",
+    "logo": {
+      "@type": "ImageObject",
+      "url": `${siteUrl}/images/logo1.webp`
+    },
+    "description": "Premier training academy in Sharjah offering IELTS, Digital SAT, GRE, GMAT, ACCA, and AI technology courses. SPEA Authorized training institute.",
     "telephone": "+971545723181",
     "email": "info@nitaqacademy.com",
     "address": {
       "@type": "PostalAddress",
+      "streetAddress": "Office 103, Floor F1, Abu Khamseen Tower",
       "addressLocality": "Al Majaz 3",
       "addressRegion": "Sharjah",
       "addressCountry": "AE"
@@ -60,15 +67,33 @@ const SEO = () => {
       "ratingValue": "4.9",
       "reviewCount": "24"
     }
-  });
+  };
 
+  // Only add a simplified catalog on the homepage to avoid "missing description" errors for inner pages
+  if (location.pathname === '/') {
+    organizationSchema.hasOfferCatalog = {
+      "@type": "OfferCatalog",
+      "name": "Nitaq Academy Courses",
+      "itemListElement": [
+        { "@type": "Course", "name": "IELTS Preparation", "description": "Expert IELTS coaching for Academic & General modules.", "url": `${siteUrl}/ielts-course` },
+        { "@type": "Course", "name": "SAT Preparation", "description": "Comprehensive Digital SAT coaching with 1400+ focus.", "url": `${siteUrl}/sat-preparation-sharjah` },
+        { "@type": "Course", "name": "GRE Coaching", "description": "Strategic GRE preparation for graduate school admissions.", "url": `${siteUrl}/gre-preparation` },
+        { "@type": "Course", "name": "GMAT Training", "description": "Top-tier GMAT coaching for MBA aspirants.", "url": `${siteUrl}/gmat-preparation` },
+        { "@type": "Course", "name": "ACCA Coaching", "description": "Complete ACCA qualification training by experts.", "url": `${siteUrl}/acca-course` }
+      ]
+    };
+  }
+
+  schemas.push(organizationSchema);
+
+  // 2. WebSite
   schemas.push({
     "@context": "https://schema.org",
     "@type": "WebSite",
     "@id": `${siteUrl}/#website`,
     "url": siteUrl,
     "name": "Nitaq Academy",
-    "publisher": {"@id": `${siteUrl}/#organization`},
+    "publisher": { "@id": orgId },
     "potentialAction": {
       "@type": "SearchAction",
       "target": `${siteUrl}/course?q={search_term_string}`,
@@ -76,7 +101,7 @@ const SEO = () => {
     }
   });
 
-  // 2. Breadcrumbs (if not homepage)
+  // 3. Breadcrumbs
   if (location.pathname !== '/') {
     const segments = location.pathname.split('/').filter(Boolean);
     const itemListElement = [{
@@ -102,16 +127,21 @@ const SEO = () => {
     });
   }
 
-  // 3. Course Schema
+  // 4. Course Schema (Main focus for course pages)
   if (routeData.courseSchema) {
     const cs = routeData.courseSchema;
     schemas.push({
       '@context': 'https://schema.org',
       '@type': 'Course',
       'name': cs.name,
-      'description': cs.description,
+      'description': cs.description || routeData.description,
       'url': fullUrl,
-      'provider': { '@id': `${siteUrl}/#organization` },
+      'provider': {
+        '@type': 'EducationalOrganization',
+        'name': 'Nitaq Academy',
+        'url': siteUrl,
+        '@id': orgId
+      },
       'aggregateRating': {
         '@type': 'AggregateRating',
         'ratingValue': '4.9',
@@ -121,12 +151,12 @@ const SEO = () => {
       ...(cs.mode && { courseMode: cs.mode }),
       ...(cs.educationalLevel && { educationalLevel: cs.educationalLevel }),
       ...(cs.teaches && { teaches: cs.teaches }),
-      ...(cs.image && { image: cs.image }),
+      ...(cs.image && { image: ogImageUrl }),
       ...(cs.inLanguage && { inLanguage: cs.inLanguage }),
     });
   }
 
-  // 4. FAQPage Schema
+  // 5. FAQPage Schema
   if (routeData.faqSchema && routeData.faqSchema.length > 0) {
     schemas.push({
       '@context': 'https://schema.org',
@@ -142,7 +172,7 @@ const SEO = () => {
     });
   }
 
-  // 5. Article Schema
+  // 6. Article Schema
   if (location.pathname.startsWith('/article/')) {
     schemas.push({
       '@context': 'https://schema.org',
@@ -151,32 +181,30 @@ const SEO = () => {
       'description': routeData.description,
       'image': ogImageUrl,
       'author': { '@type': 'Person', 'name': 'Nitaq Expert Team' },
-      'publisher': { '@id': `${siteUrl}/#organization` },
+      'publisher': { '@id': orgId },
       'datePublished': '2026-05-01'
     });
   }
 
   return (
     <Helmet>
-      {/* Basic Meta Tags */}
+      {/* Search Engine Meta Tags */}
       <title>{routeData.title}</title>
       <meta name="description" content={routeData.description} />
       <link rel="canonical" href={fullUrl} />
 
-      {/* Open Graph Tags for Social Sharing */}
+      {/* Social Media (OG/Twitter) Meta Tags */}
       <meta property="og:url" content={fullUrl} />
       <meta property="og:title" content={routeData.ogTitle || routeData.title} />
       <meta property="og:description" content={routeData.ogDescription || routeData.description} />
       <meta property="og:type" content="website" />
       <meta property="og:image" content={ogImageUrl} />
-
-      {/* Twitter Card */}
       <meta name="twitter:card" content={routeData.twitterCard || "summary_large_image"} />
       <meta name="twitter:title" content={routeData.ogTitle || routeData.title} />
       <meta name="twitter:description" content={routeData.ogDescription || routeData.description} />
       <meta name="twitter:image" content={ogImageUrl} />
 
-      {/* Structured Data: Consolidated into a single script block using @graph for better Search Console handling */}
+      {/* Structured Data: Unified @graph block for maximum compatibility */}
       <script type="application/ld+json">
         {JSON.stringify({
           "@context": "https://schema.org",
