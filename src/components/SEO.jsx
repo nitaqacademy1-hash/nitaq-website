@@ -59,8 +59,10 @@ const SEO = () => {
       "longitude": "55.3857"
     },
     "sameAs": [
-      "https://www.instagram.com/nitaqacademy",
-      "https://www.facebook.com/nitaqacademy"
+      "https://www.instagram.com/nitaq.academy",
+      "https://www.facebook.com/nitaqacademy.ae/",
+      "https://www.linkedin.com/company/nitaqacademy",
+      "https://maps.app.goo.gl/3fX3B1uQ7G2zS5vE8"
     ],
     "aggregateRating": {
       "@type": "AggregateRating",
