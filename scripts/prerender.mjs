@@ -150,10 +150,17 @@ async function prerender() {
   console.log('\n🗺️  Generating sitemap.xml...')
   const today = new Date().toISOString().split('T')[0]
   let sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`
+  
   for (const route of ROUTES) {
+    // Skip low-value pages from sitemap
+    if (route.includes('thank-you') || route.startsWith('/ig/') || route === '/enquiry') {
+      continue;
+    }
+
     let priority = '0.8'
     if (route === '/') priority = '1.0'
     else if (/course|prep|ielts|gre|gmat/.test(route)) priority = '0.9'
+    
     sitemap += `  <url>\n    <loc>https://www.nitaqacademy.com${route}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>${priority}</priority>\n  </url>\n`
   }
   sitemap += '</urlset>'
