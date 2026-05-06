@@ -10,7 +10,7 @@ import { getSeoRoute } from '../seo-routes';
 const SEO = () => {
   const location = useLocation();
   const siteUrl = 'https://www.nitaqacademy.com';
-  
+
   // Find SEO data from central directory, or fallback to generic defaults
   const routeData = getSeoRoute(location.pathname) || {
     title: "Nitaq Academy Sharjah | IELTS, ACCA, AI & Language Courses",
@@ -85,7 +85,7 @@ const SEO = () => {
       name: 'Home',
       item: siteUrl
     }];
-    
+
     let currentPath = '';
     segments.forEach((segment, index) => {
       currentPath += `/${segment}`;

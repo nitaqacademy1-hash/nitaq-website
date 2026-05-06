@@ -29,63 +29,69 @@ function generatePageHtml(template, page) {
       ? page.ogImage 
       : `https://www.nitaqacademy.com${page.ogImage}`;
 
-  // 1. Replace or Inject Title
-  if (html.includes('<title>')) {
-    html = html.replace(/<title>[^<]*<\/title>/, `<title>${page.title}</title>`);
-  } else {
-    html = html.replace('</head>', `  <title>${page.title}</title>\n</head>`);
-  }
+  // 1. Replace or Inject Basic Meta (with data-rh="true")
+  const basicTags = [
+    { tag: 'title', content: page.title },
+    { tag: 'meta', name: 'description', content: page.description },
+    { tag: 'link', rel: 'canonical', href: fullCanonical }
+  ];
 
-  // 2. Replace or Inject Meta Description
-  if (html.includes('name="description"')) {
-    html = html.replace(/<meta name="description"[^>]*>/, `<meta name="description" content="${page.description}">`);
-  } else {
-    html = html.replace('</head>', `  <meta name="description" content="${page.description}">\n</head>`);
-  }
+  basicTags.forEach(t => {
+    if (t.tag === 'title') {
+      if (html.includes('<title>')) {
+        html = html.replace(/<title>[^<]*<\/title>/i, `<title data-rh="true">${t.content}</title>`);
+      } else {
+        html = html.replace('</head>', `  <title data-rh="true">${t.content}</title>\n</head>`);
+      }
+    } else if (t.tag === 'meta') {
+      const regex = new RegExp(`<meta name="${t.name}"[^>]*>`, 'i');
+      if (regex.test(html)) {
+        html = html.replace(regex, `<meta name="${t.name}" content="${t.content}" data-rh="true">`);
+      } else {
+        html = html.replace('</head>', `  <meta name="${t.name}" content="${t.content}" data-rh="true">\n</head>`);
+      }
+    } else if (t.tag === 'link') {
+      const regex = new RegExp(`<link rel="${t.rel}"[^>]*>`, 'i');
+      if (regex.test(html)) {
+        html = html.replace(regex, `<link rel="${t.rel}" href="${t.href}" data-rh="true">`);
+      } else {
+        html = html.replace('</head>', `  <link rel="${t.rel}" href="${t.href}" data-rh="true">\n</head>`);
+      }
+    }
+  });
 
-  // 3. Replace or Inject Canonical
-  if (html.includes('rel="canonical"')) {
-    html = html.replace(/<link rel="canonical"[^>]*>/, `<link rel="canonical" href="${fullCanonical}">`);
-  } else {
-    html = html.replace('</head>', `  <link rel="canonical" href="${fullCanonical}">\n</head>`);
-  }
-
-  // 4. Handle Open Graph Tags
-  const ogTags = [
+  // 2. Handle Open Graph & Twitter Tags (Unified with data-rh="true")
+  const socialTags = [
     { property: 'og:url', content: fullCanonical },
     { property: 'og:title', content: page.ogTitle || page.title },
     { property: 'og:description', content: page.ogDescription || page.description },
     { property: 'og:type', content: 'website' },
-    { property: 'og:image', content: ogImageUrl }
-  ];
-
-  ogTags.forEach(tag => {
-    const regex = new RegExp(`<meta property="${tag.property}"[^>]*>`, 'i');
-    if (regex.test(html)) {
-      html = html.replace(regex, `<meta property="${tag.property}" content="${tag.content}">`);
-    } else {
-      html = html.replace('</head>', `  <meta property="${tag.property}" content="${tag.content}">\n</head>`);
-    }
-  });
-
-  // 5. Add or Update Twitter Card tags
-  const twitterTags = [
+    { property: 'og:image', content: ogImageUrl },
     { name: 'twitter:card', content: page.twitterCard || 'summary_large_image' },
     { name: 'twitter:title', content: page.ogTitle || page.title },
     { name: 'twitter:description', content: page.ogDescription || page.description },
     { name: 'twitter:image', content: ogImageUrl }
   ];
 
-  twitterTags.forEach(tag => {
-    const regex = new RegExp(`<meta name="${tag.name}"[^>]*>`, 'i');
-    if (regex.test(html)) {
-      html = html.replace(regex, `<meta name="${tag.name}" content="${tag.content}">`);
+  socialTags.forEach(tag => {
+    if (tag.property) {
+      const regex = new RegExp(`<meta property="${tag.property}"[^>]*>`, 'i');
+      if (regex.test(html)) {
+        html = html.replace(regex, `<meta property="${tag.property}" content="${tag.content}" data-rh="true">`);
+      } else {
+        html = html.replace('</head>', `  <meta property="${tag.property}" content="${tag.content}" data-rh="true">\n</head>`);
+      }
     } else {
-      html = html.replace('</head>', `  <meta name="twitter:${tag.name.replace('twitter:', '')}" content="${tag.content}">\n</head>`);
+      const regex = new RegExp(`<meta name="${tag.name}"[^>]*>`, 'i');
+      if (regex.test(html)) {
+        html = html.replace(regex, `<meta name="${tag.name}" content="${tag.content}" data-rh="true">`);
+      } else {
+        html = html.replace('</head>', `  <meta name="${tag.name}" content="${tag.content}" data-rh="true">\n</head>`);
+      }
     }
   });
 
-  // 6. JSON-LD Schema Construction
+  // 3. JSON-LD Schema Construction
   let schemaScripts = '';
 
   if (page.courseSchema) {
@@ -99,23 +105,15 @@ function generatePageHtml(template, page) {
         '@type': 'EducationalOrganization',
         name: 'Nitaq Academy',
         url: 'https://www.nitaqacademy.com',
-        address: {
-          '@type': 'PostalAddress',
-          addressLocality: 'Sharjah',
-          addressCountry: 'AE',
-        },
+        address: { '@type': 'PostalAddress', addressLocality: 'Sharjah', addressCountry: 'AE' }
       },
-      aggregateRating: {
-        '@type': 'AggregateRating',
-        ratingValue: '4.9',
-        reviewCount: '24'
-      },
+      aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '24' },
       ...(page.courseSchema.timeRequired && { timeRequired: page.courseSchema.timeRequired }),
       ...(page.courseSchema.courseMode && { courseMode: page.courseSchema.courseMode }),
       ...(page.courseSchema.educationalLevel && { educationalLevel: page.courseSchema.educationalLevel }),
       ...(page.courseSchema.teaches && { teaches: page.courseSchema.teaches }),
     };
-    schemaScripts += `<script type="application/ld+json">${JSON.stringify(coursePayload)}</script>\n  `;
+    schemaScripts += `<script type="application/ld+json" data-rh="true">${JSON.stringify(coursePayload)}</script>\n  `;
   }
 
   if (page.faqSchema && page.faqSchema.length > 0) {
@@ -125,24 +123,15 @@ function generatePageHtml(template, page) {
       mainEntity: page.faqSchema.map(({ question, answer }) => ({
         '@type': 'Question',
         name: question,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: answer,
-        },
+        acceptedAnswer: { '@type': 'Answer', text: answer }
       })),
     };
-    schemaScripts += `<script type="application/ld+json">${JSON.stringify(faqPayload)}</script>\n  `;
+    schemaScripts += `<script type="application/ld+json" data-rh="true">${JSON.stringify(faqPayload)}</script>\n  `;
   }
 
   if (page.path !== '/') {
     const segments = page.path.split('/').filter(Boolean);
-    const itemListElement = [{
-      '@type': 'ListItem',
-      position: 1,
-      name: 'Home',
-      item: 'https://www.nitaqacademy.com'
-    }];
-    
+    const itemListElement = [{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.nitaqacademy.com' }];
     let currentPath = '';
     segments.forEach((segment, index) => {
       currentPath += `/${segment}`;
@@ -153,13 +142,8 @@ function generatePageHtml(template, page) {
         item: `https://www.nitaqacademy.com${currentPath}`
       });
     });
-
-    const breadcrumbPayload = {
-      '@context': 'https://schema.org',
-      '@type': 'BreadcrumbList',
-      itemListElement
-    };
-    schemaScripts += `<script type="application/ld+json">${JSON.stringify(breadcrumbPayload)}</script>\n  `;
+    const breadcrumbPayload = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement };
+    schemaScripts += `<script type="application/ld+json" data-rh="true">${JSON.stringify(breadcrumbPayload)}</script>\n  `;
   }
 
   if (page.path.startsWith('/article/')) {
@@ -169,25 +153,19 @@ function generatePageHtml(template, page) {
       headline: page.title,
       description: page.description,
       image: ogImageUrl,
-      author: {
-        '@type': 'Person',
-        name: 'Nitaq Expert Team'
-      },
+      author: { '@type': 'Person', name: 'Nitaq Expert Team' },
       publisher: {
         '@type': 'EducationalOrganization',
         name: 'Nitaq Academy',
-        logo: {
-          '@type': 'ImageObject',
-          url: 'https://www.nitaqacademy.com/images/logo1.webp'
-        }
+        logo: { '@type': 'ImageObject', url: 'https://www.nitaqacademy.com/images/logo1.webp' }
       },
       datePublished: '2026-05-01'
     };
-    schemaScripts += `<script type="application/ld+json">${JSON.stringify(articlePayload)}</script>\n  `;
+    schemaScripts += `<script type="application/ld+json" data-rh="true">${JSON.stringify(articlePayload)}</script>\n  `;
   }
 
   if (page.path === '/contact') {
-    const localBusinessPayload = {
+    const lbPayload = {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "Nitaq Academy",
@@ -202,18 +180,10 @@ function generatePageHtml(template, page) {
         "addressRegion": "Sharjah",
         "addressCountry": "AE"
       },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 25.3259,
-        "longitude": 55.3857
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "24"
-      }
+      "geo": { "@type": "GeoCoordinates", "latitude": 25.3259, "longitude": 55.3857 },
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "24" }
     };
-    schemaScripts += `<script type="application/ld+json">${JSON.stringify(localBusinessPayload)}</script>\n  `;
+    schemaScripts += `<script type="application/ld+json" data-rh="true">${JSON.stringify(lbPayload)}</script>\n  `;
   }
 
   if (schemaScripts) {

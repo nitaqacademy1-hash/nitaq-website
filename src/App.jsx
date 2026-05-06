@@ -121,7 +121,7 @@ function App() {
         <Route path="/ai-robotics-kids" element={<AIRoboticsKids />} />
         <Route path="/course" element={<Courses />} />
         <Route path="/articles" element={<Articles />} />
-        
+
         {/* Articles */}
         <Route path="/article/sat-coaching-sharjah" element={<SatCoachingSharjah />} />
         <Route path="/article/sat-score-1300-guide" element={<SatScore1300Guide />} />
@@ -134,7 +134,7 @@ function App() {
         <Route path="/article/ai-courses-sharjah-essential" element={<AiCoursesSharjah />} />
         <Route path="/article/best-training-institute-sharjah" element={<BestTrainingInstituteSharjah />} />
         <Route path="/article/choose-right-course-uae" element={<ChooseRightCourseUae />} />
-        
+
         {/* IG Landing Pages */}
         <Route path="/ig/2026-03-29" element={<ResumeGuide />} />
 
@@ -142,7 +142,7 @@ function App() {
         <Route path="/webinar/ai" element={<AIWebinar />} />
         <Route path="/webinar/ai/thank-you" element={<AIWebinarThankYou />} />
         <Route path="/webinar" element={<AIWebinar />} />
-        
+
         {/* Counselors Orientation Landing Pages */}
         <Route path="/webinar/counselors" element={<CounselorsOrientation />} />
         <Route path="/webinar/counselors/thank-you" element={<CounselorsOrientationThankYou />} />
