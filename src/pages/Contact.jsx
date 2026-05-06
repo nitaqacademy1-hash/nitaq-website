@@ -54,7 +54,7 @@ const Contact = () => {
                                     <div>
                                         <h4 style={{ fontSize: '1.2rem', color: '#0f172a', marginBottom: '5px' }}>Contact Numbers</h4>
                                         <p style={{ color: '#64748b', lineHeight: 1.5 }}>
-                                            <a href="tel:+971545723181">+971 54 572 3181</a> (Mobile)<br />
+                                            <a href="tel:+971527569908">+971 52 756 9908</a> (Mobile)<br />
                                             <a href="tel:+97165798313">+971 6 579 8313</a> (Telephone)
                                         </p>
                                     </div>
@@ -120,7 +120,7 @@ const Contact = () => {
                     <div style={{ background: 'white', padding: '60px', borderRadius: '40px', textAlign: 'center', border: '1px solid rgba(0,0,0,0.02)', boxShadow: '0 20px 60px rgba(0,0,0,0.03)' }}>
                         <h2 style={{ fontSize: '2.5rem', marginBottom: '20px', color: '#0f172a' }}>Prefer an Instant <span className="text-gradient">Chat?</span></h2>
                         <p style={{ fontSize: '1.2rem', color: '#64748b', marginBottom: '40px' }}>Our advisors are active on WhatsApp for quick responses.</p>
-                        <a href="https://wa.me/971545723181" className="btn" style={{ background: '#25D366', color: 'white', fontSize: '1.2rem', padding: '20px 40px' }}>
+                        <a href="https://wa.me/971527569908" className="btn" style={{ background: '#25D366', color: 'white', fontSize: '1.2rem', padding: '20px 40px' }}>
                             Message us on WhatsApp
                         </a>
                     </div>

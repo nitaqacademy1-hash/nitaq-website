@@ -37,12 +37,12 @@ const SATCourse = () => {
                     <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '0.95rem' }}>Speak directly with our SAT counsellor on WhatsApp or call us now.</p>
                 </div>
                 <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-                    <a href="https://wa.me/971545723181?text=I'm interested in SAT preparation" className="btn" style={{ background: '#25D366', color: 'white', padding: '14px 28px', borderRadius: '50px', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+                    <a href="https://wa.me/971527569908?text=I'm interested in SAT preparation" className="btn" style={{ background: '#25D366', color: 'white', padding: '14px 28px', borderRadius: '50px', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.11.546 4.093 1.502 5.817L.048 23.952l6.305-1.407A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818c-1.937 0-3.742-.529-5.296-1.448l-.38-.225-3.94.879.946-3.774-.247-.393A9.776 9.776 0 012.182 12 9.818 9.818 0 0112 2.182 9.818 9.818 0 0121.818 12 9.818 9.818 0 0112 21.818z"/></svg>
                         WhatsApp Us
                     </a>
-                    <a href="tel:+971545723181" className="btn" style={{ background: 'rgba(255,255,255,0.15)', color: 'white', padding: '14px 28px', borderRadius: '50px', fontWeight: 600, border: '1px solid rgba(255,255,255,0.3)' }}>
-                        📞 +971 54 572 3181
+                    <a href="tel:+971527569908" className="btn" style={{ background: 'rgba(255,255,255,0.15)', color: 'white', padding: '14px 28px', borderRadius: '50px', fontWeight: 600, border: '1px solid rgba(255,255,255,0.3)' }}>
+                        📞 +971 52 756 9908
                     </a>
                 </div>
             </div>
@@ -293,12 +293,12 @@ const SATCourse = () => {
                     Join hundreds of students who have achieved 1400+ SAT scores with Nitaq Academy Sharjah. Speak with our counsellor now.
                 </p>
                 <div style={{ display: 'flex', gap: '15px', justifyContent: 'center', flexWrap: 'wrap' }}>
-                    <a href="https://wa.me/971545723181?text=I'm interested in SAT preparation" className="btn btn-primary" style={{ padding: '16px 35px', fontSize: '1.1rem', borderRadius: '50px', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '10px' }}>
+                    <a href="https://wa.me/971527569908?text=I'm interested in SAT preparation" className="btn btn-primary" style={{ padding: '16px 35px', fontSize: '1.1rem', borderRadius: '50px', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '10px' }}>
                         <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.11.546 4.093 1.502 5.817L.048 23.952l6.305-1.407A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818c-1.937 0-3.742-.529-5.296-1.448l-.38-.225-3.94.879.946-3.774-.247-.393A9.776 9.776 0 012.182 12 9.818 9.818 0 0112 2.182 9.818 9.818 0 0121.818 12 9.818 9.818 0 0112 21.818z"/></svg>
                         Enrol via WhatsApp
                     </a>
-                    <a href="tel:+971545723181" className="btn" style={{ background: 'rgba(255,255,255,0.1)', color: 'white', padding: '16px 35px', fontSize: '1.1rem', borderRadius: '50px', fontWeight: 600, border: '1px solid rgba(255,255,255,0.2)' }}>
-                        📞 +971 54 572 3181
+                    <a href="tel:+971527569908" className="btn" style={{ background: 'rgba(255,255,255,0.1)', color: 'white', padding: '16px 35px', fontSize: '1.1rem', borderRadius: '50px', fontWeight: 600, border: '1px solid rgba(255,255,255,0.2)' }}>
+                        📞 +971 52 756 9908
                     </a>
                 </div>
             </div>

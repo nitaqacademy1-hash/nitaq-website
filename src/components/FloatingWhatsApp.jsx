@@ -3,7 +3,7 @@ import { trackEvent, ANALYTICS_EVENTS } from '../utils/analytics';
 const FloatingWhatsApp = () => {
   return (
     <a
-      href="https://wa.me/971545723181"
+      href="https://wa.me/971527569908"
       className="floating-whatsapp"
       target="_blank"
       rel="noopener noreferrer"

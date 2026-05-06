@@ -68,11 +68,11 @@ const Footer = () => {
                             <li style={{ fontSize: '0.95rem' }}>Office 103, Floor F1,<br />Abu Khamseen Tower,<br />Al Majaz 3, Sharjah</li>
                             <li style={{ fontSize: '0.95rem', marginTop: '10px' }}>
                                 <a 
-                                    href="tel:+971545723181" 
+                                    href="tel:+971527569908" 
                                     onClick={() => trackEvent(ANALYTICS_EVENTS.CALL, 'footer_mobile')}
                                     style={{ color: 'inherit', textDecoration: 'none' }}
                                 >
-                                    +971 54 572 3181 (Mobile)
+                                    +971 52 756 9908 (Mobile)
                                 </a>
                                 <br />
                                 <a 

@@ -27,7 +27,7 @@ const CourseLayout = ({ title, subtitle, infoData, children }) => {
 
                             <div className="course-hero-actions">
                                 <a 
-                                    href="https://wa.me/971545723181" 
+                                    href="https://wa.me/971527569908" 
                                     className="btn btn-primary"
                                     onClick={() => trackEvent(ANALYTICS_EVENTS.WHATSAPP, `enroll_${title.split(' - ')[0].toLowerCase().replace(/\s+/g, '_')}`)}
                                 >
@@ -85,7 +85,7 @@ const CourseLayout = ({ title, subtitle, infoData, children }) => {
                     </p>
                     <div style={{ display: 'flex', gap: '20px', justifyContent: 'center', flexWrap: 'wrap' }}>
                         <a 
-                            href="https://wa.me/971545723181" 
+                            href="https://wa.me/971527569908" 
                             className="btn btn-primary" 
                             style={{ padding: '20px 45px' }}
                             onClick={() => trackEvent(ANALYTICS_EVENTS.WHATSAPP, `bottom_cta_${title.split(' - ')[0].toLowerCase().replace(/\s+/g, '_')}`)}

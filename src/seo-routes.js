@@ -210,7 +210,7 @@ export const seoRoutes = [
         },
         {
             question: 'What is the fee for Academic Excellence tutoring at Nitaq?',
-            answer: 'Fees vary by grade level and subjects required. Contact us at +971 54 572 3181 for a personalized study plan and pricing.',
+            answer: 'Fees vary by grade level and subjects required. Contact us at +971 52 756 9908 for a personalized study plan and pricing.',
         },
     ]
   },
@@ -254,7 +254,7 @@ export const seoRoutes = [
         },
         {
             question: 'What is the fee for TOEFL preparation at Nitaq Academy?',
-            answer: 'TOEFL course fees are competitive. Contact us at +971 54 572 3181 for the latest pricing and batch information.',
+            answer: 'TOEFL course fees are competitive. Contact us at +971 52 756 9908 for the latest pricing and batch information.',
         },
     ]
   },
@@ -307,7 +307,7 @@ export const seoRoutes = [
         },
         {
             question: 'What is the fee for IELTS preparation at Nitaq Academy Sharjah?',
-            answer: 'Our IELTS course fees are competitive and vary by track (Intensive, Express, Section Focus). Contact us at +971 54 572 3181 for the latest pricing.',
+            answer: 'Our IELTS course fees are competitive and vary by track (Intensive, Express, Section Focus). Contact us at +971 52 756 9908 for the latest pricing.',
         },
     ]
   },
@@ -352,7 +352,7 @@ export const seoRoutes = [
         },
         {
             question: 'What is the fee for GMAT preparation at Nitaq Academy?',
-            answer: 'Our GMAT course fees are highly competitive. Please reach out to our admission team at +971 54 572 3181 for the latest pricing and ongoing offers.',
+            answer: 'Our GMAT course fees are highly competitive. Please reach out to our admission team at +971 52 756 9908 for the latest pricing and ongoing offers.',
         },
         {
             question: 'When can I start GMAT coaching at Nitaq?',
@@ -401,7 +401,7 @@ export const seoRoutes = [
         },
         {
             question: 'What is the fee for GRE preparation at Nitaq Academy?',
-            answer: 'Our GRE course fees are highly competitive. Please reach out to our admission team at +971 54 572 3181 for the latest pricing and ongoing offers.',
+            answer: 'Our GRE course fees are highly competitive. Please reach out to our admission team at +971 52 756 9908 for the latest pricing and ongoing offers.',
         },
         {
             question: 'When can I start GRE coaching at Nitaq?',
@@ -412,10 +412,10 @@ export const seoRoutes = [
   {
     path: "/sat-preparation-sharjah",
     title: "SAT Preparation in Sharjah | Digital SAT Coaching UAE | Nitaq Academy",
-    description: "SPEA Authorized SAT coaching in Sharjah. Digital SAT Math, Reading & Writing. Score 1300+. Online & offline batches. Enrol — +971 54 572 3181.",
+    description: "SPEA Authorized SAT coaching in Sharjah. Digital SAT Math, Reading & Writing. Score 1300+. Online & offline batches. Enrol — +971 52 756 9908.",
     canonical: "https://www.nitaqacademy.com/sat-preparation-sharjah",
     ogTitle: "SAT Preparation in Sharjah | Digital SAT Coaching UAE | Nitaq Academy",
-    ogDescription: "SPEA Authorized SAT coaching in Sharjah. Digital SAT Math, Reading & Writing. Score 1300+. Online & offline batches. Enrol — +971 54 572 3181.",
+    ogDescription: "SPEA Authorized SAT coaching in Sharjah. Digital SAT Math, Reading & Writing. Score 1300+. Online & offline batches. Enrol — +971 52 756 9908.",
     ogImage: "/images/og-sat.png",
     twitterCard: "summary_large_image",
     courseSchema: {
@@ -502,7 +502,7 @@ export const seoRoutes = [
         },
         {
             question: 'What is the fee for Sales & Negotiations Training at Nitaq?',
-            answer: 'Contact us at +971 54 572 3181 for the latest training pricing and scheduling options in Sharjah.',
+            answer: 'Contact us at +971 52 756 9908 for the latest training pricing and scheduling options in Sharjah.',
         },
     ]
   },
@@ -546,7 +546,7 @@ export const seoRoutes = [
         },
         {
             question: 'What is the fee for JEE/NEET coaching at Nitaq Academy Sharjah?',
-            answer: 'Fees vary by grade level and subjects. Contact us at +971 54 572 3181 for detailed pricing and batch schedules.',
+            answer: 'Fees vary by grade level and subjects. Contact us at +971 52 756 9908 for detailed pricing and batch schedules.',
         },
     ]
   },
@@ -590,7 +590,7 @@ export const seoRoutes = [
         },
         {
             question: 'What is the fee for CPA preparation at Nitaq Academy?',
-            answer: 'Contact us at +971 54 572 3181 for the latest CPA course pricing and batch schedules in Sharjah.',
+            answer: 'Contact us at +971 52 756 9908 for the latest CPA course pricing and batch schedules in Sharjah.',
         },
     ]
   },
@@ -634,7 +634,7 @@ export const seoRoutes = [
         },
         {
             question: 'What is the fee for PTE preparation at Nitaq Academy Sharjah?',
-            answer: 'Our PTE course fees are competitive. Call +971 54 572 3181 for the latest PTE course pricing and available batches.',
+            answer: 'Our PTE course fees are competitive. Call +971 52 756 9908 for the latest PTE course pricing and available batches.',
         },
     ]
   },
@@ -678,7 +678,7 @@ export const seoRoutes = [
         },
         {
             question: 'What is the fee for Power BI & Excel training at Nitaq?',
-            answer: 'Contact us at +971 54 572 3181 for the latest Power BI and Excel course pricing and available batches.',
+            answer: 'Contact us at +971 52 756 9908 for the latest Power BI and Excel course pricing and available batches.',
         },
     ]
   },
@@ -722,7 +722,7 @@ export const seoRoutes = [
         },
         {
             question: 'What is the fee for the AI course at Nitaq Academy Sharjah?',
-            answer: 'AI course fees vary by level and duration. Contact us at +971 54 572 3181 for the latest pricing and upcoming batch schedules.',
+            answer: 'AI course fees vary by level and duration. Contact us at +971 52 756 9908 for the latest pricing and upcoming batch schedules.',
         },
     ]
   },
@@ -766,7 +766,7 @@ export const seoRoutes = [
         },
         {
             question: 'What is the fee for the UAE Corporate Tax course at Nitaq?',
-            answer: 'Contact us at +971 54 572 3181 for the latest Corporate Tax course pricing and available batch schedules.',
+            answer: 'Contact us at +971 52 756 9908 for the latest Corporate Tax course pricing and available batch schedules.',
         },
     ]
   },
@@ -810,7 +810,7 @@ export const seoRoutes = [
         },
         {
             question: 'What is the fee for Soft Skills Training at Nitaq Academy?',
-            answer: 'Contact us at +971 54 572 3181 for the latest soft skills training pricing and scheduling options.',
+            answer: 'Contact us at +971 52 756 9908 for the latest soft skills training pricing and scheduling options.',
         },
     ]
   },
@@ -854,7 +854,7 @@ export const seoRoutes = [
         },
         {
             question: 'What is the fee for CPCD training at Nitaq Academy?',
-            answer: 'Contact us at +971 54 572 3181 for the latest CPCD course pricing and available batch schedules.',
+            answer: 'Contact us at +971 52 756 9908 for the latest CPCD course pricing and available batch schedules.',
         },
     ]
   },
@@ -898,7 +898,7 @@ export const seoRoutes = [
         },
         {
             question: 'What is the fee for the HRM course at Nitaq Academy Sharjah?',
-            answer: 'Contact us at +971 54 572 3181 for the latest HRM course fees and available batch schedules.',
+            answer: 'Contact us at +971 52 756 9908 for the latest HRM course fees and available batch schedules.',
         },
     ]
   },
@@ -942,7 +942,7 @@ export const seoRoutes = [
         },
         {
             question: 'What is the fee for the French language course at Nitaq?',
-            answer: 'Our French course fees are competitive and vary by level and batch type. Contact us at +971 54 572 3181 for the latest pricing.',
+            answer: 'Our French course fees are competitive and vary by level and batch type. Contact us at +971 52 756 9908 for the latest pricing.',
         },
     ]
   },
@@ -986,7 +986,7 @@ export const seoRoutes = [
         },
         {
             question: 'What is the fee for the CHRM course at Nitaq Academy?',
-            answer: 'Contact us at +971 54 572 3181 for the latest CHRM course pricing and available batch schedules.',
+            answer: 'Contact us at +971 52 756 9908 for the latest CHRM course pricing and available batch schedules.',
         },
     ]
   },
@@ -1030,7 +1030,7 @@ export const seoRoutes = [
         },
         {
             question: 'What is the fee for AI & Robotics for Kids at Nitaq Academy?',
-            answer: 'Fees vary by age group and program level. Contact us at +971 54 572 3181 for the latest pricing and available batches.',
+            answer: 'Fees vary by age group and program level. Contact us at +971 52 756 9908 for the latest pricing and available batches.',
         },
     ]
   },
@@ -1074,7 +1074,7 @@ export const seoRoutes = [
         },
         {
             question: 'What is the fee for Data Management training at Nitaq Academy?',
-            answer: 'Contact us at +971 54 572 3181 for the latest pricing and available batch schedules for the Data Management course.',
+            answer: 'Contact us at +971 52 756 9908 for the latest pricing and available batch schedules for the Data Management course.',
         },
     ]
   },
@@ -1118,7 +1118,7 @@ export const seoRoutes = [
         },
         {
             question: 'What is the fee for CMA preparation at Nitaq Academy Sharjah?',
-            answer: 'Our CMA course fees are competitive. Contact us at +971 54 572 3181 for the latest pricing and available batch schedules.',
+            answer: 'Our CMA course fees are competitive. Contact us at +971 52 756 9908 for the latest pricing and available batch schedules.',
         },
     ]
   },
@@ -1206,7 +1206,7 @@ export const seoRoutes = [
         },
         {
             question: 'What is the fee for the UAE VAT course at Nitaq?',
-            answer: 'Contact us at +971 54 572 3181 for the latest VAT course pricing and available batch schedules in Sharjah.',
+            answer: 'Contact us at +971 52 756 9908 for the latest VAT course pricing and available batch schedules in Sharjah.',
         },
     ]
   },
@@ -1250,7 +1250,7 @@ export const seoRoutes = [
         },
         {
             question: 'What is the fee for the Spanish language course at Nitaq?',
-            answer: 'Fees vary by level and batch type. Contact us at +971 54 572 3181 for the latest pricing and ongoing offers.',
+            answer: 'Fees vary by level and batch type. Contact us at +971 52 756 9908 for the latest pricing and ongoing offers.',
         },
     ]
   },
@@ -1306,7 +1306,7 @@ export const seoRoutes = [
         },
         {
             question: 'What is the fee for the Spoken English course at Nitaq?',
-            answer: 'Fees are competitive and vary by batch type and duration. Contact us at +971 54 572 3181 for current pricing.',
+            answer: 'Fees are competitive and vary by batch type and duration. Contact us at +971 52 756 9908 for current pricing.',
         },
     ]
   },
@@ -1350,7 +1350,7 @@ export const seoRoutes = [
         },
         {
             question: 'What is the fee for the Spoken Arabic course at Nitaq Academy?',
-            answer: 'Contact us at +971 54 572 3181 for the latest Arabic course fees and available batch schedules in Sharjah.',
+            answer: 'Contact us at +971 52 756 9908 for the latest Arabic course fees and available batch schedules in Sharjah.',
         },
     ]
   },
@@ -1394,7 +1394,7 @@ export const seoRoutes = [
         },
         {
             question: 'What is the fee for Marketing Training at Nitaq Academy?',
-            answer: 'Contact us at +971 54 572 3181 for the latest marketing training pricing and scheduling options.',
+            answer: 'Contact us at +971 52 756 9908 for the latest marketing training pricing and scheduling options.',
         },
     ]
   },
@@ -1438,7 +1438,7 @@ export const seoRoutes = [
         },
         {
             question: 'What is the fee for the German language course at Nitaq?',
-            answer: 'Fees vary by level and batch type. Contact us at +971 54 572 3181 for the latest German course pricing.',
+            answer: 'Fees vary by level and batch type. Contact us at +971 52 756 9908 for the latest German course pricing.',
         },
     ]
   },

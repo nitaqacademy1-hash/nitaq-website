@@ -80,7 +80,7 @@ const FinanceCourses = () => {
                         </p>
                         <div style={{ display: 'flex', gap: '20px', justifyContent: 'center', flexWrap: 'wrap' }}>
                             <Link to="/enquiry" className="btn btn-primary">Join the Program</Link>
-                            <a href="https://wa.me/971545723181" className="btn" style={{ background: '#f1f5f9', color: '#1e293b' }}>Speak with Advisor</a>
+                            <a href="https://wa.me/971527569908" className="btn" style={{ background: '#f1f5f9', color: '#1e293b' }}>Speak with Advisor</a>
                         </div>
                     </div>
                 </div>

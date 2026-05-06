@@ -136,7 +136,7 @@ const ResumeGuide = () => {
                                 View Professional Courses
                             </Link>
                             <a 
-                                href="https://wa.me/971545723181" 
+                                href="https://wa.me/971527569908" 
                                 className="btn btn-whatsapp"
                                 onClick={() => trackEvent(ANALYTICS_EVENTS.WHATSAPP, 'ig_resume_landing')}
                             >

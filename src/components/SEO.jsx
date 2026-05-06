@@ -44,7 +44,7 @@ const SEO = () => {
       "url": `${siteUrl}/images/logo1.webp`
     },
     "description": "Premier training academy in Sharjah offering IELTS, Digital SAT, GRE, GMAT, ACCA, and AI technology courses. SPEA Authorized training institute.",
-    "telephone": "+971545723181",
+    "telephone": "+971527569908",
     "email": "info@nitaqacademy.com",
     "address": {
       "@type": "PostalAddress",
