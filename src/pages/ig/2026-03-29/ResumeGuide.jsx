@@ -77,7 +77,7 @@ const ResumeGuide = () => {
             {/* Sticky Nitaq Stripe */}
             <div className="nitaq-stripe">
                 <div className="container stripe-content">
-                    <span>🚀 Master Professional Skills with Nitaq Academy</span>
+                    <span>🚀 Master Professional Skills with NITAQ ACADEMY</span>
                     <a href="tel:+97165798313" className="stripe-link">
                         Enroll Now <span className="arrow">→</span>
                     </a>
@@ -149,7 +149,7 @@ const ResumeGuide = () => {
 
             <footer className="ig-footer">
                 <div className="container">
-                    <p>&copy; {new Date().getFullYear()} Nitaq Academy. All rights reserved.</p>
+                    <p>&copy; {new Date().getFullYear()} NITAQ ACADEMY. All rights reserved.</p>
                 </div>
             </footer>
         </main>

@@ -155,7 +155,7 @@ const Articles = () => {
                     <div className="articles-intro-card">
                         <h2>Your Hub for <span className="text-gradient">Academic & Professional Growth</span></h2>
                         <p>
-                            Welcome to the Nitaq Academy insights portal, the premier resource for students and professionals seeking a <strong>training institute in Sharjah</strong> that delivers real results. Our expert-curated articles are designed to bridge the gap between classroom learning and career success in the dynamic UAE market.
+                            Welcome to the NITAQ ACADEMY insights portal, the premier resource for students and professionals seeking a <strong>training institute in Sharjah</strong> that delivers real results. Our expert-curated articles are designed to bridge the gap between classroom learning and career success in the dynamic UAE market.
                         </p>
                         <p>
                             Whether you are looking for high-impact <strong>SAT coaching in Sharjah</strong> to secure admission to top global universities, or specialized <strong>IELTS training in UAE</strong> to achieve your target band scores for migration and study, our guides provide actionable strategies and proven techniques. We also explore the latest trends in professional certifications, including AI, ACCA, and corporate training, ensuring you stay competitive in the 2026 job market.

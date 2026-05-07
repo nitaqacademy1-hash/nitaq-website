@@ -31,7 +31,7 @@ const SatVsIeltsGuide = () => {
                                 <div className="author-avatar">NA</div>
                                 <div className="meta-text">
                                     <span className="meta-label">Author</span>
-                                    <span className="meta-value">Nitaq Academy Team</span>
+                                    <span className="meta-value">NITAQ ACADEMY Team</span>
                                 </div>
                             </div>
                             <div className="meta-divider"></div>

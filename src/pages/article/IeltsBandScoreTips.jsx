@@ -31,7 +31,7 @@ const IeltsBandScoreTips = () => {
                                 <div className="author-avatar">NA</div>
                                 <div className="meta-text">
                                     <span className="meta-label">Author</span>
-                                    <span className="meta-value">Nitaq Academy Team</span>
+                                    <span className="meta-value">NITAQ ACADEMY Team</span>
                                 </div>
                             </div>
                             <div className="meta-divider"></div>
@@ -95,7 +95,7 @@ const IeltsBandScoreTips = () => {
                                 You cannot gauge your improvement without regular testing under real exam conditions. A structured training institute provides regular mock exams that are graded according to the official IELTS rubrics. This ensures that you aren't just "practicing," but actually moving closer to your target band score.
                             </p>
 
-                            <h2>Why Choose Nitaq Academy for Your IELTS?</h2>
+                            <h2>Why Choose NITAQ ACADEMY for Your IELTS?</h2>
                             <p>
                                 We specialize in helping "stuck" candidates reach their target scores. Our trainers are experts in identifying the specific linguistic or logical barriers holding you back. Whether it's a lack of vocabulary range or a misunderstanding of the question types, we provide the targeted intervention required for success.
                             </p>

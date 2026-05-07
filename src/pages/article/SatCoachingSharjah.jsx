@@ -32,7 +32,7 @@ const SatCoachingSharjah = () => {
                                 <div className="author-avatar">NA</div>
                                 <div className="meta-text">
                                     <span className="meta-label">Author</span>
-                                    <span className="meta-value">Nitaq Academy Team</span>
+                                    <span className="meta-value">NITAQ ACADEMY Team</span>
                                 </div>
                             </div>
                             <div className="meta-divider"></div>
@@ -133,9 +133,9 @@ const SatCoachingSharjah = () => {
                             </p>
                             <p>This approach helps students stay consistent and focused throughout their preparation.</p>
 
-                            <h2>SAT Preparation at Nitaq Academy</h2>
+                            <h2>SAT Preparation at NITAQ ACADEMY</h2>
                             <p>
-                                SAT coaching at Nitaq Academy is designed to be practical, structured, and result-oriented. The program focuses on helping students build confidence while improving their performance through guided learning.
+                                SAT coaching at NITAQ ACADEMY is designed to be practical, structured, and result-oriented. The program focuses on helping students build confidence while improving their performance through guided learning.
                             </p>
                             <p>Key aspects include:</p>
                             <ul className="article-list">

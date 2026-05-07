@@ -31,7 +31,7 @@ const SatScore1300Guide = () => {
                                 <div className="author-avatar">NA</div>
                                 <div className="meta-text">
                                     <span className="meta-label">Author</span>
-                                    <span className="meta-value">Nitaq Academy Team</span>
+                                    <span className="meta-value">NITAQ ACADEMY Team</span>
                                 </div>
                             </div>
                             <div className="meta-divider"></div>
@@ -94,9 +94,9 @@ const SatScore1300Guide = () => {
                                 A structured training institute offers personalized feedback that identifies specific patterns of error. Whether it is a recurring struggle with quadratic equations or a misunderstanding of punctuation rules, targeted intervention is the fastest way to improve.
                             </p>
 
-                            <h2>Why Nitaq Academy Is the Preferred Choice</h2>
+                            <h2>Why NITAQ ACADEMY Is the Preferred Choice</h2>
                             <p>
-                                At Nitaq Academy, we have developed a specialized curriculum that addresses the unique needs of students in the UAE. Our instructors focus on real exam scenarios, providing students with the confidence to handle the pressure of the testing center.
+                                At NITAQ ACADEMY, we have developed a specialized curriculum that addresses the unique needs of students in the UAE. Our instructors focus on real exam scenarios, providing students with the confidence to handle the pressure of the testing center.
                             </p>
                             <p>Our methodology includes:</p>
                             <ul className="article-list">

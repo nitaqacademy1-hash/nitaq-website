@@ -31,7 +31,7 @@ const IeltsDubaiGuide = () => {
                                 <div className="author-avatar">NA</div>
                                 <div className="meta-text">
                                     <span className="meta-label">Author</span>
-                                    <span className="meta-value">Nitaq Academy Team</span>
+                                    <span className="meta-value">NITAQ ACADEMY Team</span>
                                 </div>
                             </div>
                             <div className="meta-divider"></div>
@@ -87,9 +87,9 @@ const IeltsDubaiGuide = () => {
                                 <li><strong>Vocabulary Expansion:</strong> Moving beyond "basic" English to use academic and thematic vocabulary correctly.</li>
                             </ul>
 
-                            <h2>Why Nitaq Academy Is the Top Choice for UAE Students</h2>
+                            <h2>Why NITAQ ACADEMY Is the Top Choice for UAE Students</h2>
                             <p>
-                                At Nitaq Academy, we understand the specific challenges faced by students in the UAE educational system. Our IELTS training programs are designed to be flexible yet rigorous.
+                                At NITAQ ACADEMY, we understand the specific challenges faced by students in the UAE educational system. Our IELTS training programs are designed to be flexible yet rigorous.
                             </p>
                             <p>
                                 Our <Link to="/ielts-course">IELTS Course in Sharjah</Link> features small class sizes, allowing for personalized feedback on every piece of writing and speaking practice. We don't just teach English; we teach you how to "beat" the exam by understanding exactly what the examiners are looking for.

@@ -16,8 +16,8 @@ const SATCourseDubai = () => {
         <>
             <SEO />
         <CourseLayout
-            title="SAT Preparation for Dubai Students — Digital SAT Coaching at Nitaq Academy"
-            subtitle="Score 1300+ on the Digital SAT with Nitaq Academy's expert coaching for Dubai Students."
+            title="SAT Preparation for Dubai Students — Digital SAT Coaching at NITAQ ACADEMY"
+            subtitle="Score 1300+ on the Digital SAT with NITAQ ACADEMY's expert coaching for Dubai Students."
             infoData={infoData}
         >
 
@@ -25,7 +25,7 @@ const SATCourseDubai = () => {
             <div className="content-card">
                 <div className="overview-text">
                     <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: '#334155' }}>
-                        The SAT (Scholastic Assessment Test) is a standardised exam used by universities in the United States, Canada, and across the globe to evaluate college readiness. The current <strong>Digital SAT</strong> is a computer-adaptive test lasting 2 hours 14 minutes, covering <strong>Reading &amp; Writing</strong> and <strong>Math</strong>. At Nitaq Academy, our SPEA Authorized &amp; UAE Govt Attested coaching programme in <strong>Dubai</strong> prepares high-school students to achieve scores of 1300 and above through small-batch expert coaching, full-length mock tests, and proven test-taking strategies. Classes are held at our Dubai campus and are also available live online across the UAE.
+                        The SAT (Scholastic Assessment Test) is a standardised exam used by universities in the United States, Canada, and across the globe to evaluate college readiness. The current <strong>Digital SAT</strong> is a computer-adaptive test lasting 2 hours 14 minutes, covering <strong>Reading &amp; Writing</strong> and <strong>Math</strong>. At NITAQ ACADEMY, our SPEA Authorized &amp; UAE Govt Attested coaching programme in <strong>Dubai</strong> prepares high-school students to achieve scores of 1300 and above through small-batch expert coaching, full-length mock tests, and proven test-taking strategies. Classes are held at our Dubai campus and are also available live online across the UAE.
                     </p>
                 </div>
             </div>
@@ -95,7 +95,7 @@ const SATCourseDubai = () => {
                 <h2>Digital SAT <span className="text-gradient">Reading &amp; Writing</span></h2>
                 <div className="overview-text">
                     <p style={{ marginBottom: '15px' }}>
-                        The Reading &amp; Writing section of the Digital SAT is a single, combined module that tests your ability to comprehend passages, analyse arguments, and apply English language conventions in context. At Nitaq Academy, our Dubai-based trainers break this section into focused skill areas to maximise your score.
+                        The Reading &amp; Writing section of the Digital SAT is a single, combined module that tests your ability to comprehend passages, analyse arguments, and apply English language conventions in context. At NITAQ ACADEMY, our Dubai-based trainers break this section into focused skill areas to maximise your score.
                     </p>
                     <h3 style={{ fontSize: '1.1rem', color: 'var(--primary-color)', marginBottom: '8px' }}>Craft &amp; Structure</h3>
                     <p style={{ marginBottom: '15px' }}>Understanding vocabulary in context, text structure, purpose identification, and cross-text connections. We drill high-frequency SAT vocabulary and teach elimination techniques that save time on every question.</p>
@@ -124,7 +124,7 @@ const SATCourseDubai = () => {
             {/* ── 7. Score Improvement Testimonials ── */}
             <div className="content-card">
                 <h2>Student <span className="text-gradient">Success Stories</span></h2>
-                <p style={{ color: '#64748b', marginBottom: '25px' }}>Real results from real students at Nitaq Academy Dubai.</p>
+                <p style={{ color: '#64748b', marginBottom: '25px' }}>Real results from real students at NITAQ ACADEMY Dubai.</p>
                 <div className="tracks-grid">
                     <div style={{ background: 'linear-gradient(135deg, #f0fdf4, #dcfce7)', borderRadius: '20px', padding: '30px', textAlign: 'center', border: '1px solid #bbf7d0' }}>
                         <div style={{ marginBottom: '15px', color: '#15803d' }}>
@@ -217,7 +217,7 @@ const SATCourseDubai = () => {
                         </div>
                     </details>
                     <details className="faq-accordion">
-                        <summary>How long does SAT preparation take at Nitaq Academy for Dubai Students?</summary>
+                        <summary>How long does SAT preparation take at NITAQ ACADEMY for Dubai Students?</summary>
                         <div className="faq-accordion-content">
                             <p>Our SAT preparation course runs for 8 to 12 weeks, with three sessions per week. Each session is approximately 90 minutes, covering Reading &amp; Writing strategies, Math concepts, and timed practice. Students who need a faster turnaround can opt for our intensive 4-week crash course with daily sessions.</p>
                         </div>
@@ -235,15 +235,15 @@ const SATCourseDubai = () => {
                         </div>
                     </details>
                     <details className="faq-accordion">
-                        <summary>Does Nitaq Academy offer online SAT coaching in the UAE?</summary>
+                        <summary>Does NITAQ ACADEMY offer online SAT coaching in the UAE?</summary>
                         <div className="faq-accordion-content">
-                            <p>Yes. Nitaq Academy offers both in-person SAT coaching at our Dubai campus and live online classes for students across Dubai, Abu Dhabi, Ajman, and the wider UAE. Online sessions are conducted in real time with the same instructor, same study materials, and the same mock test schedule as classroom batches.</p>
+                            <p>Yes. NITAQ ACADEMY offers both in-person SAT coaching at our Dubai campus and live online classes for students across Dubai, Abu Dhabi, Ajman, and the wider UAE. Online sessions are conducted in real time with the same instructor, same study materials, and the same mock test schedule as classroom batches.</p>
                         </div>
                     </details>
                     <details className="faq-accordion">
                         <summary>How much does an SAT preparation course cost for Dubai Students?</summary>
                         <div className="faq-accordion-content">
-                            <p>SAT preparation course fees for Dubai Students typically range from AED 1,800 to AED 4,000 depending on the course duration, batch size, and whether sessions are group or one-on-one. At Nitaq Academy, we offer flexible payment options and group discounts for students enrolling together. Contact us for the current batch schedule and pricing.</p>
+                            <p>SAT preparation course fees for Dubai Students typically range from AED 1,800 to AED 4,000 depending on the course duration, batch size, and whether sessions are group or one-on-one. At NITAQ ACADEMY, we offer flexible payment options and group discounts for students enrolling together. Contact us for the current batch schedule and pricing.</p>
                         </div>
                     </details>
                     <details className="faq-accordion">
@@ -255,7 +255,7 @@ const SATCourseDubai = () => {
                     <details className="faq-accordion">
                         <summary>Are weekend SAT classes available for Dubai Students?</summary>
                         <div className="faq-accordion-content">
-                            <p>Yes. Nitaq Academy offers weekend and evening SAT batches specifically designed for school students who cannot attend weekday sessions. Friday and Saturday morning batches are available throughout the year. We also accommodate students with flexible one-on-one scheduling when group batch timings do not suit their school or activity timetable.</p>
+                            <p>Yes. NITAQ ACADEMY offers weekend and evening SAT batches specifically designed for school students who cannot attend weekday sessions. Friday and Saturday morning batches are available throughout the year. We also accommodate students with flexible one-on-one scheduling when group batch timings do not suit their school or activity timetable.</p>
                         </div>
                     </details>
                 </div>
@@ -290,7 +290,7 @@ const SATCourseDubai = () => {
             <div style={{ background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 100%)', borderRadius: '24px', padding: '45px 40px', textAlign: 'center', marginBottom: '40px' }}>
                 <h2 style={{ color: 'white', fontSize: '2rem', marginBottom: '12px' }}>Start Your SAT Journey Today</h2>
                 <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '1.1rem', marginBottom: '30px', maxWidth: '600px', margin: '0 auto 30px' }}>
-                    Join hundreds of students who have achieved 1400+ SAT scores with Nitaq Academy Dubai. Speak with our counsellor now.
+                    Join hundreds of students who have achieved 1400+ SAT scores with NITAQ ACADEMY Dubai. Speak with our counsellor now.
                 </p>
                 <div style={{ display: 'flex', gap: '15px', justifyContent: 'center', flexWrap: 'wrap' }}>
                     <a href="https://wa.me/971527569908?text=I'm interested in SAT preparation" className="btn btn-primary" style={{ padding: '16px 35px', fontSize: '1.1rem', borderRadius: '50px', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '10px' }}>

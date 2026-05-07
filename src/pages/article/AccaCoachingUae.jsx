@@ -31,7 +31,7 @@ const AccaCoachingUae = () => {
                                 <div className="author-avatar">NA</div>
                                 <div className="meta-text">
                                     <span className="meta-label">Author</span>
-                                    <span className="meta-value">Nitaq Academy Team</span>
+                                    <span className="meta-value">NITAQ ACADEMY Team</span>
                                 </div>
                             </div>
                             <div className="meta-divider"></div>
@@ -91,9 +91,9 @@ const AccaCoachingUae = () => {
                                 <li><strong>Investment Analyst:</strong> Advising on mergers, acquisitions, and financial planning.</li>
                             </ul>
 
-                            <h2>Why Choose Nitaq Academy for Your ACCA Journey?</h2>
+                            <h2>Why Choose NITAQ ACADEMY for Your ACCA Journey?</h2>
                             <p>
-                                At Nitaq Academy, we provide more than just lectures. Our ACCA coaching program includes intensive question-practice sessions, mock exams that mirror the real digital format, and personalized mentorship from experienced finance professionals.
+                                At NITAQ ACADEMY, we provide more than just lectures. Our ACCA coaching program includes intensive question-practice sessions, mock exams that mirror the real digital format, and personalized mentorship from experienced finance professionals.
                             </p>
                             <p>We understand the UAE business environment and tailor our teaching to show how ACCA concepts apply to local industry scenarios. Our goal is to make you not just exam-ready, but industry-ready.</p>
 

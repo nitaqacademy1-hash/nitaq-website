@@ -126,8 +126,8 @@ export default function CounselorsOrientation() {
   return (
     <>
       <Helmet>
-        <title>Counselors Orientation | Growth Opportunities | Nitaq Academy</title>
-        <meta name="description" content="Exclusive orientation for school counselors to explore growth opportunities and student impact. Join Nitaq Academy on April 15." />
+        <title>Counselors Orientation | Growth Opportunities | NITAQ ACADEMY</title>
+        <meta name="description" content="Exclusive orientation for school counselors to explore growth opportunities and student impact. Join NITAQ ACADEMY on April 15." />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -143,7 +143,7 @@ export default function CounselorsOrientation() {
               <div className="w-hero__copy">
                 <div className="w-hero__kicker">
                   <span className="w-hero__kicker-dot" />
-                  Presented by Nitaq Academy
+                  Presented by NITAQ ACADEMY
                 </div>
 
                 <h1 className="w-hero__h1">

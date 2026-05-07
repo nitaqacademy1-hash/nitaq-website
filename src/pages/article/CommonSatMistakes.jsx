@@ -31,7 +31,7 @@ const CommonSatMistakes = () => {
                                 <div className="author-avatar">NA</div>
                                 <div className="meta-text">
                                     <span className="meta-label">Author</span>
-                                    <span className="meta-value">Nitaq Academy Team</span>
+                                    <span className="meta-value">NITAQ ACADEMY Team</span>
                                 </div>
                             </div>
                             <div className="meta-divider"></div>
@@ -90,7 +90,7 @@ const CommonSatMistakes = () => {
 
                             <h2>Why Expert Guidance Matters</h2>
                             <p>
-                                Avoiding these mistakes is much easier when you have an expert identifying them for you. At Nitaq Academy, we provide detailed performance analytics for every student. We show you exactly where you are losing time and which "trap" answers are catching you off guard.
+                                Avoiding these mistakes is much easier when you have an expert identifying them for you. At NITAQ ACADEMY, we provide detailed performance analytics for every student. We show you exactly where you are losing time and which "trap" answers are catching you off guard.
                             </p>
 
                             <div className="article-inline-cta">

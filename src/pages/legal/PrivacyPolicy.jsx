@@ -7,11 +7,11 @@ const PrivacyPolicy = () => {
             <SEO />
             <div className="container">
                 <div style={{ maxWidth: '850px', margin: '0 auto' }}>
-                    <h1 style={{ color: '#2e7d32', marginBottom: '20px' }}>Privacy Policy – Nitaq Academy</h1>
+                    <h1 style={{ color: '#2e7d32', marginBottom: '20px' }}>Privacy Policy – NITAQ ACADEMY</h1>
                     <p style={{ color: '#6b7280', marginBottom: '40px' }}>Effective Date: 26/03/2026</p>
 
                     <p style={{ marginBottom: '30px', lineHeight: '1.8' }}>
-                        Nitaq Academy (“Company”, “we”, “our”, or “us”) respects your privacy and is committed to protecting your personal data. This Privacy Policy explains in detail how we collect, use, store, disclose, and safeguard your information when you visit our website, enroll in our programs, or interact with us.
+                        NITAQ ACADEMY (“Company”, “we”, “our”, or “us”) respects your privacy and is committed to protecting your personal data. This Privacy Policy explains in detail how we collect, use, store, disclose, and safeguard your information when you visit our website, enroll in our programs, or interact with us.
                     </p>
                     <p style={{ marginBottom: '40px', lineHeight: '1.8', fontWeight: 500 }}>
                         This policy applies to all users, students, parents/guardians, and visitors of our services.
@@ -39,7 +39,7 @@ const PrivacyPolicy = () => {
                                         <li>Website usage</li>
                                         <li>Offline and online enrollment</li>
                                         <li>Communication channels (email, phone, WhatsApp, social media)</li>
-                                        <li>Third-party integrations used by Nitaq Academy</li>
+                                        <li>Third-party integrations used by NITAQ ACADEMY</li>
                                     </ul>
                                 </>
                             )
@@ -195,7 +195,7 @@ const PrivacyPolicy = () => {
                             title: "20. Contact Information",
                             content: (
                                 <div style={{ background: '#f9fafb', padding: '25px', borderRadius: '12px' }}>
-                                    <strong>Nitaq Academy</strong><br />
+                                    <strong>NITAQ ACADEMY</strong><br />
                                     📧 hr@nitaqacademy.com
                                 </div>
                             )

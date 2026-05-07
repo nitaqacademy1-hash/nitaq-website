@@ -95,7 +95,7 @@ const CorporateTrainings = () => {
                         <h2 style={{ fontSize: '2rem', marginBottom: '25px', textAlign: 'center' }}>Corporate Training <span className="text-gradient">FAQs</span></h2>
                         <div className="faq-accordion-group" style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
                             <details className="faq-accordion">
-                                <summary>What is corporate training at Nitaq Academy?</summary>
+                                <summary>What is corporate training at NITAQ ACADEMY?</summary>
                                 <div className="faq-accordion-content">
                                     <p>Corporate training programs are customized courses designed to improve employee skills, productivity, and leadership within organizations.</p>
                                 </div>

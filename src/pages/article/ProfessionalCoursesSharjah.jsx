@@ -31,7 +31,7 @@ const ProfessionalCoursesSharjah = () => {
                                 <div className="author-avatar">NA</div>
                                 <div className="meta-text">
                                     <span className="meta-label">Author</span>
-                                    <span className="meta-value">Nitaq Academy Team</span>
+                                    <span className="meta-value">NITAQ ACADEMY Team</span>
                                 </div>
                             </div>
                             <div className="meta-divider"></div>
@@ -88,9 +88,9 @@ const ProfessionalCoursesSharjah = () => {
                                 Understanding how UAE-specific laws affect your profession—such as Labor Law in HR or VAT in accounting—is a critical component of career growth that only specialized local training can offer.
                             </p>
 
-                            <h2>Why Nitaq Academy Is Your Partner in Growth</h2>
+                            <h2>Why NITAQ ACADEMY Is Your Partner in Growth</h2>
                             <p>
-                                Nitaq Academy offers a wide range of <Link to="/professional-certifications">professional certifications in Sharjah</Link> tailored to the needs of the UAE workforce. Our programs are designed by industry experts who understand the local market dynamics.
+                                NITAQ ACADEMY offers a wide range of <Link to="/professional-certifications">professional certifications in Sharjah</Link> tailored to the needs of the UAE workforce. Our programs are designed by industry experts who understand the local market dynamics.
                             </p>
                             <p>
                                 We focus on practical application, ensuring that what you learn on Saturday can be applied in your office on Sunday. This immediate impact is what helps our graduates secure promotions and advance in their careers.

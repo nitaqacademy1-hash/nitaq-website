@@ -12,12 +12,12 @@ const TermsAndConditions = () => {
 
                     <section style={{ marginBottom: '40px' }}>
                         <h2 style={{ fontSize: '1.5rem', marginBottom: '20px' }}>1. Introduction</h2>
-                        <p>Welcome to Nitaq Academy. By enrolling in our courses or using our services, you agree to the following terms and conditions. Nitaq Academy is operated by Nitaq Supportive Education L.L.C, registered in Sharjah, UAE.</p>
+                        <p>Welcome to NITAQ ACADEMY. By enrolling in our courses or using our services, you agree to the following terms and conditions. NITAQ ACADEMY is operated by Nitaq Supportive Education Services LLC, registered in Sharjah, UAE.</p>
                     </section>
 
                     <section style={{ marginBottom: '40px' }}>
                         <h2 style={{ fontSize: '1.5rem', marginBottom: '20px' }}>2. Course Enrollment</h2>
-                        <p>Enrollment in any course is subject to availability and payment of the required fees. Nitaq Academy reserves the right to refuse enrollment at its discretion. Students are responsible for providing accurate personal information during registration.</p>
+                        <p>Enrollment in any course is subject to availability and payment of the required fees. NITAQ ACADEMY reserves the right to refuse enrollment at its discretion. Students are responsible for providing accurate personal information during registration.</p>
                     </section>
 
                     <section style={{ marginBottom: '40px' }}>
@@ -32,12 +32,12 @@ const TermsAndConditions = () => {
 
                     <section style={{ marginBottom: '40px' }}>
                         <h2 style={{ fontSize: '1.5rem', marginBottom: '20px' }}>4. Academic Conduct</h2>
-                        <p>Students are expected to maintain professional conduct during online and offline sessions. Nitaq Academy reserves the right to terminate enrollment for any student who violates our code of conduct without a refund.</p>
+                        <p>Students are expected to maintain professional conduct during online and offline sessions. NITAQ ACADEMY reserves the right to terminate enrollment for any student who violates our code of conduct without a refund.</p>
                     </section>
 
                     <section style={{ marginBottom: '40px' }}>
                         <h2 style={{ fontSize: '1.5rem', marginBottom: '20px' }}>5. Limitation of Liability</h2>
-                        <p>Nitaq Academy (Nitaq Supportive Education L.L.C) shall not be held liable for any indirect, incidental, or consequential damages resulting from the use of its services or participation in its training programs.</p>
+                        <p>NITAQ ACADEMY (Nitaq Supportive Education Services LLC) shall not be held liable for any indirect, incidental, or consequential damages resulting from the use of its services or participation in its training programs.</p>
                     </section>
 
                     <section style={{ marginBottom: '40px' }}>

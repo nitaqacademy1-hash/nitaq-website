@@ -31,7 +31,7 @@ const BestTrainingInstituteSharjah = () => {
                                 <div className="author-avatar">NA</div>
                                 <div className="meta-text">
                                     <span className="meta-label">Author</span>
-                                    <span className="meta-value">Nitaq Academy Team</span>
+                                    <span className="meta-value">NITAQ ACADEMY Team</span>
                                 </div>
                             </div>
                             <div className="meta-divider"></div>
@@ -46,7 +46,7 @@ const BestTrainingInstituteSharjah = () => {
                     </div>
 
                     <div className="article-featured-img">
-                        <img src="/images/h1.webp" alt="Best Training Institute Sharjah Nitaq Academy" />
+                        <img src="/images/h1.webp" alt="Best Training Institute Sharjah NITAQ ACADEMY" />
                     </div>
 
                     <div className="article-content-wrapper">
@@ -70,7 +70,7 @@ const BestTrainingInstituteSharjah = () => {
 
                             <h2>Standardizing Excellence in Sharjah</h2>
                             <p>
-                                At Nitaq Academy, we have set a new benchmark for what a training institute should offer. Located in the prestigious Abu Khamseen Tower, we have built our reputation on a commitment to personalized learning. We understand that a student preparing for <Link to="/sat-preparation-sharjah">SAT coaching in Sharjah</Link> has different needs than a professional seeking <Link to="/acca-course">ACCA certification</Link>.
+                                At NITAQ ACADEMY, we have set a new benchmark for what a training institute should offer. Located in the prestigious Abu Khamseen Tower, we have built our reputation on a commitment to personalized learning. We understand that a student preparing for <Link to="/sat-preparation-sharjah">SAT coaching in Sharjah</Link> has different needs than a professional seeking <Link to="/acca-course">ACCA certification</Link>.
                             </p>
                             <p>Our approach is centered on "Student Outcomes." We don't just complete a syllabus; we ensure that every learner reaches their specific target, whether it's a university band score or a professional promotion.</p>
 
@@ -91,7 +91,7 @@ const BestTrainingInstituteSharjah = () => {
                             </p>
                             <p>We combine this personal touch with a global perspective, using international curricula that prepares our students for careers and universities around the world.</p>
 
-                            <h2>Why Families and Professionals Trust Nitaq Academy</h2>
+                            <h2>Why Families and Professionals Trust NITAQ ACADEMY</h2>
                             <p>
                                 Trust is built over time through consistent results. Our alumni are now in top-tier global universities and leading multinational firms in the UAE. This legacy of success is what makes us the preferred training partner for families in Sharjah and professionals across Dubai.
                             </p>
@@ -99,7 +99,7 @@ const BestTrainingInstituteSharjah = () => {
 
                             <h2>Conclusion</h2>
                             <p>
-                                If you are looking for the best training institute in Sharjah, look for a place that values your goals as much as you do. With our expert faculty, modern environment, and proven track record, Nitaq Academy is dedicated to being that partner in your journey toward success.
+                                If you are looking for the best training institute in Sharjah, look for a place that values your goals as much as you do. With our expert faculty, modern environment, and proven track record, NITAQ ACADEMY is dedicated to being that partner in your journey toward success.
                             </p>
                         </div>
 

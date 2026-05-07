@@ -14,7 +14,7 @@ const About = () => {
                             Our Journey
                         </div>
                         <h1>
-                            About <span className="text-gradient">Nitaq Academy</span>
+                            About <span className="text-gradient">NITAQ ACADEMY</span>
                         </h1>
                         <p>
                             Empowering students and professionals in Sharjah with world-class education, career-focused training, and globally recognized certifications.
@@ -32,10 +32,10 @@ const About = () => {
                                 Building Skills, <span className="text-gradient">Empowering Outcomes</span>
                             </h2>
                             <p style={{ fontSize: '1.2rem', color: 'var(--text-gray)', marginBottom: '25px', lineHeight: 1.8 }}>
-                                <strong>Nitaq Academy</strong> is a premier training institute in Sharjah for professional and academic excellence. We are dedicated to delivering job-ready skills and university preparation that helps students and professionals excel globally. 
+                                <strong>NITAQ ACADEMY</strong> is a premier training institute in Sharjah for professional and academic excellence. We are dedicated to delivering job-ready skills and university preparation that helps students and professionals excel globally. 
                             </p>
                             <p style={{ fontSize: '1.1rem', color: 'var(--text-gray)', marginBottom: '35px', lineHeight: 1.7 }}>
-                                Registered as <strong>Nitaq Supportive Education L.L.C</strong>, Sharjah, UAE, we specialize in high-impact programs including SAT score improvement, IELTS band score training, and industry-recognized certifications like ACCA.
+                                Registered as <strong>Nitaq Supportive Education Services LLC</strong>, Sharjah, UAE, we specialize in high-impact programs including SAT score improvement, IELTS band score training, and industry-recognized certifications like ACCA.
                             </p>
 
                             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '30px', marginBottom: '40px' }}>
@@ -101,7 +101,7 @@ const About = () => {
             <section className="section-padding" style={{ background: 'var(--bg-white)' }}>
                 <div className="container">
                     <div style={{ textAlign: 'center', marginBottom: '80px' }}>
-                        <h2 className="hero-text-h1" style={{ fontSize: '3.5rem', lineHeight: 1.1, marginBottom: '20px' }}>Why <span className="text-gradient">Nitaq Academy?</span></h2>
+                        <h2 className="hero-text-h1" style={{ fontSize: '3.5rem', lineHeight: 1.1, marginBottom: '20px' }}>Why <span className="text-gradient">NITAQ ACADEMY?</span></h2>
                         <p style={{ fontSize: '1.2rem', color: 'var(--text-gray)', maxWidth: '700px', margin: '0 auto' }}>Experience excellence in education with our modern approach to learning.</p>
                     </div>
 
@@ -175,7 +175,7 @@ const About = () => {
                 <div className="container">
                     <div className="testimonial-poster" style={{ background: 'var(--gradient-primary)', borderRadius: '40px', padding: '100px 60px' }}>
                         <div className="poster-graphic" style={{ background: 'radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%)' }}></div>
-                        <h2 style={{ fontSize: '3rem', color: 'white', marginBottom: '30px', position: 'relative', zIndex: 1 }}>Start Your Learning Journey with Nitaq Academy Today</h2>
+                        <h2 style={{ fontSize: '3rem', color: 'white', marginBottom: '30px', position: 'relative', zIndex: 1 }}>Start Your Learning Journey with NITAQ ACADEMY Today</h2>
                         <p style={{ fontSize: '1.2rem', color: 'rgba(255,255,255,0.9)', maxWidth: '600px', margin: '0 auto 50px', position: 'relative', zIndex: 1, lineHeight: 1.6 }}>
                             Unlock your full potential with Sharjah's leading training institute for academic and professional success.
                         </p>

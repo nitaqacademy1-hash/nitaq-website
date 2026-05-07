@@ -12,10 +12,10 @@ const SEO = () => {
 
   // Find SEO data from central directory, or fallback to generic defaults
   const routeData = getSeoRoute(location.pathname) || {
-    title: "Nitaq Academy Sharjah | IELTS, ACCA, AI & Language Courses",
+    title: "NITAQ ACADEMY Sharjah | IELTS, ACCA, AI & Language Courses",
     description: "Top-rated training academy in Sharjah offering IELTS, TOEFL, ACCA, CMA, AI & language courses.",
     canonical: `${siteUrl}${location.pathname}`,
-    ogTitle: "Nitaq Academy Sharjah | IELTS, ACCA, AI & Language Courses",
+    ogTitle: "NITAQ ACADEMY Sharjah | IELTS, ACCA, AI & Language Courses",
     ogDescription: "Top-rated training academy in Sharjah offering IELTS, TOEFL, ACCA, CMA, AI & language courses.",
     ogImage: "/images/logo1.webp",
     twitterCard: "summary_large_image",
@@ -36,7 +36,7 @@ const SEO = () => {
   const organizationSchema = {
     "@type": ["EducationalOrganization", "LocalBusiness"],
     "@id": orgId,
-    "name": "Nitaq Academy",
+    "name": "NITAQ ACADEMY",
     "url": siteUrl,
     "logo": {
       "@type": "ImageObject",
@@ -47,10 +47,10 @@ const SEO = () => {
     "email": "info@nitaqacademy.com",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Office 103, Floor F1, Abu Khamseen Tower",
-      "addressLocality": "Al Majaz 3",
+      "streetAddress": "Office : F103, Floor F1, Abu Khamseen Tower, Majaz 3",
+      "addressLocality": "Majaz 3",
       "addressRegion": "Sharjah",
-      "addressCountry": "AE"
+      "addressCountry": "UAE"
     },
     "geo": {
       "@type": "GeoCoordinates",
@@ -74,7 +74,7 @@ const SEO = () => {
   if (location.pathname === '/') {
     organizationSchema.hasOfferCatalog = {
       "@type": "OfferCatalog",
-      "name": "Nitaq Academy Courses",
+      "name": "NITAQ ACADEMY Courses",
       "itemListElement": [
         { "@type": "Course", "name": "IELTS Preparation", "description": "Expert IELTS coaching for Academic & General modules.", "url": `${siteUrl}/ielts-course` },
         { "@type": "Course", "name": "SAT Preparation", "description": "Comprehensive Digital SAT coaching with 1400+ focus.", "url": `${siteUrl}/sat-preparation-sharjah` },
@@ -92,7 +92,7 @@ const SEO = () => {
     "@type": "WebSite",
     "@id": `${siteUrl}/#website`,
     "url": siteUrl,
-    "name": "Nitaq Academy",
+    "name": "NITAQ ACADEMY",
     "publisher": { "@id": orgId },
     "potentialAction": {
       "@type": "SearchAction",
@@ -139,7 +139,7 @@ const SEO = () => {
     // Guaranteed non-null description (fix for SEMrush "missing description" errors)
     const courseDescription = (cs.description && cs.description.trim())
       || (routeData.description && routeData.description.trim())
-      || 'Professional training course offered by Nitaq Academy in Sharjah, UAE.';
+      || 'Professional training course offered by NITAQ ACADEMY in Sharjah, UAE.';
 
     // Explicit courseMode array or fallback string
     const courseMode = Array.isArray(cs.mode) ? cs.mode : (cs.mode ? [cs.mode] : ['Onsite', 'Online']);
@@ -153,14 +153,14 @@ const SEO = () => {
       // FIX 1: Full explicit provider — do NOT rely only on @id
       'provider': {
         '@type': 'EducationalOrganization',
-        'name': 'Nitaq Academy',
+        'name': 'NITAQ ACADEMY',
         'url': siteUrl,
         'address': {
           '@type': 'PostalAddress',
-          'streetAddress': 'Office 103, Floor F1, Abu Khamseen Tower',
-          'addressLocality': 'Al Majaz 3',
+          'streetAddress': 'Office : F103, Floor F1, Abu Khamseen Tower, Majaz 3',
+          'addressLocality': 'Majaz 3',
           'addressRegion': 'Sharjah',
-          'addressCountry': 'AE'
+          'addressCountry': 'UAE'
         }
       },
 
@@ -180,13 +180,13 @@ const SEO = () => {
           'courseMode': 'Onsite',
           'location': {
             '@type': 'Place',
-            'name': 'Nitaq Academy Sharjah',
+            'name': 'NITAQ ACADEMY Sharjah',
             'address': {
               '@type': 'PostalAddress',
-              'streetAddress': 'Office 103, Floor F1, Abu Khamseen Tower',
-              'addressLocality': 'Al Majaz 3',
+              'streetAddress': 'Office : F103, Floor F1, Abu Khamseen Tower, Majaz 3',
+              'addressLocality': 'Majaz 3',
               'addressRegion': 'Sharjah',
-              'addressCountry': 'AE'
+              'addressCountry': 'UAE'
             }
           },
           'instructor': {

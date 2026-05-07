@@ -31,7 +31,7 @@ const ChooseRightCourseUae = () => {
                                 <div className="author-avatar">NA</div>
                                 <div className="meta-text">
                                     <span className="meta-label">Author</span>
-                                    <span className="meta-value">Nitaq Academy Team</span>
+                                    <span className="meta-value">NITAQ ACADEMY Team</span>
                                 </div>
                             </div>
                             <div className="meta-divider"></div>
@@ -86,7 +86,7 @@ const ChooseRightCourseUae = () => {
                                 Education is also about the people you meet. Choosing a course at a prominent <Link to="/about">training institute in Sharjah</Link> allows you to connect with industry experts and like-minded professionals. These connections often lead to job referrals and collaborative opportunities that aren't available through online-only learning.
                             </p>
 
-                            <h2>Why Nitaq Academy Is the Ideal Choice</h2>
+                            <h2>Why NITAQ ACADEMY Is the Ideal Choice</h2>
                             <p>
                                 We specialize in helping students and professionals navigate these choices. Our advisors don't just enroll you in a course; they help you build a career roadmap. We offer a comprehensive ecosystem of learning that spans from academic excellence (SAT/IELTS) to high-level professional certifications.
                             </p>

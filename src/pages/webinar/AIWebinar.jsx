@@ -159,8 +159,8 @@ export default function AIWebinar() {
   return (
     <>
       <Helmet>
-        <title>Free AI Webinar — Improve Business Efficiency | Nitaq Academy</title>
-        <meta name="description" content="Join Nitaq Academy's free live webinar Sunday and learn how to use AI to automate workflows, reduce costs, and boost productivity." />
+        <title>Free AI Webinar — Improve Business Efficiency | NITAQ ACADEMY</title>
+        <meta name="description" content="Join NITAQ ACADEMY's free live webinar Sunday and learn how to use AI to automate workflows, reduce costs, and boost productivity." />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />

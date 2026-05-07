@@ -31,7 +31,7 @@ const AiCoursesSharjah = () => {
                                 <div className="author-avatar">NA</div>
                                 <div className="meta-text">
                                     <span className="meta-label">Author</span>
-                                    <span className="meta-value">Nitaq Academy Team</span>
+                                    <span className="meta-value">NITAQ ACADEMY Team</span>
                                 </div>
                             </div>
                             <div className="meta-divider"></div>
@@ -88,9 +88,9 @@ const AiCoursesSharjah = () => {
                             </p>
                             <p>Discover our <Link to="/ai-course">Advanced AI programs</Link> for detailed curriculum information.</p>
 
-                            <h2>Why Nitaq Academy Is Leading AI Training in Sharjah</h2>
+                            <h2>Why NITAQ ACADEMY Is Leading AI Training in Sharjah</h2>
                             <p>
-                                At Nitaq Academy, we don't just teach the theory of AI. Our courses are hands-on and project-based. We provide our students with access to the latest tools and frameworks, guided by instructors who are active in the tech industry.
+                                At NITAQ ACADEMY, we don't just teach the theory of AI. Our courses are hands-on and project-based. We provide our students with access to the latest tools and frameworks, guided by instructors who are active in the tech industry.
                             </p>
                             <p>We bridge the gap between "knowing about AI" and "knowing how to use AI." This practical focus is why we are considered the best training institute in Sharjah for future-focused education.</p>
 

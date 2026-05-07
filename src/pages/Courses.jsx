@@ -57,7 +57,7 @@ const Courses = () => {
                         <nav className="listing-hero-nav" style={{ marginBottom: '20px' }}>
                             <Link to="/" style={{ color: 'var(--primary-color)' }}>Home</Link> / <span>Courses</span>
                         </nav>
-                        <h1>Courses by <span className="text-gradient">Nitaq Academy</span></h1>
+                        <h1>Courses by <span className="text-gradient">NITAQ ACADEMY</span></h1>
                         <p>Explore our wide range of professional, academic, and language programs designed for your success.</p>
                     </div>
                 </div>

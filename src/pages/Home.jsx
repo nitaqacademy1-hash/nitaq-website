@@ -205,7 +205,7 @@ const Home = () => {
                                 Top Training Institute in Sharjah for SAT, IELTS, AI & Professional Courses
                             </h1>
                             <p className="subheading">
-                                Advance your career and academic future with expert-led coaching, practical training, and globally recognized programs at Nitaq Academy in Sharjah.
+                                Advance your career and academic future with expert-led coaching, practical training, and globally recognized programs at NITAQ ACADEMY in Sharjah.
                             </p>
 
                             <div className="hero-minimal-trust">
@@ -599,11 +599,11 @@ const Home = () => {
                     </div>
                 </div>
             </section>
-            {/* Why Choose Nitaq Academy Section */}
+            {/* Why Choose NITAQ ACADEMY Section */}
             <section className="why-choose-section section-padding">
                 <div className="container">
                     <div className="section-header text-center">
-                        <h2>Why Choose Nitaq Academy in Sharjah</h2>
+                        <h2>Why Choose NITAQ ACADEMY in Sharjah</h2>
                         <p className="subtitle">
                             Delivering practical, career-focused education with globally relevant training and expert guidance.
                         </p>
@@ -655,7 +655,7 @@ const Home = () => {
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2e7d32" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
                             </div>
                             <h3>Recognized & Approved</h3>
-                            <p>Nitaq Academy is an SPEA approved training institute in Sharjah, delivering globally recognized certification standards.</p>
+                            <p>NITAQ ACADEMY is an SPEA approved training institute in Sharjah, delivering globally recognized certification standards.</p>
                         </div>
                     </div>
                 </div>
@@ -734,7 +734,7 @@ const Home = () => {
                 <div className="container">
                     <div className="reviews-header text-center">
                         <h2>Trusted by Our Students</h2>
-                        <p>See what our students say about their learning experience at Nitaq Academy.</p>
+                        <p>See what our students say about their learning experience at NITAQ ACADEMY.</p>
                     </div>
 
                     <div className="reviews-grid">

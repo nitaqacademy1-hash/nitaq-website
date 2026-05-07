@@ -43,7 +43,7 @@ const Contact = () => {
                                     </div>
                                     <div>
                                         <h4 style={{ fontSize: '1.2rem', color: '#0f172a', marginBottom: '5px' }}>Our Address</h4>
-                                        <p style={{ color: '#64748b', lineHeight: 1.5 }}>Office 103, Floor F1, Abu Khamseen Tower,<br />Al Majaz 3, Sharjah, UAE<br /><span style={{ fontSize: '0.85rem' }}>Registered as Nitaq Supportive Education L.L.C</span></p>
+                                        <p style={{ color: '#64748b', lineHeight: 1.5 }}>Office : F103, Floor F1, Abu Khamseen Tower,<br />Majaz 3, Sharjah, UAE<br /><span style={{ fontSize: '0.85rem' }}>Registered as Nitaq Supportive Education Services LLC</span></p>
                                     </div>
                                 </div>
 
