@@ -31,7 +31,7 @@ const Contact = () => {
 
                         {/* Contact Info Side */}
                         <div className="contact-info-side">
-                            <h2 style={{ fontSize: '2.5rem', color: '#0f172a', marginBottom: '24px' }}>Visit Our <span className="text-gradient">Center</span></h2>
+                            <h2 style={{ fontSize: '2.5rem', color: '#0f172a', marginBottom: '24px' }}>Visit <span className="text-gradient">Us</span></h2>
                             <p style={{ fontSize: '1.15rem', color: '#64748b', marginBottom: '40px', lineHeight: '1.8' }}>
                                 We are located in the heart of Sharjah, providing easy access for students and professionals across the Northern Emirates.
                             </p>
