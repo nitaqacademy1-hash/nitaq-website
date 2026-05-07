@@ -196,7 +196,7 @@ const PrivacyPolicy = () => {
                             content: (
                                 <div style={{ background: '#f9fafb', padding: '25px', borderRadius: '12px' }}>
                                     <strong>NITAQ ACADEMY</strong><br />
-                                    📧 hr@nitaqacademy.com
+                                    📧 info@nitaqacademy.com
                                 </div>
                             )
                         },

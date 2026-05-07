@@ -82,6 +82,13 @@ const Footer = () => {
                                 >
                                     +971 6 579 8313 (Telephone)
                                 </a>
+                                <br />
+                                <a 
+                                    href="mailto:info@nitaqacademy.com" 
+                                    style={{ color: 'inherit', textDecoration: 'none' }}
+                                >
+                                    info@nitaqacademy.com
+                                </a>
                             </li>
                         </div>
                     </div>

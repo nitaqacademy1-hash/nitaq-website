@@ -67,8 +67,7 @@ const Contact = () => {
                                     <div>
                                         <h4 style={{ fontSize: '1.2rem', color: '#0f172a', marginBottom: '5px' }}>Email Support</h4>
                                         <p style={{ color: '#64748b', lineHeight: 1.5 }}>
-                                            <a href="mailto:info@nitaq.ae">info@nitaq.ae</a><br />
-                                            <a href="mailto:admissions@nitaq.ae">admissions@nitaq.ae</a>
+                                            <a href="mailto:info@nitaqacademy.com">info@nitaqacademy.com</a>
                                         </p>
                                     </div>
                                 </div>
