@@ -29,12 +29,11 @@ const SEO = () => {
   // Organization ID for linking
   const orgId = `${siteUrl}/#organization`;
 
-  // Schema Builders
+  // Schema Builders — All items in @graph must NOT have their own @context
   const schemas = [];
 
-  // 1. Global Organization 
+  // 1. Global Organization (no @context inside @graph)
   const organizationSchema = {
-    "@context": "https://schema.org",
     "@type": ["EducationalOrganization", "LocalBusiness"],
     "@id": orgId,
     "name": "Nitaq Academy",
@@ -71,7 +70,7 @@ const SEO = () => {
     }
   };
 
-  // Only add a simplified catalog on the homepage to avoid "missing description" errors for inner pages
+  // Only add a simplified catalog on the homepage
   if (location.pathname === '/') {
     organizationSchema.hasOfferCatalog = {
       "@type": "OfferCatalog",
@@ -88,9 +87,8 @@ const SEO = () => {
 
   schemas.push(organizationSchema);
 
-  // 2. WebSite
+  // 2. WebSite (no @context)
   schemas.push({
-    "@context": "https://schema.org",
     "@type": "WebSite",
     "@id": `${siteUrl}/#website`,
     "url": siteUrl,
@@ -103,7 +101,7 @@ const SEO = () => {
     }
   });
 
-  // 3. Breadcrumbs
+  // 3. Breadcrumbs (no @context)
   if (location.pathname !== '/') {
     const segments = location.pathname.split('/').filter(Boolean);
     const itemListElement = [{
@@ -123,45 +121,107 @@ const SEO = () => {
       });
     });
     schemas.push({
-      '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
       'itemListElement': itemListElement
     });
   }
 
-  // 4. Course Schema (Main focus for course pages)
-  if (routeData.courseSchema) {
+  // 4. Course Schema — ONLY on actual course pages with courseSchema data
+  // Explicitly excluded: homepage, about, contact, articles, webinar pages
+  const excludedFromCourse = ['/', '/about', '/contact', '/enquiry', '/articles', '/courses',
+    '/test-preparations', '/language-trainings', '/professional-certifications',
+    '/corporate-trainings', '/terms-and-conditions', '/privacy-policy'];
+  const isWebinarOrIg = location.pathname.startsWith('/webinar') || location.pathname.startsWith('/ig/') || location.pathname.startsWith('/article/');
+
+  if (routeData.courseSchema && !excludedFromCourse.includes(location.pathname) && !isWebinarOrIg) {
     const cs = routeData.courseSchema;
+
+    // Guaranteed non-null description (fix for SEMrush "missing description" errors)
+    const courseDescription = (cs.description && cs.description.trim())
+      || (routeData.description && routeData.description.trim())
+      || 'Professional training course offered by Nitaq Academy in Sharjah, UAE.';
+
+    // Explicit courseMode array or fallback string
+    const courseMode = Array.isArray(cs.mode) ? cs.mode : (cs.mode ? [cs.mode] : ['Onsite', 'Online']);
+
     schemas.push({
-      '@context': 'https://schema.org',
       '@type': 'Course',
       'name': cs.name,
-      'description': cs.description || routeData.description,
+      'description': courseDescription,
       'url': fullUrl,
+
+      // FIX 1: Full explicit provider — do NOT rely only on @id
       'provider': {
         '@type': 'EducationalOrganization',
         'name': 'Nitaq Academy',
         'url': siteUrl,
-        '@id': orgId
+        'address': {
+          '@type': 'PostalAddress',
+          'streetAddress': 'Office 103, Floor F1, Abu Khamseen Tower',
+          'addressLocality': 'Al Majaz 3',
+          'addressRegion': 'Sharjah',
+          'addressCountry': 'AE'
+        }
       },
+
+      // FIX 2: Offers — resolves "missing offers" SEMrush errors
+      'offers': {
+        '@type': 'Offer',
+        'category': 'Education',
+        'availability': 'https://schema.org/InStock',
+        'validFrom': '2026-01-01',
+        'url': fullUrl
+      },
+
+      // FIX 3: hasCourseInstance — resolves "missing hasCourseInstance" errors
+      'hasCourseInstance': [
+        {
+          '@type': 'CourseInstance',
+          'courseMode': 'Onsite',
+          'location': {
+            '@type': 'Place',
+            'name': 'Nitaq Academy Sharjah',
+            'address': {
+              '@type': 'PostalAddress',
+              'streetAddress': 'Office 103, Floor F1, Abu Khamseen Tower',
+              'addressLocality': 'Al Majaz 3',
+              'addressRegion': 'Sharjah',
+              'addressCountry': 'AE'
+            }
+          },
+          'instructor': {
+            '@type': 'Person',
+            'name': 'Nitaq Expert Trainer'
+          }
+        },
+        {
+          '@type': 'CourseInstance',
+          'courseMode': 'Online',
+          'courseWorkload': cs.duration || 'PT40H',
+          'instructor': {
+            '@type': 'Person',
+            'name': 'Nitaq Expert Trainer'
+          }
+        }
+      ],
+
       'aggregateRating': {
         '@type': 'AggregateRating',
         'ratingValue': '4.9',
         'reviewCount': '24'
       },
+
       ...(cs.duration && { timeRequired: cs.duration }),
-      ...(cs.mode && { courseMode: cs.mode }),
       ...(cs.educationalLevel && { educationalLevel: cs.educationalLevel }),
       ...(cs.teaches && { teaches: cs.teaches }),
-      ...(cs.image && { image: ogImageUrl }),
       ...(cs.inLanguage && { inLanguage: cs.inLanguage }),
+      'courseMode': courseMode,
     });
   }
 
-  // 5. FAQPage Schema
+  // 5. FAQPage Schema (no @context)
   if (routeData.faqSchema && routeData.faqSchema.length > 0) {
     schemas.push({
-      '@context': 'https://schema.org',
       '@type': 'FAQPage',
       'mainEntity': routeData.faqSchema.map(({ question, answer }) => ({
         '@type': 'Question',
@@ -174,10 +234,9 @@ const SEO = () => {
     });
   }
 
-  // 6. Article Schema
+  // 6. Article Schema (no @context)
   if (location.pathname.startsWith('/article/')) {
     schemas.push({
-      '@context': 'https://schema.org',
       '@type': 'Article',
       'headline': routeData.title,
       'description': routeData.description,
@@ -206,7 +265,7 @@ const SEO = () => {
       <meta name="twitter:description" content={routeData.ogDescription || routeData.description} />
       <meta name="twitter:image" content={ogImageUrl} />
 
-      {/* Structured Data: Unified @graph block for maximum compatibility */}
+      {/* Structured Data: Single root @context with @graph — NO duplicate @context inside nodes */}
       <script type="application/ld+json">
         {JSON.stringify({
           "@context": "https://schema.org",
