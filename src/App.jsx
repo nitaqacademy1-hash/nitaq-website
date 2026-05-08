@@ -62,7 +62,6 @@ import TopSkillsUae2026 from './pages/article/TopSkillsUae2026';
 import TermsAndConditions from './pages/legal/TermsAndConditions';
 import PrivacyPolicy from './pages/legal/PrivacyPolicy';
 
-import DynamicPopup from './components/DynamicPopup';
 
 import FloatingWhatsApp from './components/FloatingWhatsApp';
 import ResumeGuide from './pages/ig/2026-03-29/ResumeGuide';
@@ -77,7 +76,6 @@ function AppContent() {
       <ScrollToTop />
       <ScrollToHashElement />
       <Header />
-      <DynamicPopup />
 
       <Routes>
         <Route path="/" element={<Home />} />
