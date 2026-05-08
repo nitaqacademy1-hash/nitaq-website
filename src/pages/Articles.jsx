@@ -5,6 +5,17 @@ import { Calendar, User, ArrowRight, ExternalLink, Filter, Search } from 'lucide
 
 const articles = [
     {
+        id: 0,
+        title: "Top Skills in UAE for 2026: AI, Digital Marketing, SAT & Future Careers",
+        excerpt: "Master the most in-demand skills in UAE for 2026. From AI and Digital Marketing to academic excellence with SAT, discover how to future-proof your career today.",
+        category: "Career & Courses",
+        path: "/article/top-skills-uae-2026",
+        coursePath: "/course",
+        courseLabel: "View Courses",
+        date: "May 08, 2026",
+        image: "/images/article-future-skills-uae.webp"
+    },
+    {
         id: 1,
         title: "SAT Coaching in Sharjah: A Complete Guide to Scoring Higher in 2026",
         excerpt: "Discover proven SAT coaching strategies in Sharjah and learn how structured preparation can help you achieve higher scores and secure admission to top universities.",

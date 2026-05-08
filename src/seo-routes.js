@@ -1598,6 +1598,35 @@ export const seoRoutes = [
     courseSchema: null,
     faqSchema: null
   },
+  {
+    path: "/article/top-skills-uae-2026",
+    title: "Top Skills in UAE for 2026: AI, Digital Marketing, SAT & Future Careers | NITAQ ACADEMY",
+    description: "Discover the top skills in demand in UAE for 2026. Learn about Artificial Intelligence, Digital Marketing, SAT preparation, and high-income skills for students and professionals in Dubai & Sharjah.",
+    canonical: "https://www.nitaqacademy.com/article/top-skills-uae-2026",
+    ogTitle: "Top Skills in UAE for 2026: AI, Digital Marketing, SAT & Future Careers",
+    ogDescription: "The ultimate guide to future-proofing your career in the UAE. Explore why AI, Digital Marketing, and SAT prep are the best skills to learn for 2026 success.",
+    ogImage: "/images/article-future-skills-uae.webp",
+    twitterCard: "summary_large_image",
+    courseSchema: null,
+    faqSchema: [
+      {
+        question: "What skills are most in demand in UAE for 2026?",
+        answer: "The most in-demand skills in the UAE for 2026 include Artificial Intelligence (Generative AI & Prompt Engineering), Digital Marketing (SEO & Social Commerce), Data Analytics (Power BI), Cybersecurity, and Soft Skills like Emotional Intelligence and Cross-Cultural Communication."
+      },
+      {
+        question: "Is an AI course essential for students in Sharjah?",
+        answer: "Yes, as the UAE transition towards an AI-driven economy, mastering AI tools and concepts has become essential for students to remain competitive in both local and international university admissions and future job markets."
+      },
+      {
+        question: "Which skills will be future-proof in the UAE?",
+        answer: "Skills that require human creativity, empathy, and strategic thinking—combined with technical literacy in AI and Data—are considered most future-proof. Technical skills like Coding and Cybersecurity also remains highly resilient."
+      },
+      {
+        question: "How important is SAT preparation for students in the UAE?",
+        answer: "For students aiming for international universities in the US, UK, Canada, or top tier local universities, a high SAT score remains a critical component of a competitive application profile."
+      }
+    ]
+  },
 ];
 
 export const getSeoRoute = (path) => {
