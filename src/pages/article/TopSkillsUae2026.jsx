@@ -326,13 +326,15 @@ const TopSkillsUae2026 = () => {
 
                     {/* ── 6. FAQ Section ── */}
                     <div className="article-faq-section" style={{ marginTop: '100px' }}>
-                        <h2 style={{ textAlign: 'center', marginBottom: '50px' }}>Frequently Asked Questions</h2>
-                        <div className="faq-grid-custom">
+                        <h2 style={{ textAlign: 'center', marginBottom: '50px' }}>Future Skills <span className="text-gradient">FAQs</span></h2>
+                        <div className="faq-accordion-group" style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
                             {faqs.map((faq, index) => (
-                                <div key={index} className="faq-item-custom">
-                                    <h3>{faq.question}</h3>
-                                    <p>{faq.answer}</p>
-                                </div>
+                                <details key={index} className="faq-accordion">
+                                    <summary>{faq.question}</summary>
+                                    <div className="faq-accordion-content">
+                                        <p>{faq.answer}</p>
+                                    </div>
+                                </details>
                             ))}
                         </div>
                     </div>
