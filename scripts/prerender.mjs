@@ -71,6 +71,7 @@ const ROUTES = [
   '/article/ai-courses-sharjah-essential',
   '/article/best-training-institute-sharjah',
   '/article/choose-right-course-uae',
+  '/article/top-skills-uae-2026',
   '/terms-and-conditions',
   '/privacy-policy',
   '/ig/2026-03-29',
