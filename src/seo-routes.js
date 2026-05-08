@@ -1607,6 +1607,8 @@ export const seoRoutes = [
     ogDescription: "The ultimate guide to future-proofing your career in the UAE. Explore why AI, Digital Marketing, and SAT prep are the best skills to learn for 2026 success.",
     ogImage: "/images/article-future-skills-uae.webp",
     twitterCard: "summary_large_image",
+    datePublished: "2026-05-08T08:00:00+04:00",
+    dateModified: "2026-05-08T15:00:00+04:00",
     courseSchema: null,
     faqSchema: [
       {

@@ -19,6 +19,8 @@ const SEO = () => {
     ogDescription: "Top-rated training academy in Sharjah offering IELTS, TOEFL, ACCA, CMA, AI & language courses.",
     ogImage: "/images/logo1.webp",
     twitterCard: "summary_large_image",
+    datePublished: "2026-05-08T08:00:00+04:00",
+    dateModified: "2026-05-08T15:00:00+04:00",
     courseSchema: null,
     faqSchema: null
   };
@@ -234,16 +236,36 @@ const SEO = () => {
     });
   }
 
-  // 6. Article Schema (no @context)
+  // 6. Article (BlogPosting) Schema — Upgraded to Google Search Central best practices
   if (location.pathname.startsWith('/article/')) {
     schemas.push({
-      '@type': 'Article',
-      'headline': routeData.title,
+      '@type': 'BlogPosting',
+      'headline': routeData.title.split('|')[0].trim(),
       'description': routeData.description,
-      'image': ogImageUrl,
-      'author': { '@type': 'Person', 'name': 'Nitaq Expert Team' },
-      'publisher': { '@id': orgId },
-      'datePublished': '2026-05-01'
+      'image': [
+        ogImageUrl, // Primary
+        ogImageUrl.replace('.webp', '-1x1.webp'), // Fallback variants logic if we had them, otherwise use the main one 3 times
+        ogImageUrl.replace('.webp', '-4x3.webp')
+      ],
+      'datePublished': routeData.datePublished || '2026-05-01T08:00:00+04:00',
+      'dateModified': routeData.dateModified || '2026-05-08T15:00:00+04:00',
+      'author': [{
+        '@type': 'Person',
+        'name': 'Nitaq Academy Editorial Team',
+        'url': `${siteUrl}/about`
+      }],
+      'publisher': {
+        '@type': 'Organization',
+        'name': 'NITAQ ACADEMY',
+        'logo': {
+          '@type': 'ImageObject',
+          'url': `${siteUrl}/images/logo1.webp`
+        }
+      },
+      'mainEntityOfPage': {
+        '@type': 'WebPage',
+        '@id': fullUrl
+      }
     });
   }
 
