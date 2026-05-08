@@ -76,11 +76,11 @@ const SEO = () => {
       "@type": "OfferCatalog",
       "name": "NITAQ ACADEMY Courses",
       "itemListElement": [
-        { "@type": "Course", "name": "IELTS Preparation", "description": "Expert IELTS coaching for Academic & General modules.", "url": `${siteUrl}/ielts-course` },
-        { "@type": "Course", "name": "SAT Preparation", "description": "Comprehensive Digital SAT coaching with 1400+ focus.", "url": `${siteUrl}/sat-preparation-sharjah` },
-        { "@type": "Course", "name": "GRE Coaching", "description": "Strategic GRE preparation for graduate school admissions.", "url": `${siteUrl}/gre-preparation` },
-        { "@type": "Course", "name": "GMAT Training", "description": "Top-tier GMAT coaching for MBA aspirants.", "url": `${siteUrl}/gmat-preparation` },
-        { "@type": "Course", "name": "ACCA Coaching", "description": "Complete ACCA qualification training by experts.", "url": `${siteUrl}/acca-course` }
+        { "@type": "Offer", "itemOffered": { "@type": "Course", "name": "IELTS Preparation", "description": "Expert IELTS coaching for Academic & General modules." }, "url": `${siteUrl}/ielts-course` },
+        { "@type": "Offer", "itemOffered": { "@type": "Course", "name": "SAT Preparation", "description": "Comprehensive Digital SAT coaching with 1400+ focus." }, "url": `${siteUrl}/sat-preparation-sharjah` },
+        { "@type": "Offer", "itemOffered": { "@type": "Course", "name": "GRE Coaching", "description": "Strategic GRE preparation for graduate school admissions." }, "url": `${siteUrl}/gre-preparation` },
+        { "@type": "Offer", "itemOffered": { "@type": "Course", "name": "GMAT Training", "description": "Top-tier GMAT coaching for MBA aspirants." }, "url": `${siteUrl}/gmat-preparation` },
+        { "@type": "Offer", "itemOffered": { "@type": "Course", "name": "ACCA Coaching", "description": "Complete ACCA qualification training by experts." }, "url": `${siteUrl}/acca-course` }
       ]
     };
   }
@@ -173,11 +173,12 @@ const SEO = () => {
         'url': fullUrl
       },
 
-      // FIX 3: hasCourseInstance — resolves "missing hasCourseInstance" errors
+      // FIX 3: hasCourseInstance — resolves "missing hasCourseInstance" / "missing workload" errors
       'hasCourseInstance': [
         {
           '@type': 'CourseInstance',
-          'courseMode': 'Onsite',
+          'courseMode': 'onsite',
+          'courseWorkload': cs.duration || 'P8W', // Matches 'courseSchedule' requirements
           'location': {
             '@type': 'Place',
             'name': 'NITAQ ACADEMY Sharjah',
@@ -191,16 +192,16 @@ const SEO = () => {
           },
           'instructor': {
             '@type': 'Person',
-            'name': 'Nitaq Expert Trainer'
+            'name': 'Nitaq Senior Expert'
           }
         },
         {
           '@type': 'CourseInstance',
-          'courseMode': 'Online',
-          'courseWorkload': cs.duration || 'PT40H',
+          'courseMode': 'online',
+          'courseWorkload': cs.duration || 'P8W',
           'instructor': {
             '@type': 'Person',
-            'name': 'Nitaq Expert Trainer'
+            'name': 'Nitaq Senior Expert'
           }
         }
       ],
@@ -215,7 +216,6 @@ const SEO = () => {
       ...(cs.educationalLevel && { educationalLevel: cs.educationalLevel }),
       ...(cs.teaches && { teaches: cs.teaches }),
       ...(cs.inLanguage && { inLanguage: cs.inLanguage }),
-      'courseMode': courseMode,
     });
   }
 
