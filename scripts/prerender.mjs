@@ -23,6 +23,7 @@ const ROUTES = [
   '/about',
   '/contact',
   '/enquiry',
+  '/course',
   '/courses',
   '/articles',
   '/test-preparations',

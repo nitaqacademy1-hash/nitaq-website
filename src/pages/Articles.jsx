@@ -10,7 +10,7 @@ const articles = [
         excerpt: "Master the most in-demand skills in UAE for 2026. From AI and Digital Marketing to academic excellence with SAT, discover how to future-proof your career today.",
         category: "Career & Courses",
         path: "/article/top-skills-uae-2026",
-        coursePath: "/course",
+        coursePath: "/courses",
         courseLabel: "View Courses",
         date: "May 08, 2026",
         image: "/images/article-future-skills-uae.webp"
@@ -54,7 +54,7 @@ const articles = [
         excerpt: "Understanding the difference between academic and language proficiency tests in the UAE is crucial. We break down which exam fits your specific international goals.",
         category: "SAT Preparation",
         path: "/article/sat-vs-ielts-guide",
-        coursePath: "/course",
+        coursePath: "/courses",
         courseLabel: "Explore All",
         date: "Apr 23, 2026",
         image: "/images/h1.webp"
@@ -120,7 +120,7 @@ const articles = [
         excerpt: "Not all certificates are equal in the UAE. Learn what to look for in a training institute in Sharjah—from accreditation to expertise—to ensure your education is an investment.",
         category: "Career & Courses",
         path: "/article/best-training-institute-sharjah",
-        coursePath: "/course",
+        coursePath: "/courses",
         courseLabel: "Find Courses",
         date: "Apr 17, 2026",
         image: "/images/h1.webp"
@@ -131,7 +131,7 @@ const articles = [
         excerpt: "Matching your skills to market demand is the key to success. This guide helps you navigate the UAE's academic landscape to find your perfect fit for professional growth.",
         category: "Career & Courses",
         path: "/article/choose-right-course-uae",
-        coursePath: "/course",
+        coursePath: "/courses",
         courseLabel: "Career Paths",
         date: "Apr 16, 2026",
         image: "/images/h2.webp"
@@ -174,7 +174,7 @@ const Articles = () => {
                         <div className="quick-links-row">
                             <Link to="/sat-preparation-sharjah" className="quick-link-item">👉 Explore SAT Coaching in Sharjah</Link>
                             <Link to="/ielts-course" className="quick-link-item">👉 Join IELTS Training in Dubai</Link>
-                            <Link to="/course" className="quick-link-item">👉 Browse All Courses in UAE</Link>
+                            <Link to="/courses" className="quick-link-item">👉 Browse All Courses in UAE</Link>
                         </div>
                     </div>
                 </div>

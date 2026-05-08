@@ -13,7 +13,7 @@ const SatVsIeltsGuide = () => {
                     <nav className="article-breadcrumb">
                         <Link to="/">Home</Link>
                         <ChevronRight size={14} />
-                        <Link to="/course">Courses</Link>
+                        <Link to="/courses">Courses</Link>
                         <ChevronRight size={14} />
                         <span>SAT vs IELTS</span>
                     </nav>
@@ -108,7 +108,7 @@ const SatVsIeltsGuide = () => {
                             <div className="enroll-sidebar-card">
                                 <h3>Expert Test Coaching</h3>
                                 <p>Whether it's SAT or IELTS, we help you master the exams and secure your future.</p>
-                                <Link to="/course" className="btn btn-primary w-100 mb-15">Explore All Courses</Link>
+                                <Link to="/courses" className="btn btn-primary w-100 mb-15">Explore All Courses</Link>
                                 <a href="tel:+97165798313" className="btn btn-outline w-100">Talk to Advisor</a>
                             </div>
                         </aside>

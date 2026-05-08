@@ -13,7 +13,7 @@ const ChooseRightCourseUae = () => {
                     <nav className="article-breadcrumb">
                         <Link to="/">Home</Link>
                         <ChevronRight size={14} />
-                        <Link to="/course">Courses</Link>
+                        <Link to="/courses">Courses</Link>
                         <ChevronRight size={14} />
                         <span>Career Choice Guide</span>
                     </nav>
@@ -102,7 +102,7 @@ const ChooseRightCourseUae = () => {
                             <div className="enroll-sidebar-card">
                                 <h3>Find Your Path</h3>
                                 <p>Schedule a free consultation with our career advisors to choose the right course for your goals.</p>
-                                <Link to="/course" className="btn btn-primary w-100 mb-15">Browse Our Courses</Link>
+                                <Link to="/courses" className="btn btn-primary w-100 mb-15">Browse Our Courses</Link>
                                 <a href="tel:+97165798313" className="btn btn-outline w-100">Consult Our Advisor</a>
                             </div>
                         </aside>

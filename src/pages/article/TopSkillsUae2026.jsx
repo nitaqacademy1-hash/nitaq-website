@@ -266,7 +266,7 @@ const TopSkillsUae2026 = () => {
                                 <h3 style={{ color: 'white', fontSize: '2.4rem', marginBottom: '15px' }}>Ready to Future-Proof Your Career?</h3>
                                 <p style={{ fontSize: '1.2rem', opacity: 0.9, marginBottom: '35px' }}>Join the top training institute in Sharjah and start building your future today.</p>
                                 <div style={{ display: 'flex', gap: '20px', justifyContent: 'center', flexWrap: 'wrap' }}>
-                                    <Link to="/course" className="btn" style={{ background: 'white', color: 'var(--primary-color)', padding: '18px 40px', borderRadius: '50px', fontWeight: 700 }}>Browse Courses</Link>
+                                    <Link to="/courses" className="btn" style={{ background: 'white', color: 'var(--primary-color)', padding: '18px 40px', borderRadius: '50px', fontWeight: 700 }}>Browse Courses</Link>
                                     <a href="tel:+971527569908" className="btn" style={{ background: 'rgba(255,255,255,0.1)', border: '2px solid white', color: 'white', padding: '18px 40px', borderRadius: '50px', fontWeight: 700 }}>Contact an Advisor</a>
                                 </div>
                             </div>

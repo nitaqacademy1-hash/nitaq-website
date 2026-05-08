@@ -118,7 +118,8 @@ function AppContent() {
         <Route path="/academic-excellence" element={<AcademicExcellenceCourse />} />
         <Route path="/foundation-jee-neet" element={<FoundationJEECourse />} />
         <Route path="/ai-robotics-kids" element={<AIRoboticsKids />} />
-        <Route path="/course" element={<Courses />} />
+        <Route path="/courses" element={<Navigate to="/courses" replace />} />
+        <Route path="/courses" element={<Courses />} />
         <Route path="/articles" element={<Articles />} />
 
         {/* Articles */}

@@ -13,7 +13,7 @@ const homeArticles = [
         excerpt: "Master the most in-demand skills in UAE for 2026. From AI and Digital Marketing to academic excellence with SAT, discover how to future-proof your career today.",
         category: "Skills",
         path: "/article/top-skills-uae-2026",
-        coursePath: "/course",
+        coursePath: "/courses",
         courseLabel: "View Courses",
         date: "May 08, 2026",
         image: "/images/article-future-skills-uae.webp"
@@ -124,17 +124,17 @@ const Home = () => {
         {
             image: "/images/hero_new_1.png",
             title: "Top-Rated Training Institute in Sharjah for Professional Growth.",
-            link: "/course"
+            link: "/courses"
         },
         {
             image: "/images/hero_new_2.png",
             title: "Expert Coaching for SAT, IELTS & Competitive Examinations.",
-            link: "/course"
+            link: "/courses"
         },
         {
             image: "/images/hero_new_3.png",
             title: "Advance Your Career with Globally Recognized Certifications.",
-            link: "/course"
+            link: "/courses"
         }
     ];
 
@@ -235,7 +235,7 @@ const Home = () => {
                                 <a href="tel:+97165798313" className="btn-minimal-primary">
                                     Enroll Now
                                 </a>
-                                <Link to="/course" className="btn-minimal-secondary">
+                                <Link to="/courses" className="btn-minimal-secondary">
                                     Course Explorer
                                 </Link>
                             </div>

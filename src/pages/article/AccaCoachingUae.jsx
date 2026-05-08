@@ -13,7 +13,7 @@ const AccaCoachingUae = () => {
                     <nav className="article-breadcrumb">
                         <Link to="/">Home</Link>
                         <ChevronRight size={14} />
-                        <Link to="/course">Courses</Link>
+                        <Link to="/courses">Courses</Link>
                         <ChevronRight size={14} />
                         <span>ACCA Benefits</span>
                     </nav>
