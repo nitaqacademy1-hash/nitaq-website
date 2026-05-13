@@ -13,7 +13,7 @@ const Courses = () => {
                 { title: "UAE Corporate Tax", image: "/images/corp_tax_v2.webp", link: "/uae-corporate-tax" },
                 { title: "AI & Machine Learning", image: "/images/ai_v2.webp", link: "/ai-course" },
                 { title: "Power BI & Excel", image: "/images/data_v2.webp", link: "/power-bi-excel" },
-                { title: "Digital Marketing", image: "/images/marketing_v2.webp", link: "/marketing-training" },
+                { title: "Professional Marketing", image: "/images/marketing_v2.webp", link: "/professional-marketing-course" },
                 { title: "Sales & Negotiation", image: "/images/sales_v2.webp", link: "/sales-negotiations" }
             ],
             viewMore: "/professional-certifications"

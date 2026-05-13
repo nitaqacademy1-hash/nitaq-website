@@ -26,7 +26,7 @@ import PowerBIExcelCourse from './pages/courses/PowerBIExcelCourse';
 import CHRMCourse from './pages/courses/CHRMCourse';
 import HRMCourse from './pages/courses/HRMCourse';
 import SalesNegotiationsCourse from './pages/courses/SalesNegotiationsCourse';
-import MarketingTraining from './pages/courses/MarketingTraining';
+import ProfessionalMarketingCourse from './pages/courses/ProfessionalMarketingCourse';
 import CPCDCourse from './pages/courses/CPCDCourse';
 import DataManagementCourse from './pages/courses/DataManagementCourse';
 import SoftSkillsTraining from './pages/courses/SoftSkillsTraining';
@@ -99,7 +99,7 @@ function AppContent() {
         <Route path="/chrm" element={<CHRMCourse />} />
         <Route path="/hrm-courses" element={<HRMCourse />} />
         <Route path="/sales-negotiations" element={<SalesNegotiationsCourse />} />
-        <Route path="/marketing-training" element={<MarketingTraining />} />
+        <Route path="/professional-marketing-course" element={<ProfessionalMarketingCourse />} />
         <Route path="/cpcd-courses" element={<CPCDCourse />} />
         <Route path="/data-management" element={<DataManagementCourse />} />
         <Route path="/soft-skills-training" element={<SoftSkillsTraining />} />

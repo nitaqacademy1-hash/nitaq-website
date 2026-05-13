@@ -1355,47 +1355,39 @@ export const seoRoutes = [
     ]
   },
   {
-    path: "/marketing-training",
-    title: "Marketing Training Sharjah | Digital Marketing & Strategy UAE | NITAQ ACADEMY",
-    description: "Marketing training at NITAQ ACADEMY Sharjah. Learn digital marketing, branding, social media strategy & campaign management. Online & offline batches across UAE.",
-    canonical: "https://www.nitaqacademy.com/marketing-training",
-    ogTitle: "Marketing Training Sharjah | Digital Marketing & Strategy UAE | NITAQ ACADEMY",
-    ogDescription: "Marketing training at NITAQ ACADEMY Sharjah. Learn digital marketing, branding, social media strategy & campaign management. Online & offline batches across UAE.",
-    ogImage: "/images/logo1.webp",
+    path: "/professional-marketing-course",
+    title: "Professional Marketing Course Sharjah | Best Marketing Training UAE",
+    description: "Top-rated Professional Marketing Course in Sharjah. Learn Branding, Strategy & Customer Psychology. Perfect for beginners and entrepreneurs. Online & Offline UAE.",
+    canonical: "https://www.nitaqacademy.com/professional-marketing-course",
+    ogTitle: "Professional Marketing Course Sharjah | Best Marketing Training UAE",
+    ogDescription: "Top-rated Professional Marketing Course in Sharjah. Learn Branding, Strategy & Customer Psychology. Perfect for beginners and entrepreneurs. Online & Offline UAE.",
+    ogImage: "/images/marketing_v2.webp",
     twitterCard: "summary_large_image",
     courseSchema: {
-        name: 'Marketing Training Sharjah',
-        description: 'Professional marketing training in Sharjah covering digital marketing, social media strategy, content marketing, SEO basics, branding, and campaign management for business professionals.',
+        name: 'Professional Marketing Course',
+        description: 'A practical and strategic Marketing Fundamentals Course designed for beginners and entrepreneurs in Sharjah, UAE. Learn how to think like a strategist and grow businesses.',
         mode: ['onsite', 'online'],
-        educationalLevel: 'Beginner to Advanced',
-        teaches: 'Marketing: Digital Marketing, Social Media Strategy, Content Marketing, SEO, Branding, Campaign Management',
+        educationalLevel: 'Beginner to Professional',
+        teaches: 'Modern Marketing Fundamentals, Customer Psychology, Market Research, Branding, Strategic Positioning, Offer Creation',
         inLanguage: 'en',
     },
     faqSchema: [
         {
-            question: 'Who should attend Marketing Training at NITAQ ACADEMY?',
-            answer: 'This training is ideal for marketing professionals, business owners, entrepreneurs, communications managers, and anyone seeking to upskill in modern marketing strategies.',
+            question: 'What is the best marketing course in Sharjah for beginners?',
+            answer: 'Nitaq Academy offers a Professional Marketing Course in Sharjah designed specifically for beginners and entrepreneurs to master fundamentals and strategy.',
         },
         {
-            question: 'What marketing topics are covered at Nitaq?',
-            answer: 'The course covers digital marketing, social media marketing, content strategy, SEO fundamentals, email marketing, brand management, and campaign planning.',
+            question: 'Does this course cover Digital Marketing?',
+            answer: 'While the focus is on fundamentals and branding, it covers modern marketing strategies essential for digital success in the UAE and GCC market.',
         },
         {
-            question: 'Is Marketing Training available online in UAE?',
-            answer: 'Yes, both online and offline marketing training sessions are available with flexible scheduling at NITAQ ACADEMY Sharjah.',
+            question: 'Can I learn marketing online in UAE?',
+            answer: 'Yes, Nitaq Academy provides live online sessions accessible from anywhere in the UAE and globally.',
         },
         {
-            question: 'Can corporate marketing teams attend this training?',
-            answer: 'Yes, we offer customized marketing training programs for corporate teams tailored to specific business goals and industry sectors.',
-        },
-        {
-            question: 'How long is the Marketing Training program at Nitaq?',
-            answer: 'Program duration varies by content scope. Workshops run 1–2 days; comprehensive programs run 4–8 weeks.',
-        },
-        {
-            question: 'What is the fee for Marketing Training at NITAQ ACADEMY?',
-            answer: 'Contact us at +971 52 756 9908 for the latest marketing training pricing and scheduling options.',
-        },
+            question: 'Is this course suitable for business owners?',
+            answer: 'Absolutely. It is specifically built for entrepreneurs and business owners to help them understand market demand and scale their businesses through strategy.',
+        }
     ]
   },
   {

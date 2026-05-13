@@ -172,16 +172,17 @@ const ProfessionalCertifications = () => {
 
                         <div className="listing-card">
                             <div className="listing-card-img">
-                                <img src="/images/marketing_v2.webp" alt="Marketing" loading="lazy" />
+                                <img src="/images/marketing_v2.webp" alt="Professional Marketing" loading="lazy" />
                             </div>
                             <div className="listing-card-body">
-                                <h3>Marketing Training</h3>
-                                <p>Modern digital and traditional marketing strategies to build brands and reach global audiences effectively.</p>
+                                <h3>Professional Marketing Course</h3>
+                                <p>Learn Marketing, Branding & Customer Psychology from Beginner to Professional in Sharjah & Online.</p>
                             </div>
                             <div className="listing-card-footer">
-                                <Link to="/marketing-training" className="btn-read-more">Learn More →</Link>
+                                <Link to="/professional-marketing-course" className="btn-read-more">Learn More →</Link>
                             </div>
                         </div>
+
 
                         <div className="listing-card">
                             <div className="listing-card-img">

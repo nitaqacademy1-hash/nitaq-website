@@ -190,6 +190,13 @@ const Home = () => {
             image: "/images/acca_v2.webp",
             link: "/finance-courses",
             alt: "ACCA Coaching UAE"
+        },
+        {
+            title: "Professional Marketing Course",
+            desc: "Learn modern marketing strategy, branding, and customer psychology in our practical course for beginners and entrepreneurs in Sharjah.",
+            image: "/images/marketing_v2.webp",
+            link: "/professional-marketing-course",
+            alt: "Professional Marketing Course Sharjah"
         }
     ];
 

@@ -68,7 +68,7 @@ const AiCoursesSharjah = () => {
                                 You don't need to be a software engineer to benefit from AI. Whether you are in marketing, human resources, finance, or operations, AI tools are changing how work is done.
                             </p>
                             <p>
-                                For example, in <Link to="/marketing-training">marketing</Link>, AI is used for predictive analytics and personalized customer journeys. In <Link to="/hrm-courses">Human Resources</Link>, it streamlines recruitment and employee engagement. AI literacy means understanding how these tools work and how to apply them to your specific field.
+                                For example, in <Link to="/professional-marketing-course">marketing</Link>, AI is used for predictive analytics and personalized customer journeys. In <Link to="/hrm-courses">Human Resources</Link>, it streamlines recruitment and employee engagement. AI literacy means understanding how these tools work and how to apply them to your specific field.
                             </p>
 
                             <h2>What to Expect from a Modern AI Course</h2>

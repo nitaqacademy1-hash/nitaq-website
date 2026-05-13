@@ -96,7 +96,7 @@ const Header = () => {
                                         <Link to="/chrm" onClick={closeMenu}>CHRM</Link>
                                         <Link to="/hrm-courses" onClick={closeMenu}>HRM Professional</Link>
                                         <Link to="/sales-negotiations" onClick={closeMenu}>Sales & Negotiations</Link>
-                                        <Link to="/marketing-training" onClick={closeMenu}>Marketing Training</Link>
+                                        <Link to="/professional-marketing-course" onClick={closeMenu}>Professional Marketing</Link>
                                         <Link to="/cpcd-courses" onClick={closeMenu}>CPCD Professional</Link>
                                         <Link to="/data-management" onClick={closeMenu}>Data Management</Link>
                                         <Link to="/soft-skills-training" onClick={closeMenu}>Soft Skills Training</Link>
