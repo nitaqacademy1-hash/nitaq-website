@@ -49,7 +49,7 @@ const ROUTES = [
   '/chrm',
   '/hrm-courses',
   '/sales-negotiations',
-  '/marketing-training',
+  '/professional-marketing-course',
   '/cpcd-courses',
   '/data-management',
   '/soft-skills-training',
