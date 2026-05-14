@@ -1,7 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../../components/SEO';
-import { Calendar, User, Clock, ChevronRight, CheckCircle, ArrowRight, Star, GraduationCap, Laptop, Sparkles, Globe, Shield, TrendingUp, Users } from 'lucide-react';
+import { 
+    Calendar, User, Clock, ChevronRight, CheckCircle, ArrowRight, Star, 
+    GraduationCap, Laptop, Sparkles, Globe, Shield, TrendingUp, Users,
+    Brain, Target, BarChart, Zap, Rocket, MessageSquare
+} from 'lucide-react';
 
 const TopSkillsUae2026 = () => {
     const publishDate = new Date().toLocaleDateString('en-US', {
@@ -13,35 +17,40 @@ const TopSkillsUae2026 = () => {
     const faqs = [
         {
             question: "What skills are most in demand in UAE for 2026?",
-            answer: "The most in-demand skills in the UAE for 2026 include Artificial Intelligence (Generative AI & Prompt Engineering), Digital Marketing (SEO & Social Commerce), Data Analytics (Power BI), Cybersecurity, and Soft Skills like Emotional Intelligence and Cross-Cultural Communication."
+            answer: "The top skills UAE 2026 include Generative AI, Strategic Digital Marketing, Data Science (Power BI), Cybersecurity, and Hybrid Soft Skills. The UAE's shift toward a knowledge-based economy makes these competencies essential for both students and professionals."
         },
         {
-            question: "Is an AI course essential for students in Sharjah?",
-            answer: "Yes, as the UAE transition towards an AI-driven economy, mastering AI tools and concepts has become essential for students to remain competitive in both local and international university admissions and future job markets."
+            question: "Is AI literacy mandatory for jobs in Dubai and Sharjah?",
+            answer: "By 2026, AI literacy will be a baseline requirement across all sectors in the UAE, from healthcare to finance. Employers are prioritizing candidates who can leverage AI tools like ChatGPT and Midjourney to enhance productivity."
         },
         {
-            question: "Which skills will be future-proof in the UAE?",
-            answer: "Skills that require human creativity, empathy, and strategic thinking—combined with technical literacy in AI and Data—are considered most future-proof. Technical skills like Coding and Cybersecurity also remains highly resilient."
+            question: "How can I future-proof my career in the UAE?",
+            answer: "To future-proof your career, focus on building a 'T-shaped' skill set: deep expertise in one area (like Finance or HR) and broad literacy in emerging technologies like AI and Data Analytics."
         },
         {
-            question: "How important is SAT preparation for students in the UAE?",
-            answer: "For students aiming for international universities in the US, UK, Canada, or top tier local universities, a high SAT score remains a critical component of a competitive application profile."
+            question: "Does NITAQ ACADEMY provide certification for these skills?",
+            answer: "Yes, NITAQ ACADEMY offers SPEA-approved certifications in AI, Marketing, HR, and Finance, designed specifically for the UAE market requirements."
+        }
+    ];
+
+    const skillHighlight = [
+        {
+            title: "Artificial Intelligence",
+            desc: "Beyond coding—mastering prompt engineering and AI-driven automation.",
+            icon: <Brain className="text-blue-500" />,
+            link: "/ai-course"
         },
         {
-            question: "What is the best high-income skill to learn in Dubai?",
-            answer: "Digital Marketing, AI Consultancy, and Data Science are currently among the highest-paid skill sets in Dubai's growing startup and technology ecosystem."
+            title: "Digital Marketing",
+            desc: "Mastering social commerce, SEO, and brand psychology for the GCC market.",
+            icon: <Target className="text-emerald-500" />,
+            link: "/professional-marketing-course"
         },
         {
-            question: "Does NITAQ ACADEMY offer AI training for beginners?",
-            answer: "Yes, NITAQ ACADEMY offers beginner-friendly AI courses designed for students and professionals to master practical tools like ChatGPT, Midjourney, and prompt engineering."
-        },
-        {
-            question: "Are communication skills important for engineering students?",
-            answer: "Absolutely. Engineering students in the UAE need strong Spoken English and professional communication skills to work in multinational teams and lead projects effectively."
-        },
-        {
-            question: "Why should professionals in Sharjah learn Power BI?",
-            answer: "Power BI and Data Analytics allow professionals to make data-driven decisions, which is a top requirement for managerial roles in the UAE's modern business landscape."
+            title: "Data Analytics",
+            desc: "Turning big data into actionable business intelligence using Power BI.",
+            icon: <BarChart className="text-purple-500" />,
+            link: "/power-bi-excel"
         }
     ];
 
@@ -49,7 +58,7 @@ const TopSkillsUae2026 = () => {
         <main className="article-details-page">
             <SEO />
             
-            {/* ── 1. Breadcrumb ── */}
+            {/* Breadcrumb */}
             <div className="breadcrumb-wrapper">
                 <div className="container">
                     <nav className="article-breadcrumb">
@@ -62,284 +71,317 @@ const TopSkillsUae2026 = () => {
                 </div>
             </div>
 
-            {/* ── 2. Article Header ── */}
             <article className="article-container section-padding">
                 <div className="container">
-                    <div className="article-header">
-                        <span className="article-category">Future Skills / UAE Education</span>
-                        <h1>Top Skills in UAE for 2026: AI, Digital Marketing, SAT & Future Careers</h1>
+                    {/* Header */}
+                    <div className="article-header text-center">
+                        <span className="article-category-badge">Future-Proofing Guide</span>
+                        <h1 className="article-main-title">
+                            Top Skills UAE 2026: The Ultimate Guide to Career Success in the Emirates
+                        </h1>
                         
-                        <div className="article-meta">
+                        <div className="article-meta justify-center">
                             <div className="meta-item">
-                                <div className="author-avatar">NA</div>
-                                <div className="meta-text">
-                                    <span className="meta-label">Author</span>
-                                    <span className="meta-value">NITAQ ACADEMY Team</span>
-                                </div>
+                                <User size={16} />
+                                <span>NITAQ Editor</span>
                             </div>
                             <div className="meta-divider"></div>
                             <div className="meta-item">
-                                <Calendar size={18} className="meta-icon" />
-                                <div className="meta-text">
-                                    <span className="meta-label">Published</span>
-                                    <span className="meta-value">{publishDate}</span>
-                                </div>
+                                <Calendar size={16} />
+                                <span>{publishDate}</span>
                             </div>
                             <div className="meta-divider"></div>
                             <div className="meta-item">
-                                <Clock size={18} className="meta-icon" />
-                                <div className="meta-text">
-                                    <span className="meta-label">Reading Time</span>
-                                    <span className="meta-value">15 min read</span>
-                                </div>
+                                <Clock size={16} />
+                                <span>12 Min Read</span>
                             </div>
                         </div>
                     </div>
 
-                    {/* ── 3. Featured Image ── */}
-                    <div className="article-featured-img">
+                    <div className="article-featured-img premium-shadow">
                         <img 
                             src="/images/article-future-skills-uae.webp" 
-                            alt="Top Skills in UAE for 2026 AI Digital Marketing and SAT" 
-                            style={{ width: '100%', borderRadius: '24px', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }}
+                            alt="Top Skills UAE 2026 - AI Digital Marketing and Career Growth" 
                         />
                     </div>
 
                     <div className="article-content-wrapper">
-                        {/* ── 4. Main Content ── */}
                         <div className="article-main-content">
                             <p className="lead-text">
-                                The UAE's landscape is shifting at an unprecedented pace. As we approach 2026, the traditional educational roadmap is being rewritten by the "Vision 2031" goals and the global AI revolution. For students in Sharjah and professionals in Dubai, the question is no longer just "what degree should I get?" but "what skills will make me indispensable?"
+                                As we look toward 2026, the UAE's economic landscape is undergoing a radical transformation. With the national drive toward digitalization and the UAE Strategy for Artificial Intelligence, the definition of a "competitive professional" has changed forever.
                             </p>
 
                             <p>
-                                Every industry in the Emirates—from finance and logistics to education and healthcare—is undergoing a digital transformation. Skill-based hiring is replacing the old "degree-only" mindset. Whether you are a high-school student preparing for university admissions or a mid-career professional aiming for a promotion, understanding the **top skills in UAE for 2026** is your first step toward long-term success.
+                                Whether you are a student in Sharjah aiming for top universities or a professional in Dubai looking to climb the corporate ladder, staying relevant requires mastering the **top skills UAE 2026**. This guide explores the high-demand competencies that will define the next two years of growth in the Emirates.
                             </p>
 
-                            <div className="highlight-box">
-                                <strong>The 2026 Perspective:</strong> In the UAE, the difference between an average career and an extraordinary one often comes down to *adaptability*. Mastering future-ready tools today ensures you aren't just a participant in the economy, but a leader.
-                            </div>
-
-                            <h2>Why Skills Matter More Than Degrees in 2026</h2>
-                            <p>
-                                We are entering the era of the "Liquid Workforce." In 2026, AI automation is expected to handle over 40% of routine corporate tasks. While this might sound daunting, it actually creates a massive opportunity for those who possess the right human-centric and technical skills.
-                            </p>
-                            <p>
-                                The UAE innovation economy thrives on agility. Startups in Dubai and educational hubs in Sharjah are increasingly prioritizing candidates who can "do" over those who just "know." Freelancing and remote work have also become mainstream, allowing UAE residents to serve global markets—provided they have high-income skills like Coding or Digital Strategy.
-                            </p>
-
-                            {/* ── Section 1: AI ── */}
-                            <h2 id="ai-skills">1. Artificial Intelligence (AI)</h2>
-                            <p>
-                                It is no surprise that Artificial Intelligence tops our list. In 2026, AI is not a separate sector—it is the foundation of *every* sector. From generative AI creating marketing content to prompt engineering optimizing logistics, AI literacy is mandatory.
-                            </p>
-                            <p>
-                                Mastering an <Link to="/ai-course">AI course in Sharjah</Link> allows students to understand the mechanics of large language models and machine learning. This isn't just for software engineers; doctors, lawyers, and teachers are all using AI to enhance their productivity.
-                            </p>
-                            <div className="article-cta-block" style={{ background: '#f0f9ff', border: '1px solid #bae6fd', padding: '30px', borderRadius: '16px', margin: '30px 0' }}>
-                                <div style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
-                                    <Sparkles size={40} color="#0369a1" />
-                                    <div>
-                                        <h4 style={{ margin: 0, color: '#0369a1' }}>Master the Future with AI</h4>
-                                        <p style={{ margin: '5px 0 0', fontSize: '0.95rem' }}>Join our beginner-friendly AI Learning Program and gain a competitive edge.</p>
+                            <div className="skills-highlight-grid">
+                                {skillHighlight.map((skill, i) => (
+                                    <div key={i} className="skill-mini-card">
+                                        <div className="skill-mini-icon">{skill.icon}</div>
+                                        <h4>{skill.title}</h4>
+                                        <p>{skill.desc}</p>
+                                        <Link to={skill.link} className="skill-mini-link">Learn More <ArrowRight size={14} /></Link>
                                     </div>
+                                ))}
+                            </div>
+
+                            <h2>1. Artificial Intelligence (AI) Mastery</h2>
+                            <p>
+                                In 2026, AI will no longer be a 'bonus' skill—it will be a fundamental requirement. From Generative AI to automated workflow management, professionals who understand how to co-pilot with AI will outperform their peers.
+                            </p>
+                            <p>
+                                Students and career-switchers are increasingly enrolling in an <Link to="/ai-course" className="text-link">AI Course</Link> to gain a deep understanding of prompt engineering and ethical AI implementation. The UAE's focus on becoming a global AI hub means that expertise in this field ensures job security across all industries.
+                            </p>
+
+                            <div className="article-callout">
+                                <Zap size={24} className="callout-icon" />
+                                <div>
+                                    <strong>Pro Tip:</strong> Don't just learn <em>about</em> AI. Learn how to <em>apply</em> it to your specific field, whether it's legal, medical, or administrative.
                                 </div>
-                                <Link to="/ai-course" className="btn btn-primary" style={{ marginTop: '20px', display: 'inline-block' }}>Explore AI Course →</Link>
                             </div>
 
-                            {/* ── Section 2: Digital Marketing ── */}
-                            <h2 id="digital-marketing">2. Digital Marketing</h2>
+                            <h2>2. Strategic Digital Marketing & Branding</h2>
                             <p>
-                                The UAE is a global magnet for e-commerce and digital entrepreneurship. As businesses move from traditional storefronts to "social commerce," the demand for Digital Marketing experts is skyrocketing.
+                                The GCC market has one of the highest social media penetration rates in the world. As businesses move from traditional sales to complex digital ecosystems, the need for strategic marketers is at an all-time high.
                             </p>
                             <p>
-                                In 2026, it's not just about posting on social media; it's about SEO (Search Engine Optimization), Meta Ads, and Data-driven storytelling. Personal branding has also become a critical asset for professionals looking to establish authority in the Dubai startup ecosystem.
-                            </p>
-                            <p>
-                                If you are looking to drive business growth or launch a personal brand, learning performance marketing is essential. While we are continuously updating our curriculum, you can keep an eye on our <Link to="/professional-certifications">professional courses</Link> for upcoming digital strategy workshops.
+                                Our <Link to="/professional-marketing-course" className="text-link">Digital Marketing Course</Link> focuses on the **top skills UAE 2026** needs: SEO, performance marketing, and branding-as-strategy. Understanding the psychology of the UAE consumer and mastering data-driven campaigns is the secret to scaling businesses in the 2026 economy.
                             </p>
 
-                            {/* ── Section 3: SAT Prep ── */}
-                            <h2 id="sat-prep">3. SAT Preparation & Academic Excellence</h2>
+                            <h2>3. Data Analytics (Business Intelligence)</h2>
                             <p>
-                                For high-school students, the "skill" of academic excellence is still measured by international benchmarks. The SAT remains a gateway for admission to prestigious global universities in the US, Europe, and Asia.
-                            </p>
-                            <p>
-                                <Link to="/sat-preparation-sharjah">SAT preparation in Sharjah</Link> is about more than just math and grammar—it's about critical thinking, time management, and test-taking endurance. A competitive student profile in 2026 requires a high SAT score to stand out in a global pool of applicants.
+                                Companies in the UAE are drowning in data but starving for insights. Mastery of tools like Power BI and Advanced Excel has become a standard requirement for managerial roles. Being able to visualize trends and predict market shifts is a superpower in the modern workplace.
                             </p>
 
-                            {/* ── Section 4: Communication ── */}
-                            <h2 id="communication">4. Communication & Spoken English Skills</h2>
+                            <h2>4. Soft Skills: The "Human Advantage"</h2>
                             <p>
-                                Even the most brilliant AI coder will struggle if they cannot communicate their ideas. Professional communication—specifically in English—is the common language of global business.
-                            </p>
-                            <p>
-                                From public speaking to interview confidence, our <Link to="/spoken-english">Spoken English classes</Link> focus on making you a fluent, persuasive communicator. In the UAE's multinational workforce, clarity and confidence are your greatest professional assets.
+                                While technical skills are vital, the "Human Advantage" remains irreplaceable. In an AI-driven world, skills like <strong>Critical Thinking</strong>, <strong>Emotional Intelligence</strong>, and <strong>Cross-Cultural Communication</strong> are the ultimate differentiators. 
                             </p>
 
-                            {/* ── Section 5: Coding ── */}
-                            <h2 id="coding">5. Coding & Web Development</h2>
-                            <p>
-                                Coding is often called the "new literacy." Even if you don't plan to be a full-stack developer, understanding how websites and apps work under the hood is vital. It teaches logical problem-solving and structured thinking.
-                            </p>
-                            <p>
-                                The UAE is positioning itself as a hub for software talent. Whether it's building a simple automation script or a complex web portal, coding skills open doors to high-paying careers in technology and innovation.
-                            </p>
-
-                            {/* ── Section 6: Data Analytics ── */}
-                            <h2 id="data-analytics">6. Data Analytics & Business Intelligence</h2>
-                            <p>
-                                Data is the new oil, but only if you know how to refine it. Professionals who can master <Link to="/power-bi-excel">Power BI and Excel</Link> are highly sought after by UAE firms for their ability to turn raw numbers into strategic business decisions.
-                            </p>
-
-                            {/* ── Section 7: Cybersecurity ── */}
-                            <h2 id="cybersecurity">7. Cybersecurity</h2>
-                            <p>
-                                As we move more of our lives and assets online, the "digital guard" becomes essential. Cybersecurity is one of the fastest-growing fields in the UAE, with constant demand for experts in data protection, ethical hacking, and online safety.
-                            </p>
-
-                            {/* ── Section 8: Entrepreneurship ── */}
-                            <h2 id="entrepreneurship">8. Entrepreneurship & Freelancing</h2>
-                            <p>
-                                In 2026, "be your own boss" is a viable career path in the UAE. With the introduction of freelancer visas and startup support programs in Dubai and Sharjah, possessing an entrepreneurial mindset — including financial literacy and personal branding — is a top-tier skill.
-                            </p>
-
-                            <hr className="content-hr" />
-
-                            <h2>Best Skills for Students vs Professionals</h2>
-                            <div className="table-responsive">
-                                <table className="article-table">
-                                    <thead>
-                                        <tr>
-                                            <th>Target Group</th>
-                                            <th>Primary Focus Skills</th>
-                                            <th>Career Outcome</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td><strong>School Students</strong></td>
-                                            <td>SAT Prep, Basic Coding, Spoken English</td>
-                                            <td>Top University Admissions</td>
-                                        </tr>
-                                        <tr>
-                                            <td><strong>College Students</strong></td>
-                                            <td>AI Mastery, Data Analytics, Digital Marketing</td>
-                                            <td>High-paying Graduate Trainee Roles</td>
-                                        </tr>
-                                        <tr>
-                                            <td><strong>Young Professionals</strong></td>
-                                            <td>Cybersecurity, Personal Branding, Leadership</td>
-                                            <td>Rapid Career Advancement / Promotions</td>
-                                        </tr>
-                                        <tr>
-                                            <td><strong>Entrepreneurs</strong></td>
-                                            <td>Financial Literacy, Social Commerce, AI for Business</td>
-                                            <td>Business Growth & Scalability</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                            <div className="cta-banner-premium">
+                                <div className="cta-content">
+                                    <h3>Not sure which skill to start with?</h3>
+                                    <p>Our career advisors can help you map out a personalized learning path based on your goals.</p>
+                                    <Link to="/contact" className="btn-cta-white">Book Free Consultation</Link>
+                                </div>
+                                <div className="cta-visual">
+                                    <Users size={80} />
+                                </div>
                             </div>
 
-                            <h2>How to Choose the Right Skill in 2026</h2>
-                            <p>Choosing a skill to master can be overwhelming. Follow these three actionable steps:</p>
-                            <ol>
-                                <li><strong>Identify Your Core Interest:</strong> Do you enjoy numbers (Data), words (Marketing), or solving mechanical puzzles (Coding)?</li>
-                                <li><strong>Check Local Demand:</strong> Look at job boards in Dubai and Sharjah. What keywords appear most frequently in your desired field?</li>
-                                <li><strong>Start Small, Build Deep:</strong> Don't try to learn everything at once. Master one tool—like an AI prompt system—before moving to the next.</li>
-                            </ol>
-
-                            <h2>Why UAE is Becoming a Global Future Skills Hub</h2>
+                            <h2>5. Cybersecurity Literacy</h2>
                             <p>
-                                The UAE is uniquely positioned between the East and West. With initiatives like "Dubai Future District" and Sharjah's "University City," the country is investing billions into human capital. The focus on technology, sustainability, and education makes the UAE the perfect place to build a future-proof career.
+                                With great digital power comes great responsibility. As the UAE's digital footprint expands, protecting personal and corporate assets is paramount. Basic cybersecurity awareness and specialized security training are now critical components of the national workforce development.
                             </p>
 
-                            <h2>How NITAQ ACADEMY Helps Students Build Future Skills</h2>
+                            <h2>Conclusion: Start Building Your Future Today</h2>
                             <p>
-                                At <Link to="/">NITAQ ACADEMY</Link>, we don't just teach from a textbook. We provide practical, industry-focused training that bridges the gap between traditional education and the 2026 job market. Our mentorship programs and beginner-friendly courses are designed to help you succeed, regardless of your starting point.
+                                The **top skills UAE 2026** represent a blend of high-tech proficiency and timeless human capability. The best time to start learning was yesterday; the second best time is today.
                             </p>
                             <p>
-                                Whether you're looking for <Link to="/sat-preparation-sharjah">SAT coaching</Link> to secure your future or an <Link to="/ai-course">AI Mastery program</Link> to stay ahead, NITAQ ACADEMY is your partner in excellence.
+                                NITAQ ACADEMY is dedicated to providing the residents of Sharjah and the UAE with the tools they need to lead. From academic excellence with SAT prep to professional mastery in AI and Marketing, we are your bridge to 2026 success.
                             </p>
 
-                            <div className="article-final-cta" style={{ background: 'var(--gradient-primary)', color: 'white', padding: '60px', borderRadius: '32px', textAlign: 'center', marginTop: '60px' }}>
-                                <h3 style={{ color: 'white', fontSize: '2.4rem', marginBottom: '15px' }}>Ready to Future-Proof Your Career?</h3>
-                                <p style={{ fontSize: '1.2rem', opacity: 0.9, marginBottom: '35px' }}>Join the top training institute in Sharjah and start building your future today.</p>
-                                <div style={{ display: 'flex', gap: '20px', justifyContent: 'center', flexWrap: 'wrap' }}>
-                                    <Link to="/courses" className="btn" style={{ background: 'white', color: 'var(--primary-color)', padding: '18px 40px', borderRadius: '50px', fontWeight: 700 }}>Browse Courses</Link>
-                                    <a href="tel:+971527569908" className="btn" style={{ background: 'rgba(255,255,255,0.1)', border: '2px solid white', color: 'white', padding: '18px 40px', borderRadius: '50px', fontWeight: 700 }}>Contact an Advisor</a>
+                            <div className="article-footer-cta">
+                                <h2>Ready to Take the Next Step?</h2>
+                                <p>Join thousands of successful alumni at NITAQ ACADEMY.</p>
+                                <div className="btn-group">
+                                    <Link to="/courses" className="btn btn-primary btn-large">Browse All Courses</Link>
+                                    <a href="https://wa.me/971527569908" className="btn btn-whatsapp btn-large">
+                                        <MessageSquare size={18} /> Book Free Consultation
+                                    </a>
                                 </div>
                             </div>
                         </div>
 
-                        {/* ── 5. Article Sidebar ── */}
                         <aside className="article-sidebar">
-                            <div className="sidebar-toc">
-                                <h4>Table of Contents</h4>
-                                <ul>
-                                    <li><a href="#ai-skills">1. Artificial Intelligence</a></li>
-                                    <li><a href="#digital-marketing">2. Digital Marketing</a></li>
-                                    <li><a href="#sat-prep">3. SAT Preparation</a></li>
-                                    <li><a href="#communication">4. Communication Skills</a></li>
-                                    <li><a href="#coding">5. Coding</a></li>
-                                    <li><a href="#data-analytics">6. Data Analytics</a></li>
+                            <div className="sidebar-card consultant-card">
+                                <div className="avatar-group">
+                                    <img src="/images/mohammed-marwan.jpeg" alt="Advisor" />
+                                </div>
+                                <h4>Expert Consultation</h4>
+                                <p>Get a 15-minute free career roadmap from our experts.</p>
+                                <a href="tel:+971527569908" className="btn btn-primary w-100">Book Free Consultation</a>
+                            </div>
+
+                            <div className="sidebar-card trending-card">
+                                <h4>Trending Courses</h4>
+                                <ul className="trending-list">
+                                    <li><Link to="/ai-course">AI Mastery 2026</Link></li>
+                                    <li><Link to="/professional-marketing-course">Professional Marketing</Link></li>
+                                    <li><Link to="/sat-preparation-sharjah">SAT Prep Program</Link></li>
                                 </ul>
-                            </div>
-
-                            <div className="enroll-sidebar-card">
-                                <h3>Popular Courses</h3>
-                                <div className="side-course-list">
-                                    <Link to="/sat-preparation-sharjah" className="side-course-item">
-                                        <GraduationCap size={18} />
-                                        <span>SAT Prep Program</span>
-                                    </Link>
-                                    <Link to="/ai-course" className="side-course-item">
-                                        <Laptop size={18} />
-                                        <span>AI Mastery Course</span>
-                                    </Link>
-                                    <Link to="/spoken-english" className="side-course-item">
-                                        <Users size={18} />
-                                        <span>Spoken English</span>
-                                    </Link>
-                                </div>
-                                <Link to="/enquiry" className="btn btn-primary w-100" style={{ marginTop: '20px' }}>Join Now</Link>
-                            </div>
-
-                            <div className="sidebar-stats">
-                                <div className="side-stat">
-                                    <TrendingUp size={24} />
-                                    <div>
-                                        <strong>+40%</strong>
-                                        <span>AI Demand</span>
-                                    </div>
-                                </div>
-                                <div className="side-stat">
-                                    <Globe size={24} />
-                                    <div>
-                                        <strong>100%</strong>
-                                        <span>Future Ready</span>
-                                    </div>
-                                </div>
                             </div>
                         </aside>
                     </div>
 
-                    {/* ── 6. FAQ Section ── */}
-                    <div className="article-faq-section" style={{ marginTop: '100px' }}>
-                        <h2 style={{ textAlign: 'center', marginBottom: '50px' }}>Future Skills <span className="text-gradient">FAQs</span></h2>
-                        <div className="faq-accordion-group" style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
-                            {faqs.map((faq, index) => (
-                                <details key={index} className="faq-accordion">
-                                    <summary>{faq.question}</summary>
-                                    <div className="faq-accordion-content">
-                                        <p>{faq.answer}</p>
-                                    </div>
-                                </details>
+                    {/* FAQ section */}
+                    <div className="article-faq-section-v2">
+                        <h2 className="text-center">Frequently Asked Questions</h2>
+                        <div className="faq-grid-v2">
+                            {faqs.map((faq, i) => (
+                                <div key={i} className="faq-item-v2">
+                                    <h5>{faq.question}</h5>
+                                    <p>{faq.answer}</p>
+                                </div>
                             ))}
                         </div>
                     </div>
                 </div>
             </article>
+
+            {/* Premium Styles */}
+            <style dangerouslySetInnerHTML={{ __html: `
+                .article-main-title {
+                    font-size: 3.5rem;
+                    line-height: 1.1;
+                    font-weight: 850;
+                    margin-bottom: 30px;
+                    letter-spacing: -0.02em;
+                    color: #0f172a;
+                }
+                .article-category-badge {
+                    display: inline-block;
+                    padding: 8px 20px;
+                    background: #f0fdf4;
+                    color: #166534;
+                    border-radius: 50px;
+                    font-weight: 700;
+                    font-size: 0.9rem;
+                    margin-bottom: 25px;
+                    text-transform: uppercase;
+                    border: 1px solid #dcfce7;
+                }
+                .premium-shadow {
+                    box-shadow: 0 50px 100px -20px rgba(0,0,0,0.12), 0 30px 60px -30px rgba(0,0,0,0.15);
+                    border-radius: 32px;
+                    overflow: hidden;
+                }
+                .skills-highlight-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                    gap: 20px;
+                    margin: 50px 0;
+                }
+                .skill-mini-card {
+                    padding: 30px;
+                    background: #f8fafc;
+                    border-radius: 20px;
+                    border: 1px solid #f1f5f9;
+                    transition: all 0.3s ease;
+                }
+                .skill-mini-card:hover {
+                    transform: translateY(-5px);
+                    background: white;
+                    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+                    border-color: var(--primary-color);
+                }
+                .skill-mini-icon {
+                    margin-bottom: 20px;
+                }
+                .skill-mini-card h4 {
+                    margin-bottom: 15px;
+                    font-size: 1.25rem;
+                }
+                .skill-mini-link {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    margin-top: 15px;
+                    font-weight: 600;
+                    color: var(--primary-color);
+                    font-size: 0.9rem;
+                }
+                .text-link {
+                    color: var(--primary-color);
+                    font-weight: 600;
+                    text-decoration: underline;
+                    text-underline-offset: 4px;
+                }
+                .cta-banner-premium {
+                    background: #0f172a;
+                    border-radius: 32px;
+                    padding: 60px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    color: white;
+                    margin: 60px 0;
+                    position: relative;
+                    overflow: hidden;
+                }
+                .cta-banner-premium h3 {
+                    color: white;
+                    font-size: 2.2rem;
+                    margin-bottom: 15px;
+                }
+                .cta-banner-premium p {
+                    font-size: 1.1rem;
+                    opacity: 0.8;
+                    margin-bottom: 30px;
+                    max-width: 500px;
+                }
+                .btn-cta-white {
+                    background: white;
+                    color: #0f172a;
+                    padding: 16px 36px;
+                    border-radius: 50px;
+                    font-weight: 700;
+                    display: inline-block;
+                }
+                .article-footer-cta {
+                    background: #f1f5f9;
+                    border-radius: 40px;
+                    padding: 80px 40px;
+                    text-align: center;
+                    margin-top: 80px;
+                }
+                .article-footer-cta h2 {
+                    font-size: 2.8rem;
+                    margin-bottom: 20px;
+                }
+                .btn-group {
+                    display: flex;
+                    gap: 15px;
+                    justify-content: center;
+                    margin-top: 40px;
+                    flex-wrap: wrap;
+                }
+                .btn-large {
+                    padding: 20px 45px;
+                    font-size: 1.1rem;
+                    border-radius: 50px;
+                }
+                .btn-whatsapp {
+                    background: #25d366;
+                    color: white;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                }
+                .article-faq-section-v2 {
+                    padding-top: 100px;
+                    border-top: 1px solid #f1f5f9;
+                }
+                .faq-grid-v2 {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+                    gap: 30px;
+                    margin-top: 50px;
+                }
+                .faq-item-v2 h5 {
+                    font-size: 1.2rem;
+                    margin-bottom: 15px;
+                    color: #1e293b;
+                }
+                @media (max-width: 768px) {
+                    .article-main-title { font-size: 2.2rem; }
+                    .cta-banner-premium { padding: 40px; flex-direction: column; text-align: center; }
+                    .cta-visual { display: none; }
+                    .faq-grid-v2 { grid-template-columns: 1fr; }
+                }
+            `}} />
         </main>
     );
 };
