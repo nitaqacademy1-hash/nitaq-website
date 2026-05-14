@@ -196,14 +196,6 @@ const TopSkillsUae2026 = () => {
                         </div>
 
                         <aside className="article-sidebar">
-                            <div className="sidebar-card consultant-card">
-                                <div className="avatar-group">
-                                    <img src="/images/mohammed-marwan.jpeg" alt="Advisor" />
-                                </div>
-                                <h4>Expert Consultation</h4>
-                                <p>Get a 15-minute free career roadmap from our experts.</p>
-                                <a href="tel:+971527569908" className="btn btn-primary w-100">Book Free Consultation</a>
-                            </div>
 
                             <div className="sidebar-card trending-card">
                                 <h4>Trending Courses</h4>
