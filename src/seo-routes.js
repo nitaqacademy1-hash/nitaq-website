@@ -1640,6 +1640,25 @@ export const seoRoutes = [
       }
     ]
   },
+  {
+    path: "/article/why-not-getting-hired-uae",
+    title: "Why You Are Not Getting Hired in UAE: 5 Common Mistakes | NITAQ ACADEMY",
+    description: "Struggling to find a job in Dubai or Sharjah? Discover why you are not getting hired in UAE and how to fix your CV, certifications, and networking strategy.",
+    canonical: "https://www.nitaqacademy.com/article/why-not-getting-hired-uae",
+    ogTitle: "Why You Are Not Getting Hired in UAE: Common Mistakes",
+    ogDescription: "Essential guide to the UAE job market. Learn the top reasons candidates fail to get hired in Dubai and Sharjah and how to optimize your career profile.",
+    ogImage: "/images/hero-professional.webp",
+    twitterCard: "summary_large_image",
+    datePublished: "2026-05-15T11:00:00+04:00",
+    dateModified: "2026-05-15T15:00:00+04:00",
+    courseSchema: null,
+    faqSchema: [
+      {
+        question: "Why am I not getting any interviews in the UAE?",
+        answer: "Common reasons include a non-ATS-friendly CV, lack of local certifications (like UAE Labor Law or Tax), and not leveraging professional networks in Sharjah and Dubai."
+      }
+    ]
+  },
 ];
 
 export const getSeoRoute = (path) => {
