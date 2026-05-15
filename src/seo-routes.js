@@ -1621,6 +1621,25 @@ export const seoRoutes = [
       }
     ]
   },
+  {
+    path: "/article/best-ai-courses-dubai",
+    title: "Best AI Course Dubai: Master Artificial Intelligence in 2026 | NITAQ ACADEMY",
+    description: "Discover the best AI course Dubai offers at NITAQ ACADEMY. Master prompt engineering, Generative AI, and automation in our expert-led tech programs.",
+    canonical: "https://www.nitaqacademy.com/article/best-ai-courses-dubai",
+    ogTitle: "Best AI Course Dubai: Master Artificial Intelligence in 2026",
+    ogDescription: "Join the top-rated AI course in Dubai and Sharjah. Learn the latest in tech innovation, automation, and AI strategy from industry experts.",
+    ogImage: "/images/Aibasic-adv.webp",
+    twitterCard: "summary_large_image",
+    datePublished: "2026-05-15T09:00:00+04:00",
+    dateModified: "2026-05-15T15:00:00+04:00",
+    courseSchema: null,
+    faqSchema: [
+      {
+        question: "What is the best AI course in Dubai for beginners?",
+        answer: "NITAQ ACADEMY offers one of the best AI courses in Dubai for beginners, focusing on practical tools like ChatGPT, prompt engineering, and business automation without requiring a coding background."
+      }
+    ]
+  },
 ];
 
 export const getSeoRoute = (path) => {

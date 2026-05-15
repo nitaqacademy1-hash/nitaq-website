@@ -58,6 +58,7 @@ import AiCoursesSharjah from './pages/article/AiCoursesSharjah';
 import BestTrainingInstituteSharjah from './pages/article/BestTrainingInstituteSharjah';
 import ChooseRightCourseUae from './pages/article/ChooseRightCourseUae';
 import TopSkillsUae2026 from './pages/article/TopSkillsUae2026';
+import BestAiCoursesDubai from './pages/article/BestAiCoursesDubai';
 
 import TermsAndConditions from './pages/legal/TermsAndConditions';
 import PrivacyPolicy from './pages/legal/PrivacyPolicy';
@@ -135,6 +136,7 @@ function AppContent() {
         <Route path="/article/best-training-institute-sharjah" element={<BestTrainingInstituteSharjah />} />
         <Route path="/article/choose-right-course-uae" element={<ChooseRightCourseUae />} />
         <Route path="/article/top-skills-uae-2026" element={<TopSkillsUae2026 />} />
+        <Route path="/article/best-ai-courses-dubai" element={<BestAiCoursesDubai />} />
 
         {/* IG Landing Pages */}
         <Route path="/ig/2026-03-29" element={<ResumeGuide />} />
