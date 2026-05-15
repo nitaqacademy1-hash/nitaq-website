@@ -5,6 +5,28 @@ import { Calendar, User, ArrowRight, ExternalLink, Filter, Search } from 'lucide
 
 const articles = [
     {
+        id: 13,
+        title: "Why You Are Not Getting Hired in UAE: 5 Common Mistakes & How to Fix Them",
+        excerpt: "Struggling to land interviews in Dubai or Sharjah? Explore the top reasons candidates fail in the UAE job market and how to optimize your strategy.",
+        category: "Career & Courses",
+        path: "/article/why-not-getting-hired-uae",
+        coursePath: "/contact",
+        courseLabel: "Get Advisor",
+        date: "May 15, 2026",
+        image: "/images/hero_new_1.png"
+    },
+    {
+        id: 12,
+        title: "Best AI Courses in Dubai: Mastering the Future of Innovation",
+        excerpt: "Dubai is the global hub for AI. Discover the best AI courses in Dubai and master prompt engineering, Generative AI, and tech automation today.",
+        category: "Career & Courses",
+        path: "/article/best-ai-courses-dubai",
+        coursePath: "/ai-course",
+        courseLabel: "AI Course",
+        date: "May 15, 2026",
+        image: "/images/AI-ML.webp"
+    },
+    {
         id: 0,
         title: "Top Skills in UAE for 2026: AI, Digital Marketing, SAT & Future Careers",
         excerpt: "Master the most in-demand skills in UAE for 2026. From AI and Digital Marketing to academic excellence with SAT, discover how to future-proof your career today.",
