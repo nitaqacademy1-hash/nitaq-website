@@ -60,7 +60,7 @@ const BestAiCoursesDubai = () => {
 
                     <div className="article-featured-img premium-shadow">
                         <img 
-                            src="/images/Aibasic-adv.webp" 
+                            src="/images/AI-ML.webp" 
                             alt="Best AI Courses in Dubai - AI Training and Innovation" 
                             style={{ width: '100%', objectFit: 'cover' }}
                         />

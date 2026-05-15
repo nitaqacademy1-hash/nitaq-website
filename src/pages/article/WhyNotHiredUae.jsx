@@ -75,7 +75,7 @@ const WhyNotHiredUae = () => {
 
                     <div className="article-featured-img premium-shadow">
                         <img 
-                            src="/images/hero-professional.webp" 
+                            src="/images/hero_new_1.png" 
                             alt="Why you are not getting hired in UAE job market guide" 
                         />
                     </div>
