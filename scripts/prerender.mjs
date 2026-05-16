@@ -75,6 +75,7 @@ const ROUTES = [
   '/article/top-skills-uae-2026',
   '/article/best-ai-courses-dubai',
   '/article/why-not-getting-hired-uae',
+  '/article/best-professional-certifications-uae',
   '/terms-and-conditions',
   '/privacy-policy',
   '/ig/2026-03-29',

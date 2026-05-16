@@ -5,6 +5,17 @@ import { Calendar, User, ArrowRight, ExternalLink, Filter, Search } from 'lucide
 
 const articles = [
     {
+        id: 14,
+        title: "Best Professional Certifications UAE for Career Growth",
+        excerpt: "Accelerate your career in 2026 with the most in-demand professional certifications in UAE and Sharjah. From ACCA and HR to AI and Corporate Tax.",
+        category: "Career & Courses",
+        path: "/article/best-professional-certifications-uae",
+        coursePath: "/professional-certifications",
+        courseLabel: "View All",
+        date: "May 16, 2026",
+        image: "/images/hero-professional.webp"
+    },
+    {
         id: 13,
         title: "Why You Are Not Getting Hired in UAE: 5 Common Mistakes & How to Fix Them",
         excerpt: "Struggling to land interviews in Dubai or Sharjah? Explore the top reasons candidates fail in the UAE job market and how to optimize your strategy.",

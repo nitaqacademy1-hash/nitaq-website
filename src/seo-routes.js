@@ -1659,6 +1659,25 @@ export const seoRoutes = [
       }
     ]
   },
+  {
+    path: "/article/best-professional-certifications-uae",
+    title: "Best Professional Certifications UAE for Career Growth | NITAQ ACADEMY",
+    description: "Discover the best professional certifications UAE and Sharjah offers. Accelerate your career with ACCA, HR, AI, and Tax certifications at NITAQ ACADEMY.",
+    canonical: "https://www.nitaqacademy.com/article/best-professional-certifications-uae",
+    ogTitle: "Best Professional Certifications UAE for Career Growth",
+    ogDescription: "Essential guide to high-impact professional certifications in the UAE. Learn how ACCA, CHRM, and AI mastery can transform your salary and job prospects.",
+    ogImage: "/images/hero-professional.webp",
+    twitterCard: "summary_large_image",
+    datePublished: "2026-05-16T10:00:00+04:00",
+    dateModified: "2026-05-16T15:00:00+04:00",
+    courseSchema: null,
+    faqSchema: [
+      {
+        question: "Which professional certification is most in demand in UAE?",
+        answer: "Currently, ACCA (Finance), CHRM (HR), and specialized AI or Data Analytics certifications are among the most in-demand professional certifications in the UAE market."
+      }
+    ]
+  },
 ];
 
 export const getSeoRoute = (path) => {
