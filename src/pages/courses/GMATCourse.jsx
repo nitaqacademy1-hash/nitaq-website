@@ -27,12 +27,12 @@ const GMATCourse = () => {
                 <div style={{ marginBottom: '20px', padding: '12px 20px', background: '#fff9eb', border: '1px solid #fecaca', borderRadius: '12px', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
                     <span style={{ fontSize: '1.2rem' }}>🏆</span>
                     <a 
-                        href="https://www.coursetakers.ae/search/courses-in/academic/test-prep/gmat-preparation" 
+                        href="https://www.coursetakers.ae/search/courses-in/academic/test-prep/sat-preparation" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         style={{ color: '#991b1b', fontWeight: 700, textDecoration: 'underline', fontSize: '0.95rem' }}
                     >
-                        We are awarded the Best GMAT Preparation Course on Coursetakers.ae
+                        We are awarded the Best SAT Preparation Course on Coursetakers.ae
                     </a>
                 </div>
                 <h2>Program <span className="text-gradient">Overview</span></h2>
