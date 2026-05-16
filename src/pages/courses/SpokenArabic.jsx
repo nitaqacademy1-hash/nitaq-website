@@ -26,7 +26,7 @@ const SpokenArabic = () => {
                 <div style={{ marginBottom: '20px', padding: '12px 20px', background: '#fff9eb', border: '1px solid #fecaca', borderRadius: '12px', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
                     <span style={{ fontSize: '1.2rem' }}>🏆</span>
                     <a 
-                        href="https://www.coursetakers.ae/search/courses-in/language/arabic" 
+                        href="https://www.coursetakers.ae/search/courses-in/language/arabic/emirati-arabic" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         style={{ color: '#991b1b', fontWeight: 700, textDecoration: 'underline', fontSize: '0.95rem' }}
