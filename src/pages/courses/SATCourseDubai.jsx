@@ -23,6 +23,17 @@ const SATCourseDubai = () => {
 
             {/* ── 4. Hero Intro Paragraph ── */}
             <div className="content-card">
+                <div style={{ marginBottom: '20px', padding: '12px 20px', background: '#fff9eb', border: '1px solid #fecaca', borderRadius: '12px', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+                    <span style={{ fontSize: '1.2rem' }}>🏆</span>
+                    <a 
+                        href="https://www.coursetakers.ae/search/courses-in/academic/test-prep/sat-preparation" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        style={{ color: '#991b1b', fontWeight: 700, textDecoration: 'underline', fontSize: '0.95rem' }}
+                    >
+                        We are awarded the Best SAT Preparation Course on Coursetakers.ae
+                    </a>
+                </div>
                 <div className="overview-text">
                     <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: '#334155' }}>
                         The SAT (Scholastic Assessment Test) is a standardised exam used by universities in the United States, Canada, and across the globe to evaluate college readiness. The current <strong>Digital SAT</strong> is a computer-adaptive test lasting 2 hours 14 minutes, covering <strong>Reading &amp; Writing</strong> and <strong>Math</strong>. At NITAQ ACADEMY, our SPEA Authorized &amp; UAE Govt Attested coaching programme in <strong>Dubai</strong> prepares high-school students to achieve scores of 1300 and above through small-batch expert coaching, full-length mock tests, and proven test-taking strategies. Classes are held at our Dubai campus and are also available live online across the UAE.
