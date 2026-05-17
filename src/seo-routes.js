@@ -1678,6 +1678,33 @@ export const seoRoutes = [
       }
     ]
   },
+  {
+    path: "/article/digital-marketing-salary-increase-uae",
+    title: "How Digital Marketing Can Increase Your Salary | NITAQ ACADEMY",
+    description: "Discover how a Digital Marketing course in Dubai, Sharjah, and the UAE can significantly boost your salary and career growth. Learn high-demand skills today.",
+    canonical: "https://www.nitaqacademy.com/article/digital-marketing-salary-increase-uae",
+    ogTitle: "How Digital Marketing Can Increase Your Salary | NITAQ ACADEMY",
+    ogDescription: "Discover how a Digital Marketing course in Dubai, Sharjah, and the UAE can significantly boost your salary and career growth.",
+    ogImage: "/images/hero-professional.webp",
+    twitterCard: "summary_large_image",
+    datePublished: "2026-05-17T09:00:00+04:00",
+    dateModified: "2026-05-17T14:00:00+04:00",
+    courseSchema: null,
+    faqSchema: [
+      {
+        question: "Does digital marketing pay well in Dubai and Sharjah?",
+        answer: "Yes, digital marketing is one of the highest-paying career paths in the UAE. Performance managers and SEO strategists in Dubai can earn between AED 15,000 to AED 35,000+ depending on experience."
+      },
+      {
+        question: "How can a digital marketing course increase my salary?",
+        answer: "By mastering high-demand skills like SEO, PPC, and Analytics, you can drive direct revenue for companies. Providing measurable ROI gives you significant leverage during salary negotiations."
+      },
+      {
+        question: "What are the primary keywords for digital marketing in UAE?",
+        answer: "Key terms include Digital marketing course Dubai, Digital marketing course Sharjah, and Digital marketing course UAE. These represent the highest search volume areas for training."
+      }
+    ]
+  },
 ];
 
 export const getSeoRoute = (path) => {
