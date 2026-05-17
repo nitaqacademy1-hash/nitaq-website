@@ -70,10 +70,11 @@ const DigitalMarketingSalary = () => {
 
                     <div className="article-featured-img premium-shadow">
                         <img 
-                            src="/images/hero-professional.webp" 
+                            src="/images/course-marketing.webp" 
                             alt="Digital Marketing Course Dubai Sharjah UAE Salary Increase" 
                         />
                     </div>
+
 
                     <div className="article-content-wrapper">
                         <div className="article-main-content">

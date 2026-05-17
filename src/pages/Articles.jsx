@@ -13,8 +13,9 @@ const articles = [
         coursePath: "/professional-marketing-course",
         courseLabel: "Marketing Course",
         date: "May 17, 2026",
-        image: "/images/hero-professional.webp"
+        image: "/images/course-marketing.webp"
     },
+
     {
         id: 14,
         title: "Best Professional Certifications UAE for Career Growth",
