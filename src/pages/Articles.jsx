@@ -5,6 +5,17 @@ import { Calendar, User, ArrowRight, ExternalLink, Filter, Search } from 'lucide
 
 const articles = [
     {
+        id: 15,
+        title: "How Digital Marketing Can Increase Your Salary: UAE Career Guide",
+        excerpt: "Discover how mastering digital marketing in Dubai and Sharjah can lead to significant salary growth and career opportunities in the UAE's digital economy.",
+        category: "Career & Courses",
+        path: "/article/digital-marketing-salary-increase-uae",
+        coursePath: "/professional-marketing-course",
+        courseLabel: "Marketing Course",
+        date: "May 17, 2026",
+        image: "/images/hero-professional.webp"
+    },
+    {
         id: 14,
         title: "Best Professional Certifications UAE for Career Growth",
         excerpt: "Accelerate your career in 2026 with the most in-demand professional certifications in UAE and Sharjah. From ACCA and HR to AI and Corporate Tax.",
@@ -15,6 +26,7 @@ const articles = [
         date: "May 16, 2026",
         image: "/images/hero-professional.webp"
     },
+
     {
         id: 13,
         title: "Why You Are Not Getting Hired in UAE: 5 Common Mistakes & How to Fix Them",
