@@ -1705,6 +1705,29 @@ export const seoRoutes = [
       }
     ]
   },
+  {
+    path: "/article/ai-skills-every-student-needs",
+    title: "AI Skills Every Student Needs in 2026 | NITAQ ACADEMY",
+    description: "Explore the essential AI skills every student in Dubai and Sharjah needs to succeed in academics and future careers. Master prompt engineering and ethical AI.",
+    canonical: "https://www.nitaqacademy.com/article/ai-skills-every-student-needs",
+    ogTitle: "AI Skills Every Student Needs in 2026 | NITAQ ACADEMY",
+    ogDescription: "Essential guide for students in the UAE: Master AI tools to boost academic performance and future career prospects.",
+    ogImage: "/images/ai_v2.webp",
+    twitterCard: "summary_large_image",
+    datePublished: "2026-05-18T10:00:00+04:00",
+    dateModified: "2026-05-18T14:00:00+04:00",
+    courseSchema: null,
+    faqSchema: [
+      {
+        question: "What are the most important AI skills for students?",
+        answer: "Prompt engineering, AI ethics, data interpretation with AI, and mastering AI productivity tools like ChatGPT and Claude are currently the most critical skills."
+      },
+      {
+        question: "Is AI training available for students in Sharjah?",
+        answer: "Yes, Nitaq Academy offers specialized AI training in Sharjah designed for students to master generative AI and its academic applications."
+      }
+    ]
+  },
 ];
 
 export const getSeoRoute = (path) => {

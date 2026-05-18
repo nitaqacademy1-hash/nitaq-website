@@ -62,6 +62,8 @@ import BestAiCoursesDubai from './pages/article/BestAiCoursesDubai';
 import WhyNotHiredUae from './pages/article/WhyNotHiredUae';
 import BestCertificationsGrowth from './pages/article/BestCertificationsGrowth';
 import DigitalMarketingSalary from './pages/article/DigitalMarketingSalary';
+import AiSkillsForStudents from './pages/article/AiSkillsForStudents';
+
 
 
 import TermsAndConditions from './pages/legal/TermsAndConditions';
@@ -144,6 +146,8 @@ function AppContent() {
         <Route path="/article/why-not-getting-hired-uae" element={<WhyNotHiredUae />} />
         <Route path="/article/best-professional-certifications-uae" element={<BestCertificationsGrowth />} />
         <Route path="/article/digital-marketing-salary-increase-uae" element={<DigitalMarketingSalary />} />
+        <Route path="/article/ai-skills-every-student-needs" element={<AiSkillsForStudents />} />
+
 
 
         {/* IG Landing Pages */}

@@ -77,7 +77,9 @@ const ROUTES = [
   '/article/why-not-getting-hired-uae',
   '/article/best-professional-certifications-uae',
   '/article/digital-marketing-salary-increase-uae',
+  '/article/ai-skills-every-student-needs',
   '/terms-and-conditions',
+
 
   '/privacy-policy',
   '/ig/2026-03-29',

@@ -5,7 +5,19 @@ import { Calendar, User, ArrowRight, ExternalLink, Filter, Search } from 'lucide
 
 const articles = [
     {
+        id: 16,
+        title: "AI Skills Every Student Needs: Preparing for the Future of Work",
+        excerpt: "Master the essential AI skills needed for academic success and future careers in the UAE. From prompt engineering to AI ethics for students.",
+        category: "Career & Courses",
+        path: "/article/ai-skills-every-student-needs",
+        coursePath: "/ai-course",
+        courseLabel: "AI Course",
+        date: "May 18, 2026",
+        image: "/images/ai_v2.webp"
+    },
+    {
         id: 15,
+
         title: "How Digital Marketing Can Increase Your Salary: UAE Career Guide",
         excerpt: "Discover how mastering digital marketing in Dubai and Sharjah can lead to significant salary growth and career opportunities in the UAE's digital economy.",
         category: "Career & Courses",
