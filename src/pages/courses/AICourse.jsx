@@ -21,6 +21,19 @@ const AICourse = () => {
             subtitle="Master the technologies of the future with our comprehensive Artificial Intelligence training."
             infoData={infoData}
         >
+            {/* Award Link */}
+            <div className="award-banner" style={{ marginBottom: '30px', padding: '15px 25px', background: '#f8fafc', borderRadius: '15px', border: '1px solid #e2e8f0', display: 'inline-flex', alignItems: 'center', gap: '12px' }}>
+                <span style={{ fontSize: '1.2rem' }}>🏆</span>
+                <a 
+                    href="https://www.coursetakers.ae/search/courses-in/academic/test-prep/sat-preparation" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    style={{ color: '#1e293b', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: '4px' }}
+                >
+                    We are awarded the Best SAT Preparation Course on Coursetakers.ae
+                </a>
+            </div>
+
             {/* Program Overview */}
             <div className="content-card">
                 <h2>Program <span className="text-gradient">Overview</span></h2>
