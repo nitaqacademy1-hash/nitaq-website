@@ -5,6 +5,17 @@ import { Calendar, User, ArrowRight, ExternalLink, Filter, Search } from 'lucide
 
 const articles = [
     {
+        id: 17,
+        title: "How to Improve Your English for Better Career Opportunities in the UAE",
+        excerpt: "Mastering English is the primary bridge to professional success in Dubai and Sharjah. Learn practical ways to improve your communication and land your dream job.",
+        category: "Career & Courses",
+        path: "/article/improve-english-better-jobs",
+        coursePath: "/spoken-english",
+        courseLabel: "English Courses",
+        date: "May 19, 2026",
+        image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
         id: 16,
         title: "AI Skills Every Student Needs: Preparing for the Future of Work",
         excerpt: "Master the essential AI skills needed for academic success and future careers in the UAE. From prompt engineering to AI ethics for students.",

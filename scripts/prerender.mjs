@@ -78,6 +78,7 @@ const ROUTES = [
   '/article/best-professional-certifications-uae',
   '/article/digital-marketing-salary-increase-uae',
   '/article/ai-skills-every-student-needs',
+  '/article/improve-english-better-jobs',
   '/terms-and-conditions',
 
 

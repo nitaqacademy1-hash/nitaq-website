@@ -1728,6 +1728,29 @@ export const seoRoutes = [
       }
     ]
   },
+  {
+    path: "/article/improve-english-better-jobs",
+    title: "How to Improve English for Better Jobs in UAE | NITAQ ACADEMY",
+    description: "Discover how to improve your English for better jobs in Dubai and Sharjah. Boost your career with professional communication and Spoken English from NITAQ ACADEMY.",
+    canonical: "https://www.nitaqacademy.com/article/improve-english-better-jobs",
+    ogTitle: "How to Improve English for Better Jobs in UAE",
+    ogDescription: "Essential guide for professionals in the UAE: Master Business English to unlock higher salaries and better career opportunities in Dubai and Sharjah.",
+    ogImage: "/images/article-improve-english.webp",
+    twitterCard: "summary_large_image",
+    datePublished: "2026-05-19T09:00:00+04:00",
+    dateModified: "2026-05-19T14:00:00+04:00",
+    courseSchema: null,
+    faqSchema: [
+      {
+        question: "Does improving English increase salary in UAE?",
+        answer: "Yes, English is the primary language of business in Dubai and Sharjah. High proficiency allows you to take on leadership and client-facing roles, which typically offer higher compensation."
+      },
+      {
+        question: "What is the best way to learn Business English in Sharjah?",
+        answer: "Structured training with focus on workplace communication, email etiquette, and public speaking—like the Spoken English courses at Nitaq Academy—is the most effective way for professionals."
+      }
+    ]
+  },
 ];
 
 export const getSeoRoute = (path) => {
