@@ -22,10 +22,10 @@ export function render(url, context = {}) {
   return {
     html,
     head: `
-      ${helmet ? helmet.title.toString() : ''}
-      ${helmet ? helmet.meta.toString() : ''}
-      ${helmet ? helmet.link.toString() : ''}
-      ${helmet ? helmet.script.toString() : ''}
+      ${helmetContext.helmet ? helmetContext.helmet.title.toString() : ''}
+      ${helmetContext.helmet ? helmetContext.helmet.meta.toString() : ''}
+      ${helmetContext.helmet ? helmetContext.helmet.link.toString() : ''}
+      ${helmetContext.helmet ? helmetContext.helmet.script.toString() : ''}
     `
   }
 }
