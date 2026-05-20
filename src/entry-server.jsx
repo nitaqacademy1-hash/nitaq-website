@@ -6,7 +6,7 @@ import App from './App.jsx'
 
 export function render(url, context = {}) {
   const helmetContext = {}
-
+  
   const html = renderToString(
     <StrictMode>
       <HelmetProvider context={helmetContext}>
@@ -17,15 +17,16 @@ export function render(url, context = {}) {
     </StrictMode>
   )
 
+  // Explicitly extract the helmet instance from the completed context object
   const { helmet } = helmetContext
 
   return {
     html,
-    head: `
-      ${helmetContext.helmet ? helmetContext.helmet.title.toString() : ''}
-      ${helmetContext.helmet ? helmetContext.helmet.meta.toString() : ''}
-      ${helmetContext.helmet ? helmetContext.helmet.link.toString() : ''}
-      ${helmetContext.helmet ? helmetContext.helmet.script.toString() : ''}
-    `
+    head: helmet ? `
+      ${helmet.title ? helmet.title.toString() : ''}
+      ${helmet.meta ? helmet.meta.toString() : ''}
+      ${helmet.link ? helmet.link.toString() : ''}
+      ${helmet.script ? helmet.script.toString() : ''}
+    ` : ''
   }
 }

@@ -136,9 +136,10 @@ async function prerender() {
     try {
       const { html, head } = render(url)
 
+      // Secure regex-based template injection
       let output = template
-        .replace('<!-- JSON-LD managed by SEO.jsx -->', head)
-        .replace('<div id="root"></div>', `<div id="root">${html}</div>`)
+        .replace(/<!--\s*JSON-LD managed by SEO\.jsx\s*-->|<!--\s*ssr-head\s*-->/i, head)
+        .replace(/<div\s+id=["']root["'][^>]*>([\s\S]*?)<\/div>/i, `<div id="root">${html}</div>`);
 
       const filePath = resolve(root, 'dist', url === '/' ? 'index.html' : `${url.replace(/^\//, '')}/index.html`)
       const dir = dirname(filePath)
