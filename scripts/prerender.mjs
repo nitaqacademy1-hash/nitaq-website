@@ -137,7 +137,7 @@ async function prerender() {
       const { html, head } = render(url)
 
       let output = template
-        .replace('<!--ssr-head-->', head)
+        .replace('<!-- JSON-LD managed by SEO.jsx -->', head)
         .replace('<div id="root"></div>', `<div id="root">${html}</div>`)
 
       const filePath = resolve(root, 'dist', url === '/' ? 'index.html' : `${url.replace(/^\//, '')}/index.html`)
