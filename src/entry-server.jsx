@@ -1,28 +1,32 @@
 import { renderToString } from 'react-dom/server'
-import { StaticRouter } from 'react-router'
 import { HelmetProvider } from 'react-helmet-async'
 import React from 'react'
-import { AppContent } from './App.jsx'
+import App, { AppContent } from './App.jsx'
 
 export function render(url, context = {}) {
   const helmetContext = {}
-  
-  // Strip trailing slashes to guarantee clean routing string alignment
   const cleanUrl = url === '/' ? '/' : url.replace(/\/$/, '')
 
   let html = ''
-  
+
   try {
-    // Isolate AppContent directly to guarantee it executes matching route components without outer shell interference
+    // Force a safe, direct tree render using HelmetProvider context
     html = renderToString(
       <HelmetProvider context={helmetContext}>
-        <StaticRouter location={cleanUrl}>
-          <AppContent />
-        </StaticRouter>
+        <App />
       </HelmetProvider>
     )
   } catch (error) {
-    console.error(`❌ SSR execution failed on path [${cleanUrl}]:`, error.message);
+    // Fallback pass directly executing the inner content nodes if the shell contains client hooks
+    try {
+      html = renderToString(
+        <HelmetProvider context={helmetContext}>
+          <AppContent />
+        </HelmetProvider>
+      )
+    } catch (fallbackError) {
+      console.error("SSR compilation failure:", fallbackError.message)
+    }
   }
 
   const { helmet } = helmetContext
