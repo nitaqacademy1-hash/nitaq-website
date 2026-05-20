@@ -25,6 +25,7 @@ export function render(url, context = {}) {
       ${helmet ? helmet.title.toString() : ''}
       ${helmet ? helmet.meta.toString() : ''}
       ${helmet ? helmet.link.toString() : ''}
+      ${helmet ? helmet.script.toString() : ''}
     `
   }
 }
