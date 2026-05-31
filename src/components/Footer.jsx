@@ -33,6 +33,7 @@ const Footer = () => {
                             <Link to="/chrm">CHRM</Link>
                             <Link to="/hrm-courses">HRM</Link>
                             <Link to="/sales-negotiations">Sales & Negotiations</Link>
+                            <Link to="/courses/professional-digital-marketing-course-sharjah-uae">Digital Marketing</Link>
                             <Link to="/professional-marketing-course" style={{ fontWeight: 600 }}>Professional Marketing</Link>
                         </div>
                         <div>

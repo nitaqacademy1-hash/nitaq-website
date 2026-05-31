@@ -27,6 +27,7 @@ import CHRMCourse from './pages/courses/CHRMCourse';
 import HRMCourse from './pages/courses/HRMCourse';
 import SalesNegotiationsCourse from './pages/courses/SalesNegotiationsCourse';
 import ProfessionalMarketingCourse from './pages/courses/ProfessionalMarketingCourse';
+import ProfessionalDigitalMarketingCourse from './pages/courses/ProfessionalDigitalMarketingCourse';
 import CPCDCourse from './pages/courses/CPCDCourse';
 import DataManagementCourse from './pages/courses/DataManagementCourse';
 import SoftSkillsTraining from './pages/courses/SoftSkillsTraining';
@@ -108,6 +109,7 @@ function AppContent() {
         <Route path="/hrm-courses" element={<HRMCourse />} />
         <Route path="/sales-negotiations" element={<SalesNegotiationsCourse />} />
         <Route path="/professional-marketing-course" element={<ProfessionalMarketingCourse />} />
+        <Route path="/courses/professional-digital-marketing-course-sharjah-uae" element={<ProfessionalDigitalMarketingCourse />} />
         <Route path="/cpcd-courses" element={<CPCDCourse />} />
         <Route path="/data-management" element={<DataManagementCourse />} />
         <Route path="/soft-skills-training" element={<SoftSkillsTraining />} />

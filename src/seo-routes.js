@@ -1751,6 +1751,87 @@ export const seoRoutes = [
       }
     ]
   },
+  {
+    path: "/courses/professional-digital-marketing-course-sharjah-uae",
+    title: "Professional Digital Marketing Course in Sharjah UAE | SEO, Google Ads & Social Media Training",
+    description: "Join NITAQ Academy's Professional Digital Marketing Course in Sharjah. Learn SEO, Google Ads, Social Media Marketing, AI Marketing, Analytics, Lead Generation and Content Strategy through practical training.",
+    canonical: "https://www.nitaqacademy.com/courses/professional-digital-marketing-course-sharjah-uae",
+    ogTitle: "Professional Digital Marketing Course in Sharjah UAE | SEO, Google Ads & Social Media Training",
+    ogDescription: "Join NITAQ Academy's Professional Digital Marketing Course in Sharjah. Learn SEO, Google Ads, Social Media Marketing, AI Marketing, Analytics, Lead Generation and Content Strategy through practical training.",
+    ogImage: "/images/digital_marketing_v2.png",
+    twitterCard: "summary_large_image",
+    courseSchema: {
+        name: "Professional Digital Marketing Course in Sharjah, UAE",
+        description: "Master SEO, Google Ads, Social Media Marketing, AI Marketing, Lead Generation and Analytics through practical UAE-focused training.",
+        duration: "PT40H",
+        mode: ["onsite", "online"],
+        educationalLevel: "Beginner to Advanced",
+        teaches: "SEO, Google Ads, Social Media Marketing, PPC, AI Marketing Tools, Content Marketing, Analytics",
+        inLanguage: "en",
+    },
+    faqSchema: [
+        {
+            question: "Is this Digital Marketing course suitable for beginners?",
+            answer: "Yes. The program is designed to support learners from the beginner level and gradually progress toward advanced concepts. No prior marketing background is required."
+        },
+        {
+            question: "Do I need any coding skills to learn Digital Marketing?",
+            answer: "No. Digital marketing does not require any coding or programming experience. You will be using user-friendly tools and platforms like Google Ads, Meta Ads Manager, and Canva."
+        },
+        {
+            question: "What is the duration of the Digital Marketing course at NITAQ Academy?",
+            answer: "The course duration is flexible. Typically, it takes 4 to 8 weeks depending on the batch schedule (intensive, weekend, or evening sessions)."
+        },
+        {
+            question: "Is this course available online or offline in Sharjah?",
+            answer: "Both options are available. You can join our offline classroom sessions at our campus in Sharjah (Abu Khamseen Tower, Majaz 3) or attend live online interactive sessions from anywhere in the UAE."
+        },
+        {
+            question: "Will I get a certificate after completing the Digital Marketing course?",
+            answer: "Yes. You will receive a Professional Digital Marketing Course Completion Certificate from NITAQ Academy, which is highly valued and can be added to your resume and LinkedIn profile."
+        },
+        {
+            question: "Are SEO and Google Ads covered in detail in this course?",
+            answer: "Absolutely. Dedicated modules are included for Search Engine Optimization (SEO) and Google Ads / Search Engine Marketing (SEM), covering keyword research, campaign setup, bidding, and optimization."
+        },
+        {
+            question: "Is AI in marketing included in the curriculum?",
+            answer: "Yes, Module 8 is entirely dedicated to AI for Digital Marketing. You will learn to use ChatGPT, Gemini, Claude, and Canva AI for content creation, research, and marketing automation."
+        },
+        {
+            question: "How does this course benefit business owners and entrepreneurs?",
+            answer: "Business owners will learn how to generate high-quality leads, improve online visibility on Google, run cost-effective paid campaigns, and build a strong brand presence in the UAE market."
+        },
+        {
+            question: "Are there career placement or job assistance services?",
+            answer: "Yes, NITAQ Academy provides career development support, including resume enhancement tips, LinkedIn profile optimization guidance, and interview preparation for marketing roles."
+        },
+        {
+            question: "What tools will I learn to use during the course?",
+            answer: "You will gain hands-on experience with industry-standard tools like Google Search Console, Google Keyword Planner, Google Trends, Google Ads, Meta Ads Manager, Google Analytics, and AI writing assistants."
+        },
+        {
+            question: "Are there hands-on practical projects?",
+            answer: "Yes, the curriculum includes hands-on activities such as building an SEO Audit, Keyword Research Project, Competitor Analysis, Google Ads Campaign, Social Media Campaign, Content Calendar, and Lead Generation Strategy."
+        },
+        {
+            question: "Why should I choose NITAQ Academy for Digital Marketing in Sharjah?",
+            answer: "NITAQ Academy is a leading SPEA-authorized training institute in Sharjah offering expert-led training, small batch sizes, practical hands-on projects, flexible schedules, and a strong UAE market focus."
+        },
+        {
+            question: "What are the career opportunities in UAE after this course?",
+            answer: "You can apply for roles like Digital Marketing Executive, SEO Specialist, Google Ads Specialist, Social Media Manager, PPC Specialist, Content Strategist, or Lead Generation Specialist in the UAE."
+        },
+        {
+            question: "Can I offer freelance digital marketing services after completing this course?",
+            answer: "Yes, the course covers the skills needed to offer freelance services, build client proposals, run marketing audits, and manage campaigns for local and international clients."
+        },
+        {
+            question: "How do I register for the course and what is the fee structure?",
+            answer: "You can register by clicking 'Enroll Today' or contacting our advisors on WhatsApp at +971 52 756 9908. Fees depend on the training mode and options. Contact us for current pricing and discounts."
+        }
+    ]
+  },
 ];
 
 export const getSeoRoute = (path) => {

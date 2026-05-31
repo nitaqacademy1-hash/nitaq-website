@@ -89,13 +89,14 @@ const Header = () => {
                                         <Link to="/acca-course" onClick={closeMenu}>ACCA (UK)</Link>
                                         <Link to="/cma-course" onClick={closeMenu}>CMA (US)</Link>
                                         <Link to="/cpa-course" onClick={closeMenu}>CPA (US)</Link>
-                                        <Link to="/uae-vat" onClick={closeMenu}>UAE VAT</Link>
-                                        <Link to="/uae-corporate-tax" onClick={closeMenu}>UAE Corporate Tax</Link>
-                                        <Link to="/ai-course" onClick={closeMenu}>AI Mastery (Basic-Adv)</Link>
+                                        <Link to="/ai-course" onClick={closeMenu}>AI Course</Link>
                                         <Link to="/power-bi-excel" onClick={closeMenu}>Power BI & Excel</Link>
                                         <Link to="/chrm" onClick={closeMenu}>CHRM</Link>
-                                        <Link to="/hrm-courses" onClick={closeMenu}>HRM Professional</Link>
+                                        <Link to="/hrm-courses" onClick={closeMenu}>HRM</Link>
                                         <Link to="/sales-negotiations" onClick={closeMenu}>Sales & Negotiations</Link>
+                                        <Link to="/courses/professional-digital-marketing-course-sharjah-uae" onClick={closeMenu}>Digital Marketing</Link>
+                                        <Link to="/uae-vat" onClick={closeMenu}>UAE VAT</Link>
+                                        <Link to="/uae-corporate-tax" onClick={closeMenu}>UAE Corporate Tax</Link>
                                         <Link to="/professional-marketing-course" onClick={closeMenu}>Professional Marketing</Link>
                                         <Link to="/cpcd-courses" onClick={closeMenu}>CPCD Professional</Link>
                                         <Link to="/data-management" onClick={closeMenu}>Data Management</Link>

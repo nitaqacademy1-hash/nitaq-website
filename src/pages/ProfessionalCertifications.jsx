@@ -81,36 +81,10 @@ const ProfessionalCertifications = () => {
 
                         <div className="listing-card">
                             <div className="listing-card-img">
-                                <img src="/images/uae_tax_v2.webp" alt="UAE VAT" loading="lazy" />
+                                <img src="/images/ai_v2.webp" alt="AI Course" loading="lazy" />
                             </div>
                             <div className="listing-card-body">
-                                <h3>UAE VAT</h3>
-                                <p>Stay compliant and expert in local regulations with our specialized Value Added Tax training for UAE businesses.</p>
-                            </div>
-                            <div className="listing-card-footer">
-                                <Link to="/uae-vat" className="btn-read-more">Learn More →</Link>
-                            </div>
-                        </div>
-
-                        <div className="listing-card">
-                            <div className="listing-card-img">
-                                <img src="/images/corp_tax_v2.webp" alt="UAE Corporate Tax" loading="lazy" />
-                            </div>
-                            <div className="listing-card-body">
-                                <h3>UAE Corporate Tax</h3>
-                                <p>Navigate the new UAE Corporate Tax landscape with confidence through our expert-led regulatory training.</p>
-                            </div>
-                            <div className="listing-card-footer">
-                                <Link to="/uae-corporate-tax" className="btn-read-more">Learn More →</Link>
-                            </div>
-                        </div>
-
-                        <div className="listing-card">
-                            <div className="listing-card-img">
-                                <img src="/images/ai_v2.webp" alt="AI Mastery" loading="lazy" />
-                            </div>
-                            <div className="listing-card-body">
-                                <h3>Basic to Advance AI</h3>
+                                <h3>AI Course</h3>
                                 <p>From foundation to advanced implementation, master Artificial Intelligence tools for professional productivity.</p>
                             </div>
                             <div className="listing-card-footer">
@@ -146,10 +120,10 @@ const ProfessionalCertifications = () => {
 
                         <div className="listing-card">
                             <div className="listing-card-img">
-                                <img src="/images/hrm_pro_v2.webp" alt="HRM Courses" loading="lazy" />
+                                <img src="/images/hrm_pro_v2.webp" alt="HRM" loading="lazy" />
                             </div>
                             <div className="listing-card-body">
-                                <h3>HRM Professional</h3>
+                                <h3>HRM</h3>
                                 <p>Comprehensive training covering all core aspects of Human Resource Management for organizational success.</p>
                             </div>
                             <div className="listing-card-footer">
@@ -172,6 +146,53 @@ const ProfessionalCertifications = () => {
 
                         <div className="listing-card">
                             <div className="listing-card-img">
+                                <img src="/images/digital_marketing_v2.png" alt="Digital Marketing" loading="lazy" />
+                            </div>
+                            <div className="listing-card-body">
+                                <h3>Professional Digital Marketing Course</h3>
+                                <p style={{ marginBottom: '15px' }}>
+                                    Master SEO, Google Ads, Social Media Marketing, AI Marketing, Lead Generation and Analytics through practical UAE-focused training.
+                                </p>
+                                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px 15px', padding: '12px 15px', background: '#f8fafc', borderRadius: '10px', fontSize: '0.85rem', color: '#475569', fontWeight: 500, marginBottom: '15px' }}>
+                                    <span style={{ display: 'flex', alignItems: 'center', gap: '5px', color: '#16a34a' }}>✓ <span style={{ color: '#475569' }}>Beginner Friendly</span></span>
+                                    <span style={{ display: 'flex', alignItems: 'center', gap: '5px', color: '#16a34a' }}>✓ <span style={{ color: '#475569' }}>Practical Projects</span></span>
+                                    <span style={{ display: 'flex', alignItems: 'center', gap: '5px', color: '#16a34a' }}>✓ <span style={{ color: '#475569' }}>Certificate Included</span></span>
+                                    <span style={{ display: 'flex', alignItems: 'center', gap: '5px', color: '#16a34a' }}>✓ <span style={{ color: '#475569' }}>Offline & Online</span></span>
+                                </div>
+                            </div>
+                            <div className="listing-card-footer">
+                                <Link to="/courses/professional-digital-marketing-course-sharjah-uae" className="btn-read-more">Learn More →</Link>
+                            </div>
+                        </div>
+
+                        <div className="listing-card">
+                            <div className="listing-card-img">
+                                <img src="/images/uae_tax_v2.webp" alt="UAE VAT" loading="lazy" />
+                            </div>
+                            <div className="listing-card-body">
+                                <h3>UAE VAT</h3>
+                                <p>Stay compliant and expert in local regulations with our specialized Value Added Tax training for UAE businesses.</p>
+                            </div>
+                            <div className="listing-card-footer">
+                                <Link to="/uae-vat" className="btn-read-more">Learn More →</Link>
+                            </div>
+                        </div>
+
+                        <div className="listing-card">
+                            <div className="listing-card-img">
+                                <img src="/images/corp_tax_v2.webp" alt="UAE Corporate Tax" loading="lazy" />
+                            </div>
+                            <div className="listing-card-body">
+                                <h3>UAE Corporate Tax</h3>
+                                <p>Navigate the new UAE Corporate Tax landscape with confidence through our expert-led regulatory training.</p>
+                            </div>
+                            <div className="listing-card-footer">
+                                <Link to="/uae-corporate-tax" className="btn-read-more">Learn More →</Link>
+                            </div>
+                        </div>
+
+                        <div className="listing-card">
+                            <div className="listing-card-img">
                                 <img src="/images/marketing_v2.webp" alt="Professional Marketing" loading="lazy" />
                             </div>
                             <div className="listing-card-body">
@@ -182,7 +203,6 @@ const ProfessionalCertifications = () => {
                                 <Link to="/professional-marketing-course" className="btn-read-more">Learn More →</Link>
                             </div>
                         </div>
-
 
                         <div className="listing-card">
                             <div className="listing-card-img">
