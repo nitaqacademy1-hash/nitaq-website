@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nitaq Academy | Academic Excellence & School Student Support – Sharjah</title>
+  <meta name="description" content="SPEA Approved Training Institute in Sharjah specialising in Academic Excellence and School Student Support. Expert coaching in Mathematics, English, Sciences and all core school subjects." />
+  <link rel="icon" type="image/webp" href="/images/whatsapp-img-3.webp" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── TOKENS ─────────────────────────────────────────── */
+    :root {
+      --navy:       #0f2a5e;
+      --navy-dark:  #091e47;
+      --green:      #2e7d32;
+      --green-mid:  #388e3c;
+      --green-light:#e8f5e9;
+      --green-btn:  #2e7d32;
+      --white:      #ffffff;
+      --off-white:  #f9fafb;
+      --text-dark:  #111827;
+      --text-mid:   #374151;
+      --text-gray:  #6b7280;
+      --border:     #e5e7eb;
+      --shadow-sm:  0 1px 3px rgba(0,0,0,.08);
+      --shadow-md:  0 4px 16px rgba(0,0,0,.10);
+      --shadow-lg:  0 12px 40px rgba(0,0,0,.14);
+      --radius-sm:  8px;
+      --radius-md:  14px;
+      --radius-lg:  22px;
+      --radius-pill:999px;
+      --font-head:  'Poppins', sans-serif;
+      --font-body:  'Inter', sans-serif;
+      --transition: .25s cubic-bezier(.4,0,.2,1);
+    }
+
+    /* ─── RESET ──────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      color: var(--text-dark);
+      background: var(--white);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    img { display: block; max-width: 100%; }
+    a  { text-decoration: none; color: inherit; }
+
+    /* ─── LAYOUT SHELL ───────────────────────────────────── */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ════════════════════════════════════════════════════════
+       HEADER
+    ════════════════════════════════════════════════════════ */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 2px 12px rgba(0,0,0,.06);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 76px;
+    }
+
+    /* Logo */
+    .logo-link { display: flex; align-items: center; flex-shrink: 0; }
+    .logo-link img {
+      height: 52px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    /* Call Us button */
+    .btn-call-header {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--green-btn);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 600;
+      padding: 10px 22px;
+      border-radius: var(--radius-pill);
+      border: none;
+      cursor: pointer;
+      transition: background var(--transition), box-shadow var(--transition), transform var(--transition);
+      box-shadow: 0 2px 10px rgba(46,125,50,.28);
+      white-space: nowrap;
+    }
+    .btn-call-header:hover {
+      background: var(--green-mid);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(46,125,50,.36);
+    }
+    .btn-call-header svg { flex-shrink: 0; }
+
+    /* ════════════════════════════════════════════════════════
+       HERO  –  TWO COLUMN GRID
+    ════════════════════════════════════════════════════════ */
+    .hero {
+      background: var(--white);
+      padding: 72px 0 80px;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    /* ── LEFT COLUMN ── */
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0;
+    }
+
+    /* SPEA green badge */
+    .spea-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: var(--green-light);
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+      padding: 6px 16px 6px 10px;
+      border-radius: var(--radius-pill);
+      border: 1.5px solid #a5d6a7;
+      margin-bottom: 26px;
+      line-height: 1;
+    }
+    .spea-badge .dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      flex-shrink: 0;
+      animation: pulse-dot 2s infinite;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: .6; transform: scale(.8); }
+    }
+
+    /* Main headline */
+    .hero-h1 {
+      font-family: var(--font-head);
+      font-size: clamp(1.95rem, 3.2vw, 2.75rem);
+      font-weight: 800;
+      line-height: 1.18;
+      color: var(--text-dark);
+      margin-bottom: 20px;
+      letter-spacing: -.4px;
+    }
+    .hero-h1 .accent { color: var(--navy); }
+
+    /* Sub-headline */
+    .hero-sub {
+      font-size: 17px;
+      color: var(--text-mid);
+      line-height: 1.7;
+      margin-bottom: 32px;
+      max-width: 520px;
+    }
+
+    /* Subject pills */
+    .subject-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 40px;
+    }
+    .subject-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      color: var(--text-dark);
+      font-size: 13.5px;
+      font-weight: 600;
+      padding: 8px 18px;
+      border-radius: var(--radius-pill);
+      box-shadow: var(--shadow-sm);
+      cursor: default;
+      user-select: none;
+      transition: border-color var(--transition), box-shadow var(--transition);
+    }
+    .subject-pill:hover {
+      border-color: var(--green);
+      box-shadow: 0 2px 10px rgba(46,125,50,.12);
+    }
+    .pill-icon {
+      width: 18px; height: 18px;
+      background: var(--green-light);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .pill-icon svg { color: var(--green); }
+
+    /* CTA buttons */
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      background: var(--green-btn);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 15px; font-weight: 600;
+      padding: 14px 30px;
+      border-radius: var(--radius-pill);
+      border: 2px solid transparent;
+      box-shadow: 0 4px 16px rgba(46,125,50,.30);
+      transition: all var(--transition);
+      cursor: pointer;
+    }
+    .btn-primary:hover {
+      background: var(--green-mid);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 22px rgba(46,125,50,.38);
+    }
+    .btn-outline {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      background: var(--white);
+      color: var(--navy);
+      font-family: var(--font-body);
+      font-size: 15px; font-weight: 600;
+      padding: 14px 30px;
+      border-radius: var(--radius-pill);
+      border: 2px solid var(--navy);
+      transition: all var(--transition);
+      cursor: pointer;
+    }
+    .btn-outline:hover {
+      background: var(--navy);
+      color: var(--white);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 22px rgba(15,42,94,.22);
+    }
+
+    /* ── RIGHT COLUMN — image card ── */
+    .hero-right {
+      position: relative;
+    }
+    .image-card {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      background: var(--off-white);
+      /* subtle 3-D tilt on desktop only */
+      transform: perspective(900px) rotateY(-4deg) rotateX(2deg);
+      transition: transform var(--transition);
+    }
+    .image-card:hover {
+      transform: perspective(900px) rotateY(0deg) rotateX(0deg);
+    }
+    .image-card img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Gradient overlay + caption */
+    .image-card-overlay {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 44px 28px 28px;
+      background: linear-gradient(to top, rgba(9,30,71,.82) 0%, transparent 100%);
+    }
+    .image-card-caption {
+      font-family: var(--font-head);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.35;
+      letter-spacing: -.2px;
+    }
+
+    /* Decorative blobs behind card */
+    .hero-right::before {
+      content: '';
+      position: absolute;
+      top: -30px; right: -30px;
+      width: 180px; height: 180px;
+      background: var(--green-light);
+      border-radius: 50%;
+      filter: blur(30px);
+      opacity: .7;
+      z-index: -1;
+    }
+    .hero-right::after {
+      content: '';
+      position: absolute;
+      bottom: -40px; left: -40px;
+      width: 220px; height: 220px;
+      background: #e8edf8;
+      border-radius: 50%;
+      filter: blur(35px);
+      opacity: .65;
+      z-index: -1;
+    }
+
+    /* ════════════════════════════════════════════════════════
+       TRUST BAR
+    ════════════════════════════════════════════════════════ */
+    .trust-bar {
+      background: var(--off-white);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 28px 0;
+    }
+    .trust-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+    .trust-number {
+      font-family: var(--font-head);
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1;
+    }
+    .trust-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-gray);
+      text-transform: uppercase;
+      letter-spacing: .8px;
+    }
+    .trust-divider {
+      width: 1px;
+      height: 40px;
+      background: var(--border);
+    }
+
+    /* ════════════════════════════════════════════════════════
+       FLOATING WHATSAPP BUTTON
+    ════════════════════════════════════════════════════════ */
+    .wa-float {
+      position: fixed;
+      bottom: 28px;
+      left: 24px;
+      z-index: 500;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #25d366;
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 600;
+      padding: 13px 20px 13px 16px;
+      border-radius: var(--radius-pill);
+      box-shadow: 0 6px 24px rgba(37,211,102,.45);
+      transition: transform var(--transition), box-shadow var(--transition);
+      cursor: pointer;
+    }
+    .wa-float:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 10px 30px rgba(37,211,102,.55);
+    }
+    .wa-icon {
+      width: 24px; height: 24px;
+      fill: var(--white);
+      flex-shrink: 0;
+    }
+    /* Pulse ring */
+    .wa-float::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: var(--radius-pill);
+      border: 2px solid #25d366;
+      animation: wa-ring 2.2s ease-out infinite;
+      pointer-events: none;
+    }
+    @keyframes wa-ring {
+      0%   { transform: scale(1);   opacity: .7; }
+      100% { transform: scale(1.22); opacity: 0; }
+    }
+
+    /* ─── FOOTER ─────────────────────────────────────────── */
+    .site-footer {
+      background: var(--navy-dark);
+      padding: 32px 0;
+      margin-top: 0;
+    }
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      text-align: center;
+    }
+    .footer-logo img { height: 44px; opacity: .9; }
+    .footer-copy {
+      font-size: 13px;
+      color: rgba(255,255,255,.5);
+    }
+    .footer-spea {
+      font-size: 12px;
+      color: rgba(255,255,255,.35);
+    }
+
+    /* ════════════════════════════════════════════════════════
+       RESPONSIVE — MOBILE STACK
+    ════════════════════════════════════════════════════════ */
+    @media (max-width: 900px) {
+      .hero { padding: 52px 0 60px; }
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 44px;
+        text-align: center;
+      }
+      .hero-left { align-items: center; }
+      .hero-sub  { max-width: 100%; }
+      .hero-actions { justify-content: center; }
+      .subject-pills { justify-content: center; }
+
+      /* Image below text */
+      .hero-right { order: 2; }
+      .image-card { transform: none; max-width: 520px; margin: 0 auto; }
+    }
+
+    @media (max-width: 540px) {
+      .header-inner { height: 64px; }
+      .logo-link img { height: 42px; }
+      .btn-call-header { padding: 9px 16px; font-size: 13px; }
+
+      .hero-h1  { font-size: 1.65rem; }
+      .hero-sub { font-size: 15px; }
+
+      .btn-primary,
+      .btn-outline { width: 100%; justify-content: center; }
+      .hero-actions { flex-direction: column; width: 100%; }
+
+      .trust-divider { display: none; }
+      .trust-inner  { gap: 28px; }
+
+      .wa-float { padding: 13px 16px; }
+      .wa-label { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════════
+       HEADER
+  ══════════════════════════════════════════════════ -->
+  <header class="site-header">
+    <div class="container header-inner">
+
+      <!-- Logo only — no nav links -->
+      <a class="logo-link" href="#" aria-label="Nitaq Academy home">
+        <img src="/images/logo1.webp" alt="Nitaq Academy" width="160" height="52" fetchpriority="high" />
+      </a>
+
+      <!-- Call Us — the only header action -->
+      <a href="tel:+97165798313" class="btn-call-header" id="header-call-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-2.2 2.2a15.045 15.045 0 01-6.59-6.59l2.2-2.2c.28-.28.36-.67.25-1.02C8.79 6.34 8.59 5.15 8.59 3.92A1 1 0 007.59 2.92H3.92a1 1 0 00-1 1c0 9.93 8.07 18 18 18a1 1 0 001-1v-3.7a1 1 0 00-1-1.02z"/>
+        </svg>
+        Call Us
+      </a>
+
+    </div>
+  </header>
+
+  <!-- ══════════════════════════════════════════════════
+       HERO SECTION
+  ══════════════════════════════════════════════════ -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="hero-grid">
+
+        <!-- ── LEFT: Text content ── -->
+        <div class="hero-left">
+
+          <!-- SPEA green badge -->
+          <div class="spea-badge" role="img" aria-label="SPEA Approved">
+            <span class="dot"></span>
+            SPEA Approved Training Institute in Sharjah
+          </div>
+
+          <!-- Main headline -->
+          <h1 class="hero-h1">
+            Top Institute in Sharjah for<br />
+            <span class="accent">Academic Excellence</span> &amp;<br />
+            School Student Support
+          </h1>
+
+          <!-- Sub-headline -->
+          <p class="hero-sub">
+            Empowering school students with comprehensive curriculum coaching,
+            foundational learning, and specialized subject support designed to
+            achieve top grades.
+          </p>
+
+          <!-- Subject pills — non-clickable -->
+          <div class="subject-pills" role="list" aria-label="Subjects offered">
+
+            <span class="subject-pill" role="listitem">
+              <span class="pill-icon" aria-hidden="true">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+              </span>
+              Mathematics
+            </span>
+
+            <span class="subject-pill" role="listitem">
+              <span class="pill-icon" aria-hidden="true">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+              </span>
+              English Language
+            </span>
+
+            <span class="subject-pill" role="listitem">
+              <span class="pill-icon" aria-hidden="true">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+              </span>
+              Sciences
+            </span>
+
+            <span class="subject-pill" role="listitem">
+              <span class="pill-icon" aria-hidden="true">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+              </span>
+              All Core School Subjects
+            </span>
+
+          </div>
+
+          <!-- CTA buttons -->
+          <div class="hero-actions">
+            <a href="#" class="btn-primary" id="cta-advisor">
+              Contact an Advisor
+            </a>
+            <a href="#" class="btn-outline" id="cta-learn">
+              Learn More
+            </a>
+          </div>
+
+        </div>
+
+        <!-- ── RIGHT: Image card ── -->
+        <div class="hero-right">
+          <div class="image-card">
+            <img
+              src="main-team-image.jpg"
+              alt="Nitaq Academy students and faculty — Academic Excellence in Sharjah"
+              width="640"
+              height="480"
+              loading="eager"
+            />
+            <!-- Overlay caption -->
+            <div class="image-card-overlay">
+              <p class="image-card-caption">Building Foundations for Academic Success.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════
+       TRUST BAR — quick stat strip
+  ══════════════════════════════════════════════════ -->
+  <div class="trust-bar" aria-label="At a glance">
+    <div class="container">
+      <div class="trust-inner">
+
+        <div class="trust-item">
+          <span class="trust-number">SPEA</span>
+          <span class="trust-label">Approved</span>
+        </div>
+        <div class="trust-divider" role="separator"></div>
+
+        <div class="trust-item">
+          <span class="trust-number">Expert</span>
+          <span class="trust-label">Faculty</span>
+        </div>
+        <div class="trust-divider" role="separator"></div>
+
+        <div class="trust-item">
+          <span class="trust-number">K–12</span>
+          <span class="trust-label">All Grade Levels</span>
+        </div>
+        <div class="trust-divider" role="separator"></div>
+
+        <div class="trust-item">
+          <span class="trust-number">Sharjah</span>
+          <span class="trust-label">UAE</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-logo">
+        <img src="/images/logo1.webp" alt="Nitaq Academy" width="130" height="42" loading="lazy" />
+      </div>
+      <p class="footer-copy">© 2026 Nitaq Academy. All rights reserved.</p>
+      <p class="footer-spea">Licensed by Sharjah Private Education Authority (SPEA) · Sharjah, United Arab Emirates</p>
+    </div>
+  </footer>
+
+  <!-- ══════════════════════════════════════════════════
+       FLOATING WHATSAPP BUTTON
+  ══════════════════════════════════════════════════ -->
+  <a
+    href="https://wa.me/97165798313"
+    class="wa-float"
+    id="wa-float-btn"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Chat with us on WhatsApp"
+  >
+    <!-- Official WhatsApp icon -->
+    <svg class="wa-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/>
+    </svg>
+    <span class="wa-label">Chat with us</span>
+  </a>
+
+</body>
+</html>
