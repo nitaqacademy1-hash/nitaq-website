@@ -3,5 +3,11 @@
   "outputDirectory": "dist",
   "cleanUrls": true,
   "trailingSlash": false,
-  "rewrites": []
+  "redirects": [
+    {
+      "source": "/((?!$|images/|assets/|favicon\\.ico|robots\\.txt|sitemap\\.xml|.*\\.png|.*\\.jpg|.*\\.webp|.*\\.svg|.*\\.css|.*\\.js).+)",
+      "destination": "/",
+      "permanent": false
+    }
+  ]
 }
