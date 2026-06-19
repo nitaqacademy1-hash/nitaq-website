@@ -90,6 +90,7 @@ const Header = () => {
                                         <Link to="/cma-course" onClick={closeMenu}>CMA (US)</Link>
                                         <Link to="/cpa-course" onClick={closeMenu}>CPA (US)</Link>
                                         <Link to="/ai-course" onClick={closeMenu}>AI Course</Link>
+                                        <Link to="/cybersecurity-course-sharjah" onClick={closeMenu}>Cybersecurity & Ethical Hacking</Link>
                                         <Link to="/power-bi-excel" onClick={closeMenu}>Power BI & Excel</Link>
                                         <Link to="/chrm" onClick={closeMenu}>CHRM</Link>
                                         <Link to="/hrm-courses" onClick={closeMenu}>HRM</Link>
