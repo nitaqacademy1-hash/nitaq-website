@@ -94,6 +94,19 @@ const ProfessionalCertifications = () => {
 
                         <div className="listing-card">
                             <div className="listing-card-img">
+                                <img src="/images/cybersecurity_v2.png" alt="Cybersecurity Course" loading="lazy" />
+                            </div>
+                            <div className="listing-card-body">
+                                <h3>Cybersecurity & Ethical Hacking</h3>
+                                <p>CyberShield Program: Learn to think like a hacker before a hacker thinks about you. Built for complete beginners.</p>
+                            </div>
+                            <div className="listing-card-footer">
+                                <Link to="/cybersecurity-course-sharjah" className="btn-read-more">Learn More →</Link>
+                            </div>
+                        </div>
+
+                        <div className="listing-card">
+                            <div className="listing-card-img">
                                 <img src="/images/data_v2.webp" alt="Data Analytics" loading="lazy" />
                             </div>
                             <div className="listing-card-body">

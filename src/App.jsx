@@ -45,6 +45,7 @@ import GRECourse from './pages/courses/GRECourse';
 import AcademicExcellenceCourse from './pages/courses/AcademicExcellenceCourse';
 import FoundationJEECourse from './pages/courses/FoundationJEECourse';
 import AIRoboticsKids from './pages/courses/AIRoboticsKids';
+import CybersecurityCourse from './pages/courses/CybersecurityCourse';
 import Courses from './pages/Courses';
 import Articles from './pages/Articles';
 import SatCoachingSharjah from './pages/article/SatCoachingSharjah';
@@ -128,6 +129,7 @@ function AppContent() {
         <Route path="/academic-excellence" element={<AcademicExcellenceCourse />} />
         <Route path="/foundation-jee-neet" element={<FoundationJEECourse />} />
         <Route path="/ai-robotics-kids" element={<AIRoboticsKids />} />
+        <Route path="/cybersecurity-course-sharjah" element={<CybersecurityCourse />} />
         <Route path="/courses" element={<Courses />} />
         <Route path="/articles" element={<Articles />} />
 

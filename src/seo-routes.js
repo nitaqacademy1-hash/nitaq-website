@@ -727,6 +727,50 @@ export const seoRoutes = [
     ]
   },
   {
+    path: "/cybersecurity-course-sharjah",
+    title: "Cybersecurity Course Sharjah | Ethical Hacking UAE | Nitaq",
+    description: "Learn ethical hacking and cybersecurity in Sharjah. CyberShield program for beginners. Master Kali Linux, Metasploit, Wireshark. Online & offline batches near me.",
+    canonical: "https://www.nitaqacademy.com/cybersecurity-course-sharjah",
+    ogTitle: "Cybersecurity Course Sharjah | Ethical Hacking UAE | Nitaq",
+    ogDescription: "Learn ethical hacking and cybersecurity in Sharjah. CyberShield program for beginners. Master Kali Linux, Metasploit, Wireshark. Online & offline batches near me.",
+    ogImage: "/images/cybersecurity_v2.png",
+    twitterCard: "summary_large_image",
+    courseSchema: {
+        name: 'Cybersecurity Foundations & Ethical Hacking Program',
+        description: 'Professional cybersecurity and ethical hacking training in Sharjah. CyberShield program covers network security, web app attacks, penetration testing, and incident response for beginners.',
+        mode: ['onsite', 'online'],
+        educationalLevel: 'Beginner to Professional',
+        teaches: 'Cybersecurity, Ethical Hacking, Kali Linux, Penetration Testing, Network Security',
+        inLanguage: 'en',
+    },
+    faqSchema: [
+        {
+            question: 'What is covered in the CyberShield cybersecurity course?',
+            answer: 'The program covers cybersecurity foundations, network security with Nmap and Wireshark, system vulnerabilities, web app security with Burp Suite, penetration testing with Metasploit, and incident response.',
+        },
+        {
+            question: 'Do I need prior IT experience to join this cybersecurity course?',
+            answer: 'No, the CyberShield program is designed for complete beginners starting from zero. No prior IT background is required.',
+        },
+        {
+            question: 'What tools will I learn in the ethical hacking program?',
+            answer: 'You will learn to use industry-standard tools including Kali Linux, Metasploit, Wireshark, Nmap, Burp Suite, and DVWA.',
+        },
+        {
+            question: 'Is the cybersecurity course available online in the UAE?',
+            answer: 'Yes, the CyberShield program is available both online and in-person in Sharjah with flexible scheduling.',
+        },
+        {
+            question: 'What certification do I receive after completing the course?',
+            answer: 'You will receive an official Certificate of Achievement from Nitaq Academy, which is licensed by the Sharjah Private Education Authority (SPEA).',
+        },
+        {
+            question: 'What is the fee for the cybersecurity course at Nitaq Academy?',
+            answer: 'The fee for the 45-hour CyberShield program is AED 3,990, which includes VAT, course materials, and tools. Instalment plans are available.',
+        },
+    ]
+  },
+  {
     path: "/uae-corporate-tax",
     title: "UAE Corporate Tax Course Sharjah | CT Training UAE | NITAQ ACADEMY",
     description: "UAE Corporate Tax training at NITAQ ACADEMY Sharjah. Understand CT compliance, registration & filing for businesses. Practical training for finance professionals. SPEA Authorized.",
