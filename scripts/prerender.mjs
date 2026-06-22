@@ -52,6 +52,8 @@ const ROUTES = [
   '/sales-negotiations',
   '/professional-marketing-course',
   '/courses/professional-digital-marketing-course-sharjah-uae',
+  '/software-engineering-diploma-sharjah',
+  '/cybersecurity-course-sharjah',
   '/cpcd-courses',
   '/data-management',
   '/soft-skills-training',
