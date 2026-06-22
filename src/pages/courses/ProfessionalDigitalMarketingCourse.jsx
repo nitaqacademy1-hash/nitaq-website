@@ -5,12 +5,12 @@ import { Award, Target, BookOpen, Layers, Settings, Users, Brain, ShieldCheck, H
 
 const ProfessionalDigitalMarketingCourse = () => {
     const infoData = {
-        "Level": "Beginner to Advanced",
-        "Focus": "Digital Marketing & Business Growth",
-        "Mode": "Offline (Sharjah) | Live Online",
-        "Certificate": "Professional Training Certificate",
-        "Market": "UAE & GCC Focused",
-        "Projects": "Hands-on Campaign Experience"
+        "Level": "Beginner to Advanced (No coding needed)",
+        "Focus": "SEO, PPC, Social Media & Generative AI",
+        "Mode": "Classroom (Al Majaz, Sharjah) | Live Online",
+        "Certificate": "SPEA-Authorized & Attested Certificate",
+        "Market Focus": "UAE & GCC Digital Landscape",
+        "Placement": "Resume Optimization & Interview Prep"
     };
 
     return (
@@ -18,7 +18,7 @@ const ProfessionalDigitalMarketingCourse = () => {
             <SEO />
             <CourseLayout
                 title="Professional Digital Marketing Course in Sharjah, UAE"
-                subtitle="Master SEO, Google Ads, Social Media Marketing, AI Marketing, Lead Generation & Analytics"
+                subtitle="Master SEO, Google Ads, Meta Paid Campaigns, Web Analytics, & Generative AI to Drive Lead Generation and Scale Businesses in the UAE Market."
                 infoData={infoData}
             >
                 {/* Embedded Styled Style Tag for Premium visual presentation */}
@@ -84,36 +84,6 @@ const ProfessionalDigitalMarketingCourse = () => {
                         color: #64748b;
                         line-height: 1.6;
                     }
-                    .who-attend-grid {
-                        display: grid;
-                        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-                        gap: 20px;
-                        margin-top: 30px;
-                    }
-                    .who-attend-card {
-                        background: #f8fafc;
-                        border: 1px solid #e2e8f0;
-                        padding: 25px;
-                        border-radius: 12px;
-                        text-align: center;
-                        transition: all 0.3s ease;
-                    }
-                    .who-attend-card:hover {
-                        background: white;
-                        border-color: var(--primary-color);
-                        box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
-                    }
-                    .who-attend-card h4 {
-                        font-size: 1.15rem;
-                        color: #0f172a;
-                        margin-bottom: 8px;
-                        font-weight: 600;
-                    }
-                    .who-attend-card p {
-                        font-size: 0.9rem;
-                        color: #64748b;
-                        line-height: 1.5;
-                    }
                     .syllabus-module {
                         border: 1px solid #e2e8f0;
                         border-radius: 12px;
@@ -140,19 +110,6 @@ const ProfessionalDigitalMarketingCourse = () => {
                         padding: 25px;
                         border-top: 1px solid #e2e8f0;
                     }
-                    .syllabus-content h5 {
-                        font-size: 1rem;
-                        color: #0f172a;
-                        margin-top: 15px;
-                        margin-bottom: 10px;
-                        font-weight: 600;
-                    }
-                    .practical-grid {
-                        display: grid;
-                        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-                        gap: 20px;
-                        margin-top: 30px;
-                    }
                     .practical-card {
                         background: white;
                         border: 1px solid #e2e8f0;
@@ -161,63 +118,163 @@ const ProfessionalDigitalMarketingCourse = () => {
                         position: relative;
                         overflow: hidden;
                     }
-                    .practical-card::before {
-                        content: '';
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        width: 4px;
-                        height: 100%;
-                        background: var(--accent-color);
-                    }
-                    .practical-card h4 {
-                        font-size: 1.15rem;
-                        color: #0f172a;
-                        margin-bottom: 8px;
-                        font-weight: 600;
-                    }
                     .practical-card p {
                         font-size: 0.925rem;
                         color: #475569;
                         line-height: 1.6;
                     }
-                    .tools-section {
-                        margin-top: 50px;
-                        background: #f8fafc;
-                        padding: 40px;
-                        border-radius: 20px;
-                        border: 1px solid #e2e8f0;
-                    }
-                    .tools-grid {
+                    .tools-category-grid {
                         display: grid;
-                        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-                        gap: 20px;
-                        margin-top: 25px;
+                        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                        gap: 25px;
+                        margin-top: 30px;
                     }
-                    .tool-card {
+                    .tools-cat-card {
                         background: white;
                         border: 1px solid #e2e8f0;
-                        padding: 20px;
-                        border-radius: 12px;
-                        text-align: center;
+                        padding: 30px;
+                        border-radius: 16px;
+                        box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
+                        transition: all 0.3s ease;
                     }
-                    .tool-card h4 {
-                        font-size: 1rem;
+                    .tools-cat-card:hover {
+                        transform: translateY(-5px);
+                        box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
+                        border-color: var(--primary-color);
+                    }
+                    .tools-cat-card h3 {
+                        font-size: 1.25rem;
+                        color: #0f172a;
+                        margin-bottom: 20px;
+                        font-weight: 600;
+                        border-bottom: 2px solid var(--primary-color);
+                        padding-bottom: 10px;
+                    }
+                    .salary-grid {
+                        display: grid;
+                        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                        gap: 20px;
+                        margin-top: 30px;
+                    }
+                    .salary-card {
+                        background: white;
+                        border: 1px solid #e2e8f0;
+                        padding: 25px;
+                        border-radius: 16px;
+                        transition: all 0.3s ease;
+                        box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
+                    }
+                    .salary-card:hover {
+                        transform: translateY(-3px);
+                        border-color: var(--accent-color);
+                        box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
+                    }
+                    .role-header {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        flex-wrap: wrap;
+                        gap: 10px;
+                        margin-bottom: 15px;
+                        border-bottom: 1px solid #f1f5f9;
+                        padding-bottom: 10px;
+                    }
+                    .role-header h4 {
+                        font-size: 1.15rem;
+                        color: #0f172a;
+                        font-weight: 600;
+                        margin: 0;
+                    }
+                    .salary-badge {
+                        background: #ecfdf5;
+                        color: #047857;
+                        font-size: 0.8rem;
+                        font-weight: 700;
+                        padding: 4px 10px;
+                        border-radius: 6px;
+                        border: 1px solid #a7f3d0;
+                    }
+                    .salary-card p {
+                        font-size: 0.9rem;
+                        color: #64748b;
+                        line-height: 1.6;
+                        margin: 0;
+                    }
+                    .placement-features {
+                        display: grid;
+                        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+                        gap: 20px;
+                        margin-top: 30px;
+                    }
+                    .feature-item {
+                        background: #f8fafc;
+                        border: 1px solid #e2e8f0;
+                        padding: 25px;
+                        border-radius: 12px;
+                        transition: all 0.2s ease;
+                    }
+                    .feature-item:hover {
+                        background: white;
+                        border-color: var(--primary-color);
+                        box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
+                    }
+                    .feature-item h4 {
+                        font-size: 1.1rem;
                         color: #0f172a;
                         margin-bottom: 10px;
                         font-weight: 600;
-                        border-bottom: 1px solid #f1f5f9;
-                        padding-bottom: 8px;
                     }
-                    .tool-card ul {
-                        list-style: none;
-                        padding: 0;
+                    .feature-item p {
+                        font-size: 0.9rem;
+                        color: #64748b;
+                        line-height: 1.6;
                         margin: 0;
+                    }
+                    .success-stories-grid {
+                        display: grid;
+                        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                        gap: 25px;
+                        margin-top: 30px;
+                    }
+                    .story-card {
+                        background: #f8fafc;
+                        border: 1px solid #e2e8f0;
+                        padding: 30px;
+                        border-radius: 16px;
+                        position: relative;
+                    }
+                    .story-card::before {
+                        content: '“';
+                        position: absolute;
+                        top: 15px;
+                        left: 20px;
+                        font-size: 4rem;
+                        color: #e2e8f0;
+                        font-family: serif;
+                        line-height: 1;
+                    }
+                    .story-card .quote {
+                        font-size: 1rem;
+                        color: #475569;
+                        line-height: 1.7;
+                        font-style: italic;
+                        position: relative;
+                        z-index: 1;
+                        margin-bottom: 20px;
+                    }
+                    .author-info {
+                        display: flex;
+                        flex-direction: column;
+                        border-top: 1px solid #e2e8f0;
+                        padding-top: 15px;
+                    }
+                    .author-info strong {
+                        font-size: 0.95rem;
+                        color: #0f172a;
+                    }
+                    .author-info span {
                         font-size: 0.85rem;
                         color: #64748b;
-                    }
-                    .tool-card ul li {
-                        margin-bottom: 6px;
                     }
                     .ai-highlight-box {
                         background: linear-gradient(135deg, #111827, #1f2937);
@@ -273,43 +330,6 @@ const ProfessionalDigitalMarketingCourse = () => {
                     .ai-card p {
                         font-size: 0.9rem;
                         color: #d1d5db;
-                        line-height: 1.6;
-                    }
-                    .careers-grid {
-                        display: grid;
-                        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-                        gap: 20px;
-                        margin-top: 30px;
-                    }
-                    .career-card {
-                        background: white;
-                        border: 1px solid #e2e8f0;
-                        padding: 30px;
-                        border-radius: 16px;
-                        transition: all 0.3s ease;
-                    }
-                    .career-card:hover {
-                        border-color: var(--primary-color);
-                        box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
-                        transform: translateY(-3px);
-                    }
-                    .career-card h4 {
-                        font-size: 1.2rem;
-                        color: #0f172a;
-                        margin-bottom: 8px;
-                        font-weight: 600;
-                    }
-                    .career-card .salary {
-                        font-size: 0.85rem;
-                        color: var(--primary-color);
-                        font-weight: 700;
-                        text-transform: uppercase;
-                        margin-bottom: 12px;
-                        display: inline-block;
-                    }
-                    .career-card p {
-                        font-size: 0.9rem;
-                        color: #64748b;
                         line-height: 1.6;
                     }
                     .cert-box {
@@ -405,11 +425,11 @@ const ProfessionalDigitalMarketingCourse = () => {
                 {/* Hero Badges */}
                 <div className="badge-grid">
                     <div className="badge-item">✓ Beginner to Advanced</div>
-                    <div className="badge-item">✓ Offline Classroom in Sharjah</div>
-                    <div className="badge-item">✓ Live Online Training</div>
-                    <div className="badge-item">✓ Practical Projects</div>
-                    <div className="badge-item">✓ AI Marketing Tools</div>
-                    <div className="badge-item">✓ Professional Certificate</div>
+                    <div className="badge-item">✓ Classroom Training in Al Majaz, Sharjah</div>
+                    <div className="badge-item">✓ Interactive Live Online Training</div>
+                    <div className="badge-item">✓ 8 Hands-on Practical Projects</div>
+                    <div className="badge-item">✓ Generative AI Marketing Tools</div>
+                    <div className="badge-item">✓ SPEA Authorized Certificate</div>
                 </div>
 
                 {/* Course Overview Section */}
@@ -428,6 +448,18 @@ const ProfessionalDigitalMarketingCourse = () => {
                         <p>
                             We offer complete flexibility with offline classroom sessions at our premium training center in Sharjah (located in the prominent Abu Khamseen Tower, Majaz 3) and live online classes accessible from anywhere in the UAE. Under the direct mentorship of senior industry leaders, you will complete hands-on projects, execute live audits, build professional strategies, and earn a recognized completion certificate that accelerates your career mobility.
                         </p>
+                    </div>
+
+                    <h3 style={{ fontSize: '1.4rem', color: '#0f172a', fontWeight: '600', marginTop: '30px', marginBottom: '15px' }}>Available Learning Modes</h3>
+                    <div className="why-learn-grid" style={{ marginTop: '10px', marginBottom: '20px' }}>
+                        <div className="why-learn-card" style={{ borderTopColor: 'var(--primary-color)' }}>
+                            <h4>Classroom Training in Sharjah</h4>
+                            <p>Attend in-person lectures at our campus in Abu Khamseen Tower, Al Majaz 3. Gain direct mentor guidance, live interactive campaign evaluations, and peer-to-peer collaboration in physical batch sizes limited to 8–12 students.</p>
+                        </div>
+                        <div className="why-learn-card" style={{ borderTopColor: 'var(--accent-color)' }}>
+                            <h4>Live Online Training</h4>
+                            <p>Join virtual live sessions from anywhere in the UAE. Gain the same comprehensive syllabus coverage, screen sharing campaign walkthroughs, digital whiteboards, and class recordings with flexible evening and weekend sessions.</p>
+                        </div>
                     </div>
 
                     <div className="inline-cta-bar">
@@ -453,348 +485,40 @@ const ProfessionalDigitalMarketingCourse = () => {
                     </div>
                 </div>
 
-                {/* Why Learn Section */}
-                <div className="content-card">
-                    <h2 className="dm-section-title">Why Learn <span className="text-gradient">Digital Marketing?</span></h2>
-                    <p className="dm-section-desc">
-                        Digital marketing is one of the most resilient, high-paying, and rapidly growing career domains in the modern economy. Learn the skills that drive immediate revenue and business growth.
-                    </p>
-                    <div className="why-learn-grid">
-                        <div className="why-learn-card">
-                            <h4>Growing Industry Demand</h4>
-                            <p>Every business in the UAE, from real estate to retail, requires an active digital footprint. Marketers are in perpetual demand to sustain online customer acquisition.</p>
-                        </div>
-                        <div className="why-learn-card">
-                            <h4>Business Transformation</h4>
-                            <p>Traditional companies are pivoting to digital models. Learning these skills allows you to spearhead business transitions and unlock new revenue lines.</p>
-                        </div>
-                        <div className="why-learn-card">
-                            <h4>Online Customer Behaviour</h4>
-                            <p>Understand how modern consumers discover, evaluate, and purchase products online. Shift your mindset to build highly strategic client journeys.</p>
-                        </div>
-                        <div className="why-learn-card">
-                            <h4>Lead Generation Focus</h4>
-                            <p>Leads are the lifeblood of any organization. Master the methods of capturing high-quality leads at a lower cost-per-acquisition (CPA) using paid and organic channels.</p>
-                        </div>
-                        <div className="why-learn-card">
-                            <h4>Brand Value & Authority</h4>
-                            <p>Learn how to establish authority, curate viral content, build active local communities, and create brand equity that generates long-term customer loyalty.</p>
-                        </div>
-                        <div className="why-learn-card">
-                            <h4>Career & Income Growth</h4>
-                            <p>Digital marketing skills provide extreme career mobility, high salary potentials in the UAE, and the leverage to establish independent consulting and freelance agency services.</p>
-                        </div>
-                    </div>
-                </div>
-
-                {/* Who Should Attend Section */}
-                <div className="content-card">
-                    <h2 className="dm-section-title">Who Should <span className="text-gradient">Attend?</span></h2>
-                    <p className="dm-section-desc">
-                        Our curriculum adapts to multiple backgrounds, ensuring that every learner achieves their specific career or business objectives.
-                    </p>
-                    <div className="who-attend-grid">
-                        <div className="who-attend-card">
-                            <h4>Students</h4>
-                            <p>Enhance employability and gain in-demand digital skills before graduation.</p>
-                        </div>
-                        <div className="who-attend-card">
-                            <h4>Job Seekers</h4>
-                            <p>Build a strong practical portfolio and resume that stands out to UAE recruiters.</p>
-                        </div>
-                        <div className="who-attend-card">
-                            <h4>Entrepreneurs</h4>
-                            <p>Acquire customers, test product viability, and grow your startup online cost-effectively.</p>
-                        </div>
-                        <div className="who-attend-card">
-                            <h4>Business Owners</h4>
-                            <p>Supervise internal marketing departments and evaluate agency partner performances strategically.</p>
-                        </div>
-                        <div className="who-attend-card">
-                            <h4>Freelancers</h4>
-                            <p>Offer high-value marketing, SEO, and copywriting services on global freelance platforms.</p>
-                        </div>
-                        <div className="who-attend-card">
-                            <h4>Content Creators</h4>
-                            <p>Understand audience development, viral hooks, SEO algorithms, and audience monetization.</p>
-                        </div>
-                        <div className="who-attend-card">
-                            <h4>Marketing Professionals</h4>
-                            <p>Upskill with advanced performance marketing, data analytics, and generative AI tool integration.</p>
-                        </div>
-                        <div className="who-attend-card">
-                            <h4>Career Changers</h4>
-                            <p>Transition smoothly into the tech and creative sector with a comprehensive, beginner-friendly program.</p>
-                        </div>
-                    </div>
-                </div>
-
-                {/* What You Will Learn (Curriculum) */}
-                <div className="content-card">
-                    <h2 className="dm-section-title">Course <span className="text-gradient">Curriculum</span></h2>
-                    <p className="dm-section-desc">
-                        Our 9-module curriculum maps out all core domains of digital marketing. Learn the complete framework step-by-step from beginner to advanced.
-                    </p>
-
-                    <div className="syllabus-accordion-group">
-                        
-                        <details className="syllabus-module" open>
-                            <summary className="syllabus-summary">Module 1: Digital Marketing Fundamentals</summary>
-                            <div className="syllabus-content">
-                                <p>Build a strong baseline understanding of digital marketing infrastructure and strategic customer journeys.</p>
-                                <h5>Topics Covered:</h5>
-                                <ul className="styled-list">
-                                    <li>Traditional vs. Digital Marketing comparison</li>
-                                    <li>The Digital Marketing Ecosystem in the UAE and GCC</li>
-                                    <li>Inbound vs. Outbound Marketing strategies</li>
-                                    <li>Marketing Funnel stages: TOFU, MOFU, BOFU</li>
-                                    <li>Creating Buyer Personas and mapping customer journeys</li>
-                                    <li>Understanding traffic, lead metrics, and conversion rates</li>
-                                </ul>
-                                <h5>Learning Outcome:</h5>
-                                <p>Develop a strategic mindset to build integrated multi-channel marketing campaigns tailored to local markets.</p>
-                            </div>
-                        </details>
-
-                        <details className="syllabus-module">
-                            <summary className="syllabus-summary">Module 2: Search Engine Optimization (SEO)</summary>
-                            <div className="syllabus-content">
-                                <p>Master the art of ranking on Google's organic search results and driving continuous traffic without paying for ads.</p>
-                                <h5>Topics Covered:</h5>
-                                <ul className="styled-list">
-                                    <li>Google Search engine algorithms and indexation</li>
-                                    <li>Advanced Keyword Research & search intent mapping</li>
-                                    <li>On-page SEO: Title tags, headings, meta data, and URL structures</li>
-                                    <li>Technical SEO: Site speeds, XML sitemaps, robots.txt, and canonicals</li>
-                                    <li>Local SEO: Google Business Profile optimization for Sharjah & UAE searchers</li>
-                                    <li>Off-page SEO: Ethical link-building strategies and digital PR</li>
-                                    <li>SEO Auditing: Identifying crawl errors, toxic links, and thin content</li>
-                                </ul>
-                                <h5>Learning Outcome:</h5>
-                                <p>Execute end-to-end SEO strategies, resolve site health issues, and rank businesses for local search queries.</p>
-                            </div>
-                        </details>
-
-                        <details className="syllabus-module">
-                            <summary className="syllabus-summary">Module 3: Google Ads & Search Engine Marketing (SEM)</summary>
-                            <div className="syllabus-content">
-                                <p>Learn to launch, budget, optimize, and scale highly profitable search and display advertising campaigns.</p>
-                                <h5>Topics Covered:</h5>
-                                <ul className="styled-list">
-                                    <li>Introduction to Google Ads dashboard and auction mechanics</li>
-                                    <li>Search campaign structure: Account, Campaign, Ad Group, and Ads</li>
-                                    <li>Keyword match types: Broad, Phrase, and Exact Match</li>
-                                    <li>Negative keywords definition to reduce wasted ad spends</li>
-                                    <li>Ad copy copywriting, extensions, and ad assets</li>
-                                    <li>Bidding strategies: Manual CPC, Target CPA, Maximize Conversions</li>
-                                    <li>Quality score components and landing page optimization</li>
-                                    <li>Google conversion tracking setup & ROI measurement</li>
-                                </ul>
-                                <h5>Learning Outcome:</h5>
-                                <p>Build search campaigns that convert and achieve higher quality scores, reducing cost-per-click (CPC).</p>
-                            </div>
-                        </details>
-
-                        <details className="syllabus-module">
-                            <summary className="syllabus-summary">Module 4: Social Media Marketing (Organic)</summary>
-                            <div className="syllabus-content">
-                                <p>Build strong brand presence, communities, and customer engagement on top social channels.</p>
-                                <h5>Topics Covered:</h5>
-                                <ul className="styled-list">
-                                    <li>Social media algorithm updates and organic reach hacks</li>
-                                    <li>Facebook Marketing: Business pages, groups, and brand building</li>
-                                    <li>Instagram Marketing: Grid aesthetics, Stories, Reels, and hashtags</li>
-                                    <li>LinkedIn Marketing: B2B lead generation, personal branding, thought leadership</li>
-                                    <li>TikTok Marketing: Trending video structures and short-form video strategies</li>
-                                    <li>Community management, feedback loops, and customer service</li>
-                                </ul>
-                                <h5>Learning Outcome:</h5>
-                                <p>Formulate and execute a cohesive social media content strategy that grows organic brand followers.</p>
-                            </div>
-                        </details>
-
-                        <details className="syllabus-module">
-                            <summary className="syllabus-summary">Module 5: Social Media Advertising (Paid)</summary>
-                            <div className="syllabus-content">
-                                <p>Unlock Meta Ads Manager and run paid target campaigns on Facebook and Instagram.</p>
-                                <h5>Topics Covered:</h5>
-                                <ul className="styled-list">
-                                    <li>Meta Ads Manager architecture and campaign objectives</li>
-                                    <li>Advanced Audience Targeting: Demographics, Interests, Behaviors</li>
-                                    <li>Custom Audiences and Lookalike Audiences setup</li>
-                                    <li>Meta Pixel installation and event setup for tracking conversions</li>
-                                    <li>Ad format selection: Image, Carousel, Video, Lead Forms</li>
-                                    <li>A/B testing ad creatives, headlines, and placements</li>
-                                    <li>Remarketing strategies to re-engage warm site visitors</li>
-                                </ul>
-                                <h5>Learning Outcome:</h5>
-                                <p>Construct paid advertising funnels that generate high-quality leads, sales, and conversions with positive ROI.</p>
-                            </div>
-                        </details>
-
-                        <details className="syllabus-module">
-                            <summary className="syllabus-summary">Module 6: Content Marketing & Copywriting</summary>
-                            <div className="syllabus-content">
-                                <p>Write copy that engages readers, establishes authority, and persuades them to act.</p>
-                                <h5>Topics Covered:</h5>
-                                <ul className="styled-list">
-                                    <li>Content strategy formulation and content calendars</li>
-                                    <li>Copywriting frameworks: AIDA, PAS, BAB</li>
-                                    <li>Writing attention-grabbing headlines and call-to-actions (CTAs)</li>
-                                    <li>Blogging for business: SEO content formatting</li>
-                                    <li>Landing page copywriting: Overcoming objections and highlighting benefits</li>
-                                    <li>Visual content guidelines & Canva assets creation</li>
-                                </ul>
-                                <h5>Learning Outcome:</h5>
-                                <p>Create highly persuasive written and visual content that increases click-through rates (CTR) and online engagement.</p>
-                            </div>
-                        </details>
-
-                        <details className="syllabus-module">
-                            <summary className="syllabus-summary">Module 7: Email Marketing & Marketing Automation</summary>
-                            <div className="syllabus-content">
-                                <p>Build customer retention, relationships, and direct revenue using database email marketing.</p>
-                                <h5>Topics Covered:</h5>
-                                <ul className="styled-list">
-                                    <li>Building and segmenting clean subscriber lists legally</li>
-                                    <li>Email marketing tools overview (Mailchimp, Brevo, ActiveCampaign)</li>
-                                    <li>Email copy design: Subject lines, preview text, and personalization</li>
-                                    <li>Designing automated workflows: Welcome sequences, abandoned cart recovery</li>
-                                    <li>A/B testing subject lines and layouts</li>
-                                    <li>Key metrics analysis: Open rates, Click rates, Bounce rates</li>
-                                </ul>
-                                <h5>Learning Outcome:</h5>
-                                <p>Develop automated email flows that convert subscribers into repeat buyers and drive recurring revenue.</p>
-                            </div>
-                        </details>
-
-                        <details className="syllabus-module">
-                            <summary className="syllabus-summary">Module 8: AI Tools for Marketing</summary>
-                            <div className="syllabus-content">
-                                <p>Integrate cutting-edge AI frameworks to dramatically accelerate your research, creation, and automation tasks.</p>
-                                <h5>Topics Covered:</h5>
-                                <ul className="styled-list">
-                                    <li>Prompt Engineering fundamentals for digital marketers</li>
-                                    <li>AI Content Generation: Copywriting, social media captions, blog drafts using ChatGPT</li>
-                                    <li>AI Market Research & Competitive Intelligence using Gemini and Claude</li>
-                                    <li>AI-assisted design: Creating images, layouts, and logos with Midjourney and Canva AI</li>
-                                    <li>AI translation & content localization for multi-lingual UAE campaigns</li>
-                                    <li>Ethical boundaries and quality control in AI output</li>
-                                </ul>
-                                <h5>Learning Outcome:</h5>
-                                <p>Multiply your production output and streamline content strategies using modern Generative AI tools safely.</p>
-                            </div>
-                        </details>
-
-                        <details className="syllabus-module">
-                            <summary className="syllabus-summary">Module 9: Analytics & Reporting</summary>
-                            <div className="syllabus-content">
-                                <p>Learn the numbers behind the marketing. Measure campaign performance, ROI, and formulate reports.</p>
-                                <h5>Topics Covered:</h5>
-                                <ul className="styled-list">
-                                    <li>Google Analytics (GA4) dashboard setup and key metrics</li>
-                                    <li>Traffic acquisition sources: Organic, Paid Search, Social, Referral</li>
-                                    <li>UTM parameter tracking for exact link evaluation</li>
-                                    <li>Google Search Console data analysis: Clicks, Impressions, CTR</li>
-                                    <li>KPI selection, reporting dashboards, and weekly status reviews</li>
-                                    <li>ROI analysis and scaling strategies</li>
-                                </ul>
-                                <h5>Learning Outcome:</h5>
-                                <p>Perform deep data analysis, generate professional agency-grade reports, and optimize campaigns using analytics.</p>
-                            </div>
-                        </details>
-
-                    </div>
-                </div>
-
-                {/* Practical Training Section */}
-                <div className="content-card">
-                    <h2 className="dm-section-title">Practical <span className="text-gradient">Training Projects</span></h2>
-                    <p className="dm-section-desc">
-                        Our course is highly focused on execution. You will build a professional portfolio by completing 8 real-world project assignments.
-                    </p>
-                    <div className="practical-grid">
-                        <div className="practical-card">
-                            <h4>SEO Audit</h4>
-                            <p>Conduct a live SEO audit of an existing website to diagnose speed issues, crawl blocks, missing tags, and index errors.</p>
-                        </div>
-                        <div className="practical-card">
-                            <h4>Keyword Research</h4>
-                            <p>Identify high-volume, low-competition keywords targeting UAE customers and compile them into a content strategy matrix.</p>
-                        </div>
-                        <div className="practical-card">
-                            <h4>Competitor Analysis</h4>
-                            <p>Audit competitors' organic rankings, backlink profiles, paid ad copies, and visual creatives to discover market gaps.</p>
-                        </div>
-                        <div className="practical-card">
-                            <h4>Google Ads Campaign</h4>
-                            <p>Set up a complete search network campaign, including keyword grouping, ad copywriting, extension addition, and bidding configs.</p>
-                        </div>
-                        <div className="practical-card">
-                            <h4>Social Media Campaign</h4>
-                            <p>Launch an ad campaign in Meta Ads Manager with target segmentation, Pixel connection, and A/B ad variant testing.</p>
-                        </div>
-                        <div className="practical-card">
-                            <h4>Content Calendar</h4>
-                            <p>Design a 30-day visual and written content calendar using modern copywriting frameworks and Canva structures.</p>
-                        </div>
-                        <div className="practical-card">
-                            <h4>Lead Gen Strategy</h4>
-                            <p>Build a lead acquisition funnel featuring a landing page mockup, a lead magnet offer, and automated email follow-up workflows.</p>
-                        </div>
-                        <div className="practical-card">
-                            <h4>Analytics Reporting</h4>
-                            <p>Extract performance metrics from GA4 and Google Search Console to formulate an optimization report for a corporate client.</p>
-                        </div>
-                    </div>
-                </div>
-
                 {/* Tools Covered Section */}
-                <div className="tools-section">
-                    <h2 className="dm-section-title" style={{ textAlign: 'center', marginBottom: '10px' }}>Digital Marketing <span className="text-gradient">Tools Covered</span></h2>
-                    <p className="dm-section-desc" style={{ textAlign: 'center', maxWidth: '600px', margin: '0 auto 30px' }}>
-                        Build proficiency in the industry-standard software, analytical suites, advertising consoles, and AI tools used by top agencies globally.
+                <div className="content-card">
+                    <h2 className="dm-section-title">Digital Marketing <span className="text-gradient">Tools Covered</span></h2>
+                    <p className="dm-section-desc">
+                        Gain comprehensive, hands-on experience in the exact tools used by top advertising agencies, performance marketing teams, and corporate departments in Dubai and Sharjah.
                     </p>
-                    <div className="tools-grid">
-                        <div className="tool-card">
-                            <h4>SEO Tools</h4>
-                            <ul>
-                                <li>Google Search Console</li>
-                                <li>Google Keyword Planner</li>
-                                <li>Google Trends</li>
-                                <li>Moz & Ahrefs basics</li>
+                    
+                    <div className="tools-category-grid">
+                        <div className="tools-cat-card">
+                            <h3>Search Engine Optimization & Analytics</h3>
+                            <ul className="styled-list">
+                                <li><strong>Google Search Console:</strong> Monitor site health, index status, and keyword rankings.</li>
+                                <li><strong>Google Analytics (GA4):</strong> Track traffic source attribution, conversions, and event triggers.</li>
+                                <li><strong>Google Tag Manager (GTM):</strong> Install tracking tags, pixels, and events without developer code.</li>
+                                <li><strong>Google Keyword Planner & Trends:</strong> Conduct search volume analysis and seasonal demand tracking.</li>
                             </ul>
                         </div>
-                        <div className="tool-card">
-                            <h4>Advertising</h4>
-                            <ul>
-                                <li>Google Ads Console</li>
-                                <li>Meta Ads Manager</li>
-                                <li>LinkedIn Campaign Manager</li>
+                        
+                        <div className="tools-cat-card">
+                            <h3>Paid Advertising & Campaign Management</h3>
+                            <ul className="styled-list">
+                                <li><strong>Google Ads:</strong> Build search, display, performance max, and remarketing campaigns.</li>
+                                <li><strong>Meta Ads Manager:</strong> Run targeted campaigns on Facebook & Instagram using custom audiences.</li>
+                                <li><strong>LinkedIn Campaign Manager:</strong> Execute B2B targeting campaigns for corporate lead acquisition.</li>
+                                <li><strong>WordPress & Elementor:</strong> Build, customize, and optimize landing pages for higher conversions.</li>
                             </ul>
                         </div>
-                        <div className="tool-card">
-                            <h4>Analytics</h4>
-                            <ul>
-                                <li>Google Analytics (GA4)</li>
-                                <li>Google Tag Manager</li>
-                                <li>Looker Studio basics</li>
-                            </ul>
-                        </div>
-                        <div className="tool-card">
-                            <h4>Design & Content</h4>
-                            <ul>
-                                <li>Canva Pro</li>
-                                <li>CapCut Video Editor</li>
-                                <li>WordPress Elementor</li>
-                            </ul>
-                        </div>
-                        <div className="tool-card">
-                            <h4>AI Productivity</h4>
-                            <ul>
-                                <li>ChatGPT Plus</li>
-                                <li>Google Gemini</li>
-                                <li>Anthropic Claude</li>
+                        
+                        <div className="tools-cat-card">
+                            <h3>Generative AI & Visual Creation</h3>
+                            <ul className="styled-list">
+                                <li><strong>ChatGPT, Gemini & Claude:</strong> Write conversion copy, generate blog briefs, and build buyer persona profiles.</li>
+                                <li><strong>Canva Pro & CapCut:</strong> Design professional social graphics, banners, and trending vertical video ad reels.</li>
+                                <li><strong>Mailchimp / Brevo:</strong> Build subscriber databases and create automated email marketing flows.</li>
                             </ul>
                         </div>
                     </div>
@@ -802,7 +526,7 @@ const ProfessionalDigitalMarketingCourse = () => {
 
                 {/* AI Marketing Section */}
                 <div className="ai-highlight-box">
-                    <h2>Master <span className="text-gradient">AI-Powered</span> Digital Marketing</h2>
+                    <h2>Master <span>AI-Powered</span> Digital Marketing</h2>
                     <p style={{ color: '#d1d5db', fontSize: '1.1rem', lineHeight: '1.8', maxWidth: '800px', marginBottom: '30px' }}>
                         Artificial Intelligence is rewriting the rules of marketing. At NITAQ Academy, we don't just teach traditional SEO and Ads; we teach you how to become an AI-augmented marketer capable of automating workflows, generating content, and scaling campaigns at unprecedented speeds.
                     </p>
@@ -826,52 +550,104 @@ const ProfessionalDigitalMarketingCourse = () => {
                     </div>
                 </div>
 
-                {/* Career Opportunities */}
+                {/* Career Opportunities & Salary Section */}
                 <div className="content-card" style={{ marginTop: '50px' }}>
-                    <h2 className="dm-section-title">Career <span className="text-gradient">Opportunities</span></h2>
+                    <h2 className="dm-section-title">Career Opportunities <span className="text-gradient">& UAE Salary Guide</span></h2>
                     <p className="dm-section-desc">
-                        Digital marketing skills open career opportunities across multiple industries in the UAE. From corporate agencies to corporate departments and tech startups, the demand is continuous.
+                        According to UAE recruitment reports, digital marketing is one of the most in-demand domains. Below is the average salary range in Dubai, Sharjah, and Abu Dhabi for certified professionals who graduate from NITAQ Academy:
                     </p>
-                    <div className="careers-grid">
-                        <div className="career-card">
-                            <span className="salary">High Demand in UAE</span>
-                            <h4>Digital Marketing Executive</h4>
-                            <p>Supervise overall digital campaigns, organize social media channels, monitor website traffic, and formulate monthly performance reports.</p>
+                    
+                    <div className="salary-grid">
+                        <div className="salary-card">
+                            <div className="role-header">
+                                <h4>Digital Marketing Specialist</h4>
+                                <span class="salary-badge">AED 6,000 - 12,000 / month</span>
+                            </div>
+                            <p>Formulate and execute overall digital marketing strategies, supervise social channels, and coordinate with design teams.</p>
                         </div>
-                        <div className="career-card">
-                            <span className="salary">SEO Focused</span>
-                            <h4>SEO Specialist</h4>
-                            <p>Optimize website architectures, perform keyword research, build quality backlink profiles, and improve organic search visibility on Google.</p>
+                        
+                        <div className="salary-card">
+                            <div className="role-header">
+                                <h4>SEO Specialist</h4>
+                                <span class="salary-badge">AED 7,000 - 14,000 / month</span>
+                            </div>
+                            <p>Optimize site architecture, conduct technical audits, perform keyword mapping, and rank pages organically on Google.</p>
                         </div>
-                        <div className="career-card">
-                            <span className="salary">Paid Ad Mastery</span>
-                            <h4>Google Ads Specialist</h4>
-                            <p>Plan, set up, and manage search ads campaigns. Analyze bidding metrics, cost-per-click, and optimize ROI for paid campaigns.</p>
+                        
+                        <div className="salary-card">
+                            <div className="role-header">
+                                <h4>PPC & Performance Marketer</h4>
+                                <span class="salary-badge">AED 8,000 - 16,000 / month</span>
+                            </div>
+                            <p>Manage monthly ad budgets on Google Ads and Meta Ads, optimize conversions, track ROI, and analyze CPC metrics.</p>
                         </div>
-                        <div className="career-card">
-                            <span className="salary">Meta Ads Focused</span>
-                            <h4>PPC Executive</h4>
-                            <p>Manage paid advertising budgets across Meta Ads, LinkedIn Ads, and YouTube. Setup conversion events and audit CPA metrics.</p>
+                        
+                        <div className="salary-card">
+                            <div className="role-header">
+                                <h4>Social Media Manager</h4>
+                                <span class="salary-badge">AED 5,000 - 10,000 / month</span>
+                            </div>
+                            <p>Manage organic brand handles, schedule content calendars, engage online communities, and design video concepts.</p>
                         </div>
-                        <div className="career-card">
-                            <span className="salary">Social Brand Focus</span>
-                            <h4>Social Media Manager</h4>
-                            <p>Curate content schedules, write captions, coordinate design assets, build online communities, and monitor brand mentions.</p>
+                        
+                        <div className="salary-card">
+                            <div className="role-header">
+                                <h4>Content Marketer & Copywriter</h4>
+                                <span class="salary-badge">AED 6,000 - 11,000 / month</span>
+                            </div>
+                            <p>Draft high-conversion landing page copy, write SEO-optimized blog posts, and compose email newsletter sequences.</p>
                         </div>
-                        <div className="career-card">
-                            <span className="salary">Content Strategy</span>
-                            <h4>Content Strategist</h4>
-                            <p>Formulate blogging, video, and email strategies. Ensure tone consistency and manage content creation pipelines.</p>
+                    </div>
+                </div>
+
+                {/* Job Placement Assistance Section */}
+                <div className="content-card" style={{ marginTop: '50px' }}>
+                    <h2 className="dm-section-title">Job Placement <span className="text-gradient">Assistance</span></h2>
+                    <p className="dm-section-desc">
+                        At NITAQ Academy, our goal isn't just to provide a course completion certificate. We are dedicated to ensuring you have the assets and interview readiness to land a role in the UAE marketing sector.
+                    </p>
+                    
+                    <div className="placement-features">
+                        <div className="feature-item">
+                            <h4>Resume Drafting & Review</h4>
+                            <p>Our career advisors help you audit your resume to highlight your practical campaign achievements, tools learned, and certifications.</p>
                         </div>
-                        <div className="career-card">
-                            <span className="salary">Lead Acquisiton</span>
-                            <h4>Lead Generation Specialist</h4>
-                            <p>Build marketing funnels, compile email lead databases, manage webinar promotions, and optimize landing page conversions.</p>
+                        <div className="feature-item">
+                            <h4>LinkedIn Profile Optimization</h4>
+                            <p>We optimize your LinkedIn profile with primary marketing keywords to attract corporate recruiters and headhunters in Dubai and Sharjah.</p>
                         </div>
-                        <div className="career-card">
-                            <span className="salary">Data Analytics</span>
-                            <h4>Marketing Analyst</h4>
-                            <p>Perform deep database queries on GA4, construct custom tracking links, build Looker Studio reports, and optimize budget splits.</p>
+                        <div className="feature-item">
+                            <h4>Agency Interview Preparation</h4>
+                            <p>Participate in simulated mock interviews, covering real agency brief questions, technical SEO troubleshooting, and ad budget configuration tasks.</p>
+                        </div>
+                        <div className="feature-item">
+                            <h4>Live Project Portfolio</h4>
+                            <p>Graduate with a tangible campaign portfolio featuring real SEO audits, keyword matrices, and search ad structures that you can present to employers.</p>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Student Success Stories */}
+                <div className="content-card" style={{ marginTop: '50px' }}>
+                    <h2 className="dm-section-title">Student <span className="text-gradient">Success Stories</span></h2>
+                    <p className="dm-section-desc">
+                        Read how graduates from our academy in Sharjah have transformed their careers, landed marketing jobs, and scaled their businesses:
+                    </p>
+                    
+                    <div className="success-stories-grid">
+                        <div className="story-card">
+                            <p className="quote">"I joined NITAQ Academy as a fresh graduate. The practical SEO and Meta Ads modules helped me clear my technical interviews easily, and I landed a job as a Digital Executive in Dubai within 2 months of graduation."</p>
+                            <div className="author-info">
+                                <strong>Sarah M.</strong>
+                                <span>Alumni, Digital Marketing Executive</span>
+                            </div>
+                        </div>
+                        <div className="story-card">
+                            <p className="quote">"As an entrepreneur running a boutique in Sharjah, I used to rely on expensive marketing agencies. This course taught me how to manage my own Google Ads and target local customers directly. My lead volume increased by 40%."</p>
+                            <div className="author-info">
+                                <strong>Ahmed K.</strong>
+                                <span>Business Owner</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -879,7 +655,7 @@ const ProfessionalDigitalMarketingCourse = () => {
                 {/* Certification Section */}
                 <div className="cert-box">
                     <div className="cert-box-content">
-                        <h2 className="dm-section-title" style={{ marginBottom: '15px' }}>Earn a Professional <span className="text-gradient">Marketing Certificate</span></h2>
+                        <h2 className="dm-section-title" style={{ marginBottom: '15px' }}>Earn a Attested <span className="text-gradient">Marketing Certificate</span></h2>
                         <p className="dm-section-desc" style={{ marginBottom: '20px' }}>
                             Upon successful completion of the course curriculum, project assessments, and practical audits, you will receive the **NITAQ Academy Professional Digital Marketing Course Completion Certificate**.
                         </p>
@@ -911,107 +687,142 @@ const ProfessionalDigitalMarketingCourse = () => {
                     <div className="faq-accordion-group" style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
                         
                         <details className="faq-accordion">
-                            <summary>Is this course suitable for beginners?</summary>
+                            <summary>Is digital marketing a good career in the UAE?</summary>
                             <div className="faq-accordion-content">
-                                <p>Yes. The program is designed to support learners from the absolute beginner level and gradually progress toward advanced execution concepts. No prior marketing background is required.</p>
+                                <p>Yes, digital marketing is highly lucrative in the UAE. Organizations across real estate, e-commerce, education, and retail are actively hiring professionals to manage campaigns. Average salaries range from AED 5,000 to over AED 16,000/month depending on role experience.</p>
                             </div>
                         </details>
 
                         <details className="faq-accordion">
-                            <summary>Do I need any coding or programming skills to learn Digital Marketing?</summary>
+                            <summary>What is the duration of the digital marketing course at NITAQ Academy?</summary>
                             <div className="faq-accordion-content">
-                                <p>No. Digital marketing does not require any coding or programming experience. You will be using user-friendly tools and consoles like Google Ads, Meta Ads Manager, Google Analytics, and Canva.</p>
+                                <p>The course has flexible options. It runs for 4 to 8 weeks, with evening, morning, and weekend batch schedules available to suit working professionals and students.</p>
                             </div>
                         </details>
 
                         <details className="faq-accordion">
-                            <summary>What is the duration of the Digital Marketing course at NITAQ Academy?</summary>
+                            <summary>Do you provide certificate attestation?</summary>
                             <div className="faq-accordion-content">
-                                <p>The course duration is flexible. Typically, it takes 4 to 8 weeks depending on the batch schedule (intensive, weekend, or evening sessions).</p>
+                                <p>Yes, NITAQ Academy is a SPEA-authorized (Sharjah Private Education Authority) training institute. You will receive a professional training certificate that is recognized and can be officially attested.</p>
                             </div>
                         </details>
 
                         <details className="faq-accordion">
-                            <summary>Is the course available online or offline in Sharjah?</summary>
+                            <summary>Do I need a marketing degree to attend this digital marketing course?</summary>
                             <div className="faq-accordion-content">
-                                <p>Both options are available. You can join our offline classroom sessions at our premium campus in Sharjah (Abu Khamseen Tower, Majaz 3) or attend live online interactive sessions from anywhere in the UAE.</p>
+                                <p>No. The course is built from the ground up for beginners. Career changers, entrepreneurs, and graduates without any marketing background can easily learn the modules.</p>
                             </div>
                         </details>
 
                         <details className="faq-accordion">
-                            <summary>Will I receive a certificate after completing the course?</summary>
+                            <summary>What tools are covered in this digital marketing training in Sharjah?</summary>
                             <div className="faq-accordion-content">
-                                <p>Yes. You will receive a Professional Digital Marketing Course Completion Certificate from NITAQ Academy, which is highly valued and can be added to your resume and LinkedIn profile.</p>
+                                <p>We cover Google Analytics (GA4), Google Ads, Google Search Console, Meta Ads Manager, LinkedIn Campaign Manager, WordPress, Canva, Mailchimp, and AI tools like ChatGPT, Gemini, and Claude.</p>
                             </div>
                         </details>
 
                         <details className="faq-accordion">
-                            <summary>Are SEO and Google Ads covered in detail in this course?</summary>
+                            <summary>Does the course require coding or technical experience?</summary>
                             <div className="faq-accordion-content">
-                                <p>Absolutely. Dedicated modules are included for Search Engine Optimization (SEO) and Google Ads / Search Engine Marketing (SEM), covering keyword research, campaign setup, bidding, and optimization.</p>
+                                <p>No coding or web programming skills are required. Modern marketing relies on user-friendly dashboards, visual editors, and AI systems which are all taught practically.</p>
                             </div>
                         </details>
 
                         <details className="faq-accordion">
-                            <summary>Is AI in marketing included in the curriculum?</summary>
+                            <summary>Do you offer classroom training in Sharjah?</summary>
                             <div className="faq-accordion-content">
-                                <p>Yes, Module 8 is entirely dedicated to AI for Digital Marketing. You will learn to use ChatGPT, Gemini, Claude, and Canva AI for content creation, research, and marketing automation.</p>
+                                <p>Yes, offline classroom sessions are held at our premium campus located at F103, Abu Khamseen Tower, Majaz 3, Sharjah.</p>
                             </div>
                         </details>
 
                         <details className="faq-accordion">
-                            <summary>How does this course benefit business owners and entrepreneurs?</summary>
+                            <summary>Is live online training available?</summary>
                             <div className="faq-accordion-content">
-                                <p>Business owners will learn how to generate high-quality leads, improve online visibility on Google, run cost-effective paid campaigns, and build a strong brand presence in the UAE market.</p>
+                                <p>Yes, we offer interactive live online sessions with senior trainers for learners who cannot attend classroom sessions in person.</p>
                             </div>
                         </details>
 
                         <details className="faq-accordion">
-                            <summary>Are there career placement or job assistance services?</summary>
+                            <summary>Do you offer job placement assistance?</summary>
                             <div className="faq-accordion-content">
-                                <p>Yes, NITAQ Academy provides career development support, including resume enhancement tips, LinkedIn profile optimization guidance, and interview preparation for marketing roles.</p>
+                                <p>Yes, we provide full career development support, including resume audits, LinkedIn profile enhancement, mock interview sessions, and portfolio creation to prepare you for UAE marketing roles.</p>
                             </div>
                         </details>
 
                         <details className="faq-accordion">
-                            <summary>What tools will I learn to use during the course?</summary>
+                            <summary>What is the fee for the digital marketing course in Sharjah?</summary>
                             <div className="faq-accordion-content">
-                                <p>You will gain hands-on experience with industry-standard tools like Google Search Console, Google Keyword Planner, Google Trends, Google Ads, Meta Ads Manager, Google Analytics, and AI writing assistants.</p>
+                                <p>Fees vary depending on whether you choose offline classroom batches or live online tracks. Please contact our advisors on WhatsApp at +971 52 756 9908 for the latest prices and seasonal discounts.</p>
                             </div>
                         </details>
 
                         <details className="faq-accordion">
-                            <summary>Are there hands-on practical projects?</summary>
+                            <summary>Is Google Ads certification prep included?</summary>
                             <div className="faq-accordion-content">
-                                <p>Yes, the curriculum includes hands-on activities such as building an SEO Audit, Keyword Research Project, Competitor Analysis, Google Ads Campaign, Social Media Campaign, Content Calendar, and Lead Generation Strategy.</p>
+                                <p>Yes, the curriculum prepares you for official Google Search Ads and Google Measurement certifications, which are highly valued by corporate employers.</p>
                             </div>
                         </details>
 
                         <details className="faq-accordion">
-                            <summary>Why should I choose NITAQ Academy for Digital Marketing in Sharjah?</summary>
+                            <summary>Are there payment plans or installment options?</summary>
                             <div className="faq-accordion-content">
-                                <p>NITAQ Academy is a leading SPEA-authorized training institute in Sharjah offering expert-led training, small batch sizes, practical hands-on projects, flexible schedules, and a strong UAE market focus.</p>
+                                <p>Yes, NITAQ Academy provides flexible payment installment options. Speak with our admission advisors to organize a payment plan.</p>
                             </div>
                         </details>
 
                         <details className="faq-accordion">
-                            <summary>What are the career opportunities in the UAE after this course?</summary>
+                            <summary>What is the batch size for the classroom sessions?</summary>
                             <div className="faq-accordion-content">
-                                <p>You can apply for roles like Digital Marketing Executive, SEO Specialist, Google Ads Specialist, Social Media Manager, PPC Specialist, Content Strategist, or Lead Generation Specialist in the UAE.</p>
+                                <p>We maintain small batches of 8 to 12 students to guarantee personalized guidance, active interaction, and proper direct attention from the mentor.</p>
                             </div>
                         </details>
 
                         <details className="faq-accordion">
-                            <summary>Can I offer freelance digital marketing services after completing this course?</summary>
+                            <summary>How is AI integrated into the digital marketing training?</summary>
                             <div className="faq-accordion-content">
-                                <p>Yes, the course covers the skills needed to offer freelance services, build client proposals, run marketing audits, and manage campaigns for local and international clients.</p>
+                                <p>We have dedicated modules covering prompt engineering for copywriting, AI-assisted market research using Gemini, content planning with ChatGPT, and design creation with Canva AI.</p>
                             </div>
                         </details>
 
                         <details className="faq-accordion">
-                            <summary>How do I register for the course and what is the fee structure?</summary>
+                            <summary>What types of projects will I complete during the course?</summary>
                             <div className="faq-accordion-content">
-                                <p>You can register by clicking 'Enroll Today' or contacting our advisors on WhatsApp at +971 52 756 9908. Fees depend on the training mode and options. Contact us for current pricing and discounts.</p>
+                                <p>You will complete real-world campaigns, including a website SEO Audit, Keyword Strategy compilation, Google Search Campaign setup, and Meta Pixel targeting setup.</p>
+                            </div>
+                        </details>
+
+                        <details className="faq-accordion">
+                            <summary>Can entrepreneurs benefit from this course?</summary>
+                            <div className="faq-accordion-content">
+                                <p>Yes. Business owners will learn to track ad spend, setup conversion funnels, generate local leads, and manage campaigns without paying expensive external agencies.</p>
+                            </div>
+                        </details>
+
+                        <details className="faq-accordion">
+                            <summary>Is local SEO for Dubai and Sharjah businesses covered?</summary>
+                            <div className="faq-accordion-content">
+                                <p>Yes, we cover Google Business Profile setup, local citations, map optimization, and proximity keyword strategies targeting UAE customers.</p>
+                            </div>
+                        </details>
+
+                        <details className="faq-accordion">
+                            <summary>Who are the trainers for this course?</summary>
+                            <div className="faq-accordion-content">
+                                <p>The courses are led by senior digital marketing practitioners and consultants with extensive real-world experience managing marketing campaigns in the UAE.</p>
+                            </div>
+                        </details>
+
+                        <details className="faq-accordion">
+                            <summary>Can I offer freelance digital marketing services after this course?</summary>
+                            <div className="faq-accordion-content">
+                                <p>Yes. We teach you how to write client audits, propose marketing strategies, price your services, and set up freelance profiles on major portals.</p>
+                            </div>
+                        </details>
+
+                        <details className="faq-accordion">
+                            <summary>What jobs can I get after this course in the UAE?</summary>
+                            <div className="faq-accordion-content">
+                                <p>You will be eligible for roles such as Digital Marketing Executive, SEO Specialist, PPC Analyst, Social Media Executive, Content Strategist, or Lead Generation Coordinator.</p>
                             </div>
                         </details>
 

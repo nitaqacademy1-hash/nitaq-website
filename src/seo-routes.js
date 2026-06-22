@@ -1,5 +1,74 @@
 export const seoRoutes = [
   {
+    path: "/software-engineering-diploma-sharjah",
+    title: "Software Engineering Diploma in Sharjah | Software Development Course UAE | Nitaq Academy",
+    description: "Join Nitaq Academy's Software Engineering Diploma in Sharjah. Learn programming, software development, databases, algorithms, OOP, software architecture, debugging, testing, Git, and modern software engineering practices. SPEA Certified training in UAE.",
+    canonical: "https://www.nitaqacademy.com/software-engineering-diploma-sharjah",
+    ogTitle: "Software Engineering Diploma in Sharjah | Software Development Course UAE | Nitaq Academy",
+    ogDescription: "Join Nitaq Academy's Software Engineering Diploma in Sharjah. Learn programming, software development, databases, algorithms, OOP, software architecture, debugging, testing, Git, and modern software engineering practices. SPEA Certified training in UAE.",
+    ogImage: "/images/logo1.webp",
+    twitterCard: "summary_large_image",
+    courseSchema: {
+        name: 'Software Engineering Diploma in Sharjah',
+        description: 'Comprehensive Software Engineering Diploma in Sharjah. Master programming, software development, databases, algorithms, software architecture, Git, testing, debugging, and industry-standard engineering practices.',
+        duration: 'PT60H',
+        mode: ['onsite', 'online'],
+        educationalLevel: 'Beginner to Advanced',
+        teaches: 'Programming, Software Development, Databases, Algorithms, OOP, Software Architecture, Debugging, Testing, Git',
+        inLanguage: 'en',
+    },
+    faqSchema: [
+        {
+            question: 'What is a Software Engineering Diploma?',
+            answer: 'A Software Engineering Diploma is a comprehensive training program that teaches the principles, methodologies, and technical skills required to design, develop, test, and maintain software applications professionally.',
+        },
+        {
+            question: 'Is this Software Engineering Course suitable for beginners?',
+            answer: 'Yes! The course is structured to take you from absolute basics to advanced concepts. No prior programming experience is required to enroll.',
+        },
+        {
+            question: 'What programming languages will I learn?',
+            answer: 'You will gain exposure to core languages and technologies used in the industry, including foundational concepts applicable across Python, Java, JavaScript, and SQL.',
+        },
+        {
+            question: 'Can I become a Software Developer after completing this course?',
+            answer: 'Yes. The curriculum is designed to equip you with the practical skills and portfolio necessary to apply for entry-level to mid-level software developer roles.',
+        },
+        {
+            question: 'Is the course available online in UAE?',
+            answer: 'Absolutely. We offer both flexible live online sessions and physical classroom training at our institute in Sharjah, UAE.',
+        },
+        {
+            question: 'How long does the Software Engineering Diploma take?',
+            answer: 'The program spans 12 weeks, featuring 60 hours of intensive training, hands-on projects, and mentorship.',
+        },
+        {
+            question: 'What jobs can I apply for after completing the course?',
+            answer: 'You can pursue roles such as Software Engineer, Software Developer, Backend Developer, Full Stack Developer, QA Engineer, and Application Developer.',
+        },
+        {
+            question: 'What is the difference between Software Engineering and Software Development?',
+            answer: 'While often used interchangeably, Software Engineering focuses on the application of engineering principles to design entire systems and architectures, whereas Software Development is usually more focused on the specific coding and creation of applications.',
+        },
+        {
+            question: 'Do I receive a certificate?',
+            answer: 'Yes. Upon successful completion, you will receive a Software Engineering Diploma Certificate from Nitaq Academy, a SPEA-licensed institute.',
+        },
+        {
+            question: 'Is this course available in Sharjah?',
+            answer: 'Yes! You can attend in-person classes at our state-of-the-art training facility located in Al Majaz 3, Sharjah.',
+        },
+        {
+            question: 'What projects will I build?',
+            answer: 'You will work on multiple practical assignments culminating in a Capstone Software Development Project, allowing you to build a complete application from scratch.',
+        },
+        {
+            question: 'How do I enroll?',
+            answer: 'You can enroll by contacting our advisors directly via WhatsApp, calling us at +971 52 756 9908, or visiting our campus in Sharjah.',
+        },
+    ]
+  },
+  {
     path: "/ielts-coaching-dubai",
     title: "IELTS Coaching Dubai | Band 7+ Guaranteed | NITAQ ACADEMY",
     description: "Achieve IELTS Band 7+ with elite preparation for Dubai residents. Flexible batches, expert trainers, and mock tests for Academic and General modules.",
@@ -1797,82 +1866,102 @@ export const seoRoutes = [
   },
   {
     path: "/courses/professional-digital-marketing-course-sharjah-uae",
-    title: "Professional Digital Marketing Course in Sharjah UAE | SEO, Google Ads & Social Media Training",
-    description: "Join NITAQ Academy's Professional Digital Marketing Course in Sharjah. Learn SEO, Google Ads, Social Media Marketing, AI Marketing, Analytics, Lead Generation and Content Strategy through practical training.",
+    title: "Digital Marketing Course in Sharjah | NITAQ Academy",
+    description: "Become a certified marketer with the best Digital Marketing Course in Sharjah. Practical training in SEO, Google Ads, Meta Ads & AI. Enroll at NITAQ today!",
     canonical: "https://www.nitaqacademy.com/courses/professional-digital-marketing-course-sharjah-uae",
-    ogTitle: "Professional Digital Marketing Course in Sharjah UAE | SEO, Google Ads & Social Media Training",
-    ogDescription: "Join NITAQ Academy's Professional Digital Marketing Course in Sharjah. Learn SEO, Google Ads, Social Media Marketing, AI Marketing, Analytics, Lead Generation and Content Strategy through practical training.",
+    ogTitle: "Digital Marketing Course in Sharjah | NITAQ Academy",
+    ogDescription: "Become a certified marketer with the best Digital Marketing Course in Sharjah. Practical training in SEO, Google Ads, Meta Ads & AI. Enroll at NITAQ today!",
     ogImage: "/images/digital_marketing_v2.png",
     twitterCard: "summary_large_image",
     courseSchema: {
         name: "Professional Digital Marketing Course in Sharjah, UAE",
-        description: "Master SEO, Google Ads, Social Media Marketing, AI Marketing, Lead Generation and Analytics through practical UAE-focused training.",
+        description: "Master SEO, Google Ads, Social Media Marketing, PPC campaigns, AI Marketing, and Web Analytics. Practical hands-on training in Sharjah.",
         duration: "PT40H",
         mode: ["onsite", "online"],
         educationalLevel: "Beginner to Advanced",
-        teaches: "SEO, Google Ads, Social Media Marketing, PPC, AI Marketing Tools, Content Marketing, Analytics",
+        teaches: "SEO, Google Ads, Social Media Marketing, Meta Ads Manager, PPC, AI Marketing Tools, Content Marketing, Google Analytics GA4",
         inLanguage: "en",
     },
     faqSchema: [
         {
-            question: "Is this Digital Marketing course suitable for beginners?",
-            answer: "Yes. The program is designed to support learners from the beginner level and gradually progress toward advanced concepts. No prior marketing background is required."
+            question: "Is digital marketing a good career in the UAE?",
+            answer: "Yes, digital marketing is highly lucrative in the UAE. Organizations across real estate, e-commerce, education, and retail are actively hiring professionals to manage campaigns. Average salaries range from AED 5,000 to over AED 16,000/month depending on role experience."
         },
         {
-            question: "Do I need any coding skills to learn Digital Marketing?",
-            answer: "No. Digital marketing does not require any coding or programming experience. You will be using user-friendly tools and platforms like Google Ads, Meta Ads Manager, and Canva."
+            question: "What is the duration of the digital marketing course at NITAQ Academy?",
+            answer: "The course has flexible options. It runs for 4 to 8 weeks, with evening, morning, and weekend batch schedules available to suit working professionals and students."
         },
         {
-            question: "What is the duration of the Digital Marketing course at NITAQ Academy?",
-            answer: "The course duration is flexible. Typically, it takes 4 to 8 weeks depending on the batch schedule (intensive, weekend, or evening sessions)."
+            question: "Do you provide certificate attestation?",
+            answer: "Yes, NITAQ Academy is a SPEA-authorized (Sharjah Private Education Authority) training institute. You will receive a professional training certificate that is recognized and can be officially attested."
         },
         {
-            question: "Is this course available online or offline in Sharjah?",
-            answer: "Both options are available. You can join our offline classroom sessions at our campus in Sharjah (Abu Khamseen Tower, Majaz 3) or attend live online interactive sessions from anywhere in the UAE."
+            question: "Do I need a marketing degree to attend this digital marketing course?",
+            answer: "No. The course is built from the ground up for beginners. Career changers, entrepreneurs, and graduates without any marketing background can easily learn the modules."
         },
         {
-            question: "Will I get a certificate after completing the Digital Marketing course?",
-            answer: "Yes. You will receive a Professional Digital Marketing Course Completion Certificate from NITAQ Academy, which is highly valued and can be added to your resume and LinkedIn profile."
+            question: "What tools are covered in this digital marketing training in Sharjah?",
+            answer: "We cover Google Analytics (GA4), Google Ads, Google Search Console, Meta Ads Manager, LinkedIn Campaign Manager, WordPress, Canva, Mailchimp, and AI tools like ChatGPT, Gemini, and Claude."
         },
         {
-            question: "Are SEO and Google Ads covered in detail in this course?",
-            answer: "Absolutely. Dedicated modules are included for Search Engine Optimization (SEO) and Google Ads / Search Engine Marketing (SEM), covering keyword research, campaign setup, bidding, and optimization."
+            question: "Does the course require coding or technical experience?",
+            answer: "No coding or web programming skills are required. Modern marketing relies on user-friendly dashboards, visual editors, and AI systems which are all taught practically."
         },
         {
-            question: "Is AI in marketing included in the curriculum?",
-            answer: "Yes, Module 8 is entirely dedicated to AI for Digital Marketing. You will learn to use ChatGPT, Gemini, Claude, and Canva AI for content creation, research, and marketing automation."
+            question: "Do you offer classroom training in Sharjah?",
+            answer: "Yes, offline classroom sessions are held at our premium campus located at F103, Abu Khamseen Tower, Majaz 3, Sharjah."
         },
         {
-            question: "How does this course benefit business owners and entrepreneurs?",
-            answer: "Business owners will learn how to generate high-quality leads, improve online visibility on Google, run cost-effective paid campaigns, and build a strong brand presence in the UAE market."
+            question: "Is live online training available?",
+            answer: "Yes, we offer interactive live online sessions with senior trainers for learners who cannot attend classroom sessions in person."
         },
         {
-            question: "Are there career placement or job assistance services?",
-            answer: "Yes, NITAQ Academy provides career development support, including resume enhancement tips, LinkedIn profile optimization guidance, and interview preparation for marketing roles."
+            question: "Do you offer job placement assistance?",
+            answer: "Yes, we provide full career development support, including resume audits, LinkedIn profile enhancement, mock interview sessions, and portfolio creation to prepare you for UAE marketing roles."
         },
         {
-            question: "What tools will I learn to use during the course?",
-            answer: "You will gain hands-on experience with industry-standard tools like Google Search Console, Google Keyword Planner, Google Trends, Google Ads, Meta Ads Manager, Google Analytics, and AI writing assistants."
+            question: "What is the fee for the digital marketing course in Sharjah?",
+            answer: "Fees vary depending on whether you choose offline classroom batches or live online tracks. Please contact our advisors on WhatsApp at +971 52 756 9908 for the latest prices and seasonal discounts."
         },
         {
-            question: "Are there hands-on practical projects?",
-            answer: "Yes, the curriculum includes hands-on activities such as building an SEO Audit, Keyword Research Project, Competitor Analysis, Google Ads Campaign, Social Media Campaign, Content Calendar, and Lead Generation Strategy."
+            question: "Is Google Ads certification prep included?",
+            answer: "Yes, the curriculum prepares you for official Google Search Ads and Google Measurement certifications, which are highly valued by corporate employers."
         },
         {
-            question: "Why should I choose NITAQ Academy for Digital Marketing in Sharjah?",
-            answer: "NITAQ Academy is a leading SPEA-authorized training institute in Sharjah offering expert-led training, small batch sizes, practical hands-on projects, flexible schedules, and a strong UAE market focus."
+            question: "Are there payment plans or installment options?",
+            answer: "Yes, NITAQ Academy provides flexible payment installment options. Speak with our admission advisors to organize a payment plan."
         },
         {
-            question: "What are the career opportunities in UAE after this course?",
-            answer: "You can apply for roles like Digital Marketing Executive, SEO Specialist, Google Ads Specialist, Social Media Manager, PPC Specialist, Content Strategist, or Lead Generation Specialist in the UAE."
+            question: "What is the batch size for the classroom sessions?",
+            answer: "We maintain small batches of 8 to 12 students to guarantee personalized guidance, active interaction, and proper direct attention from the mentor."
         },
         {
-            question: "Can I offer freelance digital marketing services after completing this course?",
-            answer: "Yes, the course covers the skills needed to offer freelance services, build client proposals, run marketing audits, and manage campaigns for local and international clients."
+            question: "How is AI integrated into the digital marketing training?",
+            answer: "We have dedicated modules covering prompt engineering for copywriting, AI-assisted market research using Gemini, content planning with ChatGPT, and design creation with Canva AI."
         },
         {
-            question: "How do I register for the course and what is the fee structure?",
-            answer: "You can register by clicking 'Enroll Today' or contacting our advisors on WhatsApp at +971 52 756 9908. Fees depend on the training mode and options. Contact us for current pricing and discounts."
+            question: "What types of projects will I complete during the course?",
+            answer: "You will complete real-world campaigns, including a website SEO Audit, Keyword Strategy compilation, Google Search Campaign setup, and Meta Pixel targeting setup."
+        },
+        {
+            question: "Can entrepreneurs benefit from this course?",
+            answer: "Yes. Business owners will learn to track ad spend, setup conversion funnels, generate local leads, and manage campaigns without paying expensive external agencies."
+        },
+        {
+            question: "Is local SEO for Dubai and Sharjah businesses covered?",
+            answer: "Yes, we cover Google Business Profile setup, local citations, map optimization, and proximity keyword strategies targeting UAE customers."
+        },
+        {
+            question: "Who are the trainers for this course?",
+            answer: "The courses are led by senior digital marketing practitioners and consultants with extensive real-world experience managing marketing campaigns in the UAE."
+        },
+        {
+            question: "Can I offer freelance digital marketing services after this course?",
+            answer: "Yes. We teach you how to write client audits, propose marketing strategies, price your services, and set up freelance profiles on major portals."
+        },
+        {
+            question: "What jobs can I get after this course in the UAE?",
+            answer: "You will be eligible for roles such as Digital Marketing Executive, SEO Specialist, PPC Analyst, Social Media Executive, Content Strategist, or Lead Generation Coordinator."
         }
     ]
   },
