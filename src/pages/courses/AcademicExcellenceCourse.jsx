@@ -115,7 +115,7 @@ const AcademicExcellenceCourse = () => {
             {/* FAQ Section */}
             <div className="content-card">
                 <h2>Academic Excellence <span className="text-gradient">FAQs</span></h2>
-                <div className="faq-accordion-group" style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+                <div className="faq-accordion-group">
                     <details className="faq-accordion">
                         <summary>What is the Academic Excellence program?</summary>
                         <div className="faq-accordion-content">

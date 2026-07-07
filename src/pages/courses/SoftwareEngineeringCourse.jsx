@@ -716,7 +716,7 @@ const SoftwareEngineeringCourse = () => {
                 <div className="content-card" style={{ marginTop: '50px' }}>
                     <h2 className="dm-section-title">Frequently Asked <span className="text-gradient">Questions (FAQs)</span></h2>
                     
-                    <div className="faq-accordion-group" style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+                    <div className="faq-accordion-group">
                         
                         <details className="course-accordion">
                             <summary>What is a Software Engineering Diploma?</summary>

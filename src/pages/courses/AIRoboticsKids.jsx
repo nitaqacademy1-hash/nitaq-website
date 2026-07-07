@@ -85,7 +85,7 @@ const AIRoboticsKids = () => {
             {/* FAQ Section */}
             <div className="content-card">
                 <h2>A.I & Robotics for Kids <span className="text-gradient">FAQs</span></h2>
-                <div className="faq-accordion-group" style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+                <div className="faq-accordion-group">
                     <details className="faq-accordion">
                         <summary>What is the A.I & Robotics for Kids program?</summary>
                         <div className="faq-accordion-content">

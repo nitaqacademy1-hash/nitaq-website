@@ -6,7 +6,37 @@ import { trackEvent, ANALYTICS_EVENTS } from '../utils/analytics';
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
+    const [currentLang, setCurrentLang] = useState('en');
     const location = useLocation();
+
+    useEffect(() => {
+        // Check initial language from Google Translate cookie
+        const match = document.cookie.match(/googtrans=\/en\/([a-z]{2})/);
+        const lang = match ? match[1] : 'en';
+        setCurrentLang(lang);
+        if (lang === 'ar') {
+            document.documentElement.setAttribute('dir', 'rtl');
+            document.documentElement.setAttribute('lang', 'ar');
+        } else {
+            document.documentElement.setAttribute('dir', 'ltr');
+            document.documentElement.setAttribute('lang', 'en');
+        }
+    }, []);
+
+    const toggleLanguage = () => {
+        const newLang = currentLang === 'en' ? 'ar' : 'en';
+        
+        // Remove existing googtrans cookies
+        document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+        document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=.${window.location.hostname}; path=/;`;
+        
+        if (newLang === 'ar') {
+            // Set cookie for google translate
+            document.cookie = `googtrans=/en/ar; path=/`;
+            document.cookie = `googtrans=/en/ar; domain=.${window.location.hostname}; path=/`;
+        }
+        window.location.reload();
+    };
 
     useEffect(() => {
         const handleScroll = () => {
@@ -123,13 +153,33 @@ const Header = () => {
 
                     </nav>
 
-                    <a
-                        href="tel:+97165798313"
-                        className="btn btn-primary desktop-only-btn"
-                        onClick={() => trackEvent(ANALYTICS_EVENTS.CALL, 'header_desktop')}
-                    >
-                        Call Us
-                    </a>                </div>
+                    <div className="header-right-actions" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                        <button 
+                            onClick={toggleLanguage}
+                            className="lang-toggle"
+                            style={{ 
+                                padding: '8px 16px', 
+                                border: '1px solid var(--primary-color, #2e7d32)',
+                                borderRadius: '999px',
+                                background: 'transparent',
+                                color: 'var(--primary-color, #2e7d32)',
+                                fontWeight: '600',
+                                cursor: 'pointer',
+                                fontSize: '14px'
+                            }}
+                        >
+                            {currentLang === 'en' ? 'العربية' : 'EN'}
+                        </button>
+
+                        <a
+                            href="tel:+97165798313"
+                            className="btn btn-primary desktop-only-btn"
+                            onClick={() => trackEvent(ANALYTICS_EVENTS.CALL, 'header_desktop')}
+                        >
+                            Call Us
+                        </a>
+                    </div>
+                </div>
             </header>
 
             {isMenuOpen && (

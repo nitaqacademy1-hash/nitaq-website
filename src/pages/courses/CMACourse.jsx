@@ -117,7 +117,7 @@ const CMACourse = () => {
             {/* FAQ Section */}
             <div className="content-card">
                 <h2>CMA - Certified Management Accountant <span className="text-gradient">FAQs</span></h2>
-                <div className="faq-accordion-group" style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+                <div className="faq-accordion-group">
                     <details className="faq-accordion">
                         <summary>What is the CMA - Certified Management Accountant program?</summary>
                         <div className="faq-accordion-content">

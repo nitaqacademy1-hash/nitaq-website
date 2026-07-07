@@ -117,7 +117,7 @@ const PTECourse = () => {
             {/* FAQ Section */}
             <div className="content-card">
                 <h2>PTE - Pearson Test of English <span className="text-gradient">FAQs</span></h2>
-                <div className="faq-accordion-group" style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+                <div className="faq-accordion-group">
                     <details className="faq-accordion">
                         <summary>What is the PTE - Pearson Test of English exam?</summary>
                         <div className="faq-accordion-content">

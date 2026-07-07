@@ -128,7 +128,7 @@ const SpokenEnglish = () => {
             {/* FAQ Section */}
             <div className="content-card">
                 <h2>SPOKEN ENGLISH <span className="text-gradient">FAQs</span></h2>
-                <div className="faq-accordion-group" style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+                <div className="faq-accordion-group">
                     <details className="faq-accordion">
                         <summary>Who should join the Spoken English course?</summary>
                         <div className="faq-accordion-content">

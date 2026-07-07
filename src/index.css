@@ -3883,11 +3883,23 @@ textarea:focus {
 .outcomes-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; margin-bottom: 40px; }
 
 /* FAQ Accordion */
+.faq-accordion-group {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+@media (min-width: 992px) {
+    .faq-accordion-group {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        align-items: start;
+    }
+}
+
 details.faq-accordion {
     background: #f8fafc;
     border: 1px solid #e2e8f0;
     border-radius: 12px;
-    margin-bottom: 15px;
     overflow: hidden;
     transition: all 0.3s ease;
 }
@@ -3896,9 +3908,9 @@ details.faq-accordion[open] {
     box-shadow: 0 10px 25px -5px rgba(46, 125, 50, 0.08);
 }
 details.faq-accordion summary {
-    padding: 20px 25px;
+    padding: 16px 20px;
     font-weight: 700;
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: #1e293b;
     cursor: pointer;
     position: relative;
@@ -3921,9 +3933,9 @@ details.faq-accordion[open] summary::after {
     transform: rotate(180deg);
 }
 .faq-accordion-content {
-    padding: 0 25px 20px;
+    padding: 0 20px 16px;
     color: #475569;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     line-height: 1.6;
 }
 
@@ -4106,3 +4118,43 @@ details.faq-accordion[open] summary::after {
         margin: 0 auto;
     }
 }
+
+/* ─── GOOGLE TRANSLATE OVERRIDES & RTL ────────────────── */
+.goog-te-banner-frame.skiptranslate {
+    display: none !important;
+}
+body {
+    top: 0px !important;
+}
+#goog-gt-tt {
+    display: none !important;
+}
+.goog-tooltip {
+    display: none !important;
+}
+.goog-tooltip:hover {
+    display: none !important;
+}
+.goog-text-highlight {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* RTL Layout handling when Arabic is active */
+html[dir="rtl"] {
+    direction: rtl;
+    text-align: right;
+}
+html[dir="rtl"] .arrow-right {
+    transform: scaleX(-1);
+    display: inline-block;
+}
+html[dir="rtl"] .dropdown-content {
+    text-align: right;
+}
+html[dir="rtl"] .nav-links {
+    margin-right: auto;
+    margin-left: 0;
+}
+

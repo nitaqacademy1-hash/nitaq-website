@@ -93,7 +93,7 @@ const CorporateTrainings = () => {
                 <div className="container" style={{ maxWidth: '800px', margin: '0 auto' }}>
                     <div className="content-card" style={{ background: 'white', padding: '40px', borderRadius: '24px', boxShadow: '0 10px 30px rgba(0,0,0,0.02)' }}>
                         <h2 style={{ fontSize: '2rem', marginBottom: '25px', textAlign: 'center' }}>Corporate Training <span className="text-gradient">FAQs</span></h2>
-                        <div className="faq-accordion-group" style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+                        <div className="faq-accordion-group">
                             <details className="faq-accordion">
                                 <summary>What is corporate training at NITAQ ACADEMY?</summary>
                                 <div className="faq-accordion-content">

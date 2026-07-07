@@ -117,7 +117,7 @@ const ACCACourse = () => {
             {/* FAQ Section */}
             <div className="content-card">
                 <h2>ACCA COURSE <span className="text-gradient">FAQs</span></h2>
-                <div className="faq-accordion-group" style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+                <div className="faq-accordion-group">
                     <details className="faq-accordion">
                         <summary>What is ACCA and who should take it?</summary>
                         <div className="faq-accordion-content">

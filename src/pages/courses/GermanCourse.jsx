@@ -117,7 +117,7 @@ const GermanCourse = () => {
             {/* FAQ Section */}
             <div className="content-card">
                 <h2>German Language <span className="text-gradient">FAQs</span></h2>
-                <div className="faq-accordion-group" style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+                <div className="faq-accordion-group">
                     <details className="faq-accordion">
                         <summary>What is the German Language exam?</summary>
                         <div className="faq-accordion-content">
