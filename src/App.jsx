@@ -67,7 +67,7 @@ import BestCertificationsGrowth from './pages/article/BestCertificationsGrowth';
 import DigitalMarketingSalary from './pages/article/DigitalMarketingSalary';
 import AiSkillsForStudents from './pages/article/AiSkillsForStudents';
 import ImproveEnglishBetterJobs from './pages/article/ImproveEnglishBetterJobs';
-
+import DigitalMarketingSeoGuide from './pages/article/DigitalMarketingSeoGuide';
 
 
 import TermsAndConditions from './pages/legal/TermsAndConditions';
@@ -154,6 +154,7 @@ function AppContent() {
         <Route path="/article/best-professional-certifications-uae" element={<BestCertificationsGrowth />} />
         <Route path="/article/digital-marketing-salary-increase-uae" element={<DigitalMarketingSalary />} />
         <Route path="/article/ai-skills-every-student-needs" element={<AiSkillsForStudents />} />
+        <Route path="/article/digital-marketing-seo-guide-uae" element={<DigitalMarketingSeoGuide />} />
 
 
 

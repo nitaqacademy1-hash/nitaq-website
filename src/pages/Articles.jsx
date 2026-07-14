@@ -5,6 +5,17 @@ import { Calendar, User, ArrowRight, ExternalLink, Filter, Search } from 'lucide
 
 const articles = [
     {
+        id: 18,
+        title: "The Ultimate Guide to Mastering Digital Marketing in Dubai & Sharjah",
+        excerpt: "Learn SEO, Google Ads, and Meta Ads to boost your career in the UAE. Discover why digital marketing is the most in-demand skill in Dubai and Sharjah.",
+        category: "Career & Courses",
+        path: "/article/digital-marketing-seo-guide-uae",
+        coursePath: "/courses/professional-digital-marketing-course-sharjah-uae",
+        courseLabel: "Digital Marketing Course",
+        date: "July 14, 2026",
+        image: "/images/course-marketing.webp"
+    },
+    {
         id: 17,
         title: "How to Improve Your English for Better Career Opportunities in the UAE",
         excerpt: "Mastering English is the primary bridge to professional success in Dubai and Sharjah. Learn practical ways to improve your communication and land your dream job.",
