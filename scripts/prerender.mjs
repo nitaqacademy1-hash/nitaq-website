@@ -83,6 +83,9 @@ const ROUTES = [
   '/article/digital-marketing-salary-increase-uae',
   '/article/ai-skills-every-student-needs',
   '/article/improve-english-better-jobs',
+  '/article/digital-marketing-seo-guide-uae',
+  '/article/best-digital-marketing-course-uae',
+  '/article/professional-digital-marketing-course-overview',
   '/terms-and-conditions',
 
 
