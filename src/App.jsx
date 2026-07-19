@@ -69,6 +69,7 @@ import AiSkillsForStudents from './pages/article/AiSkillsForStudents';
 import ImproveEnglishBetterJobs from './pages/article/ImproveEnglishBetterJobs';
 import DigitalMarketingSeoGuide from './pages/article/DigitalMarketingSeoGuide';
 import BestDigitalMarketingCourse from './pages/article/BestDigitalMarketingCourse';
+import ProfessionalDigitalMarketingCourseArticle from './pages/article/ProfessionalDigitalMarketingCourseArticle';
 
 
 import TermsAndConditions from './pages/legal/TermsAndConditions';
@@ -157,6 +158,7 @@ function AppContent() {
         <Route path="/article/ai-skills-every-student-needs" element={<AiSkillsForStudents />} />
         <Route path="/article/digital-marketing-seo-guide-uae" element={<DigitalMarketingSeoGuide />} />
         <Route path="/article/best-digital-marketing-course-uae" element={<BestDigitalMarketingCourse />} />
+        <Route path="/article/professional-digital-marketing-course-overview" element={<ProfessionalDigitalMarketingCourseArticle />} />
 
 
 
