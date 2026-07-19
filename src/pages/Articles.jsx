@@ -244,10 +244,24 @@ const categories = ["All", "SAT Preparation", "IELTS Training", "Career & Course
 
 const Articles = () => {
     const [activeCategory, setActiveCategory] = useState("All");
+    const [currentPage, setCurrentPage] = useState(1);
+    const articlesPerPage = 9;
 
     const filteredArticles = activeCategory === "All" 
         ? articles 
         : articles.filter(article => article.category === activeCategory);
+
+    const indexOfLastArticle = currentPage * articlesPerPage;
+    const indexOfFirstArticle = indexOfLastArticle - articlesPerPage;
+    const currentArticles = filteredArticles.slice(indexOfFirstArticle, indexOfLastArticle);
+    const totalPages = Math.ceil(filteredArticles.length / articlesPerPage);
+
+    const handleCategoryChange = (cat) => {
+        setActiveCategory(cat);
+        setCurrentPage(1);
+    };
+
+    const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
     return (
         <main className="articles-page">
@@ -295,7 +309,7 @@ const Articles = () => {
                                 <button 
                                     key={cat} 
                                     className={`filter-btn ${activeCategory === cat ? 'active' : ''}`}
-                                    onClick={() => setActiveCategory(cat)}
+                                    onClick={() => handleCategoryChange(cat)}
                                 >
                                     {cat}
                                 </button>
@@ -309,7 +323,7 @@ const Articles = () => {
             <section className="articles-grid-section">
                 <div className="container">
                     <div className="articles-grid">
-                        {filteredArticles.map((article) => (
+                        {currentArticles.map((article) => (
                             <div key={article.id} className="article-card">
                                 <Link to={article.path} className="article-card-image-link">
                                     <div className="article-card-image">
@@ -343,6 +357,39 @@ const Articles = () => {
                     {filteredArticles.length === 0 && (
                         <div className="no-results text-center">
                             <p>No articles found in this category. Please try another one.</p>
+                        </div>
+                    )}
+
+                    {totalPages > 1 && (
+                        <div className="pagination-wrapper" style={{ display: 'flex', justifyContent: 'center', gap: '8px', marginTop: '40px', flexWrap: 'wrap' }}>
+                            <button 
+                                onClick={() => paginate(currentPage - 1)}
+                                disabled={currentPage === 1}
+                                className="btn btn-outline btn-sm"
+                                style={{ padding: '8px 16px', borderRadius: '8px', opacity: currentPage === 1 ? 0.5 : 1, cursor: currentPage === 1 ? 'not-allowed' : 'pointer' }}
+                            >
+                                Previous
+                            </button>
+                            
+                            {[...Array(totalPages)].map((_, i) => (
+                                <button
+                                    key={i + 1}
+                                    onClick={() => paginate(i + 1)}
+                                    className={`btn btn-sm ${currentPage === i + 1 ? 'btn-primary' : 'btn-outline'}`}
+                                    style={{ padding: '8px 16px', borderRadius: '8px' }}
+                                >
+                                    {i + 1}
+                                </button>
+                            ))}
+
+                            <button 
+                                onClick={() => paginate(currentPage + 1)}
+                                disabled={currentPage === totalPages}
+                                className="btn btn-outline btn-sm"
+                                style={{ padding: '8px 16px', borderRadius: '8px', opacity: currentPage === totalPages ? 0.5 : 1, cursor: currentPage === totalPages ? 'not-allowed' : 'pointer' }}
+                            >
+                                Next
+                            </button>
                         </div>
                     )}
 
