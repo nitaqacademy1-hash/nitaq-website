@@ -5,6 +5,17 @@ import { Calendar, User, ArrowRight, ExternalLink, Filter, Search } from 'lucide
 
 const articles = [
     {
+        id: 21,
+        title: "How to Choose the Best Digital Marketing Institute in Sharjah, Dubai and the UAE",
+        excerpt: "Learn how to choose the best digital marketing institute in Sharjah, Dubai and the UAE. Compare SEO, Google Ads, Meta Ads, social media and AI marketing training.",
+        category: "Career & Courses",
+        path: "/article/how-to-choose-best-digital-marketing-institute-sharjah-dubai-uae",
+        coursePath: "/courses/professional-digital-marketing-course-sharjah-uae",
+        courseLabel: "Digital Marketing Course",
+        date: "July 22, 2026",
+        image: "/images/digital_marketing_overview.png"
+    },
+    {
         id: 20,
         title: "Professional Digital Marketing Course in Sharjah, UAE - Complete Overview",
         excerpt: "Master SEO, Google Ads, Social Media Marketing, AI Marketing & Lead Generation with our Professional Digital Marketing Course.",

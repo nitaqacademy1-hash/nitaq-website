@@ -12,7 +12,7 @@
 
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'fs'
 import { resolve, dirname } from 'path'
-import { fileURLToPath } from 'url'
+import { fileURLToPath, pathToFileURL } from 'url'
 import { build } from 'vite'
 import { getSeoRoute } from '../src/seo-routes.js'
 
@@ -86,6 +86,7 @@ const ROUTES = [
   '/article/digital-marketing-seo-guide-uae',
   '/article/best-digital-marketing-course-uae',
   '/article/professional-digital-marketing-course-overview',
+  '/article/how-to-choose-best-digital-marketing-institute-sharjah-dubai-uae',
   '/terms-and-conditions',
 
 
@@ -129,7 +130,8 @@ async function prerender() {
 
   // 3. Load the render function
   const serverPath = resolve(root, 'dist-ssr/entry-server.js')
-  const { render } = await import(serverPath)
+  const serverUrl = pathToFileURL(serverPath).href
+  const { render } = await import(serverUrl)
 
   // 4. Read template
   const template = readFileSync(resolve(root, 'dist/index.html'), 'utf-8')
@@ -144,7 +146,7 @@ async function prerender() {
       // 1. Safe layout bundle fallback parsing
       let html = '';
       try {
-        const { render } = await import(serverPath);
+        const { render } = await import(serverUrl);
         const rendered = render(url);
         html = rendered.html || '';
       } catch (ssrErr) {
