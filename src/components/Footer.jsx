@@ -1,7 +1,10 @@
-import { Link } from 'react-router-dom';
+import { Link } from '../i18n/Link';
+import { useLanguage } from '../i18n/context';
 import { trackEvent, ANALYTICS_EVENTS } from '../utils/analytics';
 
 const Footer = () => {
+    const { t } = useLanguage();
+
     return (
         <footer className="footer-minimal">
             <div className="container">
@@ -9,79 +12,85 @@ const Footer = () => {
                     <div className="footer-brand">
 
                         <div style={{ marginTop: '0px', marginBottom: '0px' }}>
-                            <img src="/images/whatsapp-img-3.png" alt="SPEA Authorized" style={{ height: '70px', width: 'auto', objectFit: 'contain' }} loading="lazy" />
+                            <img src="/images/whatsapp-img-3.png" alt={t('footer.speaAlt')} style={{ height: '70px', width: 'auto', objectFit: 'contain' }} loading="lazy" />
                         </div>
-                        <p>Empowering the next generation of professionals in the UAE.</p>
+                        <p>{t('footer.tagline')}</p>
                     </div>
                     <div className="footer-nav">
                         <div>
-                            <h4>Test Preparations</h4>
-                            <Link to="/academic-excellence">Academic Excellence</Link>
-                            <Link to="/foundation-jee-neet">Foundation JEE/NEET</Link>
-                            <Link to="/sat-preparation-sharjah">SAT Prep</Link>
-                            <Link to="/gmat-preparation">GMAT Prep</Link>
-                            <Link to="/gre-preparation">GRE Prep</Link>
-                            <Link to="/ai-robotics-kids">AI & Robotics for Kids</Link>
+                            <h4>{t('footer.testPreparations')}</h4>
+                            <Link to="/academic-excellence">{t('footer.links.academicExcellence')}</Link>
+                            <Link to="/foundation-jee-neet">{t('footer.links.jeeNeet')}</Link>
+                            <Link to="/sat-preparation-sharjah">{t('footer.links.sat')}</Link>
+                            <Link to="/gmat-preparation">{t('footer.links.gmat')}</Link>
+                            <Link to="/gre-preparation">{t('footer.links.gre')}</Link>
+                            <Link to="/ai-robotics-kids">{t('footer.links.aiRobotics')}</Link>
                         </div>
                         <div>
-                            <h4>Certifications</h4>
-                            <Link to="/finance-courses">Finance (ACCA/CMA)</Link>
-                            <Link to="/uae-vat">UAE VAT</Link>
-                            <Link to="/uae-corporate-tax">UAE Corporate Tax</Link>
-                            <Link to="/ai-course">AI Course</Link>
-                            <Link to="/power-bi-excel">Power BI & Excel</Link>
-                            <Link to="/chrm">CHRM</Link>
-                            <Link to="/hrm-courses">HRM</Link>
-                            <Link to="/sales-negotiations">Sales & Negotiations</Link>
-                            <Link to="/courses/professional-digital-marketing-course-sharjah-uae">Digital Marketing</Link>
-                            <Link to="/professional-marketing-course" style={{ fontWeight: 600 }}>Professional Marketing</Link>
+                            <h4>{t('footer.certifications')}</h4>
+                            <Link to="/finance-courses">{t('footer.links.finance')}</Link>
+                            <Link to="/uae-vat">{t('footer.links.vat')}</Link>
+                            <Link to="/uae-corporate-tax">{t('footer.links.corporateTax')}</Link>
+                            <Link to="/ai-course">{t('footer.links.ai')}</Link>
+                            <Link to="/power-bi-excel">{t('footer.links.powerBi')}</Link>
+                            <Link to="/chrm">{t('footer.links.chrm')}</Link>
+                            <Link to="/hrm-courses">{t('footer.links.hrm')}</Link>
+                            <Link to="/sales-negotiations">{t('footer.links.sales')}</Link>
+                            <Link to="/courses/professional-digital-marketing-course-sharjah-uae">{t('footer.links.digitalMarketing')}</Link>
+                            <Link to="/professional-marketing-course" style={{ fontWeight: 600 }}>{t('footer.links.professionalMarketing')}</Link>
                         </div>
                         <div>
-                            <h4>Languages & More</h4>
-                            <Link to="/spoken-arabic">Spoken Arabic</Link>
-                            <Link to="/spoken-english">Spoken English</Link>
-                            <Link to="/french">French</Link>
-                            <Link to="/german">German</Link>
-                            <Link to="/spanish">Spanish</Link>
+                            <h4>{t('footer.languagesAndMore')}</h4>
+                            <Link to="/spoken-arabic">{t('footer.links.spokenArabic')}</Link>
+                            <Link to="/spoken-english">{t('footer.links.spokenEnglish')}</Link>
+                            <Link to="/french">{t('footer.links.french')}</Link>
+                            <Link to="/german">{t('footer.links.german')}</Link>
+                            <Link to="/spanish">{t('footer.links.spanish')}</Link>
                             <Link to="/ielts-course">IELTS</Link>
                             <Link to="/pte-course">PTE</Link>
                             <Link to="/toefl-course">TOEFL</Link>
                         </div>
                         <div>
-                            <h4>Articles & Insights</h4>
+                            <h4>{t('footer.articlesAndInsights')}</h4>
                             <Link to="/article/sat-score-1300-guide">SAT 1300+ Guide</Link>
                             <Link to="/article/common-sat-mistakes">Common SAT Mistakes</Link>
                             <Link to="/article/ielts-dubai-guide">IELTS Dubai Guide</Link>
                             <Link to="/article/ai-courses-sharjah-essential">AI for 2026</Link>
                             <Link to="/article/professional-courses-sharjah-growth">Career Growth Tips</Link>
-                            <Link to="/articles" style={{ fontWeight: 'bold', color: 'var(--primary-color)' }}>View All Articles →</Link>
+                            <Link to="/articles" style={{ fontWeight: 'bold', color: 'var(--primary-color)' }}>{t('footer.viewAllArticles')}</Link>
                         </div>
                         <div>
-                            <h4>Support</h4>
-                            <Link to="/contact">Contact Us</Link>
-                            <Link to="/enquiry">Enrolment Form</Link>
-                            <Link to="/about">About Nitaq</Link>
-                            <Link to="/terms-and-conditions">Terms & Conditions</Link>
-                            <Link to="/privacy-policy">Privacy Policy</Link>
+                            <h4>{t('footer.support')}</h4>
+                            <Link to="/contact">{t('common.contactUs')}</Link>
+                            {/* Full enrolment form is a standalone static page, not an SPA route */}
+                            <a href="/enrolment.html">{t('footer.links.enrolmentForm')}</a>
+                            <Link to="/enquiry">{t('footer.links.enquiryForm')}</Link>
+                            <Link to="/about">{t('footer.links.aboutNitaq')}</Link>
+                            <Link to="/terms-and-conditions">{t('footer.links.terms')}</Link>
+                            <Link to="/privacy-policy">{t('footer.links.privacy')}</Link>
                         </div>
                         <div>
-                            <h4>Get in Touch</h4>
-                            <li style={{ fontSize: '0.95rem' }}>Office : F103, Floor F1,<br />Abu Khamseen Tower,<br />Majaz 3, Sharjah, UAE</li>
+                            <h4>{t('footer.getInTouch')}</h4>
+                            <li style={{ fontSize: '0.95rem' }}>
+                                {t('footer.address').split('\n').map((line, i) => (
+                                    <span key={i}>{line}<br /></span>
+                                ))}
+                            </li>
                             <li style={{ fontSize: '0.95rem', marginTop: '10px' }}>
-                                <a 
-                                    href="tel:+971527569908" 
+                                <a
+                                    href="tel:+971527569908"
                                     onClick={() => trackEvent(ANALYTICS_EVENTS.CALL, 'footer_mobile')}
                                     style={{ color: 'inherit', textDecoration: 'none' }}
                                 >
-                                    +971 52 756 9908 (Mobile)
+                                    <span className="ltr-inline">+971 52 756 9908</span> ({t('footer.mobileLabel')})
                                 </a>
                                 <br />
-                                <a 
-                                    href="tel:+97165798313" 
+                                <a
+                                    href="tel:+97165798313"
                                     onClick={() => trackEvent(ANALYTICS_EVENTS.CALL, 'footer_phone')}
                                     style={{ color: 'inherit', textDecoration: 'none' }}
                                 >
-                                    +971 6 579 8313 (Telephone)
+                                    <span className="ltr-inline">+971 6 579 8313</span> ({t('footer.phoneLabel')})
                                 </a>
                                 <br />
                                 <a 
@@ -96,9 +105,9 @@ const Footer = () => {
                 </div>
                 <div className="footer-bottom">
                     <div>
-                        <p>&copy; {new Date().getFullYear()} NITAQ ACADEMY. All rights reserved.</p>
+                        <p>{t('footer.rights', { year: new Date().getFullYear() })}</p>
                         <p style={{ fontSize: '0.75rem', color: '#6b7280', marginTop: '5px' }}>
-                            NITAQ ACADEMY is operated by Nitaq Supportive Education Services LLC
+                            {t('footer.operatedBy')}
                         </p>
                     </div>
                     <div className="social-links">

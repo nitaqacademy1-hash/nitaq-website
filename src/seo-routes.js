@@ -75,7 +75,7 @@ export const seoRoutes = [
     canonical: "https://www.nitaqacademy.com/ielts-coaching-dubai",
     ogTitle: "IELTS Coaching Dubai | Band 7+ Guaranteed | NITAQ ACADEMY",
     ogDescription: "Achieve IELTS Band 7+ with elite preparation for Dubai residents.",
-    ogImage: "/images/og/ielts-coaching-dubai.webp",
+    ogImage: "/images/ielts_v2.webp",
     twitterCard: "summary_large_image",
     courseSchema: {
         name: 'IELTS Coaching Dubai',
@@ -94,7 +94,7 @@ export const seoRoutes = [
     canonical: "https://www.nitaqacademy.com/sat-preparation-dubai",
     ogTitle: "SAT Preparation Dubai | 1400+ Guaranteed | NITAQ ACADEMY",
     ogDescription: "Master the Digital SAT with elite coaching accessible from Dubai.",
-    ogImage: "/images/og/sat-preparation-dubai.webp",
+    ogImage: "/images/sat_v2.webp",
     twitterCard: "summary_large_image",
     courseSchema: {
         name: 'SAT Preparation Dubai',
@@ -186,7 +186,7 @@ export const seoRoutes = [
     canonical: "https://www.nitaqacademy.com/courses",
     ogTitle: "Our Courses | NITAQ ACADEMY Sharjah",
     ogDescription: "Explore all professional certifications, test preparations, and language trainings at NITAQ ACADEMY. Your path to excellence starts here.",
-    ogImage: "/images/og/courses.webp",
+    ogImage: "/images/hero-bg.webp",
     twitterCard: "summary_large_image",
     courseSchema: null,
     faqSchema: null
@@ -198,7 +198,7 @@ export const seoRoutes = [
     canonical: "https://www.nitaqacademy.com/test-preparations",
     ogTitle: "Test Preparation Courses Sharjah | IELTS, TOEFL, SAT, GRE | NITAQ ACADEMY",
     ogDescription: "Expert coaching for IELTS, TOEFL, SAT, GMAT, and GRE in Sharjah. Boost your scores and secure admissions with NITAQ ACADEMY's proven programs.",
-    ogImage: "/images/og/test-preparations.webp",
+    ogImage: "/images/h1.webp",
     twitterCard: "summary_large_image",
     courseSchema: null,
     faqSchema: null
@@ -290,7 +290,7 @@ export const seoRoutes = [
     canonical: "https://www.nitaqacademy.com/toefl-course",
     ogTitle: "TOEFL Preparation Course Sharjah | TOEFL iBT Coaching UAE | NITAQ ACADEMY",
     ogDescription: "Ace the TOEFL iBT with NITAQ ACADEMY expert coaching in Sharjah. Reading, Listening, Speaking & Writing preparation with mock tests. SPEA Authorized. Online & offline UAE.",
-    ogImage: "/images/og/toefl-course.webp",
+    ogImage: "/images/toefl_v2.webp",
     twitterCard: "summary_large_image",
     courseSchema: {
         name: 'TOEFL Preparation Course Sharjah',
@@ -334,7 +334,7 @@ export const seoRoutes = [
     canonical: "https://www.nitaqacademy.com/ielts-course",
     ogTitle: "IELTS Preparation Course Sharjah | Band 7+ Guaranteed | NITAQ ACADEMY",
     ogDescription: "Achieve IELTS Band 7+ with NITAQ ACADEMY's expert-led preparation course in Sharjah. Flexible batches, mock tests & proven strategies for Academic and General modules.",
-    ogImage: "/images/og/ielts-course.webp",
+    ogImage: "/images/ielts_v2.webp",
     twitterCard: "summary_large_image",
     courseSchema: {
         name: 'IELTS Preparation Course Sharjah',
@@ -387,7 +387,7 @@ export const seoRoutes = [
     canonical: "https://www.nitaqacademy.com/gmat-preparation",
     ogTitle: "GMAT Preparation Course Sharjah | MBA Exam Coaching UAE | NITAQ ACADEMY",
     ogDescription: "Master the GMAT with NITAQ ACADEMY's expert coaching in Sharjah. 10 mock tests, Quant, Verbal & AWA training for top MBA admission. SPEA Authorized. Online & offline GMAT prep UAE.",
-    ogImage: "/images/og/gmat-preparation.webp",
+    ogImage: "/images/gmat_gre_v2.webp",
     twitterCard: "summary_large_image",
     courseSchema: {
         name: 'GMAT Preparation Course Sharjah',
@@ -436,7 +436,7 @@ export const seoRoutes = [
     canonical: "https://www.nitaqacademy.com/gre-preparation",
     ogTitle: "GRE Preparation Course Sharjah | Graduate School Coaching UAE | NITAQ ACADEMY",
     ogDescription: "Score high on the GRE with NITAQ ACADEMY's expert coaching in Sharjah. 10 mock tests, Quant, Verbal & AWA training. SPEA Authorized. Online & offline GRE prep UAE.",
-    ogImage: "/images/og/gre-preparation.webp",
+    ogImage: "/images/gmat_gre_v2.webp",
     twitterCard: "summary_large_image",
     courseSchema: {
         name: 'GRE Preparation Course Sharjah',
@@ -538,7 +538,7 @@ export const seoRoutes = [
     canonical: "https://www.nitaqacademy.com/sales-negotiations",
     ogTitle: "Sales & Negotiations Training Sharjah | Business Skills UAE | NITAQ ACADEMY",
     ogDescription: "Sales and negotiations training at NITAQ ACADEMY Sharjah. Master persuasion, deal-closing, and negotiation strategies for business success. Online & offline batches UAE.",
-    ogImage: "/images/og/sat-preparation-sharjah.webp",
+    ogImage: "/images/sales_v2.webp",
     twitterCard: "summary_large_image",
     courseSchema: {
         name: 'Sales & Negotiations Training Sharjah',
@@ -626,7 +626,7 @@ export const seoRoutes = [
     canonical: "https://www.nitaqacademy.com/cpa-course",
     ogTitle: "CPA Course Sharjah | Certified Public Accountant Training UAE | NITAQ ACADEMY",
     ogDescription: "CPA (Certified Public Accountant) preparation at NITAQ ACADEMY Sharjah. Expert AICPA CPA exam coaching with comprehensive practice materials. SPEA Authorized.",
-    ogImage: "/images/og/cpa-course.webp",
+    ogImage: "/images/cpa_v2.webp",
     twitterCard: "summary_large_image",
     courseSchema: {
         name: 'CPA Preparation Course Sharjah',
@@ -670,7 +670,7 @@ export const seoRoutes = [
     canonical: "https://www.nitaqacademy.com/pte-course",
     ogTitle: "PTE Academic Preparation Course Sharjah | PTE Coaching UAE | NITAQ ACADEMY",
     ogDescription: "Score high on PTE Academic with NITAQ ACADEMY coaching in Sharjah. Comprehensive Speaking, Writing, Reading & Listening preparation. Online & offline batches. SPEA Authorized.",
-    ogImage: "/images/og/pte-course.webp",
+    ogImage: "/images/pte_v2.webp",
     twitterCard: "summary_large_image",
     courseSchema: {
         name: 'PTE Academic Preparation Course Sharjah',
@@ -758,7 +758,7 @@ export const seoRoutes = [
     canonical: "https://www.nitaqacademy.com/ai-course",
     ogTitle: "AI & Technology Course Sharjah | Artificial Intelligence Training UAE | Nitaq",
     ogDescription: "Master AI and technology at NITAQ ACADEMY Sharjah. Machine learning, data science, Python & professional AI certification training. Flexible online & offline batches UAE.",
-    ogImage: "/images/og/ai-course.webp",
+    ogImage: "/images/ai_v2.webp",
     twitterCard: "summary_large_image",
     courseSchema: {
         name: 'AI & Technology Course Sharjah',
@@ -802,7 +802,7 @@ export const seoRoutes = [
     canonical: "https://www.nitaqacademy.com/cybersecurity-course-sharjah",
     ogTitle: "Cybersecurity Course Sharjah | Ethical Hacking UAE | Nitaq",
     ogDescription: "Learn ethical hacking and cybersecurity in Sharjah. CyberShield program for beginners. Master Kali Linux, Metasploit, Wireshark. Online & offline batches near me.",
-    ogImage: "/images/cybersecurity_v2.png",
+    ogImage: "/images/cybersecurity_v2.webp",
     twitterCard: "summary_large_image",
     courseSchema: {
         name: 'Cybersecurity Foundations & Ethical Hacking Program',
@@ -934,7 +934,7 @@ export const seoRoutes = [
     canonical: "https://www.nitaqacademy.com/cpcd-courses",
     ogTitle: "CPCD Course Sharjah | Professional CP Training UAE | NITAQ ACADEMY",
     ogDescription: "CPCD professional certification training at NITAQ ACADEMY Sharjah. Expert coaching for CPCD exams. Online & offline batches available UAE. SPEA Authorized.",
-    ogImage: "/images/og/cpcd-courses.webp",
+    ogImage: "/images/cpcd_v2.webp",
     twitterCard: "summary_large_image",
     courseSchema: {
         name: 'CPCD Professional Course Sharjah',
@@ -978,7 +978,7 @@ export const seoRoutes = [
     canonical: "https://www.nitaqacademy.com/hrm-courses",
     ogTitle: "HRM Course Sharjah | Human Resource Management Training UAE | NITAQ ACADEMY",
     ogDescription: "Human Resource Management (HRM) training at NITAQ ACADEMY Sharjah. Practical HR skills for professionals. Online & offline batches UAE. SPEA Authorized.",
-    ogImage: "/images/og/hrm-courses.webp",
+    ogImage: "/images/hrm_v2.webp",
     twitterCard: "summary_large_image",
     courseSchema: {
         name: 'Human Resource Management Course Sharjah',
@@ -1022,7 +1022,7 @@ export const seoRoutes = [
     canonical: "https://www.nitaqacademy.com/french",
     ogTitle: "French Language Course Sharjah | DELF/DALF Preparation UAE | NITAQ ACADEMY",
     ogDescription: "Learn French at all levels (A1–C2) at NITAQ ACADEMY Sharjah. DELF/DALF exam prep, immersive teaching, flexible online & offline batches. CEFR-aligned curriculum. SPEA Authorized.",
-    ogImage: "/images/og/french.webp",
+    ogImage: "/images/french_lang_v2.webp",
     twitterCard: "summary_large_image",
     courseSchema: {
         name: 'French Language Course Sharjah',
@@ -1066,7 +1066,7 @@ export const seoRoutes = [
     canonical: "https://www.nitaqacademy.com/chrm",
     ogTitle: "CHRM Course Sharjah | Certified HR Manager Training UAE | NITAQ ACADEMY",
     ogDescription: "CHRM (Certified HR Manager) preparation at NITAQ ACADEMY Sharjah. Build strategic HR leadership skills with our expert-led CHRM coaching. Online & offline batches UAE.",
-    ogImage: "/images/og/chrm.webp",
+    ogImage: "/images/CHRM.webp",
     twitterCard: "summary_large_image",
     courseSchema: {
         name: 'CHRM - Certified HR Manager Course Sharjah',
@@ -1198,7 +1198,7 @@ export const seoRoutes = [
     canonical: "https://www.nitaqacademy.com/cma-course",
     ogTitle: "CMA Course Sharjah | Certified Management Accountant Coaching UAE | Nitaq",
     ogDescription: "CMA (Certified Management Accountant) preparation at NITAQ ACADEMY Sharjah. Expert IMA CMA exam coaching. SPEA Authorized. Online & offline batches available UAE.",
-    ogImage: "/images/og/cma-course.webp",
+    ogImage: "/images/cma_cpa_v2.webp",
     twitterCard: "summary_large_image",
     courseSchema: {
         name: 'CMA Preparation Course Sharjah',
@@ -1242,7 +1242,7 @@ export const seoRoutes = [
     canonical: "https://www.nitaqacademy.com/acca-course",
     ogTitle: "ACCA Course Sharjah | Chartered Accountant Coaching UAE | NITAQ ACADEMY",
     ogDescription: "ACCA qualification coaching in Sharjah at NITAQ ACADEMY. Expert tutors for all levels — Applied Knowledge, Skills & Strategic Professional. SPEA Authorized. Online & offline.",
-    ogImage: "/images/og/acca-course.webp",
+    ogImage: "/images/acca_v2.webp",
     twitterCard: "summary_large_image",
     courseSchema: {
         name: 'ACCA Preparation Course Sharjah',
@@ -1330,7 +1330,7 @@ export const seoRoutes = [
     canonical: "https://www.nitaqacademy.com/spanish",
     ogTitle: "Spanish Language Course Sharjah | DELE Preparation UAE | NITAQ ACADEMY",
     ogDescription: "Learn Spanish (A1–C2) at NITAQ ACADEMY Sharjah. DELE exam prep, immersive teaching, flexible online & offline batches. CEFR-aligned curriculum. SPEA Authorized.",
-    ogImage: "/images/og/spanish.webp",
+    ogImage: "/images/spanish_lang_v2.webp",
     twitterCard: "summary_large_image",
     courseSchema: {
         name: 'Spanish Language Course Sharjah',
@@ -1374,7 +1374,7 @@ export const seoRoutes = [
     canonical: "https://www.nitaqacademy.com/finance-courses",
     ogTitle: "Finance Courses Sharjah | ACCA, CMA, CPA | NITAQ ACADEMY",
     ogDescription: "Explore top professional finance certifications at NITAQ ACADEMY Sharjah. We offer expert coaching for ACCA, CMA, and CPA passing guarantee.",
-    ogImage: "/images/og/finance-courses.webp",
+    ogImage: "/images/Finance-course.webp",
     twitterCard: "summary_large_image",
     courseSchema: null,
     faqSchema: null
@@ -1510,7 +1510,7 @@ export const seoRoutes = [
     canonical: "https://www.nitaqacademy.com/german",
     ogTitle: "German Language Course Sharjah | Goethe/TestDaF Prep UAE | NITAQ ACADEMY",
     ogDescription: "Learn German (A1–C2) at NITAQ ACADEMY Sharjah. Goethe/TestDaF exam prep, immersive teaching, flexible online & offline batches. CEFR-aligned curriculum. SPEA Authorized.",
-    ogImage: "/images/og/german.webp",
+    ogImage: "/images/german_lang_v2.webp",
     twitterCard: "summary_large_image",
     courseSchema: {
         name: 'German Language Course Sharjah',
@@ -1614,7 +1614,7 @@ export const seoRoutes = [
     canonical: "https://www.nitaqacademy.com/article/choose-right-course-uae",
     ogTitle: "How to Choose the Right Course in UAE for Your Career Goals | NITAQ ACADEMY",
     ogDescription: "Unsure which professional course to take? Use our expert guide to align your skills with the UAE job market and choose the right certification for career success.",
-    ogImage: "/images/og/article/choose-right-course-uae.webp",
+    ogImage: "/images/article-future-skills-uae.webp",
     twitterCard: "summary_large_image",
     courseSchema: null,
     faqSchema: null
@@ -1650,7 +1650,7 @@ export const seoRoutes = [
     canonical: "https://www.nitaqacademy.com/article/ai-courses-sharjah-essential",
     ogTitle: "AI Courses in Sharjah: Why Learning AI Is Essential in 2026 | NITAQ ACADEMY",
     ogDescription: "Discover why AI literacy is the most critical skill for 2026. Learn about the best AI courses in Sharjah and how Artificial Intelligence is transforming the UAE job market.",
-    ogImage: "/images/og/article/ai-courses-sharjah-essential.webp",
+    ogImage: "/images/ai_v2.webp",
     twitterCard: "summary_large_image",
     courseSchema: null,
     faqSchema: null
@@ -1674,7 +1674,7 @@ export const seoRoutes = [
     canonical: "https://www.nitaqacademy.com/article/professional-courses-sharjah-growth",
     ogTitle: "Why Professional Courses in Sharjah Are Important for Career Growth | NITAQ ACADEMY",
     ogDescription: "Discover how professional courses in Sharjah can accelerate your career in the competitive UAE market. Learn about the most in-demand skills and certifications.",
-    ogImage: "/images/og/article/professional-courses-sharjah-growth.webp",
+    ogImage: "/images/course-corporate.webp",
     twitterCard: "summary_large_image",
     courseSchema: null,
     faqSchema: null
@@ -1871,7 +1871,7 @@ export const seoRoutes = [
     canonical: "https://www.nitaqacademy.com/courses/professional-digital-marketing-course-sharjah-uae",
     ogTitle: "Digital Marketing Course in Sharjah | NITAQ Academy",
     ogDescription: "Become a certified marketer with the best Digital Marketing Course in Sharjah. Practical training in SEO, Google Ads, Meta Ads & AI. Enroll at NITAQ today!",
-    ogImage: "/images/digital_marketing_v2.png",
+    ogImage: "/images/digital_marketing_v2.webp",
     twitterCard: "summary_large_image",
     courseSchema: {
         name: "Professional Digital Marketing Course in Sharjah, UAE",
@@ -2017,9 +2017,158 @@ export const seoRoutes = [
         answer: "A comprehensive digital marketing course generally spans between 8 to 12 weeks of structured learning. However, mastering the industry is an ongoing process as tools, algorithms, and AI technologies constantly evolve, requiring continuous learning and hands-on practice."
       }
     ]
+  },
+  {
+    path: "/article/digital-marketing-seo-guide-uae",
+    title: "Digital Marketing & SEO Guide for the UAE 2026 | NITAQ ACADEMY",
+    description: "A practical guide to digital marketing and SEO in the UAE: how search works, what skills employers want, and how to build a career in Sharjah and Dubai.",
+    canonical: "https://www.nitaqacademy.com/article/digital-marketing-seo-guide-uae",
+    ogTitle: "Digital Marketing & SEO Guide for the UAE 2026",
+    ogDescription: "How search works, what skills UAE employers want, and how to start a digital marketing career in Sharjah and Dubai.",
+    ogImage: "/images/course-marketing.webp",
+    twitterCard: "summary_large_image",
+    courseSchema: null,
+    faqSchema: null
+  },
+  {
+    path: "/article/best-digital-marketing-course-uae",
+    title: "Best Digital Marketing Course in the UAE 2026 | NITAQ ACADEMY",
+    description: "Compare the best digital marketing courses in the UAE: curriculum, certifications from Google and Meta, fees, and what to look for before you enrol.",
+    canonical: "https://www.nitaqacademy.com/article/best-digital-marketing-course-uae",
+    ogTitle: "Best Digital Marketing Course in the UAE 2026",
+    ogDescription: "Curriculum, Google & Meta certifications, fees, and what to check before enrolling in a UAE digital marketing course.",
+    ogImage: "/images/course-marketing.webp",
+    twitterCard: "summary_large_image",
+    courseSchema: null,
+    faqSchema: null
+  },
+  {
+    path: "/article/professional-digital-marketing-course-overview",
+    title: "Professional Digital Marketing Course Overview | NITAQ ACADEMY",
+    description: "An overview of NITAQ ACADEMY's professional digital marketing course in Sharjah: modules, hands-on projects, industry certifications, and career outcomes.",
+    canonical: "https://www.nitaqacademy.com/article/professional-digital-marketing-course-overview",
+    ogTitle: "Professional Digital Marketing Course Overview",
+    ogDescription: "Modules, hands-on projects, industry certifications, and career outcomes of NITAQ ACADEMY's digital marketing program.",
+    ogImage: "/images/digital_marketing_v2.webp",
+    twitterCard: "summary_large_image",
+    courseSchema: null,
+    faqSchema: null
+  },
+  {
+    path: "/webinar/ai",
+    title: "Free AI Webinar | Live Online Session | NITAQ ACADEMY Sharjah",
+    description: "Join NITAQ ACADEMY's free live AI webinar: discover practical AI tools for work and study, every Sunday 7:30 PM UAE time. Register your seat now.",
+    canonical: "https://www.nitaqacademy.com/webinar/ai",
+    ogTitle: "Free AI Webinar — Live Online Session",
+    ogDescription: "Practical AI tools for work and study. Live every Sunday 7:30 PM UAE. Free registration.",
+    ogImage: "/images/ai-webinar-popup.jpeg",
+    twitterCard: "summary_large_image",
+    courseSchema: null,
+    faqSchema: null
+  },
+  {
+    path: "/webinar/ai/thank-you",
+    title: "Registration Confirmed | AI Webinar | NITAQ ACADEMY",
+    description: "Your seat for the NITAQ ACADEMY AI webinar is confirmed. Check your email for joining details.",
+    canonical: "https://www.nitaqacademy.com/webinar/ai/thank-you",
+    ogImage: "/images/ai-webinar-popup.jpeg",
+    twitterCard: "summary",
+    courseSchema: null,
+    faqSchema: null
+  },
+  {
+    path: "/webinar/counselors",
+    title: "School Counselors Orientation | NITAQ ACADEMY Sharjah",
+    description: "An orientation session for school counselors: how NITAQ ACADEMY supports students with SAT, IELTS and academic programs in Sharjah. Register to attend.",
+    canonical: "https://www.nitaqacademy.com/webinar/counselors",
+    ogImage: "/images/logo1.webp",
+    twitterCard: "summary_large_image",
+    courseSchema: null,
+    faqSchema: null
+  },
+  {
+    path: "/webinar/counselors/thank-you",
+    title: "Registration Confirmed | Counselors Orientation | NITAQ ACADEMY",
+    description: "Your registration for the NITAQ ACADEMY counselors orientation is confirmed. Check your email for details.",
+    canonical: "https://www.nitaqacademy.com/webinar/counselors/thank-you",
+    ogImage: "/images/logo1.webp",
+    twitterCard: "summary",
+    courseSchema: null,
+    faqSchema: null
   }
 ];
 
-export const getSeoRoute = (path) => {
-  return seoRoutes.find(r => r.path === path) || null;
+/**
+ * Look up SEO data for a language-neutral path.
+ * Pass lang='ar' to overlay an entry's optional `ar` block (Arabic title/
+ * description/OG copy) on top of the English base; fields without an Arabic
+ * override keep the English value.
+ */
+export const getSeoRoute = (path, lang = 'en') => {
+  const route = seoRoutes.find(r => r.path === path);
+  if (!route) return null;
+  if (lang === 'ar' && route.ar) {
+    return { ...route, ...route.ar };
+  }
+  return route;
 };
+
+/**
+ * Arabic meta overlays, kept separate from the entries above so the large
+ * English data block stays untouched. Attached onto seoRoutes at load time.
+ */
+const arabicSeo = {
+  '/': {
+    title: 'أكاديمية نطاق الشارقة | دورات IELTS وACCA والذكاء الاصطناعي واللغات',
+    description: 'أكاديمية تدريب رائدة في الشارقة تقدم دورات IELTS وTOEFL وACCA وCMA والذكاء الاصطناعي واللغات. مدربون خبراء ومواعيد مرنة. سجّل اليوم في أكاديمية نطاق.',
+    ogTitle: 'أكاديمية نطاق الشارقة | دورات IELTS وACCA والذكاء الاصطناعي واللغات',
+    ogDescription: 'أكاديمية تدريب رائدة في الشارقة: اختبارات دولية، شهادات مهنية، لغات. مدربون خبراء ومواعيد مرنة.',
+  },
+  '/about': {
+    title: 'عن أكاديمية نطاق | مركز تدريب رائد في الشارقة',
+    description: 'تعرّف على رسالة أكاديمية نطاق في تمكين المهنيين والطلاب في الشارقة من خلال تعليم عالمي المستوى وشهادات معتمدة.',
+    ogTitle: 'عن أكاديمية نطاق | مركز تدريب رائد في الشارقة',
+    ogDescription: 'تعليم عالمي المستوى وشهادات معتمدة للمهنيين والطلاب في الشارقة.',
+  },
+  '/contact': {
+    title: 'تواصل مع أكاديمية نطاق الشارقة | اتصل بنا',
+    description: 'تواصل مع أكاديمية نطاق في الشارقة: استفسارات الدورات والتسجيل والمواعيد. هاتف +971 6 579 8313 أو زُر مقرنا في المجاز 3.',
+  },
+  '/courses': {
+    title: 'جميع الدورات | أكاديمية نطاق الشارقة',
+    description: 'تصفح جميع دورات أكاديمية نطاق في الشارقة: التحضير للاختبارات الدولية، الشهادات المهنية، اللغات، والتدريب المؤسسي.',
+  },
+  '/test-preparations': {
+    title: 'دورات التحضير للاختبارات في الشارقة | SAT وIELTS وGMAT | أكاديمية نطاق',
+    description: 'دورات تحضيرية متخصصة لاختبارات SAT وIELTS وTOEFL وPTE وGMAT وGRE في الشارقة مع مدربين خبراء ونتائج مضمونة.',
+  },
+  '/professional-certifications': {
+    title: 'الشهادات المهنية في الشارقة | ACCA وCMA والذكاء الاصطناعي | أكاديمية نطاق',
+    description: 'احصل على شهادات مهنية معتمدة عالمياً في الشارقة: ACCA وCMA وCPA والذكاء الاصطناعي والتسويق الرقمي وإدارة الموارد البشرية.',
+  },
+  '/language-trainings': {
+    title: 'دورات اللغات في الشارقة | الإنجليزية والعربية والفرنسية | أكاديمية نطاق',
+    description: 'تعلّم لغة جديدة في الشارقة: الإنجليزية المحادثة، العربية، الفرنسية، الألمانية، والإسبانية مع مدربين متخصصين.',
+  },
+  '/corporate-trainings': {
+    title: 'التدريب المؤسسي في الشارقة والإمارات | أكاديمية نطاق',
+    description: 'حلول تدريب مؤسسي مصممة خصيصاً للشركات في الإمارات لتطوير مهارات فرق العمل ورفع الأداء المؤسسي.',
+  },
+  '/ielts-course': {
+    title: 'دورة IELTS في الشارقة | ضمان بند 7+ | أكاديمية نطاق',
+    description: 'دورة تحضيرية لاختبار IELTS في الشارقة بقسميه الأكاديمي والعام: خطط دراسية مخصصة واختبارات تجريبية أسبوعية مع مدربين خبراء.',
+  },
+  '/sat-preparation-sharjah': {
+    title: 'دورة SAT في الشارقة | تدريب متخصص لدرجات أعلى | أكاديمية نطاق',
+    description: 'التحضير لاختبار SAT في الشارقة: استراتيجيات مثبتة، اختبارات محاكاة، ومتابعة فردية لتحقيق 1300+ ودخول أفضل الجامعات.',
+  },
+  '/ai-course': {
+    title: 'دورة الذكاء الاصطناعي في الشارقة | من الأساسيات إلى الاحتراف | أكاديمية نطاق',
+    description: 'أتقن أدوات الذكاء الاصطناعي عملياً في الشارقة: من الأساسيات إلى التطبيقات المتقدمة للعمل والدراسة، مع شهادة معتمدة.',
+  },
+};
+
+for (const [path, ar] of Object.entries(arabicSeo)) {
+  const route = seoRoutes.find(r => r.path === path);
+  if (route) route.ar = ar;
+}

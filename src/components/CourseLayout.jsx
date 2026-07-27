@@ -1,8 +1,7 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from '../i18n/Link';
 import { trackEvent, ANALYTICS_EVENTS } from '../utils/analytics';
 
 const CourseLayout = ({ title, subtitle, infoData, children }) => {
-    const location = useLocation();
     return (
         <main>
             {/* Page Hero */}

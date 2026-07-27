@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from '../../i18n/Link';
 import SEO from '../../components/SEO';
 import { 
     Calendar, User, Clock, ChevronRight, CheckCircle2, 
@@ -136,7 +136,7 @@ const HowToChooseBestDigitalMarketingInstitute = () => {
                     {/* Featured Image */}
                     <div className="article-featured-img premium-shadow">
                         <img 
-                            src="/images/digital_marketing_overview.png" 
+                            src="/images/digital_marketing_overview.webp" 
                             alt="Choosing the best digital marketing course and training institute in Sharjah, Dubai, and the UAE" 
                         />
                     </div>

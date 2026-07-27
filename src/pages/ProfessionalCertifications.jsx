@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from '../i18n/Link';
 import SEO from '../components/SEO';
 import { trackEvent, ANALYTICS_EVENTS } from '../utils/analytics';
 
@@ -94,7 +94,7 @@ const ProfessionalCertifications = () => {
 
                         <div className="listing-card">
                             <div className="listing-card-img">
-                                <img src="/images/cybersecurity_v2.png" alt="Cybersecurity Course" loading="lazy" />
+                                <img src="/images/cybersecurity_v2.webp" alt="Cybersecurity Course" loading="lazy" />
                             </div>
                             <div className="listing-card-body">
                                 <h3>Cybersecurity & Ethical Hacking</h3>
@@ -159,7 +159,7 @@ const ProfessionalCertifications = () => {
 
                         <div className="listing-card">
                             <div className="listing-card-img">
-                                <img src="/images/digital_marketing_v2.png" alt="Digital Marketing" loading="lazy" />
+                                <img src="/images/digital_marketing_v2.webp" alt="Digital Marketing" loading="lazy" />
                             </div>
                             <div className="listing-card-body">
                                 <h3>Professional Digital Marketing Course</h3>

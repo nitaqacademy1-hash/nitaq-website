@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from '../../i18n/Link';
 import CourseLayout from '../../components/CourseLayout';
 import WhyNitaq from '../../components/WhyNitaq';
 import SEO from '../../components/SEO';

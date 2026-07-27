@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
-import { getSeoRoute, seoRoutes } from '../seo-routes';
+import { getSeoRoute } from '../seo-routes';
+import { LANGUAGES, langFromPath, stripLangPrefix, localizePath } from '../i18n/config';
 
 /**
  * SEO component with full structured data support.
@@ -10,8 +11,14 @@ const SEO = () => {
   const location = useLocation();
   const siteUrl = 'https://www.nitaqacademy.com';
 
+  // SEO copy lives under language-neutral paths, so /ar/about reuses /about's
+  // entry. Canonicals and hreflang below re-add the prefix.
+  const lang = langFromPath(location.pathname);
+  const basePath = stripLangPrefix(location.pathname);
+  const localeMeta = LANGUAGES[lang];
+
   // Find SEO data from central directory, or fallback to generic defaults
-  const routeData = getSeoRoute(location.pathname) || {
+  const routeData = getSeoRoute(basePath, lang) || {
     title: "NITAQ ACADEMY Sharjah | IELTS, ACCA, AI & Language Courses",
     description: "Top-rated training academy in Sharjah offering IELTS, TOEFL, ACCA, CMA, AI & language courses.",
     canonical: `${siteUrl}${location.pathname}`,
@@ -25,7 +32,13 @@ const SEO = () => {
     faqSchema: null
   };
 
-  const fullUrl = routeData.canonical || `${siteUrl}${location.pathname}`;
+  // The stored canonical is the English URL; Arabic pages canonicalise to
+  // their own /ar/... URL and the two point at each other via hreflang.
+  const fullUrl = `${siteUrl}${localizePath(basePath, lang)}`;
+  const alternates = Object.values(LANGUAGES).map((l) => ({
+    hrefLang: l.code,
+    href: `${siteUrl}${localizePath(basePath, l.code)}`,
+  }));
   const ogImageUrl = routeData.ogImage.startsWith('http') ? routeData.ogImage : `${siteUrl}${routeData.ogImage}`;
 
   // Organization ID for linking
@@ -90,17 +103,15 @@ const SEO = () => {
   schemas.push(organizationSchema);
 
   // 2. WebSite (no @context)
+  // Note: no SearchAction — the site has no search results page, and
+  // advertising one (`/course?q=`) pointed crawlers at a phantom URL.
   schemas.push({
     "@type": "WebSite",
     "@id": `${siteUrl}/#website`,
     "url": siteUrl,
     "name": "NITAQ ACADEMY",
     "publisher": { "@id": orgId },
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": `${siteUrl}/course?q={search_term_string}`,
-      "query-input": "required name=search_term_string"
-    }
+    "inLanguage": [lang === 'ar' ? 'ar' : 'en', lang === 'ar' ? 'en' : 'ar']
   });
 
   // 3. Breadcrumbs (no @context)
@@ -142,9 +153,6 @@ const SEO = () => {
     const courseDescription = (cs.description && cs.description.trim())
       || (routeData.description && routeData.description.trim())
       || 'Professional training course offered by NITAQ ACADEMY in Sharjah, UAE.';
-
-    // Explicit courseMode array or fallback string
-    const courseMode = Array.isArray(cs.mode) ? cs.mode : (cs.mode ? [cs.mode] : ['Onsite', 'Online']);
 
     schemas.push({
       '@type': 'Course',
@@ -270,17 +278,29 @@ const SEO = () => {
   }
 
   return (
-    <Helmet>
+    <Helmet htmlAttributes={{ lang: localeMeta.code, dir: localeMeta.dir }}>
       {/* Search Engine Meta Tags */}
       <title>{routeData.title}</title>
       <meta name="description" content={routeData.description} />
       <link rel="canonical" href={fullUrl} />
+
+      {/* Language alternates so each locale is indexed on its own URL */}
+      {alternates.map((alt) => (
+        <link key={alt.hrefLang} rel="alternate" hrefLang={alt.hrefLang} href={alt.href} />
+      ))}
+      <link rel="alternate" hrefLang="x-default" href={`${siteUrl}${localizePath(basePath, 'en')}`} />
 
       {/* Social Media (OG/Twitter) Meta Tags */}
       <meta property="og:url" content={fullUrl} />
       <meta property="og:title" content={routeData.ogTitle || routeData.title} />
       <meta property="og:description" content={routeData.ogDescription || routeData.description} />
       <meta property="og:type" content="website" />
+      <meta property="og:locale" content={localeMeta.ogLocale} />
+      {Object.values(LANGUAGES)
+        .filter((l) => l.code !== lang)
+        .map((l) => (
+          <meta key={l.code} property="og:locale:alternate" content={l.ogLocale} />
+        ))}
       <meta property="og:image" content={ogImageUrl} />
       <meta name="twitter:card" content={routeData.twitterCard || "summary_large_image"} />
       <meta name="twitter:title" content={routeData.ogTitle || routeData.title} />

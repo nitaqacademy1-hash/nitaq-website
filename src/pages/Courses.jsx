@@ -1,5 +1,5 @@
-import React, { useRef } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { Link } from '../i18n/Link';
 import SEO from '../components/SEO';
 
 const Courses = () => {

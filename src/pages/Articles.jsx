@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from '../i18n/Link';
 import SEO from '../components/SEO';
 import { Calendar, User, ArrowRight, ExternalLink, Filter, Search } from 'lucide-react';
 
@@ -13,7 +13,7 @@ const articles = [
         coursePath: "/courses/professional-digital-marketing-course-sharjah-uae",
         courseLabel: "Digital Marketing Course",
         date: "July 22, 2026",
-        image: "/images/digital_marketing_overview.png"
+        image: "/images/digital_marketing_overview.webp"
     },
     {
         id: 20,
@@ -104,7 +104,7 @@ const articles = [
         coursePath: "/contact",
         courseLabel: "Get Advisor",
         date: "May 15, 2026",
-        image: "/images/hero_new_1.png"
+        image: "/images/hero_new_1.webp"
     },
     {
         id: 12,

@@ -177,8 +177,7 @@ header.scrolled {
 }
 
 .nav-links a,
-.nav-links .dropbtn,
-.nav-links .lang-switcher {
+.nav-links .dropbtn {
     font-weight: 500;
     color: #334155;
     font-size: 0.95rem;
@@ -192,14 +191,12 @@ header.scrolled {
 .nav-links a:hover,
 .nav-links a.active,
 .nav-links .dropdown:hover .dropbtn,
-.nav-links .dropbtn.active,
-.nav-links .lang-switcher:hover {
+.nav-links .dropbtn.active {
     color: var(--primary-color);
 }
 
 .nav-links a::after,
-.nav-links .dropbtn::after,
-.nav-links .lang-switcher::after {
+.nav-links .dropbtn::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -213,8 +210,7 @@ header.scrolled {
 .nav-links a:hover::after,
 .nav-links a.active::after,
 .nav-links .dropdown:hover .dropbtn::after,
-.nav-links .dropbtn.active::after,
-.nav-links .lang-switcher:hover::after {
+.nav-links .dropbtn.active::after {
     width: 100%;
 }
 
@@ -743,6 +739,10 @@ header.scrolled {
     border-radius: 50%;
     cursor: pointer;
     transition: all 0.3s ease;
+    /* dots are now real <button>s for keyboard access — flatten the chrome */
+    border: none;
+    padding: 0;
+    appearance: none;
 }
 
 .dot.active {
@@ -1491,14 +1491,14 @@ header.scrolled {
     margin-bottom: 60px;
 }
 
-.feature-block.reverse {
-    direction: rtl;
-    /* Trick to swap columns */
+/* Swap the two columns without touching text direction, so this keeps
+   working when the whole document flips to RTL for Arabic. */
+.feature-block.reverse> :first-child {
+    order: 2;
 }
 
-.feature-block.reverse .feature-content {
-    direction: ltr;
-    /* Reset text direction */
+.feature-block.reverse> :last-child {
+    order: 1;
 }
 
 .feature-content h2 {
@@ -2094,18 +2094,6 @@ header.scrolled {
 }
 
 
-/* Language Switcher Link unified with nav-links */
-
-/* Mobile Language Switcher Styles */
-@media (max-width: 968px) {
-    .lang-switcher {
-        margin: 10px auto;
-        /* Center in mobile menu */
-        display: flex;
-        width: fit-content;
-    }
-}
-
 /* --- RTL Support --- */
 html[dir="rtl"] {
     direction: rtl;
@@ -2114,6 +2102,20 @@ html[dir="rtl"] {
 
 html[dir="rtl"] body {
     text-align: right;
+}
+
+/* Poppins and Inter ship no Arabic glyphs, so Arabic would otherwise fall
+   back to an arbitrary system face. Cairo covers both scripts. */
+html[lang="ar"] {
+    --font-heading: 'Cairo', 'Segoe UI', sans-serif;
+    --font-body: 'Cairo', 'Segoe UI', sans-serif;
+}
+
+/* Latin runs inside Arabic copy (IELTS, SAT, ACCA, phone numbers) must stay LTR */
+html[dir="rtl"] .ltr-inline {
+    direction: ltr;
+    display: inline-block;
+    unicode-bidi: isolate;
 }
 
 /* Flip arrows in RTL */
@@ -2140,10 +2142,10 @@ html[dir="rtl"] .nav-links a {
     text-align: right;
 }
 
-/* Header & Nav in RTL */
-html[dir="rtl"] .lang-switcher {
-    margin-left: 0;
-    margin-right: 20px;
+/* Submenus fly out mirrored in RTL (they default to opening rightward) */
+html[dir="rtl"] .submenu-content {
+    left: auto;
+    right: 100%;
 }
 
 /* Inputs & Forms RTL */
@@ -2166,47 +2168,6 @@ html[dir="rtl"] select {
         margin-left: 0;
         order: -1;
         /* Might need flex order adjustment if it's in a flex container */
-    }
-}
-
-/* Language Loader Overlay */
-#lang-loader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: white;
-    z-index: 99999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-
-#lang-loader.active {
-    opacity: 1;
-    visibility: visible;
-}
-
-.loader-spinner {
-    width: 50px;
-    height: 50px;
-    border: 5px solid rgba(46, 125, 50, 0.1);
-    border-top: 5px solid var(--primary-color);
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
     }
 }
 
@@ -4119,33 +4080,7 @@ details.faq-accordion[open] summary::after {
     }
 }
 
-/* ─── GOOGLE TRANSLATE OVERRIDES & RTL ────────────────── */
-.goog-te-banner-frame.skiptranslate {
-    display: none !important;
-}
-body {
-    top: 0px !important;
-}
-#goog-gt-tt {
-    display: none !important;
-}
-.goog-tooltip {
-    display: none !important;
-}
-.goog-tooltip:hover {
-    display: none !important;
-}
-.goog-text-highlight {
-    background-color: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-}
-
 /* RTL Layout handling when Arabic is active */
-html[dir="rtl"] {
-    direction: rtl;
-    text-align: right;
-}
 html[dir="rtl"] .arrow-right {
     transform: scaleX(-1);
     display: inline-block;

@@ -35,32 +35,48 @@ const ContactForm = ({ mode = 'contact' }) => {
             params.append('timestamp', new Date().toISOString());
             params.append('form_type', mode);
 
-            // Note: Google Apps Script CORS can be tricky. Often simple POST works.
-            // If you face CORS issues, you might need to use 'no-cors' mode, 
-            // but then you won't get a response body.
-            const response = await fetch(SCRIPT_URL, {
-                method: 'POST',
-                body: params,
-                mode: 'no-cors' // This is common for Google Apps Script to avoid preflight issues
-            });
+            // A URLSearchParams POST is a "simple request" (no preflight), and a
+            // publicly-deployed Apps Script answers it with CORS headers, so we
+            // can actually read the outcome. Only if the browser refuses the
+            // CORS read (TypeError) do we fall back to an opaque no-cors send —
+            // the pre-fix behavior — since the request itself still goes
+            // through in that case.
+            let delivered = false;
+            try {
+                const response = await fetch(SCRIPT_URL, { method: 'POST', body: params });
+                if (!response.ok) {
+                    throw new Error(`Apps Script responded ${response.status}`);
+                }
+                delivered = true;
+            } catch (corsError) {
+                if (corsError instanceof TypeError) {
+                    // CORS-blocked read; send blind rather than lose the lead.
+                    await fetch(SCRIPT_URL, { method: 'POST', body: params, mode: 'no-cors' });
+                    delivered = true;
+                } else {
+                    throw corsError; // real server-side failure — surface it
+                }
+            }
 
-            // Since we use no-cors, we assume success if no error is thrown
-            setStatus({ type: 'success', message: 'Thank you! Your message has been sent successfully.' });
-            
-            // Track successful submission
-            trackEvent(ANALYTICS_EVENTS.FORM, `form_submit_${mode}`);
-
-            setFormData({
-                name: '',
-                email: '',
-                phone: '',
-                subject: mode === 'contact' ? '' : 'Course Enquiry',
-                course: '',
-                message: ''
-            });
+            if (delivered) {
+                setStatus({ type: 'success', message: 'Thank you! Your message has been sent successfully.' });
+                trackEvent(ANALYTICS_EVENTS.FORM, `form_submit_${mode}`);
+                setFormData({
+                    name: '',
+                    email: '',
+                    phone: '',
+                    subject: mode === 'contact' ? '' : 'Course Enquiry',
+                    course: '',
+                    message: ''
+                });
+            }
         } catch (error) {
             console.error('Submission error:', error);
-            setStatus({ type: 'error', message: 'Something went wrong. Please try again or contact us directly.' });
+            trackEvent(ANALYTICS_EVENTS.FORM, `form_error_${mode}`);
+            setStatus({
+                type: 'error',
+                message: 'Something went wrong and your message was NOT sent. Please try again, or call us on +971 6 579 8313 / WhatsApp +971 52 756 9908.'
+            });
         } finally {
             setIsSubmitting(false);
         }
@@ -85,8 +101,9 @@ const ContactForm = ({ mode = 'contact' }) => {
             <form onSubmit={handleSubmit} style={{ display: 'grid', gap: '20px' }}>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '20px' }}>
                     <div>
-                        <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, color: '#334155', marginBottom: '8px' }}>Full Name</label>
+                        <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, color: '#334155', marginBottom: '8px' }} htmlFor={`cf-${mode}-name`}>Full Name</label>
                         <input
+                            id={`cf-${mode}-name`}
                             type="text"
                             name="name"
                             value={formData.name}
@@ -97,8 +114,9 @@ const ContactForm = ({ mode = 'contact' }) => {
                         />
                     </div>
                     <div>
-                        <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, color: '#334155', marginBottom: '8px' }}>Email Address</label>
+                        <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, color: '#334155', marginBottom: '8px' }} htmlFor={`cf-${mode}-email`}>Email Address</label>
                         <input
+                            id={`cf-${mode}-email`}
                             type="email"
                             name="email"
                             value={formData.email}
@@ -111,8 +129,9 @@ const ContactForm = ({ mode = 'contact' }) => {
                 </div>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '20px' }}>
                     <div>
-                        <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, color: '#334155', marginBottom: '8px' }}>Phone Number</label>
+                        <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, color: '#334155', marginBottom: '8px' }} htmlFor={`cf-${mode}-phone`}>Phone Number</label>
                         <input
+                            id={`cf-${mode}-phone`}
                             type="tel"
                             name="phone"
                             value={formData.phone}
@@ -124,8 +143,9 @@ const ContactForm = ({ mode = 'contact' }) => {
                     </div>
                     {mode === 'contact' ? (
                         <div>
-                            <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, color: '#334155', marginBottom: '8px' }}>Subject</label>
+                            <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, color: '#334155', marginBottom: '8px' }} htmlFor={`cf-${mode}-subject`}>Subject</label>
                             <input
+                                id={`cf-${mode}-subject`}
                                 type="text"
                                 name="subject"
                                 value={formData.subject}
@@ -137,8 +157,9 @@ const ContactForm = ({ mode = 'contact' }) => {
                         </div>
                     ) : (
                         <div>
-                            <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, color: '#334155', marginBottom: '8px' }}>Course Interested In</label>
+                            <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, color: '#334155', marginBottom: '8px' }} htmlFor={`cf-${mode}-course`}>Course Interested In</label>
                             <select
+                                id={`cf-${mode}-course`}
                                 name="course"
                                 value={formData.course}
                                 onChange={handleChange}
@@ -185,8 +206,9 @@ const ContactForm = ({ mode = 'contact' }) => {
                     )}
                 </div>
                 <div>
-                    <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, color: '#334155', marginBottom: '8px' }}>Your Message</label>
+                    <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, color: '#334155', marginBottom: '8px' }} htmlFor={`cf-${mode}-message`}>Your Message</label>
                     <textarea
+                        id={`cf-${mode}-message`}
                         name="message"
                         value={formData.message}
                         onChange={handleChange}

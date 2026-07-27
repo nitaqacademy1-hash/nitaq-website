@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from '../../i18n/Link';
 import SEO from '../../components/SEO';
 import { 
     Calendar, User, Clock, ChevronRight, XCircle, AlertCircle, 
@@ -75,7 +75,7 @@ const WhyNotHiredUae = () => {
 
                     <div className="article-featured-img premium-shadow">
                         <img 
-                            src="/images/hero_new_1.png" 
+                            src="/images/hero_new_1.webp" 
                             alt="Why you are not getting hired in UAE job market guide" 
                         />
                     </div>

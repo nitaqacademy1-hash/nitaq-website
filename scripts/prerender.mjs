@@ -15,6 +15,7 @@ import { resolve, dirname } from 'path'
 import { fileURLToPath, pathToFileURL } from 'url'
 import { build } from 'vite'
 import { getSeoRoute } from '../src/seo-routes.js'
+import { LANGUAGES, langFromPath, stripLangPrefix, localizePath } from '../src/i18n/config.js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const root = resolve(__dirname, '..')
@@ -24,7 +25,6 @@ const ROUTES = [
   '/about',
   '/contact',
   '/enquiry',
-  '/course',
   '/courses',
   '/articles',
   '/test-preparations',
@@ -98,6 +98,13 @@ const ROUTES = [
   '/webinar/counselors/thank-you'
 ]
 
+// Every English route also ships an Arabic twin at /ar/... so crawlers get a
+// real document per locale instead of the SPA fallback.
+const LOCALIZED_ROUTES = [
+  ...ROUTES,
+  ...ROUTES.map((route) => localizePath(route, 'ar')),
+]
+
 async function prerender() {
   console.log('==========================================')
   console.log('🚀 SSR PRE-RENDERING ENGINE (BROWSER-LESS)')
@@ -141,38 +148,59 @@ async function prerender() {
   let success = 0
   let fail = 0
 
-  for (const url of ROUTES) {
+  for (const url of LOCALIZED_ROUTES) {
     try {
       // 1. Safe layout bundle fallback parsing
       let html = '';
       try {
         const { render } = await import(serverUrl);
-        const rendered = render(url);
+        const rendered = await render(url); // async: static prerender awaits lazy chunks
         html = rendered.html || '';
+        if (!html) {
+          throw new Error('empty render output');
+        }
       } catch (ssrErr) {
-        console.warn(`⚠️ React HTML shell skipped for route [${url}], using clean asset generation format.`);
+        console.warn(`⚠️ React HTML shell skipped for route [${url}]: ${ssrErr.message}`);
       }
 
       // 2. Pure JavaScript Metadata Generation (Bypasses React Crashes entirely)
       const siteUrl = 'https://www.nitaqacademy.com';
-      const routeData = getSeoRoute(url) || {
+
+      // SEO copy is keyed by the language-neutral path, so /ar/about reuses
+      // /about's entry until an Arabic override exists.
+      const lang = langFromPath(url);
+      const basePath = stripLangPrefix(url);
+      const localeMeta = LANGUAGES[lang];
+
+      const routeData = getSeoRoute(basePath, lang) || {
         title: "NITAQ ACADEMY Sharjah | IELTS, ACCA, AI & Language Courses",
         description: "Top-rated training academy in Sharjah offering IELTS, TOEFL, ACCA, CMA, AI & language courses.",
-        canonical: `${siteUrl}${url}`
       };
 
-      const fullUrl = routeData.canonical || `${siteUrl}${url}`;
+      const fullUrl = `${siteUrl}${url}`;
       const ogImageUrl = routeData.ogImage ? (routeData.ogImage.startsWith('http') ? routeData.ogImage : `${siteUrl}${routeData.ogImage}`) : `${siteUrl}/images/logo1.webp`;
+
+      const alternateLinks = Object.values(LANGUAGES)
+        .map((l) => `<link rel="alternate" hreflang="${l.code}" href="${siteUrl}${localizePath(basePath, l.code)}" />`)
+        .join('\n        ');
+      const alternateLocales = Object.values(LANGUAGES)
+        .filter((l) => l.code !== lang)
+        .map((l) => `<meta property="og:locale:alternate" content="${l.ogLocale}" />`)
+        .join('\n        ');
 
       // Build the pristine HTML header block manually
       const generatedHead = `
         <title>${routeData.title}</title>
         <meta name="description" content="${routeData.description}" />
         <link rel="canonical" href="${fullUrl}" />
+        ${alternateLinks}
+        <link rel="alternate" hreflang="x-default" href="${siteUrl}${localizePath(basePath, 'en')}" />
         <meta property="og:url" content="${fullUrl}" />
         <meta property="og:title" content="${routeData.ogTitle || routeData.title}" />
         <meta property="og:description" content="${routeData.ogDescription || routeData.description}" />
         <meta property="og:type" content="website" />
+        <meta property="og:locale" content="${localeMeta.ogLocale}" />
+        ${alternateLocales}
         <meta property="og:image" content="${ogImageUrl}" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="${routeData.ogTitle || routeData.title}" />
@@ -180,9 +208,30 @@ async function prerender() {
         <meta name="twitter:image" content="${ogImageUrl}" />
       `.trim();
 
+      // React 19 renders <title>/<meta>/<link> in place and only hoists them
+      // to <head> on the client, so renderToString leaves them inside #root.
+      // The head built above is authoritative, so drop the inline duplicates —
+      // otherwise every page ships two canonicals and two sets of hreflang.
+      // Resource hints (preload/preconnect/prefetch) are not duplicated by the
+      // head builder, so those are lifted into <head> rather than discarded.
+      let hoistedHints = '';
+      const leadingMeta = html.match(
+        /^(?:\s*<(?:title|meta|link)\b[^>]*(?:\/>|>(?:[\s\S]*?<\/title>)?))+/i
+      );
+      if (leadingMeta) {
+        for (const tag of leadingMeta[0].match(/<link\b[^>]*>/gi) || []) {
+          if (/rel=["'](?:preload|preconnect|prefetch|dns-prefetch)["']/i.test(tag)) {
+            hoistedHints += `\n        ${tag}`;
+          }
+        }
+        html = html.slice(leadingMeta[0].length);
+      }
+
       // 3. Inject strings safely into target templates
       let output = template
-        .replace(/<!--\s*JSON-LD managed by SEO\.jsx\s*-->|<!--\s*ssr-head\s*-->/i, generatedHead)
+        .replace(/<!--\s*JSON-LD managed by SEO\.jsx\s*-->|<!--\s*ssr-head\s*-->/i, generatedHead + hoistedHints)
+        // The template ships a fixed lang="en"; each locale needs its own.
+        .replace(/<html[^>]*>/i, `<html lang="${localeMeta.code}" dir="${localeMeta.dir}">`)
         .replace(/<div\s+id=["']root["'][^>]*>([\s\S]*?)<\/div>/i, `<div id="root">${html}</div>`);
 
       const filePath = resolve(root, 'dist', url === '/' ? 'index.html' : `${url.replace(/^\//, '')}/index.html`)
@@ -204,19 +253,26 @@ async function prerender() {
   // 6. Generate Sitemap
   console.log('\n🗺️  Generating sitemap.xml...')
   const today = new Date().toISOString().split('T')[0]
-  let sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`
-  
-  for (const route of ROUTES) {
+  let sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n`
+
+  // One <url> per locale, each listing every locale as an alternate — that
+  // reciprocal linking is what Google requires to treat them as one page.
+  for (const route of LOCALIZED_ROUTES) {
     // Skip low-value pages from sitemap
-    if (route.includes('thank-you') || route.startsWith('/ig/') || route === '/enquiry') {
+    const basePath = stripLangPrefix(route)
+    if (basePath.includes('thank-you') || basePath.startsWith('/ig/') || basePath === '/enquiry') {
       continue;
     }
 
     let priority = '0.8'
-    if (route === '/') priority = '1.0'
-    else if (/course|prep|ielts|gre|gmat/.test(route)) priority = '0.9'
-    
-    sitemap += `  <url>\n    <loc>https://www.nitaqacademy.com${route}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>${priority}</priority>\n  </url>\n`
+    if (basePath === '/') priority = '1.0'
+    else if (/course|prep|ielts|gre|gmat/.test(basePath)) priority = '0.9'
+
+    const alternates = Object.values(LANGUAGES)
+      .map((l) => `    <xhtml:link rel="alternate" hreflang="${l.code}" href="https://www.nitaqacademy.com${localizePath(basePath, l.code)}" />`)
+      .join('\n')
+
+    sitemap += `  <url>\n    <loc>https://www.nitaqacademy.com${route}</loc>\n${alternates}\n    <lastmod>${today}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>${priority}</priority>\n  </url>\n`
   }
   sitemap += '</urlset>'
   writeFileSync(resolve(root, 'dist/sitemap.xml'), sitemap)

@@ -81,7 +81,7 @@ const CounselorsPopup = () => {
                 <button className="counselors-popup-close" onClick={handleClose} aria-label="Close">✕</button>
                 
                 <div className="counselors-popup-image-side">
-                    <img src="/images/new invite nitaq.png" alt="School Counselor Orientation Invitation" />
+                    <img src="/images/new-invite-nitaq.webp" alt="School Counselor Orientation Invitation" />
                 </div>
 
                 <div className="counselors-popup-content-side">

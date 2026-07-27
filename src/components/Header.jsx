@@ -1,42 +1,21 @@
 import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { useLocation } from 'react-router-dom';
+import { Link } from '../i18n/Link';
+import { useLanguage } from '../i18n/context';
+import { stripLangPrefix } from '../i18n/config';
 import { trackEvent, ANALYTICS_EVENTS } from '../utils/analytics';
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
-    const [currentLang, setCurrentLang] = useState('en');
     const location = useLocation();
+    const { lang, t, switchLanguage } = useLanguage();
 
-    useEffect(() => {
-        // Check initial language from Google Translate cookie
-        const match = document.cookie.match(/googtrans=\/en\/([a-z]{2})/);
-        const lang = match ? match[1] : 'en';
-        setCurrentLang(lang);
-        if (lang === 'ar') {
-            document.documentElement.setAttribute('dir', 'rtl');
-            document.documentElement.setAttribute('lang', 'ar');
-        } else {
-            document.documentElement.setAttribute('dir', 'ltr');
-            document.documentElement.setAttribute('lang', 'en');
-        }
-    }, []);
+    // Active-state checks must ignore the /ar prefix so the Arabic pages
+    // highlight the same nav items as their English counterparts.
+    const path = stripLangPrefix(location.pathname);
 
-    const toggleLanguage = () => {
-        const newLang = currentLang === 'en' ? 'ar' : 'en';
-        
-        // Remove existing googtrans cookies
-        document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-        document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=.${window.location.hostname}; path=/;`;
-        
-        if (newLang === 'ar') {
-            // Set cookie for google translate
-            document.cookie = `googtrans=/en/ar; path=/`;
-            document.cookie = `googtrans=/en/ar; domain=.${window.location.hostname}; path=/`;
-        }
-        window.location.reload();
-    };
+    const toggleLanguage = () => switchLanguage(lang === 'en' ? 'ar' : 'en');
 
     useEffect(() => {
         const handleScroll = () => {
@@ -47,7 +26,7 @@ const Header = () => {
             }
         };
 
-        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('scroll', handleScroll, { passive: true });
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
@@ -70,7 +49,7 @@ const Header = () => {
     return (
         <>
 
-            <header className={`${isScrolled ? 'scrolled' : ''} ${location.pathname === '/' && !isScrolled ? 'home-top-header' : ''}`.trim()}>
+            <header className={`${isScrolled ? 'scrolled' : ''} ${path === '/' && !isScrolled ? 'home-top-header' : ''}`.trim()}>
                 <div className="container nav-wrapper">
                     <Link to="/" className="logo" onClick={closeMenu}>
                         <img
@@ -85,7 +64,7 @@ const Header = () => {
 
                     <button
                         className={`mobile-menu-btn ${isMenuOpen ? 'active' : ''}`}
-                        aria-label="Toggle Menu"
+                        aria-label={t('nav.toggleMenu')}
                         onClick={toggleMenu}
                     >
                         <span></span>
@@ -94,70 +73,72 @@ const Header = () => {
                     </button>
 
                     <nav className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
-                        <Link to="/" className={location.pathname === '/' ? 'active' : ''} onClick={closeMenu}>Home</Link>
-                        <Link to="/about" className={location.pathname === '/about' ? 'active' : ''} onClick={closeMenu}>About</Link>
+                        <Link to="/" className={path === '/' ? 'active' : ''} onClick={closeMenu}>{t('nav.home')}</Link>
+                        <Link to="/about" className={path === '/about' ? 'active' : ''} onClick={closeMenu}>{t('nav.about')}</Link>
 
                         <div className="dropdown">
-                            <span className={`dropbtn ${['/test-preparations', '/professional-certifications', '/language-trainings', '/corporate-trainings'].includes(location.pathname) ? 'active' : ''}`}>Courses ▾</span>
+                            <span className={`dropbtn ${['/test-preparations', '/professional-certifications', '/language-trainings', '/corporate-trainings'].includes(path) ? 'active' : ''}`}>{t('nav.courses')} ▾</span>
                             <div className="dropdown-content">
                                 <div className="submenu-item">
-                                    <Link to="/test-preparations" onClick={closeMenu}>Test Preparations <span className="arrow-right">›</span></Link>
+                                    <Link to="/test-preparations" onClick={closeMenu}>{t('nav.testPreparations')} <span className="arrow-right">›</span></Link>
                                     <div className="submenu-content">
-                                        <Link to="/ielts-course" onClick={closeMenu}>IELTS Preparation</Link>
-                                        <Link to="/toefl-course" onClick={closeMenu}>TOEFL Preparation</Link>
-                                        <Link to="/pte-course" onClick={closeMenu}>PTE Academic</Link>
-                                        <Link to="/sat-preparation-sharjah" onClick={closeMenu}>SAT Preparation</Link>
-                                        <Link to="/gmat-preparation" onClick={closeMenu}>GMAT Coaching</Link>
-                                        <Link to="/gre-preparation" onClick={closeMenu}>GRE Preparation</Link>
-                                        <Link to="/foundation-jee-neet" onClick={closeMenu}>Foundation JEE/NEET</Link>
-                                        <Link to="/academic-excellence" onClick={closeMenu}>Academic Excellence</Link>
+                                        <Link to="/ielts-course" onClick={closeMenu}>{t('nav.items.ielts')}</Link>
+                                        <Link to="/toefl-course" onClick={closeMenu}>{t('nav.items.toefl')}</Link>
+                                        <Link to="/pte-course" onClick={closeMenu}>{t('nav.items.pte')}</Link>
+                                        <Link to="/sat-preparation-sharjah" onClick={closeMenu}>{t('nav.items.sat')}</Link>
+                                        <Link to="/gmat-preparation" onClick={closeMenu}>{t('nav.items.gmat')}</Link>
+                                        <Link to="/gre-preparation" onClick={closeMenu}>{t('nav.items.gre')}</Link>
+                                        <Link to="/foundation-jee-neet" onClick={closeMenu}>{t('nav.items.jeeNeet')}</Link>
+                                        <Link to="/academic-excellence" onClick={closeMenu}>{t('nav.items.academicExcellence')}</Link>
                                     </div>
                                 </div>
                                 <div className="submenu-item">
-                                    <Link to="/professional-certifications" onClick={closeMenu}>Professional Certifications <span className="arrow-right">›</span></Link>
+                                    <Link to="/professional-certifications" onClick={closeMenu}>{t('nav.professionalCertifications')} <span className="arrow-right">›</span></Link>
                                     <div className="submenu-content">
-                                        <Link to="/ai-course" onClick={closeMenu}>AI Course</Link>
-                                        <Link to="/cybersecurity-course-sharjah" onClick={closeMenu}>Cybersecurity & Ethical Hacking</Link>
-                                        <Link to="/power-bi-excel" onClick={closeMenu}>Power BI & Excel</Link>
-                                        <Link to="/sales-negotiations" onClick={closeMenu}>Sales & Negotiations</Link>
-                                        <Link to="/courses/professional-digital-marketing-course-sharjah-uae" onClick={closeMenu}>Digital Marketing</Link>
-                                        <Link to="/professional-marketing-course" onClick={closeMenu}>Professional Marketing</Link>
-                                        <Link to="/software-engineering-diploma-sharjah" onClick={closeMenu}>Software Engineering</Link>
-                                        <Link to="/cpcd-courses" onClick={closeMenu}>CPCD Professional</Link>
-                                        <Link to="/data-management" onClick={closeMenu}>Data Management</Link>
-                                        <Link to="/soft-skills-training" onClick={closeMenu}>Soft Skills Training</Link>
+                                        <Link to="/ai-course" onClick={closeMenu}>{t('nav.items.ai')}</Link>
+                                        <Link to="/cybersecurity-course-sharjah" onClick={closeMenu}>{t('nav.items.cybersecurity')}</Link>
+                                        <Link to="/power-bi-excel" onClick={closeMenu}>{t('nav.items.powerBi')}</Link>
+                                        <Link to="/sales-negotiations" onClick={closeMenu}>{t('nav.items.sales')}</Link>
+                                        <Link to="/courses/professional-digital-marketing-course-sharjah-uae" onClick={closeMenu}>{t('nav.items.digitalMarketing')}</Link>
+                                        <Link to="/professional-marketing-course" onClick={closeMenu}>{t('nav.items.professionalMarketing')}</Link>
+                                        <Link to="/software-engineering-diploma-sharjah" onClick={closeMenu}>{t('nav.items.softwareEngineering')}</Link>
+                                        <Link to="/cpcd-courses" onClick={closeMenu}>{t('nav.items.cpcd')}</Link>
+                                        <Link to="/data-management" onClick={closeMenu}>{t('nav.items.dataManagement')}</Link>
+                                        <Link to="/soft-skills-training" onClick={closeMenu}>{t('nav.items.softSkills')}</Link>
                                     </div>
                                 </div>
                                 <div className="submenu-item">
-                                    <Link to="/language-trainings" onClick={closeMenu}>Language Trainings <span className="arrow-right">›</span></Link>
+                                    <Link to="/language-trainings" onClick={closeMenu}>{t('nav.languageTrainings')} <span className="arrow-right">›</span></Link>
                                     <div className="submenu-content">
-                                        <Link to="/spoken-english" onClick={closeMenu}>Spoken English</Link>
-                                        <Link to="/spoken-arabic" onClick={closeMenu}>Spoken Arabic</Link>
-                                        <Link to="/french" onClick={closeMenu}>French Language</Link>
-                                        <Link to="/spanish" onClick={closeMenu}>Spanish Language</Link>
-                                        <Link to="/german" onClick={closeMenu}>German Language</Link>
+                                        <Link to="/spoken-english" onClick={closeMenu}>{t('nav.items.spokenEnglish')}</Link>
+                                        <Link to="/spoken-arabic" onClick={closeMenu}>{t('nav.items.spokenArabic')}</Link>
+                                        <Link to="/french" onClick={closeMenu}>{t('nav.items.french')}</Link>
+                                        <Link to="/spanish" onClick={closeMenu}>{t('nav.items.spanish')}</Link>
+                                        <Link to="/german" onClick={closeMenu}>{t('nav.items.german')}</Link>
                                     </div>
                                 </div>
-                                <Link to="/corporate-trainings" onClick={closeMenu}>Corporate Trainings</Link>
+                                <Link to="/corporate-trainings" onClick={closeMenu}>{t('nav.corporateTrainings')}</Link>
                             </div>
                         </div>
 
-                        <Link to="/contact" className={location.pathname === '/contact' ? 'active' : ''} onClick={closeMenu}>Contact</Link>
-                        <a 
-                            href="tel:+97165798313" 
+                        <Link to="/contact" className={path === '/contact' ? 'active' : ''} onClick={closeMenu}>{t('nav.contact')}</Link>
+                        <a
+                            href="tel:+97165798313"
                             className="btn btn-primary mobile-only-btn"
                             onClick={() => trackEvent(ANALYTICS_EVENTS.CALL, 'header_mobile')}
                         >
-                            Call Us
+                            {t('common.callUs')}
                         </a>
 
                     </nav>
 
                     <div className="header-right-actions" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                        <button 
+                        <button
                             onClick={toggleLanguage}
                             className="lang-toggle"
-                            style={{ 
+                            lang={lang === 'en' ? 'ar' : 'en'}
+                            aria-label={t('common.switchLanguage')}
+                            style={{
                                 padding: '8px 16px', 
                                 border: '1px solid var(--primary-color, #2e7d32)',
                                 borderRadius: '999px',
@@ -168,7 +149,7 @@ const Header = () => {
                                 fontSize: '14px'
                             }}
                         >
-                            {currentLang === 'en' ? 'العربية' : 'EN'}
+                            {lang === 'en' ? 'العربية' : 'English'}
                         </button>
 
                         <a
@@ -176,7 +157,7 @@ const Header = () => {
                             className="btn btn-primary desktop-only-btn"
                             onClick={() => trackEvent(ANALYTICS_EVENTS.CALL, 'header_desktop')}
                         >
-                            Call Us
+                            {t('common.callUs')}
                         </a>
                     </div>
                 </div>

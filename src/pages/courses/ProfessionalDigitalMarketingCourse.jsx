@@ -507,7 +507,7 @@ const ProfessionalDigitalMarketingCourse = () => {
                             </p>
                         </div>
                         <div className="overview-image">
-                            <img src="/images/digital_marketing_overview.png" alt="Digital Marketing Course Overview" loading="lazy" />
+                            <img src="/images/digital_marketing_overview.webp" alt="Digital Marketing Course Overview" loading="lazy" />
                         </div>
                     </div>
 
@@ -642,7 +642,7 @@ const ProfessionalDigitalMarketingCourse = () => {
                             </div>
                         </div>
                         <div className="overview-image" style={{ alignSelf: 'stretch', display: 'flex' }}>
-                            <img src="/images/ai_marketing_illustration.png" alt="AI Powered Digital Marketing Courses in UAE" style={{ objectFit: 'cover', height: '100%', minHeight: '400px' }} loading="lazy" />
+                            <img src="/images/ai_marketing_illustration.webp" alt="AI Powered Digital Marketing Courses in UAE" style={{ objectFit: 'cover', height: '100%', minHeight: '400px' }} loading="lazy" />
                         </div>
                     </div>
                 </div>
@@ -727,7 +727,7 @@ const ProfessionalDigitalMarketingCourse = () => {
                             </div>
                         </div>
                         <div className="overview-image">
-                            <img src="/images/job_placement_illustration.png" alt="Digital Marketing Job Placement and Career Growth" loading="lazy" />
+                            <img src="/images/job_placement_illustration.webp" alt="Digital Marketing Job Placement and Career Growth" loading="lazy" />
                         </div>
                     </div>
                 </div>

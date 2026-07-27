@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from '../i18n/Link';
+import { useLanguage } from '../i18n/context';
 import ContactForm from '../components/ContactForm';
 import SEO from '../components/SEO';
-import { trackEvent, ANALYTICS_EVENTS } from '../utils/analytics';
 import { Calendar, ArrowRight, ExternalLink, ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -87,6 +87,8 @@ const homeArticles = [
 ];
 
 const Home = () => {
+    const { t } = useLanguage();
+
     const excellenceSlides = [
         {
             title: <>Empowering <span className="text-gradient">Professional Excellence</span></>,
@@ -105,6 +107,11 @@ const Home = () => {
     const [currentExcellenceSlide, setCurrentExcellenceSlide] = useState(0);
     const [articleIndex, setArticleIndex] = useState(0);
 
+    // Respect users who ask the OS for less motion: freeze the auto-carousels.
+    const prefersReducedMotion =
+        typeof window !== 'undefined' &&
+        window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
     const nextArticles = () => {
         setArticleIndex((prev) => (prev + 3 >= homeArticles.length ? 0 : prev + 3));
     };
@@ -114,26 +121,27 @@ const Home = () => {
     };
 
     useEffect(() => {
+        if (prefersReducedMotion) return;
         const interval = setInterval(() => {
             setCurrentExcellenceSlide((prev) => (prev + 1) % excellenceSlides.length);
         }, 5000);
         return () => clearInterval(interval);
-    }, [excellenceSlides.length]);
+    }, [excellenceSlides.length, prefersReducedMotion]);
 
     const heroSlides = [
         {
-            image: "/images/hero_new_1.png",
-            title: "Top-Rated Training Institute in Sharjah for Professional Growth.",
+            image: "/images/hero_new_1.webp",
+            title: t('home.slides.one'),
             link: "/courses"
         },
         {
-            image: "/images/hero_new_2.png",
-            title: "Expert Coaching for SAT, IELTS & Competitive Examinations.",
+            image: "/images/hero_new_2.webp",
+            title: t('home.slides.two'),
             link: "/courses"
         },
         {
-            image: "/images/hero_new_3.png",
-            title: "Advance Your Career with Globally Recognized Certifications.",
+            image: "/images/hero_new_3.webp",
+            title: t('home.slides.three'),
             link: "/courses"
         }
     ];
@@ -142,11 +150,12 @@ const Home = () => {
     const [currentFeaturedIndex, setCurrentFeaturedIndex] = useState(0);
 
     useEffect(() => {
+        if (prefersReducedMotion) return;
         const interval = setInterval(() => {
             setCurrentHeroSlide((prev) => (prev + 1) % heroSlides.length);
         }, 5000);
         return () => clearInterval(interval);
-    }, [heroSlides.length]);
+    }, [heroSlides.length, prefersReducedMotion]);
 
     const featuredCourses = [
         {
@@ -217,33 +226,33 @@ const Home = () => {
                     <div className="hero-minimal-grid">
                         <div className="hero-minimal-content">
                             <span className="hero-minimal-tag">
-                                SPEA Approved Training Institute in Sharjah
+                                {t('home.heroTag')}
                             </span>
                             <h1>
-                                Top Training Institute in Sharjah for SAT, IELTS, AI & Professional Courses
+                                {t('home.heroTitle')}
                             </h1>
                             <p className="subheading">
-                                Advance your career and academic future with expert-led coaching, practical training, and globally recognized programs at NITAQ ACADEMY in Sharjah.
+                                {t('home.heroSubtitle')}
                             </p>
 
                             <div className="hero-minimal-trust">
                                 <div className="trust-item">
-                                    <span>SPEA</span> Approved
+                                    <span>{t('home.trust.speaLabel')}</span> {t('home.trust.speaValue')}
                                 </div>
                                 <div className="trust-item">
-                                    <span>Expert</span> Faculty
+                                    <span>{t('home.trust.facultyLabel')}</span> {t('home.trust.facultyValue')}
                                 </div>
                                 <div className="trust-item">
-                                    <span>Career-Focused</span> Programs
+                                    <span>{t('home.trust.programsLabel')}</span> {t('home.trust.programsValue')}
                                 </div>
                             </div>
 
                             <div className="hero-minimal-actions">
                                 <a href="tel:+97165798313" className="btn-minimal-primary">
-                                    Enroll Now
+                                    {t('common.enrollNow')}
                                 </a>
                                 <Link to="/courses" className="btn-minimal-secondary">
-                                    Course Explorer
+                                    {t('home.courseExplorer')}
                                 </Link>
                             </div>
                         </div>
@@ -255,22 +264,32 @@ const Home = () => {
                                         key={index}
                                         className={`hero-slide-v4 ${index === currentHeroSlide ? 'active' : ''}`}
                                     >
-                                        <img src={slide.image} alt="Nitaq course" />
+                                        <img
+                                            src={slide.image}
+                                            alt={slide.title}
+                                            width="1536"
+                                            height="1024"
+                                            fetchPriority={index === 0 ? 'high' : 'low'}
+                                            loading={index === 0 ? 'eager' : 'lazy'}
+                                            decoding={index === 0 ? 'auto' : 'async'}
+                                        />
                                         <div className="hero-slide-content">
                                             <h3>{slide.title}</h3>
                                             <Link to={slide.link} className="btn-read-more">
-                                                Read More
+                                                {t('common.readMore')}
                                             </Link>
                                         </div>
                                     </div>
                                 ))}
                                 <div className="slider-dots">
                                     {heroSlides.map((_, index) => (
-                                        <span
+                                        <button
                                             key={index}
+                                            type="button"
                                             className={`dot ${index === currentHeroSlide ? 'active' : ''}`}
+                                            aria-label={`${t('home.slideLabel')} ${index + 1}`}
                                             onClick={() => setCurrentHeroSlide(index)}
-                                        ></span>
+                                        ></button>
                                     ))}
                                 </div>
                             </div>
@@ -474,7 +493,7 @@ const Home = () => {
                                 <div key={idx} className="featured-slide-item">
                                     <div className="featured-course-card-v2">
                                         <div className="featured-course-img-v2">
-                                            <img src={course.image} alt={course.alt} />
+                                            <img src={course.image} alt={course.alt} width="1024" height="1024" loading="lazy" decoding="async" />
                                         </div>
                                         <div className="featured-course-content-v2">
                                             <h3>{course.title}</h3>
@@ -571,9 +590,9 @@ const Home = () => {
                                     <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
                                 </svg>
                             </div>
-                            <h3>Test Preparations</h3>
-                            <p>Ace your exams with our comprehensive preparation courses for IELTS, TOEFL, SAT, and more.</p>
-                            <a href="tel:+97165798313" className="program-link">Enroll Now <span>→</span></a>
+                            <h3>{t('nav.testPreparations')}</h3>
+                            <p>{t('home.programs.testPrepDesc')}</p>
+                            <a href="tel:+97165798313" className="program-link">{t('common.enrollNow')} <span>→</span></a>
                         </div>
 
                         {/* Card 2 */}
@@ -583,9 +602,9 @@ const Home = () => {
                                     <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                                 </svg>
                             </div>
-                            <h3>Professional Certifications</h3>
-                            <p>Gain industry-recognized certifications in Finance, IT, Management, and more.</p>
-                            <a href="tel:+97165798313" className="program-link">Enroll Now <span>→</span></a>
+                            <h3>{t('nav.professionalCertifications')}</h3>
+                            <p>{t('home.programs.certificationsDesc')}</p>
+                            <a href="tel:+97165798313" className="program-link">{t('common.enrollNow')} <span>→</span></a>
                         </div>
 
                         {/* Card 3 */}
@@ -595,9 +614,9 @@ const Home = () => {
                                     <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
                                 </svg>
                             </div>
-                            <h3>Language Trainings</h3>
-                            <p>Master new languages including English, Arabic, French, German, and Spanish.</p>
-                            <a href="tel:+97165798313" className="program-link">Enroll Now <span>→</span></a>
+                            <h3>{t('nav.languageTrainings')}</h3>
+                            <p>{t('home.programs.languagesDesc')}</p>
+                            <a href="tel:+97165798313" className="program-link">{t('common.enrollNow')} <span>→</span></a>
                         </div>
 
                         {/* Card 4 */}
@@ -610,9 +629,9 @@ const Home = () => {
                                     <path d="M16 3.13a4 4 0 0 1 0 7.75" />
                                 </svg>
                             </div>
-                            <h3>Corporate Trainings</h3>
-                            <p>Customized training solutions for organizations to upskill their workforce.</p>
-                            <a href="tel:+97165798313" className="program-link">Enroll Now <span>→</span></a>
+                            <h3>{t('nav.corporateTrainings')}</h3>
+                            <p>{t('home.programs.corporateDesc')}</p>
+                            <a href="tel:+97165798313" className="program-link">{t('common.enrollNow')} <span>→</span></a>
                         </div>
                     </div>
                 </div>
@@ -733,7 +752,7 @@ const Home = () => {
                                                 <p>{article.excerpt}</p>
                                                 <div className="article-card-actions">
                                                     <Link to={article.path} className="read-more-inline">
-                                                        Read More <ArrowRight size={16} />
+                                                        {t('common.readMore')} <ArrowRight size={16} />
                                                     </Link>
                                                     <Link to={article.coursePath} className="card-course-btn">
                                                         {article.courseLabel} <ExternalLink size={14} />

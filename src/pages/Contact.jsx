@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from '../i18n/Link';
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 import ContactForm from '../components/ContactForm';
 import SEO from '../components/SEO';

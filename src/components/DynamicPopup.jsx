@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { stripLangPrefix, localizePath, langFromPath } from '../i18n/config';
 
 // ─── Popup Configuration ───────────────────────────────────────────────────
 // To update the popup, change these values:
@@ -19,54 +20,19 @@ const DynamicPopup = () => {
   const [animIn, setAnimIn]         = useState(false);
   const triggered    = useRef(false);
   const scrollReady  = useRef(false);
+  // Ref mirror of imageReady so external-system callbacks (image onload,
+  // scroll listeners) can read readiness without stale-closure issues.
+  const imageReadyRef = useRef(false);
 
-  // Check if current route should suppress the popup
+  // Check if current route should suppress the popup. Compare against the
+  // language-neutral path so /ar/webinar/ai is excluded like /webinar/ai.
   const isExcluded = POPUP_CONFIG.excludedPaths.some(p =>
-    location.pathname.startsWith(p)
+    stripLangPrefix(location.pathname).startsWith(p)
   );
-
-  /* ── 1. Preload image on mount ─────────────────────────────── */
-  useEffect(() => {
-    if (isExcluded) return;
-    if (sessionStorage.getItem('nitaq_popup_closed')) return;
-
-    const img = new Image();
-    img.onload  = () => setImageReady(true);
-    img.onerror = () => setImageReady(true); // show even if image fails
-    img.src = POPUP_CONFIG.imageUrl;
-  }, [isExcluded]);
-
-  /* ── 2. Trigger when user starts scrolling ──────────────────── */
-  useEffect(() => {
-    if (isExcluded || !imageReady) return;
-    if (sessionStorage.getItem('nitaq_popup_closed')) return;
-
-    const onInteract = () => {
-      if (!scrollReady.current) {
-        scrollReady.current = true;
-        cleanup();
-        tryShowPopup();
-      }
-    };
-
-    const cleanup = () => {
-      window.removeEventListener('wheel', onInteract);
-      window.removeEventListener('touchmove', onInteract);
-    };
-
-    window.addEventListener('wheel', onInteract, { passive: true, once: true });
-    window.addEventListener('touchmove', onInteract, { passive: true, once: true });
-    return cleanup;
-  }, [imageReady, isExcluded]);
-
-  /* ── 3. Show popup when image ready + scroll happened ───────── */
-  useEffect(() => {
-    if (imageReady && scrollReady.current) tryShowPopup();
-  }, [imageReady]);
 
   const tryShowPopup = () => {
     if (triggered.current) return;
-    if (!imageReady) return;
+    if (!imageReadyRef.current) return;
     if (sessionStorage.getItem('nitaq_popup_closed')) return;
 
     triggered.current = true;
@@ -75,6 +41,50 @@ const DynamicPopup = () => {
       requestAnimationFrame(() => setAnimIn(true))
     );
   };
+
+  /* ── 1. Preload image on mount ─────────────────────────────── */
+  useEffect(() => {
+    if (isExcluded) return;
+    if (sessionStorage.getItem('nitaq_popup_closed')) return;
+
+    const onReady = () => {
+      imageReadyRef.current = true;
+      setImageReady(true);
+      // If the visitor scrolled before the image finished loading, that
+      // gesture already counts — show as soon as we're ready.
+      if (scrollReady.current) tryShowPopup();
+    };
+
+    const img = new Image();
+    img.onload  = onReady;
+    img.onerror = onReady; // show even if image fails
+    img.src = POPUP_CONFIG.imageUrl;
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- tryShowPopup only touches refs/sessionStorage
+  }, [isExcluded]);
+
+  /* ── 2. Trigger when user starts scrolling ──────────────────── */
+  useEffect(() => {
+    if (isExcluded || !imageReady) return;
+    if (sessionStorage.getItem('nitaq_popup_closed')) return;
+
+    const cleanup = () => {
+      window.removeEventListener('wheel', onInteract);
+      window.removeEventListener('touchmove', onInteract);
+    };
+
+    function onInteract() {
+      if (!scrollReady.current) {
+        scrollReady.current = true;
+        cleanup();
+        tryShowPopup();
+      }
+    }
+
+    window.addEventListener('wheel', onInteract, { passive: true, once: true });
+    window.addEventListener('touchmove', onInteract, { passive: true, once: true });
+    return cleanup;
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- tryShowPopup only touches refs/sessionStorage
+  }, [imageReady, isExcluded]);
 
   /* ── 4. Close ─────────────────────────────────────────────── */
   const close = () => {
@@ -85,7 +95,8 @@ const DynamicPopup = () => {
 
   const handleImageClick = () => {
     close();
-    navigate(POPUP_CONFIG.actionUrl);
+    // Keep Arabic visitors on /ar/... when the popup navigates.
+    navigate(localizePath(POPUP_CONFIG.actionUrl, langFromPath(location.pathname)));
   };
 
   if (!show || isExcluded) return null;

@@ -1,4 +1,5 @@
-import { useLocation, Link } from 'react-router-dom';
+import { Link } from '../../i18n/Link';
+import { useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { useEffect } from 'react';
 import { trackEvent } from '../../utils/analytics';

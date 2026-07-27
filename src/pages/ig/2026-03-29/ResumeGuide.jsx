@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from '../../../i18n/Link';
 import SEO from '../../../components/SEO';
 import { trackEvent, ANALYTICS_EVENTS } from '../../../utils/analytics';
 import './ResumeGuide.css';
@@ -132,7 +132,7 @@ const ResumeGuide = () => {
                         <h2>Ready to <span className="text-gradient">Upgrade</span> Your Career?</h2>
                         <p>Our professional certification courses are designed to help you master the skills that employers are looking for TODAY.</p>
                         <div className="cta-buttons">
-                            <Link to="/#ourprogram" className="btn btn-primary">
+                            <Link to="/professional-certifications" className="btn btn-primary">
                                 View Professional Courses
                             </Link>
                             <a 

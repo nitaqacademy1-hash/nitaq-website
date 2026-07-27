@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from '../../i18n/Link';
 import SEO from '../../components/SEO';
 import { Calendar, User, Clock, ChevronRight } from 'lucide-react';
 
