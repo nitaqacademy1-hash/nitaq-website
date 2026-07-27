@@ -5,6 +5,8 @@ User-agent: *
 Allow: /
 Disallow: /admin/
 Disallow: /.git/
-Disallow: /404.html
+Disallow: /temp-landing/
+Disallow: /enquiry
+Disallow: /ar/enquiry
 
 Sitemap: https://www.nitaqacademy.com/sitemap.xml
