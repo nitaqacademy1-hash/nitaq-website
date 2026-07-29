@@ -5,7 +5,31 @@ import { Calendar, User, ArrowRight, ExternalLink, Filter, Search } from 'lucide
 
 const articles = [
     {
+        id: 23,
+        title: "The Complete Guide to Finding the Best Tuition Classes in Dubai, Sharjah & UAE",
+        excerpt: "Find the best tuition classes in Dubai, Sharjah & UAE. Complete guide for IGCSE, A Levels, IB, CBSE, Maths, Science & Arabic tutors.",
+        category: "Academic Excellence & Tuition",
+        path: "/article/complete-guide-best-tuition-classes-dubai-sharjah-uae",
+        coursePath: "/contact",
+        courseLabel: "Academic Consultation",
+        date: "July 30, 2026",
+        image: "/images/hero-professional.webp"
+    },
+    {
+        id: 22,
+
+        title: "Why Hiring a Digital Marketing Agency Can Transform Your Business",
+        excerpt: "Discover why hiring a digital marketing agency in Sharjah & Dubai transforms businesses. Complete guide to SEO, Google Ads, Meta Ads, AI SEO & ROI.",
+        category: "Digital Strategy & Growth",
+        path: "/article/why-hiring-digital-marketing-agency-transform-business",
+        coursePath: "/courses/professional-digital-marketing-course-sharjah-uae",
+        courseLabel: "Digital Marketing Course",
+        date: "July 30, 2026",
+        image: "/images/digital_marketing_overview.png"
+    },
+    {
         id: 21,
+
         title: "How to Choose the Best Digital Marketing Institute in Sharjah, Dubai and the UAE",
         excerpt: "Learn how to choose the best digital marketing institute in Sharjah, Dubai and the UAE. Compare SEO, Google Ads, Meta Ads, social media and AI marketing training.",
         category: "Career & Courses",

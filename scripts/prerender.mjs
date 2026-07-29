@@ -87,7 +87,11 @@ const ROUTES = [
   '/article/best-digital-marketing-course-uae',
   '/article/professional-digital-marketing-course-overview',
   '/article/how-to-choose-best-digital-marketing-institute-sharjah-dubai-uae',
+  '/article/why-hiring-digital-marketing-agency-transform-business',
+  '/article/complete-guide-best-tuition-classes-dubai-sharjah-uae',
   '/terms-and-conditions',
+
+
 
 
   '/privacy-policy',

@@ -8,6 +8,39 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const homeArticles = [
     {
+        id: 21,
+        title: "How to Choose the Best Digital Marketing Institute in Sharjah, Dubai & UAE",
+        excerpt: "Learn how to choose the best digital marketing institute in Sharjah, Dubai and the UAE. Compare SEO, Google Ads, Meta Ads, social media and AI marketing training.",
+        category: "Marketing",
+        path: "/article/how-to-choose-best-digital-marketing-institute-sharjah-dubai-uae",
+        coursePath: "/courses/professional-digital-marketing-course-sharjah-uae",
+        courseLabel: "Digital Marketing",
+        date: "July 22, 2026",
+        image: "/images/digital_marketing_overview.png"
+    },
+    {
+        id: 20,
+        title: "Professional Digital Marketing Course in Sharjah, UAE - Complete Overview",
+        excerpt: "Master SEO, Google Ads, Social Media Marketing, AI Marketing & Lead Generation with our Professional Digital Marketing Course.",
+        category: "Marketing",
+        path: "/article/professional-digital-marketing-course-overview",
+        coursePath: "/courses/professional-digital-marketing-course-sharjah-uae",
+        courseLabel: "Digital Marketing",
+        date: "July 19, 2026",
+        image: "/images/course-marketing.webp"
+    },
+    {
+        id: 19,
+        title: "Best Digital Marketing Course in UAE: How to Choose the Right Training Institute",
+        excerpt: "Looking for the best digital marketing course in Sharjah, Dubai, or the UAE? Learn how to choose the right institute covering SEO, Google Ads, and more.",
+        category: "Marketing",
+        path: "/article/best-digital-marketing-course-uae",
+        coursePath: "/courses/professional-digital-marketing-course-sharjah-uae",
+        courseLabel: "Digital Marketing",
+        date: "July 19, 2026",
+        image: "/images/course-marketing.webp"
+    },
+    {
         id: 0,
         title: "Top Skills in UAE for 2026: AI, Digital Marketing, SAT & Future Careers",
         excerpt: "Master the most in-demand skills in UAE for 2026. From AI and Digital Marketing to academic excellence with SAT, discover how to future-proof your career today.",

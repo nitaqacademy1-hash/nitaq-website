@@ -76,7 +76,8 @@ const DigitalMarketingSeoGuide = lazy(() => import('./pages/article/DigitalMarke
 const BestDigitalMarketingCourse = lazy(() => import('./pages/article/BestDigitalMarketingCourse'));
 const ProfessionalDigitalMarketingCourseArticle = lazy(() => import('./pages/article/ProfessionalDigitalMarketingCourseArticle'));
 const HowToChooseBestDigitalMarketingInstitute = lazy(() => import('./pages/article/HowToChooseBestDigitalMarketingInstitute'));
-
+const WhyHiringDigitalMarketingAgency = lazy(() => import('./pages/article/WhyHiringDigitalMarketingAgency'));
+const BestTuitionClassesUaeGuide = lazy(() => import('./pages/article/BestTuitionClassesUaeGuide'));
 
 const TermsAndConditions = lazy(() => import('./pages/legal/TermsAndConditions'));
 const PrivacyPolicy = lazy(() => import('./pages/legal/PrivacyPolicy'));
@@ -121,7 +122,7 @@ function AppContent() {
 function LocalizedRoutes() {
   return (
       <Routes>
-        <Route index element={<Home />} />
+        <Route path="" element={<Home />} />
         <Route path="about" element={<About />} />
         <Route path="enquiry" element={<Enquiry />} />
         <Route path="contact" element={<Contact />} />
@@ -190,8 +191,8 @@ function LocalizedRoutes() {
         <Route path="article/best-digital-marketing-course-uae" element={<BestDigitalMarketingCourse />} />
         <Route path="article/professional-digital-marketing-course-overview" element={<ProfessionalDigitalMarketingCourseArticle />} />
         <Route path="article/how-to-choose-best-digital-marketing-institute-sharjah-dubai-uae" element={<HowToChooseBestDigitalMarketingInstitute />} />
-
-
+        <Route path="article/why-hiring-digital-marketing-agency-transform-business" element={<WhyHiringDigitalMarketingAgency />} />
+        <Route path="article/complete-guide-best-tuition-classes-dubai-sharjah-uae" element={<BestTuitionClassesUaeGuide />} />
 
         {/* IG Landing Pages */}
         <Route path="ig/2026-03-29" element={<ResumeGuide />} />
