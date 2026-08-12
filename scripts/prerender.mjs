@@ -286,7 +286,8 @@ async function prerender() {
   }
   sitemap += '</urlset>'
   writeFileSync(resolve(root, 'dist/sitemap.xml'), sitemap)
-  console.log('✅ sitemap.xml written')
+  writeFileSync(resolve(root, 'public/sitemap.xml'), sitemap)
+  console.log('✅ sitemap.xml written to dist/ and public/')
 
   console.log('\n==========================================')
   console.log(`🎉 Done: ${success} success, ${fail} failed`)
