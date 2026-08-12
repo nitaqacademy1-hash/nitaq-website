@@ -5,10 +5,32 @@ import { Calendar, User, ArrowRight, ExternalLink, Filter, Search } from 'lucide
 
 const articles = [
     {
+        id: 25,
+        title: "How to Choose the Best Tuition Classes in Sharjah & Dubai: A Parent's Guide to IGCSE, CBSE & IB Success",
+        excerpt: "Discover essential criteria for choosing top school tuition in Sharjah and Dubai. Expert tips on teacher ratios, diagnostic assessments, and curriculum alignment.",
+        category: "Academic Excellence",
+        path: "/article/best-tuition-classes-sharjah-dubai-guide",
+        coursePath: "/academic-excellence",
+        courseLabel: "Tuition Program",
+        date: "August 12, 2026",
+        image: "/images/hero-professional.webp"
+    },
+    {
+        id: 24,
+        title: "Top Academic Tutors & School Tuition in Dubai & Sharjah, UAE: Maths, Science, English & Arabic Guide",
+        excerpt: "Master core subjects with top Arabic Tutors Dubai, English Tuition Sharjah, Maths Tuition UAE, and Physics, Chemistry, Biology coaching for CBSE, IGCSE & IB boards.",
+        category: "Academic Excellence",
+        path: "/article/academic-excellence-tuition-dubai-sharjah-uae",
+        coursePath: "/academic-excellence",
+        courseLabel: "Tuition Program",
+        date: "August 12, 2026",
+        image: "/images/hero-professional.webp"
+    },
+    {
         id: 23,
         title: "The Complete Guide to Finding the Best Tuition Classes in Dubai, Sharjah & UAE",
         excerpt: "Find the best tuition classes in Dubai, Sharjah & UAE. Complete guide for IGCSE, A Levels, IB, CBSE, Maths, Science & Arabic tutors.",
-        category: "Academic Excellence & Tuition",
+        category: "Academic Excellence",
         path: "/article/complete-guide-best-tuition-classes-dubai-sharjah-uae",
         coursePath: "/contact",
         courseLabel: "Academic Consultation",
@@ -17,7 +39,6 @@ const articles = [
     },
     {
         id: 22,
-
         title: "Why Hiring a Digital Marketing Agency Can Transform Your Business",
         excerpt: "Discover why hiring a digital marketing agency in Sharjah & Dubai transforms businesses. Complete guide to SEO, Google Ads, Meta Ads, AI SEO & ROI.",
         category: "Digital Strategy & Growth",
@@ -25,11 +46,10 @@ const articles = [
         coursePath: "/courses/professional-digital-marketing-course-sharjah-uae",
         courseLabel: "Digital Marketing Course",
         date: "July 30, 2026",
-        image: "/images/digital_marketing_overview.png"
+        image: "/images/digital_marketing_overview.webp"
     },
     {
         id: 21,
-
         title: "How to Choose the Best Digital Marketing Institute in Sharjah, Dubai and the UAE",
         excerpt: "Learn how to choose the best digital marketing institute in Sharjah, Dubai and the UAE. Compare SEO, Google Ads, Meta Ads, social media and AI marketing training.",
         category: "Career & Courses",
@@ -275,7 +295,7 @@ const articles = [
     }
 ];
 
-const categories = ["All", "SAT Preparation", "IELTS Training", "Career & Courses"];
+const categories = ["All", "Academic Excellence", "Digital Strategy & Growth", "SAT Preparation", "IELTS Training", "Career & Courses"];
 
 const Articles = () => {
     const [activeCategory, setActiveCategory] = useState("All");

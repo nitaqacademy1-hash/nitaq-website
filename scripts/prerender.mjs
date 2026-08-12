@@ -63,6 +63,10 @@ const ROUTES = [
   '/german',
   '/spanish',
   '/academic-excellence',
+  '/maths-tuition-sharjah',
+  '/science-tuition-sharjah',
+  '/english-tuition-sharjah',
+  '/social-science-tuition-sharjah',
   '/foundation-jee-neet',
   '/ai-robotics-kids',
   '/article/sat-coaching-sharjah',
@@ -89,6 +93,8 @@ const ROUTES = [
   '/article/how-to-choose-best-digital-marketing-institute-sharjah-dubai-uae',
   '/article/why-hiring-digital-marketing-agency-transform-business',
   '/article/complete-guide-best-tuition-classes-dubai-sharjah-uae',
+  '/article/academic-excellence-tuition-dubai-sharjah-uae',
+  '/article/best-tuition-classes-sharjah-dubai-guide',
   '/terms-and-conditions',
 
 

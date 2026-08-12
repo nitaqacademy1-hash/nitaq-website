@@ -48,6 +48,10 @@ const SATCourseDubai = lazy(() => import('./pages/courses/SATCourseDubai'));
 const GMATCourse = lazy(() => import('./pages/courses/GMATCourse'));
 const GRECourse = lazy(() => import('./pages/courses/GRECourse'));
 const AcademicExcellenceCourse = lazy(() => import('./pages/courses/AcademicExcellenceCourse'));
+const MathsTuitionSharjah = lazy(() => import('./pages/seo/MathsTuitionSharjah'));
+const ScienceTuitionSharjah = lazy(() => import('./pages/seo/ScienceTuitionSharjah'));
+const EnglishTuitionSharjah = lazy(() => import('./pages/seo/EnglishTuitionSharjah'));
+const SocialScienceTuitionSharjah = lazy(() => import('./pages/seo/SocialScienceTuitionSharjah'));
 const FoundationJEECourse = lazy(() => import('./pages/courses/FoundationJEECourse'));
 const AIRoboticsKids = lazy(() => import('./pages/courses/AIRoboticsKids'));
 const CybersecurityCourse = lazy(() => import('./pages/courses/CybersecurityCourse'));
@@ -78,6 +82,8 @@ const ProfessionalDigitalMarketingCourseArticle = lazy(() => import('./pages/art
 const HowToChooseBestDigitalMarketingInstitute = lazy(() => import('./pages/article/HowToChooseBestDigitalMarketingInstitute'));
 const WhyHiringDigitalMarketingAgency = lazy(() => import('./pages/article/WhyHiringDigitalMarketingAgency'));
 const BestTuitionClassesUaeGuide = lazy(() => import('./pages/article/BestTuitionClassesUaeGuide'));
+const AcademicExcellenceTuitionGuide = lazy(() => import('./pages/article/AcademicExcellenceTuitionGuide'));
+const BestTuitionClassesSharjahDubai = lazy(() => import('./pages/article/BestTuitionClassesSharjahDubai'));
 
 const TermsAndConditions = lazy(() => import('./pages/legal/TermsAndConditions'));
 const PrivacyPolicy = lazy(() => import('./pages/legal/PrivacyPolicy'));
@@ -162,6 +168,10 @@ function LocalizedRoutes() {
         <Route path="gmat-preparation" element={<GMATCourse />} />
         <Route path="gre-preparation" element={<GRECourse />} />
         <Route path="academic-excellence" element={<AcademicExcellenceCourse />} />
+        <Route path="maths-tuition-sharjah" element={<MathsTuitionSharjah />} />
+        <Route path="science-tuition-sharjah" element={<ScienceTuitionSharjah />} />
+        <Route path="english-tuition-sharjah" element={<EnglishTuitionSharjah />} />
+        <Route path="social-science-tuition-sharjah" element={<SocialScienceTuitionSharjah />} />
         <Route path="foundation-jee-neet" element={<FoundationJEECourse />} />
         <Route path="ai-robotics-kids" element={<AIRoboticsKids />} />
         <Route path="cybersecurity-course-sharjah" element={<CybersecurityCourse />} />
@@ -193,6 +203,8 @@ function LocalizedRoutes() {
         <Route path="article/how-to-choose-best-digital-marketing-institute-sharjah-dubai-uae" element={<HowToChooseBestDigitalMarketingInstitute />} />
         <Route path="article/why-hiring-digital-marketing-agency-transform-business" element={<WhyHiringDigitalMarketingAgency />} />
         <Route path="article/complete-guide-best-tuition-classes-dubai-sharjah-uae" element={<BestTuitionClassesUaeGuide />} />
+        <Route path="article/academic-excellence-tuition-dubai-sharjah-uae" element={<AcademicExcellenceTuitionGuide />} />
+        <Route path="article/best-tuition-classes-sharjah-dubai-guide" element={<BestTuitionClassesSharjahDubai />} />
 
         {/* IG Landing Pages */}
         <Route path="ig/2026-03-29" element={<ResumeGuide />} />

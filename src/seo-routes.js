@@ -241,46 +241,55 @@ export const seoRoutes = [
   },
   {
     path: "/academic-excellence",
-    title: "Academic Excellence Program Sharjah | School Tuition UAE | NITAQ ACADEMY",
-    description: "Academic Excellence coaching at NITAQ ACADEMY Sharjah. Expert tutoring for school students in Math, Science, English & more. Boost grades & academic performance UAE.",
+    title: "Academic Excellence Sharjah | IGCSE, A-Level & IB Tuition | Nitaq Academy",
+    description: "Leading academic excellence & school tuition in Sharjah. Expert IGCSE classes, A-Level tuition, IB tutoring, Maths, Science & English support in Al Majaz 3, Sharjah.",
     canonical: "https://www.nitaqacademy.com/academic-excellence",
-    ogTitle: "Academic Excellence Program Sharjah | School Tuition UAE | NITAQ ACADEMY",
-    ogDescription: "Academic Excellence coaching at NITAQ ACADEMY Sharjah. Expert tutoring for school students in Math, Science, English & more. Boost grades & academic performance UAE.",
-    ogImage: "/images/logo1.webp",
+    ogTitle: "Academic Excellence Sharjah | IGCSE, A-Level & IB Tuition | Nitaq Academy",
+    ogDescription: "Leading academic excellence & school tuition in Sharjah. Expert IGCSE classes, A-Level tuition, IB tutoring, Maths, Science & English support in Al Majaz 3, Sharjah.",
+    ogImage: "/images/academic_v2.webp",
     twitterCard: "summary_large_image",
     courseSchema: {
-        name: 'Academic Excellence Program Sharjah',
-        description: 'Expert academic tutoring in Sharjah for school students. Covers Mathematics, Science, English, and other core subjects to improve grades, build confidence, and achieve academic excellence.',
-        mode: ['onsite', 'online'],
-        educationalLevel: 'Beginner to Advanced',
-        teaches: 'Mathematics, Science, English, Academic Study Skills, Exam Preparation',
-        inLanguage: 'en',
+        name: "Academic Excellence Programme Sharjah",
+        description: "Comprehensive school academic support and personalized learning in Sharjah for Grades 1 to 12. Expert coaching in Mathematics, Physics, Chemistry, Biology, English, and Arabic across IGCSE, A-Level, IB, and CBSE curricula.",
+        duration: "P1Y",
+        mode: ["onsite", "online"],
+        educationalLevel: "Grades 1 to 12 (Primary to High School)",
+        teaches: "IGCSE Mathematics, A-Level Science, IB Tutoring, English, Physics, Chemistry, Biology, Arabic, Exam Preparation, Study Skills",
+        inLanguage: "en",
     },
     faqSchema: [
         {
-            question: 'Who is the Academic Excellence program for?',
-            answer: 'This program is designed for school-age students from Grade 1 to Grade 12 who need subject-specific tutoring, exam preparation, or overall academic support.',
+            question: "What is the Academic Excellence programme at Nitaq Academy?",
+            answer: "The Academic Excellence programme is a structured tutoring and academic mentoring course for school students in Grades 1 to 12 across Sharjah and Dubai. It covers Mathematics, Science (Physics, Chemistry, Biology), English, and Arabic across IGCSE, A-Level, IB, and CBSE curricula."
         },
         {
-            question: 'What subjects are covered in the Academic Excellence program?',
-            answer: 'We cover Mathematics, Science, English, Arabic, Social Studies, and other core subjects based on major curricula including CBSE, British, American, and IB.',
+            question: "Where are your tuition classes conducted in Sharjah?",
+            answer: "Our campus is centrally located at Office F103, Floor F1, Abu Khamseen Tower, Al Majaz 3, Sharjah, UAE. We also offer interactive live online classes for students residing in Dubai, Abu Dhabi, Ajman, and across the UAE."
         },
         {
-            question: 'How does the Academic Excellence program help students?',
-            answer: 'The program provides personalized tutoring, targeted exam preparation, doubt-clearing sessions, study skill development, and consistent progress monitoring.',
+            question: "Do you offer specialized IGCSE and A-Level classes in Sharjah?",
+            answer: "Yes, we offer specialized Cambridge CAIE and Pearson Edexcel IGCSE and A-Level tuition. Our expert teachers focus on past papers, mark scheme analysis, and exam time management to help students secure A* and Grade 9 results."
         },
         {
-            question: 'Is Academic Excellence tutoring available online in UAE?',
-            answer: 'Yes, both online and in-person academic tutoring sessions are available with flexible scheduling to fit school timetables.',
+            question: "How does Nitaq Academy support International Baccalaureate (IB) students?",
+            answer: "We provide comprehensive IB tutoring for PYP, MYP, and DP (Higher Level and Standard Level) students. Our subject tutors guide learners through IB Math AA/AI, Sciences, and structured Internal Assessment (IA) rubrics."
         },
         {
-            question: 'Can you help with school curriculum-specific tutoring?',
-            answer: 'Yes, we offer tutoring aligned with CBSE, British Curriculum, American Curriculum, and IB programs followed by schools in Sharjah and across the UAE.',
+            question: "What is the average batch size for tuition classes?",
+            answer: "We maintain micro-batches of only 5 to 8 students to ensure individualized attention, active teacher interaction, and prompt doubt clearance. 1-on-1 private tutoring sessions are also available upon request."
         },
         {
-            question: 'What is the fee for Academic Excellence tutoring at Nitaq?',
-            answer: 'Fees vary by grade level and subjects required. Contact us at +971 52 756 9908 for a personalized study plan and pricing.',
+            question: "How do you track and report student performance improvement in Sharjah?",
+            answer: "Through our dedicated student progress tracking system, we conduct chapter-wise diagnostic tests and monthly mock exams. Comprehensive progress reports are shared bi-weekly with parents."
         },
+        {
+            question: "Are your academic courses authorized by government education authorities?",
+            answer: "Yes, Nitaq Academy is an officially licensed and SPEA-authorized (Sharjah Private Education Authority) training institute in Sharjah, ensuring the highest standards of academic excellence and educational safety."
+        },
+        {
+            question: "How can I enroll my child or schedule a free diagnostic assessment?",
+            answer: "You can book a free diagnostic assessment by contacting our admissions desk via WhatsApp at +971 52 756 9908, submitting the enquiry form on our website, or visiting our center in Al Majaz 3, Sharjah."
+        }
     ]
   },
   {
@@ -2019,6 +2028,130 @@ export const seoRoutes = [
     ]
   },
   {
+    path: "/article/why-hiring-digital-marketing-agency-transform-business",
+    title: "Why Hiring a Digital Marketing Agency Transforms Business | Nitaq Academy",
+    description: "Discover why hiring a digital marketing agency in Sharjah & Dubai transforms businesses. Complete guide to SEO, Google Ads, Meta Ads, AI SEO & ROI.",
+    canonical: "https://www.nitaqacademy.com/article/why-hiring-digital-marketing-agency-transform-business",
+    ogTitle: "Why Hiring a Digital Marketing Agency Transforms Business | Nitaq Academy",
+    ogDescription: "Discover why hiring a digital marketing agency in Sharjah & Dubai transforms businesses. Complete guide to SEO, Google Ads, Meta Ads, AI SEO & ROI.",
+    ogImage: "/images/digital_marketing_overview.webp",
+    twitterCard: "summary_large_image",
+    courseSchema: null,
+    faqSchema: [
+      {
+        question: "Why should a UAE business hire a digital marketing agency instead of an in-house team?",
+        answer: "Hiring an agency gives you instant access to a multidisciplinary team—SEO specialists, PPC managers, copywriters, and designers—at a fraction of the cost of hiring full-time in-house staff in the UAE."
+      },
+      {
+        question: "How long does it take to see results from digital marketing in Dubai and Sharjah?",
+        answer: "Paid advertising (Google Ads and Meta Ads) can generate leads within days, while organic SEO and content marketing typically take 3 to 6 months to establish strong search dominance."
+      }
+    ]
+  },
+  {
+    path: "/article/complete-guide-best-tuition-classes-dubai-sharjah-uae",
+    title: "Complete Guide to Best Tuition Classes in Dubai, Sharjah & UAE | Nitaq Academy",
+    description: "Find the best tuition classes in Dubai, Sharjah & UAE. Complete guide for IGCSE, A Levels, IB, CBSE, Maths, Science & Arabic tutors.",
+    canonical: "https://www.nitaqacademy.com/article/complete-guide-best-tuition-classes-dubai-sharjah-uae",
+    ogTitle: "Complete Guide to Best Tuition Classes in Dubai, Sharjah & UAE | Nitaq Academy",
+    ogDescription: "Find the best tuition classes in Dubai, Sharjah & UAE. Complete guide for IGCSE, A Levels, IB, CBSE, Maths, Science & Arabic tutors.",
+    ogImage: "/images/hero-professional.webp",
+    twitterCard: "summary_large_image",
+    courseSchema: null,
+    faqSchema: [
+      {
+        question: "How do I choose the best tuition classes in Sharjah and Dubai?",
+        answer: "Look for SPEA authorization, experienced subject-matter teachers, micro-batch sizes (5 to 8 students), diagnostic baseline assessments, and regular mock testing."
+      },
+      {
+        question: "Which curricula are supported at Nitaq Academy?",
+        answer: "We support Cambridge IGCSE, Edexcel A-Levels, International Baccalaureate (IB), and CBSE Indian board curricula across all core subjects."
+      }
+    ]
+  },
+  {
+    path: "/article/academic-excellence-tuition-dubai-sharjah-uae",
+    title: "Top Academic Tutors & School Tuition in Dubai & Sharjah, UAE | Maths, Science, English & Arabic",
+    description: "Best school tuition & academic tutors in UAE. Expert Arabic Tutors Dubai, English Tuition Sharjah, Maths Tuition UAE, Science Tutors Dubai & Physics Chemistry Biology Tuition Sharjah.",
+    canonical: "https://www.nitaqacademy.com/article/academic-excellence-tuition-dubai-sharjah-uae",
+    ogTitle: "Top Academic Tutors & School Tuition in Dubai & Sharjah, UAE | NITAQ ACADEMY",
+    ogDescription: "Comprehensive guide to finding top Arabic Tutors Dubai, English Tuition Sharjah, Maths Tuition UAE, Science Tutors Dubai, and Physics Chemistry Biology Tuition Sharjah.",
+    ogImage: "/images/academic_v2.webp",
+    twitterCard: "summary_large_image",
+    datePublished: "2026-08-12T08:00:00+04:00",
+    dateModified: "2026-08-12T15:00:00+04:00",
+    courseSchema: null,
+    faqSchema: [
+      {
+        question: "Which subjects are covered under NITAQ's Academic Tuition in UAE?",
+        answer: "We provide comprehensive school tutoring across Mathematics, Science (Physics, Chemistry, Biology), English Language & Literature, and Arabic (MOE A and MOE B curricula) for Grades 1 to 12."
+      },
+      {
+        question: "Where can I find Arabic Tutors in Dubai and Arabic Classes in Sharjah?",
+        answer: "NITAQ Academy provides expert Arabic tutors at our Sharjah Majaz 3 training center and live interactive online Arabic classes for students across Dubai, Abu Dhabi, and the Northern Emirates, covering both native Arabic A and non-native Arabic B curricula."
+      },
+      {
+        question: "How does Maths Tuition UAE and Maths Online Classes work at NITAQ?",
+        answer: "Our Maths Tuition delivers concept-first coaching covering CBSE, IGCSE, IB Math AA/AI, and American Core standards. Live online maths classes use digital whiteboards, step-by-step problem breakdowns, and extensive past paper drills."
+      },
+      {
+        question: "Do you provide Physics, Chemistry, and Biology tuition in Sharjah and Dubai?",
+        answer: "Yes, our specialized science faculty conducts Physics, Chemistry, and Biology coaching for secondary and higher secondary school students (Grades 8 to 12), focusing on board exam scoring techniques and conceptual depth."
+      },
+      {
+        question: "What is included in English Tuition Sharjah and English Speaking Course Dubai?",
+        answer: "Our English programs cover school curriculum writing, reading comprehension, grammar mastery, and IGCSE/CBSE board exam prep, alongside conversational English speaking courses for fluency and confidence."
+      },
+      {
+        question: "Which curricula do your UAE tutors specialize in?",
+        answer: "We specialize in CBSE, Cambridge IGCSE, Edexcel GCSE/A-Levels, International Baccalaureate (IB PYP/MYP/DP), and the American Curriculum."
+      },
+      {
+        question: "What is the student-to-teacher ratio in your tuition batches?",
+        answer: "To ensure individualized attention and doubt-clearing, group classes are restricted to small micro-batches of 5 to 8 students. Dedicated 1-on-1 private tutoring is also available."
+      },
+      {
+        question: "Is NITAQ Academy authorized by government educational authorities?",
+        answer: "Yes, NITAQ Academy is an officially authorized educational training institute recognized by SPEA (Sharjah Private Education Authority)."
+      }
+    ]
+  },
+  {
+    path: "/article/best-tuition-classes-sharjah-dubai-guide",
+    title: "Best Tuition Classes in Sharjah & Dubai: IGCSE, CBSE & IB Guide | Nitaq Academy",
+    description: "How to choose the best tuition classes in Sharjah and Dubai. Expert parent guide on IGCSE, CBSE, and IB coaching in Maths, Science, English and Arabic.",
+    canonical: "https://www.nitaqacademy.com/article/best-tuition-classes-sharjah-dubai-guide",
+    ogTitle: "Best Tuition Classes in Sharjah & Dubai: IGCSE, CBSE & IB Guide | NITAQ",
+    ogDescription: "Discover how to choose the best tuition classes in Sharjah & Dubai for IGCSE, CBSE, and IB boards. Expert Maths, Science, English & Arabic tutoring.",
+    ogImage: "/images/academic_v2.webp",
+    twitterCard: "summary_large_image",
+    datePublished: "2026-08-12T09:00:00+04:00",
+    dateModified: "2026-08-12T15:00:00+04:00",
+    courseSchema: null,
+    faqSchema: [
+      {
+        question: "How do I choose the best tuition center in Sharjah and Dubai?",
+        answer: "Look for official government authorization (such as SPEA in Sharjah), micro-batch sizes of 5 to 8 students, curriculum-specialized teachers (IGCSE, CBSE, IB), diagnostic baseline assessments, and regular mock exams."
+      },
+      {
+        question: "Why are small batch sizes important for school tuition?",
+        answer: "Micro-batches ensure the tutor can actively monitor each student's problem-solving method, instantly clarify individual doubts, and adapt the lesson pacing rather than teaching a generic one-size-fits-all lecture."
+      },
+      {
+        question: "Do tuition centers in Sharjah cover both British and Indian curricula?",
+        answer: "Top training institutes like Nitaq Academy maintain separate, dedicated batches and specialist teachers for British (Cambridge IGCSE & A-Levels), Indian (CBSE & ICSE), and International Baccalaureate (IB) boards."
+      },
+      {
+        question: "What subjects are most in demand for school tuition in the UAE?",
+        answer: "Mathematics, Physics, Chemistry, Biology, Academic English, and Ministry of Education (MOE) Arabic are the most requested tuition subjects across Sharjah and Dubai."
+      },
+      {
+        question: "Is in-person classroom tuition better than online classes in the UAE?",
+        answer: "Both formats have distinct advantages. In-person classes at our Al Majaz 3 campus provide disciplined study routines and hands-on paper solving, while live online classes offer scheduling convenience and zero commuting time for families across Dubai and Abu Dhabi."
+      }
+    ]
+  },
+  {
     path: "/article/digital-marketing-seo-guide-uae",
     title: "Digital Marketing & SEO Guide for the UAE 2026 | NITAQ ACADEMY",
     description: "A practical guide to digital marketing and SEO in the UAE: how search works, what skills employers want, and how to build a career in Sharjah and Dubai.",
@@ -2095,6 +2228,146 @@ export const seoRoutes = [
     twitterCard: "summary",
     courseSchema: null,
     faqSchema: null
+  },
+  {
+    path: "/maths-tuition-sharjah",
+    title: "Maths Tuition in Sharjah | Class 1 to 12, IGCSE, A-Level & CBSE | Nitaq Academy",
+    description: "Expert Maths tuition in Sharjah for Class 1-12. Specialized IGCSE maths tuition, A-Level & Class 10 CBSE coaching in Al Majaz 3, Sharjah & online UAE.",
+    canonical: "https://www.nitaqacademy.com/maths-tuition-sharjah",
+    ogTitle: "Maths Tuition in Sharjah | Class 1 to 12, IGCSE, A-Level & CBSE | Nitaq",
+    ogDescription: "Expert Maths tuition in Sharjah for Class 1-12. Specialized IGCSE maths tuition, A-Level & Class 10 CBSE coaching in Al Majaz 3, Sharjah & online UAE.",
+    ogImage: "/images/academic_v2.webp",
+    twitterCard: "summary_large_image",
+    datePublished: "2026-08-12T08:00:00+04:00",
+    dateModified: "2026-08-12T15:00:00+04:00",
+    courseSchema: {
+      name: "Mathematics Tuition in Sharjah",
+      description: "Comprehensive Mathematics tutoring in Sharjah for Class 1 to 12, IGCSE, A-Level, IB, and CBSE boards.",
+      duration: "P1Y",
+      mode: ["onsite", "online"],
+      educationalLevel: "Class 1 to Class 12",
+      teaches: "Primary Maths, Middle School Pre-Algebra, IGCSE Mathematics, CBSE Class 10/12 Maths, A-Level Pure Mathematics, Mechanics, Statistics, IB Math AA/AI",
+      inLanguage: "en"
+    },
+    faqSchema: [
+      { question: "Do you provide Class 10 Maths tuition in Sharjah?", answer: "Yes, Nitaq Academy offers specialized Class 10 Maths tuition in Sharjah for both CBSE (Standard and Basic) and IGCSE curriculums, focusing on board question banks and step-marking techniques." },
+      { question: "Do you teach IGCSE Mathematics in Sharjah?", answer: "Yes, we cover both Cambridge CAIE (0580/0607) and Pearson Edexcel IGCSE Mathematics with extensive past paper solving and command-word analysis." },
+      { question: "Are online Mathematics classes available?", answer: "Yes, our live online Mathematics classes feature HD interactive whiteboards, direct teacher communication, and recorded revision archives for students across the UAE." },
+      { question: "What is the average batch size for maths classes?", answer: "We maintain micro-batches of only 5 to 8 students to guarantee that every learner receives individualized feedback and doubt clearance." },
+      { question: "Do you provide exam practice papers?", answer: "Yes, students receive topic-wise worksheets, formula cheat sheets, and past 10-year examination paper compilations with detailed marking schemes." },
+      { question: "Do you teach A-Level and Class 12 Mathematics?", answer: "Yes, we provide advanced Pure Mathematics, Mechanics, and Statistics tuition for A-Level and CBSE Class 11 and 12 board students." },
+      { question: "How do you support IB Mathematics students?", answer: "We offer specialized tutoring for both IB Math Analysis & Approaches (AA HL/SL) and Applications & Interpretation (AI HL/SL), including Internal Assessment (IA) mentoring." },
+      { question: "Where is your tuition center located in Sharjah?", answer: "Our center is located at Office F103, Floor F1, Abu Khamseen Tower, Al Majaz 3, Sharjah, UAE." },
+      { question: "Do you cover foundational Maths for Class 1 to 5?", answer: "Yes, our primary school program builds mental math agility, number sense, and word problem translation for Class 1 to Class 5 students." },
+      { question: "Are 1-on-1 private tutoring sessions available?", answer: "Yes, we provide dedicated 1-on-1 private tutoring sessions for students requiring customized one-on-one attention or urgent exam preparation." },
+      { question: "Is Nitaq Academy an authorized training institute?", answer: "Yes, Nitaq Academy is an officially licensed and SPEA-authorized (Sharjah Private Education Authority) educational training center." },
+      { question: "How can I enroll or book a free trial assessment?", answer: "You can call or WhatsApp our admissions desk at +971 52 756 9908 or submit an enquiry form on our website to schedule a free diagnostic assessment." }
+    ]
+  },
+  {
+    path: "/science-tuition-sharjah",
+    title: "Science Tuition in Sharjah | Physics, Chemistry, Biology Class 1-12 | Nitaq",
+    description: "Top-rated Science tuition in Sharjah for Class 1-12. Specialized Physics, Chemistry & Biology coaching for IGCSE, A-Level, IB & CBSE in Al Majaz 3, Sharjah.",
+    canonical: "https://www.nitaqacademy.com/science-tuition-sharjah",
+    ogTitle: "Science Tuition in Sharjah | Physics, Chemistry, Biology Class 1-12 | Nitaq",
+    ogDescription: "Top-rated Science tuition in Sharjah for Class 1-12. Specialized Physics, Chemistry & Biology coaching for IGCSE, A-Level, IB & CBSE in Al Majaz 3, Sharjah.",
+    ogImage: "/images/academic_v2.webp",
+    twitterCard: "summary_large_image",
+    datePublished: "2026-08-12T08:00:00+04:00",
+    dateModified: "2026-08-12T15:00:00+04:00",
+    courseSchema: {
+      name: "Science Tuition in Sharjah",
+      description: "Comprehensive Physics, Chemistry, and Biology tutoring in Sharjah for Class 1 to 12 across IGCSE, A-Level, IB, and CBSE boards.",
+      duration: "P1Y",
+      mode: ["onsite", "online"],
+      educationalLevel: "Class 1 to Class 12",
+      teaches: "Primary Science, Middle School General Science, IGCSE Sciences (0625/0620/0610), CBSE Class 10/12 Science, A-Level Physics, Chemistry, Biology, IB Sciences HL/SL",
+      inLanguage: "en"
+    },
+    faqSchema: [
+      { question: "Do you provide Class 10 Science tuition in Sharjah?", answer: "Yes, Nitaq Academy offers specialized Class 10 Science tuition in Sharjah covering Physics, Chemistry, and Biology for CBSE, IGCSE, and British Curriculum boards." },
+      { question: "Do you have separate tutors for Physics, Chemistry, and Biology?", answer: "Yes, our secondary and higher secondary programs are taught by dedicated subject specialists with advanced degrees in Physics, Chemistry, and Biology." },
+      { question: "Do you offer IGCSE Science tuition in Sharjah?", answer: "Yes, we prepare students for Cambridge CAIE and Pearson Edexcel IGCSE separate sciences (Physics 0625, Chemistry 0620, Biology 0610) and Combined/Co-ordinated Science." },
+      { question: "Are online Science classes available?", answer: "Yes, our live online classes feature interactive digital whiteboards, molecular simulation software, and recorded video archives for students throughout the UAE." },
+      { question: "What is the batch size for Science tuition?", answer: "We maintain micro-batches of 5 to 8 students to ensure individualized attention, numerical problem-solving checks, and instant doubt resolution." },
+      { question: "Do you teach A-Level Physics, Chemistry, and Biology?", answer: "Yes, we conduct comprehensive AS and A2 Level coaching for Cambridge, Edexcel, and AQA boards focusing on advanced derivations and mark scheme keywords." },
+      { question: "How do you support IB Science students with Internal Assessments (IA)?", answer: "Our mentors provide rubric-aligned guidance on research question formulation, data processing, statistical analysis, and error evaluation for IB Physics, Chemistry, and Biology IAs." },
+      { question: "Do you provide past exam papers and revision kits?", answer: "Yes, students receive chapter-wise question banks, formula booklets, practical exam guides (Paper 6 / ATP), and past 10-year exam paper compilations." },
+      { question: "Can students enroll for single subjects like only Physics or only Chemistry?", answer: "Yes, flexible single-subject enrollment options are available alongside comprehensive triple-science packages." },
+      { question: "Do you offer Science tuition for Primary Class 1 to 5?", answer: "Yes, our primary science program builds observational thinking, natural curiosity, and fundamental physical science concepts for Class 1 to Class 5 students." },
+      { question: "Is Nitaq Academy an authorized training institute in Sharjah?", answer: "Yes, Nitaq Academy is an officially licensed and SPEA-authorized (Sharjah Private Education Authority) educational center." },
+      { question: "How can I schedule a diagnostic assessment for Science?", answer: "You can contact our admissions team on WhatsApp at +971 52 756 9908 or complete the online enquiry form to schedule a free diagnostic assessment." }
+    ]
+  },
+  {
+    path: "/english-tuition-sharjah",
+    title: "English Tuition in Sharjah | Grammar, Writing, IGCSE & CBSE Class 1-12 | Nitaq",
+    description: "Premier English tuition in Sharjah for Class 1-12. Grammar classes, essay writing, comprehension & IGCSE English coaching in Al Majaz 3, Sharjah & online UAE.",
+    canonical: "https://www.nitaqacademy.com/english-tuition-sharjah",
+    ogTitle: "English Tuition in Sharjah | Grammar, Writing, IGCSE & CBSE Class 1-12 | Nitaq",
+    ogDescription: "Premier English tuition in Sharjah for Class 1-12. Grammar classes, essay writing, comprehension & IGCSE English coaching in Al Majaz 3, Sharjah & online UAE.",
+    ogImage: "/images/academic_v2.webp",
+    twitterCard: "summary_large_image",
+    datePublished: "2026-08-12T08:00:00+04:00",
+    dateModified: "2026-08-12T15:00:00+04:00",
+    courseSchema: {
+      name: "English Tuition in Sharjah",
+      description: "Comprehensive English Language, Literature, and Grammar tutoring in Sharjah for Class 1 to 12 across IGCSE, A-Level, IB, and CBSE boards.",
+      duration: "P1Y",
+      mode: ["onsite", "online"],
+      educationalLevel: "Class 1 to Class 12",
+      teaches: "Primary Phonics & Reading, Grammar Mastery, Directed/Persuasive Writing, IGCSE English (0500/0510), CBSE English Core, A-Level Literature, IB English Language & Lit",
+      inLanguage: "en"
+    },
+    faqSchema: [
+      { question: "Do you provide Class 10 English tuition in Sharjah?", answer: "Yes, Nitaq Academy offers comprehensive Class 10 English tuition for CBSE, IGCSE, and British curricula covering unseen passages, formal writing, and literature analysis." },
+      { question: "Do you offer IGCSE First Language and Second Language English coaching?", answer: "Yes, we prepare students for Cambridge IGCSE 0500 (First Language) and 0510/0511 (Second Language) as well as Pearson Edexcel English boards." },
+      { question: "What grammar skills are covered in your classes?", answer: "We cover sentence syntax, tense consistency, active/passive voice, direct/indirect speech, punctuation mastery, subject-verb agreement, and advanced modal verbs." },
+      { question: "Are online English classes available across the UAE?", answer: "Yes, our live online English classes feature interactive collaborative document editing, real-time feedback, and recorded lessons for students throughout the UAE." },
+      { question: "What is the batch size for English tuition?", answer: "We maintain micro-batches of only 5 to 8 students so that every essay and writing task receives detailed individual teacher critique." },
+      { question: "How do you prepare students for the IB English Individual Oral (IO)?", answer: "Our mentors guide IB students in connecting chosen literary and non-literary texts to a global issue, refining their 10-minute presentation and 5-minute Q&A." },
+      { question: "Do you provide reading and writing support for Primary Class 1 to 5?", answer: "Yes, our primary program builds phonics, reading fluency, vocabulary, and creative paragraph writing for Class 1 to Class 5 students." },
+      { question: "Do you also provide Spoken English and communication training?", answer: "Yes, we offer specialized spoken English modules focusing on public speaking confidence, clear pronunciation, and conversational fluency." },
+      { question: "Do you provide sample model essays and marking rubrics?", answer: "Yes, students receive model high-scoring essays, vocabulary word banks, transition phrase cheat sheets, and official board marking rubrics." },
+      { question: "Are 1-on-1 private English tutoring sessions available?", answer: "Yes, dedicated 1-on-1 private tutoring is available for intensive essay writing catch-up or urgent board exam revision." },
+      { question: "Is Nitaq Academy an authorized training center in Sharjah?", answer: "Yes, Nitaq Academy is an officially licensed and SPEA-authorized (Sharjah Private Education Authority) educational center." },
+      { question: "How can I schedule a diagnostic writing assessment?", answer: "You can contact our admissions desk on WhatsApp at +971 52 756 9908 or complete the online enquiry form to schedule a free diagnostic assessment." }
+    ]
+  },
+  {
+    path: "/social-science-tuition-sharjah",
+    title: "Social Science Tuition in Sharjah | History, Geography, Civics Class 1-12 | Nitaq",
+    description: "Expert Social Science (SST) tuition in Sharjah for Class 1-12. History, Geography, Civics & Economics coaching for CBSE, IGCSE & IB in Al Majaz 3, Sharjah.",
+    canonical: "https://www.nitaqacademy.com/social-science-tuition-sharjah",
+    ogTitle: "Social Science Tuition in Sharjah | History, Geography, Civics Class 1-12 | Nitaq",
+    ogDescription: "Expert Social Science (SST) tuition in Sharjah for Class 1-12. History, Geography, Civics & Economics coaching for CBSE, IGCSE & IB in Al Majaz 3, Sharjah.",
+    ogImage: "/images/academic_v2.webp",
+    twitterCard: "summary_large_image",
+    datePublished: "2026-08-12T08:00:00+04:00",
+    dateModified: "2026-08-12T15:00:00+04:00",
+    courseSchema: {
+      name: "Social Science Tuition in Sharjah",
+      description: "Comprehensive History, Geography, Political Science/Civics, and Economics tutoring in Sharjah for Class 1 to 12 across CBSE, IGCSE, and IB boards.",
+      duration: "P1Y",
+      mode: ["onsite", "online"],
+      educationalLevel: "Class 1 to Class 12",
+      teaches: "Primary Social Studies, Middle School SST, CBSE Class 10 SST (History, Geography, Civics, Economics, Map Work), IGCSE History (0470), IGCSE Geography (0460), IB Humanities",
+      inLanguage: "en"
+    },
+    faqSchema: [
+      { question: "Do you provide Class 10 Social Science (SST) tuition in Sharjah?", answer: "Yes, Nitaq Academy offers comprehensive Class 10 SST tuition for CBSE and international boards covering History, Geography, Civics, Economics, and Map Work." },
+      { question: "Do you teach IGCSE History and IGCSE Geography?", answer: "Yes, we prepare students for Cambridge IGCSE History (0470) and Geography (0460) focusing on source-based questions, case studies, and investigative papers." },
+      { question: "How do you help students remember historical dates and events?", answer: "We use chronological visual timelines, cause-and-effect flowcharts, and thematic story-based instruction rather than mindless rote memorization." },
+      { question: "Is map work training included in Social Science tuition?", answer: "Yes, comprehensive map locating and labeling practice for Geography and History is integrated into regular class sessions." },
+      { question: "Are online Social Science classes available in UAE?", answer: "Yes, our live online classes feature digital interactive maps, visual timelines, and recorded video archives for students across Dubai, Abu Dhabi, and the UAE." },
+      { question: "What is the batch size for SST tuition classes?", answer: "We maintain micro-batches of only 5 to 8 students to ensure that every student's long-form answers receive individual feedback and grading." },
+      { question: "How do you prepare students for 5-mark and case-based CBSE questions?", answer: "We teach structured point-wise answer formatting, precise terminology incorporation, and subheading organization that align with official board answer keys." },
+      { question: "Do you cover UAE Social Studies and Moral Education?", answer: "Yes, we support students in mandatory UAE Ministry of Education (MOE) Social Studies and National Education curricula." },
+      { question: "Do you provide chapter summary notes and mind maps?", answer: "Yes, students receive concise chapter revision booklets, keyword glossaries, timeline charts, and previous 10-year board question compilations." },
+      { question: "Are 1-on-1 private tutoring sessions available for Social Science?", answer: "Yes, dedicated 1-on-1 private tutoring sessions are available for intensive exam preparation or personalized pacing." },
+      { question: "Is Nitaq Academy an authorized training center in Sharjah?", answer: "Yes, Nitaq Academy is an officially licensed and SPEA-authorized (Sharjah Private Education Authority) educational center." },
+      { question: "How can I schedule an assessment for Social Science?", answer: "You can contact our admissions team on WhatsApp at +971 52 756 9908 or complete the online enquiry form to schedule a free diagnostic assessment." }
+    ]
   }
 ];
 
