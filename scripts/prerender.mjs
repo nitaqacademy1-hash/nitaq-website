@@ -252,6 +252,17 @@ async function prerender() {
       }
 
       writeFileSync(filePath, output)
+
+      // Also generate flat .html file for cleanUrls compatibility on Vercel
+      if (url !== '/') {
+        const flatPath = resolve(root, 'dist', `${url.replace(/^\//, '')}.html`)
+        const flatDir = dirname(flatPath)
+        if (!existsSync(flatDir)) {
+          mkdirSync(flatDir, { recursive: true })
+        }
+        writeFileSync(flatPath, output)
+      }
+
       success++
       console.log(`✅ Fixed & Generated: ${url}`)
     } catch (e) {

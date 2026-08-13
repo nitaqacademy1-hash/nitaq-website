@@ -1,11 +1,8 @@
 {
-  "version": 2,
-  "outputDirectory": "dist",
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
     {
-      "comment": "Proper 301s replace the old meta-refresh page at public/sat-preparation/",
       "source": "/sat-preparation",
       "destination": "/sat-preparation-sharjah",
       "permanent": true
@@ -23,7 +20,6 @@
   ],
   "rewrites": [
     {
-      "comment": "Arabic SPA fallback. Rewrites only apply after the filesystem check, so prerendered /ar/... pages still win; this keeps unprerendered Arabic paths on the Arabic shell instead of the English one.",
       "source": "/ar/(.*)",
       "destination": "/ar/index.html"
     },
