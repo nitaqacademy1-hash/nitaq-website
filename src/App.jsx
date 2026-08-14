@@ -50,6 +50,12 @@ const GRECourse = lazy(() => import('./pages/courses/GRECourse'));
 const AcademicExcellenceCourse = lazy(() => import('./pages/courses/AcademicExcellenceCourse'));
 const MathsTuitionSharjah = lazy(() => import('./pages/seo/MathsTuitionSharjah'));
 const ScienceTuitionSharjah = lazy(() => import('./pages/seo/ScienceTuitionSharjah'));
+const PhysicsTuitionSharjah = lazy(() => import('./pages/seo/PhysicsTuitionSharjah'));
+const ChemistryTuitionSharjah = lazy(() => import('./pages/seo/ChemistryTuitionSharjah'));
+const BiologyTuitionSharjah = lazy(() => import('./pages/seo/BiologyTuitionSharjah'));
+const BusinessStudiesTuitionSharjah = lazy(() => import('./pages/seo/BusinessStudiesTuitionSharjah'));
+const AccountancyTuitionSharjah = lazy(() => import('./pages/seo/AccountancyTuitionSharjah'));
+const EconomicsTuitionSharjah = lazy(() => import('./pages/seo/EconomicsTuitionSharjah'));
 const EnglishTuitionSharjah = lazy(() => import('./pages/seo/EnglishTuitionSharjah'));
 const SocialScienceTuitionSharjah = lazy(() => import('./pages/seo/SocialScienceTuitionSharjah'));
 const FoundationJEECourse = lazy(() => import('./pages/courses/FoundationJEECourse'));
@@ -168,6 +174,12 @@ function LocalizedRoutes() {
         <Route path="academic-excellence" element={<AcademicExcellenceCourse />} />
         <Route path="maths-tuition-sharjah" element={<MathsTuitionSharjah />} />
         <Route path="science-tuition-sharjah" element={<ScienceTuitionSharjah />} />
+        <Route path="physics-tuition-sharjah" element={<PhysicsTuitionSharjah />} />
+        <Route path="chemistry-tuition-sharjah" element={<ChemistryTuitionSharjah />} />
+        <Route path="biology-tuition-sharjah" element={<BiologyTuitionSharjah />} />
+        <Route path="business-studies-tuition-sharjah" element={<BusinessStudiesTuitionSharjah />} />
+        <Route path="accountancy-tuition-sharjah" element={<AccountancyTuitionSharjah />} />
+        <Route path="economics-tuition-sharjah" element={<EconomicsTuitionSharjah />} />
         <Route path="english-tuition-sharjah" element={<EnglishTuitionSharjah />} />
         <Route path="social-science-tuition-sharjah" element={<SocialScienceTuitionSharjah />} />
         <Route path="foundation-jee-neet" element={<FoundationJEECourse />} />
