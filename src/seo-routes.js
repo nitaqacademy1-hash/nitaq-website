@@ -2578,6 +2578,24 @@ export const seoRoutes = [
       { question: "How can I schedule a free Economics assessment or demo class?", answer: "You can schedule a free diagnostic assessment or demo session by contacting our admissions team on WhatsApp at +971 52 756 9908 or calling +971 6 579 8313." },
       { question: "Are intensive crash courses available before board exams?", answer: "Yes. Ahead of board examination sessions, we offer intensive crash courses focusing on high-weightage topics (Market Failure, Macro Policy Mix, Exchange Rates, Trade Protectionism)." }
     ]
+  },
+  {
+    path: "/article/comprehensive-subject-tuition-guide-sharjah-dubai-uae",
+    title: "The Complete UAE Subject Tuition Guide: Maths, Sciences, Commerce & Humanities | Nitaq",
+    description: "Master core academic subjects with expert tuition in Sharjah & Dubai. In-depth guide to Maths, Physics, Chemistry, Biology, Business Studies, Accountancy, and Economics across IGCSE, CBSE, A-Level & IB.",
+    canonical: "https://www.nitaqacademy.com/article/comprehensive-subject-tuition-guide-sharjah-dubai-uae",
+    ogTitle: "The Complete UAE Subject Tuition Guide: Maths, Sciences, Commerce & Humanities | Nitaq",
+    ogDescription: "Master core academic subjects with expert tuition in Sharjah & Dubai. In-depth guide to Maths, Physics, Chemistry, Biology, Business Studies, Accountancy, and Economics.",
+    ogImage: "/images/academic_v2.webp",
+    twitterCard: "summary_large_image",
+    datePublished: "2026-08-14T08:00:00+04:00",
+    dateModified: "2026-08-14T10:00:00+04:00",
+    faqSchema: [
+      { question: "Can students enroll in individual subject modules or package bundles?", answer: "Yes. Students have the flexibility to enroll in single subject modules (e.g., only Physics or only Accountancy) or comprehensive multi-subject tuition packages covering all school disciplines." },
+      { question: "Where is Nitaq Academy located for in-person tuition in Sharjah?", answer: "Our campus is centrally located at Office F103, Floor F1, Abu Khamseen Tower, Al Majaz 3, Sharjah, UAE, easily accessible from King Faisal Street and Al Wahda Street." },
+      { question: "Are online tuition classes available for students in Dubai and other Emirates?", answer: "Yes. Our live interactive online platform features HD digital whiteboards, screen-sharing problem solving, recorded sessions, and digital assignments across the UAE." },
+      { question: "How can parents schedule a free diagnostic assessment?", answer: "You can schedule a free diagnostic evaluation or demo session by contacting our admissions desk via WhatsApp at +971 52 756 9908 or calling +971 6 579 8313." }
+    ]
   }
 ];
 

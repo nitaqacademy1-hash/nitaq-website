@@ -5,6 +5,17 @@ import { Calendar, User, ArrowRight, ExternalLink, Filter, Search } from 'lucide
 
 const articles = [
     {
+        id: 26,
+        title: "The Complete UAE Subject Tuition Guide: Mastering Mathematics, Sciences, Commerce & Humanities",
+        excerpt: "Master core academic subjects with expert tuition in Sharjah & Dubai. In-depth guide to Maths, Physics, Chemistry, Biology, Business Studies, Accountancy, and Economics across IGCSE, CBSE, A-Level & IB.",
+        category: "Academic Excellence",
+        path: "/article/comprehensive-subject-tuition-guide-sharjah-dubai-uae",
+        coursePath: "/academic-excellence",
+        courseLabel: "Tuition Program",
+        date: "August 14, 2026",
+        image: "/images/academic_v2.webp"
+    },
+    {
         id: 25,
         title: "How to Choose the Best Tuition Classes in Sharjah & Dubai: A Parent's Guide to IGCSE, CBSE & IB Success",
         excerpt: "Discover essential criteria for choosing top school tuition in Sharjah and Dubai. Expert tips on teacher ratios, diagnostic assessments, and curriculum alignment.",

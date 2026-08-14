@@ -90,6 +90,7 @@ const WhyHiringDigitalMarketingAgency = lazy(() => import('./pages/article/WhyHi
 const BestTuitionClassesUaeGuide = lazy(() => import('./pages/article/BestTuitionClassesUaeGuide'));
 const AcademicExcellenceTuitionGuide = lazy(() => import('./pages/article/AcademicExcellenceTuitionGuide'));
 const BestTuitionClassesSharjahDubai = lazy(() => import('./pages/article/BestTuitionClassesSharjahDubai'));
+const ComprehensiveSubjectTuitionGuide = lazy(() => import('./pages/article/ComprehensiveSubjectTuitionGuide'));
 
 const TermsAndConditions = lazy(() => import('./pages/legal/TermsAndConditions'));
 const PrivacyPolicy = lazy(() => import('./pages/legal/PrivacyPolicy'));
@@ -215,6 +216,7 @@ function LocalizedRoutes() {
         <Route path="article/complete-guide-best-tuition-classes-dubai-sharjah-uae" element={<BestTuitionClassesUaeGuide />} />
         <Route path="article/academic-excellence-tuition-dubai-sharjah-uae" element={<AcademicExcellenceTuitionGuide />} />
         <Route path="article/best-tuition-classes-sharjah-dubai-guide" element={<BestTuitionClassesSharjahDubai />} />
+        <Route path="article/comprehensive-subject-tuition-guide-sharjah-dubai-uae" element={<ComprehensiveSubjectTuitionGuide />} />
 
         {/* IG Landing Pages */}
         <Route path="ig/2026-03-29" element={<ResumeGuide />} />
