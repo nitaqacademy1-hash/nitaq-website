@@ -57,7 +57,7 @@ const SEO = () => {
       "@type": "ImageObject",
       "url": `${siteUrl}/images/logo1.webp`
     },
-    "description": "Premier training academy in Sharjah offering IELTS, Digital SAT, GRE, GMAT, ACCA, and AI technology courses. SPEA Authorized training institute.",
+    "description": "Premier training academy in Sharjah & Dubai, UAE offering IELTS, Digital SAT, GRE, GMAT, ACCA, AI technology, and comprehensive school subject tuition (Maths, Physics, Chemistry, Biology, Business, Accounts, Economics). SPEA Authorized training institute.",
     "telephone": "+971527569908",
     "email": "info@nitaqacademy.com",
     "address": {
@@ -72,6 +72,42 @@ const SEO = () => {
       "latitude": "25.3259",
       "longitude": "55.3857"
     },
+    "areaServed": [
+      { "@type": "City", "name": "Sharjah" },
+      { "@type": "City", "name": "Dubai" },
+      { "@type": "City", "name": "Ajman" },
+      { "@type": "City", "name": "Abu Dhabi" },
+      { "@type": "Country", "name": "United Arab Emirates" }
+    ],
+    "serviceArea": {
+      "@type": "GeoCircle",
+      "geoMidpoint": {
+        "@type": "GeoCoordinates",
+        "latitude": "25.3259",
+        "longitude": "55.3857"
+      },
+      "geoRadius": "150000"
+    },
+    "knowsAbout": [
+      "School Subject Tuition UAE",
+      "Maths Tuition Sharjah & Dubai",
+      "Physics Tuition Sharjah & Dubai",
+      "Chemistry Tuition Sharjah & Dubai",
+      "Biology Tuition Sharjah & Dubai",
+      "Business Studies Tuition Dubai & Sharjah",
+      "Accountancy Tuition Dubai & Sharjah",
+      "Economics Tuition Dubai & Sharjah",
+      "English Tuition Dubai & Sharjah",
+      "Social Science Tuition UAE",
+      "Cambridge IGCSE Tutors Dubai",
+      "Edexcel A Level Coaching UAE",
+      "IB DP Tutors Dubai & Sharjah",
+      "CBSE Board Coaching Sharjah & Dubai",
+      "Digital SAT Preparation Dubai & Sharjah",
+      "IELTS Coaching Dubai & Sharjah",
+      "ACCA and CMA Coaching UAE",
+      "Artificial Intelligence Courses UAE"
+    ],
     "sameAs": [
       "https://www.instagram.com/nitaq.academy",
       "https://www.facebook.com/nitaqacademy.ae/",
@@ -91,8 +127,9 @@ const SEO = () => {
       "@type": "OfferCatalog",
       "name": "NITAQ ACADEMY Courses",
       "itemListElement": [
-        { "@type": "Offer", "itemOffered": { "@type": "Course", "name": "IELTS Preparation", "description": "Expert IELTS coaching for Academic & General modules." }, "url": `${siteUrl}/ielts-course` },
-        { "@type": "Offer", "itemOffered": { "@type": "Course", "name": "SAT Preparation", "description": "Comprehensive Digital SAT coaching with 1400+ focus." }, "url": `${siteUrl}/sat-preparation-sharjah` },
+        { "@type": "Offer", "itemOffered": { "@type": "Course", "name": "IELTS Preparation", "description": "Expert IELTS coaching for Academic & General modules in Sharjah & Dubai." }, "url": `${siteUrl}/ielts-course` },
+        { "@type": "Offer", "itemOffered": { "@type": "Course", "name": "SAT Preparation", "description": "Comprehensive Digital SAT coaching with 1400+ focus in Sharjah & Dubai." }, "url": `${siteUrl}/sat-preparation-sharjah` },
+        { "@type": "Offer", "itemOffered": { "@type": "Course", "name": "School Subject Tuition", "description": "Specialized Maths, Physics, Chemistry, Biology, Business, Accounts & Economics tuition in Sharjah, Dubai & UAE." }, "url": `${siteUrl}/academic-excellence` },
         { "@type": "Offer", "itemOffered": { "@type": "Course", "name": "GRE Coaching", "description": "Strategic GRE preparation for graduate school admissions." }, "url": `${siteUrl}/gre-preparation` },
         { "@type": "Offer", "itemOffered": { "@type": "Course", "name": "GMAT Training", "description": "Top-tier GMAT coaching for MBA aspirants." }, "url": `${siteUrl}/gmat-preparation` },
         { "@type": "Offer", "itemOffered": { "@type": "Course", "name": "ACCA Coaching", "description": "Complete ACCA qualification training by experts." }, "url": `${siteUrl}/acca-course` }
@@ -103,8 +140,6 @@ const SEO = () => {
   schemas.push(organizationSchema);
 
   // 2. WebSite (no @context)
-  // Note: no SearchAction — the site has no search results page, and
-  // advertising one (`/course?q=`) pointed crawlers at a phantom URL.
   schemas.push({
     "@type": "WebSite",
     "@id": `${siteUrl}/#website`,
@@ -114,7 +149,29 @@ const SEO = () => {
     "inLanguage": [lang === 'ar' ? 'ar' : 'en', lang === 'ar' ? 'en' : 'ar']
   });
 
-  // 3. Breadcrumbs (no @context)
+  // 3. WebPage with Geographic & AI Speakable targeting
+  schemas.push({
+    "@type": "WebPage",
+    "@id": fullUrl,
+    "url": fullUrl,
+    "name": routeData.title,
+    "description": routeData.description,
+    "isPartOf": { "@id": `${siteUrl}/#website` },
+    "about": { "@id": orgId },
+    "inLanguage": lang === 'ar' ? 'ar' : 'en',
+    "spatialCoverage": [
+      { "@type": "Place", "name": "Sharjah, UAE" },
+      { "@type": "Place", "name": "Dubai, UAE" },
+      { "@type": "Place", "name": "Abu Dhabi, UAE" },
+      { "@type": "Place", "name": "United Arab Emirates" }
+    ],
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [".subject-quick-answer", ".course-hero h1", ".course-hero p", ".lead-text", "h1", "h2"]
+    }
+  });
+
+  // 4. Breadcrumbs (no @context)
   if (location.pathname !== '/') {
     const segments = location.pathname.split('/').filter(Boolean);
     const itemListElement = [{
@@ -139,8 +196,7 @@ const SEO = () => {
     });
   }
 
-  // 4. Course Schema — ONLY on actual course pages with courseSchema data
-  // Explicitly excluded: homepage, about, contact, articles, webinar pages
+  // 5. Course Schema — ONLY on actual course pages with courseSchema data
   const excludedFromCourse = ['/', '/about', '/contact', '/enquiry', '/articles', '/courses',
     '/test-preparations', '/language-trainings', '/professional-certifications',
     '/corporate-trainings', '/terms-and-conditions', '/privacy-policy'];
@@ -149,18 +205,28 @@ const SEO = () => {
   if (routeData.courseSchema && !excludedFromCourse.includes(location.pathname) && !isWebinarOrIg) {
     const cs = routeData.courseSchema;
 
-    // Guaranteed non-null description (fix for SEMrush "missing description" errors)
     const courseDescription = (cs.description && cs.description.trim())
       || (routeData.description && routeData.description.trim())
-      || 'Professional training course offered by NITAQ ACADEMY in Sharjah, UAE.';
+      || 'Professional training course offered by NITAQ ACADEMY in Sharjah & Dubai, UAE.';
 
     schemas.push({
       '@type': 'Course',
       'name': cs.name,
       'description': courseDescription,
       'url': fullUrl,
-
-      // FIX 1: Full explicit provider — do NOT rely only on @id
+      'areaServed': [
+        { '@type': 'City', 'name': 'Sharjah' },
+        { '@type': 'City', 'name': 'Dubai' },
+        { '@type': 'City', 'name': 'Ajman' },
+        { '@type': 'City', 'name': 'Abu Dhabi' },
+        { '@type': 'Country', 'name': 'United Arab Emirates' }
+      ],
+      'spatialCoverage': [
+        { '@type': 'Place', 'name': 'Sharjah, UAE' },
+        { '@type': 'Place', 'name': 'Dubai, UAE' },
+        { '@type': 'Place', 'name': 'Abu Dhabi, UAE' },
+        { '@type': 'Place', 'name': 'United Arab Emirates' }
+      ],
       'provider': {
         '@type': 'EducationalOrganization',
         'name': 'NITAQ ACADEMY',
@@ -173,8 +239,6 @@ const SEO = () => {
           'addressCountry': 'UAE'
         }
       },
-
-      // FIX 2: Offers — resolves "missing offers" SEMrush errors
       'offers': {
         '@type': 'Offer',
         'category': 'Education',
@@ -182,16 +246,14 @@ const SEO = () => {
         'validFrom': '2026-01-01',
         'url': fullUrl
       },
-
-      // FIX 3: hasCourseInstance — resolves "missing hasCourseInstance" / "missing workload" errors
       'hasCourseInstance': [
         {
           '@type': 'CourseInstance',
           'courseMode': 'onsite',
-          'courseWorkload': cs.duration || 'P8W', // Matches 'courseSchedule' requirements
+          'courseWorkload': cs.duration || 'P8W',
           'location': {
             '@type': 'Place',
-            'name': 'NITAQ ACADEMY Sharjah',
+            'name': 'NITAQ ACADEMY Sharjah Campus (Serving Sharjah, Dubai & Northern Emirates)',
             'address': {
               '@type': 'PostalAddress',
               'streetAddress': 'Office : F103, Floor F1, Abu Khamseen Tower, Majaz 3',
@@ -209,19 +271,21 @@ const SEO = () => {
           '@type': 'CourseInstance',
           'courseMode': 'online',
           'courseWorkload': cs.duration || 'P8W',
+          'location': {
+            '@type': 'Place',
+            'name': 'NITAQ Live Online Virtual Campus (Serving Dubai, Abu Dhabi, Sharjah & All UAE)'
+          },
           'instructor': {
             '@type': 'Person',
             'name': 'Nitaq Senior Expert'
           }
         }
       ],
-
       'aggregateRating': {
         '@type': 'AggregateRating',
         'ratingValue': '4.9',
         'reviewCount': '24'
       },
-
       ...(cs.duration && { timeRequired: cs.duration }),
       ...(cs.educationalLevel && { educationalLevel: cs.educationalLevel }),
       ...(cs.teaches && { teaches: cs.teaches }),
@@ -229,7 +293,7 @@ const SEO = () => {
     });
   }
 
-  // 5. FAQPage Schema (no @context)
+  // 6. FAQPage Schema (no @context)
   if (routeData.faqSchema && routeData.faqSchema.length > 0) {
     schemas.push({
       '@type': 'FAQPage',
@@ -244,19 +308,20 @@ const SEO = () => {
     });
   }
 
-  // 6. Article (BlogPosting) Schema — Upgraded to Google Search Central best practices
+  // 7. Article (BlogPosting) Schema — Optimized for Google AI Overviews, Perplexity & Dubai/UAE Search
   if (location.pathname.startsWith('/article/')) {
     schemas.push({
       '@type': 'BlogPosting',
       'headline': routeData.title.split('|')[0].trim(),
       'description': routeData.description,
+      'keywords': routeData.keywords || "Tuition Sharjah, Tuition Dubai, Academic Tutors UAE, IGCSE Dubai, CBSE Sharjah, A Level UAE, IB Tutors Dubai",
       'image': [
-        ogImageUrl, // Primary
-        ogImageUrl.replace('.webp', '-1x1.webp'), // Fallback variants logic if we had them, otherwise use the main one 3 times
+        ogImageUrl,
+        ogImageUrl.replace('.webp', '-1x1.webp'),
         ogImageUrl.replace('.webp', '-4x3.webp')
       ],
       'datePublished': routeData.datePublished || '2026-05-01T08:00:00+04:00',
-      'dateModified': routeData.dateModified || '2026-05-08T15:00:00+04:00',
+      'dateModified': routeData.dateModified || '2026-08-14T15:00:00+04:00',
       'author': [{
         '@type': 'Person',
         'name': 'Nitaq Academy Editorial Team',
@@ -273,6 +338,16 @@ const SEO = () => {
       'mainEntityOfPage': {
         '@type': 'WebPage',
         '@id': fullUrl
+      },
+      'spatialCoverage': [
+        { '@type': 'Place', 'name': 'Sharjah, UAE' },
+        { '@type': 'Place', 'name': 'Dubai, UAE' },
+        { '@type': 'Place', 'name': 'Abu Dhabi, UAE' },
+        { '@type': 'Place', 'name': 'United Arab Emirates' }
+      ],
+      'speakable': {
+        '@type': 'SpeakableSpecification',
+        'cssSelector': ['.article-main-title', '.lead-text', '.subject-quick-answer', 'h1', 'h2', 'p']
       }
     });
   }
