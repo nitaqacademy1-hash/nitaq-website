@@ -1,223 +1,384 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from '../../i18n/Link';
+import CourseLayout from '../../components/CourseLayout';
 import SEO from '../../components/SEO';
+import WhyNitaq from '../../components/WhyNitaq';
 import { 
-    CheckCircle, MapPin, Phone, Mail, Clock, Calendar, 
-    ShieldCheck, ArrowRight, BookOpen, Layers, Users, Award 
+    CheckCircle, Award, BookOpen, Users, MapPin, Phone, 
+    Calendar, Clock, ShieldCheck, ArrowRight, Star, 
+    Target, TrendingUp, Sparkles, HelpCircle, ChevronDown, 
+    PenTool, BookMarked, MessageSquare, FileText, Mail
 } from 'lucide-react';
 
 const EnglishTuitionSharjah = () => {
+    const infoData = {
+        "Grades Covered": "Class 1 to 12 (Primary to High School)",
+        "Modules Included": "Grammar, Reading, Writing & Literature",
+        "Curricula Supported": "Cambridge IGCSE (0500/0510), Edexcel, IB & CBSE",
+        "Batch Structure": "Micro-Batches (5-8 Students) & 1-on-1 Tutoring",
+        "Delivery Mode": "In-Person (Al Majaz 3, Sharjah) & Live Online UAE",
+        "Skill Pillars": "Creative Writing, Text Analysis & Board Prep",
+        "Licensing": "SPEA Authorized (Sharjah Private Education Authority)"
+    };
+
     return (
-        <main className="article-details-page">
+        <>
             <SEO />
-            
-            <div className="breadcrumb-wrapper">
-                <div className="container">
-                    <nav className="article-breadcrumb">
-                        <Link to="/">Home</Link>
-                        <span>/</span>
-                        <span>English Tuition Sharjah</span>
-                    </nav>
-                </div>
-            </div>
+            <CourseLayout
+                title="English Tuition in Sharjah"
+                subtitle="Premier English Grammar, Essay Writing, Reading Comprehension & Literature Coaching for Class 1 to 12 in Al Majaz 3, Sharjah & Online UAE."
+                infoData={infoData}
+            >
+                {/* QUICK ANSWER / AI DISCOVERABILITY HIGHLIGHT */}
+                <section aria-labelledby="quick-answer" className="subject-quick-answer">
+                    <h2 id="quick-answer" className="subject-quick-answer-title">
+                        <CheckCircle size={22} color="#2E7D32" /> Quick Answer: English Tuition at Nitaq Academy Sharjah
+                    </h2>
+                    <p>
+                        Nitaq Academy provides SPEA-authorized <strong>English tuition in Sharjah</strong> for Class 1 to Class 12 students. We deliver structured coaching for <strong>Cambridge IGCSE English (First Language 0500 & Second Language 0510)</strong>, <strong>Pearson Edexcel GCSE/A-Level English</strong>, <strong>International Baccalaureate (IB Language A & B)</strong>, and <strong>CBSE English Core & Communicative</strong>. Focus areas include English grammar, vocabulary expansion, reading comprehension, essay structuring, and literary analysis, taught in micro-batches of 5 to 8 students and 1-on-1 private classes at Abu Khamseen Tower, Al Majaz 3, Sharjah, as well as live interactive online classes across the UAE.
+                    </p>
+                </section>
 
-            <article className="article-container section-padding">
-                <div className="container">
-                    <header className="article-header text-center">
-                        <span className="article-category-badge">Academic Support</span>
-                        <h1 className="article-main-title">
-                            English Tuition in Sharjah: Grammar, Reading, Writing, Literature & Board Exam Coaching for Class 1 to 12
-                        </h1>
-                    </header>
-
-                    {/* AI DISCOVERABILITY / QUICK ANSWER SECTION */}
-                    <section aria-labelledby="quick-answer" style={{ background: '#f0fdf4', border: '2px solid #2E7D32', borderRadius: '16px', padding: '24px 30px', margin: '30px 0 40px' }}>
-                        <h2 id="quick-answer" style={{ color: '#1b5e20', fontSize: '1.4rem', margin: '0 0 12px 0', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                            <CheckCircle size={22} color="#2E7D32" /> Quick Answer: English Tuition at Nitaq Academy Sharjah
-                        </h2>
-                        <p style={{ margin: 0, fontSize: '1.05rem', lineHeight: '1.7', color: '#1e293b' }}>
-                            Nitaq Academy delivers SPEA-authorized English tuition in Sharjah for Class 1 to Class 12. We teach academic grammar, reading comprehension, creative/persuasive writing, and literature for Cambridge IGCSE (First & Second Language), Edexcel, CBSE Core, and IB English at our Al Majaz 3 campus and through interactive live online classes throughout the UAE.
+                {/* PROGRAM OVERVIEW CARD */}
+                <div className="content-card">
+                    <h2>Master the Language: <span className="text-gradient">English Tuition & Literary Coaching in Sharjah</span></h2>
+                    <div className="overview-text">
+                        <p className="lead-text">
+                            English proficiency is the gateway to academic excellence across all school subjects, university admissions, and international career communication. Whether your child requires foundational phonics and grammar remediation, advanced descriptive essay writing for <strong>IGCSE English tuition in Sharjah</strong>, or critical text analysis for <strong>A-Level and IB English</strong>, Nitaq Academy provides tailored, results-driven linguistic training.
                         </p>
-                    </section>
+                        <p>
+                            From our campus in <strong>Al Majaz 3, Sharjah</strong>, our certified English educators cultivate articulate expression, grammatical precision, and analytical reading habits. We transition students from hesitant English speakers and writers into confident, persuasive communicators.
+                        </p>
+                    </div>
+                </div>
 
-                    {/* KEY FACTS TABLE */}
-                    <div style={{ overflowX: 'auto', margin: '30px 0' }}>
-                        <table style={{ width: '100%', borderCollapse: 'collapse', background: '#f8fafc', borderRadius: '12px', border: '1px solid #e2e8f0' }}>
+                {/* KEY FACTS SPECIFICATION TABLE */}
+                <div className="content-card">
+                    <h2>Program <span className="text-gradient">Key Facts & Specifications</span></h2>
+                    <div className="spec-table-wrapper">
+                        <table className="spec-table">
                             <thead>
-                                <tr style={{ background: '#2E7D32', color: '#ffffff', textAlign: 'left' }}>
-                                    <th style={{ padding: '14px 18px' }}>Program Dimension</th>
-                                    <th style={{ padding: '14px 18px' }}>Details for English Tuition</th>
+                                <tr>
+                                    <th>Program Attribute</th>
+                                    <th>Specification for English Tuition</th>
                                 </tr>
                             </thead>
-                            <tbody style={{ fontSize: '0.95rem', color: '#334155' }}>
-                                <tr style={{ borderBottom: '1px solid #e2e8f0' }}><td style={{ padding: '12px 18px', fontWeight: 600 }}>Grades Covered</td><td style={{ padding: '12px 18px' }}>Class 1, Class 2, Class 3, Class 4, Class 5, Class 6, Class 7, Class 8, Class 9, Class 10, Class 11, Class 12</td></tr>
-                                <tr style={{ borderBottom: '1px solid #e2e8f0', background: '#ffffff' }}><td style={{ padding: '12px 18px', fontWeight: 600 }}>Curricula Supported</td><td style={{ padding: '12px 18px' }}>Cambridge IGCSE (0500 / 0510), Edexcel GCSE/A-Level, IB English (Language & Literature), CBSE Core, British Curriculum</td></tr>
-                                <tr style={{ borderBottom: '1px solid #e2e8f0' }}><td style={{ padding: '12px 18px', fontWeight: 600 }}>Core Modules</td><td style={{ padding: '12px 18px' }}>Grammar Classes, Reading Comprehension, Directed/Creative Writing, Literary Analysis, Spoken Fluency</td></tr>
-                                <tr style={{ borderBottom: '1px solid #e2e8f0', background: '#ffffff' }}><td style={{ padding: '12px 18px', fontWeight: 600 }}>Class Formats</td><td style={{ padding: '12px 18px' }}>Classroom Micro-Batches (5–8 students), 1-on-1 Private Tutoring & Live Interactive Online Classes</td></tr>
-                                <tr><td style={{ padding: '12px 18px', fontWeight: 600 }}>Government Licensing</td><td style={{ padding: '12px 18px' }}>Sharjah Private Education Authority (SPEA) Authorized</td></tr>
+                            <tbody>
+                                <tr>
+                                    <td className="spec-label">Grades Covered</td>
+                                    <td>Class 1, Class 2, Class 3, Class 4, Class 5, Class 6, Class 7, Class 8, Class 9, Class 10, Class 11, Class 12</td>
+                                </tr>
+                                <tr>
+                                    <td className="spec-label">Core Modules</td>
+                                    <td>English Grammar & Syntax, Reading Comprehension, Directed & Creative Essay Writing, English Literature (Prose, Poetry, Drama), Spoken Fluency</td>
+                                </tr>
+                                <tr>
+                                    <td className="spec-label">Curricula Supported</td>
+                                    <td>Cambridge IGCSE (0500 First Lang, 0510/0511 Second Lang, 0475 Literature), Edexcel GCSE/A-Level English, IB DP English A/B (SL/HL), CBSE (Class 1-12 English Core & Communicative)</td>
+                                </tr>
+                                <tr>
+                                    <td className="spec-label">Batch Size Options</td>
+                                    <td>Micro-batches (5 to 8 students) & 1-on-1 Dedicated Private Tutoring</td>
+                                </tr>
+                                <tr>
+                                    <td className="spec-label">Instruction Modes</td>
+                                    <td>In-Person Classroom (Al Majaz 3, Sharjah Campus) & Live Online HD Interactive Whiteboard (UAE-wide)</td>
+                                </tr>
+                                <tr>
+                                    <td className="spec-label">Regulatory Licensing</td>
+                                    <td>SPEA Authorized (Sharjah Private Education Authority)</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
+                </div>
 
-                    <div className="article-content-wrapper">
-                        <div className="article-main-content">
-                            <p className="lead-text">
-                                High academic proficiency in the English language is essential for success across all educational boards and global university admissions. Nitaq Academy provides rigorous <strong>English tuition in Sharjah</strong>, integrating comprehensive <strong>grammar classes in Sharjah</strong> with structured <strong>reading and writing support in Sharjah</strong> and specialized <strong>IGCSE English tuition in Sharjah</strong>.
-                            </p>
-
-                            <h2>Tuition for Primary School (Class 1–5)</h2>
-                            <p>
-                                Primary English tuition (Class 1, Class 2, Class 3, Class 4, and Class 5) builds fundamental literacy, phonics, and vocabulary:
-                            </p>
-                            <ul>
-                                <li><strong>Phonics, Spelling & Vocabulary:</strong> Word decoding, phonetic patterns, high-frequency sight words, and contextual vocabulary acquisition.</li>
-                                <li><strong>Grammar & Sentence Construction:</strong> Parts of speech (nouns, verbs, adjectives, adverbs), punctuation rules, and correct subject-verb agreement.</li>
-                                <li><strong>Reading Fluency & Comprehension:</strong> Guided reading, extracting explicit facts, and inferring character motives.</li>
-                                <li><strong>Creative Expression:</strong> Paragraph writing, short storytelling, and descriptive writing exercises.</li>
-                            </ul>
-
-                            <h2>Tuition for Middle School (Class 6–8)</h2>
-                            <p>
-                                Middle school English instruction for Class 6, Class 7, and Class 8 bridges basic communication to advanced analytical writing:
-                            </p>
-                            <ul>
-                                <li><strong>Advanced Grammar & Syntax:</strong> Clauses, active/passive voice, direct/indirect speech, conditional tenses, and complex sentence structures.</li>
-                                <li><strong>Formal & Informal Composition:</strong> Letter writing, formal emails, diary entries, narrative essays, and persuasive speeches.</li>
-                                <li><strong>Critical Reading Skills:</strong> Distinguishing fact from opinion, identifying authorial bias, tone, and figurative language devices.</li>
-                                <li><strong>Poetry & Prose Analysis:</strong> Themes, characterization, metaphors, similes, and symbolism in prose and poetry.</li>
-                            </ul>
-
-                            <h2>Tuition for Secondary School (Class 9–10)</h2>
-                            <p>
-                                Preparing for Class 9 and Class 10 board examinations in CBSE, British Curriculum, and American frameworks:
-                            </p>
-                            <ul>
-                                <li><strong>CBSE Class 9 & 10 English Language & Literature:</strong> Complete coverage of NCERT textbooks (First Flight, Footprints Without Feet, Beehive, Moments), unseen comprehension passages, and formal report/article writing.</li>
-                                <li><strong>High-Scoring Writing Formats:</strong> Analytical paragraphs, formal letters to the editor, and commercial speech writing adhering to CBSE rubrics.</li>
-                                <li><strong>Literature Appreciation:</strong> In-depth thematic analysis, character sketches, and reference-to-context question formats.</li>
-                            </ul>
-
-                            <h2>IGCSE Support</h2>
-                            <p>
-                                Specialized IGCSE English coaching for Cambridge (CAIE 0500 / 0510) and Pearson Edexcel boards:
-                            </p>
-                            <ul>
-                                <li><strong>IGCSE First Language English (0500):</strong> Reading comprehension analysis, explicit and implicit meaning synthesis, summary writing (Paper 1), and directed writing & composition (Paper 2).</li>
-                                <li><strong>IGCSE English as a Second Language (0510 / 0511):</strong> Reading and writing techniques, note-making, summary writing, formal/informal writing, and speaking endorsement training.</li>
-                                <li><strong>Examiner Mark-Scheme Alignment:</strong> Training students on specific Reading Assessment Objectives (AO1, AO2, AO3) and Writing Assessment Objectives (AO1 to AO5).</li>
-                            </ul>
-
-                            <h2>A-Level Support</h2>
-                            <p>
-                                Advanced Level English coaching for AS and A2 Level:
-                            </p>
-                            <ul>
-                                <li><strong>A-Level English Language:</strong> Textual analysis, language change over time, child language acquisition, and English in a global context.</li>
-                                <li><strong>A-Level English Literature:</strong> In-depth dramatic criticism of Shakespearean texts, modern drama, Victorian prose, and unseen poetry comparison.</li>
-                            </ul>
-
-                            <h2>IB Support</h2>
-                            <p>
-                                Comprehensive guidance for IB English Language A and Language B:
-                            </p>
-                            <ul>
-                                <li><strong>IB English A: Language & Literature (HL/SL):</strong> Textual analysis of non-literary bodies of work, global issues exploration, and Paper 1 comparative essay techniques.</li>
-                                <li><strong>Individual Oral (IO) Preparation:</strong> Brainstorming global issues, script timing, excerpt selection, and practice oral delivery sessions.</li>
-                            </ul>
-
-                            <h2>Online & Offline Classes</h2>
-                            <ul>
-                                <li><strong>Offline In-Person Tutoring:</strong> Interactive seminars and essay workshops at Abu Khamseen Tower, Al Majaz 3, Sharjah.</li>
-                                <li><strong>Live Online Classes:</strong> Real-time shared document editing, structured grammar quizzes, and digital vocabulary builders accessible across Dubai, Abu Dhabi, and the UAE.</li>
-                            </ul>
-
-                            <h2>Exam Preparation</h2>
-                            <ul>
-                                <li>Timed essay writing simulations under strict examination conditions.</li>
-                                <li>Unseen reading comprehension speed strategies to maximize reading paper accuracy.</li>
-                                <li>Detailed individual essay feedback with line-by-line stylistic and grammatical corrections.</li>
-                            </ul>
-
-                            <h2>Personalized Learning</h2>
-                            <p>
-                                Diagnostic writing assessments evaluate vocabulary range, syntactic complexity, and grammatical accuracy. Custom lesson pathways ensure that ESL learners achieve fluency while advanced students master literary critique.
-                            </p>
-
-                            <h2>Why Choose Nitaq Academy in Sharjah</h2>
-                            <ul>
-                                <li><strong>SPEA Authorized:</strong> Government accredited training center in Sharjah.</li>
-                                <li><strong>Experienced English Linguists & Literature Masters:</strong> Specialized native and bilingual educators.</li>
-                                <li><strong>Micro-Batches (5–8 students):</strong> Ensuring every written draft receives direct individual teacher feedback.</li>
-                                <li><strong>Central Al Majaz 3 Location:</strong> Located in Abu Khamseen Tower, near Buhaira Corniche.</li>
-                            </ul>
-
-                            <div className="content-hr"></div>
-
-                            {/* COMPREHENSIVE 12 FAQS */}
-                            <h2>Frequently Asked Questions About English Tuition in Sharjah</h2>
-                            <div className="faq-accordion-group">
-                                <details className="faq-accordion" open><summary>1. Do you provide Class 10 English tuition in Sharjah?</summary><p>Yes, Nitaq Academy offers comprehensive Class 10 English tuition for CBSE, IGCSE, and British curricula covering unseen passages, formal writing, and literature analysis.</p></details>
-                                <details className="faq-accordion"><summary>2. Do you offer IGCSE First Language and Second Language English coaching?</summary><p>Yes, we prepare students for Cambridge IGCSE 0500 (First Language) and 0510/0511 (Second Language) as well as Pearson Edexcel English boards.</p></details>
-                                <details className="faq-accordion"><summary>3. What grammar skills are covered in your classes?</summary><p>We cover sentence syntax, tense consistency, active/passive voice, direct/indirect speech, punctuation mastery, subject-verb agreement, and advanced modal verbs.</p></details>
-                                <details className="faq-accordion"><summary>4. Are online English classes available across the UAE?</summary><p>Yes, our live online English classes feature interactive collaborative document editing, real-time feedback, and recorded lessons for students throughout the UAE.</p></details>
-                                <details className="faq-accordion"><summary>5. What is the batch size for English tuition?</summary><p>We maintain micro-batches of only 5 to 8 students so that every essay and writing task receives detailed individual teacher critique.</p></details>
-                                <details className="faq-accordion"><summary>6. How do you prepare students for the IB English Individual Oral (IO)?</summary><p>Our mentors guide IB students in connecting chosen literary and non-literary texts to a global issue, refining their 10-minute presentation and 5-minute Q&A.</p></details>
-                                <details className="faq-accordion"><summary>7. Do you provide reading and writing support for Primary Class 1 to 5?</summary><p>Yes, our primary program builds phonics, reading fluency, vocabulary, and creative paragraph writing for Class 1 to Class 5 students.</p></details>
-                                <details className="faq-accordion"><summary>8. Do you also provide Spoken English and communication training?</summary><p>Yes, we offer specialized spoken English modules focusing on public speaking confidence, clear pronunciation, and conversational fluency.</p></details>
-                                <details className="faq-accordion"><summary>9. Do you provide sample model essays and marking rubrics?</summary><p>Yes, students receive model high-scoring essays, vocabulary word banks, transition phrase cheat sheets, and official board marking rubrics.</p></details>
-                                <details className="faq-accordion"><summary>10. Are 1-on-1 private English tutoring sessions available?</summary><p>Yes, dedicated 1-on-1 private tutoring is available for intensive essay writing catch-up or urgent board exam revision.</p></details>
-                                <details className="faq-accordion"><summary>11. Is Nitaq Academy an authorized training center in Sharjah?</summary><p>Yes, Nitaq Academy is an officially licensed and SPEA-authorized (Sharjah Private Education Authority) educational center.</p></details>
-                                <details className="faq-accordion"><summary>12. How can I schedule a diagnostic writing assessment?</summary><p>You can contact our admissions desk on WhatsApp at +971 52 756 9908 or complete the online enquiry form to schedule a free diagnostic assessment.</p></details>
+                {/* FOUR ENGLISH PILLARS GRID */}
+                <div className="content-card">
+                    <h2>Four Core Pillars: <span className="text-gradient">Comprehensive English Mastery</span></h2>
+                    <div className="tracks-grid">
+                        <div className="feature-item" style={{ borderTop: '4px solid #2E7D32' }}>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                                <PenTool size={24} color="#2E7D32" />
+                                <h3 style={{ color: '#2E7D32', margin: 0 }}>Grammar & Vocabulary</h3>
                             </div>
+                            <p style={{ fontSize: '0.92rem', color: '#475569', lineHeight: '1.6' }}>
+                                Master parts of speech, tense consistency, active/passive voice, clause structures, punctuation precision, and academic vocabulary expansion for error-free writing.
+                            </p>
+                        </div>
 
-                            {/* INTERNAL LINKING */}
-                            <div style={{ marginTop: '40px', padding: '20px', background: '#f8fafc', borderRadius: '12px', border: '1px solid #e2e8f0' }}>
-                                <h3 style={{ fontSize: '1.1rem', marginBottom: '10px' }}>Explore Other Academic Subjects at Nitaq Academy:</h3>
-                                <ul style={{ margin: 0, paddingLeft: '20px', lineHeight: '1.8' }}>
-                                    <li>Explore <Link to="/maths-tuition-sharjah" className="inline-link">Maths Tuition in Sharjah (Primary to A-Level & IB)</Link></li>
-                                    <li>Explore <Link to="/science-tuition-sharjah" className="inline-link">Science Tuition in Sharjah (Physics, Chemistry & Biology)</Link></li>
-                                    <li>Explore <Link to="/social-science-tuition-sharjah" className="inline-link">Social Science Tuition in Sharjah (History, Geography & Civics)</Link></li>
-                                </ul>
+                        <div className="feature-item" style={{ borderTop: '4px solid #0284c7' }}>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                                <BookOpen size={24} color="#0284c7" />
+                                <h3 style={{ color: '#0284c7', margin: 0 }}>Reading Comprehension</h3>
                             </div>
+                            <p style={{ fontSize: '0.92rem', color: '#475569', lineHeight: '1.6' }}>
+                                Unpack complex unseen texts, inferential reading, identifying literary devices, tone analysis, skimming/scanning techniques, and summary writing.
+                            </p>
+                        </div>
 
-                            {/* CONTACT & LOCATION */}
-                            <h2>Contact & Location in Al Majaz 3, Sharjah</h2>
-                            <div style={{ background: '#f8fafc', padding: '24px', borderRadius: '16px', border: '1px solid #e2e8f0', margin: '20px 0' }}>
-                                <p style={{ margin: '0 0 10px' }}><strong>Institution:</strong> Nitaq Academy</p>
-                                <p style={{ margin: '0 0 10px' }}><strong>Address:</strong> Office F103, Floor F1, Abu Khamseen Tower, Al Majaz 3, Sharjah, UAE</p>
-                                <p style={{ margin: '0 0 10px' }}><strong>Phone / WhatsApp:</strong> <a href="tel:+971527569908" style={{ color: '#2E7D32', fontWeight: 600 }}>+971 52 756 9908</a></p>
-                                <p style={{ margin: '0 0 15px' }}><strong>Email:</strong> <a href="mailto:info@nitaqacademy.com" style={{ color: '#2E7D32', fontWeight: 600 }}>info@nitaqacademy.com</a></p>
-                                <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-                                    <a href="https://wa.me/971527569908?text=Hello%20Nitaq%20Academy,%20I%20am%20inquiring%20about%20English%20Tuition%20in%20Sharjah" target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '12px 24px', borderRadius: '50px', background: '#2E7D32', color: '#fff', fontWeight: 700 }}>
-                                        WhatsApp Admissions (+971 52 756 9908)
-                                    </a>
-                                    <Link to="/enquiry" className="btn-outline-primary" style={{ padding: '12px 24px' }}>
-                                        Book Diagnostic Evaluation
-                                    </Link>
-                                </div>
+                        <div className="feature-item" style={{ borderTop: '4px solid #7e22ce' }}>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                                <FileText size={24} color="#7e22ce" />
+                                <h3 style={{ color: '#7e22ce', margin: 0 }}>Directed & Creative Writing</h3>
+                            </div>
+                            <p style={{ fontSize: '0.92rem', color: '#475569', lineHeight: '1.6' }}>
+                                Structured training in narrative essays, descriptive writing, persuasive letters, formal reports, newspaper articles, speech writing, and argumentative essays.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                {/* GRADE-WISE ACADEMIC PATHWAYS (4 CARDS) */}
+                <div className="content-card">
+                    <h2>Grade-Wise <span className="text-gradient">English Pathways (Class 1 to 12)</span></h2>
+                    <div className="grade-grid">
+                        <div className="grade-card">
+                            <span className="grade-badge primary">Class 1 to 5</span>
+                            <h3>Primary English</h3>
+                            <p className="grade-desc">Phonics, sentence building, and fostering a love for reading.</p>
+                            <ul>
+                                <li><strong>Phonics & Spelling:</strong> Sight words, root words, prefixes and suffixes.</li>
+                                <li><strong>Grammar Fundamentals:</strong> Nouns, verbs, adjectives, prepositions, capitalization.</li>
+                                <li><strong>Story Comprehension:</strong> Sequencing events, character feelings, main ideas.</li>
+                                <li><strong>Creative Storytelling:</strong> Writing simple descriptive paragraphs and short stories.</li>
+                            </ul>
+                        </div>
+
+                        <div className="grade-card">
+                            <span className="grade-badge accent">Class 6 to 8</span>
+                            <h3>Middle School English</h3>
+                            <p className="grade-desc">Transitioning to complex sentence structures and formal composition.</p>
+                            <ul>
+                                <li><strong>Advanced Grammar:</strong> Direct & indirect speech, conditional clauses, subject-verb agreement.</li>
+                                <li><strong>Formal Writing:</strong> Informal/formal letters, diary entries, email writing, notices.</li>
+                                <li><strong>Literary Elements:</strong> Metaphor, simile, personification, alliteration, themes.</li>
+                                <li><strong>Analytical Thinking:</strong> Critical responses to non-fiction and classic fiction passages.</li>
+                            </ul>
+                        </div>
+
+                        <div className="grade-card">
+                            <span className="grade-badge purple">Class 9 & 10</span>
+                            <h3>Secondary English Boards</h3>
+                            <p className="grade-desc">Mastering board examination formats for CBSE, IGCSE (0500/0510), and MYP.</p>
+                            <ul>
+                                <li><strong>Directed Writing:</strong> Speech, report, journal, and interview response formats.</li>
+                                <li><strong>Writer's Effect Analysis:</strong> Dissecting how linguistic choices evoke reader emotions.</li>
+                                <li><strong>Literature Mastery:</strong> In-depth exploration of set prose, poetry, and Shakespearean drama.</li>
+                                <li><strong>Past Paper Drills:</strong> Mark scheme alignment for CAIE 0500 & CBSE Class 10.</li>
+                            </ul>
+                        </div>
+
+                        <div className="grade-card">
+                            <span className="grade-badge amber">Class 11 & 12</span>
+                            <h3>Senior English / A-Level / IB</h3>
+                            <p className="grade-desc">University-level textual critique, rhetoric, and stylistic analysis.</p>
+                            <ul>
+                                <li><strong>Stylistics & Rhetoric:</strong> Analysis of political speeches, travelogues, and essays.</li>
+                                <li><strong>Comparative Literature:</strong> Cross-textual thematic essays and contextual critique.</li>
+                                <li><strong>IB Individual Oral (IO):</strong> Rubric optimization and oral presentation training.</li>
+                                <li><strong>Extended Essay (EE) Support:</strong> Research framing and academic formatting.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                {/* CURRICULUM MASTERY (CBSE, IGCSE, A-LEVEL, IB) */}
+                <div className="content-card">
+                    <h2>Curriculum Mastery: <span className="text-gradient">CBSE, IGCSE, A-Level & IB English</span></h2>
+                    <div className="tracks-grid">
+                        <div className="feature-item" style={{ borderTop: '4px solid var(--primary-color)' }}>
+                            <h3 style={{ color: 'var(--primary-color)', marginBottom: '8px' }}>CBSE English</h3>
+                            <div className="curriculum-pill-group">
+                                <span className="curriculum-pill">Class 9-10 Communicative</span>
+                                <span className="curriculum-pill">Class 11-12 English Core</span>
+                            </div>
+                            <p style={{ fontSize: '0.92rem', color: '#475569', lineHeight: '1.6' }}>
+                                NCERT textbook chapter analysis (Beehive, Moments, First Flight, Footprints Without Feet, Flamingo, Vistas), notice/letter/article writing drills, and error correction exercises.
+                            </p>
+                        </div>
+
+                        <div className="feature-item" style={{ borderTop: '4px solid var(--accent-color)' }}>
+                            <h3 style={{ color: 'var(--accent-color)', marginBottom: '8px' }}>Cambridge IGCSE</h3>
+                            <div className="curriculum-pill-group">
+                                <span className="curriculum-pill">First Language 0500</span>
+                                <span className="curriculum-pill">Second Language 0510</span>
+                            </div>
+                            <p style={{ fontSize: '0.92rem', color: '#475569', lineHeight: '1.6' }}>
+                                Intensive training on Paper 1 (Reading & Summary) and Paper 2 (Directed Writing & Composition) with emphasis on precise vocabulary selection and examiner criteria for A* / Grade 9.
+                            </p>
+                        </div>
+
+                        <div className="feature-item" style={{ borderTop: '4px solid #7e22ce' }}>
+                            <h3 style={{ color: '#7e22ce', marginBottom: '8px' }}>A-Level & IB DP English</h3>
+                            <div className="curriculum-pill-group">
+                                <span className="curriculum-pill">Edexcel A-Level Lang/Lit</span>
+                                <span className="curriculum-pill">IB DP English A: Lang & Lit</span>
+                            </div>
+                            <p style={{ fontSize: '0.92rem', color: '#475569', lineHeight: '1.6' }}>
+                                Guiding students through guided textual analysis (Paper 1), comparative essays (Paper 2), Higher Level (HL) essays, and Individual Oral (IO) preparation with veteran examiners.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                {/* 12 FREQUENTLY ASKED QUESTIONS */}
+                <div className="content-card">
+                    <h2>Frequently Asked Questions: <span className="text-gradient">English Tuition Sharjah</span></h2>
+                    <p style={{ color: '#475569', marginBottom: '20px' }}>
+                        Answers to common questions regarding English tuition, grammar, writing, and literature classes at Nitaq Academy:
+                    </p>
+
+                    <div className="faq-card-group">
+                        <details className="faq-card-item">
+                            <summary>Which curriculums do you cover for English tuition in Sharjah? <ChevronDown size={18} /></summary>
+                            <p>We provide comprehensive English coaching for Cambridge IGCSE (0500 First Language, 0510/0511 Second Language, 0475 Literature), Pearson Edexcel GCSE and A-Level English, International Baccalaureate (IB DP English A and B at HL/SL), CBSE (Class 1 to 12 English Core and Communicative), and British Curriculum schools.</p>
+                        </details>
+
+                        <details className="faq-card-item">
+                            <summary>How do you help students improve their essay writing and creative composition? <ChevronDown size={18} /></summary>
+                            <p>We use structured writing frameworks (such as PEEL and TEEL paragraph models), sensory vocabulary banks, dynamic sentence starter techniques, and line-by-line editorial feedback to transform rough drafts into polished, high-scoring essays.</p>
+                        </details>
+
+                        <details className="faq-card-item">
+                            <summary>Do you offer English tuition for non-native Arabic-speaking or bilingual students? <ChevronDown size={18} /></summary>
+                            <p>Yes. We have specialized English as a Second Language (ESL / IGCSE 0510) and Spoken English modules designed to build grammar confidence, pronunciation clarity, and verbal fluency for students from Arabic or multilingual backgrounds.</p>
+                        </details>
+
+                        <details className="faq-card-item">
+                            <summary>What are the class sizes for English tuition at Nitaq Academy? <ChevronDown size={18} /></summary>
+                            <p>Our English classes are limited to micro-batches of 5 to 8 students to enable extensive individual writing feedback, live essay corrections, and active discussion. 1-on-1 private tuition is also available.</p>
+                        </details>
+
+                        <details className="faq-card-item">
+                            <summary>Can students take online English tuition classes across the UAE? <ChevronDown size={18} /></summary>
+                            <p>Yes. Our live interactive online classes feature collaborative Google Docs editing, digital annotation whiteboards, recorded lectures for review, and weekly writing submissions accessible across Dubai, Abu Dhabi, and Sharjah.</p>
+                        </details>
+
+                        <details className="faq-card-item">
+                            <summary>How do you prepare students for IGCSE First Language English (0500) Paper 1 and 2? <ChevronDown size={18} /></summary>
+                            <p>We provide targeted training on summary writing techniques, writer's effect analysis (selecting precise figurative language and emotional tone), directed writing formats (speech, article, letter), and descriptive/narrative composition.</p>
+                        </details>
+
+                        <details className="faq-card-item">
+                            <summary>Do you provide tutoring for English Literature texts and poetry analysis? <ChevronDown size={18} /></summary>
+                            <p>Yes. We analyze set texts including Shakespearean plays (Macbeth, Romeo and Juliet, The Merchant of Venice), modern novels (Lord of the Flies, To Kill a Mockingbird, Animal Farm), and anthology poetry collections.</p>
+                        </details>
+
+                        <details className="faq-card-item">
+                            <summary>Can students receive guidance for IB English Individual Oral (IO) and HL Essays? <ChevronDown size={18} /></summary>
+                            <p>Yes. Our IB specialist English mentors provide rubric-focused guidance on global issue formulation, extract selection, rhetorical analysis, and mock oral practice for the Individual Oral (IO).</p>
+                        </details>
+
+                        <details className="faq-card-item">
+                            <summary>Where is Nitaq Academy's Sharjah learning center located? <ChevronDown size={18} /></summary>
+                            <p>We are centrally located at Abu Khamseen Tower, Office F103, Floor F1, Al Majaz 3, Sharjah, UAE, easily accessible from Buhaira Corniche and King Faisal Street.</p>
+                        </details>
+
+                        <details className="faq-card-item">
+                            <summary>What qualifications do your English tutors hold? <ChevronDown size={18} /></summary>
+                            <p>Our faculty hold Master's degrees in English Literature, Linguistics, or Education, with CELTA/TESOL certifications and over 7 to 15 years of international school teaching experience in the UAE.</p>
+                        </details>
+
+                        <details className="faq-card-item">
+                            <summary>How can I book a free English evaluation or demo class? <ChevronDown size={18} /></summary>
+                            <p>You can book a free diagnostic assessment or demo class by messaging us on WhatsApp at +971 52 756 9908 or calling our center at +971 6 579 8313.</p>
+                        </details>
+
+                        <details className="faq-card-item">
+                            <summary>Are grammar remediation drills provided for students with low vocabulary? <ChevronDown size={18} /></summary>
+                            <p>Yes. Every enrolled student receives access to weekly personalized grammar worksheets, contextual vocabulary quizzes, and root-word morphology exercises to systematically build lexical breadth.</p>
+                        </details>
+                    </div>
+                </div>
+
+                {/* SIBLING SUBJECT DISCOVERY GRID */}
+                <div className="content-card">
+                    <h2>Explore Related <span className="text-gradient">Academic Support Programs</span></h2>
+                    <p style={{ color: '#475569' }}>
+                        Pair your English studies with Nitaq Academy's top-rated tuition across other major disciplines:
+                    </p>
+
+                    <div className="subject-discovery-grid">
+                        <Link to="/maths-tuition-sharjah" className="subject-discovery-card">
+                            <div>
+                                <h4>Maths Tuition <ArrowRight size={18} color="#2E7D32" /></h4>
+                                <p>Primary, Secondary, IGCSE, A-Level, IB & CBSE Mathematics coaching from Class 1 to 12.</p>
+                            </div>
+                        </Link>
+
+                        <Link to="/science-tuition-sharjah" className="subject-discovery-card">
+                            <div>
+                                <h4>Science Tuition <ArrowRight size={18} color="#2E7D32" /></h4>
+                                <p>Physics, Chemistry, and Biology coaching for Class 1 to 12 across IGCSE, CBSE, and IB boards.</p>
+                            </div>
+                        </Link>
+
+                        <Link to="/social-science-tuition-sharjah" className="subject-discovery-card">
+                            <div>
+                                <h4>Social Science Tuition <ArrowRight size={18} color="#2E7D32" /></h4>
+                                <p>History, Geography, Civics, Economics, and UAE Social Studies for CBSE, IGCSE & IB.</p>
+                            </div>
+                        </Link>
+                    </div>
+                </div>
+
+                {/* CAMPUS LOCATION & ADMISSIONS */}
+                <div className="campus-contact-card">
+                    <h3 style={{ fontSize: '1.3rem', color: '#0f172a', marginBottom: '15px' }}>
+                        Sharjah Campus & Admissions Center
+                    </h3>
+                    <p style={{ color: '#475569', marginBottom: '20px' }}>
+                        Visit our SPEA-authorized learning center in Al Majaz 3 for free diagnostic evaluations and personalized academic counseling:
+                    </p>
+
+                    <div className="campus-contact-grid">
+                        <div className="campus-contact-item">
+                            <div className="campus-contact-icon"><MapPin size={20} /></div>
+                            <div className="campus-contact-text">
+                                <h5>Campus Address</h5>
+                                <p>Abu Khamseen Tower, Office F103, Al Majaz 3, Sharjah</p>
                             </div>
                         </div>
 
-                        {/* SIDEBAR */}
-                        <aside className="article-sidebar">
-                            <div className="enroll-sidebar-card">
-                                <h3>English Tuition Sharjah</h3>
-                                <p>Grammar, Writing & Literature</p>
-                                <ul style={{ textAlign: 'left', margin: '20px 0', padding: 0, listStyle: 'none', fontSize: '0.9rem', color: '#475569' }}>
-                                    <li style={{ marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}><CheckCircle size={16} color="#2E7D32" /> Class 1 to 12 All Curricula</li>
-                                    <li style={{ marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}><CheckCircle size={16} color="#2E7D32" /> IGCSE & A-Level English</li>
-                                    <li style={{ marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}><CheckCircle size={16} color="#2E7D32" /> IB English Language & Lit</li>
-                                    <li style={{ marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}><CheckCircle size={16} color="#2E7D32" /> SPEA Authorized Center</li>
-                                </ul>
-                                <a href="https://wa.me/971527569908?text=Hello%20Nitaq%20Academy,%20I%20am%20inquiring%20about%20English%20Tuition" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', width: '100%', padding: '12px 0', borderRadius: '50px', background: '#25D366', color: '#fff', fontWeight: 700, textDecoration: 'none' }}>
-                                    Chat on WhatsApp
-                                </a>
+                        <div className="campus-contact-item">
+                            <div className="campus-contact-icon"><Phone size={20} /></div>
+                            <div className="campus-contact-text">
+                                <h5>Direct Call</h5>
+                                <p>+971 6 579 8313 / +971 52 756 9908</p>
                             </div>
-                        </aside>
+                        </div>
+
+                        <div className="campus-contact-item">
+                            <div className="campus-contact-icon"><Mail size={20} /></div>
+                            <div className="campus-contact-text">
+                                <h5>Admissions Email</h5>
+                                <p>info@nitaqacademy.com</p>
+                            </div>
+                        </div>
+
+                        <div className="campus-contact-item">
+                            <div className="campus-contact-icon"><ShieldCheck size={20} /></div>
+                            <div className="campus-contact-text">
+                                <h5>Accreditation</h5>
+                                <p>SPEA Licensed Institution</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style={{ display: 'flex', gap: '15px', flexWrap: 'wrap' }}>
+                        <a href="https://wa.me/971527569908" className="btn btn-primary" style={{ padding: '14px 30px' }}>
+                            Book Free English Assessment on WhatsApp
+                        </a>
+                        <Link to="/enquiry" className="btn" style={{ background: '#f1f5f9', color: '#1e293b', padding: '14px 30px' }}>
+                            Schedule Campus Visit
+                        </Link>
                     </div>
                 </div>
-            </article>
-        </main>
+
+                <WhyNitaq />
+            </CourseLayout>
+        </>
     );
 };
 

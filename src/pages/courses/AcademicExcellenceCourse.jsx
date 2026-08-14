@@ -153,64 +153,86 @@ const AcademicExcellenceCourse = () => {
                     </ul>
                 </div>
 
+                {/* SIBLING SUBJECT DISCOVERY GRID */}
+                <div className="content-card">
+                    <h2>Specialized Subject Coaching: <span className="text-gradient">Explore Dedicated Tracks</span></h2>
+                    <p style={{ color: '#475569' }}>
+                        In addition to comprehensive multi-subject academic mentoring, Nitaq Academy offers dedicated subject tuition in Sharjah:
+                    </p>
+
+                    <div className="subject-discovery-grid">
+                        <Link to="/maths-tuition-sharjah" className="subject-discovery-card">
+                            <div>
+                                <h4>Maths Tuition <ArrowRight size={18} color="#2E7D32" /></h4>
+                                <p>Primary, Secondary, IGCSE, A-Level, IB & CBSE Mathematics coaching from Class 1 to 12.</p>
+                            </div>
+                        </Link>
+
+                        <Link to="/science-tuition-sharjah" className="subject-discovery-card">
+                            <div>
+                                <h4>Science Tuition <ArrowRight size={18} color="#2E7D32" /></h4>
+                                <p>Physics, Chemistry, and Biology coaching for Class 1 to 12 across IGCSE, CBSE, and IB boards.</p>
+                            </div>
+                        </Link>
+
+                        <Link to="/english-tuition-sharjah" className="subject-discovery-card">
+                            <div>
+                                <h4>English Tuition <ArrowRight size={18} color="#2E7D32" /></h4>
+                                <p>Grammar mastery, comprehension, essay writing, and IGCSE First Language English coaching.</p>
+                            </div>
+                        </Link>
+
+                        <Link to="/social-science-tuition-sharjah" className="subject-discovery-card">
+                            <div>
+                                <h4>Social Science Tuition <ArrowRight size={18} color="#2E7D32" /></h4>
+                                <p>History, Geography, Civics, Economics, and UAE Social Studies for CBSE, IGCSE & IB.</p>
+                            </div>
+                        </Link>
+                    </div>
+                </div>
+
                 {/* FAQ SECTION */}
                 <div className="content-card">
                     <h2>Academic Support in Sharjah <span className="text-gradient">FAQs</span></h2>
-                    <div className="faq-accordion-group">
-                        <details className="faq-accordion" open>
+                    <div className="faq-card-group">
+                        <details className="faq-card-item" open>
                             <summary>What is the Academic Excellence programme at Nitaq Academy?</summary>
-                            <div className="faq-accordion-content" style={{ padding: '15px 20px', color: '#475569', lineHeight: '1.7' }}>
-                                <p>The Academic Excellence programme is a structured tutoring and academic mentoring course for school students in Grades 1 to 12 across Sharjah and Dubai. It covers Mathematics, Science (Physics, Chemistry, Biology), English, and Arabic across IGCSE, A-Level, IB, and CBSE curricula.</p>
-                            </div>
+                            <p>The Academic Excellence programme is a structured tutoring and academic mentoring course for school students in Grades 1 to 12 across Sharjah and Dubai. It covers Mathematics, Science (Physics, Chemistry, Biology), English, and Arabic across IGCSE, A-Level, IB, and CBSE curricula.</p>
                         </details>
 
-                        <details className="faq-accordion">
+                        <details className="faq-card-item">
                             <summary>Where are your tuition classes conducted in Sharjah?</summary>
-                            <div className="faq-accordion-content" style={{ padding: '15px 20px', color: '#475569', lineHeight: '1.7' }}>
-                                <p>Our campus is centrally located at Office F103, Floor F1, Abu Khamseen Tower, Al Majaz 3, Sharjah, UAE. We also offer interactive live online classes for students residing in Dubai, Abu Dhabi, Ajman, and across the UAE.</p>
-                            </div>
+                            <p>Our campus is centrally located at Office F103, Floor F1, Abu Khamseen Tower, Al Majaz 3, Sharjah, UAE. We also offer interactive live online classes for students residing in Dubai, Abu Dhabi, Ajman, and across the UAE.</p>
                         </details>
 
-                        <details className="faq-accordion">
+                        <details className="faq-card-item">
                             <summary>Do you offer specialized IGCSE and A-Level classes in Sharjah?</summary>
-                            <div className="faq-accordion-content" style={{ padding: '15px 20px', color: '#475569', lineHeight: '1.7' }}>
-                                <p>Yes, we offer specialized Cambridge CAIE and Pearson Edexcel IGCSE and A-Level tuition. Our expert teachers focus on past papers, mark scheme analysis, and exam time management to help students secure A* and Grade 9 results.</p>
-                            </div>
+                            <p>Yes, we offer specialized Cambridge CAIE and Pearson Edexcel IGCSE and A-Level tuition. Our expert teachers focus on past papers, mark scheme analysis, and exam time management to help students secure A* and Grade 9 results.</p>
                         </details>
 
-                        <details className="faq-accordion">
+                        <details className="faq-card-item">
                             <summary>How does Nitaq Academy support International Baccalaureate (IB) students?</summary>
-                            <div className="faq-accordion-content" style={{ padding: '15px 20px', color: '#475569', lineHeight: '1.7' }}>
-                                <p>We provide comprehensive IB tutoring for PYP, MYP, and DP (Higher Level and Standard Level) students. Our subject tutors guide learners through IB Math AA/AI, Sciences, and structured Internal Assessment (IA) rubrics.</p>
-                            </div>
+                            <p>We provide comprehensive IB tutoring for PYP, MYP, and DP (Higher Level and Standard Level) students. Our subject tutors guide learners through IB Math AA/AI, Sciences, and structured Internal Assessment (IA) rubrics.</p>
                         </details>
 
-                        <details className="faq-accordion">
+                        <details className="faq-card-item">
                             <summary>What is the average batch size for tuition classes?</summary>
-                            <div className="faq-accordion-content" style={{ padding: '15px 20px', color: '#475569', lineHeight: '1.7' }}>
-                                <p>We maintain micro-batches of only 5 to 8 students to ensure individualized attention, active teacher interaction, and prompt doubt clearance. 1-on-1 private tutoring sessions are also available upon request.</p>
-                            </div>
+                            <p>We maintain micro-batches of only 5 to 8 students to ensure individualized attention, active teacher interaction, and prompt doubt clearance. 1-on-1 private tutoring sessions are also available upon request.</p>
                         </details>
 
-                        <details className="faq-accordion">
+                        <details className="faq-card-item">
                             <summary>How do you track and report student performance improvement in Sharjah?</summary>
-                            <div className="faq-accordion-content" style={{ padding: '15px 20px', color: '#475569', lineHeight: '1.7' }}>
-                                <p>Through our dedicated <Link to="/academic-excellence" className="inline-link">student progress tracking</Link> system, we conduct chapter-wise diagnostic tests and monthly mock exams. Comprehensive progress reports are shared bi-weekly with parents.</p>
-                            </div>
+                            <p>Through our dedicated student progress tracking system, we conduct chapter-wise diagnostic tests and monthly mock exams. Comprehensive progress reports are shared bi-weekly with parents.</p>
                         </details>
 
-                        <details className="faq-accordion">
+                        <details className="faq-card-item">
                             <summary>Are your academic courses authorized by government education authorities?</summary>
-                            <div className="faq-accordion-content" style={{ padding: '15px 20px', color: '#475569', lineHeight: '1.7' }}>
-                                <p>Yes, Nitaq Academy is an officially licensed and SPEA-authorized (Sharjah Private Education Authority) training institute in Sharjah, ensuring the highest standards of academic excellence and educational safety.</p>
-                            </div>
+                            <p>Yes, Nitaq Academy is an officially licensed and SPEA-authorized (Sharjah Private Education Authority) training institute in Sharjah, ensuring the highest standards of academic excellence and educational safety.</p>
                         </details>
 
-                        <details className="faq-accordion">
+                        <details className="faq-card-item">
                             <summary>How can I enroll my child or schedule a free diagnostic assessment?</summary>
-                            <div className="faq-accordion-content" style={{ padding: '15px 20px', color: '#475569', lineHeight: '1.7' }}>
-                                <p>You can book a free diagnostic assessment by contacting our admissions desk via WhatsApp at +971 52 756 9908, submitting the enquiry form on our website, or visiting our center in Al Majaz 3, Sharjah.</p>
-                            </div>
+                            <p>You can book a free diagnostic assessment by contacting our admissions desk via WhatsApp at +971 52 756 9908, submitting the enquiry form on our website, or visiting our center in Al Majaz 3, Sharjah.</p>
                         </details>
                     </div>
                 </div>

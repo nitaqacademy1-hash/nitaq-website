@@ -90,7 +90,6 @@ const PrivacyPolicy = lazy(() => import('./pages/legal/PrivacyPolicy'));
 
 
 import FloatingWhatsApp from './components/FloatingWhatsApp';
-import DynamicPopup from './components/DynamicPopup';
 const ResumeGuide = lazy(() => import('./pages/ig/2026-03-29/ResumeGuide'));
 const AIWebinar = lazy(() => import('./pages/webinar/AIWebinar'));
 const AIWebinarThankYou = lazy(() => import('./pages/webinar/AIWebinarThankYou'));
@@ -115,7 +114,6 @@ function AppContent() {
         </Routes>
       </Suspense>
       <FloatingWhatsAppCondition />
-      <DynamicPopupCondition />
       <Footer />
     </LanguageProvider>
   );
@@ -251,16 +249,6 @@ const FloatingWhatsAppCondition = () => {
   const isIgPage = path.startsWith('/ig/');
   const isWebinarPage = path.startsWith('/webinar/');
   return (!isIgPage && !isWebinarPage) ? <FloatingWhatsApp /> : null;
-};
-
-/** Marketing popup — everywhere except landing/webinar pages, which have their
- *  own conversion flow (the component additionally excludes its action pages). */
-const DynamicPopupCondition = () => {
-  const location = useLocation();
-  const path = stripLangPrefix(location.pathname);
-  const isIgPage = path.startsWith('/ig/');
-  const isWebinarPage = path.startsWith('/webinar');
-  return (!isIgPage && !isWebinarPage) ? <DynamicPopup /> : null;
 };
 
 export default App;

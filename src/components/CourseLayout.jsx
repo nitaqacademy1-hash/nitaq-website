@@ -25,16 +25,16 @@ const CourseLayout = ({ title, subtitle, infoData, children }) => {
                             </p>
 
                             <div className="course-hero-actions">
-                                <a 
-                                    href="https://wa.me/971527569908" 
+                                <a
+                                    href="https://wa.me/971527569908"
                                     className="btn btn-primary"
                                     onClick={() => trackEvent(ANALYTICS_EVENTS.WHATSAPP, `enroll_${title.split(' - ')[0].toLowerCase().replace(/\s+/g, '_')}`)}
                                 >
                                     Enroll Today
                                 </a>
-                                <a 
-                                    href="tel:+97165798313" 
-                                    className="btn" 
+                                <a
+                                    href="tel:+97165798313"
+                                    className="btn"
                                     style={{ background: '#f0f0f0', color: 'var(--text-dark)' }}
                                     onClick={() => trackEvent(ANALYTICS_EVENTS.CALL, `advisor_${title.split(' - ')[0].toLowerCase().replace(/\s+/g, '_')}`)}
                                 >
@@ -83,9 +83,9 @@ const CourseLayout = ({ title, subtitle, infoData, children }) => {
                         Join a community of focused learners and build your future with Nitaq Training Center. Expert guidance is just a click away.
                     </p>
                     <div style={{ display: 'flex', gap: '20px', justifyContent: 'center', flexWrap: 'wrap' }}>
-                        <a 
-                            href="https://wa.me/971527569908" 
-                            className="btn btn-primary" 
+                        <a
+                            href="https://wa.me/971527569908"
+                            className="btn btn-primary"
                             style={{ padding: '20px 45px' }}
                             onClick={() => trackEvent(ANALYTICS_EVENTS.WHATSAPP, `bottom_cta_${title.split(' - ')[0].toLowerCase().replace(/\s+/g, '_')}`)}
                         >
