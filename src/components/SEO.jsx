@@ -62,16 +62,35 @@ const SEO = () => {
     "email": "info@nitaqacademy.com",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Office : F103, Floor F1, Abu Khamseen Tower, Majaz 3",
-      "addressLocality": "Majaz 3",
+      "streetAddress": "Abu Khamseen Tower - Office : F103, Floor F1 - Al Majaz 3",
+      "addressLocality": "Al Majaz 3, Al Majaz",
       "addressRegion": "Sharjah",
-      "addressCountry": "UAE"
+      "postalCode": "00000",
+      "addressCountry": "United Arab Emirates"
     },
     "geo": {
       "@type": "GeoCoordinates",
       "latitude": "25.3259",
       "longitude": "55.3857"
     },
+    "hasMap": "https://maps.app.goo.gl/3fX3B1uQ7G2zS5vE8",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "09:00",
+        "closes": "20:00"
+      }
+    ],
+    "priceRange": "$$",
     "areaServed": [
       { "@type": "City", "name": "Sharjah" },
       { "@type": "City", "name": "Dubai" },
@@ -117,7 +136,7 @@ const SEO = () => {
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.9",
-      "reviewCount": "24"
+      "reviewCount": "11"
     }
   };
 
