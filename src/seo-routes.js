@@ -2634,6 +2634,36 @@ export const seoRoutes = [
         answer: "NITAQ Academy provides SPEA-authorized SAT preparation available both in-person at our Al Majaz 3 Sharjah campus and via interactive live online batches across Dubai and the UAE with micro-batches (5–8 students) and full-length adaptive simulations."
       }
     ]
+  },
+  {
+    path: "/article/best-tuition-classes-near-me-sharjah",
+    title: "Best Tuition Classes Near Me in Sharjah (2026): Al Majaz, Al Nahda, Muwaileh | Nitaq Academy",
+    description: "Looking for the best tuition classes near me in Sharjah? Complete guide to top school tuition in Al Majaz, Al Nahda, Muwaileh, Al Qasimia, Al Taawun & Al Khan. Expert tutors for CBSE, IGCSE, IB & American curricula.",
+    canonical: "https://www.nitaqacademy.com/article/best-tuition-classes-near-me-sharjah",
+    ogTitle: "Best Tuition Classes Near Me in Sharjah (2026): Al Majaz, Al Nahda, Muwaileh | Nitaq Academy",
+    ogDescription: "Looking for the best tuition classes near me in Sharjah? Complete guide to top school tuition in Al Majaz, Al Nahda, Muwaileh, Al Qasimia, Al Taawun & Al Khan.",
+    ogImage: "/images/academic_v2.webp",
+    twitterCard: "summary_large_image",
+    datePublished: "2026-08-18T08:00:00+04:00",
+    dateModified: "2026-08-18T15:00:00+04:00",
+    faqSchema: [
+      {
+        question: "Where is the best tuition center located near me in Sharjah?",
+        answer: "The premier tuition center in Sharjah is NITAQ Academy, centrally located in Al Majaz 3 at Abu Khamseen Tower (Floor F1, Office F103), easily accessible within 2–10 minutes from Al Majaz, Al Nahda, Al Taawun, Al Qasimia, Abu Shagara, and Al Khan."
+      },
+      {
+        question: "Is NITAQ Academy licensed by the Sharjah Private Education Authority (SPEA)?",
+        answer: "Yes, NITAQ Academy is a fully authorized and licensed educational training institute approved by the Sharjah Private Education Authority (SPEA)."
+      },
+      {
+        question: "Which school curricula do you cover in your Sharjah tuition classes?",
+        answer: "We provide specialized coaching across CBSE, ICSE, British (Cambridge & Edexcel IGCSE/A-Level), IB (PYP, MYP, DP), and American curriculum."
+      },
+      {
+        question: "What subjects are available for school tuition in Sharjah?",
+        answer: "We offer tutoring for Grade 1 through Grade 12 in Mathematics, Physics, Chemistry, Biology, English, Arabic (MOE A & B), Business Studies, Accountancy, and Economics."
+      }
+    ]
   }
 ];
 

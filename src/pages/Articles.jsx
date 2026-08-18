@@ -5,6 +5,17 @@ import { Calendar, User, ArrowRight, ExternalLink, Filter, Search } from 'lucide
 
 const articles = [
     {
+        id: 28,
+        title: "Best Tuition Classes Near Me in Sharjah (2026): The Complete Neighborhood Guide to Top Coaching Centers",
+        excerpt: "Find the best school tuition classes near you in Sharjah. Comprehensive guide covering Al Majaz, Al Nahda, Muwaileh, Al Qasimia & Al Khan for CBSE, IGCSE, IB & American boards.",
+        category: "Academic Excellence",
+        path: "/article/best-tuition-classes-near-me-sharjah",
+        coursePath: "/academic-excellence",
+        courseLabel: "Tuition Program",
+        date: "August 18, 2026",
+        image: "/images/academic_v2.webp"
+    },
+    {
         id: 27,
         title: "Digital SAT Preparation in Sharjah & Dubai: The Ultimate Roadmap to Scoring 1500+ in 2026",
         excerpt: "Master the Digital SAT with adaptive testing strategies, Desmos graphing calculator hacks, Reading & Writing blueprints, and proven study plans for UAE university admissions & scholarships.",
