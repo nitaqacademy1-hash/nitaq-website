@@ -529,7 +529,10 @@
 
       .toolbar,
       .btn-row,
-      .sig-actions {
+      .sig-actions,
+      .loading-overlay,
+      .modal-overlay,
+      #successModal {
         display: none !important;
       }
 
@@ -623,10 +626,200 @@
         transform: rotate(360deg);
       }
     }
+
+    /* Success Thank You Modal */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(15, 35, 22, 0.68);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      z-index: 2000;
+      animation: modalFadeIn 0.25s ease-out;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    @keyframes modalFadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes modalScaleIn {
+      from { transform: scale(0.92); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .modal-card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 36px 32px 30px;
+      max-width: 520px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(26, 92, 46, 0.1);
+      animation: modalScaleIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+    }
+
+    .modal-icon-wrap {
+      width: 72px;
+      height: 72px;
+      margin: 0 auto 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-check-svg {
+      width: 72px;
+      height: 72px;
+    }
+
+    .modal-title {
+      font-family: 'Montserrat', 'Tajawal', sans-serif;
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--green-dark);
+      margin-bottom: 12px;
+      line-height: 1.25;
+    }
+
+    .modal-message {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .modal-highlight-box {
+      background: #f0f8f3;
+      border: 1px dashed var(--green-accent);
+      border-radius: 10px;
+      padding: 12px 16px;
+      margin-bottom: 24px;
+      font-size: 13px;
+      color: var(--green-dark);
+      line-height: 1.5;
+      font-weight: 600;
+    }
+
+    .modal-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .btn-modal-download {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 14px 20px;
+      background: linear-gradient(135deg, var(--green-dark) 0%, var(--green-mid) 100%);
+      color: #ffffff;
+      border: none;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(26, 92, 46, 0.35);
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+
+    .btn-modal-download:hover {
+      background: linear-gradient(135deg, #134622 0%, var(--green-dark) 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(26, 92, 46, 0.45);
+    }
+
+    .modal-secondary-row {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn-modal-close,
+    .btn-modal-home {
+      flex: 1;
+      padding: 11px 16px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: inherit;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn-modal-close {
+      background: #f1f5f2;
+      color: #3e5245;
+      border: 1px solid #d5e0d8;
+    }
+
+    .btn-modal-close:hover {
+      background: #e3ebe5;
+      color: var(--text);
+    }
+
+    .btn-modal-home {
+      background: transparent;
+      color: var(--green-dark);
+      border: 1px solid var(--border);
+    }
+
+    .btn-modal-home:hover {
+      background: #f7f9f7;
+      border-color: var(--green-mid);
+    }
   </style>
   <div id="loadingOverlay" class="loading-overlay">
     <div class="spinner"></div>
     <p style="font-weight: 700; color: var(--green-dark);">Submitting Form...</p>
+  </div>
+
+  <!-- Success Thank You & PDF Download Modal -->
+  <div id="successModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <div class="modal-icon-wrap">
+        <svg class="modal-check-svg" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="26" cy="26" r="25" fill="#e8f5ed" stroke="#1a5c2e" stroke-width="2"/>
+          <path d="M15 27L22 34L37 19" stroke="#1a5c2e" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h2 id="modalTitle" class="modal-title" data-i18n="modalTitle">Thank You for Enrolling with Us!</h2>
+      <p id="modalMsg" class="modal-message" data-i18n="modalMessage">Your enrolment application has been submitted successfully. Our admissions team will review your details and contact you shortly.</p>
+      
+      <div class="modal-highlight-box">
+        <p data-i18n="modalPdfNotice">💡 We recommend downloading or saving a copy of your completed enrolment form for your records.</p>
+      </div>
+
+      <div class="modal-actions">
+        <button type="button" class="btn-modal-download" id="modalDownloadPdfBtn" data-i18n="modalDownloadPdf">
+          📥 Download / Save PDF
+        </button>
+        <div class="modal-secondary-row">
+          <button type="button" class="btn-modal-close" id="modalCloseBtn" data-i18n="modalClose">Close</button>
+          <a href="/" class="btn-modal-home" data-i18n="modalBackHome">Go to Homepage →</a>
+        </div>
+      </div>
+    </div>
   </div>
 </head>
 
@@ -854,6 +1047,12 @@
         fullName: 'Full name', gradePh: 'Grade / Year', schoolName: 'School name', emailExample: 'email@example.com', eidOptionalPh: 'Emirates ID No.', notesNeedsPh: 'Any learning notes, allergies, medical needs, or support requirements...', relationshipPh: 'e.g. Father / Mother / Guardian', uaePhone: '+971 xx xxx xxxx', courseInterestedPh: 'e.g. SAT, IELTS, English, Math, AI', goalPh: 'What would you like the student to improve or achieve?', contactNamePh: 'Contact name', relationshipToStudent: 'Relationship to student', additionalNotesPh: 'Anything else we should know...',
         submitAlert: 'Form submitted successfully! Our team will contact you soon.',
         submitError: 'There was an error submitting the form. Please try again or contact us directly.',
+        modalTitle: 'Thank You for Enrolling with Us!',
+        modalMessage: 'Your enrolment application has been submitted successfully. Our admissions team will review your details and contact you shortly.',
+        modalPdfNotice: '💡 We recommend downloading or saving a PDF copy of your completed enrolment form for your records.',
+        modalDownloadPdf: '📥 Download / Save PDF',
+        modalClose: 'Close',
+        modalBackHome: 'Go to Homepage →',
         termsList: [
           'Enrolment is confirmed only after schedule, fees, and payment arrangements are approved by NITAQ Academy.',
           'Students are expected to attend classes regularly and punctually.',
@@ -886,6 +1085,12 @@
         fullName: 'الاسم الكامل', gradePh: 'الصف / السنة الدراسية', schoolName: 'اسم المدرسة', emailExample: 'email@example.com', eidOptionalPh: 'رقم الهوية', notesNeedsPh: 'أي ملاحظات تعليمية، حساسية، احتياجات صحية أو دعم مطلوب...', relationshipPh: 'مثال: أب / أم / ولي أمر', uaePhone: '+971 xx xxx xxxx', courseInterestedPh: 'مثال: SAT، IELTS، لغة إنجليزية، رياضيات، ذكاء اصطناعي', goalPh: 'ما الهدف أو المهارة التي ترغبون بتحسينها لدى الطالب؟', contactNamePh: 'اسم جهة الاتصال', relationshipToStudent: 'صلة القرابة بالطالب', additionalNotesPh: 'أي معلومات إضافية يجب أن نعرفها...',
         submitAlert: 'تم إرسال النموذج بنجاح! سيتواصل معكم فريقنا قريباً.',
         submitError: 'حدث خطأ أثناء إرسال النموذج. يرجى المحاولة مرة أخرى أو التواصل معنا مباشرة.',
+        modalTitle: 'شكراً لتسجيلكم معنا!',
+        modalMessage: 'تم إرسال طلب التسجيل الخاص بكم بنجاح. سيقوم فريق القبول بمراجعة البيانات والتواصل معكم قريباً.',
+        modalPdfNotice: '💡 يُرجى تحميل أو حفظ نسخة من استمارة التسجيل المكتملة لسجلاتكم الخاصة.',
+        modalDownloadPdf: '📥 تحميل / حفظ بصيغة PDF',
+        modalClose: 'إغلاق',
+        modalBackHome: 'العودة للصفحة الرئيسية ←',
         termsList: [
           'يتم تأكيد التسجيل فقط بعد اعتماد الجدول والرسوم وترتيبات الدفع من قبل أكاديمية نطاق.',
           'يتوقع من الطلاب الالتزام بالحضور المنتظم وفي الوقت المحدد.',
@@ -1003,7 +1208,37 @@
       form.reset();
       Object.keys(signaturePads).forEach(clearSignature);
     });
-    const API_URL = 'https://script.google.com/macros/s/AKfycbzOXWMUx79_TNkrigcnDg8YUQYiMRbXp0ZCSHHc69NR7fvN6zSuWQFTOQVFLS4eppQ2/exec';
+
+    // Success Modal controls
+    const modal = document.getElementById('successModal');
+    const modalDownloadBtn = document.getElementById('modalDownloadPdfBtn');
+    const modalCloseBtn = document.getElementById('modalCloseBtn');
+
+    function showSuccessModal() {
+      syncSignatures();
+      modal.classList.add('active');
+    }
+
+    function hideSuccessModal() {
+      modal.classList.remove('active');
+    }
+
+    modalDownloadBtn.addEventListener('click', () => {
+      syncSignatures();
+      window.print();
+    });
+
+    modalCloseBtn.addEventListener('click', () => {
+      hideSuccessModal();
+    });
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        hideSuccessModal();
+      }
+    });
+
+    const API_URL = 'https://script.google.com/macros/s/AKfycbzaolnYFH4sA3-yv6iZIGBBHbhBmLY3BuWXvI2v7_oRGIW5ZYvqD7QTitkCsPcCn2-J/exec';
 
     form.addEventListener('submit', async e => {
       e.preventDefault();
@@ -1022,12 +1257,19 @@
           data[name] = form.querySelector(`[name="${name}"]`).checked ? "Yes" : "No";
         });
 
-        // Get simple fields
+        // Handle simple fields
         formData.forEach((value, key) => {
           if (!checkboxes.includes(key) && key !== 'emirates_id_file') {
             data[key] = value;
           }
         });
+
+        // Ensure signatures and metadata
+        data.parent_signature = document.getElementById('parent_signature_data').value;
+        data.student_signature = document.getElementById('student_signature_data').value;
+        data.signature_date = (form.querySelector('[name="signature_date"]') && form.querySelector('[name="signature_date"]').value) || new Date().toISOString().split('T')[0];
+        data.timestamp = new Date().toLocaleString('en-US', { timeZone: 'Asia/Dubai' });
+        data.lang = currentLang;
 
         // Handle EID File
         const eidFile = form.querySelector('[name="emirates_id_file"]').files[0];
@@ -1039,6 +1281,7 @@
           });
           data.eidFile = await base64Promise;
           data.eidFileName = eidFile.name;
+          data.eidMimeType = eidFile.type || 'application/octet-stream';
         }
 
         const response = await fetch(API_URL, {
@@ -1050,15 +1293,18 @@
         });
 
         loading.style.display = 'none';
-        alert(translations[currentLang].submitAlert);
-        form.reset();
-        Object.keys(signaturePads).forEach(clearSignature);
+        showSuccessModal();
       } catch (error) {
         console.error('Error:', error);
         loading.style.display = 'none';
         alert(translations[currentLang].submitError);
       }
     });
+
+    const sigDateEl = form.querySelector('[name="signature_date"]');
+    if (sigDateEl && !sigDateEl.value) {
+      sigDateEl.value = new Date().toISOString().split('T')[0];
+    }
     setLanguage('en');
   </script>
 </body>

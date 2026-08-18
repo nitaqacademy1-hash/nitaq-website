@@ -126,6 +126,13 @@ function AppContent() {
   );
 }
 
+const EnrolmentRedirect = () => {
+  if (typeof window !== 'undefined') {
+    window.location.replace('/enrolment.html');
+  }
+  return null;
+};
+
 /**
  * The full page tree, mounted under a language prefix. Paths are relative so
  * the same definitions serve `/about` and `/ar/about`.
@@ -135,6 +142,8 @@ function LocalizedRoutes() {
       <Routes>
         <Route path="" element={<Home />} />
         <Route path="about" element={<About />} />
+        <Route path="enrolment" element={<EnrolmentRedirect />} />
+        <Route path="enrolment.html" element={<EnrolmentRedirect />} />
         <Route path="enquiry" element={<Enquiry />} />
         <Route path="contact" element={<Contact />} />
         <Route path="test-preparations" element={<TestPreparations />} />
