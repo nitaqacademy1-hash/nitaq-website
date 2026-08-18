@@ -5,6 +5,17 @@ import { Calendar, User, ArrowRight, ExternalLink, Filter, Search } from 'lucide
 
 const articles = [
     {
+        id: 27,
+        title: "Digital SAT Preparation in Sharjah & Dubai: The Ultimate Roadmap to Scoring 1500+ in 2026",
+        excerpt: "Master the Digital SAT with adaptive testing strategies, Desmos graphing calculator hacks, Reading & Writing blueprints, and proven study plans for UAE university admissions & scholarships.",
+        category: "SAT Preparation",
+        path: "/article/digital-sat-preparation-guide-sharjah-dubai-uae",
+        coursePath: "/sat-preparation-sharjah",
+        courseLabel: "SAT Course",
+        date: "August 18, 2026",
+        image: "/images/sat_v2.webp"
+    },
+    {
         id: 26,
         title: "The Complete UAE Subject Tuition Guide: Mastering Mathematics, Sciences, Commerce & Humanities",
         excerpt: "Master core academic subjects with expert tuition in Sharjah & Dubai. In-depth guide to Maths, Physics, Chemistry, Biology, Business Studies, Accountancy, and Economics across IGCSE, CBSE, A-Level & IB.",
