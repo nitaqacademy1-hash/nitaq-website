@@ -4,7 +4,7 @@
  */
 
 import React, { useState, useEffect, useCallback } from 'react';
-import { listQuestions, createQuestion, deleteQuestion, ApiError } from '../../services/diagnosticApi';
+import { listQuestions, createQuestion, updateQuestion, deleteQuestion, ApiError } from '../../services/diagnosticApi';
 import '../sat/sat.css';
 
 const SECTION_OPTIONS = ['', 'MATH', 'READING_WRITING'];
@@ -80,6 +80,7 @@ export default function AdminQuestions() {
   const [sectionFilter, setSectionFilter] = useState('');
   const [deleting, setDeleting] = useState(null);
   const [showModal, setShowModal] = useState(false);
+  const [editingId, setEditingId] = useState(null);
   const [submitting, setSubmitting] = useState(false);
   const [modalError, setModalError] = useState('');
 
@@ -111,34 +112,64 @@ export default function AdminQuestions() {
 
   useEffect(() => { load(); }, [load]);
 
+  const handleOpenAdd = () => {
+    setEditingId(null);
+    setModalError('');
+    setFormData({
+      question_code: `SAT-Q${questions.length + 1}`,
+      section: 'MATH',
+      domain: 'ALGEBRA',
+      difficulty: 'MEDIUM',
+      question_text: '',
+      option_a: '',
+      option_b: '',
+      option_c: '',
+      option_d: '',
+      correct_answer: 'A',
+      explanation: '',
+    });
+    setShowModal(true);
+  };
+
+  const handleOpenEdit = (q) => {
+    setEditingId(q.id);
+    setModalError('');
+    setFormData({
+      question_code: q.question_code || '',
+      section: q.section || 'MATH',
+      domain: q.domain || 'ALGEBRA',
+      difficulty: q.difficulty || 'MEDIUM',
+      question_text: q.question_text || '',
+      option_a: q.option_a || '',
+      option_b: q.option_b || '',
+      option_c: q.option_c || '',
+      option_d: q.option_d || '',
+      correct_answer: q.correct_answer || 'A',
+      explanation: q.explanation || '',
+    });
+    setShowModal(true);
+  };
+
   const handleSectionChange = (sec) => {
     const defaultDomain = sec === 'MATH' ? 'ALGEBRA' : 'INFORMATION_IDEAS';
     setFormData(prev => ({ ...prev, section: sec, domain: defaultDomain }));
   };
 
-  const handleCreateSubmit = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setSubmitting(true);
     setModalError('');
     try {
-      await createQuestion(formData);
+      if (editingId) {
+        await updateQuestion(editingId, formData);
+      } else {
+        await createQuestion(formData);
+      }
       setShowModal(false);
-      setFormData({
-        question_code: '',
-        section: 'MATH',
-        domain: 'ALGEBRA',
-        difficulty: 'MEDIUM',
-        question_text: '',
-        option_a: '',
-        option_b: '',
-        option_c: '',
-        option_d: '',
-        correct_answer: 'A',
-        explanation: '',
-      });
+      setEditingId(null);
       load();
     } catch (err) {
-      setModalError(err instanceof ApiError ? err.message : 'Failed to create question');
+      setModalError(err instanceof ApiError ? err.message : (editingId ? 'Failed to update question' : 'Failed to create question'));
     } finally {
       setSubmitting(false);
     }
@@ -173,10 +204,7 @@ export default function AdminQuestions() {
         <div style={{ display: 'flex', gap: '8px', alignItems: 'center', flexWrap: 'wrap' }}>
           <button
             className="admin-btn primary"
-            onClick={() => {
-              setFormData(f => ({ ...f, question_code: `SAT-Q${questions.length + 1}` }));
-              setShowModal(true);
-            }}
+            onClick={handleOpenAdd}
           >
             + Add Question
           </button>
@@ -259,7 +287,7 @@ export default function AdminQuestions() {
                       <p style={{ fontSize: '0.82rem', color: '#64748B', marginBottom: '16px' }}>
                         Click "+ Add Question" to enter questions manually.
                       </p>
-                      <button className="admin-btn primary" onClick={() => setShowModal(true)}>
+                      <button className="admin-btn primary" onClick={handleOpenAdd}>
                         + Add Question
                       </button>
                     </td>
@@ -298,14 +326,23 @@ export default function AdminQuestions() {
                       </span>
                     </td>
                     <td>
-                      <button
-                        className="admin-btn outline"
-                        style={{ fontSize: '0.72rem', padding: '4px 8px', color: '#B91C1C', borderColor: '#FECACA' }}
-                        onClick={() => handleDelete(q.id, q.question_code)}
-                        disabled={deleting === q.id}
-                      >
-                        {deleting === q.id ? '…' : 'Delete'}
-                      </button>
+                      <div style={{ display: 'flex', gap: '6px', alignItems: 'center' }}>
+                        <button
+                          className="admin-btn outline"
+                          style={{ fontSize: '0.72rem', padding: '4px 8px', color: '#2563EB', borderColor: '#BFDBFE' }}
+                          onClick={() => handleOpenEdit(q)}
+                        >
+                          Edit
+                        </button>
+                        <button
+                          className="admin-btn outline"
+                          style={{ fontSize: '0.72rem', padding: '4px 8px', color: '#B91C1C', borderColor: '#FECACA' }}
+                          onClick={() => handleDelete(q.id, q.question_code)}
+                          disabled={deleting === q.id}
+                        >
+                          {deleting === q.id ? '…' : 'Delete'}
+                        </button>
+                      </div>
                     </td>
                   </tr>
                 ))}
@@ -315,17 +352,17 @@ export default function AdminQuestions() {
         )}
       </div>
 
-      {/* Add Question Modal */}
+      {/* Add / Edit Question Modal */}
       {showModal && (
         <div style={modalOverlayStyle} onClick={() => setShowModal(false)}>
           <div style={modalContentStyle} onClick={e => e.stopPropagation()}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
               <div>
                 <h2 style={{ fontFamily: 'var(--font-heading, sans-serif)', fontSize: '1.2rem', fontWeight: 800, color: '#0F172A', margin: '0 0 2px 0' }}>
-                  Add SAT Question
+                  {editingId ? 'Edit SAT Question' : 'Add SAT Question'}
                 </h2>
                 <p style={{ color: '#64748B', fontSize: '0.8rem', margin: 0 }}>
-                  Active diagnostic assessment entry
+                  {editingId ? `Editing question ID #${editingId}` : 'Active diagnostic assessment entry'}
                 </p>
               </div>
               <button
@@ -342,7 +379,7 @@ export default function AdminQuestions() {
               </div>
             )}
 
-            <form onSubmit={handleCreateSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+            <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '10px' }}>
                 <div>
                   <label style={{ fontSize: '0.72rem', color: '#475569', fontWeight: 700, textTransform: 'uppercase' }}>Section</label>
@@ -495,7 +532,7 @@ export default function AdminQuestions() {
                   disabled={submitting}
                   style={{ fontSize: '0.8rem', padding: '8px 16px' }}
                 >
-                  {submitting ? 'Saving…' : 'Save Question'}
+                  {submitting ? 'Saving…' : (editingId ? 'Update Question' : 'Save Question')}
                 </button>
               </div>
             </form>
