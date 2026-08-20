@@ -6,9 +6,16 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, DeclarativeBase
 from app.core.config import settings
 
+db_url = settings.DATABASE_URL
+if db_url.startswith("postgresql://") and not db_url.startswith("postgresql+"):
+    try:
+        import psycopg2
+    except ImportError:
+        db_url = db_url.replace("postgresql://", "postgresql+pg8000://", 1)
+
 # ── Engine ────────────────────────────────────────────────────────────────────
 engine = create_engine(
-    settings.DATABASE_URL,
+    db_url,
     pool_pre_ping=True,          # detect stale connections
     pool_size=5,
     max_overflow=10,
