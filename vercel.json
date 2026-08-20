@@ -20,11 +20,11 @@
   ],
   "rewrites": [
     {
-      "source": "/ar/(.*)",
+      "source": "/ar/:path*",
       "destination": "/ar/index.html"
     },
     {
-      "source": "/(.*)",
+      "source": "/:path*",
       "destination": "/index.html"
     }
   ]
