@@ -13,6 +13,7 @@ from app.schemas.question import QuestionCreate, QuestionUpdate, QuestionFull
 router = APIRouter(prefix="/admin/questions", tags=["admin-questions"])
 
 
+@router.get("", response_model=list[QuestionFull])
 @router.get("/", response_model=list[QuestionFull])
 def list_questions(
     section: Section | None = None,
@@ -30,6 +31,7 @@ def list_questions(
     return q.order_by(Question.id).offset(skip).limit(limit).all()
 
 
+@router.post("", response_model=QuestionFull, status_code=status.HTTP_201_CREATED)
 @router.post("/", response_model=QuestionFull, status_code=status.HTTP_201_CREATED)
 def create_question(payload: QuestionCreate, admin=Depends(get_current_admin), db: Session = Depends(get_db)):
     existing = db.query(Question).filter(Question.question_code == payload.question_code).first()

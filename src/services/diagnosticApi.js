@@ -136,11 +136,12 @@ export async function listQuestions({ section, domain } = {}) {
   const params = new URLSearchParams();
   if (section) params.set('section', section);
   if (domain) params.set('domain', domain);
-  return request(`/admin/questions/?${params}`);
+  const queryStr = params.toString();
+  return request(`/admin/questions${queryStr ? '?' + queryStr : ''}`);
 }
 
 export async function createQuestion(data) {
-  return request('/admin/questions/', { method: 'POST', body: JSON.stringify(data) });
+  return request('/admin/questions', { method: 'POST', body: JSON.stringify(data) });
 }
 
 export async function updateQuestion(id, data) {
