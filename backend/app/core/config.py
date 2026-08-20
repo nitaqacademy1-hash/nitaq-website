@@ -11,6 +11,10 @@ class Settings(BaseSettings):
     # ── Database ──────────────────────────────────────────────────────────────
     DATABASE_URL: str = "postgresql://postgres.emlzasyxockzkwxjcvor:%26hB239EyrS7%3F%25Lk@aws-0-ap-southeast-2.pooler.supabase.com:6543/postgres"
 
+    @property
+    def clean_database_url(self) -> str:
+        return self.DATABASE_URL.strip()
+
     # ── Security ──────────────────────────────────────────────────────────────
     SECRET_KEY: str = "nitaq_super_secret_sat_jwt_key_2026_x89f41b"
     ADMIN_BOOTSTRAP_SECRET: str = ""

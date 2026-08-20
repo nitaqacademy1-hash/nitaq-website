@@ -6,7 +6,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, DeclarativeBase
 from app.core.config import settings
 
-db_url = settings.DATABASE_URL
+db_url = settings.clean_database_url
 if db_url.startswith("postgresql://") and not db_url.startswith("postgresql+"):
     try:
         import psycopg2
