@@ -14,9 +14,16 @@ class ApiError extends Error {
 }
 
 async function request(path, options = {}) {
+  const token = sessionStorage.getItem('nitaq_admin_token');
+  const authHeader = token ? { Authorization: `Bearer ${token}` } : {};
+
   const res = await fetch(`${API_BASE}${path}`, {
-    headers: { 'Content-Type': 'application/json', ...options.headers },
-    credentials: 'include', // send cookies for admin session
+    headers: {
+      'Content-Type': 'application/json',
+      ...authHeader,
+      ...options.headers,
+    },
+    credentials: 'include',
     ...options,
   });
 
