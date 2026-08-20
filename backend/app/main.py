@@ -22,7 +22,7 @@ app = FastAPI(
 # ── CORS ──────────────────────────────────────────────────────────────────────
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=settings.cors_origins_list,
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -31,6 +31,7 @@ app.add_middleware(
 # ── Routers ───────────────────────────────────────────────────────────────────
 API_PREFIX = "/api/v1"
 
+# 1. Register with /api/v1 prefix
 app.include_router(students.router, prefix=API_PREFIX)
 app.include_router(diagnostics.router, prefix=API_PREFIX)
 app.include_router(admin.router, prefix=API_PREFIX)
@@ -38,9 +39,18 @@ app.include_router(questions.router, prefix=API_PREFIX)
 app.include_router(questions.tests_router, prefix=API_PREFIX)
 app.include_router(analytics.router, prefix=API_PREFIX)
 
+# 2. Register without prefix for direct Vercel serverless routing fallback
+app.include_router(students.router)
+app.include_router(diagnostics.router)
+app.include_router(admin.router)
+app.include_router(questions.router)
+app.include_router(questions.tests_router)
+app.include_router(analytics.router)
+
 
 # ── Health check ──────────────────────────────────────────────────────────────
 @app.get("/health", tags=["system"])
+@app.get("/api/v1/health", tags=["system"])
 def health():
     return {"status": "ok", "service": "nitaq-sat-diagnostic"}
 
