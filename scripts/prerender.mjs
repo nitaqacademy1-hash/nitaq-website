@@ -117,10 +117,13 @@ const ROUTES = [
   '/webinar/counselors/thank-you',
   '/sat/diagnostic',
   '/sat/results',
+  '/admin',
   '/admin/login',
   '/admin/dashboard',
   '/admin/students',
-  '/admin/questions'
+  '/admin/questions',
+  '/admin/sat/students',
+  '/admin/sat/questions'
 ]
 
 // Every English route also ships an Arabic twin at /ar/... so crawlers get a

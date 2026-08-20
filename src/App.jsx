@@ -126,6 +126,9 @@ function AppContent() {
           <Route path="/admin" element={<AdminLayout />}>
             <Route index element={<AdminDashboard />} />
             <Route path="dashboard" element={<AdminDashboard />} />
+            <Route path="students" element={<AdminStudents />} />
+            <Route path="students/:sessionId" element={<AdminStudentDetail />} />
+            <Route path="questions" element={<AdminQuestions />} />
             <Route path="sat/students" element={<AdminStudents />} />
             <Route path="sat/students/:sessionId" element={<AdminStudentDetail />} />
             <Route path="sat/questions" element={<AdminQuestions />} />

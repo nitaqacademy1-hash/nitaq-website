@@ -705,6 +705,14 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.nitaqacademy.com/admin</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nitaqacademy.com/admin" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.nitaqacademy.com/ar/admin" />
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.nitaqacademy.com/admin/login</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.nitaqacademy.com/admin/login" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.nitaqacademy.com/ar/admin/login" />
@@ -732,6 +740,22 @@
     <loc>https://www.nitaqacademy.com/admin/questions</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.nitaqacademy.com/admin/questions" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.nitaqacademy.com/ar/admin/questions" />
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.nitaqacademy.com/admin/sat/students</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nitaqacademy.com/admin/sat/students" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.nitaqacademy.com/ar/admin/sat/students" />
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.nitaqacademy.com/admin/sat/questions</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nitaqacademy.com/admin/sat/questions" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.nitaqacademy.com/ar/admin/sat/questions" />
     <lastmod>2026-08-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -1441,6 +1465,14 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.nitaqacademy.com/ar/admin</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nitaqacademy.com/admin" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.nitaqacademy.com/ar/admin" />
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.nitaqacademy.com/ar/admin/login</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.nitaqacademy.com/admin/login" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.nitaqacademy.com/ar/admin/login" />
@@ -1468,6 +1500,22 @@
     <loc>https://www.nitaqacademy.com/ar/admin/questions</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.nitaqacademy.com/admin/questions" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.nitaqacademy.com/ar/admin/questions" />
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.nitaqacademy.com/ar/admin/sat/students</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nitaqacademy.com/admin/sat/students" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.nitaqacademy.com/ar/admin/sat/students" />
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.nitaqacademy.com/ar/admin/sat/questions</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nitaqacademy.com/admin/sat/questions" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.nitaqacademy.com/ar/admin/sat/questions" />
     <lastmod>2026-08-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
