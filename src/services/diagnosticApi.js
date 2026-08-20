@@ -127,6 +127,10 @@ export async function updateLeadStatus(sessionId, leadStatus) {
   });
 }
 
+export async function deleteStudentSession(sessionId) {
+  return request(`/admin/students/${sessionId}`, { method: 'DELETE' });
+}
+
 export function getExportCsvUrl() {
   return `${API_BASE}/admin/students/export/csv`;
 }

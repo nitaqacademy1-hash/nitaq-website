@@ -208,6 +208,41 @@ def update_lead_status(
     return {"message": "Lead status updated", "lead_status": payload.lead_status.value}
 
 
+# ── Delete student session record ─────────────────────────────────────────────
+@router.delete("/students/{session_id}", status_code=status.HTTP_204_NO_CONTENT)
+def delete_student_session(
+    session_id: int,
+    admin=Depends(get_current_admin),
+    db: Session = Depends(get_db),
+):
+    session = db.query(DiagnosticSession).filter(DiagnosticSession.id == session_id).first()
+    if not session:
+        raise HTTPException(status_code=404, detail="Student session not found")
+
+    student_id = session.student_id
+
+    # Delete results & domain results
+    result = db.query(DiagnosticResult).filter(DiagnosticResult.session_id == session.id).first()
+    if result:
+        db.query(DomainResult).filter(DomainResult.result_id == result.id).delete()
+        db.delete(result)
+
+    # Delete student answers
+    db.query(StudentAnswer).filter(StudentAnswer.session_id == session.id).delete()
+
+    # Delete session
+    db.delete(session)
+    db.flush()
+
+    # Delete student if no other sessions remain
+    other_sessions = db.query(DiagnosticSession).filter(DiagnosticSession.student_id == student_id).count()
+    if other_sessions == 0:
+        db.query(Student).filter(Student.id == student_id).delete()
+
+    db.commit()
+    return Response(status_code=status.HTTP_204_NO_CONTENT)
+
+
 # ── CSV export ────────────────────────────────────────────────────────────────
 @router.get("/students/export/csv")
 def export_students_csv(

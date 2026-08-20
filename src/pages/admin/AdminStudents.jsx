@@ -5,7 +5,7 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { getStudentsList, updateLeadStatus, getExportCsvUrl, ApiError } from '../../services/diagnosticApi';
+import { getStudentsList, updateLeadStatus, deleteStudentSession, getExportCsvUrl, ApiError } from '../../services/diagnosticApi';
 import '../sat/sat.css';
 
 const STATUS_OPTIONS = ['', 'NOT_STARTED', 'IN_PROGRESS', 'MATH_COMPLETED', 'COMPLETED', 'ABANDONED'];
@@ -58,6 +58,7 @@ export default function AdminStudents() {
   const navigate = useNavigate();
   const [sessions, setSessions] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [deletingId, setDeletingId] = useState(null);
   const [error, setError] = useState('');
   const [statusFilter, setStatusFilter] = useState('');
   const [leadFilter, setLeadFilter] = useState('');
@@ -86,6 +87,19 @@ export default function AdminStudents() {
     setSessions(prev => prev.map(s =>
       s.id === sessionId ? { ...s, lead_status: newStatus } : s
     ));
+  };
+
+  const handleDeleteStudent = async (id, name) => {
+    if (!window.confirm(`Delete record for student "${name}" (#${id})? This will permanently remove their diagnostic test results.`)) return;
+    setDeletingId(id);
+    try {
+      await deleteStudentSession(id);
+      setSessions(prev => prev.filter(s => s.id !== id));
+    } catch (e) {
+      alert(e instanceof ApiError ? e.message : 'Delete failed');
+    } finally {
+      setDeletingId(null);
+    }
   };
 
   const filtered = sessions.filter(s => {
@@ -262,17 +276,43 @@ export default function AdminStudents() {
                       {formatDate(s.created_at)}
                     </td>
                     <td>
-                      {s.status === 'COMPLETED' ? (
+                      <div style={{ display: 'flex', gap: '6px', alignItems: 'center' }}>
+                        {s.status === 'COMPLETED' ? (
+                          <button
+                            className="admin-btn outline"
+                            style={{ fontSize: '0.75rem', padding: '5px 10px' }}
+                            onClick={() => navigate(`/admin/sat/students/${s.id}`)}
+                          >
+                            View Result
+                          </button>
+                        ) : (
+                          <span style={{ color: '#94A3B8', fontSize: '0.75rem', marginRight: '4px' }}>Pending</span>
+                        )}
                         <button
                           className="admin-btn outline"
-                          style={{ fontSize: '0.75rem', padding: '5px 10px' }}
-                          onClick={() => navigate(`/admin/sat/students/${s.id}`)}
+                          style={{
+                            fontSize: '0.75rem',
+                            fontWeight: 600,
+                            padding: '5px 10px',
+                            color: '#DC2626',
+                            background: '#FEF2F2',
+                            borderColor: '#FECACA',
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: '4px',
+                            cursor: 'pointer',
+                          }}
+                          onClick={() => handleDeleteStudent(s.id, s.student_name)}
+                          disabled={deletingId === s.id}
+                          title="Delete student record"
                         >
-                          View Result
+                          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <polyline points="3 6 5 6 21 6"/>
+                            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                          </svg>
+                          <span>{deletingId === s.id ? '…' : 'Delete'}</span>
                         </button>
-                      ) : (
-                        <span style={{ color: '#94A3B8', fontSize: '0.75rem' }}>Pending</span>
-                      )}
+                      </div>
                     </td>
                   </tr>
                 ))}
