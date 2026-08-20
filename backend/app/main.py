@@ -2,7 +2,8 @@
 FastAPI application entrypoint.
 """
 
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
+from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.middleware.trustedhost import TrustedHostMiddleware
 
@@ -53,6 +54,16 @@ app.include_router(analytics.router)
 @app.get("/api/v1/health", tags=["system"])
 def health():
     return {"status": "ok", "service": "nitaq-sat-diagnostic"}
+
+
+@app.exception_handler(Exception)
+async def global_exception_handler(request: Request, exc: Exception):
+    import traceback
+    traceback.print_exc()
+    return JSONResponse(
+        status_code=500,
+        content={"detail": f"Internal Error: {type(exc).__name__} - {str(exc)}"},
+    )
 
 
 @app.get("/", tags=["system"])
