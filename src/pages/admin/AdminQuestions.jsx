@@ -382,10 +382,12 @@ export default function AdminQuestions() {
               </div>
 
               <div>
-                <label style={{ fontSize: '0.72rem', color: '#475569', fontWeight: 700, textTransform: 'uppercase' }}>Question Code / ID *</label>
+                <label style={{ fontSize: '0.72rem', color: '#475569', fontWeight: 700, textTransform: 'uppercase' }}>Question Code / ID * (Max 20 chars)</label>
                 <input
                   type="text"
                   required
+                  minLength={3}
+                  maxLength={20}
                   placeholder="e.g. MATH-ALG-001"
                   value={formData.question_code}
                   onChange={e => setFormData({ ...formData, question_code: e.target.value })}

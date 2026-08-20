@@ -89,10 +89,10 @@ class Question(Base):
 
     # Relationships
     test_questions: Mapped[list["DiagnosticTestQuestion"]] = relationship(
-        "DiagnosticTestQuestion", back_populates="question"
+        "DiagnosticTestQuestion", back_populates="question", cascade="all, delete-orphan"
     )
     student_answers: Mapped[list["StudentAnswer"]] = relationship(
-        "StudentAnswer", back_populates="question"
+        "StudentAnswer", back_populates="question", cascade="all, delete-orphan"
     )
 
     def __repr__(self) -> str:
