@@ -16,10 +16,12 @@ if db_url.startswith("postgresql://") and not db_url.startswith("postgresql+"):
 # ── Engine ────────────────────────────────────────────────────────────────────
 engine = create_engine(
     db_url,
-    pool_pre_ping=True,          # detect stale connections
-    pool_size=5,
-    max_overflow=10,
-    echo=not settings.is_production,  # SQL logging in dev only
+    pool_pre_ping=True,          # detect stale connections immediately
+    pool_size=3,
+    max_overflow=5,
+    pool_recycle=300,            # recycle stale connections every 5 mins
+    pool_timeout=10,             # quick failover
+    echo=False,
 )
 
 # ── Session factory ───────────────────────────────────────────────────────────

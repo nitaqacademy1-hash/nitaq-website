@@ -161,13 +161,14 @@ export default function AdminQuestions() {
     setModalError('');
     try {
       if (editingId) {
-        await updateQuestion(editingId, formData);
+        const updated = await updateQuestion(editingId, formData);
+        setQuestions(prev => prev.map(q => q.id === editingId ? { ...q, ...updated } : q));
       } else {
-        await createQuestion(formData);
+        const created = await createQuestion(formData);
+        setQuestions(prev => [created, ...prev]);
       }
       setShowModal(false);
       setEditingId(null);
-      load();
     } catch (err) {
       setModalError(err instanceof ApiError ? err.message : (editingId ? 'Failed to update question' : 'Failed to create question'));
     } finally {
