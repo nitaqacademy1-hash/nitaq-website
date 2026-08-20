@@ -2,6 +2,7 @@ import { Link } from '../../i18n/Link';
 import CourseLayout from '../../components/CourseLayout';
 import WhyNitaq from '../../components/WhyNitaq';
 import SEO from '../../components/SEO';
+import SATDiagnosticSection from '../../components/sat/SATDiagnosticSection';
 
 const SATCourseDubai = () => {
     const infoData = {
@@ -58,6 +59,8 @@ const SATCourseDubai = () => {
                 </div>
             </div>
 
+            {/* ── Free SAT Diagnostic Section ── */}
+            <SATDiagnosticSection />
 
             {/* ── SAT Tracks ── */}
             <div className="content-card">

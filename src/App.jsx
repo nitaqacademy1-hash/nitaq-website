@@ -21,6 +21,7 @@ const ACCACourse = lazy(() => import('./pages/courses/ACCACourse'));
 const CMACourse = lazy(() => import('./pages/courses/CMACourse'));
 const CPACourse = lazy(() => import('./pages/courses/CPACourse'));
 const IELTSCourse = lazy(() => import('./pages/courses/IELTSCourse'));
+const IELTSCourseDubai = lazy(() => import('./pages/courses/IELTSCourseDubai'));
 const SpokenArabic = lazy(() => import('./pages/courses/SpokenArabic'));
 const UAEVATCourse = lazy(() => import('./pages/courses/UAEVATCourse'));
 const UAECorporateTaxCourse = lazy(() => import('./pages/courses/UAECorporateTaxCourse'));
@@ -43,8 +44,18 @@ const SpanishCourse = lazy(() => import('./pages/courses/SpanishCourse'));
 const PTECourse = lazy(() => import('./pages/courses/PTECourse'));
 const TOEFLCourse = lazy(() => import('./pages/courses/TOEFLCourse'));
 const SATCourse = lazy(() => import('./pages/courses/SATCourse'));
-const IELTSCourseDubai = lazy(() => import('./pages/courses/IELTSCourseDubai'));
 const SATCourseDubai = lazy(() => import('./pages/courses/SATCourseDubai'));
+const SATDiagnostic = lazy(() => import('./pages/sat/SATDiagnostic'));
+const QuizView = lazy(() => import('./pages/sat/QuizView'));
+const MathMiniReport = lazy(() => import('./pages/sat/MathMiniReport'));
+const DiagnosticResults = lazy(() => import('./pages/sat/DiagnosticResults'));
+// Admin Portal
+const AdminLogin = lazy(() => import('./pages/admin/AdminLogin'));
+const AdminLayout = lazy(() => import('./pages/admin/AdminLayout'));
+const AdminDashboard = lazy(() => import('./pages/admin/AdminDashboard'));
+const AdminStudents = lazy(() => import('./pages/admin/AdminStudents'));
+const AdminStudentDetail = lazy(() => import('./pages/admin/AdminStudentDetail'));
+const AdminQuestions = lazy(() => import('./pages/admin/AdminQuestions'));
 const GMATCourse = lazy(() => import('./pages/courses/GMATCourse'));
 const GRECourse = lazy(() => import('./pages/courses/GRECourse'));
 const AcademicExcellenceCourse = lazy(() => import('./pages/courses/AcademicExcellenceCourse'));
@@ -108,23 +119,44 @@ const CounselorsOrientationThankYou = lazy(() => import('./pages/webinar/Counsel
 function AppContent() {
   return (
     <LanguageProvider>
+      <Suspense fallback={<div style={{ minHeight: '100vh' }} aria-busy="true" />}>
+        <Routes>
+          {/* ── Admin Portal (no site header/footer) ──────────────────── */}
+          <Route path="/admin/login" element={<AdminLogin />} />
+          <Route path="/admin" element={<AdminLayout />}>
+            <Route index element={<AdminDashboard />} />
+            <Route path="dashboard" element={<AdminDashboard />} />
+            <Route path="sat/students" element={<AdminStudents />} />
+            <Route path="sat/students/:sessionId" element={<AdminStudentDetail />} />
+            <Route path="sat/questions" element={<AdminQuestions />} />
+          </Route>
+
+          {/* ── SAT Diagnostic Quiz (no site header/footer) ───────────── */}
+          <Route path="/sat/diagnostic/quiz" element={<QuizView />} />
+          <Route path="/sat/diagnostic/math-report" element={<MathMiniReport />} />
+          <Route path="/sat/diagnostic/results" element={<DiagnosticResults />} />
+
+          {/* ── Main Site (with header/footer) ────────────────────────── */}
+          <Route path="/ar/*" element={<SiteLayout><LocalizedRoutes /></SiteLayout>} />
+          <Route path="/*" element={<SiteLayout><LocalizedRoutes /></SiteLayout>} />
+        </Routes>
+      </Suspense>
+    </LanguageProvider>
+  );
+}
+
+function SiteLayout({ children }) {
+  return (
+    <>
       <ScrollToTop />
       <ScrollToHashElement />
       <Header />
-
-      {/* Every page is reachable in both languages: English at /x and Arabic
-          at /ar/x. Both branches mount the same tree, so pages stay in sync.
-          Pages are code-split (React.lazy); the Suspense fallback reserves
-          viewport height so the footer doesn't jump while a chunk loads. */}
       <Suspense fallback={<div style={{ minHeight: '70vh' }} aria-busy="true" />}>
-        <Routes>
-          <Route path="/ar/*" element={<LocalizedRoutes />} />
-          <Route path="/*" element={<LocalizedRoutes />} />
-        </Routes>
+        {children}
       </Suspense>
       <FloatingWhatsAppCondition />
       <Footer />
-    </LanguageProvider>
+    </>
   );
 }
 
@@ -179,6 +211,8 @@ function LocalizedRoutes() {
         <Route path="toefl-course" element={<TOEFLCourse />} />
         <Route path="sat-preparation-sharjah" element={<SATCourse />} />
         <Route path="sat-preparation-dubai" element={<SATCourseDubai />} />
+        <Route path="sat/diagnostic" element={<SATDiagnostic />} />
+        <Route path="sat-diagnostic" element={<LocalizedNavigate to="/sat/diagnostic" />} />
         <Route path="ielts-coaching-dubai" element={<IELTSCourseDubai />} />
         <Route path="sat-preparation" element={<LocalizedNavigate to="/sat-preparation-sharjah" />} />
         <Route path="gmat-preparation" element={<GMATCourse />} />
@@ -271,11 +305,12 @@ const LocalizedNavigate = ({ to }) => {
 
 const FloatingWhatsAppCondition = () => {
   const location = useLocation();
-  // Compare against the language-neutral path so /ar/ig/... matches too.
   const path = stripLangPrefix(location.pathname);
   const isIgPage = path.startsWith('/ig/');
   const isWebinarPage = path.startsWith('/webinar/');
-  return (!isIgPage && !isWebinarPage) ? <FloatingWhatsApp /> : null;
+  const isAdmin = path.startsWith('/admin');
+  const isQuiz = path.startsWith('/sat/diagnostic/quiz') || path.startsWith('/sat/diagnostic/results') || path.startsWith('/sat/diagnostic/math-report');
+  return (!isIgPage && !isWebinarPage && !isAdmin && !isQuiz) ? <FloatingWhatsApp /> : null;
 };
 
 export default App;

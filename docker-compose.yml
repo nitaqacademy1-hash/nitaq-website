@@ -1,0 +1,49 @@
+version: "3.9"
+
+services:
+  # ── PostgreSQL ──────────────────────────────────────────────────────────────
+  postgres:
+    image: postgres:16-alpine
+    container_name: nitaq_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: nitaq_user
+      POSTGRES_PASSWORD: nitaq_dev_password
+      POSTGRES_DB: nitaq_sat
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U nitaq_user -d nitaq_sat"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ── FastAPI Backend ─────────────────────────────────────────────────────────
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: nitaq_backend
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    env_file:
+      - ./backend/.env
+    environment:
+      DATABASE_URL: postgresql://nitaq_user:nitaq_dev_password@postgres:5432/nitaq_sat
+    ports:
+      - "8001:8000"
+    volumes:
+      - ./backend:/backend
+    command: >
+      sh -c "
+        alembic upgrade head &&
+        python seed.py &&
+        uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+      "
+
+volumes:
+  postgres_data:

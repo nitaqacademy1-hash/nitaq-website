@@ -1,0 +1,869 @@
+/* ==========================================================================
+   SAT Diagnostic Landing Section Styles
+   Nitaq Academy — International Standard Educational Platform Aesthetic
+   ========================================================================== */
+
+.sat-diagnostic-section {
+  position: relative;
+  padding: 100px 0;
+  background: #ffffff;
+  overflow: hidden;
+  font-family: var(--font-body, 'Inter', -apple-system, BlinkMacSystemFont, sans-serif);
+  color: #1F2937;
+}
+
+/* When embedded directly inside course pages / layout */
+.course-description-area .sat-diagnostic-section,
+.sat-diagnostic-section.in-course-layout {
+  padding: 40px 36px;
+  background: #ffffff;
+  border: 1px solid #E9EEF0;
+  border-radius: 24px;
+  margin-bottom: 40px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.03);
+}
+
+.course-description-area .sat-diagnostic-section .sat-diagnostic-container,
+.sat-diagnostic-section.in-course-layout .sat-diagnostic-container {
+  max-width: 100%;
+  padding: 0;
+}
+
+/* Subtle ambient background glow (predominantly clean white canvas) */
+.sat-diagnostic-ambient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.sat-diagnostic-ambient-glow-1 {
+  position: absolute;
+  top: 15%;
+  right: -5%;
+  width: 580px;
+  height: 580px;
+  background: radial-gradient(circle, rgba(46, 125, 50, 0.05) 0%, rgba(43, 187, 173, 0.03) 45%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(50px);
+}
+
+.sat-diagnostic-ambient-glow-2 {
+  position: absolute;
+  bottom: 10%;
+  left: -8%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(43, 187, 173, 0.04) 0%, rgba(102, 187, 106, 0.03) 50%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(60px);
+}
+
+.sat-diagnostic-container {
+  position: relative;
+  z-index: 1;
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Two-column layout */
+.sat-diagnostic-grid {
+  display: grid;
+  grid-template-columns: 46% 54%;
+  gap: 56px;
+  align-items: center;
+}
+
+/* --------------------------------------------------------------------------
+   Left Column: Diagnostic Intro & Content
+   -------------------------------------------------------------------------- */
+.sat-diagnostic-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 580px;
+}
+
+/* Eyebrow badge */
+.sat-diagnostic-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-heading, 'Poppins', sans-serif);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #2e7d32;
+  background: #f0fdf4;
+  border: 1px solid rgba(46, 125, 50, 0.18);
+  padding: 6px 14px;
+  border-radius: 100px;
+  margin-bottom: 22px;
+}
+
+.sat-diagnostic-eyebrow-dot {
+  width: 6px;
+  height: 6px;
+  background-color: #2e7d32;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px rgba(46, 125, 50, 0.2);
+}
+
+/* Main Heading */
+.sat-diagnostic-heading {
+  font-family: var(--font-heading, 'Poppins', sans-serif);
+  font-size: clamp(2.35rem, 4vw, 3.45rem);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  color: #1F2937;
+  margin: 0 0 22px 0;
+  max-width: 560px;
+}
+
+.sat-diagnostic-heading span {
+  display: block;
+}
+
+/* Description */
+.sat-diagnostic-desc {
+  font-size: 1.125rem;
+  line-height: 1.68;
+  color: #4B5563;
+  margin: 0 0 28px 0;
+  max-width: 520px;
+  font-weight: 400;
+}
+
+/* Benefits list */
+.sat-diagnostic-benefits {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  width: 100%;
+}
+
+.sat-diagnostic-benefit-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #374151;
+  line-height: 1.45;
+}
+
+.sat-diagnostic-check-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #f0fdf4;
+  border: 1px solid rgba(46, 125, 50, 0.25);
+  color: #2e7d32;
+  flex-shrink: 0;
+}
+
+/* Information Row (Metadata tokens) */
+.sat-diagnostic-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 12px 18px;
+  background: #F8FAF8;
+  border: 1px solid #E9EEF0;
+  border-radius: 12px;
+  margin-bottom: 28px;
+  font-size: 0.875rem;
+  color: #4B5563;
+  font-weight: 500;
+}
+
+.sat-diagnostic-meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sat-diagnostic-meta-item strong {
+  color: #1F2937;
+  font-weight: 600;
+}
+
+.sat-diagnostic-meta-badge {
+  background: #e8f5e9;
+  color: #2e7d32;
+  font-weight: 700;
+  font-size: 0.775rem;
+  padding: 2px 9px;
+  border-radius: 6px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.sat-diagnostic-meta-divider {
+  color: #CBD5E1;
+  font-weight: 400;
+  user-select: none;
+}
+
+/* Primary CTA */
+.sat-diagnostic-cta-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.sat-diagnostic-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: #2e7d32;
+  color: #ffffff !important;
+  font-family: var(--font-heading, 'Poppins', sans-serif);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  height: 54px;
+  padding: 0 30px;
+  border-radius: 12px;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(46, 125, 50, 0.28);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  width: fit-content;
+  position: relative;
+  overflow: hidden;
+}
+
+.sat-diagnostic-cta:hover {
+  background-color: #256b29;
+  box-shadow: 0 8px 22px rgba(46, 125, 50, 0.35);
+  transform: translateY(-1.5px);
+  color: #ffffff !important;
+}
+
+.sat-diagnostic-cta:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 10px rgba(46, 125, 50, 0.25);
+}
+
+.sat-diagnostic-cta:focus-visible {
+  outline: 3px solid rgba(46, 125, 50, 0.45);
+  outline-offset: 3px;
+}
+
+.sat-diagnostic-cta-arrow {
+  display: inline-flex;
+  align-items: center;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sat-diagnostic-cta:hover .sat-diagnostic-cta-arrow {
+  transform: translateX(4px);
+}
+
+.sat-diagnostic-reassurance {
+  font-size: 0.8125rem;
+  color: #6B7280;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* --------------------------------------------------------------------------
+   Right Column: Diagnostic Dashboard Preview Card
+   -------------------------------------------------------------------------- */
+.sat-diagnostic-preview-card-wrap {
+  position: relative;
+  width: 100%;
+}
+
+/* Glowing back-shadow behind centerpiece dashboard */
+.sat-diagnostic-preview-glow {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  right: 20px;
+  bottom: 0px;
+  background: radial-gradient(ellipse at 50% 40%, rgba(46, 125, 50, 0.12) 0%, rgba(43, 187, 173, 0.08) 50%, transparent 75%);
+  filter: blur(28px);
+  border-radius: 32px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.sat-diagnostic-preview-card {
+  position: relative;
+  z-index: 1;
+  background: #ffffff;
+  border: 1px solid #E9EEF0;
+  border-radius: 24px;
+  box-shadow: 
+    0 1px 3px rgba(0, 0, 0, 0.02),
+    0 12px 32px -4px rgba(15, 23, 42, 0.06),
+    0 24px 60px -12px rgba(46, 125, 50, 0.09);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+
+.sat-diagnostic-preview-card:hover {
+  box-shadow: 
+    0 2px 6px rgba(0, 0, 0, 0.03),
+    0 18px 42px -4px rgba(15, 23, 42, 0.08),
+    0 30px 70px -10px rgba(46, 125, 50, 0.13);
+}
+
+/* Dashboard Header */
+.sat-dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #F1F5F9;
+  padding-bottom: 18px;
+}
+
+.sat-dashboard-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.sat-dashboard-eyebrow {
+  font-family: var(--font-heading, 'Poppins', sans-serif);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #6B7280;
+}
+
+.sat-dashboard-title {
+  font-family: var(--font-heading, 'Poppins', sans-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.sat-dashboard-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #f0fdf4;
+  border: 1px solid rgba(46, 125, 50, 0.2);
+  color: #2e7d32;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 4px 11px;
+  border-radius: 100px;
+}
+
+.sat-dashboard-badge-dot {
+  width: 6px;
+  height: 6px;
+  background-color: #2e7d32;
+  border-radius: 50%;
+  animation: satPulse 2.2s infinite ease-in-out;
+}
+
+@keyframes satPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.45;
+    transform: scale(1.2);
+  }
+}
+
+/* Overall Performance Hero Card */
+.sat-overall-card {
+  background: linear-gradient(135deg, #F8FAF8 0%, #F1F8F1 100%);
+  border: 1px solid #E2EFE2;
+  border-radius: 16px;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.sat-overall-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sat-overall-label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #4B5563;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.sat-overall-caption {
+  font-size: 0.875rem;
+  color: #2e7d32;
+  font-weight: 600;
+}
+
+.sat-overall-score-group {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+}
+
+.sat-overall-score-big {
+  font-family: var(--font-heading, 'Poppins', sans-serif);
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #1F2937;
+  line-height: 1;
+}
+
+.sat-overall-score-total {
+  font-family: var(--font-heading, 'Poppins', sans-serif);
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #9CA3AF;
+}
+
+.sat-overall-tag {
+  background: #ffffff;
+  border: 1px solid #D1E7D1;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 0.775rem;
+  font-weight: 600;
+  color: #2e7d32;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+/* Section Performance (2 Cards: Math & Reading/Writing) */
+.sat-sections-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.sat-section-card {
+  background: #FAFAFA;
+  border: 1px solid #E9EEF0;
+  border-radius: 14px;
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.sat-section-card:hover {
+  background: #ffffff;
+  border-color: #CBD5E1;
+}
+
+.sat-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.sat-section-name {
+  font-family: var(--font-heading, 'Poppins', sans-serif);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #1F2937;
+}
+
+.sat-section-score {
+  font-family: var(--font-heading, 'Poppins', sans-serif);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.sat-section-score-total {
+  font-weight: 500;
+  color: #9CA3AF;
+  font-size: 0.8125rem;
+}
+
+/* Progress bar */
+.sat-progress-bar-track {
+  width: 100%;
+  height: 6px;
+  background-color: #E5E7EB;
+  border-radius: 100px;
+  overflow: hidden;
+  position: relative;
+}
+
+.sat-progress-bar-fill {
+  height: 100%;
+  border-radius: 100px;
+  transition: width 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sat-progress-bar-fill.math {
+  background: linear-gradient(90deg, #2e7d32 0%, #66bb6a 100%);
+}
+
+.sat-progress-bar-fill.rw {
+  background: linear-gradient(90deg, #2bbbad 0%, #5cd2c6 100%);
+}
+
+.sat-section-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #4B5563;
+}
+
+.sat-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.sat-status-dot.strong {
+  background-color: #2e7d32;
+}
+
+.sat-status-dot.review {
+  background-color: #2bbbad;
+}
+
+/* Skill Analysis Section */
+.sat-skills-area {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sat-skills-heading-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sat-skills-title {
+  font-family: var(--font-heading, 'Poppins', sans-serif);
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #4B5563;
+  margin: 0;
+}
+
+.sat-skills-hint {
+  font-size: 0.75rem;
+  color: #9CA3AF;
+  font-weight: 500;
+}
+
+.sat-skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.sat-skill-item {
+  background: #F8FAF8;
+  border: 1px solid #EDF2EE;
+  border-radius: 12px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.sat-skill-item:hover {
+  transform: translateY(-1px);
+  border-color: #DDE5DF;
+  background: #ffffff;
+}
+
+.sat-skill-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.sat-skill-name {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #1F2937;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sat-skill-score {
+  font-size: 0.775rem;
+  font-weight: 700;
+  color: #374151;
+}
+
+.sat-skill-bar-track {
+  width: 100%;
+  height: 4px;
+  background: #E5E7EB;
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.sat-skill-bar-fill {
+  height: 100%;
+  border-radius: 100px;
+  background-color: #2e7d32;
+}
+
+.sat-skill-bar-fill.review {
+  background-color: #2bbbad;
+}
+
+.sat-skill-badge {
+  align-self: flex-start;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 4px;
+  text-transform: capitalize;
+}
+
+.sat-skill-badge.strong {
+  background: #E8F5E9;
+  color: #1B5E20;
+}
+
+.sat-skill-badge.review {
+  background: #E0F2F1;
+  color: #00695C;
+}
+
+/* Priority Card (Callout) */
+.sat-priority-card {
+  background: linear-gradient(135deg, #F0FDF4 0%, #ECFDF5 100%);
+  border: 1px solid #BBF7D0;
+  border-radius: 16px;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sat-priority-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.sat-priority-badge {
+  font-family: var(--font-heading, 'Poppins', sans-serif);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #15803D;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.sat-priority-target {
+  font-family: var(--font-heading, 'Poppins', sans-serif);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.sat-priority-desc {
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #374151;
+  margin: 0;
+}
+
+.sat-priority-link {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #15803D;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+  transition: gap 0.2s ease, color 0.2s ease;
+  margin-top: 2px;
+  cursor: pointer;
+}
+
+.sat-priority-link:hover {
+  gap: 7px;
+  color: #0d5a2b;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Breakpoints
+   -------------------------------------------------------------------------- */
+
+/* Tablet (1024px and below) */
+@media (max-width: 1024px) {
+  .sat-diagnostic-section {
+    padding: 85px 0;
+  }
+
+  .sat-diagnostic-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .sat-diagnostic-intro {
+    max-width: 100%;
+  }
+
+  .sat-diagnostic-heading {
+    max-width: 100%;
+  }
+
+  .sat-diagnostic-desc {
+    max-width: 100%;
+  }
+
+  .sat-diagnostic-preview-card-wrap {
+    max-width: 650px;
+    margin: 0 auto;
+  }
+}
+
+/* Mobile Devices (768px and below) */
+@media (max-width: 768px) {
+  .sat-diagnostic-section {
+    padding: 65px 0;
+  }
+
+  .sat-diagnostic-heading {
+    font-size: clamp(2rem, 8vw, 2.45rem);
+    margin-bottom: 18px;
+  }
+
+  .sat-diagnostic-desc {
+    font-size: 1rem;
+    margin-bottom: 22px;
+  }
+
+  .sat-diagnostic-benefit-item {
+    font-size: 0.9375rem;
+  }
+
+  .sat-diagnostic-meta {
+    padding: 10px 14px;
+    font-size: 0.8125rem;
+    gap: 8px;
+  }
+
+  .sat-diagnostic-cta {
+    width: 100%;
+    height: 52px;
+    font-size: 1rem;
+  }
+
+  .sat-diagnostic-preview-card {
+    padding: 22px 18px;
+    border-radius: 20px;
+    gap: 18px;
+  }
+
+  .sat-overall-card {
+    padding: 16px 18px;
+  }
+
+  .sat-overall-score-big {
+    font-size: 1.85rem;
+  }
+
+  .sat-sections-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .sat-skills-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
+/* Extra Small Screens (480px and below) */
+@media (max-width: 480px) {
+  .sat-diagnostic-section {
+    padding: 55px 0;
+  }
+
+  .sat-diagnostic-heading {
+    font-size: 1.85rem;
+  }
+
+  .sat-diagnostic-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .sat-diagnostic-meta-divider {
+    display: none;
+  }
+
+  .sat-dashboard-header {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .sat-dashboard-title {
+    font-size: 1.1rem;
+  }
+}
+
+/* Reduced Motion Mode */
+@media (prefers-reduced-motion: reduce) {
+  .sat-diagnostic-cta,
+  .sat-diagnostic-cta-arrow,
+  .sat-diagnostic-preview-card,
+  .sat-skill-item,
+  .sat-progress-bar-fill,
+  .sat-priority-link {
+    transition: none !important;
+    transform: none !important;
+  }
+
+  .sat-dashboard-badge-dot {
+    animation: none !important;
+  }
+}
