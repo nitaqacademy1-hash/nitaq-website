@@ -25,7 +25,11 @@ export default function AdminLogin() {
       sessionStorage.setItem('nitaq_admin_token', result.access_token);
       navigate('/admin/dashboard');
     } catch (err) {
-      setError(err instanceof ApiError ? err.message : 'Invalid credentials. Please verify your email and password.');
+      if (err instanceof ApiError) {
+        setError(err.message || 'Invalid email or password.');
+      } else {
+        setError('Unable to connect to the backend API server. Please check your backend deployment & VITE_API_URL settings.');
+      }
     } finally {
       setLoading(false);
     }
