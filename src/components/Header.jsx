@@ -122,6 +122,28 @@ const Header = () => {
                         </div>
 
                         <Link to="/contact" className={path === '/contact' ? 'active' : ''} onClick={closeMenu}>{t('nav.contact')}</Link>
+                        
+                        <button
+                            onClick={() => { toggleLanguage(); closeMenu(); }}
+                            className="lang-toggle mobile-only-btn"
+                            lang={lang === 'en' ? 'ar' : 'en'}
+                            aria-label={t('common.switchLanguage')}
+                            style={{
+                                padding: '10px 24px', 
+                                border: '1.5px solid var(--primary-color, #2e7d32)',
+                                borderRadius: '999px',
+                                background: 'transparent',
+                                color: 'var(--primary-color, #2e7d32)',
+                                fontWeight: '700',
+                                cursor: 'pointer',
+                                fontSize: '15px',
+                                marginTop: '10px',
+                                justifyContent: 'center'
+                            }}
+                        >
+                            {lang === 'en' ? 'العربية' : 'English'}
+                        </button>
+
                         <a
                             href="tel:+97165798313"
                             className="btn btn-primary mobile-only-btn"
@@ -135,7 +157,7 @@ const Header = () => {
                     <div className="header-right-actions" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                         <button
                             onClick={toggleLanguage}
-                            className="lang-toggle"
+                            className="lang-toggle desktop-only-btn"
                             lang={lang === 'en' ? 'ar' : 'en'}
                             aria-label={t('common.switchLanguage')}
                             style={{
