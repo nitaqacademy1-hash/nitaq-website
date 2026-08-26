@@ -29,6 +29,19 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# ── Startup Migrations ────────────────────────────────────────────────────────
+@app.on_event("startup")
+def run_auto_migrations():
+    """Ensure missing columns like shuffle_questions exist on PostgreSQL database."""
+    try:
+        from sqlalchemy import text
+        from app.core.database import engine
+        with engine.connect() as conn:
+            conn.execute(text("ALTER TABLE diagnostic_tests ADD COLUMN IF NOT EXISTS shuffle_questions BOOLEAN DEFAULT FALSE;"))
+            conn.commit()
+    except Exception as e:
+        print(f"[Auto Migration] Notice: {e}")
+
 # ── Routers ───────────────────────────────────────────────────────────────────
 API_PREFIX = "/api/v1"
 
