@@ -36,6 +36,9 @@ export default function AdminStudentDetail() {
         setResult(data);
         setLeadStatus(data.lead_status);
         setLoading(false);
+        if (window.location.search.includes('print=true')) {
+          setTimeout(() => window.print(), 500);
+        }
       })
       .catch(e => {
         setError(e instanceof ApiError ? e.message : 'Failed to load result');
@@ -92,8 +95,32 @@ export default function AdminStudentDetail() {
             </p>
           </div>
 
-          <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
-            <span style={{ fontSize: '0.78rem', color: '#64748B', fontWeight: 600 }}>Lead Status:</span>
+          <div style={{ display: 'flex', gap: '8px', alignItems: 'center', flexWrap: 'wrap' }}>
+            <button
+              type="button"
+              onClick={() => window.print()}
+              className="admin-btn primary"
+              style={{
+                fontSize: '0.8rem',
+                padding: '7px 14px',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '6px',
+                background: 'linear-gradient(90deg, #2E7D32 0%, #2BBBAD 100%)',
+                color: '#ffffff',
+                border: 'none',
+                cursor: 'pointer',
+              }}
+            >
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <polyline points="6 9 6 2 18 2 18 9" />
+                <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
+                <rect x="6" y="14" width="12" height="8" />
+              </svg>
+              <span>Download PDF Report</span>
+            </button>
+
+            <span style={{ fontSize: '0.78rem', color: '#64748B', fontWeight: 600, marginLeft: '4px' }}>Lead Status:</span>
             <select
               value={leadStatus}
               onChange={e => handleLeadUpdate(e.target.value)}

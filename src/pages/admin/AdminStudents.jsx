@@ -278,13 +278,36 @@ export default function AdminStudents() {
                     <td>
                       <div style={{ display: 'flex', gap: '6px', alignItems: 'center' }}>
                         {s.status === 'COMPLETED' ? (
-                          <button
-                            className="admin-btn outline"
-                            style={{ fontSize: '0.75rem', padding: '5px 10px' }}
-                            onClick={() => navigate(`/admin/sat/students/${s.id}`)}
-                          >
-                            View Result
-                          </button>
+                          <>
+                            <button
+                              className="admin-btn outline"
+                              style={{ fontSize: '0.75rem', padding: '5px 10px' }}
+                              onClick={() => navigate(`/admin/sat/students/${s.id}`)}
+                            >
+                              View Result
+                            </button>
+                            <button
+                              className="admin-btn primary"
+                              style={{
+                                fontSize: '0.75rem',
+                                padding: '5px 10px',
+                                background: '#2E7D32',
+                                borderColor: '#2E7D32',
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                gap: '4px',
+                              }}
+                              onClick={() => window.open(`/admin/sat/students/${s.id}?print=true`, '_blank')}
+                              title="Download PDF Report"
+                            >
+                              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                <polyline points="6 9 6 2 18 2 18 9" />
+                                <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
+                                <rect x="6" y="14" width="12" height="8" />
+                              </svg>
+                              <span>PDF Report</span>
+                            </button>
+                          </>
                         ) : (
                           <span style={{ color: '#94A3B8', fontSize: '0.75rem', marginRight: '4px' }}>Pending</span>
                         )}

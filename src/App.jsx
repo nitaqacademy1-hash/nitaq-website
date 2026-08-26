@@ -215,6 +215,10 @@ function LocalizedRoutes() {
         <Route path="sat-preparation-sharjah" element={<SATCourse />} />
         <Route path="sat-preparation-dubai" element={<SATCourseDubai />} />
         <Route path="sat/diagnostic" element={<SATDiagnostic />} />
+        <Route path="sat/diagnostic/quiz" element={<QuizView />} />
+        <Route path="sat/diagnostic/results" element={<DiagnosticResults />} />
+        <Route path="sat/results" element={<DiagnosticResults />} />
+        <Route path="sat/diagnostic/math-report" element={<MathMiniReport />} />
         <Route path="sat-diagnostic" element={<LocalizedNavigate to="/sat/diagnostic" />} />
         <Route path="ielts-coaching-dubai" element={<IELTSCourseDubai />} />
         <Route path="sat-preparation" element={<LocalizedNavigate to="/sat-preparation-sharjah" />} />

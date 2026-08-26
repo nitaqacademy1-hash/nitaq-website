@@ -16,6 +16,7 @@ class StudentCreate(BaseModel):
     current_status: CurrentStatus = CurrentStatus.SCHOOL_STUDENT
     target_sat_score: TargetScore = TargetScore.NOT_SURE
     sat_test_date: Optional[str] = None
+    action: Optional[str] = None  # None (check for existing session), "resume", or "new"
 
     @field_validator("full_name")
     @classmethod

@@ -11,12 +11,24 @@ from app.schemas.question import QuestionPublic
 from app.schemas.student import StudentPublic
 
 
-# ── Session creation / start response ────────────────────────────────────────
-class SessionStartResponse(BaseModel):
+# ── Existing Session Check Info ───────────────────────────────────────────────
+class ExistingSessionInfo(BaseModel):
     session_token: str
     session_id: int
+    status: SessionStatus
+    current_section: Optional[str] = None
+    answered_count: int = 0
+    created_at: datetime
+
+
+# ── Session creation / start response ────────────────────────────────────────
+class SessionStartResponse(BaseModel):
+    session_token: Optional[str] = None
+    session_id: Optional[int] = None
     student: StudentPublic
-    test_id: int
+    test_id: Optional[int] = None
+    existing_session_found: bool = False
+    existing_session: Optional[ExistingSessionInfo] = None
 
 
 # ── Question list for a section ───────────────────────────────────────────────

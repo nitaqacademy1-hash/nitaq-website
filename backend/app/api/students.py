@@ -1,4 +1,4 @@
-"""Students API — registration, deduplication, return session token."""
+"""Students API — registration, deduplication, return session token or prompt resume."""
 
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
@@ -9,7 +9,7 @@ from app.models.student import Student
 from app.models.question import DiagnosticTest, TestStatus
 from app.models.diagnostic import DiagnosticSession, SessionStatus
 from app.schemas.student import StudentCreate, StudentPublic
-from app.schemas.diagnostic import SessionStartResponse
+from app.schemas.diagnostic import SessionStartResponse, ExistingSessionInfo
 
 router = APIRouter(prefix="/students", tags=["students"])
 
@@ -17,12 +17,82 @@ router = APIRouter(prefix="/students", tags=["students"])
 @router.post("/register", response_model=SessionStartResponse, status_code=status.HTTP_201_CREATED)
 def register_student(payload: StudentCreate, db: Session = Depends(get_db)):
     """
-    Register a student and create a new diagnostic session.
-    If the email already exists, creates a new session for the same student.
-    Returns session_token (used for all subsequent quiz API calls).
+    Register or identify a student by email/phone.
+    If an existing session is found and no action (resume/new) is specified,
+    returns existing_session_found=True so the frontend can prompt the student.
     """
-    # Get or create student
-    student = db.query(Student).filter(Student.email == payload.email.lower()).first()
+    # 1. Find existing student by email or phone
+    student = (
+        db.query(Student)
+        .filter(
+            (Student.email == payload.email.lower()) | (Student.phone == payload.phone)
+        )
+        .first()
+    )
+
+    if student:
+        # Update details safely
+        try:
+            student.full_name = payload.full_name
+            student.current_grade = payload.current_grade
+            student.current_status = payload.current_status
+            student.target_sat_score = payload.target_sat_score
+            if payload.sat_test_date:
+                student.sat_test_date = payload.sat_test_date
+            db.flush()
+        except Exception:
+            db.rollback()
+            student = (
+                db.query(Student)
+                .filter(
+                    (Student.email == payload.email.lower()) | (Student.phone == payload.phone)
+                )
+                .first()
+            )
+
+        # Find student's most recent diagnostic session
+        latest_session = (
+            db.query(DiagnosticSession)
+            .filter(DiagnosticSession.student_id == student.id)
+            .order_by(DiagnosticSession.created_at.desc())
+            .first()
+        )
+
+        if latest_session:
+            answered_count = len(latest_session.answers) if latest_session.answers else 0
+            sec_val = latest_session.current_section.value if latest_session.current_section else None
+            existing_info = ExistingSessionInfo(
+                session_token=latest_session.session_token,
+                session_id=latest_session.id,
+                status=latest_session.status,
+                current_section=sec_val,
+                answered_count=answered_count,
+                created_at=latest_session.created_at,
+            )
+
+            # If payload explicitly requests "resume"
+            if payload.action == "resume":
+                db.commit()
+                return SessionStartResponse(
+                    session_token=latest_session.session_token,
+                    session_id=latest_session.id,
+                    student=StudentPublic.model_validate(student),
+                    test_id=latest_session.test_id,
+                    existing_session_found=False,
+                    existing_session=existing_info,
+                )
+
+            # If payload explicitly requests "new", fall through to create a new session
+            # If action is None, prompt student with existing session info
+            if payload.action is None:
+                db.commit()
+                return SessionStartResponse(
+                    student=StudentPublic.model_validate(student),
+                    existing_session_found=True,
+                    existing_session=existing_info,
+                )
+
+    # 2. Create new student if not exists
     if not student:
         student = Student(
             full_name=payload.full_name,
@@ -34,9 +104,9 @@ def register_student(payload: StudentCreate, db: Session = Depends(get_db)):
             sat_test_date=payload.sat_test_date,
         )
         db.add(student)
-        db.flush()  # get student.id before committing
+        db.flush()
 
-    # Find the active diagnostic test
+    # 3. Find active diagnostic test
     test = (
         db.query(DiagnosticTest)
         .filter(DiagnosticTest.status == TestStatus.ACTIVE)
@@ -49,7 +119,7 @@ def register_student(payload: StudentCreate, db: Session = Depends(get_db)):
             detail="No active diagnostic test is available. Please try again later.",
         )
 
-    # Create new session
+    # 4. Create new session
     session = DiagnosticSession(
         student_id=student.id,
         test_id=test.id,
@@ -65,4 +135,5 @@ def register_student(payload: StudentCreate, db: Session = Depends(get_db)):
         session_id=session.id,
         student=StudentPublic.model_validate(student),
         test_id=test.id,
+        existing_session_found=False,
     )

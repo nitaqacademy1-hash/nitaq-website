@@ -83,6 +83,16 @@ def get_section_questions(
         q.question_order = tq.question_order
         questions.append(q)
 
+    # If shuffle_questions setting is enabled for active test, shuffle per student session
+    active_test = session.test or db.query(DiagnosticTest).filter(DiagnosticTest.id == session.test_id).first()
+    if active_test and getattr(active_test, "shuffle_questions", False):
+        import random
+        # Deterministically seed with session.id so question order is constant for this student
+        rng = random.Random(session.id + (100 if section == Section.READING_WRITING else 0))
+        rng.shuffle(questions)
+        for idx, q in enumerate(questions):
+            q.question_order = idx + 1
+
     return SectionQuestionsResponse(section=section, questions=questions)
 
 

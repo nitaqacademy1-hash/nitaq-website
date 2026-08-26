@@ -5,11 +5,49 @@
 
 const API_BASE = import.meta.env.VITE_API_URL || '/api/v1';
 
+function formatErrorDetail(detail) {
+  if (!detail) return 'An unexpected error occurred.';
+  if (typeof detail === 'string') return detail;
+
+  if (Array.isArray(detail)) {
+    return detail
+      .map(item => {
+        if (!item) return '';
+        if (typeof item === 'string') return item;
+        if (typeof item === 'object') {
+          const field = Array.isArray(item.loc)
+            ? item.loc.filter(l => l !== 'body' && l !== 'query').join(' → ')
+            : '';
+          const msg = item.msg || item.message || JSON.stringify(item);
+          return field ? `${field}: ${msg}` : msg;
+        }
+        return String(item);
+      })
+      .filter(Boolean)
+      .join(' | ');
+  }
+
+  if (typeof detail === 'object') {
+    if (detail.detail && typeof detail.detail === 'string') return detail.detail;
+    if (detail.message && typeof detail.message === 'string') return detail.message;
+    if (detail.msg && typeof detail.msg === 'string') return detail.msg;
+    try {
+      return JSON.stringify(detail);
+    } catch {
+      return 'An error occurred (unparseable error object)';
+    }
+  }
+
+  return String(detail);
+}
+
 class ApiError extends Error {
-  constructor(message, status) {
-    super(message);
+  constructor(detail, status) {
+    const formattedMessage = formatErrorDetail(detail);
+    super(formattedMessage);
     this.name = 'ApiError';
     this.status = status;
+    this.rawDetail = detail;
   }
 }
 
@@ -31,7 +69,7 @@ async function request(path, options = {}) {
     let detail = `HTTP ${res.status}`;
     try {
       const body = await res.json();
-      detail = body.detail || JSON.stringify(body);
+      detail = body.detail !== undefined ? body.detail : body;
     } catch {}
     throw new ApiError(detail, res.status);
   }
@@ -118,6 +156,14 @@ export async function getStudentsList({ status, lead_status, skip = 0, limit = 5
 
 export async function getStudentResult(sessionId) {
   return request(`/admin/students/${sessionId}/result`);
+}
+
+export async function getShuffleSetting() {
+  return request('/admin/tests/shuffle-setting');
+}
+
+export async function toggleShuffleSetting() {
+  return request('/admin/tests/toggle-shuffle', { method: 'POST' });
 }
 
 export async function updateLeadStatus(sessionId, leadStatus) {

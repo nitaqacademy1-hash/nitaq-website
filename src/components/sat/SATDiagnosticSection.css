@@ -1,869 +1,1231 @@
 /* ==========================================================================
-   SAT Diagnostic Landing Section Styles
-   Nitaq Academy — International Standard Educational Platform Aesthetic
+   Nitaq Academy — Premium Digital SAT Diagnostic Design System & Styles
+   EdTech SaaS Visual Standard (2026 Edition)
    ========================================================================== */
 
-.sat-diagnostic-section {
+:root {
+  --sat-brand-green: #2E7D32;
+  --sat-brand-green-hover: #236327;
+  --sat-brand-teal: #2BBBAD;
+  --sat-brand-teal-light: #CBFAF5;
+  
+  --sat-accent-purple: #6C4CF1;
+  --sat-accent-blue: #3B82F6;
+  --sat-accent-cyan: #20C7D9;
+  --sat-accent-orange: #FF9F43;
+  --sat-accent-emerald: #10B981;
+
+  --sat-text-primary: #101828;
+  --sat-text-secondary: #475467;
+  --sat-text-muted: #667085;
+
+  --sat-bg-main: #FFFFFF;
+  --sat-bg-soft: #F8FAFC;
+  --sat-bg-card: #FFFFFF;
+  --sat-border-color: #E4E7EC;
+
+  --sat-radius-sm: 12px;
+  --sat-radius-md: 16px;
+  --sat-radius-lg: 20px;
+  --sat-radius-xl: 24px;
+  --sat-radius-pill: 999px;
+
+  --sat-shadow-sm: 0 2px 8px rgba(16, 24, 40, 0.04);
+  --sat-shadow-md: 0 10px 30px rgba(16, 24, 40, 0.06);
+  --sat-shadow-lg: 0 20px 50px rgba(16, 24, 40, 0.10);
+  --sat-shadow-glow: 0 12px 32px -4px rgba(108, 76, 241, 0.35);
+
+  --sat-font: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* ==========================================================================
+   1. Hero Section
+   ========================================================================== */
+
+.sat-landing-hero-section {
   position: relative;
-  padding: 100px 0;
-  background: #ffffff;
+  padding: 150px 0 100px 0;
+  background: 
+    radial-gradient(circle at 80% 35%, rgba(108,76,241,0.08), transparent 28%),
+    radial-gradient(circle at 92% 65%, rgba(32,199,217,0.08), transparent 25%),
+    linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
   overflow: hidden;
-  font-family: var(--font-body, 'Inter', -apple-system, BlinkMacSystemFont, sans-serif);
-  color: #1F2937;
+  font-family: var(--sat-font);
+  color: var(--sat-text-primary);
 }
 
-/* When embedded directly inside course pages / layout */
-.course-description-area .sat-diagnostic-section,
-.sat-diagnostic-section.in-course-layout {
-  padding: 40px 36px;
-  background: #ffffff;
-  border: 1px solid #E9EEF0;
-  border-radius: 24px;
-  margin-bottom: 40px;
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.03);
-}
-
-.course-description-area .sat-diagnostic-section .sat-diagnostic-container,
-.sat-diagnostic-section.in-course-layout .sat-diagnostic-container {
-  max-width: 100%;
-  padding: 0;
-}
-
-/* Subtle ambient background glow (predominantly clean white canvas) */
-.sat-diagnostic-ambient {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: 0;
-}
-
-.sat-diagnostic-ambient-glow-1 {
-  position: absolute;
-  top: 15%;
-  right: -5%;
-  width: 580px;
-  height: 580px;
-  background: radial-gradient(circle, rgba(46, 125, 50, 0.05) 0%, rgba(43, 187, 173, 0.03) 45%, transparent 70%);
-  border-radius: 50%;
-  filter: blur(50px);
-}
-
-.sat-diagnostic-ambient-glow-2 {
-  position: absolute;
-  bottom: 10%;
-  left: -8%;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(43, 187, 173, 0.04) 0%, rgba(102, 187, 106, 0.03) 50%, transparent 70%);
-  border-radius: 50%;
-  filter: blur(60px);
-}
-
-.sat-diagnostic-container {
+.sat-hero-container {
   position: relative;
-  z-index: 1;
-  max-width: 1260px;
+  z-index: 2;
+  max-width: 1320px;
   margin: 0 auto;
   padding: 0 24px;
 }
 
-/* Two-column layout */
-.sat-diagnostic-grid {
+.sat-hero-grid {
   display: grid;
-  grid-template-columns: 46% 54%;
-  gap: 56px;
+  grid-template-columns: 52% 48%;
+  gap: 40px;
   align-items: center;
 }
 
-/* --------------------------------------------------------------------------
-   Left Column: Diagnostic Intro & Content
-   -------------------------------------------------------------------------- */
-.sat-diagnostic-intro {
+/* --- Left Hero Column --- */
+.sat-hero-left {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  max-width: 580px;
+  max-width: 650px;
 }
 
-/* Eyebrow badge */
-.sat-diagnostic-eyebrow {
+/* Breadcrumb Navigation - Simple & Minimal */
+.sat-hero-breadcrumb {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  font-family: var(--font-heading, 'Poppins', sans-serif);
-  font-size: 0.8125rem;
+  gap: 8px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  font-size: 0.875rem;
+  color: var(--sat-text-muted);
+  margin-bottom: 20px;
+  box-shadow: none;
+}
+
+.sat-hero-breadcrumb-link {
+  color: var(--sat-brand-green);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.sat-hero-breadcrumb-link:hover {
+  color: var(--sat-brand-green-hover);
+}
+
+.sat-hero-breadcrumb-sep {
+  color: #CBD5E1;
+}
+
+.sat-hero-breadcrumb-current {
+  color: var(--sat-text-primary);
+  font-weight: 600;
+}
+
+/* Hero Badge */
+.sat-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  background: linear-gradient(90deg, rgba(46,125,50,0.08), rgba(43,187,173,0.08));
+  border: 1px solid rgba(46,125,50,0.2);
+  border-radius: var(--sat-radius-pill);
+  font-size: 0.775rem;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #2e7d32;
-  background: #f0fdf4;
-  border: 1px solid rgba(46, 125, 50, 0.18);
-  padding: 6px 14px;
-  border-radius: 100px;
+  color: var(--sat-brand-green);
   margin-bottom: 22px;
 }
 
-.sat-diagnostic-eyebrow-dot {
-  width: 6px;
-  height: 6px;
-  background-color: #2e7d32;
+.sat-hero-badge-dot {
+  width: 7px;
+  height: 7px;
+  background-color: var(--sat-brand-green);
   border-radius: 50%;
-  box-shadow: 0 0 0 2px rgba(46, 125, 50, 0.2);
+  box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.25);
+  animation: satPulseDot 2.2s infinite ease-in-out;
 }
 
-/* Main Heading */
-.sat-diagnostic-heading {
-  font-family: var(--font-heading, 'Poppins', sans-serif);
-  font-size: clamp(2.35rem, 4vw, 3.45rem);
-  font-weight: 700;
-  line-height: 1.12;
-  letter-spacing: -0.03em;
-  color: #1F2937;
-  margin: 0 0 22px 0;
-  max-width: 560px;
+@keyframes satPulseDot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.3); opacity: 0.5; }
 }
 
-.sat-diagnostic-heading span {
+/* Main Hero Heading */
+.sat-hero-heading {
+  font-family: var(--sat-font);
+  font-size: clamp(2.6rem, 4.5vw, 4.2rem);
+  font-weight: 800;
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+  color: var(--sat-text-primary);
+  margin: 0 0 20px 0;
+}
+
+.sat-hero-heading-gradient {
+  background: linear-gradient(90deg, #6C4CF1 0%, #3B82F6 50%, #20C7D9 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
   display: block;
 }
 
-/* Description */
-.sat-diagnostic-desc {
-  font-size: 1.125rem;
+/* Subtitle */
+.sat-hero-subtitle {
+  font-size: clamp(1.05rem, 1.8vw, 1.25rem);
   line-height: 1.68;
-  color: #4B5563;
-  margin: 0 0 28px 0;
-  max-width: 520px;
-  font-weight: 400;
+  color: var(--sat-text-secondary);
+  margin: 0 0 32px 0;
+  max-width: 650px;
 }
 
-/* Benefits list */
-.sat-diagnostic-benefits {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 32px 0;
+/* Feature Statistics Cards Row (4 Cards) */
+.sat-hero-features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  width: 100%;
+  margin-bottom: 36px;
+}
+
+.sat-hero-feature-card {
+  background: #FFFFFF;
+  border: 1px solid var(--sat-border-color);
+  border-radius: var(--sat-radius-md);
+  padding: 16px 12px;
   display: flex;
   flex-direction: column;
-  gap: 13px;
-  width: 100%;
-}
-
-.sat-diagnostic-benefit-item {
-  display: flex;
   align-items: center;
-  gap: 12px;
-  font-size: 1rem;
-  font-weight: 500;
-  color: #374151;
-  line-height: 1.45;
+  text-align: center;
+  gap: 10px;
+  box-shadow: var(--sat-shadow-sm);
+  transition: all 0.25s ease;
 }
 
-.sat-diagnostic-check-icon {
+.sat-hero-feature-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--sat-shadow-md);
+  border-color: #CBD5E1;
+}
+
+.sat-hero-feature-icon-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--sat-radius-sm);
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  background: #f0fdf4;
-  border: 1px solid rgba(46, 125, 50, 0.25);
-  color: #2e7d32;
   flex-shrink: 0;
 }
 
-/* Information Row (Metadata tokens) */
-.sat-diagnostic-meta {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 10px;
-  padding: 12px 18px;
-  background: #F8FAF8;
-  border: 1px solid #E9EEF0;
-  border-radius: 12px;
-  margin-bottom: 28px;
-  font-size: 0.875rem;
-  color: #4B5563;
-  font-weight: 500;
-}
+.sat-hero-feature-icon-wrap.purple { background: #F3E8FF; color: #6C4CF1; }
+.sat-hero-feature-icon-wrap.blue   { background: #EFF6FF; color: #3B82F6; }
+.sat-hero-feature-icon-wrap.green  { background: #ECFDF5; color: #10B981; }
+.sat-hero-feature-icon-wrap.orange { background: #FFF7ED; color: #FF9F43; }
 
-.sat-diagnostic-meta-item {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.sat-diagnostic-meta-item strong {
-  color: #1F2937;
-  font-weight: 600;
-}
-
-.sat-diagnostic-meta-badge {
-  background: #e8f5e9;
-  color: #2e7d32;
+.sat-hero-feature-label {
+  font-size: 0.85rem;
   font-weight: 700;
-  font-size: 0.775rem;
-  padding: 2px 9px;
-  border-radius: 6px;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
+  color: var(--sat-text-primary);
+  line-height: 1.25;
 }
 
-.sat-diagnostic-meta-divider {
-  color: #CBD5E1;
-  font-weight: 400;
-  user-select: none;
-}
-
-/* Primary CTA */
-.sat-diagnostic-cta-wrapper {
+/* Primary & Secondary Buttons Row */
+.sat-hero-cta-group {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 36px;
   width: 100%;
 }
 
-.sat-diagnostic-cta {
+.sat-hero-primary-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  background-color: #2e7d32;
-  color: #ffffff !important;
-  font-family: var(--font-heading, 'Poppins', sans-serif);
+  background: linear-gradient(90deg, #2E7D32 0%, #20BFA9 100%);
+  color: #FFFFFF !important;
+  font-family: var(--sat-font);
   font-size: 1.0625rem;
-  font-weight: 600;
-  height: 54px;
-  padding: 0 30px;
-  border-radius: 12px;
+  font-weight: 700;
+  height: 58px;
+  padding: 0 32px;
+  border-radius: var(--sat-radius-md);
   text-decoration: none;
-  box-shadow: 0 4px 14px rgba(46, 125, 50, 0.28);
+  box-shadow: 0 8px 24px -4px rgba(46, 125, 50, 0.35);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  width: fit-content;
-  position: relative;
-  overflow: hidden;
+  border: none;
+  cursor: pointer;
 }
 
-.sat-diagnostic-cta:hover {
-  background-color: #256b29;
-  box-shadow: 0 8px 22px rgba(46, 125, 50, 0.35);
-  transform: translateY(-1.5px);
-  color: #ffffff !important;
+.sat-hero-primary-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px -4px rgba(46, 125, 50, 0.45);
+  color: #FFFFFF !important;
 }
 
-.sat-diagnostic-cta:active {
-  transform: translateY(0);
-  box-shadow: 0 3px 10px rgba(46, 125, 50, 0.25);
+.sat-hero-primary-btn-arrow {
+  transition: transform 0.25s ease;
 }
 
-.sat-diagnostic-cta:focus-visible {
-  outline: 3px solid rgba(46, 125, 50, 0.45);
-  outline-offset: 3px;
+.sat-hero-primary-btn:hover .sat-hero-primary-btn-arrow {
+  transform: translateX(5px);
 }
 
-.sat-diagnostic-cta-arrow {
+.sat-hero-secondary-btn {
   display: inline-flex;
   align-items: center;
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  justify-content: center;
+  gap: 8px;
+  background: #FFFFFF;
+  color: var(--sat-text-primary) !important;
+  font-family: var(--sat-font);
+  font-size: 1rem;
+  font-weight: 600;
+  height: 58px;
+  padding: 0 26px;
+  border-radius: var(--sat-radius-md);
+  text-decoration: none;
+  border: 1px solid var(--sat-border-color);
+  box-shadow: var(--sat-shadow-sm);
+  transition: all 0.2s ease;
 }
 
-.sat-diagnostic-cta:hover .sat-diagnostic-cta-arrow {
-  transform: translateX(4px);
+.sat-hero-secondary-btn:hover {
+  background: var(--sat-bg-soft);
+  border-color: #CBD5E1;
+  transform: translateY(-1px);
 }
 
-.sat-diagnostic-reassurance {
-  font-size: 0.8125rem;
-  color: #6B7280;
-  margin: 0;
+/* Trust Section under CTA */
+.sat-hero-social-proof {
   display: flex;
   align-items: center;
-  gap: 6px;
-}
-
-/* --------------------------------------------------------------------------
-   Right Column: Diagnostic Dashboard Preview Card
-   -------------------------------------------------------------------------- */
-.sat-diagnostic-preview-card-wrap {
-  position: relative;
+  gap: 18px;
+  flex-wrap: wrap;
+  padding-top: 20px;
+  border-top: 1px solid var(--sat-border-color);
   width: 100%;
 }
 
-/* Glowing back-shadow behind centerpiece dashboard */
-.sat-diagnostic-preview-glow {
+.sat-hero-trust-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sat-hero-shield-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #ECFDF5;
+  border: 1px solid #A7F3D0;
+  color: var(--sat-brand-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sat-hero-trust-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.sat-hero-trust-title {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--sat-text-primary);
+  line-height: 1.2;
+}
+
+.sat-hero-trust-sub {
+  font-size: 0.775rem;
+  color: var(--sat-text-secondary);
+}
+
+.sat-hero-avatars-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+}
+
+.sat-hero-avatars-stack {
+  display: flex;
+  align-items: center;
+}
+
+.sat-hero-avatar-img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid #FFFFFF;
+  margin-left: -8px;
+  object-fit: cover;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.sat-hero-avatar-img:first-child {
+  margin-left: 0;
+}
+
+.sat-hero-rating-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.sat-hero-stars {
+  color: #F59E0B;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+.sat-hero-rating-score {
+  font-size: 0.775rem;
+  font-weight: 700;
+  color: var(--sat-text-primary);
+}
+
+/* --- Right Visual: Smartphone Mockup --- */
+.sat-hero-right {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sat-phone-bg-glow {
   position: absolute;
-  top: 10px;
-  left: 20px;
-  right: 20px;
-  bottom: 0px;
-  background: radial-gradient(ellipse at 50% 40%, rgba(46, 125, 50, 0.12) 0%, rgba(43, 187, 173, 0.08) 50%, transparent 75%);
-  filter: blur(28px);
-  border-radius: 32px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(circle, rgba(108,76,241,0.22) 0%, rgba(32,199,217,0.18) 40%, rgba(46,125,50,0.1) 65%, transparent 80%);
+  border-radius: 50%;
+  filter: blur(50px);
   z-index: 0;
   pointer-events: none;
 }
 
-.sat-diagnostic-preview-card {
-  position: relative;
+.sat-hero-svg-waves {
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 500px;
+  height: 500px;
   z-index: 1;
-  background: #ffffff;
-  border: 1px solid #E9EEF0;
-  border-radius: 24px;
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+/* Phone Stand / Rotated Frame Container */
+.sat-phone-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 370px;
+  perspective: 1000px;
+  filter: drop-shadow(0 25px 50px rgba(16, 24, 40, 0.22));
+}
+
+.sat-phone-frame {
+  position: relative;
+  width: 100%;
+  background: #090D16;
+  border-radius: 46px;
+  padding: 11px;
+  border: 2.5px solid #2A324B;
   box-shadow: 
-    0 1px 3px rgba(0, 0, 0, 0.02),
-    0 12px 32px -4px rgba(15, 23, 42, 0.06),
-    0 24px 60px -12px rgba(46, 125, 50, 0.09);
-  padding: 30px;
+    inset 0 0 0 2px rgba(255, 255, 255, 0.12),
+    0 0 0 1px #000000;
+  transform: rotate(-8deg) rotateY(4deg);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: satPhoneFloat 6s infinite ease-in-out;
+}
+
+@keyframes satPhoneFloat {
+  0%, 100% { transform: rotate(-8deg) rotateY(4deg) translateY(0); }
+  50% { transform: rotate(-8deg) rotateY(4deg) translateY(-10px); }
+}
+
+.sat-phone-container:hover .sat-phone-frame {
+  transform: rotate(0deg) rotateY(0deg) scale(1.02);
+  animation-play-state: paused;
+}
+
+/* Side Buttons on Phone */
+.sat-phone-frame::before {
+  content: '';
+  position: absolute;
+  left: -4.5px;
+  top: 110px;
+  width: 3px;
+  height: 50px;
+  background: #1E293B;
+  border-radius: 3px 0 0 3px;
+  box-shadow: 0 60px 0 #1E293B, 0 110px 0 #1E293B;
+}
+
+.sat-phone-frame::after {
+  content: '';
+  position: absolute;
+  right: -4.5px;
+  top: 140px;
+  width: 3px;
+  height: 70px;
+  background: #1E293B;
+  border-radius: 0 3px 3px 0;
+}
+
+/* Phone Screen Canvas */
+.sat-phone-screen {
+  background: #F8FAFC;
+  border-radius: 36px;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  gap: 22px;
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+  position: relative;
+  min-height: 640px;
+  border: 1px solid #1E293B;
 }
 
-.sat-diagnostic-preview-card:hover {
-  box-shadow: 
-    0 2px 6px rgba(0, 0, 0, 0.03),
-    0 18px 42px -4px rgba(15, 23, 42, 0.08),
-    0 30px 70px -10px rgba(46, 125, 50, 0.13);
+/* Dynamic Island Notch */
+.sat-phone-notch {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90px;
+  height: 22px;
+  background: #000000;
+  border-radius: 14px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 8px;
 }
 
-/* Dashboard Header */
-.sat-dashboard-header {
+.sat-phone-notch-camera {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #0F172A;
+  border: 1.5px solid #1E293B;
+}
+
+/* Inside Phone UI Components */
+.sat-portal-header {
+  padding: 38px 16px 12px 16px;
+  background: #FFFFFF;
+  border-bottom: 1px solid #F1F5F9;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #F1F5F9;
-  padding-bottom: 18px;
 }
 
-.sat-dashboard-title-group {
+.sat-portal-logo {
   display: flex;
-  flex-direction: column;
-  gap: 3px;
-}
-
-.sat-dashboard-eyebrow {
-  font-family: var(--font-heading, 'Poppins', sans-serif);
-  font-size: 0.6875rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #6B7280;
-}
-
-.sat-dashboard-title {
-  font-family: var(--font-heading, 'Poppins', sans-serif);
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #111827;
-  margin: 0;
-  letter-spacing: -0.01em;
-}
-
-.sat-dashboard-badge {
-  display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: #f0fdf4;
-  border: 1px solid rgba(46, 125, 50, 0.2);
-  color: #2e7d32;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  padding: 4px 11px;
-  border-radius: 100px;
+  font-family: var(--sat-font);
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--sat-brand-green);
 }
 
-.sat-dashboard-badge-dot {
-  width: 6px;
-  height: 6px;
-  background-color: #2e7d32;
-  border-radius: 50%;
-  animation: satPulse 2.2s infinite ease-in-out;
-}
-
-@keyframes satPulse {
-  0%, 100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.45;
-    transform: scale(1.2);
-  }
-}
-
-/* Overall Performance Hero Card */
-.sat-overall-card {
-  background: linear-gradient(135deg, #F8FAF8 0%, #F1F8F1 100%);
-  border: 1px solid #E2EFE2;
-  border-radius: 16px;
-  padding: 20px 24px;
+.sat-portal-logo-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  background: var(--sat-brand-green);
+  color: #FFFFFF;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 16px;
+  justify-content: center;
+  font-size: 0.75rem;
 }
 
-.sat-overall-info {
+.sat-portal-user-row {
+  padding: 16px 16px 10px 16px;
+  background: #FFFFFF;
+}
+
+.sat-portal-greeting {
+  font-family: var(--sat-font);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--sat-text-primary);
+  margin: 0 0 2px 0;
+}
+
+.sat-portal-subtext {
+  font-size: 0.775rem;
+  color: var(--sat-text-secondary);
+  margin: 0;
+}
+
+.sat-portal-card {
+  margin: 10px 12px;
+  background: #FFFFFF;
+  border: 1px solid var(--sat-border-color);
+  border-radius: var(--sat-radius-md);
+  padding: 14px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+}
+
+.sat-portal-card-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.sat-portal-card-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  background: #ECFDF5;
+  color: var(--sat-brand-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sat-portal-card-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--sat-text-primary);
+}
+
+.sat-portal-card-meta {
+  font-size: 0.7rem;
+  color: var(--sat-text-secondary);
+}
+
+.sat-portal-card-btn {
+  width: 100%;
+  padding: 9px;
+  background: var(--sat-brand-green);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 0.825rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(46, 125, 50, 0.3);
+}
+
+.sat-portal-domains-section {
+  padding: 8px 12px;
+}
+
+.sat-portal-domains-title {
+  font-size: 0.725rem;
+  font-weight: 700;
+  color: var(--sat-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 8px 0;
+}
+
+.sat-portal-domains-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+
+.sat-portal-domain-chip {
+  background: #FFFFFF;
+  border: 1px solid #F1F5F9;
+  border-radius: 10px;
+  padding: 7px 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sat-portal-domain-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sat-portal-domain-text {
   display: flex;
   flex-direction: column;
-  gap: 4px;
 }
 
-.sat-overall-label {
-  font-size: 0.8125rem;
-  font-weight: 600;
-  color: #4B5563;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
+.sat-portal-domain-name {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--sat-text-primary);
+  line-height: 1.2;
 }
 
-.sat-overall-caption {
-  font-size: 0.875rem;
-  color: #2e7d32;
-  font-weight: 600;
+.sat-portal-domain-sub {
+  font-size: 0.575rem;
+  color: var(--sat-text-muted);
 }
 
-.sat-overall-score-group {
+.sat-portal-bottom-banner {
+  margin: 8px 12px 12px 12px;
+  background: linear-gradient(135deg, #6C4CF1 0%, #3B82F6 100%);
+  border-radius: 14px;
+  padding: 12px;
+  color: #FFFFFF;
   display: flex;
-  align-items: baseline;
-  gap: 5px;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 6px 16px rgba(108, 76, 241, 0.3);
 }
 
-.sat-overall-score-big {
-  font-family: var(--font-heading, 'Poppins', sans-serif);
-  font-size: 2.25rem;
+.sat-portal-banner-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.sat-portal-banner-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.sat-portal-banner-desc {
+  font-size: 0.625rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin-top: 2px;
+}
+
+/* Floating Circular Badge overlapping Phone */
+.sat-phone-free-badge {
+  position: absolute;
+  bottom: 30px;
+  right: -25px;
+  z-index: 5;
+  width: 108px;
+  height: 108px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+  border: 4px solid #FFFFFF;
+  box-shadow: 
+    0 10px 25px rgba(16, 185, 129, 0.4),
+    0 0 0 2px #10B981;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #FFFFFF;
+  transform: rotate(6deg);
+  animation: satBadgePulse 3s infinite ease-in-out;
+}
+
+@keyframes satBadgePulse {
+  0%, 100% { transform: rotate(6deg) scale(1); }
+  50% { transform: rotate(6deg) scale(1.05); }
+}
+
+.sat-phone-free-title {
+  font-family: var(--sat-font);
+  font-size: 1.05rem;
   font-weight: 800;
-  color: #1F2937;
   line-height: 1;
 }
 
-.sat-overall-score-total {
-  font-family: var(--font-heading, 'Poppins', sans-serif);
-  font-size: 1.125rem;
+.sat-phone-free-sub {
+  font-size: 0.6rem;
   font-weight: 600;
-  color: #9CA3AF;
+  color: rgba(255, 255, 255, 0.95);
+  margin-top: 3px;
+  line-height: 1.15;
 }
 
-.sat-overall-tag {
-  background: #ffffff;
-  border: 1px solid #D1E7D1;
-  padding: 4px 10px;
-  border-radius: 8px;
-  font-size: 0.775rem;
-  font-weight: 600;
-  color: #2e7d32;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+/* ==========================================================================
+   2. "Know Exactly Where You Stand" (3 Steps Section)
+   ========================================================================== */
+
+.sat-steps-section {
+  padding: 100px 0;
+  background: #FFFFFF;
+  position: relative;
+  font-family: var(--sat-font);
 }
 
-/* Section Performance (2 Cards: Math & Reading/Writing) */
-.sat-sections-grid {
+.sat-section-header-center {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 56px;
+}
+
+.sat-section-eyebrow {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--sat-brand-green);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.sat-section-title {
+  font-family: var(--sat-font);
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 800;
+  color: var(--sat-text-primary);
+  letter-spacing: -0.03em;
+  margin: 0 0 14px 0;
+}
+
+.sat-section-desc {
+  font-size: 1.08rem;
+  color: var(--sat-text-secondary);
+  line-height: 1.65;
+  margin: 0;
+}
+
+.sat-steps-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
 }
 
-.sat-section-card {
-  background: #FAFAFA;
-  border: 1px solid #E9EEF0;
-  border-radius: 14px;
-  padding: 16px 18px;
+.sat-step-card {
+  background: #FFFFFF;
+  border: 1px solid var(--sat-border-color);
+  border-radius: var(--sat-radius-lg);
+  padding: 36px 28px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  transition: border-color 0.2s, background-color 0.2s;
+  gap: 16px;
+  position: relative;
+  box-shadow: var(--sat-shadow-sm);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.sat-section-card:hover {
-  background: #ffffff;
+.sat-step-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--sat-shadow-md);
   border-color: #CBD5E1;
 }
 
-.sat-section-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
+.sat-step-number {
+  font-family: var(--sat-font);
+  font-size: 2.75rem;
+  font-weight: 800;
+  line-height: 1;
+  background: linear-gradient(135deg, #6C4CF1 0%, #20C7D9 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
-.sat-section-name {
-  font-family: var(--font-heading, 'Poppins', sans-serif);
-  font-size: 0.9375rem;
-  font-weight: 600;
-  color: #1F2937;
-}
-
-.sat-section-score {
-  font-family: var(--font-heading, 'Poppins', sans-serif);
-  font-size: 0.9375rem;
-  font-weight: 700;
-  color: #111827;
-}
-
-.sat-section-score-total {
-  font-weight: 500;
-  color: #9CA3AF;
-  font-size: 0.8125rem;
-}
-
-/* Progress bar */
-.sat-progress-bar-track {
-  width: 100%;
-  height: 6px;
-  background-color: #E5E7EB;
-  border-radius: 100px;
-  overflow: hidden;
-  position: relative;
-}
-
-.sat-progress-bar-fill {
-  height: 100%;
-  border-radius: 100px;
-  transition: width 1s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.sat-progress-bar-fill.math {
-  background: linear-gradient(90deg, #2e7d32 0%, #66bb6a 100%);
-}
-
-.sat-progress-bar-fill.rw {
-  background: linear-gradient(90deg, #2bbbad 0%, #5cd2c6 100%);
-}
-
-.sat-section-status {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  font-size: 0.8125rem;
-  font-weight: 500;
-  color: #4B5563;
-}
-
-.sat-status-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-}
-
-.sat-status-dot.strong {
-  background-color: #2e7d32;
-}
-
-.sat-status-dot.review {
-  background-color: #2bbbad;
-}
-
-/* Skill Analysis Section */
-.sat-skills-area {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.sat-skills-heading-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.sat-skills-title {
-  font-family: var(--font-heading, 'Poppins', sans-serif);
-  font-size: 0.875rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: #4B5563;
+.sat-step-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--sat-text-primary);
   margin: 0;
 }
 
-.sat-skills-hint {
-  font-size: 0.75rem;
-  color: #9CA3AF;
-  font-weight: 500;
+.sat-step-text {
+  font-size: 0.975rem;
+  color: var(--sat-text-secondary);
+  line-height: 1.6;
+  margin: 0;
 }
 
-.sat-skills-grid {
+/* ==========================================================================
+   3. 8 SAT Domains Section Grid
+   ========================================================================== */
+
+.sat-domains-section {
+  padding: 100px 0;
+  background: var(--sat-bg-soft);
+  border-top: 1px solid var(--sat-border-color);
+  border-bottom: 1px solid var(--sat-border-color);
+  font-family: var(--sat-font);
+}
+
+.sat-domains-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.sat-domain-card {
+  background: #FFFFFF;
+  border: 1px solid var(--sat-border-color);
+  border-radius: var(--sat-radius-md);
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.sat-domain-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: transparent;
+  transition: background 0.3s ease;
+}
+
+.sat-domain-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--sat-shadow-md);
+}
+
+.sat-domain-card:hover::before {
+  background: linear-gradient(90deg, #6C4CF1, #20C7D9);
+}
+
+.sat-domain-icon-wrap {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sat-domain-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--sat-text-primary);
+  margin: 0;
+}
+
+.sat-domain-desc {
+  font-size: 0.875rem;
+  color: var(--sat-text-secondary);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ==========================================================================
+   4. Scorecard & Personalized Roadmap Section
+   ========================================================================== */
+
+.sat-roadmap-section {
+  padding: 100px 0;
+  background: #FFFFFF;
+  font-family: var(--sat-font);
+}
+
+.sat-roadmap-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px;
+  gap: 40px;
+  align-items: start;
 }
 
-.sat-skill-item {
-  background: #F8FAF8;
-  border: 1px solid #EDF2EE;
-  border-radius: 12px;
-  padding: 12px 14px;
+/* Mock Scorecard Card */
+.sat-scorecard-card {
+  background: #FFFFFF;
+  border: 1px solid var(--sat-border-color);
+  border-radius: var(--sat-radius-xl);
+  padding: 32px;
+  box-shadow: var(--sat-shadow-md);
   display: flex;
   flex-direction: column;
-  gap: 7px;
-  transition: transform 0.2s ease, border-color 0.2s ease;
+  gap: 20px;
 }
 
-.sat-skill-item:hover {
-  transform: translateY(-1px);
-  border-color: #DDE5DF;
-  background: #ffffff;
-}
-
-.sat-skill-top {
+.sat-scorecard-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 6px;
+  border-bottom: 1px solid var(--sat-border-color);
+  padding-bottom: 16px;
 }
 
-.sat-skill-name {
-  font-size: 0.8125rem;
-  font-weight: 600;
-  color: #1F2937;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.sat-skill-score {
-  font-size: 0.775rem;
-  font-weight: 700;
-  color: #374151;
-}
-
-.sat-skill-bar-track {
-  width: 100%;
-  height: 4px;
-  background: #E5E7EB;
-  border-radius: 100px;
-  overflow: hidden;
-}
-
-.sat-skill-bar-fill {
-  height: 100%;
-  border-radius: 100px;
-  background-color: #2e7d32;
-}
-
-.sat-skill-bar-fill.review {
-  background-color: #2bbbad;
-}
-
-.sat-skill-badge {
-  align-self: flex-start;
-  font-size: 0.6875rem;
-  font-weight: 600;
-  padding: 2px 7px;
-  border-radius: 4px;
-  text-transform: capitalize;
-}
-
-.sat-skill-badge.strong {
-  background: #E8F5E9;
-  color: #1B5E20;
-}
-
-.sat-skill-badge.review {
-  background: #E0F2F1;
-  color: #00695C;
-}
-
-/* Priority Card (Callout) */
-.sat-priority-card {
-  background: linear-gradient(135deg, #F0FDF4 0%, #ECFDF5 100%);
-  border: 1px solid #BBF7D0;
-  border-radius: 16px;
-  padding: 16px 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.sat-priority-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-}
-
-.sat-priority-badge {
-  font-family: var(--font-heading, 'Poppins', sans-serif);
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.07em;
-  color: #15803D;
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-}
-
-.sat-priority-target {
-  font-family: var(--font-heading, 'Poppins', sans-serif);
-  font-size: 0.9375rem;
-  font-weight: 700;
-  color: #111827;
-}
-
-.sat-priority-desc {
-  font-size: 0.8125rem;
-  line-height: 1.5;
-  color: #374151;
+.sat-scorecard-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--sat-text-primary);
   margin: 0;
 }
 
-.sat-priority-link {
-  font-size: 0.8125rem;
-  font-weight: 600;
-  color: #15803D;
-  display: inline-flex;
-  align-items: center;
+.sat-scorecard-tag {
+  background: #ECFDF5;
+  color: var(--sat-brand-green);
+  font-size: 0.775rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: var(--sat-radius-pill);
+}
+
+.sat-score-bar-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sat-score-bar-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--sat-text-primary);
+}
+
+.sat-score-bar-track {
+  width: 100%;
+  height: 8px;
+  background: #F1F5F9;
+  border-radius: var(--sat-radius-pill);
+  overflow: hidden;
+}
+
+.sat-score-bar-fill {
+  height: 100%;
+  border-radius: var(--sat-radius-pill);
+  transition: width 1s ease;
+}
+
+.sat-score-bar-fill.overall { background: linear-gradient(90deg, #6C4CF1, #3B82F6); }
+.sat-score-bar-fill.rw      { background: linear-gradient(90deg, #20C7D9, #10B981); }
+.sat-score-bar-fill.math    { background: linear-gradient(90deg, #2E7D32, #20BFA9); }
+
+/* Roadmap Timeline Card */
+.sat-roadmap-card {
+  background: var(--sat-bg-soft);
+  border: 1px solid var(--sat-border-color);
+  border-radius: var(--sat-radius-xl);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.sat-timeline-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+  padding-left: 20px;
+  border-left: 2px stroke var(--sat-border-color);
+}
+
+.sat-timeline-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
   gap: 4px;
+}
+
+.sat-timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -27px;
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--sat-brand-green);
+  border: 3px solid #FFFFFF;
+  box-shadow: 0 0 0 2px var(--sat-brand-green);
+}
+
+.sat-timeline-week {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--sat-brand-green);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.sat-timeline-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--sat-text-primary);
+  margin: 0;
+}
+
+/* ==========================================================================
+   5. Final Conversion CTA Section
+   ========================================================================== */
+
+.sat-final-cta-section {
+  padding: 100px 0;
+  background: #FFFFFF;
+  font-family: var(--sat-font);
+}
+
+.sat-final-cta-card {
+  background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+  border-radius: var(--sat-radius-xl);
+  padding: 64px 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  color: #FFFFFF;
+  box-shadow: var(--sat-shadow-lg);
+}
+
+.sat-final-cta-glow {
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(108,76,241,0.3) 0%, rgba(32,199,217,0.2) 50%, transparent 70%);
+  pointer-events: none;
+  filter: blur(50px);
+}
+
+.sat-final-cta-content {
+  position: relative;
+  z-index: 2;
+  max-width: 650px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.sat-final-cta-heading {
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+
+.sat-final-cta-desc {
+  font-size: 1.1rem;
+  color: #94A3B8;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.sat-final-cta-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.875rem;
+  color: #CBD5E1;
+  margin-top: 8px;
+}
+
+/* Floating Redesigned WhatsApp Button */
+.sat-whatsapp-floating-btn {
+  position: fixed;
+  bottom: 28px;
+  left: 28px;
+  z-index: 999;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #25D366;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   text-decoration: none;
-  transition: gap 0.2s ease, color 0.2s ease;
-  margin-top: 2px;
-  cursor: pointer;
 }
 
-.sat-priority-link:hover {
-  gap: 7px;
-  color: #0d5a2b;
+.sat-whatsapp-floating-btn:hover {
+  transform: scale(1.08) translateY(-2px);
+  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.55);
 }
 
-/* --------------------------------------------------------------------------
-   Responsive Breakpoints
-   -------------------------------------------------------------------------- */
+/* ==========================================================================
+   Responsive Mobile & Tablet Adjustments
+   ========================================================================== */
 
-/* Tablet (1024px and below) */
 @media (max-width: 1024px) {
-  .sat-diagnostic-section {
-    padding: 85px 0;
+  .sat-landing-hero-section {
+    padding: 120px 0 80px 0;
   }
 
-  .sat-diagnostic-grid {
+  .sat-hero-grid {
     grid-template-columns: 1fr;
-    gap: 50px;
+    gap: 56px;
   }
 
-  .sat-diagnostic-intro {
-    max-width: 100%;
-  }
-
-  .sat-diagnostic-heading {
-    max-width: 100%;
-  }
-
-  .sat-diagnostic-desc {
-    max-width: 100%;
-  }
-
-  .sat-diagnostic-preview-card-wrap {
-    max-width: 650px;
-    margin: 0 auto;
-  }
-}
-
-/* Mobile Devices (768px and below) */
-@media (max-width: 768px) {
-  .sat-diagnostic-section {
-    padding: 65px 0;
-  }
-
-  .sat-diagnostic-heading {
-    font-size: clamp(2rem, 8vw, 2.45rem);
-    margin-bottom: 18px;
-  }
-
-  .sat-diagnostic-desc {
-    font-size: 1rem;
-    margin-bottom: 22px;
-  }
-
-  .sat-diagnostic-benefit-item {
-    font-size: 0.9375rem;
-  }
-
-  .sat-diagnostic-meta {
-    padding: 10px 14px;
-    font-size: 0.8125rem;
-    gap: 8px;
-  }
-
-  .sat-diagnostic-cta {
-    width: 100%;
-    height: 52px;
-    font-size: 1rem;
-  }
-
-  .sat-diagnostic-preview-card {
-    padding: 22px 18px;
-    border-radius: 20px;
-    gap: 18px;
-  }
-
-  .sat-overall-card {
-    padding: 16px 18px;
-  }
-
-  .sat-overall-score-big {
-    font-size: 1.85rem;
-  }
-
-  .sat-sections-grid {
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
-
-  .sat-skills-grid {
-    grid-template-columns: 1fr;
-    gap: 8px;
-  }
-}
-
-/* Extra Small Screens (480px and below) */
-@media (max-width: 480px) {
-  .sat-diagnostic-section {
-    padding: 55px 0;
-  }
-
-  .sat-diagnostic-heading {
-    font-size: 1.85rem;
-  }
-
-  .sat-diagnostic-meta {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 6px;
-  }
-
-  .sat-diagnostic-meta-divider {
-    display: none;
-  }
-
-  .sat-dashboard-header {
-    flex-direction: row;
+  .sat-hero-left {
     align-items: center;
+    text-align: center;
+    max-width: 100%;
   }
 
-  .sat-dashboard-title {
-    font-size: 1.1rem;
+  .sat-hero-subtitle {
+    max-width: 100%;
+  }
+
+  .sat-hero-features-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .sat-hero-cta-group {
+    justify-content: center;
+  }
+
+  .sat-hero-social-proof {
+    justify-content: center;
+  }
+
+  .sat-hero-avatars-group {
+    margin-left: 0;
+  }
+
+  .sat-steps-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sat-domains-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sat-roadmap-grid {
+    grid-template-columns: 1fr;
   }
 }
 
-/* Reduced Motion Mode */
-@media (prefers-reduced-motion: reduce) {
-  .sat-diagnostic-cta,
-  .sat-diagnostic-cta-arrow,
-  .sat-diagnostic-preview-card,
-  .sat-skill-item,
-  .sat-progress-bar-fill,
-  .sat-priority-link {
-    transition: none !important;
-    transform: none !important;
+@media (max-width: 640px) {
+  .sat-landing-hero-section {
+    padding: 100px 0 60px 0;
   }
 
-  .sat-dashboard-badge-dot {
-    animation: none !important;
+  .sat-hero-heading {
+    font-size: 2.2rem;
+  }
+
+  .sat-hero-features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sat-domains-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sat-hero-primary-btn, .sat-hero-secondary-btn {
+    width: 100%;
+  }
+
+  .sat-phone-free-badge {
+    width: 88px;
+    height: 88px;
+    right: -10px;
+    bottom: 15px;
+  }
+
+  .sat-whatsapp-floating-btn {
+    bottom: 20px;
+    left: 20px;
+    width: 52px;
+    height: 52px;
   }
 }

@@ -4,7 +4,7 @@
  */
 
 import React, { useState, useEffect, useCallback } from 'react';
-import { listQuestions, createQuestion, updateQuestion, deleteQuestion, ApiError } from '../../services/diagnosticApi';
+import { listQuestions, createQuestion, updateQuestion, deleteQuestion, getShuffleSetting, toggleShuffleSetting, ApiError } from '../../services/diagnosticApi';
 import '../sat/sat.css';
 
 const SECTION_OPTIONS = ['', 'MATH', 'READING_WRITING'];
@@ -83,6 +83,8 @@ export default function AdminQuestions() {
   const [editingId, setEditingId] = useState(null);
   const [submitting, setSubmitting] = useState(false);
   const [modalError, setModalError] = useState('');
+  const [shuffleQuestions, setShuffleQuestions] = useState(false);
+  const [togglingShuffle, setTogglingShuffle] = useState(false);
 
   const [formData, setFormData] = useState({
     question_code: '',
@@ -112,11 +114,37 @@ export default function AdminQuestions() {
 
   useEffect(() => { load(); }, [load]);
 
+  useEffect(() => {
+    getShuffleSetting()
+      .then(res => setShuffleQuestions(!!res?.shuffle_questions))
+      .catch(() => {});
+  }, []);
+
+  const handleToggleShuffle = async () => {
+    setTogglingShuffle(true);
+    try {
+      const res = await toggleShuffleSetting();
+      setShuffleQuestions(!!res?.shuffle_questions);
+    } catch (e) {
+      alert(e instanceof ApiError ? e.message : 'Failed to update shuffle setting');
+    } finally {
+      setTogglingShuffle(false);
+    }
+  };
+
   const handleOpenAdd = () => {
     setEditingId(null);
     setModalError('');
+    let nextNum = questions.length + 1;
+    let code = `SAT-Q${nextNum}`;
+    const existingCodes = new Set(questions.map(q => q.question_code));
+    while (existingCodes.has(code)) {
+      nextNum += 1;
+      code = `SAT-Q${nextNum}`;
+    }
+
     setFormData({
-      question_code: `SAT-Q${questions.length + 1}`,
+      question_code: code,
       section: 'MATH',
       domain: 'ALGEBRA',
       difficulty: 'MEDIUM',
@@ -170,7 +198,10 @@ export default function AdminQuestions() {
       setShowModal(false);
       setEditingId(null);
     } catch (err) {
-      setModalError(err instanceof ApiError ? err.message : (editingId ? 'Failed to update question' : 'Failed to create question'));
+      const msg = err instanceof ApiError
+        ? err.message
+        : (typeof err === 'string' ? err : (err?.message || (editingId ? 'Failed to update question' : 'Failed to create question')));
+      setModalError(typeof msg === 'string' ? msg : JSON.stringify(msg));
     } finally {
       setSubmitting(false);
     }
@@ -202,7 +233,31 @@ export default function AdminQuestions() {
           </p>
         </div>
 
-        <div style={{ display: 'flex', gap: '8px', alignItems: 'center', flexWrap: 'wrap' }}>
+        <div style={{ display: 'flex', gap: '12px', alignItems: 'center', flexWrap: 'wrap' }}>
+          <label style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '8px',
+            background: '#F8FAFC',
+            border: '1px solid #CBD5E1',
+            borderRadius: '8px',
+            padding: '7px 12px',
+            fontSize: '0.82rem',
+            fontWeight: 700,
+            color: '#0F172A',
+            cursor: 'pointer',
+            userSelect: 'none'
+          }}>
+            <input
+              type="checkbox"
+              checked={shuffleQuestions}
+              onChange={handleToggleShuffle}
+              disabled={togglingShuffle}
+              style={{ width: '16px', height: '16px', accentColor: '#2E7D32', cursor: 'pointer' }}
+            />
+            <span>Shuffle questions for each student</span>
+          </label>
+
           <button
             className="admin-btn primary"
             onClick={handleOpenAdd}

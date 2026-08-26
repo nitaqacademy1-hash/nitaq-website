@@ -125,3 +125,29 @@ def activate_test(test_id: int, admin=Depends(get_current_admin), db: Session = 
     test.status = TestStatus.ACTIVE
     db.commit()
     return {"message": f"Test '{test.name}' is now active."}
+
+
+@tests_router.get("/shuffle-setting", status_code=status.HTTP_200_OK)
+def get_shuffle_setting(admin=Depends(get_current_admin), db: Session = Depends(get_db)):
+    """Get shuffle_questions setting for the active diagnostic test."""
+    test = db.query(DiagnosticTest).filter(DiagnosticTest.status == TestStatus.ACTIVE).first()
+    if not test:
+        test = db.query(DiagnosticTest).first()
+    shuffle_val = getattr(test, "shuffle_questions", False) if test else False
+    return {"shuffle_questions": shuffle_val}
+
+
+@tests_router.post("/toggle-shuffle", status_code=status.HTTP_200_OK)
+def toggle_shuffle_setting(admin=Depends(get_current_admin), db: Session = Depends(get_db)):
+    """Toggle shuffle_questions setting for the active diagnostic test."""
+    test = db.query(DiagnosticTest).filter(DiagnosticTest.status == TestStatus.ACTIVE).first()
+    if not test:
+        test = db.query(DiagnosticTest).first()
+    if not test:
+        raise HTTPException(status_code=404, detail="No diagnostic test found.")
+
+    current_val = getattr(test, "shuffle_questions", False)
+    test.shuffle_questions = not current_val
+    db.commit()
+    db.refresh(test)
+    return {"shuffle_questions": test.shuffle_questions, "message": f"Questions shuffle set to {test.shuffle_questions}"}

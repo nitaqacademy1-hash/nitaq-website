@@ -109,6 +109,7 @@ class DiagnosticTest(Base):
     version: Mapped[int] = mapped_column(Integer, default=1, nullable=False)
     status: Mapped[TestStatus] = mapped_column(SAEnum(TestStatus), default=TestStatus.DRAFT, nullable=False)
     show_answer_review: Mapped[bool] = mapped_column(Boolean, default=True, nullable=False)
+    shuffle_questions: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)
     created_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True), default=lambda: datetime.now(timezone.utc)
     )

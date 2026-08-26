@@ -182,33 +182,108 @@ export default function QuizView() {
     if (currentQ > 0) setCurrentQ(q => q - 1);
   };
 
+  const [userMenuOpen, setUserMenuOpen] = useState(false);
+
+  const handleSignOut = () => {
+    sessionStorage.removeItem('nitaq_session_token');
+    sessionStorage.removeItem('nitaq_session_id');
+    sessionStorage.removeItem('nitaq_student');
+    sessionStorage.removeItem('nitaq_current_section');
+    sessionStorage.removeItem('nitaq_first_section');
+    sessionStorage.removeItem('nitaq_interim_result');
+    sessionStorage.removeItem('nitaq_math_result');
+    navigate('/', { replace: true });
+  };
+
+  const firstSec = sessionStorage.getItem('nitaq_first_section');
+  const isSecondStep = firstSec && selectedSection && firstSec !== selectedSection;
+  const stepLabel = isSecondStep ? 'Step 2 of 2' : 'Step 1 of 2';
+  const stepProgressPercent = isSecondStep ? '100%' : '50%';
+
   // ── Top Header Bar ──────────────────────────────────────────
-  const renderTopBar = (sectionTitle = null) => (
-    <header className="test-top-bar">
-      <div className="test-bar-container">
-        <div className="test-bar-brand">
+  const renderTopBar = (moduleTitle = null) => (
+    <header className="sat-assessment-header">
+      <div className="sat-assessment-header-container">
+        <div className="test-bar-brand" style={{ display: 'flex', alignItems: 'center', gap: '18px' }}>
           <img
             src="/images/logo1.webp"
             alt="Nitaq Academy"
-            style={{ height: '30px', width: 'auto', objectFit: 'contain' }}
+            style={{ height: '32px', width: 'auto', objectFit: 'contain' }}
           />
-        </div>
-
-        {sectionTitle && (
-          <div className="test-bar-center">
-            <span className="test-active-section">
-              {sectionTitle}
-            </span>
-          </div>
-        )}
-
-        <div className="test-bar-right">
-          {student?.full_name && (
-            <div className="test-student-pill">
-              <span className="student-dot" />
-              <span>{student.full_name}</span>
+          {moduleTitle && (
+            <div className="sat-header-module-name">
+              <span className="sat-header-module-dot" />
+              <span>{moduleTitle.toUpperCase()}</span>
             </div>
           )}
+        </div>
+
+        <div className="sat-header-progress-group">
+          <span className="sat-header-progress-text">{stepLabel}</span>
+          <div className="sat-header-progress-track">
+            <div className="sat-header-progress-fill" style={{ width: stepProgressPercent }} />
+          </div>
+        </div>
+
+        <div className="test-bar-right">
+          <div className="sat-user-menu-container" style={{ position: 'relative' }}>
+            <button
+              type="button"
+              className="sat-user-pill-btn"
+              onClick={() => setUserMenuOpen(prev => !prev)}
+              aria-expanded={userMenuOpen}
+            >
+              <span className="sat-user-dot" />
+              <span className="sat-user-name">{student?.full_name || 'Student'}</span>
+              <svg
+                width="12"
+                height="12"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                style={{
+                  transform: userMenuOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+                  transition: 'transform 0.2s ease',
+                }}
+              >
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+            </button>
+
+            {userMenuOpen && (
+              <>
+                <div
+                  style={{ position: 'fixed', inset: 0, zIndex: 190 }}
+                  onClick={() => setUserMenuOpen(false)}
+                />
+                <div className="sat-user-dropdown-menu">
+                  <div className="sat-user-dropdown-item profile-info">
+                    <div className="sat-user-dropdown-avatar">
+                      {(student?.full_name || 'S').charAt(0).toUpperCase()}
+                    </div>
+                    <div className="sat-user-dropdown-details">
+                      <span className="sat-user-dropdown-name">{student?.full_name || 'Student'}</span>
+                      <span className="sat-user-dropdown-email">{student?.email || 'Nitaq Student'}</span>
+                    </div>
+                  </div>
+                  <div className="sat-user-dropdown-divider" />
+                  <button
+                    type="button"
+                    className="sat-user-dropdown-item signout-btn"
+                    onClick={handleSignOut}
+                  >
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                      <polyline points="16 17 21 12 16 7" />
+                      <line x1="21" y1="12" x2="9" y2="12" />
+                    </svg>
+                    <span>Sign Out</span>
+                  </button>
+                </div>
+              </>
+            )}
+          </div>
         </div>
       </div>
     </header>
@@ -217,117 +292,165 @@ export default function QuizView() {
   // ── Render: Section Selection Screen ────────────────────────
   if (phase === 'choose_section') {
     return (
-      <div className="quiz-platform-shell">
+      <div className="sat-section-select-shell">
         <SEO
           title="Choose Starting Section — Nitaq SAT Diagnostic"
           description="Select whether to begin with Mathematics or Reading & Writing."
         />
-        {renderTopBar('Select Section')}
 
-        <main className="section-intro-wrapper" style={{ maxWidth: '820px' }}>
-          <div className="section-intro-card">
-            <div style={{ marginBottom: '20px' }}>
-              <div className="intro-step-badge">
-                Step 1 of 2 · Section Selection
+        {/* Sticky Header Bar */}
+        <header className="sat-assessment-header">
+          <div className="sat-assessment-header-container">
+            <div className="test-bar-brand">
+              <img
+                src="/images/logo1.webp"
+                alt="Nitaq Academy"
+                style={{ height: '32px', width: 'auto', objectFit: 'contain' }}
+              />
+            </div>
+
+            <div className="sat-header-progress-group">
+              <span className="sat-header-progress-text">{stepLabel}</span>
+              <div className="sat-header-progress-track">
+                <div className="sat-header-progress-fill" style={{ width: stepProgressPercent }} />
               </div>
             </div>
 
-            <h1 className="intro-title">
+            <div className="test-bar-right">
+              <div className="sat-user-menu-container" style={{ position: 'relative' }}>
+                <button
+                  type="button"
+                  className="sat-user-pill-btn"
+                  onClick={() => setUserMenuOpen(prev => !prev)}
+                  aria-expanded={userMenuOpen}
+                >
+                  <span className="sat-user-dot" />
+                  <span className="sat-user-name">{student?.full_name || 'Student'}</span>
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                    style={{
+                      transform: userMenuOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+                      transition: 'transform 0.2s ease',
+                    }}
+                  >
+                    <path d="M6 9l6 6 6-6" />
+                  </svg>
+                </button>
+
+                {userMenuOpen && (
+                  <>
+                    <div
+                      style={{ position: 'fixed', inset: 0, zIndex: 190 }}
+                      onClick={() => setUserMenuOpen(false)}
+                    />
+                    <div className="sat-user-dropdown-menu">
+                      <div className="sat-user-dropdown-item profile-info">
+                        <div className="sat-user-dropdown-avatar">
+                          {(student?.full_name || 'S').charAt(0).toUpperCase()}
+                        </div>
+                        <div className="sat-user-dropdown-details">
+                          <span className="sat-user-dropdown-name">{student?.full_name || 'Student'}</span>
+                          <span className="sat-user-dropdown-email">{student?.email || 'Nitaq Student'}</span>
+                        </div>
+                      </div>
+                      <div className="sat-user-dropdown-divider" />
+                      <button
+                        type="button"
+                        className="sat-user-dropdown-item signout-btn"
+                        onClick={handleSignOut}
+                      >
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                          <polyline points="16 17 21 12 16 7" />
+                          <line x1="21" y1="12" x2="9" y2="12" />
+                        </svg>
+                        <span>Sign Out</span>
+                      </button>
+                    </div>
+                  </>
+                )}
+              </div>
+            </div>
+          </div>
+        </header>
+
+        {/* Main Content Container */}
+        <main className="sat-section-select-main">
+          <div className="sat-section-select-header">
+            <div className="sat-section-select-pill">
+              STEP 1 OF 2 · SECTION SELECTION
+            </div>
+            <h1 className="sat-section-select-heading">
               Choose Your Starting Section
             </h1>
-            <p className="intro-subtitle">
-              You will complete both sections (24 questions total). Select which section you would like to tackle first:
+            <p className="sat-section-select-desc">
+              You’ll complete both sections for a total of 24 questions. Choose which section you’d like to tackle first.
             </p>
+          </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '20px', marginTop: '28px' }}>
-              {/* Option 1: Mathematics */}
-              <div
-                onClick={() => handleSelectSection('MATH')}
-                style={{
-                  background: '#FAFAFA',
-                  border: '1.5px solid #E2E8F0',
-                  borderRadius: '20px',
-                  padding: '28px',
-                  cursor: 'pointer',
-                  transition: 'all 0.2s ease',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-between'
-                }}
-                onMouseEnter={e => { e.currentTarget.style.borderColor = '#0F172A'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
-                onMouseLeave={e => { e.currentTarget.style.borderColor = '#E2E8F0'; e.currentTarget.style.transform = 'none'; }}
-              >
-                <div>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
-                    <span style={{ fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#64748B' }}>
-                      Module Option A
-                    </span>
-                    <span style={{ fontSize: '0.75rem', fontWeight: 700, padding: '3px 8px', borderRadius: '6px', background: '#F1F5F9', color: '#334155' }}>
-                      12 Questions
-                    </span>
-                  </div>
-
-                  <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#0F172A', margin: '0 0 8px 0' }}>
-                    Mathematics
-                  </h3>
-                  <p style={{ fontSize: '0.85rem', color: '#64748B', lineHeight: 1.5, margin: '0 0 16px 0' }}>
-                    Algebra, Advanced Math, Problem-Solving &amp; Data Analysis, and Geometry &amp; Trigonometry.
-                  </p>
+          <div className="sat-section-select-grid">
+            {/* Card 1: Mathematics */}
+            <div
+              className="sat-select-card math"
+              onClick={() => handleSelectSection('MATH')}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') handleSelectSection('MATH'); }}
+            >
+              <div>
+                <div className="sat-select-card-top">
+                  <span className="sat-select-module-tag">MODULE A</span>
+                  <span className="sat-select-qs-badge">12 QUESTIONS</span>
                 </div>
-
-                <button
-                  type="button"
-                  className="admin-btn primary"
-                  style={{ width: '100%', justifyContent: 'center', marginTop: '16px' }}
-                >
-                  Start with Mathematics →
-                </button>
+                <h2 className="sat-select-card-title">Mathematics</h2>
+                <p className="sat-select-card-desc">
+                  Algebra, Advanced Math, Problem-Solving &amp; Data Analysis, and Geometry &amp; Trigonometry.
+                </p>
               </div>
-
-              {/* Option 2: Reading & Writing */}
-              <div
-                onClick={() => handleSelectSection('READING_WRITING')}
-                style={{
-                  background: '#FAFAFA',
-                  border: '1.5px solid #E2E8F0',
-                  borderRadius: '20px',
-                  padding: '28px',
-                  cursor: 'pointer',
-                  transition: 'all 0.2s ease',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-between'
-                }}
-                onMouseEnter={e => { e.currentTarget.style.borderColor = '#0F172A'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
-                onMouseLeave={e => { e.currentTarget.style.borderColor = '#E2E8F0'; e.currentTarget.style.transform = 'none'; }}
-              >
-                <div>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
-                    <span style={{ fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#64748B' }}>
-                      Module Option B
-                    </span>
-                    <span style={{ fontSize: '0.75rem', fontWeight: 700, padding: '3px 8px', borderRadius: '6px', background: '#F1F5F9', color: '#334155' }}>
-                      12 Questions
-                    </span>
-                  </div>
-
-                  <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#0F172A', margin: '0 0 8px 0' }}>
-                    Reading &amp; Writing (English)
-                  </h3>
-                  <p style={{ fontSize: '0.85rem', color: '#64748B', lineHeight: 1.5, margin: '0 0 16px 0' }}>
-                    Information &amp; Ideas, Craft &amp; Structure, Expression of Ideas, and Standard English Conventions.
-                  </p>
-                </div>
-
-                <button
-                  type="button"
-                  className="admin-btn primary"
-                  style={{ width: '100%', justifyContent: 'center', marginTop: '16px' }}
-                >
-                  Start with English →
-                </button>
-              </div>
+              <button type="button" className="sat-select-card-cta">
+                <span>Start with Mathematics</span>
+                <span className="sat-select-card-cta-arrow" aria-hidden="true">→</span>
+              </button>
             </div>
+
+            {/* Card 2: Reading & Writing */}
+            <div
+              className="sat-select-card rw"
+              onClick={() => handleSelectSection('READING_WRITING')}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') handleSelectSection('READING_WRITING'); }}
+            >
+              <div>
+                <div className="sat-select-card-top">
+                  <span className="sat-select-module-tag" style={{ color: '#2BBBAD' }}>MODULE B</span>
+                  <span className="sat-select-qs-badge" style={{ color: '#2BBBAD', background: '#EAF7EF' }}>12 QUESTIONS</span>
+                </div>
+                <h2 className="sat-select-card-title">Reading &amp; Writing</h2>
+                <p className="sat-select-card-desc">
+                  Information &amp; Ideas, Craft &amp; Structure, Expression of Ideas, and Standard English Conventions.
+                </p>
+              </div>
+              <button type="button" className="sat-select-card-cta">
+                <span>Start with English</span>
+                <span className="sat-select-card-cta-arrow" aria-hidden="true">→</span>
+              </button>
+            </div>
+          </div>
+
+          {/* Reassurance Footer Line */}
+          <div className="sat-select-reassurance">
+            <span className="sat-select-check-icon" aria-hidden="true">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+            </span>
+            <span>You’ll complete both sections · Your progress is saved automatically</span>
           </div>
         </main>
       </div>
@@ -338,7 +461,7 @@ export default function QuizView() {
   if (loadingSection) {
     return (
       <div className="quiz-platform-shell">
-        {renderTopBar()}
+        {renderTopBar(meta?.shortName)}
         <div className="quiz-loading-container">
           <div className="spinner" style={{ width: '32px', height: '32px', margin: '0 auto 14px' }} />
           <p style={{ color: '#64748B', fontSize: '0.85rem' }}>
@@ -353,7 +476,7 @@ export default function QuizView() {
   if (phase === 'error') {
     return (
       <div className="quiz-platform-shell">
-        {renderTopBar()}
+        {renderTopBar(meta?.shortName)}
         <div className="quiz-error-container">
           <div style={{ background: '#ffffff', border: '1px solid #E2E8F0', borderRadius: '16px', padding: '32px', maxWidth: '440px', margin: '0 auto' }}>
             <h2 style={{ fontSize: '1.15rem', fontWeight: 800, color: '#0F172A', marginBottom: '8px' }}>
@@ -371,76 +494,77 @@ export default function QuizView() {
     );
   }
 
-  // ── Render: Section Intro ───────────────────────────────────
+  // ── Render: Section Intro (Module Overview) ─────────────────
   if (phase === 'intro') {
     return (
-      <div className="quiz-platform-shell">
+      <div className="sat-module-overview-shell">
         <SEO
-          title={`${meta?.label} Section — Nitaq SAT Diagnostic`}
+          title={`${meta?.label} Assessment — Nitaq SAT Diagnostic`}
           description={meta?.description}
         />
-        {renderTopBar(meta?.label)}
+        {renderTopBar(meta?.shortName)}
 
-        <main className="section-intro-wrapper">
-          <div className="section-intro-card">
-            <div style={{ marginBottom: '20px' }}>
-              <div className="intro-step-badge">
-                Active Module · {meta?.shortName}
-              </div>
+        <main className="sat-module-overview-container">
+          <div className="sat-module-overview-panel">
+            <div className="sat-module-active-badge">
+              ACTIVE MODULE · {meta?.shortName.toUpperCase()}
             </div>
 
-            <h1 className="intro-title">
+            <h1 className="sat-module-title">
               {meta?.label} Assessment
             </h1>
-            <p className="intro-subtitle">
+            <p className="sat-module-desc">
               {meta?.description}
             </p>
 
-            {/* Domain Overview */}
-            <div className="intro-domains-section">
-              <div className="intro-subhead">Domains Assessed in this Module</div>
-              <div className="intro-domains-grid">
+            {/* Domains Assessed Grid */}
+            <div style={{ marginBottom: '36px' }}>
+              <div className="sat-domains-section-title">
+                DOMAINS ASSESSED IN THIS MODULE
+              </div>
+              <div className="sat-domains-grid-container">
                 {meta?.domains.map(d => (
-                  <div key={d.key} className="intro-domain-card">
-                    <div className="domain-title">{d.label}</div>
-                    <div className="domain-count">{d.count}</div>
+                  <div key={d.key} className="sat-domain-card">
+                    <div className="sat-domain-name">{d.label}</div>
+                    <div className="sat-domain-badge">{d.count}</div>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Instructions Box */}
-            <div className="intro-instructions-box">
-              <div className="intro-instructions-grid">
-                <div className="instruction-item">
-                  <div>
-                    <div className="instruction-title">12 Diagnostic Questions</div>
-                    <div className="instruction-text">Answer each question to evaluate your domain proficiency.</div>
-                  </div>
-                </div>
-
-                <div className="instruction-item">
-                  <div>
-                    <div className="instruction-title">Natural Pacing</div>
-                    <div className="instruction-text">Take your time. You can navigate back to change answers anytime.</div>
-                  </div>
-                </div>
+            {/* Horizontal Information Strip */}
+            <div className="sat-info-strip">
+              <div>
+                <h3 className="sat-info-col-title">12 Diagnostic Questions</h3>
+                <p className="sat-info-col-desc">
+                  Answer each question to evaluate your domain proficiency.
+                </p>
+              </div>
+              <div>
+                <h3 className="sat-info-col-title">Natural Pacing</h3>
+                <p className="sat-info-col-desc">
+                  Take your time. You can navigate back to change answers anytime.
+                </p>
               </div>
             </div>
 
-            {/* Bottom Actions */}
-            <div className="intro-bottom-cta">
+            {/* Bottom Action Bar */}
+            <div className="sat-module-bottom-bar">
               <button
                 type="button"
-                className="admin-btn outline"
+                className="sat-btn-change-section"
                 onClick={() => setPhase('choose_section')}
-                style={{ fontSize: '0.82rem', padding: '10px 16px' }}
               >
                 ← Change Section
               </button>
 
-              <button className="intro-start-btn" onClick={loadQuestions}>
-                Begin {meta?.shortName} →
+              <button
+                type="button"
+                className="sat-btn-begin-module"
+                onClick={loadQuestions}
+              >
+                <span>Begin {meta?.shortName}</span>
+                <span className="sat-btn-begin-module-arrow" aria-hidden="true">→</span>
               </button>
             </div>
           </div>
@@ -593,24 +717,22 @@ export default function QuizView() {
             })}
           </div>
 
-          {/* Next / Submit Button */}
+          {/* Next / Skip / Submit Button Group */}
           {isLast ? (
             <button
               type="button"
               className="test-btn-submit"
               onClick={handleSubmitSection}
-              disabled={!selectedAns}
             >
               Submit {meta?.shortName} →
             </button>
           ) : (
             <button
               type="button"
-              className="test-btn-next"
+              className={`test-btn-next${!selectedAns ? ' is-skip' : ''}`}
               onClick={handleNext}
-              disabled={!selectedAns}
             >
-              Next Question →
+              {selectedAns ? 'Next Question →' : 'Skip / Next →'}
             </button>
           )}
         </div>
