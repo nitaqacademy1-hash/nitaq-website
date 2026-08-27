@@ -154,21 +154,22 @@ const Header = () => {
 
                     </nav>
 
-                    <div className="header-right-actions" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <div className="header-right-actions" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
                         <button
                             onClick={toggleLanguage}
                             className="lang-toggle desktop-only-btn"
                             lang={lang === 'en' ? 'ar' : 'en'}
                             aria-label={t('common.switchLanguage')}
                             style={{
-                                padding: '8px 16px', 
-                                border: '1px solid var(--primary-color, #2e7d32)',
+                                padding: '8px 20px', 
+                                border: '1.5px solid #2E7D32',
                                 borderRadius: '999px',
-                                background: 'transparent',
-                                color: 'var(--primary-color, #2e7d32)',
-                                fontWeight: '600',
+                                background: '#ffffff',
+                                color: '#2E7D32',
+                                fontWeight: '700',
                                 cursor: 'pointer',
-                                fontSize: '14px'
+                                fontSize: '14px',
+                                transition: 'all 0.2s ease'
                             }}
                         >
                             {lang === 'en' ? 'العربية' : 'English'}
@@ -176,8 +177,23 @@ const Header = () => {
 
                         <a
                             href="tel:+97165798313"
-                            className="btn btn-primary desktop-only-btn"
+                            className="btn desktop-only-btn"
                             onClick={() => trackEvent(ANALYTICS_EVENTS.CALL, 'header_desktop')}
+                            style={{
+                                padding: '10px 24px',
+                                borderRadius: '999px',
+                                background: '#1E7E34',
+                                color: '#ffffff',
+                                fontWeight: '700',
+                                fontSize: '14px',
+                                border: 'none',
+                                textDecoration: 'none',
+                                boxShadow: '0 4px 14px rgba(30, 126, 52, 0.25)',
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                transition: 'all 0.2s ease'
+                            }}
                         >
                             {t('common.callUs')}
                         </a>
