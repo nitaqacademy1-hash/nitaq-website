@@ -5,6 +5,17 @@ import { Calendar, User, ArrowRight, ExternalLink, Filter, Search } from 'lucide
 
 const articles = [
     {
+        id: 29,
+        title: "Free Digital SAT Diagnostic Assessment & Self-Evaluation Guide (2026)",
+        excerpt: "Evaluate your Digital SAT readiness with our free 24-question adaptive diagnostic quiz, instant domain performance analysis, score predictor, and detailed answer explanations.",
+        category: "SAT Assessment & Diagnostics",
+        path: "/article/free-digital-sat-diagnostic-assessment-guide",
+        coursePath: "/sat/diagnostic",
+        courseLabel: "Take Diagnostic",
+        date: "August 28, 2026",
+        image: "/images/sat_v2.webp"
+    },
+    {
         id: 28,
         title: "Best Tuition Classes Near Me in Sharjah (2026): The Complete Neighborhood Guide to Top Coaching Centers",
         excerpt: "Find the best school tuition classes near you in Sharjah. Comprehensive guide covering Al Majaz, Al Nahda, Muwaileh, Al Qasimia & Al Khan for CBSE, IGCSE, IB & American boards.",

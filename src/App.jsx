@@ -104,6 +104,7 @@ const DigitalSatPreparationGuide = lazy(() => import('./pages/article/DigitalSat
 const BestTuitionClassesSharjahDubai = lazy(() => import('./pages/article/BestTuitionClassesSharjahDubai'));
 const BestTuitionClassesNearMeSharjah = lazy(() => import('./pages/article/BestTuitionClassesNearMeSharjah'));
 const ComprehensiveSubjectTuitionGuide = lazy(() => import('./pages/article/ComprehensiveSubjectTuitionGuide'));
+const FreeDigitalSatDiagnosticArticle = lazy(() => import('./pages/article/FreeDigitalSatDiagnosticArticle'));
 
 const TermsAndConditions = lazy(() => import('./pages/legal/TermsAndConditions'));
 const PrivacyPolicy = lazy(() => import('./pages/legal/PrivacyPolicy'));
@@ -271,6 +272,7 @@ function LocalizedRoutes() {
         <Route path="article/comprehensive-subject-tuition-guide-sharjah-dubai-uae" element={<ComprehensiveSubjectTuitionGuide />} />
         <Route path="article/digital-sat-preparation-guide-sharjah-dubai-uae" element={<DigitalSatPreparationGuide />} />
         <Route path="article/best-tuition-classes-near-me-sharjah" element={<BestTuitionClassesNearMeSharjah />} />
+        <Route path="article/free-digital-sat-diagnostic-assessment-guide" element={<FreeDigitalSatDiagnosticArticle />} />
 
         {/* IG Landing Pages */}
         <Route path="ig/2026-03-29" element={<ResumeGuide />} />

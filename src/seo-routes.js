@@ -1,5 +1,15 @@
 export const seoRoutes = [
   {
+    path: "/article/free-digital-sat-diagnostic-assessment-guide",
+    title: "Free Digital SAT Diagnostic Assessment Guide (2026) | Nitaq Academy",
+    description: "Take Nitaq Academy's free Digital SAT diagnostic test with questions and answers, domain performance analytics, score prediction, and step-by-step answer explanations.",
+    canonical: "https://www.nitaqacademy.com/article/free-digital-sat-diagnostic-assessment-guide",
+    ogTitle: "Free Digital SAT Diagnostic Assessment & Self-Evaluation Guide (2026)",
+    ogDescription: "Evaluate your Digital SAT readiness with our free 24-question adaptive diagnostic quiz, instant domain performance analysis, score predictor, and detailed answer explanations.",
+    ogImage: "/images/sat_v2.webp",
+    twitterCard: "summary_large_image",
+  },
+  {
     path: "/software-engineering-diploma-sharjah",
     title: "Software Engineering Diploma in Sharjah | Software Development Course UAE | Nitaq Academy",
     description: "Join Nitaq Academy's Software Engineering Diploma in Sharjah. Learn programming, software development, databases, algorithms, OOP, software architecture, debugging, testing, Git, and modern software engineering practices. SPEA Certified training in UAE.",
