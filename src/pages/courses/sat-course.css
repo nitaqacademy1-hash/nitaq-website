@@ -1,3 +1,6 @@
+
+
+
 /* ==========================================
    NITAQ ACADEMY — SAT PREPARATION LANDING PAGE
    Exact Match to Reference Design (Arch Background + Rounded Floating Badge + Icons)
@@ -640,26 +643,25 @@
 
 /* ── Responsive Rules ───────────────────────── */
 @media (max-width: 1024px) {
-  .sat-hero-arch-bg {
-    width: 100%;
-    right: 0;
-    border-radius: 0;
-    top: 50%;
-    height: 50%;
+  .sat-hero-section {
+    padding: 110px 0 70px 0;
   }
 
   .sat-hero-container {
     grid-template-columns: 1fr;
-    gap: 48px;
+    gap: 40px;
+  }
+
+  .sat-hero-arch-bg {
+    width: 100%;
+    right: 0;
+    border-radius: 0;
+    top: 45%;
+    height: 55%;
   }
 
   .sat-hero-image-col {
     justify-content: center;
-  }
-
-  .sat-hero-floating-badge {
-    left: 10px;
-    bottom: 16px;
   }
 
   .sat-snapshot-container {
@@ -688,29 +690,172 @@
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .sat-hero-section {
-    padding: 40px 0 60px 0;
+    padding: 95px 0 48px 0;
+  }
+
+  .sat-hero-arch-bg {
+    display: none;
+  }
+
+  .sat-hero-eyebrow {
+    font-size: 11px;
+    margin-bottom: 14px;
   }
 
   .sat-hero-heading {
     font-size: 2.15rem;
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+
+  .sat-hero-description {
+    font-size: 0.98rem;
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+
+  .sat-hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    margin-bottom: 20px;
   }
 
   .sat-btn-primary,
   .sat-btn-secondary {
     width: 100%;
+    height: 50px;
+    font-size: 0.95rem;
+    border-radius: 12px;
+  }
+
+  .sat-hero-trust-line {
+    font-size: 0.82rem;
+    justify-content: center;
+  }
+
+  .sat-hero-image-wrapper img {
+    border-radius: 18px;
+    max-height: 380px;
+  }
+
+  .sat-hero-floating-badge {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    right: 12px;
+    width: auto;
+    min-width: unset;
+    padding: 12px 16px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  }
+
+  .sat-floating-icon-box {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+  }
+
+  .sat-floating-title {
+    font-size: 0.88rem;
+  }
+
+  .sat-floating-subtitle {
+    font-size: 0.75rem;
+  }
+
+  .sat-snapshot-strip {
+    padding: 20px 0;
   }
 
   .sat-snapshot-container {
     grid-template-columns: 1fr;
+    gap: 0;
   }
 
-  .sat-hero-floating-badge {
-    position: relative;
-    left: 0;
-    bottom: 0;
-    margin-top: -30px;
-    width: fit-content;
+  .sat-snapshot-item {
+    padding: 14px 0;
+    border-right: none;
+    border-bottom: 1px dashed #E4E7EC;
+  }
+
+  .sat-snapshot-item:last-child {
+    border-bottom: none;
+  }
+
+  .sat-why-section {
+    padding: 56px 0;
+  }
+
+  .sat-why-container {
+    gap: 28px;
+  }
+
+  .sat-why-title {
+    font-size: 1.85rem;
+  }
+
+  .sat-why-items-col {
+    gap: 24px;
+  }
+
+  .sat-why-icon-circle {
+    width: 46px;
+    height: 46px;
+    margin-bottom: 12px;
+  }
+
+  .sat-programs-section {
+    padding: 56px 0;
+  }
+
+  .sat-section-header-center {
+    margin-bottom: 36px;
+  }
+
+  .sat-programs-grid {
+    gap: 20px;
+  }
+
+  .sat-program-card {
+    padding: 26px 20px;
+    border-radius: 16px;
+  }
+
+  .sat-curriculum-panel {
+    padding: 24px 20px;
+    border-radius: 16px;
+  }
+
+  .sat-result-card {
+    padding: 24px 20px;
+    border-radius: 16px;
+  }
+
+  .sat-final-cta-section {
+    padding: 56px 0;
+  }
+
+  .sat-final-cta-title {
+    font-size: 1.85rem;
+  }
+
+  .sat-final-cta-desc {
+    font-size: 0.98rem;
+    margin-bottom: 28px;
+  }
+
+  .sat-btn-cta-white,
+  .sat-btn-cta-outline {
+    width: 100%;
+    height: 50px;
+    font-size: 0.95rem;
+    border-radius: 12px;
   }
 }
+
