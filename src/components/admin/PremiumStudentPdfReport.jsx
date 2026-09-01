@@ -1,7 +1,7 @@
 /**
- * PremiumStudentPdfReport.jsx — High-Executive SAT Diagnostic Assessment PDF Report for Nitaq Academy.
- * Features official Nitaq logo, student profile details, total/section scores, 8-domain breakdown,
- * targeted study priorities, complete question-by-question review, and 1-click html2pdf export.
+ * PremiumStudentPdfReport.jsx — Minimalist, Executive SAT Diagnostic Assessment PDF Report.
+ * Clean typography, top-left Nitaq logo alignment, generous spacing, subtle borders,
+ * and high-fidelity 1-click HTML2PDF + print vector export.
  */
 
 import React, { useRef, useState } from 'react';
@@ -19,9 +19,9 @@ const DOMAIN_DISPLAY = {
 };
 
 const STATUS_CHIP = {
-  STRONG: { label: 'Strong', color: '#15803D', bg: '#DCFCE7', border: '#86EFAC' },
-  DEVELOPING: { label: 'Developing', color: '#B45309', bg: '#FEF3C7', border: '#FDE68A' },
-  REVIEW: { label: 'Needs Review', color: '#B91C1C', bg: '#FEE2E2', border: '#FECACA' },
+  STRONG: { label: 'Strong', color: '#166534', bg: '#F0FDF4', border: '#DCFCE7' },
+  DEVELOPING: { label: 'Developing', color: '#92400E', bg: '#FFFBEB', border: '#FDE68A' },
+  REVIEW: { label: 'Needs Review', color: '#991B1B', bg: '#FEF2F2', border: '#FEE2E2' },
 };
 
 export default function PremiumStudentPdfReport({ result }) {
@@ -51,7 +51,7 @@ export default function PremiumStudentPdfReport({ result }) {
     try {
       const element = reportRef.current;
       const opt = {
-        margin: [8, 8, 8, 8],
+        margin: [10, 10, 10, 10],
         filename: `Nitaq_SAT_Diagnostic_Report_${studentName.replace(/[^a-zA-Z0-9]/g, '_')}.pdf`,
         image: { type: 'jpeg', quality: 0.98 },
         html2canvas: {
@@ -77,9 +77,9 @@ export default function PremiumStudentPdfReport({ result }) {
     <div className="pdf-report-wrapper">
       {/* Top Action Toolbar (Hidden during print/PDF render) */}
       <div className="no-print pdf-actions-bar">
-        <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-          <span style={{ fontSize: '0.85rem', fontWeight: 700, color: '#334155' }}>
-            Report View Options:
+        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+          <span style={{ fontSize: '0.82rem', fontWeight: 600, color: '#475569' }}>
+            Report Options:
           </span>
           <button
             type="button"
@@ -87,7 +87,7 @@ export default function PremiumStudentPdfReport({ result }) {
             onClick={() => setShowAllQuestions(prev => !prev)}
             style={{ fontSize: '0.78rem', padding: '6px 12px' }}
           >
-            {showAllQuestions ? 'Show Missed Questions Only' : 'Show All Questions (24)'}
+            {showAllQuestions ? 'View Missed Questions Only' : `View All Questions (${result.question_reviews?.length || 24})`}
           </button>
         </div>
 
@@ -114,8 +114,8 @@ export default function PremiumStudentPdfReport({ result }) {
             style={{
               fontSize: '0.82rem',
               padding: '8px 18px',
-              background: 'linear-gradient(135deg, #1B5E20 0%, #2E7D32 100%)',
-              borderColor: '#1B5E20',
+              background: '#166534',
+              borderColor: '#166534',
               color: '#ffffff',
             }}
           >
@@ -124,22 +124,23 @@ export default function PremiumStudentPdfReport({ result }) {
               <polyline points="7 10 12 15 17 10" />
               <line x1="12" y1="15" x2="12" y2="3" />
             </svg>
-            <span>{downloading ? 'Generating PDF…' : 'Download Premium PDF'}</span>
+            <span>{downloading ? 'Generating PDF…' : 'Download PDF Report'}</span>
           </button>
         </div>
       </div>
 
-      {/* Printable PDF Document Canvas */}
+      {/* Printable Minimal Executive PDF Canvas */}
       <div className="pdf-document-canvas" ref={reportRef}>
         
-        {/* ── HEADER WITH NITAQ LOGO & STAMP ───────────────────────── */}
+        {/* ── HEADER WITH TOP-LEFT LOGO ALIGNMENT ──────────────────── */}
         <header className="pdf-header-container">
           <div className="pdf-header-left">
             <img
               src="/images/logo1.webp"
-              alt="Nitaq Academy Logo"
+              alt="Nitaq Academy"
               className="pdf-logo-img"
             />
+            <div className="pdf-logo-divider" />
             <div>
               <div className="pdf-institution-name">NITAQ TRAINING INSTITUTE</div>
               <div className="pdf-institution-sub">SHARJAH, UNITED ARAB EMIRATES</div>
@@ -147,15 +148,15 @@ export default function PremiumStudentPdfReport({ result }) {
           </div>
 
           <div className="pdf-header-right">
-            <div className="pdf-report-badge">OFFICIAL SAT® ASSESSMENT</div>
+            <div className="pdf-report-badge">DIGITAL SAT® DIAGNOSTIC REPORT</div>
             <div className="pdf-report-date">
-              Date: {new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}
+              Issue Date: {new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}
             </div>
             <div className="pdf-report-id">Record ID: #{result.session_id}</div>
           </div>
         </header>
 
-        <div className="pdf-divider-gold" />
+        <div className="pdf-divider-line" />
 
         {/* ── STUDENT PROFILE BANNER ───────────────────────────────── */}
         <section className="pdf-student-card">
@@ -163,29 +164,29 @@ export default function PremiumStudentPdfReport({ result }) {
             <h1 className="pdf-student-name">{studentName}</h1>
             <div className="pdf-student-meta-list">
               <span><strong>Email:</strong> {result.student_email}</span>
-              <span>•</span>
+              <span className="pdf-bullet">•</span>
               <span><strong>Phone:</strong> {result.student_phone}</span>
-              <span>•</span>
+              <span className="pdf-bullet">•</span>
               <span><strong>Grade:</strong> {result.student_grade}</span>
-              <span>•</span>
-              <span><strong>Target SAT:</strong> {result.target_sat_score}</span>
+              <span className="pdf-bullet">•</span>
+              <span><strong>Target Score:</strong> {result.target_sat_score}</span>
             </div>
           </div>
           <div className="pdf-lead-badge-box">
             <span className="pdf-lead-status-chip">
-              Status: {result.lead_status ? result.lead_status.replace(/_/g, ' ') : 'COMPLETED'}
+              {result.lead_status ? result.lead_status.replace(/_/g, ' ') : 'COMPLETED'}
             </span>
           </div>
         </section>
 
-        {/* ── EXECUTIVE SUMMARY & SCORE OVERVIEW ────────────────────── */}
+        {/* ── EXECUTIVE PERFORMANCE SUMMARY ────────────────────────── */}
         <section className="pdf-section-box">
           <h2 className="pdf-section-title">
-            <span className="pdf-title-icon">📊</span> Executive Performance Summary
+            Executive Performance Summary
           </h2>
 
           <div className="pdf-scores-grid">
-            {/* Total Diagnostic Score */}
+            {/* Total Score */}
             <div className="pdf-score-card highlight">
               <div className="pdf-score-label">TOTAL DIAGNOSTIC SCORE</div>
               <div className="pdf-score-value">
@@ -194,16 +195,16 @@ export default function PremiumStudentPdfReport({ result }) {
               <div className="pdf-score-sub">{accuracyPct}% Overall Accuracy</div>
             </div>
 
-            {/* Estimated SAT Score */}
+            {/* Estimated SAT */}
             <div className="pdf-score-card">
-              <div className="pdf-score-label">ESTIMATED SAT SCORE</div>
+              <div className="pdf-score-label">ESTIMATED SAT RANGE</div>
               <div className="pdf-score-value sat-estimate">
                 {result.estimated_sat_score || 'Pending'}
               </div>
               <div className="pdf-score-sub">{result.overall_band || 'Baseline Performance'}</div>
             </div>
 
-            {/* Math Section */}
+            {/* Math */}
             <div className="pdf-score-card">
               <div className="pdf-score-label">MATHEMATICS SECTION</div>
               <div className="pdf-score-value">
@@ -212,7 +213,7 @@ export default function PremiumStudentPdfReport({ result }) {
               <div className="pdf-score-sub">{Math.round((mathScore / 12) * 100)}% Accuracy</div>
             </div>
 
-            {/* Reading & Writing Section */}
+            {/* Reading & Writing */}
             <div className="pdf-score-card">
               <div className="pdf-score-label">READING &amp; WRITING</div>
               <div className="pdf-score-value">
@@ -226,7 +227,7 @@ export default function PremiumStudentPdfReport({ result }) {
         {/* ── 8-DOMAIN ANALYTICAL BREAKDOWN ──────────────────────────── */}
         <section className="pdf-section-box avoid-break">
           <h2 className="pdf-section-title">
-            <span className="pdf-title-icon">🎯</span> 8-Domain Analytical Skill Breakdown
+            8-Domain Analytical Skill Breakdown
           </h2>
 
           <div className="pdf-domains-container">
@@ -253,7 +254,7 @@ export default function PremiumStudentPdfReport({ result }) {
                       </div>
                       <div className="pdf-domain-row-bottom">
                         <span>{dr.correct_count} of {dr.total_questions} correct</span>
-                        <strong>{pct}%</strong>
+                        <strong style={{ color: '#0F172A' }}>{pct}%</strong>
                       </div>
                     </div>
                   );
@@ -284,7 +285,7 @@ export default function PremiumStudentPdfReport({ result }) {
                       </div>
                       <div className="pdf-domain-row-bottom">
                         <span>{dr.correct_count} of {dr.total_questions} correct</span>
-                        <strong>{pct}%</strong>
+                        <strong style={{ color: '#0F172A' }}>{pct}%</strong>
                       </div>
                     </div>
                   );
@@ -298,7 +299,7 @@ export default function PremiumStudentPdfReport({ result }) {
         {result.recommendations?.length > 0 && (
           <section className="pdf-section-box avoid-break">
             <h2 className="pdf-section-title">
-              <span className="pdf-title-icon">📌</span> Targeted Study Priorities &amp; Academic Action Plan
+              Targeted Study Priorities &amp; Recommendations
             </h2>
             <div className="pdf-priorities-list">
               {result.recommendations.map((rec, i) => {
@@ -333,7 +334,7 @@ export default function PremiumStudentPdfReport({ result }) {
         {questionList.length > 0 && (
           <section className="pdf-section-box avoid-break">
             <h2 className="pdf-section-title">
-              <span className="pdf-title-icon">📝</span> Diagnostic Question Review ({questionList.length} Items)
+              Diagnostic Question Review ({questionList.length} Items)
             </h2>
             <div className="pdf-questions-list">
               {questionList.map((q, idx) => {
@@ -346,15 +347,15 @@ export default function PremiumStudentPdfReport({ result }) {
                         {q.section === 'MATH' ? 'Math' : 'Reading & Writing'} • {DOMAIN_DISPLAY[q.domain] || q.domain}
                       </span>
                       <span className={`pdf-q-status ${isCorrect ? 'correct' : 'incorrect'}`}>
-                        {isCorrect ? '✓ Correct' : '✕ Incorrect'}
+                        {isCorrect ? '✓ Correct' : '✕ Missed'}
                       </span>
                     </div>
 
                     <p className="pdf-q-text">{q.question_text}</p>
 
                     <div className="pdf-q-answers-row">
-                      <span><strong>Student Selected:</strong> <code className={isCorrect ? 'code-correct' : 'code-wrong'}>{q.selected_answer || 'None'}</code></span>
-                      <span><strong>Correct Answer:</strong> <code className="code-correct">{q.correct_answer}</code></span>
+                      <span><strong>Student Choice:</strong> <code className={isCorrect ? 'code-correct' : 'code-wrong'}>{q.selected_answer || 'None'}</code></span>
+                      <span><strong>Verified Answer:</strong> <code className="code-correct">{q.correct_answer}</code></span>
                     </div>
 
                     {q.explanation && (
@@ -374,14 +375,14 @@ export default function PremiumStudentPdfReport({ result }) {
           <div className="pdf-footer-line" />
           <div className="pdf-footer-content">
             <div>
-              <strong style={{ color: '#0F172A' }}>Nitaq Training Institute</strong> — SAT Prep &amp; Academic Excellence Center
+              <strong style={{ color: '#0F172A', fontWeight: 600 }}>Nitaq Training Institute</strong> — SAT Prep &amp; Academic Excellence Center
               <br />
-              Al Estiqlal St, Abu Shagara, Sharjah, United Arab Emirates • Tel: +971 6 579 8313
+              Al Estiqlal St, Abu Shagara, Sharjah, United Arab Emirates • Phone: +971 6 579 8313
             </div>
             <div style={{ textAlign: 'right' }}>
-              Web: <strong>www.nitaqacademy.com</strong>
+              Website: <strong style={{ color: '#166534', fontWeight: 600 }}>www.nitaqacademy.com</strong>
               <br />
-              Official SAT® Diagnostic Report &copy; {new Date().getFullYear()} Nitaq Academy
+              Official SAT® Assessment Report &copy; {new Date().getFullYear()} Nitaq Academy
             </div>
           </div>
         </footer>
