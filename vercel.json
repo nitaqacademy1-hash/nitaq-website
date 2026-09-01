@@ -28,10 +28,6 @@
       "destination": "/api/[...path].py"
     },
     {
-      "source": "/ar/:path*",
-      "destination": "/ar/index.html"
-    },
-    {
       "source": "/((?!api/).*)",
       "destination": "/index.html"
     }
