@@ -1,21 +1,28 @@
 /**
- * AdminLayout.jsx — Ultra-minimal sidebar layout.
- * Clean, compact typography, official Nitaq logo on top-left, zero clutter.
+ * AdminLayout.jsx — Responsive admin layout with desktop sidebar & mobile slide-out drawer navigation.
+ * Features official Nitaq logo, responsive top header, hamburger menu toggle, and clean backdrop.
  */
 
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation, Link, Outlet } from 'react-router-dom';
 import { adminLogout } from '../../services/diagnosticApi';
 import '../sat/sat.css';
+import '../sat/sat_admin.css';
 
 export default function AdminLayout() {
   const navigate = useNavigate();
   const location = useLocation();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const admin = sessionStorage.getItem('nitaq_admin');
     if (!admin) navigate('/admin/login', { replace: true });
   }, [navigate]);
+
+  // Close mobile drawer when route changes
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [location.pathname]);
 
   const admin = JSON.parse(sessionStorage.getItem('nitaq_admin') || 'null');
 
@@ -30,8 +37,17 @@ export default function AdminLayout() {
 
   return (
     <div className="admin-shell">
-      {/* ── Left Sidebar ────────────────────────────────────────── */}
-      <aside className="admin-sidebar">
+      {/* Mobile Drawer Overlay Backdrop */}
+      {mobileMenuOpen && (
+        <div
+          className="admin-mobile-backdrop"
+          onClick={() => setMobileMenuOpen(false)}
+          aria-hidden="true"
+        />
+      )}
+
+      {/* ── Left Sidebar Navigation (Desktop & Mobile Drawer) ───── */}
+      <aside className={`admin-sidebar ${mobileMenuOpen ? 'mobile-open' : ''}`}>
         {/* Brand Header with Official Nitaq Logo */}
         <div className="admin-sidebar-header">
           <Link to="/admin/dashboard" style={{ display: 'flex', alignItems: 'center', gap: '10px', textDecoration: 'none' }}>
@@ -41,6 +57,14 @@ export default function AdminLayout() {
               style={{ height: '32px', width: 'auto', objectFit: 'contain' }}
             />
           </Link>
+          <button
+            type="button"
+            className="admin-sidebar-close-btn"
+            onClick={() => setMobileMenuOpen(false)}
+            aria-label="Close menu"
+          >
+            ✕
+          </button>
         </div>
 
         {/* Navigation Menu */}
@@ -84,7 +108,7 @@ export default function AdminLayout() {
           </a>
 
           <a
-            href="http://localhost:8001/docs"
+            href="/api/v1/docs"
             target="_blank"
             rel="noopener noreferrer"
             className="admin-sidebar-link"
@@ -117,16 +141,35 @@ export default function AdminLayout() {
 
       {/* ── Main Canvas Wrapper ─────────────────────────────────── */}
       <div className="admin-main-wrapper">
-        {/* Compact Header */}
+        {/* Top Header Bar */}
         <header className="admin-top-header">
           <div className="admin-header-left">
+            <button
+              type="button"
+              className="admin-hamburger-btn"
+              onClick={() => setMobileMenuOpen(prev => !prev)}
+              aria-label="Toggle navigation menu"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="3" y1="12" x2="21" y2="12" />
+                <line x1="3" y1="6" x2="21" y2="6" />
+                <line x1="3" y1="18" x2="21" y2="18" />
+              </svg>
+            </button>
+
+            <img
+              src="/images/logo1.webp"
+              alt="Nitaq Academy"
+              className="admin-mobile-logo"
+            />
+
             <div className="workspace-badge">
-              SAT Diagnostic Management
+              SAT Diagnostic Admin
             </div>
           </div>
 
           <div className="admin-header-right">
-            <span style={{ fontSize: '0.75rem', color: '#64748B' }}>
+            <span className="admin-user-email-tag">
               Logged in as <strong>{admin?.email}</strong>
             </span>
           </div>

@@ -164,7 +164,7 @@ export default function AdminDashboard() {
       )}
 
       {/* Quick Navigation Cards */}
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '16px' }}>
         <Link to="/admin/sat/students" style={{ textDecoration: 'none' }}>
           <div className="admin-stat-card" style={{ cursor: 'pointer', padding: '20px' }}>
             <div style={{ fontSize: '0.95rem', fontWeight: 700, color: '#0F172A', marginBottom: '4px' }}>
