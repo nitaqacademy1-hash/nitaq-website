@@ -1,13 +1,22 @@
 /**
- * PremiumStudentPdfReport.jsx — Minimalist, Executive SAT Diagnostic Assessment PDF Report.
- * Clean typography, top-left Nitaq logo alignment, generous spacing, subtle borders,
- * and high-fidelity 1-click HTML2PDF + print vector export.
+ * PremiumStudentPdfReport.jsx
+ * Deep-Premium McKinsey-Style SAT Diagnostic Report — Nitaq Academy
+ *
+ * Design principles:
+ *  • Inter typeface (max weight 600, never 700/800)
+ *  • Pure white canvas — zero colored card backgrounds
+ *  • Status conveyed via 3-px left-border accent lines only
+ *  • Always 4-column even score grid (no orphan cards)
+ *  • No emoji in section headings
+ *  • Flat domain rows inside a single column container (no nested cards)
+ *  • Consistent 36 px vertical rhythm between sections
  */
 
 import React, { useRef, useState } from 'react';
 import html2pdf from 'html2pdf.js';
 
-const DOMAIN_DISPLAY = {
+/* ─── Static display maps ─────────────────────────────────────────────────── */
+const DOMAIN_LABEL = {
   ALGEBRA: 'Algebra',
   ADVANCED_MATH: 'Advanced Math',
   PROBLEM_SOLVING_DATA_ANALYSIS: 'Problem-Solving & Data Analysis',
@@ -18,376 +27,332 @@ const DOMAIN_DISPLAY = {
   STANDARD_ENGLISH_CONVENTIONS: 'Standard English Conventions',
 };
 
-const STATUS_CHIP = {
-  STRONG: { label: 'Strong', color: '#166534', bg: '#F0FDF4', border: '#DCFCE7' },
-  DEVELOPING: { label: 'Developing', color: '#92400E', bg: '#FFFBEB', border: '#FDE68A' },
-  REVIEW: { label: 'Needs Review', color: '#991B1B', bg: '#FEF2F2', border: '#FEE2E2' },
+/* Status is rendered ONLY as a coloured dot + label text — no filled pills */
+const STATUS_META = {
+  STRONG:     { label: 'Strong',       dot: '#15803D', bar: '#15803D' },
+  DEVELOPING: { label: 'Developing',   dot: '#D97706', bar: '#D97706' },
+  REVIEW:     { label: 'Needs Review', dot: '#DC2626', bar: '#DC2626' },
 };
 
 export default function PremiumStudentPdfReport({ result }) {
-  const reportRef = useRef(null);
-  const [downloading, setDownloading] = useState(false);
+  const reportRef  = useRef(null);
+  const [downloading, setDownloading]       = useState(false);
   const [showAllQuestions, setShowAllQuestions] = useState(false);
 
   if (!result) return null;
 
-  const studentName = result.student_name || 'Student';
-  const totalScore = result.total_score ?? 0;
-  const totalQuestions = result.total_questions ?? 24;
-  const accuracyPct = Math.round((totalScore / Math.max(totalQuestions, 1)) * 100);
-  const mathScore = result.math_score ?? 0;
-  const rwScore = result.reading_writing_score ?? 0;
-
-  const mathDomains = result.domain_results?.filter(d => d.section === 'MATH') || [];
-  const rwDomains = result.domain_results?.filter(d => d.section === 'READING_WRITING') || [];
-
-  const questionList = (showAllQuestions && result.question_reviews?.length > 0)
+  /* ── Derived values ─────────────────────────────────────────────────────── */
+  const studentName   = result.student_name  || 'Student';
+  const totalScore    = result.total_score   ?? 0;
+  const totalQ        = result.total_questions ?? 24;
+  const accuracy      = Math.round((totalScore / Math.max(totalQ, 1)) * 100);
+  const mathScore     = result.math_score    ?? 0;
+  const rwScore       = result.reading_writing_score ?? 0;
+  const mathDomains   = result.domain_results?.filter(d => d.section === 'MATH') || [];
+  const rwDomains     = result.domain_results?.filter(d => d.section === 'READING_WRITING') || [];
+  const questionList  = (showAllQuestions && result.question_reviews?.length > 0)
     ? result.question_reviews
     : (result.missed_questions || []);
+  const issueDate     = new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
 
-  const handleDownloadPdf = async () => {
+  /* ── PDF export ─────────────────────────────────────────────────────────── */
+  const handleDownload = async () => {
     if (!reportRef.current) return;
     setDownloading(true);
     try {
-      const element = reportRef.current;
-      const opt = {
-        margin: [10, 10, 10, 10],
-        filename: `Nitaq_SAT_Diagnostic_Report_${studentName.replace(/[^a-zA-Z0-9]/g, '_')}.pdf`,
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: {
-          scale: 2,
-          useCORS: true,
-          logging: false,
-          backgroundColor: '#FFFFFF',
-        },
-        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-        pagebreak: { mode: ['avoid-all', 'css', 'legacy'] },
-      };
-
-      await html2pdf().set(opt).from(element).save();
-    } catch (err) {
-      console.error('PDF generation error:', err);
+      await html2pdf()
+        .set({
+          margin:     [12, 12, 12, 12],
+          filename:   `Nitaq_SAT_Report_${studentName.replace(/[^a-zA-Z0-9]/g, '_')}.pdf`,
+          image:      { type: 'jpeg', quality: 0.99 },
+          html2canvas: { scale: 2.5, useCORS: true, logging: false, backgroundColor: '#fff' },
+          jsPDF:      { unit: 'mm', format: 'a4', orientation: 'portrait' },
+          pagebreak:  { mode: ['avoid-all', 'css', 'legacy'] },
+        })
+        .from(reportRef.current)
+        .save();
+    } catch (e) {
+      console.error('PDF export error:', e);
       window.print();
     } finally {
       setDownloading(false);
     }
   };
 
-  return (
-    <div className="pdf-report-wrapper">
-      {/* Top Action Toolbar (Hidden during print/PDF render) */}
-      <div className="no-print pdf-actions-bar">
-        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-          <span style={{ fontSize: '0.82rem', fontWeight: 600, color: '#475569' }}>
-            Report Options:
+  /* ── Small reusable sub-components ─────────────────────────────────────── */
+
+  /* Section heading — no emoji, uppercase label + thin rule */
+  const SectionHeading = ({ label }) => (
+    <div className="rpt-section-heading">
+      <span className="rpt-section-label">{label}</span>
+      <div className="rpt-section-rule" />
+    </div>
+  );
+
+  /* Single score tile — always same look, no highlight variant */
+  const ScoreTile = ({ label, primary, secondary }) => (
+    <div className="rpt-score-tile">
+      <div className="rpt-tile-label">{label}</div>
+      <div className="rpt-tile-primary">{primary}</div>
+      {secondary && <div className="rpt-tile-secondary">{secondary}</div>}
+    </div>
+  );
+
+  /* Flat domain row with left accent border */
+  const DomainRow = ({ dr }) => {
+    const pct  = Math.round(dr.percentage ?? 0);
+    const meta = STATUS_META[dr.status] || STATUS_META.DEVELOPING;
+    return (
+      <div className="rpt-domain-row" style={{ borderLeftColor: meta.bar }}>
+        <div className="rpt-domain-row-top">
+          <span className="rpt-domain-name">{DOMAIN_LABEL[dr.domain] || dr.domain}</span>
+          <span className="rpt-domain-status" style={{ color: meta.dot }}>
+            <span className="rpt-status-dot" style={{ background: meta.dot }} />
+            {meta.label}
           </span>
+        </div>
+        <div className="rpt-bar-bg">
+          <div className="rpt-bar-fill" style={{ width: `${pct}%`, background: meta.bar }} />
+        </div>
+        <div className="rpt-domain-row-bottom">
+          <span>{dr.correct_count} of {dr.total_questions} correct</span>
+          <span className="rpt-domain-pct">{pct}%</span>
+        </div>
+      </div>
+    );
+  };
+
+  /* ── Render ─────────────────────────────────────────────────────────────── */
+  return (
+    <div className="rpt-wrapper">
+
+      {/* ── Admin Toolbar (hidden in PDF) ──────────────────────────────── */}
+      <div className="no-print rpt-toolbar">
+        <div className="rpt-toolbar-left">
           <button
             type="button"
             className="admin-btn outline"
-            onClick={() => setShowAllQuestions(prev => !prev)}
-            style={{ fontSize: '0.78rem', padding: '6px 12px' }}
+            onClick={() => setShowAllQuestions(p => !p)}
           >
-            {showAllQuestions ? 'View Missed Questions Only' : `View All Questions (${result.question_reviews?.length || 24})`}
+            {showAllQuestions ? 'Show Missed Questions' : `Show All Questions (${result.question_reviews?.length ?? totalQ})`}
           </button>
         </div>
-
-        <div style={{ display: 'flex', gap: '10px' }}>
-          <button
-            type="button"
-            className="admin-btn outline"
-            onClick={() => window.print()}
-            style={{ fontSize: '0.82rem', padding: '8px 16px' }}
-          >
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <polyline points="6 9 6 2 18 2 18 9" />
-              <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
-              <rect x="6" y="14" width="12" height="8" />
+        <div className="rpt-toolbar-right">
+          <button type="button" className="admin-btn outline" onClick={() => window.print()}>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <polyline points="6 9 6 2 18 2 18 9"/>
+              <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
+              <rect x="6" y="14" width="12" height="8"/>
             </svg>
-            <span>Print Report</span>
+            Print
           </button>
-
           <button
             type="button"
-            className="admin-btn primary"
-            onClick={handleDownloadPdf}
+            className="admin-btn primary rpt-download-btn"
+            onClick={handleDownload}
             disabled={downloading}
-            style={{
-              fontSize: '0.82rem',
-              padding: '8px 18px',
-              background: '#166534',
-              borderColor: '#166534',
-              color: '#ffffff',
-            }}
           >
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-              <polyline points="7 10 12 15 17 10" />
-              <line x1="12" y1="15" x2="12" y2="3" />
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7 10 12 15 17 10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
             </svg>
-            <span>{downloading ? 'Generating PDF…' : 'Download PDF Report'}</span>
+            {downloading ? 'Generating…' : 'Download PDF'}
           </button>
         </div>
       </div>
 
-      {/* Printable Minimal Executive PDF Canvas */}
-      <div className="pdf-document-canvas" ref={reportRef}>
-        
-        {/* ── HEADER WITH TOP-LEFT LOGO ALIGNMENT ──────────────────── */}
-        <header className="pdf-header-container">
-          <div className="pdf-header-left">
-            <img
-              src="/images/logo1.webp"
-              alt="Nitaq Academy"
-              className="pdf-logo-img"
-            />
-            <div className="pdf-logo-divider" />
-            <div>
-              <div className="pdf-institution-name">NITAQ TRAINING INSTITUTE</div>
-              <div className="pdf-institution-sub">SHARJAH, UNITED ARAB EMIRATES</div>
+      {/* ╔══════════════════════════════════════════════════════════════════╗
+          ║               PRINTABLE / PDF DOCUMENT CANVAS                   ║
+          ╚══════════════════════════════════════════════════════════════════╝ */}
+      <div className="rpt-canvas" ref={reportRef}>
+
+        {/* Google Fonts — loaded inline so html2canvas captures it */}
+        <style>{`@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');`}</style>
+
+        {/* ── PAGE HEADER ──────────────────────────────────────────────── */}
+        <header className="rpt-page-header">
+          <div className="rpt-brand">
+            <img src="/images/logo1.webp" alt="Nitaq Academy" className="rpt-logo" />
+            <div className="rpt-brand-text">
+              <div className="rpt-brand-name">NITAQ TRAINING INSTITUTE</div>
+              <div className="rpt-brand-sub">Sharjah, United Arab Emirates</div>
             </div>
           </div>
-
-          <div className="pdf-header-right">
-            <div className="pdf-report-badge">DIGITAL SAT® DIAGNOSTIC REPORT</div>
-            <div className="pdf-report-date">
-              Issue Date: {new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}
-            </div>
-            <div className="pdf-report-id">Record ID: #{result.session_id}</div>
+          <div className="rpt-doc-meta">
+            <div className="rpt-doc-type">SAT® DIAGNOSTIC REPORT</div>
+            <div className="rpt-doc-date">{issueDate}</div>
+            <div className="rpt-doc-id">ID #{result.session_id}</div>
           </div>
         </header>
 
-        <div className="pdf-divider-line" />
+        <div className="rpt-header-rule" />
 
-        {/* ── STUDENT PROFILE BANNER ───────────────────────────────── */}
-        <section className="pdf-student-card">
-          <div className="pdf-student-main">
-            <h1 className="pdf-student-name">{studentName}</h1>
-            <div className="pdf-student-meta-list">
-              <span><strong>Email:</strong> {result.student_email}</span>
-              <span className="pdf-bullet">•</span>
-              <span><strong>Phone:</strong> {result.student_phone}</span>
-              <span className="pdf-bullet">•</span>
-              <span><strong>Grade:</strong> {result.student_grade}</span>
-              <span className="pdf-bullet">•</span>
-              <span><strong>Target Score:</strong> {result.target_sat_score}</span>
+        {/* ── STUDENT IDENTITY ─────────────────────────────────────────── */}
+        <section className="rpt-identity">
+          <div className="rpt-identity-left">
+            <h1 className="rpt-student-name">{studentName}</h1>
+            <div className="rpt-student-meta">
+              {result.student_email && <span>{result.student_email}</span>}
+              {result.student_phone && <><span className="rpt-sep">·</span><span>{result.student_phone}</span></>}
+              {result.student_grade && <><span className="rpt-sep">·</span><span>{result.student_grade}</span></>}
+              {result.target_sat_score && <><span className="rpt-sep">·</span><span>Target: {result.target_sat_score}</span></>}
             </div>
           </div>
-          <div className="pdf-lead-badge-box">
-            <span className="pdf-lead-status-chip">
-              {result.lead_status ? result.lead_status.replace(/_/g, ' ') : 'COMPLETED'}
-            </span>
-          </div>
-        </section>
-
-        {/* ── EXECUTIVE PERFORMANCE SUMMARY ────────────────────────── */}
-        <section className="pdf-section-box">
-          <h2 className="pdf-section-title">
-            Executive Performance Summary
-          </h2>
-
-          <div className="pdf-scores-grid">
-            {/* Total Score */}
-            <div className="pdf-score-card highlight">
-              <div className="pdf-score-label">TOTAL DIAGNOSTIC SCORE</div>
-              <div className="pdf-score-value">
-                {totalScore} <span className="pdf-score-max">/ {totalQuestions}</span>
-              </div>
-              <div className="pdf-score-sub">{accuracyPct}% Overall Accuracy</div>
-            </div>
-
-            {/* Estimated SAT */}
-            <div className="pdf-score-card">
-              <div className="pdf-score-label">ESTIMATED SAT RANGE</div>
-              <div className="pdf-score-value sat-estimate">
-                {result.estimated_sat_score || 'Pending'}
-              </div>
-              <div className="pdf-score-sub">{result.overall_band || 'Baseline Performance'}</div>
-            </div>
-
-            {/* Math */}
-            <div className="pdf-score-card">
-              <div className="pdf-score-label">MATHEMATICS SECTION</div>
-              <div className="pdf-score-value">
-                {mathScore} <span className="pdf-score-max">/ 12</span>
-              </div>
-              <div className="pdf-score-sub">{Math.round((mathScore / 12) * 100)}% Accuracy</div>
-            </div>
-
-            {/* Reading & Writing */}
-            <div className="pdf-score-card">
-              <div className="pdf-score-label">READING &amp; WRITING</div>
-              <div className="pdf-score-value">
-                {rwScore} <span className="pdf-score-max">/ 12</span>
-              </div>
-              <div className="pdf-score-sub">{Math.round((rwScore / 12) * 100)}% Accuracy</div>
-            </div>
+          <div className="rpt-identity-right">
+            {result.lead_status && (
+              <span className="rpt-status-badge">
+                <span className="rpt-status-badge-dot" />
+                {result.lead_status.replace(/_/g, ' ')}
+              </span>
+            )}
           </div>
         </section>
 
-        {/* ── 8-DOMAIN ANALYTICAL BREAKDOWN ──────────────────────────── */}
-        <section className="pdf-section-box avoid-break">
-          <h2 className="pdf-section-title">
-            8-Domain Analytical Skill Breakdown
-          </h2>
+        <div className="rpt-section-gap" />
 
-          <div className="pdf-domains-container">
-            {/* Math Domains */}
-            <div className="pdf-domain-column">
-              <h3 className="pdf-column-header">Mathematics Domains</h3>
-              <div className="pdf-domain-table">
-                {mathDomains.map(dr => {
-                  const pct = Math.round(dr.percentage);
-                  const statusInfo = STATUS_CHIP[dr.status] || STATUS_CHIP.DEVELOPING;
-                  return (
-                    <div key={dr.domain} className="pdf-domain-row">
-                      <div className="pdf-domain-row-top">
-                        <span className="pdf-domain-name">{DOMAIN_DISPLAY[dr.domain] || dr.domain}</span>
-                        <span
-                          className="pdf-status-pill"
-                          style={{ color: statusInfo.color, background: statusInfo.bg, borderColor: statusInfo.border }}
-                        >
-                          {statusInfo.label}
-                        </span>
-                      </div>
-                      <div className="pdf-domain-bar-bg">
-                        <div className="pdf-domain-bar-fill" style={{ width: `${pct}%`, background: statusInfo.color }} />
-                      </div>
-                      <div className="pdf-domain-row-bottom">
-                        <span>{dr.correct_count} of {dr.total_questions} correct</span>
-                        <strong style={{ color: '#0F172A' }}>{pct}%</strong>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-
-            {/* Reading & Writing Domains */}
-            <div className="pdf-domain-column">
-              <h3 className="pdf-column-header">Reading &amp; Writing Domains</h3>
-              <div className="pdf-domain-table">
-                {rwDomains.map(dr => {
-                  const pct = Math.round(dr.percentage);
-                  const statusInfo = STATUS_CHIP[dr.status] || STATUS_CHIP.DEVELOPING;
-                  return (
-                    <div key={dr.domain} className="pdf-domain-row">
-                      <div className="pdf-domain-row-top">
-                        <span className="pdf-domain-name">{DOMAIN_DISPLAY[dr.domain] || dr.domain}</span>
-                        <span
-                          className="pdf-status-pill"
-                          style={{ color: statusInfo.color, background: statusInfo.bg, borderColor: statusInfo.border }}
-                        >
-                          {statusInfo.label}
-                        </span>
-                      </div>
-                      <div className="pdf-domain-bar-bg">
-                        <div className="pdf-domain-bar-fill" style={{ width: `${pct}%`, background: statusInfo.color }} />
-                      </div>
-                      <div className="pdf-domain-row-bottom">
-                        <span>{dr.correct_count} of {dr.total_questions} correct</span>
-                        <strong style={{ color: '#0F172A' }}>{pct}%</strong>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
+        {/* ── PERFORMANCE SUMMARY ──────────────────────────────────────── */}
+        <section className="rpt-section avoid-break">
+          <SectionHeading label="Performance Summary" />
+          <div className="rpt-score-grid">
+            <ScoreTile
+              label="Diagnostic Score"
+              primary={<>{totalScore}<span className="rpt-tile-denom"> / {totalQ}</span></>}
+              secondary={`${accuracy}% accuracy`}
+            />
+            <ScoreTile
+              label="Estimated SAT"
+              primary={result.estimated_sat_score || '—'}
+              secondary={result.overall_band || 'Baseline'}
+            />
+            <ScoreTile
+              label="Mathematics"
+              primary={<>{mathScore}<span className="rpt-tile-denom"> / 12</span></>}
+              secondary={`${Math.round((mathScore / 12) * 100)}% accuracy`}
+            />
+            <ScoreTile
+              label="Reading & Writing"
+              primary={<>{rwScore}<span className="rpt-tile-denom"> / 12</span></>}
+              secondary={`${Math.round((rwScore / 12) * 100)}% accuracy`}
+            />
           </div>
         </section>
 
-        {/* ── TARGETED STUDY PRIORITIES & ADVISORY ────────────────────── */}
+        <div className="rpt-section-gap" />
+
+        {/* ── DOMAIN BREAKDOWN ─────────────────────────────────────────── */}
+        <section className="rpt-section avoid-break">
+          <SectionHeading label="Domain Skill Breakdown" />
+          <div className="rpt-domain-grid">
+
+            <div className="rpt-domain-col">
+              <div className="rpt-col-label">Mathematics</div>
+              <div className="rpt-domain-list">
+                {mathDomains.map(dr => <DomainRow key={dr.domain} dr={dr} />)}
+              </div>
+            </div>
+
+            <div className="rpt-domain-col">
+              <div className="rpt-col-label">Reading &amp; Writing</div>
+              <div className="rpt-domain-list">
+                {rwDomains.map(dr => <DomainRow key={dr.domain} dr={dr} />)}
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        {/* ── RECOMMENDATIONS ──────────────────────────────────────────── */}
         {result.recommendations?.length > 0 && (
-          <section className="pdf-section-box avoid-break">
-            <h2 className="pdf-section-title">
-              Targeted Study Priorities &amp; Recommendations
-            </h2>
-            <div className="pdf-priorities-list">
-              {result.recommendations.map((rec, i) => {
-                const prio = String(rec.priority || 'HIGH').toUpperCase();
-                const isHigh = prio === 'HIGH' || prio === '1';
-                return (
-                  <div key={i} className="pdf-priority-item">
-                    <div className="pdf-priority-badge-col">
-                      <span className={`pdf-prio-tag ${isHigh ? 'high' : 'med'}`}>
-                        {isHigh ? 'Priority High' : 'Priority Medium'}
-                      </span>
-                    </div>
-                    <div className="pdf-priority-content">
-                      <h4 className="pdf-priority-title">{rec.title}</h4>
-                      <p className="pdf-priority-desc">{rec.description}</p>
+          <>
+            <div className="rpt-section-gap" />
+            <section className="rpt-section avoid-break">
+              <SectionHeading label="Study Priorities &amp; Recommendations" />
+              <div className="rpt-rec-list">
+                {result.recommendations.map((rec, i) => {
+                  const isHigh = ['HIGH', '1'].includes(String(rec.priority || 'HIGH').toUpperCase());
+                  return (
+                    <div key={i} className={`rpt-rec-item ${isHigh ? 'high' : 'med'}`}>
+                      <div className="rpt-rec-top">
+                        <span className="rpt-rec-priority">{isHigh ? 'High Priority' : 'Medium Priority'}</span>
+                        <span className="rpt-rec-title">{rec.title}</span>
+                      </div>
+                      {rec.description && (
+                        <p className="rpt-rec-desc">{rec.description}</p>
+                      )}
                       {Array.isArray(rec.topics) && rec.topics.length > 0 && (
-                        <div className="pdf-topics-wrap">
-                          {rec.topics.map((topic, j) => (
-                            <span key={j} className="pdf-topic-chip">{topic}</span>
-                          ))}
+                        <div className="rpt-rec-topics">
+                          {rec.topics.map((t, j) => <span key={j} className="rpt-topic">{t}</span>)}
                         </div>
                       )}
                     </div>
-                  </div>
-                );
-              })}
-            </div>
-          </section>
+                  );
+                })}
+              </div>
+            </section>
+          </>
         )}
 
-        {/* ── QUESTION-BY-QUESTION DIAGNOSTIC REVIEW ───────────────────── */}
+        {/* ── QUESTION REVIEW ──────────────────────────────────────────── */}
         {questionList.length > 0 && (
-          <section className="pdf-section-box avoid-break">
-            <h2 className="pdf-section-title">
-              Diagnostic Question Review ({questionList.length} Items)
-            </h2>
-            <div className="pdf-questions-list">
-              {questionList.map((q, idx) => {
-                const isCorrect = q.is_correct ?? false;
-                return (
-                  <div key={q.question_id || idx} className={`pdf-q-card ${isCorrect ? 'correct' : 'incorrect'} avoid-break`}>
-                    <div className="pdf-q-header">
-                      <span className="pdf-q-num">Q{idx + 1}</span>
-                      <span className="pdf-q-meta">
-                        {q.section === 'MATH' ? 'Math' : 'Reading & Writing'} • {DOMAIN_DISPLAY[q.domain] || q.domain}
-                      </span>
-                      <span className={`pdf-q-status ${isCorrect ? 'correct' : 'incorrect'}`}>
-                        {isCorrect ? '✓ Correct' : '✕ Missed'}
-                      </span>
-                    </div>
-
-                    <p className="pdf-q-text">{q.question_text}</p>
-
-                    <div className="pdf-q-answers-row">
-                      <span><strong>Student Choice:</strong> <code className={isCorrect ? 'code-correct' : 'code-wrong'}>{q.selected_answer || 'None'}</code></span>
-                      <span><strong>Verified Answer:</strong> <code className="code-correct">{q.correct_answer}</code></span>
-                    </div>
-
-                    {q.explanation && (
-                      <div className="pdf-q-explanation">
-                        <strong>Explanation:</strong> {q.explanation}
+          <>
+            <div className="rpt-section-gap" />
+            <section className="rpt-section avoid-break">
+              <SectionHeading label={`Question Review — ${questionList.length} item${questionList.length !== 1 ? 's' : ''}`} />
+              <div className="rpt-q-list">
+                {questionList.map((q, idx) => {
+                  const correct = q.is_correct ?? false;
+                  return (
+                    <div key={q.question_id || idx} className={`rpt-q-item ${correct ? 'correct' : 'missed'} avoid-break`}>
+                      <div className="rpt-q-top">
+                        <span className="rpt-q-num">Q{idx + 1}</span>
+                        <span className="rpt-q-tag">
+                          {q.section === 'MATH' ? 'Math' : 'R&W'} · {DOMAIN_LABEL[q.domain] || q.domain}
+                        </span>
+                        <span className={`rpt-q-result ${correct ? 'correct' : 'missed'}`}>
+                          {correct ? 'Correct' : 'Missed'}
+                        </span>
                       </div>
-                    )}
-                  </div>
-                );
-              })}
-            </div>
-          </section>
+                      <p className="rpt-q-text">{q.question_text}</p>
+                      <div className="rpt-q-answers">
+                        <span>
+                          <span className="rpt-ans-label">Selected:</span>
+                          <code className={correct ? 'rpt-ans-correct' : 'rpt-ans-wrong'}>{q.selected_answer || 'None'}</code>
+                        </span>
+                        <span>
+                          <span className="rpt-ans-label">Correct:</span>
+                          <code className="rpt-ans-correct">{q.correct_answer}</code>
+                        </span>
+                      </div>
+                      {q.explanation && (
+                        <div className="rpt-q-explanation">{q.explanation}</div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            </section>
+          </>
         )}
 
-        {/* ── OFFICIAL FOOTER ──────────────────────────────────────── */}
-        <footer className="pdf-footer-container avoid-break">
-          <div className="pdf-footer-line" />
-          <div className="pdf-footer-content">
-            <div>
-              <strong style={{ color: '#0F172A', fontWeight: 600 }}>Nitaq Training Institute</strong> — SAT Prep &amp; Academic Excellence Center
+        {/* ── PAGE FOOTER ──────────────────────────────────────────────── */}
+        <footer className="rpt-footer avoid-break">
+          <div className="rpt-footer-rule" />
+          <div className="rpt-footer-content">
+            <div className="rpt-footer-left">
+              <strong>Nitaq Training Institute</strong> · SAT Prep &amp; Academic Excellence
               <br />
-              Al Estiqlal St, Abu Shagara, Sharjah, United Arab Emirates • Phone: +971 6 579 8313
+              Al Estiqlal St, Abu Shagara, Sharjah, UAE · +971 6 579 8313
             </div>
-            <div style={{ textAlign: 'right' }}>
-              Website: <strong style={{ color: '#166534', fontWeight: 600 }}>www.nitaqacademy.com</strong>
+            <div className="rpt-footer-right">
+              www.nitaqacademy.com
               <br />
-              Official SAT® Assessment Report &copy; {new Date().getFullYear()} Nitaq Academy
+              &copy; {new Date().getFullYear()} Nitaq Academy · Confidential
             </div>
           </div>
         </footer>
 
-      </div>
+      </div>{/* end rpt-canvas */}
     </div>
   );
 }
