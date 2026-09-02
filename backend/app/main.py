@@ -32,12 +32,19 @@ app.add_middleware(
 # ── Startup Migrations ────────────────────────────────────────────────────────
 @app.on_event("startup")
 def run_auto_migrations():
-    """Ensure missing columns like shuffle_questions exist on PostgreSQL database."""
+    """Ensure all models are created and missing columns exist on PostgreSQL/SQLite databases."""
     try:
         from sqlalchemy import text
-        from app.core.database import engine
+        from app.core.database import engine, Base
+        import app.models  # Ensure all models are registered
+        Base.metadata.create_all(bind=engine)
         with engine.connect() as conn:
             conn.execute(text("ALTER TABLE diagnostic_tests ADD COLUMN IF NOT EXISTS shuffle_questions BOOLEAN DEFAULT FALSE;"))
+            conn.execute(text("ALTER TABLE students ADD COLUMN IF NOT EXISTS utm_source VARCHAR(255);"))
+            conn.execute(text("ALTER TABLE students ADD COLUMN IF NOT EXISTS utm_medium VARCHAR(255);"))
+            conn.execute(text("ALTER TABLE students ADD COLUMN IF NOT EXISTS utm_campaign VARCHAR(255);"))
+            conn.execute(text("ALTER TABLE students ADD COLUMN IF NOT EXISTS utm_content VARCHAR(255);"))
+            conn.execute(text("ALTER TABLE students ADD COLUMN IF NOT EXISTS utm_term VARCHAR(255);"))
             conn.commit()
     except Exception as e:
         print(f"[Auto Migration] Notice: {e}")

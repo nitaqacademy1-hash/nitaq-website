@@ -8,6 +8,7 @@ from sqlalchemy.orm import Session, joinedload
 from app.core.database import get_db
 from app.core.security import get_current_admin
 from app.models.student import Student
+from app.models.parent_enquiry import ParentEnquiry
 from app.models.diagnostic import DiagnosticSession, SessionStatus, LeadStatus
 from app.models.result import DiagnosticResult, DomainResult
 from app.models.question import Domain
@@ -287,3 +288,67 @@ def export_students_csv(
         media_type="text/csv",
         headers={"Content-Disposition": "attachment; filename=nitaq_sat_diagnostic_leads.csv"},
     )
+
+
+# ── Parent Enquiries List ─────────────────────────────────────────────────────
+@router.get("/parent-enquiries")
+def list_parent_enquiries(
+    skip: int = Query(0, ge=0),
+    limit: int = Query(100, le=500),
+    admin=Depends(get_current_admin),
+    db: Session = Depends(get_db),
+):
+    enquiries = (
+        db.query(ParentEnquiry)
+        .order_by(desc(ParentEnquiry.created_at))
+        .offset(skip)
+        .limit(limit)
+        .all()
+    )
+    return enquiries
+
+
+@router.get("/parent-enquiries/export/csv")
+def export_parent_enquiries_csv(
+    admin=Depends(get_current_admin),
+    db: Session = Depends(get_db),
+):
+    import csv, io
+    enquiries = (
+        db.query(ParentEnquiry)
+        .order_by(desc(ParentEnquiry.created_at))
+        .all()
+    )
+    output = io.StringIO()
+    writer = csv.writer(output)
+    writer.writerow([
+        "id", "parent_name", "phone", "email", "student_grade",
+        "expected_sat_date", "previous_sat_score", "target_sat_score",
+        "area_of_residence", "can_attend_al_majaz",
+        "utm_source", "utm_medium", "utm_campaign", "utm_content", "created_at"
+    ])
+    for e in enquiries:
+        writer.writerow([
+            e.id,
+            e.parent_name,
+            e.phone,
+            e.email or "",
+            e.student_grade,
+            e.expected_sat_date or "",
+            e.previous_sat_score or "",
+            e.target_sat_score or "",
+            e.area_of_residence,
+            "Yes" if e.can_attend_al_majaz else "No",
+            e.utm_source or "",
+            e.utm_medium or "",
+            e.utm_campaign or "",
+            e.utm_content or "",
+            e.created_at.isoformat(),
+        ])
+    content = output.getvalue()
+    return Response(
+        content=content,
+        media_type="text/csv",
+        headers={"Content-Disposition": "attachment; filename=nitaq_parent_enquiries.csv"},
+    )
+

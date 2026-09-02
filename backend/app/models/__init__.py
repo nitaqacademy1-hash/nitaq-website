@@ -1,6 +1,7 @@
 """Models package — import all models to ensure SQLAlchemy registers them for Alembic."""
 
 from app.models.student import Student, CurrentStatus, TargetScore
+from app.models.parent_enquiry import ParentEnquiry
 from app.models.question import (
     Question,
     DiagnosticTest,
@@ -20,6 +21,7 @@ from app.models.admin import AdminUser, AdminRole
 
 __all__ = [
     "Student",
+    "ParentEnquiry",
     "CurrentStatus",
     "TargetScore",
     "Question",

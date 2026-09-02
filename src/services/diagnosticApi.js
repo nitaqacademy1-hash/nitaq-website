@@ -92,6 +92,20 @@ export async function registerStudent(data) {
   });
 }
 
+/**
+ * Save a parent enquiry for SAT guidance with campaign parameters.
+ * @param {Object} data
+ * @returns {Promise<Object>}
+ */
+export async function submitParentEnquiry(data) {
+  return request('/students/parent-enquiry', {
+    method: 'POST',
+    body: JSON.stringify(data),
+  });
+}
+
+
+
 // ── Diagnostic Quiz ───────────────────────────────────────────────────────────
 /**
  * Fetch questions for a section.
@@ -180,6 +194,15 @@ export async function deleteStudentSession(sessionId) {
 export function getExportCsvUrl() {
   return `${API_BASE}/admin/students/export/csv`;
 }
+
+export async function getParentEnquiries() {
+  return request('/admin/parent-enquiries');
+}
+
+export function getExportParentCsvUrl() {
+  return `${API_BASE}/admin/parent-enquiries/export/csv`;
+}
+
 
 // ── Admin Questions ───────────────────────────────────────────────────────────
 export async function listQuestions({ section, domain } = {}) {

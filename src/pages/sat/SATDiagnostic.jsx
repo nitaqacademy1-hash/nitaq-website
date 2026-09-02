@@ -1,12 +1,14 @@
 /**
- * SATDiagnostic.jsx — Premium SAT Diagnostic Landing Page & Student Registration Flow.
- * Features existing session detection prompt (Resume vs Start New).
+ * SATDiagnostic.jsx — Premium SAT Diagnostic Landing Page.
+ * Supports distinct Student and Parent Journeys with Meta Lead event tracking,
+ * advertising UTM parameter preservation, and interactive Parent options.
  */
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import SEO from '../../components/SEO';
-import { trackEvent, ANALYTICS_EVENTS } from '../../utils/analytics';
+import { trackEvent, ANALYTICS_EVENTS, trackMetaLead } from '../../utils/analytics';
+import { getUtmParameters } from '../../utils/utm';
 import SATDiagnosticSection, {
   KnowWhereYouStand,
   SATDomainsGrid,
@@ -14,7 +16,7 @@ import SATDiagnosticSection, {
   FinalDiagnosticCTA,
   WhatsAppFloatingButton
 } from '../../components/sat/SATDiagnosticSection';
-import { registerStudent, ApiError } from '../../services/diagnosticApi';
+import { registerStudent, submitParentEnquiry, ApiError } from '../../services/diagnosticApi';
 
 const SAT_BLUEPRINT = {
   math: [
@@ -32,6 +34,7 @@ const SAT_BLUEPRINT = {
 };
 
 const GRADE_OPTIONS = ['Grade 9', 'Grade 10', 'Grade 11', 'Grade 12', 'Gap Year / Retaker'];
+
 const TARGET_OPTIONS = [
   { label: 'Not sure yet', value: 'NOT_SURE' },
   { label: '1100+', value: '1100+' },
@@ -41,9 +44,31 @@ const TARGET_OPTIONS = [
   { label: '1500+', value: '1500+' },
 ];
 
+const EXPECTED_TEST_DATES = [
+  'October 2026',
+  'December 2026',
+  'March 2027',
+  'May / June 2027',
+  'Undecided / Thinking about it'
+];
+
+const PREVIOUS_SCORE_OPTIONS = [
+  'Not taken yet (First time)',
+  'Below 1000',
+  '1000 – 1190',
+  '1200 – 1390',
+  '1400+'
+];
+
 export default function SATDiagnostic() {
   const navigate = useNavigate();
-  const [formData, setFormData] = useState({
+
+  // Persona state: 'STUDENT' or 'PARENT'
+  const [persona, setPersona] = useState('STUDENT');
+  const [utmParams, setUtmParams] = useState({});
+
+  // Student Form State
+  const [studentFormData, setStudentFormData] = useState({
     full_name: '',
     email: '',
     phone: '',
@@ -52,20 +77,56 @@ export default function SATDiagnostic() {
     target_sat_score: '1400+',
     sat_test_date: '',
   });
+
+  // Parent Form State
+  const [parentFormData, setParentFormData] = useState({
+    parent_name: '',
+    phone: '',
+    email: '',
+    student_grade: 'Grade 11',
+    expected_sat_date: 'October 2026',
+    previous_sat_score: 'Not taken yet (First time)',
+    target_sat_score: '1400+',
+    area_of_residence: 'Al Majaz, Sharjah',
+    can_attend_al_majaz: true,
+  });
+
+  const [parentSubmitted, setParentSubmitted] = useState(false);
+  const [parentResult, setParentResult] = useState(null);
+  const [copiedLink, setCopiedLink] = useState(false);
+
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [focusField, setFocusField] = useState('');
   const [existingSessionPrompt, setExistingSessionPrompt] = useState(null);
 
-  const handleChange = (field, value) => setFormData(prev => ({ ...prev, [field]: value }));
+  // Capture UTM parameters on mount
+  useEffect(() => {
+    const utms = getUtmParameters();
+    setUtmParams(utms);
+  }, []);
 
-  const handleSubmit = async (e, forcedAction = null) => {
+  const handleStudentChange = (field, value) => {
+    setStudentFormData(prev => ({ ...prev, [field]: value }));
+  };
+
+  const handleParentChange = (field, value) => {
+    setParentFormData(prev => ({ ...prev, [field]: value }));
+  };
+
+  // Student Registration Submission
+  const handleStudentSubmit = async (e, forcedAction = null) => {
     if (e) e.preventDefault();
     setLoading(true);
     setError('');
 
     try {
-      const payload = forcedAction ? { ...formData, action: forcedAction } : formData;
+      const payload = {
+        ...studentFormData,
+        ...utmParams,
+        ...(forcedAction ? { action: forcedAction } : {})
+      };
+
       const result = await registerStudent(payload);
 
       // Check if existing session found and no forced action taken yet
@@ -75,13 +136,16 @@ export default function SATDiagnostic() {
         return;
       }
 
-      // Persist session data for quiz execution
+      // Session established successfully
       const token = result.session_token || result.existing_session?.session_token || existingSessionPrompt?.existing_session?.session_token;
       const sessionId = result.session_id || result.existing_session?.session_id || existingSessionPrompt?.existing_session?.session_id;
 
       if (!token) {
         throw new Error('Unable to establish diagnostic session token. Please try again.');
       }
+
+      // Fire Meta Lead Event AFTER successful backend save (deduplicated)
+      trackMetaLead(sessionId || token);
 
       sessionStorage.setItem('nitaq_session_token', token);
       if (sessionId) sessionStorage.setItem('nitaq_session_id', String(sessionId));
@@ -96,9 +160,9 @@ export default function SATDiagnostic() {
         sessionStorage.setItem('nitaq_current_section', currSec);
       }
 
-      trackEvent(ANALYTICS_EVENTS.FORM, 'sat_diagnostic_registration', {
-        student_name: formData.full_name,
-        grade: formData.current_grade,
+      trackEvent(ANALYTICS_EVENTS.FORM, 'sat_diagnostic_student_registration', {
+        student_name: studentFormData.full_name,
+        grade: studentFormData.current_grade,
         action: forcedAction || 'new',
       });
 
@@ -121,11 +185,56 @@ export default function SATDiagnostic() {
     }
   };
 
+  // Parent Enquiry Submission
+  const handleParentSubmit = async (e) => {
+    if (e) e.preventDefault();
+    setLoading(true);
+    setError('');
+
+    try {
+      const payload = {
+        ...parentFormData,
+        ...utmParams,
+      };
+
+      const result = await submitParentEnquiry(payload);
+
+      // Fire Meta Lead Event AFTER successful backend save (deduplicated)
+      if (result && result.id) {
+        trackMetaLead(`parent_${result.id}`);
+      } else {
+        trackMetaLead(`parent_${Date.now()}`);
+      }
+
+      trackEvent(ANALYTICS_EVENTS.FORM, 'sat_diagnostic_parent_enquiry', {
+        parent_name: parentFormData.parent_name,
+        student_grade: parentFormData.student_grade,
+      });
+
+      setParentResult(result);
+      setParentSubmitted(true);
+    } catch (err) {
+      const msg = err instanceof ApiError ? err.message : (typeof err === 'string' ? err : err?.message);
+      setError(msg || 'Something went wrong. Please try again or contact us on WhatsApp.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const scrollToForm = (e) => {
     if (e) e.preventDefault();
     const formElem = document.getElementById('start-diagnostic');
     if (formElem) {
       formElem.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const copyDiagnosticLink = () => {
+    const diagnosticUrl = 'https://www.nitaqacademy.com/sat/diagnostic';
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(diagnosticUrl);
+      setCopiedLink(true);
+      setTimeout(() => setCopiedLink(false), 3000);
     }
   };
 
@@ -151,7 +260,7 @@ export default function SATDiagnostic() {
         description="Take Nitaq Academy's 24-question free Digital SAT diagnostic test to evaluate your Math and Reading & Writing readiness across all 8 SAT domains."
       />
 
-      {/* ── Existing Session Prompt Modal ── */}
+      {/* ── Existing Session Prompt Modal for Students ── */}
       {existingSessionPrompt && (
         <div style={{
           position: 'fixed',
@@ -200,7 +309,7 @@ export default function SATDiagnostic() {
               Existing Assessment Found
             </h3>
             <p style={{ fontSize: '0.95rem', color: '#64748B', lineHeight: 1.5, margin: '0 0 20px 0' }}>
-              We found a previous diagnostic session for <strong>{formData.email || formData.phone}</strong>. Would you like to resume your previous progress or start a brand new assessment?
+              We found a previous diagnostic session for <strong>{studentFormData.email || studentFormData.phone}</strong>. Would you like to resume your previous progress or start a brand new assessment?
             </p>
 
             <div style={{
@@ -237,7 +346,7 @@ export default function SATDiagnostic() {
                 disabled={loading}
                 onClick={() => {
                   setExistingSessionPrompt(null);
-                  handleSubmit(null, 'resume');
+                  handleStudentSubmit(null, 'resume');
                 }}
                 style={{
                   width: '100%',
@@ -265,7 +374,7 @@ export default function SATDiagnostic() {
                 disabled={loading}
                 onClick={() => {
                   setExistingSessionPrompt(null);
-                  handleSubmit(null, 'new');
+                  handleStudentSubmit(null, 'new');
                 }}
                 style={{
                   width: '100%',
@@ -313,7 +422,7 @@ export default function SATDiagnostic() {
                   Structure of the Diagnostic
                 </h2>
                 <p style={{ color: '#475467', lineHeight: 1.65, fontSize: '1.025rem' }}>
-                  Calibrated to test foundational concepts across both SAT sections. You'll complete <strong>12 Math</strong> questions followed by <strong>12 Reading &amp; Writing</strong> questions.
+                  Calibrated to test foundational concepts across both SAT sections. Students complete <strong>12 Math</strong> questions followed by <strong>12 Reading &amp; Writing</strong> questions.
                 </p>
               </div>
 
@@ -409,7 +518,7 @@ export default function SATDiagnostic() {
               </div>
             </div>
 
-            {/* Right Column: Registration Form */}
+            {/* Right Column: Persona Switcher & Form / Thank You */}
             <div>
               <div style={{
                 background: '#FFFFFF',
@@ -419,16 +528,83 @@ export default function SATDiagnostic() {
                 boxShadow: '0 20px 50px rgba(16, 24, 40, 0.08)',
                 position: 'relative'
               }}>
-                <div style={{ marginBottom: '24px' }}>
-                  <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', padding: '4px 12px', background: '#ECFDF5', borderRadius: '100px', fontSize: '0.75rem', fontWeight: 700, color: '#2E7D32', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px' }}>
-                    Step 1 of 2 · Student Details
+
+                {/* ── WHO ARE YOU? PERSONA SELECTOR TAB ── */}
+                <div style={{ marginBottom: '28px' }}>
+                  <label style={{
+                    display: 'block',
+                    fontSize: '0.85rem',
+                    fontWeight: 800,
+                    color: '#2E7D32',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.08em',
+                    marginBottom: '10px'
+                  }}>
+                    Who are you?
+                  </label>
+
+                  <div style={{
+                    display: 'grid',
+                    gridTemplateColumns: '1fr 1fr',
+                    gap: '10px',
+                    background: '#F1F5F9',
+                    padding: '6px',
+                    borderRadius: '16px'
+                  }}>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setPersona('STUDENT');
+                        setError('');
+                      }}
+                      style={{
+                        padding: '12px 16px',
+                        borderRadius: '12px',
+                        fontWeight: 700,
+                        fontSize: '0.95rem',
+                        border: 'none',
+                        cursor: 'pointer',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        gap: '8px',
+                        transition: 'all 0.2s ease',
+                        background: persona === 'STUDENT' ? '#FFFFFF' : 'transparent',
+                        color: persona === 'STUDENT' ? '#101828' : '#64748B',
+                        boxShadow: persona === 'STUDENT' ? '0 4px 12px rgba(0,0,0,0.06)' : 'none'
+                      }}
+                    >
+                      <span style={{ fontSize: '1.1rem' }}>🎓</span>
+                      <span>I’m a Student</span>
+                    </button>
+
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setPersona('PARENT');
+                        setError('');
+                      }}
+                      style={{
+                        padding: '12px 16px',
+                        borderRadius: '12px',
+                        fontWeight: 700,
+                        fontSize: '0.95rem',
+                        border: 'none',
+                        cursor: 'pointer',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        gap: '8px',
+                        transition: 'all 0.2s ease',
+                        background: persona === 'PARENT' ? '#FFFFFF' : 'transparent',
+                        color: persona === 'PARENT' ? '#101828' : '#64748B',
+                        boxShadow: persona === 'PARENT' ? '0 4px 12px rgba(0,0,0,0.06)' : 'none'
+                      }}
+                    >
+                      <span style={{ fontSize: '1.1rem' }}>👨‍👩‍👧</span>
+                      <span>I’m a Parent</span>
+                    </button>
                   </div>
-                  <h3 style={{ fontFamily: 'var(--sat-font)', fontSize: '1.75rem', fontWeight: 800, color: '#101828', margin: '4px 0 6px 0' }}>
-                    Start Your Free Diagnostic
-                  </h3>
-                  <p style={{ fontSize: '0.95rem', color: '#667085', lineHeight: 1.5, margin: 0 }}>
-                    Enter your details to generate your official 8-domain diagnostic analysis.
-                  </p>
                 </div>
 
                 {error && (
@@ -437,118 +613,531 @@ export default function SATDiagnostic() {
                   </div>
                 )}
 
-                <form onSubmit={(e) => handleSubmit(e)} style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
-                  <div>
-                    <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: '#344054', marginBottom: '6px' }}>
-                      Student Full Name *
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      placeholder="e.g. Sara Al Mansoori"
-                      value={formData.full_name}
-                      onChange={e => handleChange('full_name', e.target.value)}
-                      onFocus={() => setFocusField('full_name')}
-                      onBlur={() => setFocusField('')}
-                      style={getInputStyle('full_name')}
-                    />
-                  </div>
-
-                  <div>
-                    <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: '#344054', marginBottom: '6px' }}>
-                      Email Address *
-                    </label>
-                    <input
-                      type="email"
-                      required
-                      placeholder="sara@example.com"
-                      value={formData.email}
-                      onChange={e => handleChange('email', e.target.value)}
-                      onFocus={() => setFocusField('email')}
-                      onBlur={() => setFocusField('')}
-                      style={getInputStyle('email')}
-                    />
-                  </div>
-
-                  <div>
-                    <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: '#344054', marginBottom: '6px' }}>
-                      WhatsApp / Phone Number *
-                    </label>
-                    <input
-                      type="tel"
-                      required
-                      placeholder="+971 50 123 4567"
-                      value={formData.phone}
-                      onChange={e => handleChange('phone', e.target.value)}
-                      onFocus={() => setFocusField('phone')}
-                      onBlur={() => setFocusField('')}
-                      style={getInputStyle('phone')}
-                    />
-                  </div>
-
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '14px' }}>
-                    <div>
-                      <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: '#344054', marginBottom: '6px' }}>
-                        Current Grade
-                      </label>
-                      <select
-                        value={formData.current_grade}
-                        onChange={e => handleChange('current_grade', e.target.value)}
-                        onFocus={() => setFocusField('grade')}
-                        onBlur={() => setFocusField('')}
-                        style={getInputStyle('grade')}
-                      >
-                        {GRADE_OPTIONS.map(g => <option key={g} value={g}>{g}</option>)}
-                      </select>
+                {/* ── PERSONA: STUDENT FLOW ── */}
+                {persona === 'STUDENT' && (
+                  <>
+                    <div style={{ marginBottom: '24px' }}>
+                      <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', padding: '4px 12px', background: '#ECFDF5', borderRadius: '100px', fontSize: '0.75rem', fontWeight: 700, color: '#2E7D32', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px' }}>
+                        Step 1 of 2 · Student Diagnostic Flow
+                      </div>
+                      <h3 style={{ fontFamily: 'var(--sat-font)', fontSize: '1.75rem', fontWeight: 800, color: '#101828', margin: '4px 0 6px 0' }}>
+                        Start Your Free Diagnostic
+                      </h3>
+                      <p style={{ fontSize: '0.95rem', color: '#667085', lineHeight: 1.5, margin: 0 }}>
+                        Enter your contact details to begin the 24-question test and unlock your domain score breakdown.
+                      </p>
                     </div>
-                    <div>
-                      <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: '#344054', marginBottom: '6px' }}>
-                        Target SAT Score
-                      </label>
-                      <select
-                        value={formData.target_sat_score}
-                        onChange={e => handleChange('target_sat_score', e.target.value)}
-                        onFocus={() => setFocusField('target')}
-                        onBlur={() => setFocusField('')}
-                        style={getInputStyle('target')}
+
+                    <form onSubmit={handleStudentSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
+                      <div>
+                        <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: '#344054', marginBottom: '6px' }}>
+                          Student Full Name *
+                        </label>
+                        <input
+                          type="text"
+                          required
+                          placeholder="e.g. Sara Al Mansoori"
+                          value={studentFormData.full_name}
+                          onChange={e => handleStudentChange('full_name', e.target.value)}
+                          onFocus={() => setFocusField('full_name')}
+                          onBlur={() => setFocusField('')}
+                          style={getInputStyle('full_name')}
+                        />
+                      </div>
+
+                      <div>
+                        <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: '#344054', marginBottom: '6px' }}>
+                          Email Address *
+                        </label>
+                        <input
+                          type="email"
+                          required
+                          placeholder="sara@example.com"
+                          value={studentFormData.email}
+                          onChange={e => handleStudentChange('email', e.target.value)}
+                          onFocus={() => setFocusField('email')}
+                          onBlur={() => setFocusField('')}
+                          style={getInputStyle('email')}
+                        />
+                      </div>
+
+                      <div>
+                        <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: '#344054', marginBottom: '6px' }}>
+                          WhatsApp / Phone Number *
+                        </label>
+                        <input
+                          type="tel"
+                          required
+                          placeholder="+971 50 123 4567"
+                          value={studentFormData.phone}
+                          onChange={e => handleStudentChange('phone', e.target.value)}
+                          onFocus={() => setFocusField('phone')}
+                          onBlur={() => setFocusField('')}
+                          style={getInputStyle('phone')}
+                        />
+                      </div>
+
+                      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '14px' }}>
+                        <div>
+                          <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: '#344054', marginBottom: '6px' }}>
+                            Current Grade
+                          </label>
+                          <select
+                            value={studentFormData.current_grade}
+                            onChange={e => handleStudentChange('current_grade', e.target.value)}
+                            onFocus={() => setFocusField('grade')}
+                            onBlur={() => setFocusField('')}
+                            style={getInputStyle('grade')}
+                          >
+                            {GRADE_OPTIONS.map(g => <option key={g} value={g}>{g}</option>)}
+                          </select>
+                        </div>
+                        <div>
+                          <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: '#344054', marginBottom: '6px' }}>
+                            Target SAT Score
+                          </label>
+                          <select
+                            value={studentFormData.target_sat_score}
+                            onChange={e => handleStudentChange('target_sat_score', e.target.value)}
+                            onFocus={() => setFocusField('target')}
+                            onBlur={() => setFocusField('')}
+                            style={getInputStyle('target')}
+                          >
+                            {TARGET_OPTIONS.map(o => <option key={o.value} value={o.value}>{o.label}</option>)}
+                          </select>
+                        </div>
+                      </div>
+
+                      <button
+                        type="submit"
+                        disabled={loading}
+                        className="sat-hero-primary-btn"
+                        style={{
+                          width: '100%',
+                          marginTop: '6px',
+                          background: loading ? '#94A3B8' : 'linear-gradient(90deg, #2E7D32 0%, #20BFA9 100%)',
+                          boxShadow: loading ? 'none' : '0 8px 24px -4px rgba(46, 125, 50, 0.4)',
+                          cursor: loading ? 'not-allowed' : 'pointer'
+                        }}
                       >
-                        {TARGET_OPTIONS.map(o => <option key={o.value} value={o.value}>{o.label}</option>)}
-                      </select>
-                    </div>
-                  </div>
+                        {loading ? '⏳ Preparing Assessment…' : 'Begin SAT Diagnostic →'}
+                      </button>
 
-                  <button
-                    type="submit"
-                    disabled={loading}
-                    className="sat-hero-primary-btn"
-                    style={{
-                      width: '100%',
-                      marginTop: '6px',
-                      background: loading ? '#94A3B8' : 'linear-gradient(90deg, #2E7D32 0%, #20BFA9 100%)',
-                      boxShadow: loading ? 'none' : '0 8px 24px -4px rgba(46, 125, 50, 0.4)',
-                      cursor: loading ? 'not-allowed' : 'pointer'
-                    }}
-                  >
-                    {loading ? '⏳ Preparing Assessment…' : 'Begin SAT Diagnostic →'}
-                  </button>
+                      <div style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        gap: '6px',
+                        fontSize: '0.8rem',
+                        color: '#667085',
+                        textAlign: 'center',
+                        marginTop: '4px'
+                      }}>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                          <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                          <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                        </svg>
+                        <span>Free &amp; Confidential · Instant results after completion</span>
+                      </div>
+                    </form>
+                  </>
+                )}
 
-                  <div style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: '6px',
-                    fontSize: '0.8rem',
-                    color: '#667085',
-                    textAlign: 'center',
-                    marginTop: '4px'
-                  }}>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-                      <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-                    </svg>
-                    <span>Free &amp; Confidential · Instant results after completion</span>
-                  </div>
-                </form>
+                {/* ── PERSONA: PARENT FLOW ── */}
+                {persona === 'PARENT' && (
+                  <>
+                    {!parentSubmitted ? (
+                      <>
+                        <div style={{ marginBottom: '24px' }}>
+                          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', padding: '4px 12px', background: '#EFF6FF', borderRadius: '100px', fontSize: '0.75rem', fontWeight: 700, color: '#3B82F6', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px' }}>
+                            Parent Guidance &amp; Consultation
+                          </div>
+                          <h3 style={{ fontFamily: 'var(--sat-font)', fontSize: '1.75rem', fontWeight: 800, color: '#101828', margin: '4px 0 6px 0' }}>
+                            Get SAT Preparation Guidance
+                          </h3>
+                          <p style={{ fontSize: '0.95rem', color: '#667085', lineHeight: 1.5, margin: 0 }}>
+                            Parents do not need to take the test. Fill out this brief form to speak with our SAT master counselors.
+                          </p>
+                        </div>
+
+                        <form onSubmit={handleParentSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                          <div>
+                            <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: '#344054', marginBottom: '6px' }}>
+                              Parent Full Name *
+                            </label>
+                            <input
+                              type="text"
+                              required
+                              placeholder="e.g. Mohammed Al Mansoori"
+                              value={parentFormData.parent_name}
+                              onChange={e => handleParentChange('parent_name', e.target.value)}
+                              onFocus={() => setFocusField('p_name')}
+                              onBlur={() => setFocusField('')}
+                              style={getInputStyle('p_name')}
+                            />
+                          </div>
+
+                          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '14px' }}>
+                            <div>
+                              <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: '#344054', marginBottom: '6px' }}>
+                                Mobile / WhatsApp *
+                              </label>
+                              <input
+                                type="tel"
+                                required
+                                placeholder="+971 50 123 4567"
+                                value={parentFormData.phone}
+                                onChange={e => handleParentChange('phone', e.target.value)}
+                                onFocus={() => setFocusField('p_phone')}
+                                onBlur={() => setFocusField('')}
+                                style={getInputStyle('p_phone')}
+                              />
+                            </div>
+                            <div>
+                              <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: '#344054', marginBottom: '6px' }}>
+                                Email Address (Optional)
+                              </label>
+                              <input
+                                type="email"
+                                placeholder="parent@example.com"
+                                value={parentFormData.email}
+                                onChange={e => handleParentChange('email', e.target.value)}
+                                onFocus={() => setFocusField('p_email')}
+                                onBlur={() => setFocusField('')}
+                                style={getInputStyle('p_email')}
+                              />
+                            </div>
+                          </div>
+
+                          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '14px' }}>
+                            <div>
+                              <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: '#344054', marginBottom: '6px' }}>
+                                Student Grade *
+                              </label>
+                              <select
+                                value={parentFormData.student_grade}
+                                onChange={e => handleParentChange('student_grade', e.target.value)}
+                                onFocus={() => setFocusField('p_grade')}
+                                onBlur={() => setFocusField('')}
+                                style={getInputStyle('p_grade')}
+                              >
+                                {GRADE_OPTIONS.map(g => <option key={g} value={g}>{g}</option>)}
+                              </select>
+                            </div>
+                            <div>
+                              <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: '#344054', marginBottom: '6px' }}>
+                                Expected SAT Date
+                              </label>
+                              <select
+                                value={parentFormData.expected_sat_date}
+                                onChange={e => handleParentChange('expected_sat_date', e.target.value)}
+                                onFocus={() => setFocusField('p_date')}
+                                onBlur={() => setFocusField('')}
+                                style={getInputStyle('p_date')}
+                              >
+                                {EXPECTED_TEST_DATES.map(d => <option key={d} value={d}>{d}</option>)}
+                              </select>
+                            </div>
+                          </div>
+
+                          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '14px' }}>
+                            <div>
+                              <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: '#344054', marginBottom: '6px' }}>
+                                Previous SAT Score (Optional)
+                              </label>
+                              <select
+                                value={parentFormData.previous_sat_score}
+                                onChange={e => handleParentChange('previous_sat_score', e.target.value)}
+                                onFocus={() => setFocusField('p_prev')}
+                                onBlur={() => setFocusField('')}
+                                style={getInputStyle('p_prev')}
+                              >
+                                {PREVIOUS_SCORE_OPTIONS.map(s => <option key={s} value={s}>{s}</option>)}
+                              </select>
+                            </div>
+                            <div>
+                              <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: '#344054', marginBottom: '6px' }}>
+                                Target SAT Score (Optional)
+                              </label>
+                              <select
+                                value={parentFormData.target_sat_score}
+                                onChange={e => handleParentChange('target_sat_score', e.target.value)}
+                                onFocus={() => setFocusField('p_target')}
+                                onBlur={() => setFocusField('')}
+                                style={getInputStyle('p_target')}
+                              >
+                                {TARGET_OPTIONS.map(o => <option key={o.value} value={o.value}>{o.label}</option>)}
+                              </select>
+                            </div>
+                          </div>
+
+                          <div>
+                            <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: '#344054', marginBottom: '6px' }}>
+                              Area of Residence *
+                            </label>
+                            <input
+                              type="text"
+                              required
+                              placeholder="e.g. Al Majaz 3, Sharjah / Al Qusais, Dubai"
+                              value={parentFormData.area_of_residence}
+                              onChange={e => handleParentChange('area_of_residence', e.target.value)}
+                              onFocus={() => setFocusField('p_area')}
+                              onBlur={() => setFocusField('')}
+                              style={getInputStyle('p_area')}
+                            />
+                          </div>
+
+                          <div>
+                            <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: '#344054', marginBottom: '8px' }}>
+                              Can the student attend classes at Al Majaz 3, Sharjah? *
+                            </label>
+                            <div style={{ display: 'flex', gap: '16px' }}>
+                              <label style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '8px',
+                                background: parentFormData.can_attend_al_majaz ? '#ECFDF5' : '#F8FAFC',
+                                border: `1.5px solid ${parentFormData.can_attend_al_majaz ? '#2E7D32' : '#E4E7EC'}`,
+                                padding: '10px 18px',
+                                borderRadius: '12px',
+                                cursor: 'pointer',
+                                fontWeight: 700,
+                                fontSize: '0.9rem',
+                                color: parentFormData.can_attend_al_majaz ? '#2E7D32' : '#475467'
+                              }}>
+                                <input
+                                  type="radio"
+                                  name="can_attend"
+                                  checked={parentFormData.can_attend_al_majaz === true}
+                                  onChange={() => handleParentChange('can_attend_al_majaz', true)}
+                                />
+                                <span>Yes, can attend at Al Majaz 3</span>
+                              </label>
+
+                              <label style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '8px',
+                                background: !parentFormData.can_attend_al_majaz ? '#FFF7ED' : '#F8FAFC',
+                                border: `1.5px solid ${!parentFormData.can_attend_al_majaz ? '#FF9F43' : '#E4E7EC'}`,
+                                padding: '10px 18px',
+                                borderRadius: '12px',
+                                cursor: 'pointer',
+                                fontWeight: 700,
+                                fontSize: '0.9rem',
+                                color: !parentFormData.can_attend_al_majaz ? '#C2410C' : '#475467'
+                              }}>
+                                <input
+                                  type="radio"
+                                  name="can_attend"
+                                  checked={parentFormData.can_attend_al_majaz === false}
+                                  onChange={() => handleParentChange('can_attend_al_majaz', false)}
+                                />
+                                <span>No (Online / Other location)</span>
+                              </label>
+                            </div>
+                          </div>
+
+                          <button
+                            type="submit"
+                            disabled={loading}
+                            style={{
+                              width: '100%',
+                              padding: '16px',
+                              borderRadius: '14px',
+                              marginTop: '8px',
+                              background: loading ? '#94A3B8' : 'linear-gradient(90deg, #2E7D32 0%, #20BFA9 100%)',
+                              color: '#FFFFFF',
+                              fontWeight: 800,
+                              fontSize: '1rem',
+                              border: 'none',
+                              cursor: loading ? 'not-allowed' : 'pointer',
+                              boxShadow: loading ? 'none' : '0 8px 24px -4px rgba(46, 125, 50, 0.4)',
+                              transition: 'all 0.2s ease'
+                            }}
+                          >
+                            {loading ? '⏳ Submitting Enquiry…' : 'Get SAT Preparation Guidance →'}
+                          </button>
+                        </form>
+                      </>
+                    ) : (
+                      /* ── PARENT THANK YOU SCREEN WITH OPTIONS ── */
+                      <div style={{ textAlign: 'center', padding: '10px 0' }}>
+                        <div style={{
+                          width: '64px',
+                          height: '64px',
+                          borderRadius: '50%',
+                          background: '#ECFDF5',
+                          color: '#2E7D32',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          margin: '0 auto 20px auto',
+                          boxShadow: '0 10px 25px rgba(46, 125, 50, 0.2)'
+                        }}>
+                          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                            <polyline points="20 6 9 17 4 12" />
+                          </svg>
+                        </div>
+
+                        <span style={{ fontSize: '0.8rem', fontWeight: 800, color: '#2E7D32', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+                          Enquiry Received
+                        </span>
+
+                        <h3 style={{ fontFamily: 'var(--sat-font)', fontSize: '1.8rem', fontWeight: 800, color: '#101828', margin: '6px 0 10px 0' }}>
+                          Thank You, {parentFormData.parent_name}!
+                        </h3>
+
+                        <p style={{ color: '#475467', lineHeight: 1.6, fontSize: '0.975rem', marginBottom: '28px' }}>
+                          We have safely logged your SAT guidance request. Our senior SAT academic advisor will connect with you on WhatsApp / phone shortly.
+                        </p>
+
+                        <div style={{
+                          background: '#F8FAFC',
+                          border: '1px solid #E2E8F0',
+                          borderRadius: '20px',
+                          padding: '24px',
+                          textAlign: 'left',
+                          marginBottom: '20px',
+                          display: 'flex',
+                          flexDirection: 'column',
+                          gap: '16px'
+                        }}>
+                          <h4 style={{ fontSize: '1.05rem', fontWeight: 800, color: '#101828', margin: 0 }}>
+                            What would you like to do next?
+                          </h4>
+
+                          {/* Option 1: Send SAT Diagnostic to My Child */}
+                          <div style={{
+                            background: '#FFFFFF',
+                            border: '1px solid #E2E8F0',
+                            borderRadius: '14px',
+                            padding: '16px',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            gap: '10px'
+                          }}>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                              <span style={{ fontSize: '1.2rem' }}>📤</span>
+                              <div>
+                                <div style={{ fontWeight: 700, fontSize: '0.95rem', color: '#101828' }}>
+                                  Send SAT Diagnostic to My Child
+                                </div>
+                                <div style={{ fontSize: '0.825rem', color: '#64748B' }}>
+                                  Share the official 24-question test link directly with your student.
+                                </div>
+                              </div>
+                            </div>
+                            <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginTop: '4px' }}>
+                              <a
+                                href={`https://api.whatsapp.com/send?text=${encodeURIComponent('Hi! Take Nitaq Academy’s free Digital SAT Diagnostic test here to check your score: https://www.nitaqacademy.com/sat/diagnostic')}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                style={{
+                                  padding: '8px 14px',
+                                  borderRadius: '8px',
+                                  background: '#25D366',
+                                  color: '#FFFFFF',
+                                  fontWeight: 700,
+                                  fontSize: '0.825rem',
+                                  textDecoration: 'none',
+                                  display: 'inline-flex',
+                                  alignItems: 'center',
+                                  gap: '6px'
+                                }}
+                              >
+                                <span>Share via WhatsApp</span>
+                              </a>
+                              <button
+                                type="button"
+                                onClick={copyDiagnosticLink}
+                                style={{
+                                  padding: '8px 14px',
+                                  borderRadius: '8px',
+                                  background: copiedLink ? '#ECFDF5' : '#F1F5F9',
+                                  color: copiedLink ? '#2E7D32' : '#334155',
+                                  fontWeight: 700,
+                                  fontSize: '0.825rem',
+                                  border: `1px solid ${copiedLink ? '#A7F3D0' : '#CBD5E1'}`,
+                                  cursor: 'pointer'
+                                }}
+                              >
+                                {copiedLink ? '✓ Link Copied!' : 'Copy Link'}
+                              </button>
+                            </div>
+                          </div>
+
+                          {/* Option 2 & 3: Direct Consultation & WhatsApp */}
+                          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+                            <a
+                              href={`https://wa.me/971501234567?text=${encodeURIComponent(`Hi Nitaq Academy, I am ${parentFormData.parent_name}. I requested SAT guidance for my child (${parentFormData.student_grade}). I would like to schedule a consultation.`)}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              style={{
+                                padding: '12px 14px',
+                                borderRadius: '12px',
+                                background: '#FFFFFF',
+                                border: '1.5px solid #2E7D32',
+                                color: '#2E7D32',
+                                fontWeight: 700,
+                                fontSize: '0.875rem',
+                                textDecoration: 'none',
+                                textAlign: 'center',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                gap: '6px'
+                              }}
+                            >
+                              <span>📞 Request Consultation</span>
+                            </a>
+
+                            <a
+                              href={`https://wa.me/971501234567?text=${encodeURIComponent(`Hi Nitaq Academy, I submitted a parent enquiry for SAT guidance. Parent: ${parentFormData.parent_name}, Grade: ${parentFormData.student_grade}.`)}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              style={{
+                                padding: '12px 14px',
+                                borderRadius: '12px',
+                                background: '#25D366',
+                                color: '#FFFFFF',
+                                fontWeight: 700,
+                                fontSize: '0.875rem',
+                                textDecoration: 'none',
+                                textAlign: 'center',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                gap: '6px',
+                                boxShadow: '0 4px 12px rgba(37, 211, 102, 0.25)'
+                              }}
+                            >
+                              <span>💬 WhatsApp Nitaq</span>
+                            </a>
+                          </div>
+
+                        </div>
+
+                        <button
+                          type="button"
+                          onClick={() => setParentSubmitted(false)}
+                          style={{
+                            background: 'transparent',
+                            border: 'none',
+                            color: '#64748B',
+                            fontSize: '0.85rem',
+                            fontWeight: 600,
+                            cursor: 'pointer',
+                            textDecoration: 'underline'
+                          }}
+                        >
+                          Submit another enquiry or edit details
+                        </button>
+                      </div>
+                    )}
+                  </>
+                )}
+
               </div>
             </div>
 

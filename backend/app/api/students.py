@@ -6,9 +6,11 @@ from sqlalchemy.orm import Session
 from app.core.database import get_db
 from app.core.security import generate_session_token
 from app.models.student import Student
+from app.models.parent_enquiry import ParentEnquiry
 from app.models.question import DiagnosticTest, TestStatus
 from app.models.diagnostic import DiagnosticSession, SessionStatus
 from app.schemas.student import StudentCreate, StudentPublic
+from app.schemas.parent_enquiry import ParentEnquiryCreate, ParentEnquiryResponse
 from app.schemas.diagnostic import SessionStartResponse, ExistingSessionInfo
 
 router = APIRouter(prefix="/students", tags=["students"])
@@ -39,6 +41,16 @@ def register_student(payload: StudentCreate, db: Session = Depends(get_db)):
             student.target_sat_score = payload.target_sat_score
             if payload.sat_test_date:
                 student.sat_test_date = payload.sat_test_date
+            if payload.utm_source:
+                student.utm_source = payload.utm_source
+            if payload.utm_medium:
+                student.utm_medium = payload.utm_medium
+            if payload.utm_campaign:
+                student.utm_campaign = payload.utm_campaign
+            if payload.utm_content:
+                student.utm_content = payload.utm_content
+            if payload.utm_term:
+                student.utm_term = payload.utm_term
             db.flush()
         except Exception:
             db.rollback()
@@ -102,6 +114,11 @@ def register_student(payload: StudentCreate, db: Session = Depends(get_db)):
             current_status=payload.current_status,
             target_sat_score=payload.target_sat_score,
             sat_test_date=payload.sat_test_date,
+            utm_source=payload.utm_source,
+            utm_medium=payload.utm_medium,
+            utm_campaign=payload.utm_campaign,
+            utm_content=payload.utm_content,
+            utm_term=payload.utm_term,
         )
         db.add(student)
         db.flush()
@@ -137,3 +154,32 @@ def register_student(payload: StudentCreate, db: Session = Depends(get_db)):
         test_id=test.id,
         existing_session_found=False,
     )
+
+
+@router.post("/parent-enquiry", response_model=ParentEnquiryResponse, status_code=status.HTTP_201_CREATED)
+def create_parent_enquiry(payload: ParentEnquiryCreate, db: Session = Depends(get_db)):
+    """
+    Save a parent enquiry for SAT guidance with UTM campaign details.
+    """
+    enquiry = ParentEnquiry(
+        parent_name=payload.parent_name,
+        phone=payload.phone,
+        email=payload.email.lower() if payload.email else None,
+        student_grade=payload.student_grade,
+        expected_sat_date=payload.expected_sat_date,
+        previous_sat_score=payload.previous_sat_score,
+        target_sat_score=payload.target_sat_score,
+        area_of_residence=payload.area_of_residence,
+        can_attend_al_majaz=payload.can_attend_al_majaz,
+        utm_source=payload.utm_source,
+        utm_medium=payload.utm_medium,
+        utm_campaign=payload.utm_campaign,
+        utm_content=payload.utm_content,
+        utm_term=payload.utm_term,
+    )
+    db.add(enquiry)
+    db.commit()
+    db.refresh(enquiry)
+
+    return ParentEnquiryResponse.model_validate(enquiry)
+

@@ -18,6 +18,13 @@ class StudentCreate(BaseModel):
     sat_test_date: Optional[str] = None
     action: Optional[str] = None  # None (check for existing session), "resume", or "new"
 
+    # UTM parameters
+    utm_source: Optional[str] = None
+    utm_medium: Optional[str] = None
+    utm_campaign: Optional[str] = None
+    utm_content: Optional[str] = None
+    utm_term: Optional[str] = None
+
     @field_validator("full_name")
     @classmethod
     def name_not_empty(cls, v: str) -> str:

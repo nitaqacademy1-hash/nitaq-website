@@ -24,3 +24,29 @@ export const ANALYTICS_EVENTS = {
   CALL: 'call_click',
   FORM: 'form_submit'
 };
+
+/**
+ * Programmatically fire Meta Pixel 'Lead' event.
+ * Ensures the event fires strictly ONCE per successful form submission key,
+ * preventing duplicates on page refresh, double submission, or re-renders.
+ */
+export const trackMetaLead = (submissionKey) => {
+  if (typeof window === 'undefined') return;
+
+  if (submissionKey) {
+    const dedupeStorageKey = `nitaq_lead_fired_${submissionKey}`;
+    if (sessionStorage.getItem(dedupeStorageKey)) {
+      console.log(`[Meta Pixel] Lead event skipped: Already fired for submission key ${submissionKey}`);
+      return;
+    }
+    sessionStorage.setItem(dedupeStorageKey, 'true');
+  }
+
+  if (typeof window.fbq === 'function') {
+    window.fbq('track', 'Lead');
+    console.log('[Meta Pixel] Lead event fired successfully: fbq("track", "Lead")');
+  } else {
+    console.warn('[Meta Pixel] window.fbq is not defined. Ensure Meta Pixel base code is loaded.');
+  }
+};
+
