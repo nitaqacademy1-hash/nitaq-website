@@ -162,70 +162,49 @@ export default function AdminStudents() {
   return (
     <div>
       {/* Header & Segmented Tabs */}
-      <div className="admin-students-header" style={{ marginBottom: '24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
+      <div className="admin-students-header" style={{ marginBottom: '24px' }}>
         <div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '4px' }}>
-            <h1 style={{ fontFamily: 'var(--font-heading, sans-serif)', fontSize: '1.45rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.02em', margin: 0 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '4px', flexWrap: 'wrap' }}>
+            <h1 style={{ fontFamily: 'var(--font-heading, sans-serif)', fontSize: '1.45rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.02em', margin: 0, wordBreak: 'break-word' }}>
               SAT Diagnostic &amp; Parent Leads
             </h1>
-            <span style={{ fontSize: '0.75rem', fontWeight: 700, background: '#F1F5F9', color: '#475569', padding: '3px 10px', borderRadius: '100px', border: '1px solid #E2E8F0' }}>
+            <span style={{ fontSize: '0.75rem', fontWeight: 700, background: '#F1F5F9', color: '#475569', padding: '3px 10px', borderRadius: '100px', border: '1px solid #E2E8F0', whiteSpace: 'nowrap' }}>
               {activeTab === 'STUDENTS' ? `${filteredSessions.length} students` : `${filteredParentEnquiries.length} enquiries`}
             </span>
           </div>
-          <p style={{ color: '#64748B', fontSize: '0.84rem', margin: 0 }}>
+          <p style={{ color: '#64748B', fontSize: '0.84rem', margin: 0, wordBreak: 'break-word' }}>
             Real-time candidate registrations, test results, and lead pipeline tracking
           </p>
         </div>
 
         {/* Tab Switcher & Export */}
-        <div className="admin-header-actions" style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
+        <div className="admin-header-actions">
           <div className="admin-tab-switcher-container">
-            <div style={{ background: '#F1F5F9', padding: '4px', borderRadius: '12px', display: 'flex', gap: '4px', border: '1px solid #E2E8F0' }}>
+            <div className="admin-tab-switcher">
               <button
                 type="button"
                 onClick={() => { setActiveTab('STUDENTS'); setSearch(''); }}
-                style={{
-                  padding: '8px 16px',
-                  borderRadius: '8px',
-                  fontSize: '0.82rem',
-                  fontWeight: 700,
-                  border: 'none',
-                  cursor: 'pointer',
-                  transition: 'all 0.2s ease',
-                  background: activeTab === 'STUDENTS' ? '#FFFFFF' : 'transparent',
-                  color: activeTab === 'STUDENTS' ? '#0F172A' : '#64748B',
-                  boxShadow: activeTab === 'STUDENTS' ? '0 2px 8px rgba(15,23,42,0.08)' : 'none'
-                }}
+                className={`admin-tab-btn ${activeTab === 'STUDENTS' ? 'active' : ''}`}
               >
-                🎓 Student Diagnostics
+                <span className="tab-full-label">🎓 Student Diagnostics</span>
+                <span className="tab-short-label">🎓 Students</span>
               </button>
               <button
                 type="button"
                 onClick={() => { setActiveTab('PARENTS'); setSearch(''); }}
-                style={{
-                  padding: '8px 16px',
-                  borderRadius: '8px',
-                  fontSize: '0.82rem',
-                  fontWeight: 700,
-                  border: 'none',
-                  cursor: 'pointer',
-                  transition: 'all 0.2s ease',
-                  background: activeTab === 'PARENTS' ? '#FFFFFF' : 'transparent',
-                  color: activeTab === 'PARENTS' ? '#0F172A' : '#64748B',
-                  boxShadow: activeTab === 'PARENTS' ? '0 2px 8px rgba(15,23,42,0.08)' : 'none'
-                }}
+                className={`admin-tab-btn ${activeTab === 'PARENTS' ? 'active' : ''}`}
               >
-                👨‍👩‍👧 Parent Enquiries
+                <span className="tab-full-label">👨‍👩‍👧 Parent Enquiries</span>
+                <span className="tab-short-label">👨‍👩‍👧 Parents</span>
               </button>
             </div>
           </div>
 
           <a
             href={activeTab === 'STUDENTS' ? getExportCsvUrl() : getExportParentCsvUrl()}
-            className="admin-btn primary"
+            className="admin-export-csv-btn"
             target="_blank"
             rel="noopener noreferrer"
-            style={{ justifyContent: 'center', boxShadow: '0 2px 8px rgba(15,23,42,0.12)', padding: '10px 18px' }}
           >
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
@@ -238,20 +217,9 @@ export default function AdminStudents() {
       </div>
 
       {/* Filter & Search Toolbar */}
-      <div className="admin-filter-bar" style={{
-        background: '#ffffff',
-        border: '1px solid #E2E8F0',
-        borderRadius: '16px',
-        padding: '14px 18px',
-        display: 'flex',
-        gap: '12px',
-        flexWrap: 'wrap',
-        alignItems: 'center',
-        marginBottom: '24px',
-        boxShadow: '0 2px 10px rgba(0,0,0,0.02)',
-      }}>
+      <div className="admin-filter-bar">
         {/* Search Input with Icon */}
-        <div style={{ position: 'relative', flex: '1', minWidth: '220px' }}>
+        <div className="admin-search-wrapper">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#64748B" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none' }}>
             <circle cx="11" cy="11" r="8"/>
             <line x1="21" y1="21" x2="16.65" y2="16.65"/>
@@ -261,22 +229,7 @@ export default function AdminStudents() {
             placeholder={activeTab === 'STUDENTS' ? "Search student name, email, or phone…" : "Search parent name, phone, area…"}
             value={search}
             onChange={e => setSearch(e.target.value)}
-            style={{
-              width: '100%',
-              paddingLeft: '38px',
-              paddingRight: search ? '32px' : '12px',
-              background: '#FAFAFA',
-              border: '1.5px solid #CBD5E1',
-              borderRadius: '10px',
-              color: '#0F172A',
-              paddingTop: '9px',
-              paddingBottom: '9px',
-              fontSize: '0.85rem',
-              fontWeight: 500,
-              fontFamily: 'inherit',
-              outline: 'none',
-              boxSizing: 'border-box',
-            }}
+            className="admin-search-input"
           />
           {search && (
             <button
@@ -374,15 +327,13 @@ export default function AdminStudents() {
                     <div className="admin-avatar-circle">
                       {s.student_name ? s.student_name.charAt(0).toUpperCase() : 'S'}
                     </div>
-                    <div style={{ flex: 1, minWidth: 0 }}>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <div className="admin-card-header-info">
+                      <div className="admin-card-title-line">
                         <span className="admin-card-student-name">{s.student_name}</span>
-                        <span className="mono" style={{ fontSize: '0.75rem', color: '#2563EB', background: '#EFF6FF', padding: '2px 6px', borderRadius: '6px', fontWeight: 700 }}>
-                          #{s.id}
-                        </span>
+                        <span className="admin-card-id-badge">#{s.id}</span>
                       </div>
                       <div className="admin-card-contact-line">
-                        <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{s.student_email}</span>
+                        {s.student_email}
                       </div>
                     </div>
                     <span className={`status-chip ${s.status}`}>
@@ -391,11 +342,11 @@ export default function AdminStudents() {
                   </div>
 
                   {/* Quick Phone Row */}
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.8rem', marginBottom: '10px', padding: '8px 12px', background: '#F8FAFC', border: '1px solid #F1F5F9', borderRadius: '10px' }}>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0284C7" strokeWidth="2">
+                  <div className="admin-card-phone-row">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0284C7" strokeWidth="2.2">
                       <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
                     </svg>
-                    <a href={`tel:${s.student_phone}`} style={{ color: '#0284C7', fontWeight: 700, textDecoration: 'none' }}>
+                    <a href={`tel:${s.student_phone}`} className="admin-phone-link">
                       {s.student_phone}
                     </a>
                   </div>
@@ -412,15 +363,15 @@ export default function AdminStudents() {
                     </div>
                     <div className="admin-stat-mini">
                       <span className="admin-stat-mini-label">Score</span>
-                      <span className="admin-stat-mini-val" style={{ color: s.total_score !== null ? '#15803D' : '#94A3B8' }}>
+                      <span className="admin-stat-mini-val" style={{ color: s.total_score !== null ? '#15803D' : '#64748B' }}>
                         {s.total_score !== null ? `${s.total_score} / 24` : 'Pending'}
                       </span>
                     </div>
                   </div>
 
                   {/* Lead Selector */}
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', margin: '10px 0 14px' }}>
-                    <span style={{ fontSize: '0.78rem', color: '#64748B', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+                  <div className="admin-card-lead-row">
+                    <span className="admin-lead-label">
                       Lead Stage:
                     </span>
                     <LeadSelector
@@ -435,12 +386,14 @@ export default function AdminStudents() {
                     {s.status === 'COMPLETED' ? (
                       <>
                         <button
+                          type="button"
                           className="admin-btn-result"
                           onClick={() => navigate(`/admin/sat/students/${s.id}`)}
                         >
                           View Result
                         </button>
                         <button
+                          type="button"
                           className="admin-btn-pdf"
                           onClick={() => window.open(`/admin/sat/students/${s.id}?print=true`, '_blank')}
                           title="Download PDF Report"
@@ -454,11 +407,12 @@ export default function AdminStudents() {
                         </button>
                       </>
                     ) : (
-                      <div style={{ color: '#94A3B8', fontSize: '0.78rem', padding: '8px 0', flex: '1', fontWeight: 500 }}>
+                      <div className="admin-card-pending-notice">
                         ⏳ Test pending completion
                       </div>
                     )}
                     <button
+                      type="button"
                       className="admin-btn-delete"
                       onClick={() => handleDeleteStudent(s.id, s.student_name)}
                       disabled={deletingId === s.id}

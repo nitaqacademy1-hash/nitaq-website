@@ -1,6 +1,12 @@
+import { useLocation } from 'react-router-dom';
 import { trackEvent, ANALYTICS_EVENTS } from '../utils/analytics';
 
 const FloatingWhatsApp = () => {
+  const location = useLocation();
+  if (location.pathname.startsWith('/admin')) {
+    return null;
+  }
+
   return (
     <a
       href="https://wa.me/971527569908"
