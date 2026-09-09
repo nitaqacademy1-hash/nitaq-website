@@ -344,17 +344,41 @@
 
 .admin-table-scroll {
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+  position: relative;
+  scrollbar-width: thin;
+  scrollbar-color: #CBD5E1 #F1F5F9;
+}
+
+.admin-table-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+
+.admin-table-scroll::-webkit-scrollbar-track {
+  background: #F1F5F9;
+  border-radius: 4px;
+}
+
+.admin-table-scroll::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+
+.admin-table-scroll::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
 }
 
 .admin-table {
   width: 100%;
+  min-width: 960px;
   border-collapse: collapse;
   font-size: 0.88rem;
   text-align: left;
 }
 
 .admin-table th {
-  padding: 12px 20px;
+  padding: 12px 18px;
   background: #F8FAFC;
   color: #64748B;
   font-size: 0.72rem;
@@ -748,6 +772,87 @@
     flex-direction: column !important;
     gap: 8px !important;
   }
+
+  /* Admin Students Tab Mobile Overrides */
+  .admin-students-header {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 14px !important;
+  }
+
+  .admin-header-actions {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    gap: 10px !important;
+  }
+
+  .admin-tab-switcher-container {
+    width: 100% !important;
+  }
+
+  .admin-tab-switcher-container > div {
+    width: 100% !important;
+    display: flex !important;
+  }
+
+  .admin-tab-switcher-container button {
+    flex: 1 !important;
+    text-align: center !important;
+    padding: 8px 10px !important;
+    font-size: 0.78rem !important;
+  }
+
+  .admin-filter-bar {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 10px !important;
+  }
+
+  .admin-filter-bar input,
+  .admin-filter-bar select,
+  .admin-filter-bar button {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .admin-mobile-scroll-hint {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: #EFF6FF;
+    color: #1D4ED8;
+    border: 1px solid #BFDBFE;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+
+  .admin-student-cards-mobile {
+    display: flex !important;
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .admin-student-card-mobile {
+    background: #ffffff;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    padding: 14px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+}
+
+.admin-mobile-scroll-hint {
+  display: none;
+}
+
+.admin-student-cards-mobile {
+  display: none;
 }
 
 
@@ -1323,7 +1428,22 @@
 
   .rpt-toolbar {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .rpt-toolbar-left,
+  .rpt-toolbar-right {
+    width: 100%;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .rpt-toolbar-left button,
+  .rpt-toolbar-right button {
+    flex: 1;
+    justify-content: center;
+    text-align: center;
   }
 }
 

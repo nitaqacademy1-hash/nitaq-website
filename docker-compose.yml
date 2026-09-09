@@ -35,7 +35,7 @@ services:
     environment:
       DATABASE_URL: postgresql://nitaq_user:nitaq_dev_password@postgres:5432/nitaq_sat
     ports:
-      - "8001:8000"
+      - "8000:8000"
     volumes:
       - ./backend:/backend
     command: >

@@ -146,7 +146,7 @@ export default function AdminStudents() {
   return (
     <div>
       {/* Header & Tabs */}
-      <div style={{ marginBottom: '20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
+      <div className="admin-students-header" style={{ marginBottom: '20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
         <div>
           <h1 style={{ fontFamily: 'var(--font-heading, sans-serif)', fontSize: '1.35rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.02em', margin: '0 0 2px 0' }}>
             SAT Leads &amp; Diagnostic Records
@@ -157,42 +157,44 @@ export default function AdminStudents() {
         </div>
 
         {/* Tab Switcher & Export */}
-        <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
-          <div style={{ background: '#E2E8F0', padding: '3px', borderRadius: '8px', display: 'flex', gap: '4px' }}>
-            <button
-              type="button"
-              onClick={() => { setActiveTab('STUDENTS'); setSearch(''); }}
-              style={{
-                padding: '6px 14px',
-                borderRadius: '6px',
-                fontSize: '0.8rem',
-                fontWeight: 700,
-                border: 'none',
-                cursor: 'pointer',
-                background: activeTab === 'STUDENTS' ? '#FFFFFF' : 'transparent',
-                color: activeTab === 'STUDENTS' ? '#0F172A' : '#64748B',
-                boxShadow: activeTab === 'STUDENTS' ? '0 1px 3px rgba(0,0,0,0.1)' : 'none'
-              }}
-            >
-              🎓 Student Diagnostics
-            </button>
-            <button
-              type="button"
-              onClick={() => { setActiveTab('PARENTS'); setSearch(''); }}
-              style={{
-                padding: '6px 14px',
-                borderRadius: '6px',
-                fontSize: '0.8rem',
-                fontWeight: 700,
-                border: 'none',
-                cursor: 'pointer',
-                background: activeTab === 'PARENTS' ? '#FFFFFF' : 'transparent',
-                color: activeTab === 'PARENTS' ? '#0F172A' : '#64748B',
-                boxShadow: activeTab === 'PARENTS' ? '0 1px 3px rgba(0,0,0,0.1)' : 'none'
-              }}
-            >
-              👨‍👩‍👧 Parent Enquiries
-            </button>
+        <div className="admin-header-actions" style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
+          <div className="admin-tab-switcher-container">
+            <div style={{ background: '#E2E8F0', padding: '3px', borderRadius: '8px', display: 'flex', gap: '4px' }}>
+              <button
+                type="button"
+                onClick={() => { setActiveTab('STUDENTS'); setSearch(''); }}
+                style={{
+                  padding: '6px 14px',
+                  borderRadius: '6px',
+                  fontSize: '0.8rem',
+                  fontWeight: 700,
+                  border: 'none',
+                  cursor: 'pointer',
+                  background: activeTab === 'STUDENTS' ? '#FFFFFF' : 'transparent',
+                  color: activeTab === 'STUDENTS' ? '#0F172A' : '#64748B',
+                  boxShadow: activeTab === 'STUDENTS' ? '0 1px 3px rgba(0,0,0,0.1)' : 'none'
+                }}
+              >
+                🎓 Student Diagnostics
+              </button>
+              <button
+                type="button"
+                onClick={() => { setActiveTab('PARENTS'); setSearch(''); }}
+                style={{
+                  padding: '6px 14px',
+                  borderRadius: '6px',
+                  fontSize: '0.8rem',
+                  fontWeight: 700,
+                  border: 'none',
+                  cursor: 'pointer',
+                  background: activeTab === 'PARENTS' ? '#FFFFFF' : 'transparent',
+                  color: activeTab === 'PARENTS' ? '#0F172A' : '#64748B',
+                  boxShadow: activeTab === 'PARENTS' ? '0 1px 3px rgba(0,0,0,0.1)' : 'none'
+                }}
+              >
+                👨‍👩‍👧 Parent Enquiries
+              </button>
+            </div>
           </div>
 
           <a
@@ -200,6 +202,7 @@ export default function AdminStudents() {
             className="admin-btn primary"
             target="_blank"
             rel="noopener noreferrer"
+            style={{ justifyContent: 'center' }}
           >
             Export CSV
           </a>
@@ -207,7 +210,7 @@ export default function AdminStudents() {
       </div>
 
       {/* Filter Toolbar */}
-      <div style={{
+      <div className="admin-filter-bar" style={{
         background: '#ffffff',
         border: '1px solid #E2E8F0',
         borderRadius: '12px',
@@ -225,7 +228,7 @@ export default function AdminStudents() {
           onChange={e => setSearch(e.target.value)}
           style={{
             flex: '1',
-            minWidth: '220px',
+            minWidth: '200px',
             background: '#FAFAFA',
             border: '1px solid #CBD5E1',
             borderRadius: '8px',
@@ -281,12 +284,12 @@ export default function AdminStudents() {
           </>
         )}
 
-        <button className="admin-btn outline" onClick={loadData} style={{ padding: '8px 14px', fontSize: '0.8rem' }}>
+        <button className="admin-btn outline" onClick={loadData} style={{ padding: '8px 14px', fontSize: '0.8rem', justifyContent: 'center' }}>
           Refresh
         </button>
       </div>
 
-      {/* Table Card */}
+      {/* Table Card Container */}
       <div className="admin-table-card">
         {loading ? (
           <div style={{ padding: '48px', textAlign: 'center' }}>
@@ -296,196 +299,383 @@ export default function AdminStudents() {
         ) : error ? (
           <div style={{ padding: '32px', textAlign: 'center', color: '#B91C1C', fontSize: '0.85rem' }}>{error}</div>
         ) : activeTab === 'STUDENTS' ? (
-          /* ── STUDENT SESSIONS TABLE ── */
-          <div className="admin-table-scroll">
-            <table className="admin-table">
-              <thead>
-                <tr>
-                  <th>ID</th>
-                  <th>Student Info</th>
-                  <th>Grade</th>
-                  <th>Target</th>
-                  <th>Status</th>
-                  <th>Score</th>
-                  <th>Lead Stage</th>
-                  <th>Registered</th>
-                  <th>Actions</th>
-                </tr>
-              </thead>
-              <tbody>
-                {filteredSessions.length === 0 ? (
-                  <tr>
-                    <td colSpan={9} style={{ textAlign: 'center', padding: '40px', color: '#64748B', fontSize: '0.85rem' }}>
-                      No student records found.
-                    </td>
-                  </tr>
-                ) : filteredSessions.map(s => (
-                  <tr key={s.id}>
-                    <td className="mono">#{s.id}</td>
-                    <td>
-                      <div className="student-name" style={{ fontSize: '0.85rem' }}>{s.student_name}</div>
-                      <div style={{ fontSize: '0.74rem', color: '#64748B' }}>{s.student_email} · {s.student_phone}</div>
-                    </td>
-                    <td style={{ fontSize: '0.8rem', color: '#334155' }}>{s.current_grade}</td>
-                    <td style={{ fontSize: '0.8rem', color: '#334155' }}>{s.target_sat_score}</td>
-                    <td>
-                      <span className={`status-chip ${s.status}`}>
-                        {s.status.replace(/_/g, ' ')}
-                      </span>
-                    </td>
-                    <td style={{ fontWeight: 700, fontSize: '0.85rem', color: s.total_score !== null ? '#0F172A' : '#94A3B8' }}>
-                      {s.total_score !== null ? `${s.total_score} / 24` : '—'}
-                    </td>
-                    <td>
-                      <LeadSelector
-                        sessionId={s.id}
-                        currentStatus={s.lead_status}
-                        onUpdate={handleLeadUpdate}
-                      />
-                    </td>
-                    <td style={{ fontSize: '0.75rem', color: '#64748B', whiteSpace: 'nowrap' }}>
-                      {formatDate(s.created_at)}
-                    </td>
-                    <td>
-                      <div style={{ display: 'flex', gap: '6px', alignItems: 'center' }}>
-                        {s.status === 'COMPLETED' ? (
-                          <>
-                            <button
-                              className="admin-btn outline"
-                              style={{ fontSize: '0.75rem', padding: '5px 10px' }}
-                              onClick={() => navigate(`/admin/sat/students/${s.id}`)}
-                            >
-                              View Result
-                            </button>
-                            <button
-                              className="admin-btn primary"
-                              style={{
-                                fontSize: '0.75rem',
-                                padding: '5px 10px',
-                                background: '#2E7D32',
-                                borderColor: '#2E7D32',
-                                display: 'inline-flex',
-                                alignItems: 'center',
-                                gap: '4px',
-                              }}
-                              onClick={() => window.open(`/admin/sat/students/${s.id}?print=true`, '_blank')}
-                              title="Download PDF Report"
-                            >
-                              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                <polyline points="6 9 6 2 18 2 18 9" />
-                                <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
-                                <rect x="6" y="14" width="12" height="8" />
-                              </svg>
-                              <span>PDF Report</span>
-                            </button>
-                          </>
-                        ) : (
-                          <span style={{ color: '#94A3B8', fontSize: '0.75rem', marginRight: '4px' }}>Pending</span>
-                        )}
+          <>
+            {/* Mobile Scroll Indicator Banner */}
+            <div className="admin-mobile-scroll-hint">
+              <span>👈 Swipe horizontally to view full table &amp; PDF reports 👉</span>
+            </div>
+
+            {/* ── MOBILE CARDS VIEW FOR STUDENTS (Screen < 768px) ── */}
+            <div className="admin-student-cards-mobile">
+              {filteredSessions.length === 0 ? (
+                <div style={{ textAlign: 'center', padding: '24px', color: '#64748B', fontSize: '0.85rem' }}>
+                  No student records found.
+                </div>
+              ) : filteredSessions.map(s => (
+                <div key={s.id} className="admin-student-card-mobile">
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
+                    <span className="mono" style={{ fontSize: '0.82rem', fontWeight: 700 }}>#{s.id}</span>
+                    <span className={`status-chip ${s.status}`}>
+                      {s.status.replace(/_/g, ' ')}
+                    </span>
+                  </div>
+
+                  <div style={{ fontSize: '0.95rem', fontWeight: 700, color: '#0F172A', marginBottom: '2px' }}>
+                    {s.student_name}
+                  </div>
+                  <div style={{ fontSize: '0.78rem', color: '#64748B', marginBottom: '8px' }}>
+                    {s.student_email} · <a href={`tel:${s.student_phone}`} style={{ color: '#0284C7', textDecoration: 'none' }}>{s.student_phone}</a>
+                  </div>
+
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', background: '#F8FAFC', padding: '8px 10px', borderRadius: '8px', marginBottom: '10px', fontSize: '0.78rem' }}>
+                    <div>
+                      <span style={{ color: '#64748B' }}>Grade / Target:</span>
+                      <div style={{ fontWeight: 700, color: '#0F172A' }}>Gr {s.current_grade || '—'} · Target {s.target_sat_score || '—'}</div>
+                    </div>
+                    <div>
+                      <span style={{ color: '#64748B' }}>Score:</span>
+                      <div style={{ fontWeight: 800, color: s.total_score !== null ? '#0F172A' : '#94A3B8' }}>
+                        {s.total_score !== null ? `${s.total_score} / 24` : '—'}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px', gap: '8px' }}>
+                    <span style={{ fontSize: '0.78rem', color: '#64748B', fontWeight: 700 }}>Lead Stage:</span>
+                    <LeadSelector
+                      sessionId={s.id}
+                      currentStatus={s.lead_status}
+                      onUpdate={handleLeadUpdate}
+                    />
+                  </div>
+
+                  <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
+                    {s.status === 'COMPLETED' ? (
+                      <>
                         <button
                           className="admin-btn outline"
+                          style={{ fontSize: '0.75rem', padding: '6px 12px', flex: '1', justifyContent: 'center' }}
+                          onClick={() => navigate(`/admin/sat/students/${s.id}`)}
+                        >
+                          View Result
+                        </button>
+                        <button
+                          className="admin-btn primary"
                           style={{
                             fontSize: '0.75rem',
-                            fontWeight: 600,
-                            padding: '5px 10px',
-                            color: '#DC2626',
-                            background: '#FEF2F2',
-                            borderColor: '#FECACA',
+                            padding: '6px 12px',
+                            background: '#2E7D32',
+                            borderColor: '#2E7D32',
                             display: 'inline-flex',
                             alignItems: 'center',
+                            justifyContent: 'center',
                             gap: '4px',
-                            cursor: 'pointer',
+                            flex: '1.2',
+                            whiteSpace: 'nowrap',
                           }}
-                          onClick={() => handleDeleteStudent(s.id, s.student_name)}
-                          disabled={deletingId === s.id}
-                          title="Delete student record"
+                          onClick={() => window.open(`/admin/sat/students/${s.id}?print=true`, '_blank')}
+                          title="Download PDF Report"
                         >
-                          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                            <polyline points="3 6 5 6 21 6"/>
-                            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                            <polyline points="6 9 6 2 18 2 18 9" />
+                            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
+                            <rect x="6" y="14" width="12" height="8" />
                           </svg>
-                          <span>{deletingId === s.id ? '…' : 'Delete'}</span>
+                          <span>PDF Report</span>
                         </button>
-                      </div>
-                    </td>
+                      </>
+                    ) : (
+                      <span style={{ color: '#94A3B8', fontSize: '0.75rem', padding: '6px 0', flex: '1' }}>Pending test completion</span>
+                    )}
+                    <button
+                      className="admin-btn outline"
+                      style={{
+                        fontSize: '0.75rem',
+                        fontWeight: 600,
+                        padding: '6px 10px',
+                        color: '#DC2626',
+                        background: '#FEF2F2',
+                        borderColor: '#FECACA',
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        gap: '4px',
+                        cursor: 'pointer',
+                      }}
+                      onClick={() => handleDeleteStudent(s.id, s.student_name)}
+                      disabled={deletingId === s.id}
+                      title="Delete student record"
+                    >
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <polyline points="3 6 5 6 21 6"/>
+                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                      </svg>
+                      <span>{deletingId === s.id ? '…' : 'Delete'}</span>
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* ── STUDENT SESSIONS TABLE (Scrollable with min-width) ── */}
+            <div className="admin-table-scroll">
+              <table className="admin-table">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Student Info</th>
+                    <th>Grade</th>
+                    <th>Target</th>
+                    <th>Status</th>
+                    <th>Score</th>
+                    <th>Lead Stage</th>
+                    <th>Registered</th>
+                    <th>Actions</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+                </thead>
+                <tbody>
+                  {filteredSessions.length === 0 ? (
+                    <tr>
+                      <td colSpan={9} style={{ textAlign: 'center', padding: '40px', color: '#64748B', fontSize: '0.85rem' }}>
+                        No student records found.
+                      </td>
+                    </tr>
+                  ) : filteredSessions.map(s => (
+                    <tr key={s.id}>
+                      <td className="mono">#{s.id}</td>
+                      <td>
+                        <div className="student-name" style={{ fontSize: '0.85rem' }}>{s.student_name}</div>
+                        <div style={{ fontSize: '0.74rem', color: '#64748B' }}>{s.student_email} · {s.student_phone}</div>
+                      </td>
+                      <td style={{ fontSize: '0.8rem', color: '#334155' }}>{s.current_grade}</td>
+                      <td style={{ fontSize: '0.8rem', color: '#334155' }}>{s.target_sat_score}</td>
+                      <td>
+                        <span className={`status-chip ${s.status}`}>
+                          {s.status.replace(/_/g, ' ')}
+                        </span>
+                      </td>
+                      <td style={{ fontWeight: 700, fontSize: '0.85rem', color: s.total_score !== null ? '#0F172A' : '#94A3B8' }}>
+                        {s.total_score !== null ? `${s.total_score} / 24` : '—'}
+                      </td>
+                      <td>
+                        <LeadSelector
+                          sessionId={s.id}
+                          currentStatus={s.lead_status}
+                          onUpdate={handleLeadUpdate}
+                        />
+                      </td>
+                      <td style={{ fontSize: '0.75rem', color: '#64748B', whiteSpace: 'nowrap' }}>
+                        {formatDate(s.created_at)}
+                      </td>
+                      <td style={{ whiteSpace: 'nowrap' }}>
+                        <div style={{ display: 'flex', gap: '6px', alignItems: 'center', whiteSpace: 'nowrap' }}>
+                          {s.status === 'COMPLETED' ? (
+                            <>
+                              <button
+                                className="admin-btn outline"
+                                style={{ fontSize: '0.75rem', padding: '5px 10px', whiteSpace: 'nowrap' }}
+                                onClick={() => navigate(`/admin/sat/students/${s.id}`)}
+                              >
+                                View Result
+                              </button>
+                              <button
+                                className="admin-btn primary"
+                                style={{
+                                  fontSize: '0.75rem',
+                                  padding: '5px 10px',
+                                  background: '#2E7D32',
+                                  borderColor: '#2E7D32',
+                                  display: 'inline-flex',
+                                  alignItems: 'center',
+                                  gap: '4px',
+                                  whiteSpace: 'nowrap',
+                                }}
+                                onClick={() => window.open(`/admin/sat/students/${s.id}?print=true`, '_blank')}
+                                title="Download PDF Report"
+                              >
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                  <polyline points="6 9 6 2 18 2 18 9" />
+                                  <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
+                                  <rect x="6" y="14" width="12" height="8" />
+                                </svg>
+                                <span>PDF Report</span>
+                              </button>
+                            </>
+                          ) : (
+                            <span style={{ color: '#94A3B8', fontSize: '0.75rem', marginRight: '4px' }}>Pending</span>
+                          )}
+                          <button
+                            className="admin-btn outline"
+                            style={{
+                              fontSize: '0.75rem',
+                              fontWeight: 600,
+                              padding: '5px 10px',
+                              color: '#DC2626',
+                              background: '#FEF2F2',
+                              borderColor: '#FECACA',
+                              display: 'inline-flex',
+                              alignItems: 'center',
+                              gap: '4px',
+                              cursor: 'pointer',
+                              whiteSpace: 'nowrap',
+                            }}
+                            onClick={() => handleDeleteStudent(s.id, s.student_name)}
+                            disabled={deletingId === s.id}
+                            title="Delete student record"
+                          >
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                              <polyline points="3 6 5 6 21 6"/>
+                              <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                            </svg>
+                            <span>{deletingId === s.id ? '…' : 'Delete'}</span>
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </>
         ) : (
           /* ── PARENT ENQUIRIES TABLE ── */
-          <div className="admin-table-scroll">
-            <table className="admin-table">
-              <thead>
-                <tr>
-                  <th>ID</th>
-                  <th>Parent Info</th>
-                  <th>Student Grade</th>
-                  <th>Expected SAT</th>
-                  <th>Scores (Prev / Target)</th>
-                  <th>Area of Residence</th>
-                  <th>Al Majaz 3</th>
-                  <th>Campaign (UTM)</th>
-                  <th>Date</th>
-                </tr>
-              </thead>
-              <tbody>
-                {filteredParentEnquiries.length === 0 ? (
+          <>
+            <div className="admin-mobile-scroll-hint">
+              <span>👈 Swipe horizontally to view full parent enquiry details 👉</span>
+            </div>
+
+            {/* Mobile Cards View for Parents */}
+            <div className="admin-student-cards-mobile">
+              {filteredParentEnquiries.length === 0 ? (
+                <div style={{ textAlign: 'center', padding: '24px', color: '#64748B', fontSize: '0.85rem' }}>
+                  No parent enquiries received yet.
+                </div>
+              ) : filteredParentEnquiries.map(p => (
+                <div key={p.id} className="admin-student-card-mobile">
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '6px' }}>
+                    <span className="mono" style={{ fontSize: '0.82rem', fontWeight: 700 }}>#{p.id}</span>
+                    <span style={{
+                      padding: '3px 10px',
+                      borderRadius: '100px',
+                      fontSize: '0.72rem',
+                      fontWeight: 700,
+                      background: p.can_attend_al_majaz ? '#ECFDF5' : '#FFF7ED',
+                      color: p.can_attend_al_majaz ? '#059669' : '#C2410C',
+                      border: `1px solid ${p.can_attend_al_majaz ? '#A7F3D0' : '#FFD8A8'}`
+                    }}>
+                      Majaz 3: {p.can_attend_al_majaz ? 'Yes' : 'No'}
+                    </span>
+                  </div>
+
+                  <div style={{ fontSize: '0.95rem', fontWeight: 700, color: '#0F172A', marginBottom: '2px' }}>
+                    {p.parent_name}
+                  </div>
+                  <div style={{ fontSize: '0.78rem', color: '#64748B', marginBottom: '10px' }}>
+                    <a href={`tel:${p.phone}`} style={{ color: '#0284C7', textDecoration: 'none' }}>{p.phone}</a>
+                    {p.email ? ` · ${p.email}` : ''}
+                  </div>
+
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', background: '#F8FAFC', padding: '8px 10px', borderRadius: '8px', fontSize: '0.78rem', marginBottom: '8px' }}>
+                    <div>
+                      <span style={{ color: '#64748B' }}>Grade:</span>
+                      <div style={{ fontWeight: 700, color: '#0F172A' }}>{p.student_grade}</div>
+                    </div>
+                    <div>
+                      <span style={{ color: '#64748B' }}>Expected SAT:</span>
+                      <div style={{ fontWeight: 700, color: '#0F172A' }}>{p.expected_sat_date || '—'}</div>
+                    </div>
+                    <div>
+                      <span style={{ color: '#64748B' }}>Prev Score:</span>
+                      <div style={{ fontWeight: 600, color: '#334155' }}>{p.previous_sat_score || 'None'}</div>
+                    </div>
+                    <div>
+                      <span style={{ color: '#64748B' }}>Target Score:</span>
+                      <div style={{ fontWeight: 600, color: '#334155' }}>{p.target_sat_score || 'Not set'}</div>
+                    </div>
+                  </div>
+
+                  <div style={{ fontSize: '0.78rem', color: '#475569', marginTop: '6px' }}>
+                    <strong>Area:</strong> {p.area_of_residence}
+                  </div>
+                  <div style={{ fontSize: '0.74rem', color: '#64748B', marginTop: '4px' }}>
+                    Campaign: {p.utm_source ? `${p.utm_source} / ${p.utm_campaign || 'direct'}` : 'Organic / Direct'}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="admin-table-scroll">
+              <table className="admin-table">
+                <thead>
                   <tr>
-                    <td colSpan={9} style={{ textAlign: 'center', padding: '40px', color: '#64748B', fontSize: '0.85rem' }}>
-                      No parent enquiries received yet.
-                    </td>
+                    <th>ID</th>
+                    <th>Parent Info</th>
+                    <th>Student Grade</th>
+                    <th>Expected SAT</th>
+                    <th>Scores (Prev / Target)</th>
+                    <th>Area of Residence</th>
+                    <th>Al Majaz 3</th>
+                    <th>Campaign (UTM)</th>
+                    <th>Date</th>
                   </tr>
-                ) : filteredParentEnquiries.map(p => (
-                  <tr key={p.id}>
-                    <td className="mono">#{p.id}</td>
-                    <td>
-                      <div className="student-name" style={{ fontSize: '0.85rem', color: '#0F172A', fontWeight: 700 }}>
-                        {p.parent_name}
-                      </div>
-                      <div style={{ fontSize: '0.74rem', color: '#64748B' }}>
-                        <a href={`tel:${p.phone}`} style={{ color: '#0284C7', textDecoration: 'none' }}>{p.phone}</a>
-                        {p.email ? ` · ${p.email}` : ''}
-                      </div>
-                    </td>
-                    <td style={{ fontSize: '0.8rem', color: '#334155', fontWeight: 600 }}>{p.student_grade}</td>
-                    <td style={{ fontSize: '0.8rem', color: '#334155' }}>{p.expected_sat_date || '—'}</td>
-                    <td style={{ fontSize: '0.78rem', color: '#334155' }}>
-                      <div>Prev: {p.previous_sat_score || 'None'}</div>
-                      <div>Target: {p.target_sat_score || 'Not set'}</div>
-                    </td>
-                    <td style={{ fontSize: '0.8rem', color: '#334155' }}>{p.area_of_residence}</td>
-                    <td>
-                      <span style={{
-                        padding: '3px 10px',
-                        borderRadius: '100px',
-                        fontSize: '0.75rem',
-                        fontWeight: 700,
-                        background: p.can_attend_al_majaz ? '#ECFDF5' : '#FFF7ED',
-                        color: p.can_attend_al_majaz ? '#059669' : '#C2410C',
-                        border: `1px solid ${p.can_attend_al_majaz ? '#A7F3D0' : '#FFD8A8'}`
-                      }}>
-                        {p.can_attend_al_majaz ? 'Yes' : 'No'}
-                      </span>
-                    </td>
-                    <td style={{ fontSize: '0.75rem', color: '#64748B' }}>
-                      {p.utm_source ? (
-                        <div>
-                          <strong style={{ color: '#0F172A' }}>{p.utm_source}</strong> / {p.utm_campaign || 'direct'}
+                </thead>
+                <tbody>
+                  {filteredParentEnquiries.length === 0 ? (
+                    <tr>
+                      <td colSpan={9} style={{ textAlign: 'center', padding: '40px', color: '#64748B', fontSize: '0.85rem' }}>
+                        No parent enquiries received yet.
+                      </td>
+                    </tr>
+                  ) : filteredParentEnquiries.map(p => (
+                    <tr key={p.id}>
+                      <td className="mono">#{p.id}</td>
+                      <td>
+                        <div className="student-name" style={{ fontSize: '0.85rem', color: '#0F172A', fontWeight: 700 }}>
+                          {p.parent_name}
                         </div>
-                      ) : (
-                        <span style={{ color: '#94A3B8' }}>Organic / Direct</span>
-                      )}
-                    </td>
-                    <td style={{ fontSize: '0.75rem', color: '#64748B', whiteSpace: 'nowrap' }}>
-                      {formatDate(p.created_at)}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+                        <div style={{ fontSize: '0.74rem', color: '#64748B' }}>
+                          <a href={`tel:${p.phone}`} style={{ color: '#0284C7', textDecoration: 'none' }}>{p.phone}</a>
+                          {p.email ? ` · ${p.email}` : ''}
+                        </div>
+                      </td>
+                      <td style={{ fontSize: '0.8rem', color: '#334155', fontWeight: 600 }}>{p.student_grade}</td>
+                      <td style={{ fontSize: '0.8rem', color: '#334155' }}>{p.expected_sat_date || '—'}</td>
+                      <td style={{ fontSize: '0.78rem', color: '#334155' }}>
+                        <div>Prev: {p.previous_sat_score || 'None'}</div>
+                        <div>Target: {p.target_sat_score || 'Not set'}</div>
+                      </td>
+                      <td style={{ fontSize: '0.8rem', color: '#334155' }}>{p.area_of_residence}</td>
+                      <td>
+                        <span style={{
+                          padding: '3px 10px',
+                          borderRadius: '100px',
+                          fontSize: '0.75rem',
+                          fontWeight: 700,
+                          background: p.can_attend_al_majaz ? '#ECFDF5' : '#FFF7ED',
+                          color: p.can_attend_al_majaz ? '#059669' : '#C2410C',
+                          border: `1px solid ${p.can_attend_al_majaz ? '#A7F3D0' : '#FFD8A8'}`
+                        }}>
+                          {p.can_attend_al_majaz ? 'Yes' : 'No'}
+                        </span>
+                      </td>
+                      <td style={{ fontSize: '0.75rem', color: '#64748B' }}>
+                        {p.utm_source ? (
+                          <div>
+                            <strong style={{ color: '#0F172A' }}>{p.utm_source}</strong> / {p.utm_campaign || 'direct'}
+                          </div>
+                        ) : (
+                          <span style={{ color: '#94A3B8' }}>Organic / Direct</span>
+                        )}
+                      </td>
+                      <td style={{ fontSize: '0.75rem', color: '#64748B', whiteSpace: 'nowrap' }}>
+                        {formatDate(p.created_at)}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </>
         )}
       </div>
     </div>
