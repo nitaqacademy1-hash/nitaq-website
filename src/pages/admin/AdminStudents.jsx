@@ -37,26 +37,42 @@ function LeadSelector({ sessionId, currentStatus, onUpdate }) {
     }
   };
 
+  const getStyle = (val) => {
+    switch (val) {
+      case 'ENROLLED': return { bg: '#ECFDF5', text: '#047857', border: '#A7F3D0' };
+      case 'COMPLETED': return { bg: '#F0FDF4', text: '#15803D', border: '#BBF7D0' };
+      case 'CONTACTED': return { bg: '#EFF6FF', text: '#1D4ED8', border: '#BFDBFE' };
+      case 'COUNSELING': return { bg: '#FFF7ED', text: '#C2410C', border: '#FFD8A8' };
+      case 'NOT_INTERESTED': return { bg: '#F1F5F9', text: '#64748B', border: '#CBD5E1' };
+      default: return { bg: '#F8FAFC', text: '#0F172A', border: '#CBD5E1' };
+    }
+  };
+
+  const styleConfig = getStyle(value);
+
   return (
     <select
       value={value}
       onChange={handleChange}
       disabled={saving}
       style={{
-        background: '#ffffff',
-        color: '#0F172A',
-        border: '1px solid #CBD5E1',
-        borderRadius: '6px',
-        padding: '4px 8px',
+        background: styleConfig.bg,
+        color: styleConfig.text,
+        border: `1px solid ${styleConfig.border}`,
+        borderRadius: '8px',
+        padding: '5px 10px',
         fontSize: '0.75rem',
-        fontWeight: 600,
+        fontWeight: 700,
         fontFamily: 'inherit',
         cursor: 'pointer',
         outline: 'none',
+        transition: 'all 0.15s ease',
       }}
     >
       {LEAD_OPTIONS.filter(Boolean).map(opt => (
-        <option key={opt} value={opt}>{opt.replace(/_/g, ' ')}</option>
+        <option key={opt} value={opt} style={{ background: '#ffffff', color: '#0F172A' }}>
+          {opt.replace(/_/g, ' ')}
+        </option>
       ))}
     </select>
   );
@@ -145,34 +161,40 @@ export default function AdminStudents() {
 
   return (
     <div>
-      {/* Header & Tabs */}
-      <div className="admin-students-header" style={{ marginBottom: '20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
+      {/* Header & Segmented Tabs */}
+      <div className="admin-students-header" style={{ marginBottom: '24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
         <div>
-          <h1 style={{ fontFamily: 'var(--font-heading, sans-serif)', fontSize: '1.35rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.02em', margin: '0 0 2px 0' }}>
-            SAT Leads &amp; Diagnostic Records
-          </h1>
-          <p style={{ color: '#64748B', fontSize: '0.82rem', margin: 0 }}>
-            {activeTab === 'STUDENTS' ? `${filteredSessions.length} student records` : `${filteredParentEnquiries.length} parent enquiries`}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '4px' }}>
+            <h1 style={{ fontFamily: 'var(--font-heading, sans-serif)', fontSize: '1.45rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.02em', margin: 0 }}>
+              SAT Diagnostic &amp; Parent Leads
+            </h1>
+            <span style={{ fontSize: '0.75rem', fontWeight: 700, background: '#F1F5F9', color: '#475569', padding: '3px 10px', borderRadius: '100px', border: '1px solid #E2E8F0' }}>
+              {activeTab === 'STUDENTS' ? `${filteredSessions.length} students` : `${filteredParentEnquiries.length} enquiries`}
+            </span>
+          </div>
+          <p style={{ color: '#64748B', fontSize: '0.84rem', margin: 0 }}>
+            Real-time candidate registrations, test results, and lead pipeline tracking
           </p>
         </div>
 
         {/* Tab Switcher & Export */}
         <div className="admin-header-actions" style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
           <div className="admin-tab-switcher-container">
-            <div style={{ background: '#E2E8F0', padding: '3px', borderRadius: '8px', display: 'flex', gap: '4px' }}>
+            <div style={{ background: '#F1F5F9', padding: '4px', borderRadius: '12px', display: 'flex', gap: '4px', border: '1px solid #E2E8F0' }}>
               <button
                 type="button"
                 onClick={() => { setActiveTab('STUDENTS'); setSearch(''); }}
                 style={{
-                  padding: '6px 14px',
-                  borderRadius: '6px',
-                  fontSize: '0.8rem',
+                  padding: '8px 16px',
+                  borderRadius: '8px',
+                  fontSize: '0.82rem',
                   fontWeight: 700,
                   border: 'none',
                   cursor: 'pointer',
+                  transition: 'all 0.2s ease',
                   background: activeTab === 'STUDENTS' ? '#FFFFFF' : 'transparent',
                   color: activeTab === 'STUDENTS' ? '#0F172A' : '#64748B',
-                  boxShadow: activeTab === 'STUDENTS' ? '0 1px 3px rgba(0,0,0,0.1)' : 'none'
+                  boxShadow: activeTab === 'STUDENTS' ? '0 2px 8px rgba(15,23,42,0.08)' : 'none'
                 }}
               >
                 🎓 Student Diagnostics
@@ -181,15 +203,16 @@ export default function AdminStudents() {
                 type="button"
                 onClick={() => { setActiveTab('PARENTS'); setSearch(''); }}
                 style={{
-                  padding: '6px 14px',
-                  borderRadius: '6px',
-                  fontSize: '0.8rem',
+                  padding: '8px 16px',
+                  borderRadius: '8px',
+                  fontSize: '0.82rem',
                   fontWeight: 700,
                   border: 'none',
                   cursor: 'pointer',
+                  transition: 'all 0.2s ease',
                   background: activeTab === 'PARENTS' ? '#FFFFFF' : 'transparent',
                   color: activeTab === 'PARENTS' ? '#0F172A' : '#64748B',
-                  boxShadow: activeTab === 'PARENTS' ? '0 1px 3px rgba(0,0,0,0.1)' : 'none'
+                  boxShadow: activeTab === 'PARENTS' ? '0 2px 8px rgba(15,23,42,0.08)' : 'none'
                 }}
               >
                 👨‍👩‍👧 Parent Enquiries
@@ -202,43 +225,68 @@ export default function AdminStudents() {
             className="admin-btn primary"
             target="_blank"
             rel="noopener noreferrer"
-            style={{ justifyContent: 'center' }}
+            style={{ justifyContent: 'center', boxShadow: '0 2px 8px rgba(15,23,42,0.12)', padding: '10px 18px' }}
           >
-            Export CSV
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7 10 12 15 17 10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            <span>Export CSV</span>
           </a>
         </div>
       </div>
 
-      {/* Filter Toolbar */}
+      {/* Filter & Search Toolbar */}
       <div className="admin-filter-bar" style={{
         background: '#ffffff',
         border: '1px solid #E2E8F0',
-        borderRadius: '12px',
-        padding: '12px 16px',
+        borderRadius: '16px',
+        padding: '14px 18px',
         display: 'flex',
-        gap: '10px',
+        gap: '12px',
         flexWrap: 'wrap',
         alignItems: 'center',
-        marginBottom: '20px',
+        marginBottom: '24px',
+        boxShadow: '0 2px 10px rgba(0,0,0,0.02)',
       }}>
-        <input
-          type="text"
-          placeholder={activeTab === 'STUDENTS' ? "Search students by name, email, or phone…" : "Search parent name, phone, area…"}
-          value={search}
-          onChange={e => setSearch(e.target.value)}
-          style={{
-            flex: '1',
-            minWidth: '200px',
-            background: '#FAFAFA',
-            border: '1px solid #CBD5E1',
-            borderRadius: '8px',
-            color: '#0F172A',
-            padding: '8px 12px',
-            fontSize: '0.82rem',
-            fontFamily: 'inherit',
-            outline: 'none',
-          }}
-        />
+        {/* Search Input with Icon */}
+        <div style={{ position: 'relative', flex: '1', minWidth: '220px' }}>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#64748B" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none' }}>
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+          <input
+            type="text"
+            placeholder={activeTab === 'STUDENTS' ? "Search student name, email, or phone…" : "Search parent name, phone, area…"}
+            value={search}
+            onChange={e => setSearch(e.target.value)}
+            style={{
+              width: '100%',
+              paddingLeft: '38px',
+              paddingRight: search ? '32px' : '12px',
+              background: '#FAFAFA',
+              border: '1.5px solid #CBD5E1',
+              borderRadius: '10px',
+              color: '#0F172A',
+              paddingTop: '9px',
+              paddingBottom: '9px',
+              fontSize: '0.85rem',
+              fontWeight: 500,
+              fontFamily: 'inherit',
+              outline: 'none',
+              boxSizing: 'border-box',
+            }}
+          />
+          {search && (
+            <button
+              onClick={() => setSearch('')}
+              style={{ position: 'absolute', right: '10px', top: '50%', transform: 'translateY(-50%)', background: 'none', border: 'none', color: '#94A3B8', cursor: 'pointer', fontSize: '0.9rem', padding: 0 }}
+            >
+              ✕
+            </button>
+          )}
+        </div>
 
         {activeTab === 'STUDENTS' && (
           <>
@@ -247,13 +295,15 @@ export default function AdminStudents() {
               onChange={e => setStatusFilter(e.target.value)}
               style={{
                 background: '#FAFAFA',
-                border: '1px solid #CBD5E1',
-                borderRadius: '8px',
+                border: '1.5px solid #CBD5E1',
+                borderRadius: '10px',
                 color: '#0F172A',
-                padding: '8px 12px',
-                fontSize: '0.82rem',
+                padding: '9px 14px',
+                fontSize: '0.83rem',
+                fontWeight: 600,
                 fontFamily: 'inherit',
                 outline: 'none',
+                cursor: 'pointer',
               }}
             >
               <option value="">All Statuses</option>
@@ -267,13 +317,15 @@ export default function AdminStudents() {
               onChange={e => setLeadFilter(e.target.value)}
               style={{
                 background: '#FAFAFA',
-                border: '1px solid #CBD5E1',
-                borderRadius: '8px',
+                border: '1.5px solid #CBD5E1',
+                borderRadius: '10px',
                 color: '#0F172A',
-                padding: '8px 12px',
-                fontSize: '0.82rem',
+                padding: '9px 14px',
+                fontSize: '0.83rem',
+                fontWeight: 600,
                 fontFamily: 'inherit',
                 outline: 'none',
+                cursor: 'pointer',
               }}
             >
               <option value="">All Lead Stages</option>
@@ -284,64 +336,93 @@ export default function AdminStudents() {
           </>
         )}
 
-        <button className="admin-btn outline" onClick={loadData} style={{ padding: '8px 14px', fontSize: '0.8rem', justifyContent: 'center' }}>
-          Refresh
+        <button className="admin-btn outline" onClick={loadData} style={{ padding: '9px 16px', fontSize: '0.82rem', justifyContent: 'center', borderRadius: '10px' }}>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="23 4 23 10 17 10"/>
+            <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/>
+          </svg>
+          <span>Refresh</span>
         </button>
       </div>
 
       {/* Table Card Container */}
-      <div className="admin-table-card">
+      <div className="admin-table-card" style={{ border: '1px solid #E2E8F0', borderRadius: '20px', overflow: 'hidden' }}>
         {loading ? (
-          <div style={{ padding: '48px', textAlign: 'center' }}>
-            <div className="spinner" style={{ margin: '0 auto 10px', width: '28px', height: '28px' }} />
-            <p style={{ color: '#64748B', fontSize: '0.82rem' }}>Loading records…</p>
+          <div style={{ padding: '60px', textAlign: 'center' }}>
+            <div className="spinner" style={{ margin: '0 auto 12px', width: '32px', height: '32px' }} />
+            <p style={{ color: '#64748B', fontSize: '0.85rem', fontWeight: 500 }}>Loading records…</p>
           </div>
         ) : error ? (
-          <div style={{ padding: '32px', textAlign: 'center', color: '#B91C1C', fontSize: '0.85rem' }}>{error}</div>
+          <div style={{ padding: '40px', textAlign: 'center', color: '#B91C1C', fontSize: '0.88rem', fontWeight: 600 }}>{error}</div>
         ) : activeTab === 'STUDENTS' ? (
           <>
-            {/* Mobile Scroll Indicator Banner */}
+            {/* Mobile Touch Scroll Hint */}
             <div className="admin-mobile-scroll-hint">
-              <span>👈 Swipe horizontally to view full table &amp; PDF reports 👉</span>
+              <span>📱 Swipe table horizontally to view all columns &amp; PDF reports →</span>
             </div>
 
             {/* ── MOBILE CARDS VIEW FOR STUDENTS (Screen < 768px) ── */}
             <div className="admin-student-cards-mobile">
               {filteredSessions.length === 0 ? (
-                <div style={{ textAlign: 'center', padding: '24px', color: '#64748B', fontSize: '0.85rem' }}>
-                  No student records found.
+                <div style={{ textAlign: 'center', padding: '32px', color: '#64748B', fontSize: '0.85rem' }}>
+                  No student records found matching your filters.
                 </div>
               ) : filteredSessions.map(s => (
                 <div key={s.id} className="admin-student-card-mobile">
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
-                    <span className="mono" style={{ fontSize: '0.82rem', fontWeight: 700 }}>#{s.id}</span>
+                  {/* Card Header */}
+                  <div className="admin-card-header-row">
+                    <div className="admin-avatar-circle">
+                      {s.student_name ? s.student_name.charAt(0).toUpperCase() : 'S'}
+                    </div>
+                    <div style={{ flex: 1, minWidth: 0 }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <span className="admin-card-student-name">{s.student_name}</span>
+                        <span className="mono" style={{ fontSize: '0.75rem', color: '#2563EB', background: '#EFF6FF', padding: '2px 6px', borderRadius: '6px', fontWeight: 700 }}>
+                          #{s.id}
+                        </span>
+                      </div>
+                      <div className="admin-card-contact-line">
+                        <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{s.student_email}</span>
+                      </div>
+                    </div>
                     <span className={`status-chip ${s.status}`}>
                       {s.status.replace(/_/g, ' ')}
                     </span>
                   </div>
 
-                  <div style={{ fontSize: '0.95rem', fontWeight: 700, color: '#0F172A', marginBottom: '2px' }}>
-                    {s.student_name}
-                  </div>
-                  <div style={{ fontSize: '0.78rem', color: '#64748B', marginBottom: '8px' }}>
-                    {s.student_email} · <a href={`tel:${s.student_phone}`} style={{ color: '#0284C7', textDecoration: 'none' }}>{s.student_phone}</a>
-                  </div>
-
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', background: '#F8FAFC', padding: '8px 10px', borderRadius: '8px', marginBottom: '10px', fontSize: '0.78rem' }}>
-                    <div>
-                      <span style={{ color: '#64748B' }}>Grade / Target:</span>
-                      <div style={{ fontWeight: 700, color: '#0F172A' }}>Gr {s.current_grade || '—'} · Target {s.target_sat_score || '—'}</div>
-                    </div>
-                    <div>
-                      <span style={{ color: '#64748B' }}>Score:</span>
-                      <div style={{ fontWeight: 800, color: s.total_score !== null ? '#0F172A' : '#94A3B8' }}>
-                        {s.total_score !== null ? `${s.total_score} / 24` : '—'}
-                      </div>
-                    </div>
+                  {/* Quick Phone Row */}
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.8rem', marginBottom: '10px', padding: '8px 12px', background: '#F8FAFC', border: '1px solid #F1F5F9', borderRadius: '10px' }}>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0284C7" strokeWidth="2">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                    </svg>
+                    <a href={`tel:${s.student_phone}`} style={{ color: '#0284C7', fontWeight: 700, textDecoration: 'none' }}>
+                      {s.student_phone}
+                    </a>
                   </div>
 
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px', gap: '8px' }}>
-                    <span style={{ fontSize: '0.78rem', color: '#64748B', fontWeight: 700 }}>Lead Stage:</span>
+                  {/* Metrics Box */}
+                  <div className="admin-card-stats-box">
+                    <div className="admin-stat-mini">
+                      <span className="admin-stat-mini-label">Grade</span>
+                      <span className="admin-stat-mini-val">Gr {s.current_grade || '—'}</span>
+                    </div>
+                    <div className="admin-stat-mini">
+                      <span className="admin-stat-mini-label">Target SAT</span>
+                      <span className="admin-stat-mini-val">{s.target_sat_score || '—'}</span>
+                    </div>
+                    <div className="admin-stat-mini">
+                      <span className="admin-stat-mini-label">Score</span>
+                      <span className="admin-stat-mini-val" style={{ color: s.total_score !== null ? '#15803D' : '#94A3B8' }}>
+                        {s.total_score !== null ? `${s.total_score} / 24` : 'Pending'}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Lead Selector */}
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', margin: '10px 0 14px' }}>
+                    <span style={{ fontSize: '0.78rem', color: '#64748B', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+                      Lead Stage:
+                    </span>
                     <LeadSelector
                       sessionId={s.id}
                       currentStatus={s.lead_status}
@@ -349,34 +430,22 @@ export default function AdminStudents() {
                     />
                   </div>
 
-                  <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
+                  {/* Action Bar */}
+                  <div className="admin-card-actions-row">
                     {s.status === 'COMPLETED' ? (
                       <>
                         <button
-                          className="admin-btn outline"
-                          style={{ fontSize: '0.75rem', padding: '6px 12px', flex: '1', justifyContent: 'center' }}
+                          className="admin-btn-result"
                           onClick={() => navigate(`/admin/sat/students/${s.id}`)}
                         >
                           View Result
                         </button>
                         <button
-                          className="admin-btn primary"
-                          style={{
-                            fontSize: '0.75rem',
-                            padding: '6px 12px',
-                            background: '#2E7D32',
-                            borderColor: '#2E7D32',
-                            display: 'inline-flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            gap: '4px',
-                            flex: '1.2',
-                            whiteSpace: 'nowrap',
-                          }}
+                          className="admin-btn-pdf"
                           onClick={() => window.open(`/admin/sat/students/${s.id}?print=true`, '_blank')}
                           title="Download PDF Report"
                         >
-                          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
                             <polyline points="6 9 6 2 18 2 18 9" />
                             <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
                             <rect x="6" y="14" width="12" height="8" />
@@ -385,32 +454,20 @@ export default function AdminStudents() {
                         </button>
                       </>
                     ) : (
-                      <span style={{ color: '#94A3B8', fontSize: '0.75rem', padding: '6px 0', flex: '1' }}>Pending test completion</span>
+                      <div style={{ color: '#94A3B8', fontSize: '0.78rem', padding: '8px 0', flex: '1', fontWeight: 500 }}>
+                        ⏳ Test pending completion
+                      </div>
                     )}
                     <button
-                      className="admin-btn outline"
-                      style={{
-                        fontSize: '0.75rem',
-                        fontWeight: 600,
-                        padding: '6px 10px',
-                        color: '#DC2626',
-                        background: '#FEF2F2',
-                        borderColor: '#FECACA',
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        gap: '4px',
-                        cursor: 'pointer',
-                      }}
+                      className="admin-btn-delete"
                       onClick={() => handleDeleteStudent(s.id, s.student_name)}
                       disabled={deletingId === s.id}
                       title="Delete student record"
                     >
-                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                         <polyline points="3 6 5 6 21 6"/>
                         <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
                       </svg>
-                      <span>{deletingId === s.id ? '…' : 'Delete'}</span>
                     </button>
                   </div>
                 </div>
@@ -444,17 +501,17 @@ export default function AdminStudents() {
                     <tr key={s.id}>
                       <td className="mono">#{s.id}</td>
                       <td>
-                        <div className="student-name" style={{ fontSize: '0.85rem' }}>{s.student_name}</div>
-                        <div style={{ fontSize: '0.74rem', color: '#64748B' }}>{s.student_email} · {s.student_phone}</div>
+                        <div className="student-name" style={{ fontSize: '0.88rem', fontWeight: 700, color: '#0F172A' }}>{s.student_name}</div>
+                        <div style={{ fontSize: '0.75rem', color: '#64748B', marginTop: '2px' }}>{s.student_email} · {s.student_phone}</div>
                       </td>
-                      <td style={{ fontSize: '0.8rem', color: '#334155' }}>{s.current_grade}</td>
-                      <td style={{ fontSize: '0.8rem', color: '#334155' }}>{s.target_sat_score}</td>
+                      <td style={{ fontSize: '0.82rem', color: '#334155', fontWeight: 600 }}>Gr {s.current_grade || '—'}</td>
+                      <td style={{ fontSize: '0.82rem', color: '#334155', fontWeight: 600 }}>{s.target_sat_score || '—'}</td>
                       <td>
                         <span className={`status-chip ${s.status}`}>
                           {s.status.replace(/_/g, ' ')}
                         </span>
                       </td>
-                      <td style={{ fontWeight: 700, fontSize: '0.85rem', color: s.total_score !== null ? '#0F172A' : '#94A3B8' }}>
+                      <td style={{ fontWeight: 800, fontSize: '0.88rem', color: s.total_score !== null ? '#0F172A' : '#94A3B8' }}>
                         {s.total_score !== null ? `${s.total_score} / 24` : '—'}
                       </td>
                       <td>
@@ -473,7 +530,7 @@ export default function AdminStudents() {
                             <>
                               <button
                                 className="admin-btn outline"
-                                style={{ fontSize: '0.75rem', padding: '5px 10px', whiteSpace: 'nowrap' }}
+                                style={{ fontSize: '0.75rem', padding: '6px 12px', whiteSpace: 'nowrap', borderRadius: '8px' }}
                                 onClick={() => navigate(`/admin/sat/students/${s.id}`)}
                               >
                                 View Result
@@ -482,18 +539,20 @@ export default function AdminStudents() {
                                 className="admin-btn primary"
                                 style={{
                                   fontSize: '0.75rem',
-                                  padding: '5px 10px',
-                                  background: '#2E7D32',
-                                  borderColor: '#2E7D32',
+                                  padding: '6px 12px',
+                                  background: 'linear-gradient(135deg, #15803D 0%, #166534 100%)',
+                                  borderColor: '#15803D',
                                   display: 'inline-flex',
                                   alignItems: 'center',
-                                  gap: '4px',
+                                  gap: '5px',
                                   whiteSpace: 'nowrap',
+                                  borderRadius: '8px',
+                                  boxShadow: '0 2px 6px rgba(21, 128, 61, 0.2)',
                                 }}
                                 onClick={() => window.open(`/admin/sat/students/${s.id}?print=true`, '_blank')}
                                 title="Download PDF Report"
                               >
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
                                   <polyline points="6 9 6 2 18 2 18 9" />
                                   <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
                                   <rect x="6" y="14" width="12" height="8" />
@@ -509,7 +568,7 @@ export default function AdminStudents() {
                             style={{
                               fontSize: '0.75rem',
                               fontWeight: 600,
-                              padding: '5px 10px',
+                              padding: '6px 10px',
                               color: '#DC2626',
                               background: '#FEF2F2',
                               borderColor: '#FECACA',
@@ -518,6 +577,7 @@ export default function AdminStudents() {
                               gap: '4px',
                               cursor: 'pointer',
                               whiteSpace: 'nowrap',
+                              borderRadius: '8px',
                             }}
                             onClick={() => handleDeleteStudent(s.id, s.student_name)}
                             disabled={deletingId === s.id}
@@ -541,64 +601,61 @@ export default function AdminStudents() {
           /* ── PARENT ENQUIRIES TABLE ── */
           <>
             <div className="admin-mobile-scroll-hint">
-              <span>👈 Swipe horizontally to view full parent enquiry details 👉</span>
+              <span>📱 Swipe table horizontally to view full parent enquiry details →</span>
             </div>
 
             {/* Mobile Cards View for Parents */}
             <div className="admin-student-cards-mobile">
               {filteredParentEnquiries.length === 0 ? (
-                <div style={{ textAlign: 'center', padding: '24px', color: '#64748B', fontSize: '0.85rem' }}>
+                <div style={{ textAlign: 'center', padding: '32px', color: '#64748B', fontSize: '0.85rem' }}>
                   No parent enquiries received yet.
                 </div>
               ) : filteredParentEnquiries.map(p => (
                 <div key={p.id} className="admin-student-card-mobile">
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '6px' }}>
-                    <span className="mono" style={{ fontSize: '0.82rem', fontWeight: 700 }}>#{p.id}</span>
-                    <span style={{
-                      padding: '3px 10px',
-                      borderRadius: '100px',
-                      fontSize: '0.72rem',
-                      fontWeight: 700,
-                      background: p.can_attend_al_majaz ? '#ECFDF5' : '#FFF7ED',
-                      color: p.can_attend_al_majaz ? '#059669' : '#C2410C',
-                      border: `1px solid ${p.can_attend_al_majaz ? '#A7F3D0' : '#FFD8A8'}`
-                    }}>
-                      Majaz 3: {p.can_attend_al_majaz ? 'Yes' : 'No'}
+                  <div className="admin-card-header-row">
+                    <div className="admin-avatar-circle" style={{ background: 'linear-gradient(135deg, #0284C7 0%, #0369A1 100%)' }}>
+                      {p.parent_name ? p.parent_name.charAt(0).toUpperCase() : 'P'}
+                    </div>
+                    <div style={{ flex: 1, minWidth: 0 }}>
+                      <div style={{ fontSize: '1.02rem', fontWeight: 800, color: '#0F172A' }}>
+                        {p.parent_name}
+                      </div>
+                      <div className="admin-card-contact-line">
+                        <a href={`tel:${p.phone}`} style={{ color: '#0284C7', fontWeight: 700, textDecoration: 'none' }}>
+                          📞 {p.phone}
+                        </a>
+                        {p.email && <span>· {p.email}</span>}
+                      </div>
+                    </div>
+                    <span className="mono" style={{ fontSize: '0.75rem', color: '#2563EB', background: '#EFF6FF', padding: '2px 6px', borderRadius: '6px', fontWeight: 700 }}>
+                      #{p.id}
                     </span>
                   </div>
 
-                  <div style={{ fontSize: '0.95rem', fontWeight: 700, color: '#0F172A', marginBottom: '2px' }}>
-                    {p.parent_name}
-                  </div>
-                  <div style={{ fontSize: '0.78rem', color: '#64748B', marginBottom: '10px' }}>
-                    <a href={`tel:${p.phone}`} style={{ color: '#0284C7', textDecoration: 'none' }}>{p.phone}</a>
-                    {p.email ? ` · ${p.email}` : ''}
-                  </div>
-
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', background: '#F8FAFC', padding: '8px 10px', borderRadius: '8px', fontSize: '0.78rem', marginBottom: '8px' }}>
-                    <div>
-                      <span style={{ color: '#64748B' }}>Grade:</span>
-                      <div style={{ fontWeight: 700, color: '#0F172A' }}>{p.student_grade}</div>
+                  <div className="admin-card-stats-box">
+                    <div className="admin-stat-mini">
+                      <span className="admin-stat-mini-label">Grade</span>
+                      <span className="admin-stat-mini-val">{p.student_grade}</span>
                     </div>
-                    <div>
-                      <span style={{ color: '#64748B' }}>Expected SAT:</span>
-                      <div style={{ fontWeight: 700, color: '#0F172A' }}>{p.expected_sat_date || '—'}</div>
+                    <div className="admin-stat-mini">
+                      <span className="admin-stat-mini-label">Exp. SAT</span>
+                      <span className="admin-stat-mini-val">{p.expected_sat_date || '—'}</span>
                     </div>
-                    <div>
-                      <span style={{ color: '#64748B' }}>Prev Score:</span>
-                      <div style={{ fontWeight: 600, color: '#334155' }}>{p.previous_sat_score || 'None'}</div>
-                    </div>
-                    <div>
-                      <span style={{ color: '#64748B' }}>Target Score:</span>
-                      <div style={{ fontWeight: 600, color: '#334155' }}>{p.target_sat_score || 'Not set'}</div>
+                    <div className="admin-stat-mini">
+                      <span className="admin-stat-mini-label">Al Majaz 3</span>
+                      <span className="admin-stat-mini-val" style={{ color: p.can_attend_al_majaz ? '#059669' : '#C2410C' }}>
+                        {p.can_attend_al_majaz ? 'Yes' : 'No'}
+                      </span>
                     </div>
                   </div>
 
-                  <div style={{ fontSize: '0.78rem', color: '#475569', marginTop: '6px' }}>
-                    <strong>Area:</strong> {p.area_of_residence}
+                  <div style={{ fontSize: '0.78rem', color: '#475569', background: '#F8FAFC', border: '1px solid #F1F5F9', padding: '8px 10px', borderRadius: '8px', marginBottom: '6px' }}>
+                    <strong>📍 Residence Area:</strong> {p.area_of_residence}
                   </div>
-                  <div style={{ fontSize: '0.74rem', color: '#64748B', marginTop: '4px' }}>
-                    Campaign: {p.utm_source ? `${p.utm_source} / ${p.utm_campaign || 'direct'}` : 'Organic / Direct'}
+
+                  <div style={{ fontSize: '0.74rem', color: '#64748B', display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '8px' }}>
+                    <span>Campaign: <strong>{p.utm_source ? `${p.utm_source}` : 'Organic'}</strong></span>
+                    <span>Target: <strong>{p.target_sat_score || 'Not set'}</strong></span>
                   </div>
                 </div>
               ))}
@@ -630,21 +687,21 @@ export default function AdminStudents() {
                     <tr key={p.id}>
                       <td className="mono">#{p.id}</td>
                       <td>
-                        <div className="student-name" style={{ fontSize: '0.85rem', color: '#0F172A', fontWeight: 700 }}>
+                        <div className="student-name" style={{ fontSize: '0.88rem', color: '#0F172A', fontWeight: 700 }}>
                           {p.parent_name}
                         </div>
-                        <div style={{ fontSize: '0.74rem', color: '#64748B' }}>
-                          <a href={`tel:${p.phone}`} style={{ color: '#0284C7', textDecoration: 'none' }}>{p.phone}</a>
+                        <div style={{ fontSize: '0.75rem', color: '#64748B', marginTop: '2px' }}>
+                          <a href={`tel:${p.phone}`} style={{ color: '#0284C7', textDecoration: 'none', fontWeight: 600 }}>{p.phone}</a>
                           {p.email ? ` · ${p.email}` : ''}
                         </div>
                       </td>
-                      <td style={{ fontSize: '0.8rem', color: '#334155', fontWeight: 600 }}>{p.student_grade}</td>
-                      <td style={{ fontSize: '0.8rem', color: '#334155' }}>{p.expected_sat_date || '—'}</td>
+                      <td style={{ fontSize: '0.82rem', color: '#334155', fontWeight: 600 }}>{p.student_grade}</td>
+                      <td style={{ fontSize: '0.82rem', color: '#334155' }}>{p.expected_sat_date || '—'}</td>
                       <td style={{ fontSize: '0.78rem', color: '#334155' }}>
                         <div>Prev: {p.previous_sat_score || 'None'}</div>
                         <div>Target: {p.target_sat_score || 'Not set'}</div>
                       </td>
-                      <td style={{ fontSize: '0.8rem', color: '#334155' }}>{p.area_of_residence}</td>
+                      <td style={{ fontSize: '0.82rem', color: '#334155' }}>{p.area_of_residence}</td>
                       <td>
                         <span style={{
                           padding: '3px 10px',
