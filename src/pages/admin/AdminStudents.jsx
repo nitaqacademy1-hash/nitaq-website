@@ -384,28 +384,13 @@ export default function AdminStudents() {
                   {/* Action Bar */}
                   <div className="admin-card-actions-row">
                     {s.status === 'COMPLETED' ? (
-                      <>
-                        <button
-                          type="button"
-                          className="admin-btn-result"
-                          onClick={() => navigate(`/admin/sat/students/${s.id}`)}
-                        >
-                          View Result
-                        </button>
-                        <button
-                          type="button"
-                          className="admin-btn-pdf"
-                          onClick={() => window.open(`/admin/sat/students/${s.id}?print=true`, '_blank')}
-                          title="Download PDF Report"
-                        >
-                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
-                            <polyline points="6 9 6 2 18 2 18 9" />
-                            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
-                            <rect x="6" y="14" width="12" height="8" />
-                          </svg>
-                          <span>PDF Report</span>
-                        </button>
-                      </>
+                      <button
+                        type="button"
+                        className="admin-btn-result"
+                        onClick={() => navigate(`/admin/sat/students/${s.id}`)}
+                      >
+                        View Result
+                      </button>
                     ) : (
                       <div className="admin-card-pending-notice">
                         ⏳ Test pending completion
@@ -481,39 +466,13 @@ export default function AdminStudents() {
                       <td style={{ whiteSpace: 'nowrap' }}>
                         <div style={{ display: 'flex', gap: '6px', alignItems: 'center', whiteSpace: 'nowrap' }}>
                           {s.status === 'COMPLETED' ? (
-                            <>
-                              <button
-                                className="admin-btn outline"
-                                style={{ fontSize: '0.75rem', padding: '6px 12px', whiteSpace: 'nowrap', borderRadius: '8px' }}
-                                onClick={() => navigate(`/admin/sat/students/${s.id}`)}
-                              >
-                                View Result
-                              </button>
-                              <button
-                                className="admin-btn primary"
-                                style={{
-                                  fontSize: '0.75rem',
-                                  padding: '6px 12px',
-                                  background: 'linear-gradient(135deg, #15803D 0%, #166534 100%)',
-                                  borderColor: '#15803D',
-                                  display: 'inline-flex',
-                                  alignItems: 'center',
-                                  gap: '5px',
-                                  whiteSpace: 'nowrap',
-                                  borderRadius: '8px',
-                                  boxShadow: '0 2px 6px rgba(21, 128, 61, 0.2)',
-                                }}
-                                onClick={() => window.open(`/admin/sat/students/${s.id}?print=true`, '_blank')}
-                                title="Download PDF Report"
-                              >
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
-                                  <polyline points="6 9 6 2 18 2 18 9" />
-                                  <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
-                                  <rect x="6" y="14" width="12" height="8" />
-                                </svg>
-                                <span>PDF Report</span>
-                              </button>
-                            </>
+                            <button
+                              className="admin-btn outline"
+                              style={{ fontSize: '0.75rem', padding: '6px 12px', whiteSpace: 'nowrap', borderRadius: '8px' }}
+                              onClick={() => navigate(`/admin/sat/students/${s.id}`)}
+                            >
+                              View Result
+                            </button>
                           ) : (
                             <span style={{ color: '#94A3B8', fontSize: '0.75rem', marginRight: '4px' }}>Pending</span>
                           )}
