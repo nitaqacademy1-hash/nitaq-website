@@ -28,6 +28,7 @@ export default function CourseCompletionCertificate({ onCertificateCreated }) {
 
   const [createdCert, setCreatedCert] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [downloadingPdf, setDownloadingPdf] = useState(false);
   const [copied, setCopied] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
   const templateImgRef = useRef(null);
@@ -181,6 +182,51 @@ export default function CourseCompletionCertificate({ onCertificateCreated }) {
     link.download = `Certificate_${safeStudent}_${safeCourse}.png`;
     link.href = canvas.toDataURL('image/png', 1.0);
     link.click();
+  };
+
+  const handleDownloadPdf = async () => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    setDownloadingPdf(true);
+    try {
+      const html2pdfModule = await import('html2pdf.js');
+      const html2pdf = html2pdfModule.default || html2pdfModule;
+      const dataUrl = canvas.toDataURL('image/png', 1.0);
+
+      const container = document.createElement('div');
+      container.style.width = '297mm';
+      container.style.height = '198mm';
+      container.style.margin = '0';
+      container.style.padding = '0';
+      container.style.overflow = 'hidden';
+      container.style.background = '#FFFFFF';
+
+      const img = document.createElement('img');
+      img.src = dataUrl;
+      img.style.width = '100%';
+      img.style.height = '100%';
+      img.style.objectFit = 'contain';
+      img.style.display = 'block';
+      container.appendChild(img);
+
+      const safeStudent = (studentName || 'Student').replace(/[^a-zA-Z0-9]/g, '_');
+      const safeCourse = (courseName || 'Course').replace(/[^a-zA-Z0-9]/g, '_');
+
+      const opt = {
+        margin: [0, 0, 0, 0],
+        filename: `Certificate_${safeStudent}_${safeCourse}.pdf`,
+        image: { type: 'jpeg', quality: 1.0 },
+        html2canvas: { scale: 2, useCORS: true, logging: false },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'landscape' },
+      };
+
+      await html2pdf().set(opt).from(container).save();
+    } catch (err) {
+      console.error('PDF export error, falling back to PNG:', err);
+      handleDownloadPng();
+    } finally {
+      setDownloadingPdf(false);
+    }
   };
 
   const handleCopyLink = () => {
@@ -344,14 +390,25 @@ export default function CourseCompletionCertificate({ onCertificateCreated }) {
               Live rendering on official template with QR code in "SCAN HERE" box.
             </p>
           </div>
-          <button
-            type="button"
-            className="admin-btn admin-btn-primary"
-            onClick={handleDownloadPng}
-            style={{ fontSize: '0.85rem', padding: '8px 14px' }}
-          >
-            ⬇️ Download PNG
-          </button>
+          <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+            <button
+              type="button"
+              className="admin-btn admin-btn-primary"
+              onClick={handleDownloadPdf}
+              disabled={downloadingPdf}
+              style={{ fontSize: '0.85rem', padding: '8px 14px', display: 'inline-flex', alignItems: 'center', gap: '6px' }}
+            >
+              {downloadingPdf ? '⏳ Generating PDF…' : '⬇️ Download PDF'}
+            </button>
+            <button
+              type="button"
+              className="admin-btn admin-btn-secondary"
+              onClick={handleDownloadPng}
+              style={{ fontSize: '0.85rem', padding: '8px 14px' }}
+            >
+              PNG
+            </button>
+          </div>
         </div>
 
         <div className="canvas-wrapper" style={{ marginTop: '16px', background: '#0F172A', padding: '12px', borderRadius: '12px', overflow: 'hidden' }}>

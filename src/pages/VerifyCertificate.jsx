@@ -18,6 +18,7 @@ export default function VerifyCertificate() {
   const [cert, setCert] = useState(null);
   const [loading, setLoading] = useState(!!initialCertId);
   const [error, setError] = useState(null);
+  const [downloadingPdf, setDownloadingPdf] = useState(false);
   const canvasRef = useRef(null);
 
   useEffect(() => {
@@ -58,25 +59,24 @@ export default function VerifyCertificate() {
   // Render certificate canvas when cert data is ready
   useEffect(() => {
     if (!cert || !canvasRef.current) return;
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext('2d');
 
-    const img = new Image();
-    img.src = '/CERTIFICATE VERIFICATION.png';
-    img.onload = async () => {
-      const canvas = canvasRef.current;
-      if (!canvas) return;
-      const ctx = canvas.getContext('2d');
+    const templateImg = new Image();
+    templateImg.crossOrigin = 'anonymous';
+    templateImg.src = '/CERTIFICATE VERIFICATION.png';
 
-      canvas.width = img.naturalWidth || 1536;
-      canvas.height = img.naturalHeight || 1024;
+    templateImg.onload = async () => {
+      canvas.width = templateImg.width;
+      canvas.height = templateImg.height;
 
-      // 1. Background image
-      ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+      // 1. Draw Official Certificate Background Template
+      ctx.drawImage(templateImg, 0, 0);
 
-      // 2. Student Name
-      // Location: Centered above the main horizontal line (y = 549 line, center = 796)
-      const displayName = cert.student_name || 'Student Full Name';
-      let nameFontSize = 54;
-      if (displayName.length > 30) {
+      // 2. Render Student Full Name
+      const displayName = cert.student_name.trim();
+      let nameFontSize = 52;
+      if (displayName.length > 28) {
         nameFontSize = 38;
       } else if (displayName.length > 22) {
         nameFontSize = 44;
@@ -123,7 +123,7 @@ export default function VerifyCertificate() {
       ctx.fillText(displayDate, 450, 798);
       ctx.restore();
 
-      // 5. Draw QR Code on the down left side above 'CERTIFICATE VERIFICATION'
+      // 5. Generate high-contrast QR Code on the down left side
       // Location: x=110, y=820, width=124, height=124 (centered over label at x=172)
       const publicUrl = window.location.href;
       try {
@@ -155,6 +155,51 @@ export default function VerifyCertificate() {
     link.download = `NITAQ_Certificate_${safeStudent}.png`;
     link.href = canvas.toDataURL('image/png', 1.0);
     link.click();
+  };
+
+  const handleDownloadPdf = async () => {
+    const canvas = canvasRef.current;
+    if (!canvas || !cert) return;
+    setDownloadingPdf(true);
+    try {
+      const html2pdfModule = await import('html2pdf.js');
+      const html2pdf = html2pdfModule.default || html2pdfModule;
+      const dataUrl = canvas.toDataURL('image/png', 1.0);
+
+      const container = document.createElement('div');
+      container.style.width = '297mm';
+      container.style.height = '198mm';
+      container.style.margin = '0';
+      container.style.padding = '0';
+      container.style.overflow = 'hidden';
+      container.style.background = '#FFFFFF';
+
+      const img = document.createElement('img');
+      img.src = dataUrl;
+      img.style.width = '100%';
+      img.style.height = '100%';
+      img.style.objectFit = 'contain';
+      img.style.display = 'block';
+      container.appendChild(img);
+
+      const safeStudent = (cert.student_name || 'Student').replace(/[^a-zA-Z0-9]/g, '_');
+      const safeCourse = (cert.course_name || 'Course').replace(/[^a-zA-Z0-9]/g, '_');
+
+      const opt = {
+        margin: [0, 0, 0, 0],
+        filename: `NITAQ_Certificate_${safeStudent}_${safeCourse}.pdf`,
+        image: { type: 'jpeg', quality: 1.0 },
+        html2canvas: { scale: 2, useCORS: true, logging: false },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'landscape' },
+      };
+
+      await html2pdf().set(opt).from(container).save();
+    } catch (err) {
+      console.error('PDF export error, falling back to PNG:', err);
+      handleDownload();
+    } finally {
+      setDownloadingPdf(false);
+    }
   };
 
   return (
@@ -229,14 +274,48 @@ export default function VerifyCertificate() {
                   Issued by Nitaq Academy (Sharjah, UAE). Authenticity & credentials confirmed.
                 </div>
               </div>
-              <button
-                type="button"
-                className="cert-download-btn"
-                onClick={handleDownload}
-                style={{ background: '#FFFFFF', color: '#047857', border: 'none', padding: '12px 24px', borderRadius: '10px', fontWeight: 800, fontSize: '0.9rem', cursor: 'pointer', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }}
-              >
-                ⬇️ Download Official Certificate (PNG)
-              </button>
+              <div style={{ display: 'flex', gap: '10px', alignItems: 'center', flexWrap: 'wrap' }}>
+                <button
+                  type="button"
+                  className="cert-download-btn"
+                  onClick={handleDownloadPdf}
+                  disabled={downloadingPdf}
+                  style={{
+                    background: '#FFFFFF',
+                    color: '#047857',
+                    border: 'none',
+                    padding: '12px 24px',
+                    borderRadius: '10px',
+                    fontWeight: 800,
+                    fontSize: '0.9rem',
+                    cursor: downloadingPdf ? 'wait' : 'pointer',
+                    boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    transition: 'all 0.2s ease',
+                  }}
+                >
+                  {downloadingPdf ? '⏳ Generating PDF…' : '⬇️ Download Official Certificate (PDF)'}
+                </button>
+                <button
+                  type="button"
+                  onClick={handleDownload}
+                  style={{
+                    background: 'rgba(255, 255, 255, 0.2)',
+                    color: '#FFFFFF',
+                    border: '1px solid rgba(255, 255, 255, 0.4)',
+                    padding: '12px 18px',
+                    borderRadius: '10px',
+                    fontWeight: 700,
+                    fontSize: '0.85rem',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s ease',
+                  }}
+                >
+                  Download PNG
+                </button>
+              </div>
             </div>
 
             {/* Certificate Details Card & Rendered Canvas */}
