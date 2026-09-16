@@ -8,7 +8,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.middleware.trustedhost import TrustedHostMiddleware
 
 from app.core.config import settings
-from app.api import admin, analytics, diagnostics, questions, students
+from app.api import admin, analytics, certificates, diagnostics, questions, students
 
 # ── App ───────────────────────────────────────────────────────────────────────
 app = FastAPI(
@@ -23,7 +23,7 @@ app = FastAPI(
 # ── CORS ──────────────────────────────────────────────────────────────────────
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origin_regex=r"https?://.*",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -59,6 +59,7 @@ app.include_router(admin.router, prefix=API_PREFIX)
 app.include_router(questions.router, prefix=API_PREFIX)
 app.include_router(questions.tests_router, prefix=API_PREFIX)
 app.include_router(analytics.router, prefix=API_PREFIX)
+app.include_router(certificates.router, prefix=API_PREFIX)
 
 # 2. Register without prefix for direct Vercel serverless routing fallback
 app.include_router(students.router)
@@ -67,6 +68,7 @@ app.include_router(admin.router)
 app.include_router(questions.router)
 app.include_router(questions.tests_router)
 app.include_router(analytics.router)
+app.include_router(certificates.router)
 
 
 # ── Health check ──────────────────────────────────────────────────────────────

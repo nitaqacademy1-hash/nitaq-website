@@ -48,7 +48,7 @@ export default function AdminLogin() {
               NITAQ ACADEMY
             </div>
             <div style={{ fontSize: '0.75rem', fontWeight: 600, color: '#64748B', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
-              SAT Diagnostic Admin
+              NITAQ Portal Admin
             </div>
           </div>
         </div>

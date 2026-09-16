@@ -95,7 +95,25 @@ export default function AdminLayout() {
             <span>Question Bank</span>
           </Link>
 
+          <Link
+            to="/admin/certificates"
+            className={`admin-sidebar-link${path.includes('/certificates') ? ' active' : ''}`}
+          >
+            <span className="admin-nav-bullet" />
+            <span>Certificates</span>
+          </Link>
+
           <div className="admin-nav-category" style={{ marginTop: '14px' }}>System</div>
+
+          <a
+            href="/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="admin-sidebar-link"
+          >
+            <span className="admin-nav-bullet" />
+            <span>NITAQ Website ↗</span>
+          </a>
 
           <a
             href="/sat/diagnostic"
@@ -104,7 +122,7 @@ export default function AdminLayout() {
             className="admin-sidebar-link"
           >
             <span className="admin-nav-bullet" />
-            <span>Student Portal ↗</span>
+            <span>SAT Portal ↗</span>
           </a>
 
           <a
@@ -164,7 +182,7 @@ export default function AdminLayout() {
             />
 
             <div className="workspace-badge">
-              SAT Diagnostic Admin
+              NITAQ Portal Admin
             </div>
           </div>
 

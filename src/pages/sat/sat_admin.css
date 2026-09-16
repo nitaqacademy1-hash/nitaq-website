@@ -282,6 +282,49 @@ html, body, #root {
   overflow-x: hidden !important;
 }
 
+/* ── Certificate Generator & Preview Layout ───────────────────── */
+.admin-cert-generator-grid {
+  display: grid;
+  grid-template-columns: 460px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+@media (max-width: 1100px) {
+  .admin-cert-generator-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.admin-tag-btn {
+  background: #F1F5F9;
+  color: #475569;
+  border: 1px solid #E2E8F0;
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.admin-tag-btn:hover {
+  background: #E2E8F0;
+  color: #0F172A;
+}
+
+.admin-tag-btn.active {
+  background: #0F3822;
+  color: #FFFFFF;
+  border-color: #0F3822;
+}
+
+@media (max-width: 900px) {
+  .cert-verify-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
 /* ── Metrics Cards Grid ──────────────────────────────────────── */
 .admin-stat-grid {
   display: grid;
@@ -1792,6 +1835,70 @@ html, body, #root {
     flex: 1;
     justify-content: center;
     text-align: center;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   ADMIN CERTIFICATES & STUDENT VERIFICATION MOBILE RESPONSIVE
+   ═══════════════════════════════════════════════════════════════ */
+.admin-cert-generator-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.cert-verify-grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 24px;
+}
+
+.cert-date-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+@media (max-width: 1024px) {
+  .admin-cert-generator-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .cert-verify-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .cert-verify-main {
+    padding-top: 100px !important;
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+
+  .cert-verify-banner {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    padding: 18px 20px !important;
+  }
+
+  .cert-download-btn {
+    width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+  }
+
+  .cert-date-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .admin-tab-switcher {
+    width: 100% !important;
+  }
+
+  .admin-tab-switcher .admin-tab-btn {
+    flex: 1 !important;
+    text-align: center !important;
   }
 }
 

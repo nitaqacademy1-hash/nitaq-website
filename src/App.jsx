@@ -56,6 +56,9 @@ const AdminDashboard = lazy(() => import('./pages/admin/AdminDashboard'));
 const AdminStudents = lazy(() => import('./pages/admin/AdminStudents'));
 const AdminStudentDetail = lazy(() => import('./pages/admin/AdminStudentDetail'));
 const AdminQuestions = lazy(() => import('./pages/admin/AdminQuestions'));
+const AdminCertificates = lazy(() => import('./pages/admin/AdminCertificates'));
+const VerifyCertificate = lazy(() => import('./pages/VerifyCertificate'));
+
 const GMATCourse = lazy(() => import('./pages/courses/GMATCourse'));
 const GRECourse = lazy(() => import('./pages/courses/GRECourse'));
 const AcademicExcellenceCourse = lazy(() => import('./pages/courses/AcademicExcellenceCourse'));
@@ -130,10 +133,15 @@ function AppContent() {
             <Route path="students" element={<AdminStudents />} />
             <Route path="students/:sessionId" element={<AdminStudentDetail />} />
             <Route path="questions" element={<AdminQuestions />} />
+            <Route path="certificates" element={<AdminCertificates />} />
             <Route path="sat/students" element={<AdminStudents />} />
             <Route path="sat/students/:sessionId" element={<AdminStudentDetail />} />
             <Route path="sat/questions" element={<AdminQuestions />} />
           </Route>
+
+          {/* ── Public Certificate Verification Route ───────────────── */}
+          <Route path="/verify-certificate/:certId" element={<VerifyCertificate />} />
+          <Route path="/certificate/verify/:certId" element={<VerifyCertificate />} />
 
           {/* ── SAT Diagnostic Quiz (no site header/footer) ───────────── */}
           <Route path="/sat/diagnostic/quiz" element={<QuizView />} />

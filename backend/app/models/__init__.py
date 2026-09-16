@@ -18,6 +18,7 @@ from app.models.diagnostic import DiagnosticSession, SessionStatus, CurrentSecti
 from app.models.answer import StudentAnswer
 from app.models.result import DiagnosticResult, DomainResult, DomainStatus, Recommendation
 from app.models.admin import AdminUser, AdminRole
+from app.models.certificate import Certificate
 
 __all__ = [
     "Student",
@@ -45,4 +46,5 @@ __all__ = [
     "Recommendation",
     "AdminUser",
     "AdminRole",
+    "Certificate",
 ]
