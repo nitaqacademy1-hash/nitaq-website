@@ -139,9 +139,17 @@ function AppContent() {
             <Route path="sat/questions" element={<AdminQuestions />} />
           </Route>
 
-          {/* ── Public Certificate Verification Route ───────────────── */}
+          {/* ── Public Certificate Verification Routes ───────────────── */}
           <Route path="/verify-certificate/:certId" element={<VerifyCertificate />} />
+          <Route path="/verify-certificate" element={<VerifyCertificate />} />
+          <Route path="/verify/:certId" element={<VerifyCertificate />} />
+          <Route path="/verify" element={<VerifyCertificate />} />
           <Route path="/certificate/verify/:certId" element={<VerifyCertificate />} />
+          <Route path="/certificate/verify" element={<VerifyCertificate />} />
+          <Route path="/ar/verify-certificate/:certId" element={<VerifyCertificate />} />
+          <Route path="/ar/verify-certificate" element={<VerifyCertificate />} />
+          <Route path="/ar/verify/:certId" element={<VerifyCertificate />} />
+          <Route path="/ar/verify" element={<VerifyCertificate />} />
 
           {/* ── SAT Diagnostic Quiz (no site header/footer) ───────────── */}
           <Route path="/sat/diagnostic/quiz" element={<QuizView />} />

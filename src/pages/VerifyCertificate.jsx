@@ -1,36 +1,59 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, useSearchParams, useNavigate, Link } from 'react-router-dom';
 import QRCode from 'qrcode';
 import { getCertificateById } from '../services/diagnosticApi';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 export default function VerifyCertificate() {
-  const { certId } = useParams();
+  const { certId: paramCertId } = useParams();
+  const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
+
+  const queryCertId = searchParams.get('id') || searchParams.get('certId') || searchParams.get('code') || '';
+  const initialCertId = paramCertId || queryCertId;
+
+  const [activeCertId, setActiveCertId] = useState(initialCertId);
+  const [searchInput, setSearchInput] = useState('');
   const [cert, setCert] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(!!initialCertId);
   const [error, setError] = useState(null);
   const canvasRef = useRef(null);
 
   useEffect(() => {
+    setActiveCertId(initialCertId);
+  }, [initialCertId]);
+
+  useEffect(() => {
     async function loadCert() {
-      if (!certId) {
-        setError('No certificate ID provided.');
+      if (!activeCertId) {
+        setCert(null);
+        setError(null);
         setLoading(false);
         return;
       }
       try {
         setLoading(true);
-        const data = await getCertificateById(certId);
+        setError(null);
+        const data = await getCertificateById(activeCertId);
         setCert(data);
       } catch (err) {
+        setCert(null);
         setError(err.message || 'Certificate verification failed.');
       } finally {
         setLoading(false);
       }
     }
     loadCert();
-  }, [certId]);
+  }, [activeCertId]);
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    if (!searchInput.trim()) return;
+    const cleanId = searchInput.trim();
+    navigate(`/verify-certificate/${cleanId}`);
+    setActiveCertId(cleanId);
+  };
 
   // Render certificate canvas when cert data is ready
   useEffect(() => {
@@ -117,16 +140,58 @@ export default function VerifyCertificate() {
       <Header />
 
       <main className="cert-verify-main" style={{ flex: 1, maxWidth: '1100px', margin: '0 auto 60px auto', padding: '135px 20px 40px', width: '100%', boxSizing: 'border-box' }}>
-        {loading ? (
+        {!activeCertId ? (
+          <div style={{ background: '#FFFFFF', padding: '48px 32px', borderRadius: '20px', boxShadow: '0 4px 25px rgba(0,0,0,0.06)', textAlign: 'center', maxWidth: '560px', margin: '20px auto' }}>
+            <div style={{ fontSize: '3.5rem', marginBottom: '16px' }}>📜</div>
+            <h1 style={{ fontSize: '1.6rem', color: '#0F172A', fontWeight: 800, marginBottom: '8px' }}>
+              Verify Certificate Authenticity
+            </h1>
+            <p style={{ color: '#64748B', fontSize: '0.92rem', marginBottom: '28px', lineHeight: 1.6 }}>
+              Enter the official Certificate ID (e.g. NITAQ-12345) printed on your NITAQ ACADEMY course completion certificate to verify its credentials.
+            </p>
+            <form onSubmit={handleSearchSubmit} style={{ display: 'flex', gap: '10px', justifyContent: 'center', flexWrap: 'wrap' }}>
+              <input
+                type="text"
+                placeholder="Enter Certificate ID..."
+                value={searchInput}
+                onChange={(e) => setSearchInput(e.target.value)}
+                style={{ padding: '12px 18px', fontSize: '0.95rem', borderRadius: '10px', border: '2px solid #CBD5E1', flex: 1, minWidth: '220px', outline: 'none' }}
+              />
+              <button
+                type="submit"
+                style={{ padding: '12px 24px', background: '#0F3822', color: '#FFF', border: 'none', borderRadius: '10px', fontWeight: 700, cursor: 'pointer', fontSize: '0.92rem' }}
+              >
+                Verify Certificate
+              </button>
+            </form>
+          </div>
+        ) : loading ? (
           <div style={{ textAlign: 'center', padding: '80px 20px', fontSize: '1.2rem', color: '#64748B' }}>
             🔍 Verifying certificate authenticity...
           </div>
         ) : error ? (
-          <div style={{ background: '#FFFFFF', padding: '40px', borderRadius: '16px', boxShadow: '0 4px 20px rgba(0,0,0,0.06)', textAlign: 'center' }}>
+          <div style={{ background: '#FFFFFF', padding: '40px', borderRadius: '16px', boxShadow: '0 4px 20px rgba(0,0,0,0.06)', textAlign: 'center', maxWidth: '600px', margin: '0 auto' }}>
             <div style={{ fontSize: '3rem', marginBottom: '16px' }}>❌</div>
             <h1 style={{ fontSize: '1.5rem', color: '#991B1B', fontWeight: 800 }}>Certificate Not Found</h1>
-            <p style={{ color: '#475569', marginTop: '8px' }}>{error}</p>
-            <Link to="/" style={{ display: 'inline-block', marginTop: '20px', padding: '10px 20px', background: '#0F3822', color: '#FFF', borderRadius: '8px', textDecoration: 'none', fontWeight: 700 }}>
+            <p style={{ color: '#475569', marginTop: '8px', marginBottom: '24px' }}>{error}</p>
+            
+            <form onSubmit={handleSearchSubmit} style={{ display: 'flex', gap: '10px', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '20px' }}>
+              <input
+                type="text"
+                placeholder="Try another Certificate ID..."
+                value={searchInput}
+                onChange={(e) => setSearchInput(e.target.value)}
+                style={{ padding: '10px 16px', fontSize: '0.9rem', borderRadius: '8px', border: '1px solid #CBD5E1', flex: 1, minWidth: '200px' }}
+              />
+              <button
+                type="submit"
+                style={{ padding: '10px 20px', background: '#0F3822', color: '#FFF', border: 'none', borderRadius: '8px', fontWeight: 700, cursor: 'pointer' }}
+              >
+                Search
+              </button>
+            </form>
+
+            <Link to="/" style={{ display: 'inline-block', color: '#0F3822', textDecoration: 'underline', fontWeight: 600, fontSize: '0.9rem' }}>
               Return to Nitaq Academy Home
             </Link>
           </div>
