@@ -24,7 +24,23 @@
       "destination": "/api"
     },
     {
-      "source": "/(.*)",
+      "source": "/verify-certificate/:certId*",
+      "destination": "/verify-certificate/index.html"
+    },
+    {
+      "source": "/verify/:certId*",
+      "destination": "/verify-certificate/index.html"
+    },
+    {
+      "source": "/ar/verify-certificate/:certId*",
+      "destination": "/ar/verify-certificate/index.html"
+    },
+    {
+      "source": "/ar/verify/:certId*",
+      "destination": "/ar/verify/index.html"
+    },
+    {
+      "source": "/((?!api/).*)",
       "destination": "/index.html"
     }
   ]
