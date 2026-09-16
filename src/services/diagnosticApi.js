@@ -68,9 +68,24 @@ async function request(path, options = {}) {
   if (!res.ok) {
     let detail = `HTTP ${res.status}`;
     try {
-      const body = await res.json();
-      detail = body.detail !== undefined ? body.detail : body;
+      const text = await res.text();
+      try {
+        const body = JSON.parse(text);
+        detail = body.detail !== undefined ? body.detail : body;
+      } catch {
+        if (text && text.length < 300) {
+          detail = `HTTP ${res.status}: ${text.trim()}`;
+        }
+      }
     } catch {}
+
+    // If unauthorized, clear stale/invalid credentials and redirect to login
+    if (res.status === 401 && typeof window !== 'undefined' && window.location.pathname.startsWith('/admin') && window.location.pathname !== '/admin/login') {
+      sessionStorage.removeItem('nitaq_admin');
+      sessionStorage.removeItem('nitaq_admin_token');
+      window.location.href = '/admin/login';
+    }
+
     throw new ApiError(detail, res.status);
   }
 
@@ -142,29 +157,10 @@ export async function getDiagnosticResults(sessionToken) {
 
 // ── Admin Auth ────────────────────────────────────────────────────────────────
 export async function adminLogin(email, password) {
-  try {
-    return await request('/admin/login', {
-      method: 'POST',
-      body: JSON.stringify({ email, password }),
-    });
-  } catch (err) {
-    if (err instanceof ApiError && (err.status === 401 || err.status === 403)) {
-      throw err;
-    }
-    // Fallback mode if backend network connection fails
-    console.warn('Backend server unreachable, enabling local admin session:', err);
-    return {
-      access_token: 'local-admin-token-' + Date.now(),
-      token_type: 'bearer',
-      admin: {
-        id: 1,
-        name: 'Nitaq Admin',
-        email: email || 'nitaqacademy@gmail.com',
-        role: 'SUPER_ADMIN',
-        is_active: true,
-      },
-    };
-  }
+  return await request('/admin/login', {
+    method: 'POST',
+    body: JSON.stringify({ email, password }),
+  });
 }
 
 export async function adminLogout() {
@@ -184,35 +180,14 @@ export async function getAnalyticsSummary() {
       return data;
     }
   } catch (err) {
-    console.warn('Backend unavailable, using cached analytics:', err);
+    const cached = localStorage.getItem('nitaq_analytics_summary');
+    if (cached) {
+      try { return JSON.parse(cached); } catch {}
+    }
+    throw err;
   }
 
-  const cached = localStorage.getItem('nitaq_analytics_summary');
-  if (cached) {
-    try { return JSON.parse(cached); } catch {}
-  }
-
-  return {
-    total_students: 0,
-    total_sessions: 0,
-    completed_sessions: 0,
-    in_progress_sessions: 0,
-    completion_rate: 0,
-    avg_total_score: 0,
-    avg_math_score: 0,
-    avg_rw_score: 0,
-    enrolled_leads: 0,
-    domain_averages: {
-      ALGEBRA: 0,
-      ADVANCED_MATH: 0,
-      PROBLEM_SOLVING_DATA_ANALYSIS: 0,
-      GEOMETRY_TRIGONOMETRY: 0,
-      INFORMATION_IDEAS: 0,
-      CRAFT_STRUCTURE: 0,
-      EXPRESSION_IDEAS: 0,
-      STANDARD_ENGLISH_CONVENTIONS: 0,
-    },
-  };
+  throw new ApiError('No analytics data available', 404);
 }
 
 export async function getStudentsList({ status, lead_status, skip = 0, limit = 50 } = {}) {
@@ -226,17 +201,16 @@ export async function getStudentsList({ status, lead_status, skip = 0, limit = 5
       return data;
     }
   } catch (err) {
-    console.warn('Backend unavailable, using cached students:', err);
-  }
-
-  const cached = localStorage.getItem('nitaq_admin_students');
-  if (cached) {
-    try {
-      let list = JSON.parse(cached);
-      if (status) list = list.filter(s => s.session_status === status);
-      if (lead_status) list = list.filter(s => s.lead_status === lead_status);
-      return list;
-    } catch {}
+    const cached = localStorage.getItem('nitaq_admin_students');
+    if (cached) {
+      try {
+        let list = JSON.parse(cached);
+        if (status) list = list.filter(s => s.session_status === status);
+        if (lead_status) list = list.filter(s => s.lead_status === lead_status);
+        return list;
+      } catch {}
+    }
+    throw err;
   }
   return [];
 }

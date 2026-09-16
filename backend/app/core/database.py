@@ -4,6 +4,7 @@ Database engine, session factory, and Base declarative class.
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, DeclarativeBase
+from sqlalchemy.pool import NullPool
 from app.core.config import settings
 
 db_url = settings.clean_database_url
@@ -14,13 +15,12 @@ if db_url.startswith("postgresql://") and not db_url.startswith("postgresql+"):
         db_url = db_url.replace("postgresql://", "postgresql+pg8000://", 1)
 
 # ── Engine ────────────────────────────────────────────────────────────────────
+# NullPool is required for serverless environments (e.g., Vercel / AWS Lambda)
+# connecting to Supabase transaction pooler (port 6543) to prevent stale socket errors.
 engine = create_engine(
     db_url,
-    pool_pre_ping=True,          # detect stale connections immediately
-    pool_size=3,
-    max_overflow=5,
-    pool_recycle=300,            # recycle stale connections every 5 mins
-    pool_timeout=10,             # quick failover
+    poolclass=NullPool,
+    pool_pre_ping=True,
     echo=False,
 )
 

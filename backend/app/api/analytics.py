@@ -25,43 +25,77 @@ router = APIRouter(prefix="/admin", tags=["admin-analytics"])
 # ── Dashboard summary ─────────────────────────────────────────────────────────
 @router.get("/analytics/summary", response_model=AnalyticsSummary)
 def analytics_summary(admin=Depends(get_current_admin), db: Session = Depends(get_db)):
-    total_students = db.query(func.count(Student.id)).scalar() or 0
-    total_sessions = db.query(func.count(DiagnosticSession.id)).scalar() or 0
-    completed = (
-        db.query(func.count(DiagnosticSession.id))
-        .filter(DiagnosticSession.status == SessionStatus.COMPLETED)
-        .scalar() or 0
-    )
-    in_progress = (
-        db.query(func.count(DiagnosticSession.id))
-        .filter(DiagnosticSession.status.in_([SessionStatus.IN_PROGRESS, SessionStatus.MATH_COMPLETED]))
-        .scalar() or 0
-    )
-    new_leads = (
-        db.query(func.count(DiagnosticSession.id))
-        .filter(DiagnosticSession.lead_status == LeadStatus.NEW)
-        .scalar() or 0
-    )
-    enrolled_leads = (
-        db.query(func.count(DiagnosticSession.id))
-        .filter(DiagnosticSession.lead_status == LeadStatus.ENROLLED)
-        .scalar() or 0
-    )
+    try:
+        total_students = db.query(func.count(Student.id)).scalar() or 0
+    except Exception as e:
+        print(f"[Analytics] Error querying total students: {e}")
+        total_students = 0
+
+    try:
+        total_sessions = db.query(func.count(DiagnosticSession.id)).scalar() or 0
+    except Exception as e:
+        print(f"[Analytics] Error querying total sessions: {e}")
+        total_sessions = 0
+
+    try:
+        completed = (
+            db.query(func.count(DiagnosticSession.id))
+            .filter(DiagnosticSession.status == SessionStatus.COMPLETED)
+            .scalar() or 0
+        )
+    except Exception as e:
+        print(f"[Analytics] Error querying completed sessions: {e}")
+        completed = 0
+
+    try:
+        in_progress = (
+            db.query(func.count(DiagnosticSession.id))
+            .filter(DiagnosticSession.status.in_([SessionStatus.IN_PROGRESS, SessionStatus.MATH_COMPLETED]))
+            .scalar() or 0
+        )
+    except Exception as e:
+        print(f"[Analytics] Error querying in_progress sessions: {e}")
+        in_progress = 0
+
+    try:
+        new_leads = (
+            db.query(func.count(DiagnosticSession.id))
+            .filter(DiagnosticSession.lead_status == LeadStatus.NEW)
+            .scalar() or 0
+        )
+    except Exception as e:
+        new_leads = 0
+
+    try:
+        enrolled_leads = (
+            db.query(func.count(DiagnosticSession.id))
+            .filter(DiagnosticSession.lead_status == LeadStatus.ENROLLED)
+            .scalar() or 0
+        )
+    except Exception as e:
+        enrolled_leads = 0
 
     # Score averages from completed results
-    avg_total = db.query(func.avg(DiagnosticResult.total_score)).scalar() or 0.0
-    avg_math = db.query(func.avg(DiagnosticResult.math_score)).scalar() or 0.0
-    avg_rw = db.query(func.avg(DiagnosticResult.reading_writing_score)).scalar() or 0.0
+    try:
+        avg_total = db.query(func.avg(DiagnosticResult.total_score)).scalar() or 0.0
+        avg_math = db.query(func.avg(DiagnosticResult.math_score)).scalar() or 0.0
+        avg_rw = db.query(func.avg(DiagnosticResult.reading_writing_score)).scalar() or 0.0
+    except Exception as e:
+        print(f"[Analytics] Error querying score averages: {e}")
+        avg_total, avg_math, avg_rw = 0.0, 0.0, 0.0
 
     # Domain averages
     domain_averages = {}
     for domain in Domain:
-        avg = (
-            db.query(func.avg(DomainResult.correct_count))
-            .filter(DomainResult.domain == domain)
-            .scalar()
-        )
-        domain_averages[domain.value] = round(float(avg or 0), 2)
+        try:
+            avg = (
+                db.query(func.avg(DomainResult.correct_count))
+                .filter(DomainResult.domain == domain)
+                .scalar()
+            )
+            domain_averages[domain.value] = round(float(avg or 0), 2)
+        except Exception:
+            domain_averages[domain.value] = 0.0
 
     completion_rate = round(completed / total_sessions * 100, 1) if total_sessions else 0.0
 
@@ -83,46 +117,65 @@ def analytics_summary(admin=Depends(get_current_admin), db: Session = Depends(ge
 # ── Student list ──────────────────────────────────────────────────────────────
 @router.get("/students", response_model=list[SessionListItem])
 def list_students(
-    status_filter: Optional[SessionStatus] = None,
-    lead_filter: Optional[LeadStatus] = None,
+    status_filter: Optional[str] = None,
+    lead_filter: Optional[str] = None,
     skip: int = Query(0, ge=0),
-    limit: int = Query(50, le=200),
+    limit: int = Query(200, le=500),
     admin=Depends(get_current_admin),
     db: Session = Depends(get_db),
 ):
-    q = (
-        db.query(DiagnosticSession)
-        .options(joinedload(DiagnosticSession.student), joinedload(DiagnosticSession.result))
-        .order_by(desc(DiagnosticSession.created_at))
-    )
-    if status_filter:
-        q = q.filter(DiagnosticSession.status == status_filter)
-    if lead_filter:
-        q = q.filter(DiagnosticSession.lead_status == lead_filter)
-
-    sessions = q.offset(skip).limit(limit).all()
-
-    items = []
-    for s in sessions:
-        items.append(
-            SessionListItem(
-                id=s.id,
-                session_token=s.session_token,
-                student_id=s.student_id,
-                student_name=s.student.full_name,
-                student_email=s.student.email,
-                student_phone=s.student.phone,
-                current_grade=s.student.current_grade,
-                target_sat_score=s.student.target_sat_score.value,
-                status=s.status,
-                lead_status=s.lead_status,
-                started_at=s.started_at,
-                completed_at=s.completed_at,
-                total_score=s.result.total_score if s.result else None,
-                created_at=s.created_at,
-            )
+    try:
+        q = (
+            db.query(DiagnosticSession)
+            .options(joinedload(DiagnosticSession.student), joinedload(DiagnosticSession.result))
+            .order_by(desc(DiagnosticSession.created_at))
         )
-    return items
+        if status_filter and status_filter.strip():
+            q = q.filter(DiagnosticSession.status == status_filter.strip())
+        if lead_filter and lead_filter.strip():
+            q = q.filter(DiagnosticSession.lead_status == lead_filter.strip())
+
+        sessions = q.offset(skip).limit(limit).all()
+
+        items = []
+        for s in sessions:
+            student_obj = s.student
+            target_str = "NOT_SURE"
+            if student_obj and hasattr(student_obj, "target_sat_score"):
+                ts = student_obj.target_sat_score
+                target_str = getattr(ts, "value", str(ts)) if ts else "NOT_SURE"
+
+            score_val = None
+            if s.result and hasattr(s.result, "total_score"):
+                score_val = s.result.total_score
+
+            items.append(
+                SessionListItem(
+                    id=s.id,
+                    session_token=s.session_token or "",
+                    student_id=s.student_id or 0,
+                    student_name=student_obj.full_name if student_obj else "Unknown",
+                    student_email=student_obj.email if student_obj else "",
+                    student_phone=student_obj.phone if student_obj else "",
+                    current_grade=student_obj.current_grade if student_obj else "",
+                    target_sat_score=target_str,
+                    status=s.status,
+                    lead_status=s.lead_status,
+                    started_at=s.started_at,
+                    completed_at=s.completed_at,
+                    total_score=score_val,
+                    created_at=s.created_at,
+                )
+            )
+        return items
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        print(f"[List Students] Error: {e}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Failed to fetch student list: {str(e)}",
+        )
 
 
 # ── Single student result (admin view) ────────────────────────────────────────
