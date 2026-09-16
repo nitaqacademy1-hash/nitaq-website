@@ -37,6 +37,14 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# ── Vercel Rewrite Middleware ─────────────────────────────────────────────────
+@app.middleware("http")
+async def vercel_rewrite_middleware(request: Request, call_next):
+    matched_path = request.headers.get("x-matched-path")
+    if matched_path:
+        request.scope["path"] = matched_path.split("?")[0]
+    return await call_next(request)
+
 # ── Startup Migrations ────────────────────────────────────────────────────────
 @app.on_event("startup")
 def run_auto_migrations():
@@ -91,6 +99,8 @@ app.include_router(certificates.router)
 
 # ── Health check ──────────────────────────────────────────────────────────────
 @app.get("/health", tags=["system"])
+@app.get("/api", tags=["system"])
+@app.get("/api/health", tags=["system"])
 @app.get("/api/v1/health", tags=["system"])
 def health():
     return {"status": "ok", "service": "nitaq-sat-diagnostic"}
