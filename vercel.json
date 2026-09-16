@@ -25,19 +25,19 @@
     },
     {
       "source": "/verify-certificate/:certId*",
-      "destination": "/verify-certificate/index.html"
+      "destination": "/verify-certificate"
     },
     {
       "source": "/verify/:certId*",
-      "destination": "/verify-certificate/index.html"
+      "destination": "/verify-certificate"
     },
     {
       "source": "/ar/verify-certificate/:certId*",
-      "destination": "/ar/verify-certificate/index.html"
+      "destination": "/ar/verify-certificate"
     },
     {
       "source": "/ar/verify/:certId*",
-      "destination": "/ar/verify/index.html"
+      "destination": "/ar/verify"
     },
     {
       "source": "/((?!api/).*)",

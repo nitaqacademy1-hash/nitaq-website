@@ -321,6 +321,11 @@ async function prerender() {
   writeFileSync(resolve(root, 'public/sitemap.xml'), sitemap)
   console.log('✅ sitemap.xml written to dist/ and public/')
 
+  // SPA fallback for dynamic routes on Vercel
+  writeFileSync(resolve(root, 'dist/404.html'), template)
+  writeFileSync(resolve(root, 'public/404.html'), template)
+  console.log('✅ 404.html SPA fallback written to dist/ and public/')
+
   console.log('\n==========================================')
   console.log(`🎉 Done: ${success} success, ${fail} failed`)
   console.log('==========================================')
