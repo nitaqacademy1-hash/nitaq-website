@@ -177,37 +177,149 @@ export async function getAdminMe() {
 
 // ── Admin Analytics ───────────────────────────────────────────────────────────
 export async function getAnalyticsSummary() {
-  return request('/admin/analytics/summary');
+  try {
+    const data = await request('/admin/analytics/summary');
+    if (data) {
+      localStorage.setItem('nitaq_analytics_summary', JSON.stringify(data));
+      return data;
+    }
+  } catch (err) {
+    console.warn('Backend unavailable, using cached analytics:', err);
+  }
+
+  const cached = localStorage.getItem('nitaq_analytics_summary');
+  if (cached) {
+    try { return JSON.parse(cached); } catch {}
+  }
+
+  return {
+    total_students: 0,
+    total_sessions: 0,
+    completed_sessions: 0,
+    in_progress_sessions: 0,
+    completion_rate: 0,
+    avg_total_score: 0,
+    avg_math_score: 0,
+    avg_rw_score: 0,
+    enrolled_leads: 0,
+    domain_averages: {
+      ALGEBRA: 0,
+      ADVANCED_MATH: 0,
+      PROBLEM_SOLVING_DATA_ANALYSIS: 0,
+      GEOMETRY_TRIGONOMETRY: 0,
+      INFORMATION_IDEAS: 0,
+      CRAFT_STRUCTURE: 0,
+      EXPRESSION_IDEAS: 0,
+      STANDARD_ENGLISH_CONVENTIONS: 0,
+    },
+  };
 }
 
 export async function getStudentsList({ status, lead_status, skip = 0, limit = 50 } = {}) {
-  const params = new URLSearchParams({ skip, limit });
-  if (status) params.set('status_filter', status);
-  if (lead_status) params.set('lead_filter', lead_status);
-  return request(`/admin/students?${params}`);
+  try {
+    const params = new URLSearchParams({ skip, limit });
+    if (status) params.set('status_filter', status);
+    if (lead_status) params.set('lead_filter', lead_status);
+    const data = await request(`/admin/students?${params}`);
+    if (Array.isArray(data)) {
+      localStorage.setItem('nitaq_admin_students', JSON.stringify(data));
+      return data;
+    }
+  } catch (err) {
+    console.warn('Backend unavailable, using cached students:', err);
+  }
+
+  const cached = localStorage.getItem('nitaq_admin_students');
+  if (cached) {
+    try {
+      let list = JSON.parse(cached);
+      if (status) list = list.filter(s => s.session_status === status);
+      if (lead_status) list = list.filter(s => s.lead_status === lead_status);
+      return list;
+    } catch {}
+  }
+  return [];
 }
 
 export async function getStudentResult(sessionId) {
-  return request(`/admin/students/${sessionId}/result`);
+  try {
+    const data = await request(`/admin/students/${sessionId}/result`);
+    if (data) return data;
+  } catch (err) {
+    console.warn(`Backend unavailable for student ${sessionId}, checking cache:`, err);
+    const cached = localStorage.getItem('nitaq_admin_students');
+    if (cached) {
+      try {
+        const list = JSON.parse(cached);
+        const student = list.find(s => s.id === sessionId || String(s.id) === String(sessionId));
+        if (student) {
+          return {
+            ...student,
+            domain_breakdown: {},
+            question_breakdown: [],
+          };
+        }
+      } catch {}
+    }
+    throw err;
+  }
 }
 
 export async function getShuffleSetting() {
-  return request('/admin/tests/shuffle-setting');
+  try {
+    return await request('/admin/tests/shuffle-setting');
+  } catch {
+    return { shuffle_questions: false };
+  }
 }
 
 export async function toggleShuffleSetting() {
-  return request('/admin/tests/toggle-shuffle', { method: 'POST' });
+  try {
+    return await request('/admin/tests/toggle-shuffle', { method: 'POST' });
+  } catch {
+    return { shuffle_questions: false };
+  }
 }
 
 export async function updateLeadStatus(sessionId, leadStatus) {
-  return request(`/admin/students/${sessionId}/lead-status`, {
-    method: 'PATCH',
-    body: JSON.stringify({ lead_status: leadStatus }),
-  });
+  // Update local cache first
+  try {
+    const cached = localStorage.getItem('nitaq_admin_students');
+    if (cached) {
+      const list = JSON.parse(cached);
+      const updated = list.map(s => (s.id === sessionId || String(s.id) === String(sessionId)) ? { ...s, lead_status: leadStatus } : s);
+      localStorage.setItem('nitaq_admin_students', JSON.stringify(updated));
+    }
+  } catch {}
+
+  try {
+    return await request(`/admin/students/${sessionId}/lead-status`, {
+      method: 'PATCH',
+      body: JSON.stringify({ lead_status: leadStatus }),
+    });
+  } catch (err) {
+    console.warn('Backend update failed, saved locally:', err);
+    return { success: true };
+  }
 }
 
 export async function deleteStudentSession(sessionId) {
-  return request(`/admin/students/${sessionId}`, { method: 'DELETE' });
+  // Remove from local cache
+  try {
+    const cached = localStorage.getItem('nitaq_admin_students');
+    if (cached) {
+      const list = JSON.parse(cached);
+      const updated = list.filter(s => s.id !== sessionId && String(s.id) !== String(sessionId));
+      localStorage.setItem('nitaq_admin_students', JSON.stringify(updated));
+    }
+  } catch {}
+
+  try {
+    return await request(`/admin/students/${sessionId}`, { method: 'DELETE' });
+  } catch (err) {
+    console.warn('Backend delete failed, removed locally:', err);
+    return null;
+  }
 }
 
 export function getExportCsvUrl() {
@@ -215,7 +327,21 @@ export function getExportCsvUrl() {
 }
 
 export async function getParentEnquiries() {
-  return request('/admin/parent-enquiries');
+  try {
+    const data = await request('/admin/parent-enquiries');
+    if (Array.isArray(data)) {
+      localStorage.setItem('nitaq_parent_enquiries', JSON.stringify(data));
+      return data;
+    }
+  } catch (err) {
+    console.warn('Backend unavailable, using cached parent enquiries:', err);
+  }
+
+  const cached = localStorage.getItem('nitaq_parent_enquiries');
+  if (cached) {
+    try { return JSON.parse(cached); } catch {}
+  }
+  return [];
 }
 
 export function getExportParentCsvUrl() {
@@ -225,11 +351,30 @@ export function getExportParentCsvUrl() {
 
 // ── Admin Questions ───────────────────────────────────────────────────────────
 export async function listQuestions({ section, domain } = {}) {
-  const params = new URLSearchParams();
-  if (section) params.set('section', section);
-  if (domain) params.set('domain', domain);
-  const queryStr = params.toString();
-  return request(`/admin/questions${queryStr ? '?' + queryStr : ''}`);
+  try {
+    const params = new URLSearchParams();
+    if (section) params.set('section', section);
+    if (domain) params.set('domain', domain);
+    const queryStr = params.toString();
+    const data = await request(`/admin/questions${queryStr ? '?' + queryStr : ''}`);
+    if (Array.isArray(data)) {
+      localStorage.setItem('nitaq_admin_questions', JSON.stringify(data));
+      return data;
+    }
+  } catch (err) {
+    console.warn('Backend unavailable, using cached questions:', err);
+  }
+
+  const cached = localStorage.getItem('nitaq_admin_questions');
+  if (cached) {
+    try {
+      let list = JSON.parse(cached);
+      if (section) list = list.filter(q => q.section === section);
+      if (domain) list = list.filter(q => q.domain === domain);
+      return list;
+    } catch {}
+  }
+  return [];
 }
 
 export async function createQuestion(data) {

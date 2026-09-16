@@ -50,18 +50,28 @@ def run_auto_migrations():
         print(f"[Auto Migration] Notice: {e}")
 
 # ── Routers ───────────────────────────────────────────────────────────────────
-API_PREFIX = "/api/v1"
+API_PREFIX_V1 = "/api/v1"
+API_PREFIX_V2 = "/api"
 
 # 1. Register with /api/v1 prefix
-app.include_router(students.router, prefix=API_PREFIX)
-app.include_router(diagnostics.router, prefix=API_PREFIX)
-app.include_router(admin.router, prefix=API_PREFIX)
-app.include_router(questions.router, prefix=API_PREFIX)
-app.include_router(questions.tests_router, prefix=API_PREFIX)
-app.include_router(analytics.router, prefix=API_PREFIX)
-app.include_router(certificates.router, prefix=API_PREFIX)
+app.include_router(students.router, prefix=API_PREFIX_V1)
+app.include_router(diagnostics.router, prefix=API_PREFIX_V1)
+app.include_router(admin.router, prefix=API_PREFIX_V1)
+app.include_router(questions.router, prefix=API_PREFIX_V1)
+app.include_router(questions.tests_router, prefix=API_PREFIX_V1)
+app.include_router(analytics.router, prefix=API_PREFIX_V1)
+app.include_router(certificates.router, prefix=API_PREFIX_V1)
 
-# 2. Register without prefix for direct Vercel serverless routing fallback
+# 2. Register with /api prefix
+app.include_router(students.router, prefix=API_PREFIX_V2)
+app.include_router(diagnostics.router, prefix=API_PREFIX_V2)
+app.include_router(admin.router, prefix=API_PREFIX_V2)
+app.include_router(questions.router, prefix=API_PREFIX_V2)
+app.include_router(questions.tests_router, prefix=API_PREFIX_V2)
+app.include_router(analytics.router, prefix=API_PREFIX_V2)
+app.include_router(certificates.router, prefix=API_PREFIX_V2)
+
+# 3. Register without prefix for direct Vercel serverless routing fallback
 app.include_router(students.router)
 app.include_router(diagnostics.router)
 app.include_router(admin.router)

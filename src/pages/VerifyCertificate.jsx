@@ -60,65 +60,87 @@ export default function VerifyCertificate() {
     if (!cert || !canvasRef.current) return;
 
     const img = new Image();
-    img.src = '/certi comp temp.png';
+    img.src = '/CERTIFICATE VERIFICATION.png';
     img.onload = async () => {
       const canvas = canvasRef.current;
       if (!canvas) return;
       const ctx = canvas.getContext('2d');
 
-      canvas.width = img.naturalWidth || 2000;
-      canvas.height = img.naturalHeight || 1414;
+      canvas.width = img.naturalWidth || 1536;
+      canvas.height = img.naturalHeight || 1024;
 
       // 1. Background image
       ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
       // 2. Student Name
+      // Location: Centered above the main horizontal line (y = 549 line, center = 796)
+      const displayName = cert.student_name || 'Student Full Name';
+      let nameFontSize = 54;
+      if (displayName.length > 30) {
+        nameFontSize = 38;
+      } else if (displayName.length > 22) {
+        nameFontSize = 44;
+      } else if (displayName.length > 16) {
+        nameFontSize = 48;
+      }
+
+      ctx.save();
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'alphabetic';
+      ctx.font = `italic 700 ${nameFontSize}px "Playfair Display", "Times New Roman", Georgia, serif`;
+      ctx.fillStyle = '#0F3822';
+      ctx.fillText(displayName, 796, 535);
+      ctx.restore();
+
+      // 3. Course Name in the gap after 'has successfully completed the course'
+      // Location: Gap between y=598 and y=656 -> center y = 627, center x = 796
+      const displayCourse = cert.course_name || 'Course Name';
+      let courseFontSize = 32;
+      if (displayCourse.length > 35) {
+        courseFontSize = 22;
+      } else if (displayCourse.length > 25) {
+        courseFontSize = 26;
+      } else if (displayCourse.length > 18) {
+        courseFontSize = 30;
+      }
+
       ctx.save();
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
-      ctx.font = 'italic 700 68px "Playfair Display", "Times New Roman", Georgia, serif';
+      ctx.font = `italic 700 ${courseFontSize}px "Playfair Display", "Times New Roman", Georgia, serif`;
       ctx.fillStyle = '#0F3822';
-      ctx.fillText(cert.student_name, 1000, 785);
+      ctx.fillText(displayCourse, 796, 627);
       ctx.restore();
 
-      // 3. Course Sentence line (Line 1 after 'for completing a course in')
-      const displayCourse = cert.course_name;
+      // 4. Render Date above the DATE underline
+      // Location: Above y=809 line, centered at x=450, baseline y=798
+      const displayDate = cert.issue_date || new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
       ctx.save();
-
-      // Dynamic font size scaling based on content length
-      let fontSize = 34;
-      if (displayCourse.length > 30) {
-        fontSize = 24;
-      } else if (displayCourse.length > 22) {
-        fontSize = 30;
-      } else if (displayCourse.length > 14) {
-        fontSize = 34;
-      } else if (displayCourse.length > 8) {
-        fontSize = 38;
-      } else {
-        fontSize = 44; // Big bold size for short titles (e.g. ACCA, IELTS, SAT)
-      }
-
-      ctx.font = `italic 700 ${fontSize}px "Georgia", serif`;
-
-      // Render course name cleanly right after 'in ' with transparent background on exact sentence baseline (y=935)
-      ctx.textAlign = 'left';
+      ctx.textAlign = 'center';
       ctx.textBaseline = 'alphabetic';
+      ctx.font = '600 22px "Plus Jakarta Sans", "Inter", sans-serif';
       ctx.fillStyle = '#0F3822';
-      ctx.fillText(displayCourse, 1115, 935);
-
+      ctx.fillText(displayDate, 450, 798);
       ctx.restore();
 
-      // 4. Draw QR Code into exact SCAN HERE inner white box
+      // 5. Draw QR Code on the down left side above 'CERTIFICATE VERIFICATION'
+      // Location: x=110, y=820, width=124, height=124 (centered over label at x=172)
       const publicUrl = window.location.href;
       try {
         const qrCanvas = document.createElement('canvas');
         await QRCode.toCanvas(qrCanvas, publicUrl, {
-          width: 172,
+          width: 124,
           margin: 1,
           color: { dark: '#0F3822', light: '#FFFFFF' },
         });
-        ctx.drawImage(qrCanvas, 290, 1135, 168, 160);
+
+        // Draw high-contrast white card backdrop for camera scanning reliability
+        ctx.save();
+        ctx.fillStyle = '#FFFFFF';
+        ctx.fillRect(110, 820, 124, 124);
+        ctx.restore();
+
+        ctx.drawImage(qrCanvas, 110, 820, 124, 124);
       } catch (e) {
         console.error('QR draw error:', e);
       }

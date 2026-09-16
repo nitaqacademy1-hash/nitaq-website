@@ -122,8 +122,11 @@ const ROUTES = [
   '/admin/dashboard',
   '/admin/students',
   '/admin/questions',
+  '/admin/certificates',
   '/admin/sat/students',
-  '/admin/sat/questions'
+  '/admin/sat/questions',
+  '/verify-certificate',
+  '/verify'
 ]
 
 // Every English route also ships an Arabic twin at /ar/... so crawlers get a
@@ -297,9 +300,9 @@ async function prerender() {
   // One <url> per locale, each listing every locale as an alternate — that
   // reciprocal linking is what Google requires to treat them as one page.
   for (const route of LOCALIZED_ROUTES) {
-    // Skip low-value pages from sitemap
+    // Skip low-value pages and admin/utility pages from sitemap
     const basePath = stripLangPrefix(route)
-    if (basePath.includes('thank-you') || basePath.startsWith('/ig/') || basePath === '/enquiry') {
+    if (basePath.includes('thank-you') || basePath.startsWith('/ig/') || basePath === '/enquiry' || basePath.startsWith('/admin') || basePath.startsWith('/verify')) {
       continue;
     }
 
