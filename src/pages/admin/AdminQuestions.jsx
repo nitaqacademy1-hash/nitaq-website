@@ -5,6 +5,7 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 import { listQuestions, createQuestion, updateQuestion, deleteQuestion, getShuffleSetting, toggleShuffleSetting, ApiError } from '../../services/diagnosticApi';
+import MathText from '../../components/common/MathText';
 import '../sat/sat.css';
 
 const SECTION_OPTIONS = ['', 'MATH', 'READING_WRITING'];
@@ -371,7 +372,7 @@ export default function AdminQuestions() {
                       </span>
                     </td>
                     <td style={{ maxWidth: '280px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', color: '#334155', fontSize: '0.82rem' }}>
-                      {q.question_text}
+                      <MathText text={q.question_text} />
                     </td>
                     <td style={{ fontWeight: 700, color: '#0F172A', fontSize: '0.9rem' }}>
                       {q.correct_answer}
@@ -522,7 +523,10 @@ export default function AdminQuestions() {
               </div>
 
               <div>
-                <label style={{ fontSize: '0.72rem', color: '#475569', fontWeight: 700, textTransform: 'uppercase' }}>Question Text *</label>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <label style={{ fontSize: '0.72rem', color: '#475569', fontWeight: 700, textTransform: 'uppercase' }}>Question Text *</label>
+                  <span style={{ fontSize: '0.68rem', color: '#64748B' }}>Supports LaTeX $...$ or carets e.g. x^2, (1.20)^(x/3)</span>
+                </div>
                 <textarea
                   required
                   rows={3}
@@ -531,6 +535,12 @@ export default function AdminQuestions() {
                   onChange={e => setFormData({ ...formData, question_text: e.target.value })}
                   style={{ ...inputStyle, resize: 'vertical' }}
                 />
+                {formData.question_text && (
+                  <div style={{ marginTop: '6px', padding: '8px 12px', background: '#F8FAFC', borderRadius: '6px', border: '1px solid #E2E8F0', fontSize: '0.88rem' }}>
+                    <span style={{ fontSize: '0.68rem', fontWeight: 700, color: '#64748B', display: 'block', marginBottom: '4px', textTransform: 'uppercase' }}>Live Math Notation Preview:</span>
+                    <MathText text={formData.question_text} />
+                  </div>
+                )}
               </div>
 
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '10px' }}>
@@ -544,6 +554,11 @@ export default function AdminQuestions() {
                     onChange={e => setFormData({ ...formData, option_a: e.target.value })}
                     style={inputStyle}
                   />
+                  {formData.option_a && (formData.option_a.includes('$') || formData.option_a.includes('^') || formData.option_a.includes('\\')) && (
+                    <div style={{ marginTop: '4px', fontSize: '0.78rem', color: '#334155' }}>
+                      <MathText text={formData.option_a} />
+                    </div>
+                  )}
                 </div>
                 <div>
                   <label style={{ fontSize: '0.72rem', color: '#475569', fontWeight: 700, textTransform: 'uppercase' }}>Option B *</label>
@@ -555,6 +570,11 @@ export default function AdminQuestions() {
                     onChange={e => setFormData({ ...formData, option_b: e.target.value })}
                     style={inputStyle}
                   />
+                  {formData.option_b && (formData.option_b.includes('$') || formData.option_b.includes('^') || formData.option_b.includes('\\')) && (
+                    <div style={{ marginTop: '4px', fontSize: '0.78rem', color: '#334155' }}>
+                      <MathText text={formData.option_b} />
+                    </div>
+                  )}
                 </div>
                 <div>
                   <label style={{ fontSize: '0.72rem', color: '#475569', fontWeight: 700, textTransform: 'uppercase' }}>Option C *</label>
@@ -566,6 +586,11 @@ export default function AdminQuestions() {
                     onChange={e => setFormData({ ...formData, option_c: e.target.value })}
                     style={inputStyle}
                   />
+                  {formData.option_c && (formData.option_c.includes('$') || formData.option_c.includes('^') || formData.option_c.includes('\\')) && (
+                    <div style={{ marginTop: '4px', fontSize: '0.78rem', color: '#334155' }}>
+                      <MathText text={formData.option_c} />
+                    </div>
+                  )}
                 </div>
                 <div>
                   <label style={{ fontSize: '0.72rem', color: '#475569', fontWeight: 700, textTransform: 'uppercase' }}>Option D *</label>
@@ -577,6 +602,11 @@ export default function AdminQuestions() {
                     onChange={e => setFormData({ ...formData, option_d: e.target.value })}
                     style={inputStyle}
                   />
+                  {formData.option_d && (formData.option_d.includes('$') || formData.option_d.includes('^') || formData.option_d.includes('\\')) && (
+                    <div style={{ marginTop: '4px', fontSize: '0.78rem', color: '#334155' }}>
+                      <MathText text={formData.option_d} />
+                    </div>
+                  )}
                 </div>
               </div>
 
@@ -603,6 +633,11 @@ export default function AdminQuestions() {
                     onChange={e => setFormData({ ...formData, explanation: e.target.value })}
                     style={inputStyle}
                   />
+                  {formData.explanation && (
+                    <div style={{ marginTop: '4px', fontSize: '0.78rem', color: '#334155' }}>
+                      <MathText text={formData.explanation} />
+                    </div>
+                  )}
                 </div>
               </div>
 

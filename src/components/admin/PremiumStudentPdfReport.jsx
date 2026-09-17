@@ -14,6 +14,7 @@
 
 import React, { useRef, useState } from 'react';
 import html2pdf from 'html2pdf.js';
+import MathText from '../common/MathText';
 
 /* ─── Static display maps ─────────────────────────────────────────────────── */
 const DOMAIN_LABEL = {
@@ -313,7 +314,7 @@ export default function PremiumStudentPdfReport({ result }) {
                           {correct ? 'Correct' : 'Missed'}
                         </span>
                       </div>
-                      <p className="rpt-q-text">{q.question_text}</p>
+                      <p className="rpt-q-text"><MathText text={q.question_text} /></p>
                       <div className="rpt-q-answers">
                         <span>
                           <span className="rpt-ans-label">Selected:</span>
@@ -325,7 +326,7 @@ export default function PremiumStudentPdfReport({ result }) {
                         </span>
                       </div>
                       {q.explanation && (
-                        <div className="rpt-q-explanation">{q.explanation}</div>
+                        <div className="rpt-q-explanation"><MathText text={q.explanation} /></div>
                       )}
                     </div>
                   );

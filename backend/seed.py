@@ -35,13 +35,13 @@ QUESTIONS = [
         "section": Section.MATH,
         "domain": Domain.ALGEBRA,
         "difficulty": Difficulty.EASY,
-        "question_text": "If 3x − 7 = 14, what is the value of x?",
+        "question_text": "If $3x - 7 = 14$, what is the value of $x$?",
         "option_a": "5",
         "option_b": "7",
         "option_c": "3",
         "option_d": "9",
         "correct_answer": AnswerChoice.B,
-        "explanation": "Add 7 to both sides: 3x = 21. Divide by 3: x = 7.",
+        "explanation": "Add 7 to both sides: $3x = 21$. Divide by 3: $x = 7$.",
     },
     {
         "question_code": "MATH-ALG-002",
@@ -59,7 +59,7 @@ QUESTIONS = [
         "correct_answer": AnswerChoice.C,
         "explanation": (
             "The total cost is a fixed $45 registration plus $30 per month. "
-            "So C = 30m + 45."
+            "So $C = 30m + 45$."
         ),
     },
     {
@@ -68,7 +68,7 @@ QUESTIONS = [
         "domain": Domain.ALGEBRA,
         "difficulty": Difficulty.HARD,
         "question_text": (
-            "If 2x + y = 10 and x − y = 2, what is the value of x?"
+            "If $2x + y = 10$ and $x - y = 2$, what is the value of $x$?"
         ),
         "option_a": "3",
         "option_b": "4",
@@ -76,8 +76,8 @@ QUESTIONS = [
         "option_d": "6",
         "correct_answer": AnswerChoice.B,
         "explanation": (
-            "Add the two equations: 3x = 12, so x = 4. "
-            "Substituting back: 8 + y = 10, so y = 2."
+            "Add the two equations: $3x = 12$, so $x = 4$. "
+            "Substituting back: $8 + y = 10$, so $y = 2$."
         ),
     },
 
@@ -87,13 +87,13 @@ QUESTIONS = [
         "section": Section.MATH,
         "domain": Domain.ADVANCED_MATH,
         "difficulty": Difficulty.EASY,
-        "question_text": "What are the solutions to x² − 5x + 6 = 0?",
-        "option_a": "x = 1 and x = 6",
-        "option_b": "x = 2 and x = 3",
-        "option_c": "x = −2 and x = −3",
-        "option_d": "x = −1 and x = 6",
+        "question_text": "What are the solutions to $x^2 - 5x + 6 = 0$?",
+        "option_a": "$x = 1$ and $x = 6$",
+        "option_b": "$x = 2$ and $x = 3$",
+        "option_c": "$x = -2$ and $x = -3$",
+        "option_d": "$x = -1$ and $x = 6$",
         "correct_answer": AnswerChoice.B,
-        "explanation": "Factor: (x − 2)(x − 3) = 0. Solutions: x = 2 or x = 3.",
+        "explanation": "Factor: $(x - 2)(x - 3) = 0$. Solutions: $x = 2$ or $x = 3$.",
     },
     {
         "question_code": "MATH-ADV-002",
@@ -101,8 +101,8 @@ QUESTIONS = [
         "domain": Domain.ADVANCED_MATH,
         "difficulty": Difficulty.MEDIUM,
         "question_text": (
-            "A ball is thrown upward and its height h (in metres) after t seconds is "
-            "h(t) = −5t² + 20t + 2. What is the maximum height reached by the ball?"
+            "A ball is thrown upward and its height $h$ (in metres) after $t$ seconds is "
+            "$h(t) = -5t^2 + 20t + 2$. What is the maximum height reached by the ball?"
         ),
         "option_a": "20 metres",
         "option_b": "22 metres",
@@ -110,8 +110,8 @@ QUESTIONS = [
         "option_d": "25 metres",
         "correct_answer": AnswerChoice.B,
         "explanation": (
-            "The vertex of h(t) = −5t² + 20t + 2 is at t = −b/(2a) = −20/(2·(−5)) = 2. "
-            "h(2) = −5(4) + 20(2) + 2 = −20 + 40 + 2 = 22 metres."
+            "The vertex of $h(t) = -5t^2 + 20t + 2$ is at $t = -b/(2a) = -20/(2\\cdot(-5)) = 2$. "
+            "$h(2) = -5(4) + 20(2) + 2 = -20 + 40 + 2 = 22$ metres."
         ),
     },
     {
@@ -120,16 +120,16 @@ QUESTIONS = [
         "domain": Domain.ADVANCED_MATH,
         "difficulty": Difficulty.HARD,
         "question_text": (
-            "Which of the following is equivalent to (x² − 9) / (x − 3) for x ≠ 3?"
+            "Which of the following is equivalent to $\\frac{x^2 - 9}{x - 3}$ for $x \\neq 3$?"
         ),
-        "option_a": "x − 3",
-        "option_b": "x + 3",
-        "option_c": "x² + 3",
-        "option_d": "x − 9",
+        "option_a": "$x - 3$",
+        "option_b": "$x + 3$",
+        "option_c": "$x^2 + 3$",
+        "option_d": "$x - 9$",
         "correct_answer": AnswerChoice.B,
         "explanation": (
-            "Factor the numerator: x² − 9 = (x − 3)(x + 3). "
-            "Cancel (x − 3): result is x + 3."
+            "Factor the numerator: $x^2 - 9 = (x - 3)(x + 3)$. "
+            "Cancel $(x - 3)$: result is $x + 3$."
         ),
     },
 

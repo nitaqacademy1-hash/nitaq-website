@@ -2508,3 +2508,45 @@
     justify-content: center;
   }
 }
+
+/* ── Math Rendering Typography (KaTeX Enhancements) ── */
+.sat-math-rendered-root {
+  display: inline;
+}
+
+.sat-math-segment {
+  display: inline;
+}
+
+.sat-math-inline {
+  display: inline;
+  vertical-align: baseline;
+}
+
+.sat-math-block {
+  display: block;
+  margin: 12px 0;
+  text-align: center;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.test-question-body .katex {
+  font-size: 1.18em;
+}
+
+.option-text-content .katex {
+  font-size: 1.08em;
+}
+
+.sat-question-snippet .katex {
+  font-size: 1.05em;
+}
+
+.sat-explanation-box .katex {
+  font-size: 1.05em;
+}
+
+.rpt-q-text .katex {
+  font-size: 1.05em;
+}

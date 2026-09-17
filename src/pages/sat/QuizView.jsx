@@ -7,6 +7,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import SEO from '../../components/SEO';
 import { getSectionQuestions, submitSection, ApiError } from '../../services/diagnosticApi';
+import MathText from '../../components/common/MathText';
 import './sat.css';
 
 const SECTION_META = {
@@ -654,7 +655,7 @@ export default function QuizView() {
             </div>
 
             <div className="test-question-body">
-              {q.question_text}
+              <MathText text={q.question_text} />
             </div>
           </div>
 
@@ -673,7 +674,9 @@ export default function QuizView() {
                     <div className={`option-letter-badge${isSelected ? ' badge-selected' : ''}`}>
                       {letter}
                     </div>
-                    <div className="option-text-content">{text}</div>
+                    <div className="option-text-content">
+                      <MathText text={text} />
+                    </div>
                     {isSelected && (
                       <div className="option-check-icon">✓</div>
                     )}

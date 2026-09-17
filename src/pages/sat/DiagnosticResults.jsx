@@ -8,6 +8,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import SEO from '../../components/SEO';
 import { getDiagnosticResults, ApiError } from '../../services/diagnosticApi';
+import MathText from '../../components/common/MathText';
 import './sat.css';
 
 const DOMAIN_DISPLAY = {
@@ -311,7 +312,7 @@ function QuestionAccordionItem({ q, index, onFilterDomain }) {
               {q.is_correct ? '✓ Correct' : '✕ Incorrect'}
             </span>
           </div>
-          <p className="sat-question-snippet">{q.question_text}</p>
+          <p className="sat-question-snippet"><MathText text={q.question_text} /></p>
         </div>
 
         <button type="button" className="sat-expand-btn">
@@ -344,7 +345,7 @@ function QuestionAccordionItem({ q, index, onFilterDomain }) {
               return (
                 <div key={letter} className={`sat-review-choice-item ${itemClass}`}>
                   <span className={`sat-choice-badge ${badgeClass}`}>{letter}</span>
-                  <span style={{ flex: 1 }}>{text}</span>
+                  <span style={{ flex: 1 }}><MathText text={text} /></span>
                   {isCorrect && <span style={{ color: '#15803D', fontWeight: 700, fontSize: '0.75rem' }}>✓ Correct Answer</span>}
                   {isYours && !isCorrect && <span style={{ color: '#DC2626', fontWeight: 700, fontSize: '0.75rem' }}>Your Selection</span>}
                 </div>
@@ -356,7 +357,7 @@ function QuestionAccordionItem({ q, index, onFilterDomain }) {
           {q.explanation && (
             <div className="sat-explanation-box">
               <strong>Why this is correct:</strong>
-              <div style={{ marginTop: '4px' }}>{q.explanation}</div>
+              <div style={{ marginTop: '4px' }}><MathText text={q.explanation} /></div>
             </div>
           )}
 
