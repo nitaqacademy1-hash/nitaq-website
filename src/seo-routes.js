@@ -1,13 +1,58 @@
 export const seoRoutes = [
   {
     path: "/article/free-digital-sat-diagnostic-assessment-guide",
-    title: "Free Digital SAT Diagnostic Assessment Guide (2026) | Nitaq Academy",
-    description: "Take Nitaq Academy's free Digital SAT diagnostic test with questions and answers, domain performance analytics, score prediction, and step-by-step answer explanations.",
+    title: "Free Digital SAT Diagnostic Assessment & Self-Evaluation Guide (2026) | Nitaq Academy",
+    description: "Take Nitaq Academy's free Digital SAT diagnostic test with 24 adaptive questions, instant domain performance analytics, score prediction, and step-by-step answer explanations.",
     canonical: "https://www.nitaqacademy.com/article/free-digital-sat-diagnostic-assessment-guide",
-    ogTitle: "Free Digital SAT Diagnostic Assessment & Self-Evaluation Guide (2026)",
-    ogDescription: "Evaluate your Digital SAT readiness with our free 24-question adaptive diagnostic quiz, instant domain performance analysis, score predictor, and detailed answer explanations.",
+    ogTitle: "Free Digital SAT Diagnostic Assessment & Score Predictor (2026) | Nitaq Academy",
+    ogDescription: "Evaluate your Digital SAT readiness with our free 24-question adaptive diagnostic tool. Instant domain analysis, score predictor, and study priorities.",
     ogImage: "/images/sat_v2.webp",
     twitterCard: "summary_large_image",
+    datePublished: "2026-08-28T08:00:00+04:00",
+    dateModified: "2026-09-22T10:00:00+04:00",
+    keywords: "SAT diagnostic tool, free SAT diagnostic test, Digital SAT assessment, SAT score predictor, digital sat quiz, SAT questions and answers, SAT self assessment, free sat practice quiz, digital sat evaluation, SAT math diagnostic, SAT reading writing assessment, SAT domain performance, digital sat readiness test, online sat quiz, sat test prep evaluation, sat practice test with explanations, digital sat mock exam, free sat question bank, sat diagnostic test sharjah, sat diagnostic test dubai uae, sat score baseline test, digital sat practice questions, sat sample test questions, sat math practice quiz, sat reading writing practice test, college board sat diagnostic, sat adaptive test simulation, sat study priority generator, nitaq academy sat diagnostic, free sat score assessment uae",
+    faqSchema: [
+      {
+        question: "What is a Digital SAT diagnostic tool and why is it important?",
+        answer: "A Digital SAT diagnostic tool is a targeted baseline assessment designed to measure a student's current proficiency across the official College Board Math and Reading & Writing test domains. Unlike generic practice quizzes, an adaptive diagnostic evaluates your strengths and conceptual gaps, predicts your potential 400–1600 composite score, and generates customized study priorities so you don't waste time studying concepts you have already mastered."
+      },
+      {
+        question: "How long does the Nitaq Academy free SAT diagnostic test take?",
+        answer: "The free diagnostic test takes approximately 25 to 30 minutes to complete. It contains 24 carefully balanced questions (12 Math and 12 Reading & Writing) mapped across the official 8 College Board domains, providing an accurate baseline without requiring a full 2-hour-and-14-minute exam sitting."
+      },
+      {
+        question: "How accurate is the SAT score predictor on this diagnostic tool?",
+        answer: "Our diagnostic score algorithm is calibrated against official College Board Bluebook scoring percentiles and item-response curves. By factoring in domain-specific weights and difficulty-adjusted module performance, it provides a realistic baseline score range within ±40 to ±60 points of an official full-length test."
+      },
+      {
+        question: "Is this Digital SAT diagnostic test completely free for UAE students?",
+        answer: "Yes, 100% free. Students across Sharjah, Dubai, Abu Dhabi, Ajman, and worldwide can take the diagnostic assessment, view detailed question-by-question explanations, and download their personalized domain scorecard without any hidden fees or credit card requirements."
+      },
+      {
+        question: "Can I use the Desmos graphing calculator during the diagnostic test?",
+        answer: "Yes. The Digital SAT allows calculator usage on every single Math question. Our diagnostic questions are designed to test both algebraic mastery and calculator efficiency, training students to leverage Desmos functions, regression modeling, and graphical solutions."
+      },
+      {
+        question: "How does the adaptive testing algorithm work on the Digital SAT?",
+        answer: "The Digital SAT uses a multistage adaptive model. Section 1 (Module 1) includes a balanced mix of easy, medium, and difficult questions. Your accuracy on Module 1 determines whether you receive the easier or harder Module 2. Reaching the higher-difficulty Module 2 is mathematically required to score above 1200–1250 in each section."
+      },
+      {
+        question: "What domains are evaluated in the Nitaq Academy SAT diagnostic?",
+        answer: "The diagnostic evaluates all 8 core College Board domains: Algebra, Advanced Math, Problem-Solving & Data Analysis, Geometry & Trigonometry, Information & Ideas, Craft & Structure, Expression of Ideas, and Standard English Conventions."
+      },
+      {
+        question: "What SAT score is needed for top UAE universities like AUS and NYU Abu Dhabi?",
+        answer: "For the American University of Sharjah (AUS), engineering and business programs typically require 1200–1350+. For Khalifa University, 1250–1400+ is competitive. For NYU Abu Dhabi, competitive applicants generally present scores between 1450 and 1550+. High scores also unlock substantial merit scholarships."
+      },
+      {
+        question: "How do I interpret my diagnostic results and scorecard?",
+        answer: "Your scorecard classifies performance into Strong (75%+ accuracy), Developing (50%–74% accuracy), and Needs Review (<50% accuracy). It ranks your weakest areas into High, Medium, and Low study priorities, giving you an immediate roadmap for targeted preparation."
+      },
+      {
+        question: "When should high school students take their first SAT diagnostic?",
+        answer: "We recommend students take their first diagnostic at the end of Grade 10 or the beginning of Grade 11. This establishes an early baseline and allows 3 to 6 months for structured preparation before taking their first official Digital SAT in October or December of Grade 11."
+      }
+    ]
   },
   {
     path: "/software-engineering-diploma-sharjah",

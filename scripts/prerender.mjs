@@ -104,6 +104,7 @@ const ROUTES = [
   '/article/comprehensive-subject-tuition-guide-sharjah-dubai-uae',
   '/article/digital-sat-preparation-guide-sharjah-dubai-uae',
   '/article/best-tuition-classes-near-me-sharjah',
+  '/article/free-digital-sat-diagnostic-assessment-guide',
   '/terms-and-conditions',
 
 

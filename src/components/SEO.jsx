@@ -7,7 +7,7 @@ import { LANGUAGES, langFromPath, stripLangPrefix, localizePath } from '../i18n/
  * SEO component with full structured data support.
  * Consolidated single-script JSON-LD to prevent duplication and missing field errors.
  */
-const SEO = () => {
+const SEO = ({ title, description, keywords, faqSchema, ogTitle, ogDescription, ogImage } = {}) => {
   const location = useLocation();
   const siteUrl = 'https://www.nitaqacademy.com';
 
@@ -18,7 +18,7 @@ const SEO = () => {
   const localeMeta = LANGUAGES[lang];
 
   // Find SEO data from central directory, or fallback to generic defaults
-  const routeData = getSeoRoute(basePath, lang) || {
+  const rawRouteData = getSeoRoute(basePath, lang) || {
     title: "NITAQ ACADEMY Sharjah | IELTS, ACCA, AI & Language Courses",
     description: "Top-rated training academy in Sharjah offering IELTS, TOEFL, ACCA, CMA, AI & language courses.",
     canonical: `${siteUrl}${location.pathname}`,
@@ -30,6 +30,17 @@ const SEO = () => {
     dateModified: "2026-05-08T15:00:00+04:00",
     courseSchema: null,
     faqSchema: null
+  };
+
+  const routeData = {
+    ...rawRouteData,
+    ...(title && { title }),
+    ...(description && { description }),
+    ...(keywords && { keywords }),
+    ...(ogTitle ? { ogTitle } : title ? { ogTitle: title } : {}),
+    ...(ogDescription ? { ogDescription } : description ? { ogDescription: description } : {}),
+    ...(ogImage && { ogImage }),
+    ...(faqSchema && { faqSchema: Array.isArray(faqSchema) ? faqSchema : rawRouteData.faqSchema })
   };
 
   // The stored canonical is the English URL; Arabic pages canonicalise to
