@@ -11,7 +11,6 @@ import {
 
 const FreeDigitalSatDiagnosticArticle = () => {
   const publishDate = "August 28, 2026";
-  const updatedDate = "September 22, 2026";
 
   // Score Estimator State
   const [baselineScore, setBaselineScore] = useState('1100');
@@ -460,7 +459,7 @@ const FreeDigitalSatDiagnosticArticle = () => {
                   </div>
 
                   {/* Embedded Diagnostic Hero Section */}
-                  <SATDiagnosticSection />
+                  <SATDiagnosticSection headingLevel="h2" />
 
                   <div style={{ textAlign: 'center', marginTop: '24px' }}>
                     <p style={{ fontSize: '0.95rem', color: '#475569', marginBottom: '14px' }}>
@@ -784,7 +783,7 @@ const FreeDigitalSatDiagnosticArticle = () => {
                   Want 1-on-1 Guidance from SPEA-Certified SAT Mentors?
                 </h3>
                 <p style={{ color: '#334155', fontSize: '1rem', maxWidth: '640px', margin: '0 auto 20px auto' }}>
-                  Whether you want to bridge a 150-point gap or cross the elite 1500+ threshold, Nitaq Academy offers small micro-batches (5–8 students) and 1-on-1 personalized SAT tutoring in Sharjah and online across Dubai &amp; the UAE.
+                  Whether you want to bridge a 150-point gap or cross the elite 1500+ threshold, Nitaq Academy offers small micro-batches (5–8 students) and 1-on-1 personalized <Link to="/sat-preparation-sharjah" style={{ color: '#166534', fontWeight: '700', textDecoration: 'underline' }}>SAT coaching in Sharjah</Link> and <Link to="/sat-preparation-dubai" style={{ color: '#166534', fontWeight: '700', textDecoration: 'underline' }}>online SAT preparation across Dubai &amp; the UAE</Link>. Review our <Link to="/article/digital-sat-preparation-guide-sharjah-dubai-uae" style={{ color: '#166534', fontWeight: '700', textDecoration: 'underline' }}>Digital SAT Preparation Guide</Link> or <Link to="/article/sat-score-1300-guide" style={{ color: '#166534', fontWeight: '700', textDecoration: 'underline' }}>1300+ score roadmap</Link> for structured study plans.
                 </p>
                 <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '14px' }}>
                   <Link to="/sat/diagnostic" className="btn btn-primary" style={{ padding: '12px 24px', textDecoration: 'none' }}>
@@ -819,7 +818,13 @@ const FreeDigitalSatDiagnosticArticle = () => {
                   Start Free Diagnostic
                 </Link>
                 <Link to="/sat-preparation-sharjah" className="btn btn-outline w-100 mb-15">
-                  Explore SAT Coaching
+                  SAT Coaching Sharjah
+                </Link>
+                <Link to="/sat-preparation-dubai" className="btn btn-outline w-100 mb-15">
+                  Online SAT Dubai
+                </Link>
+                <Link to="/article/digital-sat-preparation-guide-sharjah-dubai-uae" className="btn btn-outline w-100 mb-15">
+                  Digital SAT Guide
                 </Link>
                 
                 <hr style={{ border: 'none', borderTop: '1px solid #e2e8f0', margin: '20px 0' }} />
@@ -827,7 +832,7 @@ const FreeDigitalSatDiagnosticArticle = () => {
                 <div style={{ fontSize: '0.85rem', color: '#475569' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
                     <MapPin size={16} color="#2e7d32" />
-                    <span>Office F103, Abu Khamseen Tower, Al Majaz 3, Sharjah</span>
+                    <span>Abu Khamseen Tower - Office : F103, Floor F1 - Al Majaz 3 - Al Majaz - Sharjah - United Arab Emirates</span>
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
                     <ShieldCheck size={16} color="#2e7d32" />

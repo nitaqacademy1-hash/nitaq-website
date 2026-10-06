@@ -1,6 +1,7 @@
 import { useMemo, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { LANGUAGES, DEFAULT_LANG, langFromPath, localizePath } from './config';
+import { LANGUAGES, DEFAULT_LANG, langFromPath, localizePath, stripLangPrefix } from './config';
+import { isArabicPublished } from './published';
 import { LanguageContext } from './context';
 import en from './translations/en';
 import ar from './translations/ar';
@@ -52,7 +53,8 @@ export function LanguageProvider({ children }) {
         /** Switch language, staying on the equivalent page. */
         const switchLanguage = (nextLang) => {
             if (nextLang === lang) return;
-            navigate(localizePath(location.pathname, nextLang) + location.search + location.hash);
+            const target = localizePath(location.pathname, nextLang);
+            navigate(target + location.search + location.hash);
         };
 
         return { lang, dir: meta.dir, isRTL: meta.dir === 'rtl', t, localize, switchLanguage };

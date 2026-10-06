@@ -40,7 +40,7 @@ For **EVERY HTML page**, add these meta tags in the `<head>` section:
     
     <!-- SEO Meta Tags (CUSTOMIZE FOR EACH PAGE) -->
     <title>IELTS Coaching in Sharjah | Nitaq Training Center UAE</title>
-    <meta name="description" content="Best IELTS coaching in Sharjah with expert trainers. Achieve your target score with Nitaq Training Center. Flexible timings, proven results. Call +971 54 572 3181">
+    <meta name="description" content="Best IELTS coaching in Sharjah with expert trainers. Achieve your target score with Nitaq Training Center. Flexible timings, proven results. Call +971 52 756 9908">
     <meta name="keywords" content="IELTS Sharjah, IELTS coaching UAE, IELTS training Sharjah, English test preparation, study abroad UAE">
     <meta name="author" content="Nitaq Training Center">
     <meta name="robots" content="index, follow">
@@ -81,7 +81,7 @@ For **EVERY HTML page**, add these meta tags in the `<head>` section:
 ### Homepage (`index.html`)
 ```html
 <title>Nitaq Training Center Sharjah | IELTS, SAT, Language & Tech Courses UAE</title>
-<meta name="description" content="Premier training center in Sharjah offering IELTS, SAT, GRE, GMAT prep, French, German, Spanish courses, AI & technology training. Expert instructors. Call +971 54 572 3181">
+<meta name="description" content="Premier training center in Sharjah offering IELTS, SAT, GRE, GMAT prep, French, German, Spanish courses, AI & technology training. Expert instructors. Call +971 52 756 9908">
 <meta name="keywords" content="training center Sharjah, IELTS Sharjah, language courses UAE, SAT preparation Sharjah, AI courses UAE, professional training Sharjah">
 <link rel="canonical" href="https://nitaq-training-center.vercel.app/">
 ```
@@ -89,7 +89,7 @@ For **EVERY HTML page**, add these meta tags in the `<head>` section:
 ### IELTS Course (`ielts-course.html`)
 ```html
 <title>IELTS Coaching in Sharjah | Best IELTS Training Center UAE | Nitaq</title>
-<meta name="description" content="Achieve your IELTS target score with Nitaq's expert coaching in Sharjah. Proven methods, flexible timings, online & offline classes. Book free demo +971 54 572 3181">
+<meta name="description" content="Achieve your IELTS target score with Nitaq's expert coaching in Sharjah. Proven methods, flexible timings, online & offline classes. Book free demo +971 52 756 9908">
 <meta name="keywords" content="IELTS Sharjah, IELTS coaching UAE, IELTS training Sharjah, IELTS preparation, British Council IELTS, study abroad UAE">
 <link rel="canonical" href="https://nitaq-training-center.vercel.app/ielts-course.html">
 ```
@@ -97,7 +97,7 @@ For **EVERY HTML page**, add these meta tags in the `<head>` section:
 ### SAT Preparation (`sat-preparation.html`)
 ```html
 <title>SAT Preparation in Sharjah | SAT Coaching UAE | Nitaq Training</title>
-<meta name="description" content="Top SAT preparation center in Sharjah. Expert tutors, comprehensive study materials, proven results. Enroll now for SAT success. Call +971 54 572 3181">
+<meta name="description" content="Top SAT preparation center in Sharjah. Expert tutors, comprehensive study materials, proven results. Enroll now for SAT success. Call +971 52 756 9908">
 <meta name="keywords" content="SAT Sharjah, SAT coaching UAE, SAT preparation Sharjah, SAT training, university admission UAE">
 <link rel="canonical" href="https://nitaq-training-center.vercel.app/sat-preparation.html">
 ```
@@ -105,7 +105,7 @@ For **EVERY HTML page**, add these meta tags in the `<head>` section:
 ### French Language (`french.html`)
 ```html
 <title>French Language Course in Sharjah | Learn French UAE | Nitaq</title>
-<meta name="description" content="Learn French in Sharjah with native speakers. Beginner to advanced levels. DELF/DALF preparation. Flexible schedules. Join Nitaq +971 54 572 3181">
+<meta name="description" content="Learn French in Sharjah with native speakers. Beginner to advanced levels. DELF/DALF preparation. Flexible schedules. Join Nitaq +971 52 756 9908">
 <meta name="keywords" content="French course Sharjah, learn French UAE, French classes Sharjah, DELF preparation, French language training">
 <link rel="canonical" href="https://nitaq-training-center.vercel.app/french.html">
 ```
@@ -113,7 +113,7 @@ For **EVERY HTML page**, add these meta tags in the `<head>` section:
 ### German Language (`german.html`)
 ```html
 <title>German Language Course in Sharjah | Learn German UAE | Nitaq</title>
-<meta name="description" content="Master German language in Sharjah. A1 to C2 levels. Goethe Institut preparation. Expert instructors. Enroll at Nitaq +971 54 572 3181">
+<meta name="description" content="Master German language in Sharjah. A1 to C2 levels. Goethe Institut preparation. Expert instructors. Enroll at Nitaq +971 52 756 9908">
 <meta name="keywords" content="German course Sharjah, learn German UAE, German classes Sharjah, Goethe preparation, German language training">
 <link rel="canonical" href="https://nitaq-training-center.vercel.app/german.html">
 ```
@@ -121,7 +121,7 @@ For **EVERY HTML page**, add these meta tags in the `<head>` section:
 ### Spanish Language (`spanish.html`)
 ```html
 <title>Spanish Language Course in Sharjah | Learn Spanish UAE | Nitaq</title>
-<meta name="description" content="Learn Spanish in Sharjah from beginner to advanced. DELE preparation available. Interactive classes. Join Nitaq Training +971 54 572 3181">
+<meta name="description" content="Learn Spanish in Sharjah from beginner to advanced. DELE preparation available. Interactive classes. Join Nitaq Training +971 52 756 9908">
 <meta name="keywords" content="Spanish course Sharjah, learn Spanish UAE, Spanish classes Sharjah, DELE preparation, Spanish language training">
 <link rel="canonical" href="https://nitaq-training-center.vercel.app/spanish.html">
 ```
@@ -129,7 +129,7 @@ For **EVERY HTML page**, add these meta tags in the `<head>` section:
 ### AI Course (`ai-course.html`)
 ```html
 <title>AI & Machine Learning Course in Sharjah | Python, ML Training UAE | Nitaq</title>
-<meta name="description" content="Master AI, Machine Learning & Python in Sharjah. Hands-on projects, expert mentors. Career-focused training. Enroll at Nitaq +971 54 572 3181">
+<meta name="description" content="Master AI, Machine Learning & Python in Sharjah. Hands-on projects, expert mentors. Career-focused training. Enroll at Nitaq +971 52 756 9908">
 <meta name="keywords" content="AI course Sharjah, machine learning UAE, Python training Sharjah, data science course, AI certification UAE">
 <link rel="canonical" href="https://nitaq-training-center.vercel.app/ai-course.html">
 ```
@@ -150,7 +150,7 @@ For **EVERY HTML page**, add these meta tags in the `<head>` section:
   "url": "https://nitaq-training-center.vercel.app",
   "logo": "https://nitaq-training-center.vercel.app/images/logo.webp",
   "image": "https://nitaq-training-center.vercel.app/images/logo.webp",
-  "telephone": "+971545723181",
+  "telephone": "+971527569908",
   "email": "info@nitaq.ae",
   "address": {
     "@type": "PostalAddress",
@@ -310,8 +310,8 @@ Bing Webmaster Tools: https://www.bing.com/webmasters
 
 ### 2. **Google My Business**
 - Create/claim listing for "Nitaq Training Center"
-- Add: Office 103, Abu Khamseen Tower, Al Majaz 3, Sharjah
-- Phone: +971 54 572 3181
+- Add: Abu Khamseen Tower - Office : F103, Floor F1 - Al Majaz 3 - Al Majaz - Sharjah - United Arab Emirates
+- Phone: +971 52 756 9908
 - Add photos, services, hours
 - Get reviews from students
 
@@ -363,8 +363,8 @@ Submit to:
 
 ```
 Nitaq Training Center
-Office 103, Floor F1, Abu Khamseen Tower, Al Majaz 3, Sharjah, UAE
-+971 54 572 3181
+Abu Khamseen Tower - Office : F103, Floor F1 - Al Majaz 3 - Al Majaz - Sharjah - United Arab Emirates
++971 52 756 9908
 ```
 
 ---

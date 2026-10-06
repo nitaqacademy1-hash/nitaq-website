@@ -103,7 +103,7 @@ const ChooseRightCourseUae = () => {
                                 <h3>Find Your Path</h3>
                                 <p>Schedule a free consultation with our career advisors to choose the right course for your goals.</p>
                                 <Link to="/courses" className="btn btn-primary w-100 mb-15">Browse Our Courses</Link>
-                                <a href="tel:+97165798313" className="btn btn-outline w-100">Consult Our Advisor</a>
+                                <a href="tel:+971527569908" className="btn btn-outline w-100">Consult Our Advisor</a>
                             </div>
                         </aside>
                     </div>

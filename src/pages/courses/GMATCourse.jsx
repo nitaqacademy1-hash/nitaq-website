@@ -6,7 +6,7 @@ const GMATCourse = () => {
     const infoData = {
         "Level": "MBA Aspirants",
         "Mock Exams": "10 Full-Length Tests",
-        "Focus Areas": "Quant, Verbal, AWA",
+        "Exam Sections": "Quantitative, Verbal, Data Insights",
         "Support": "One-on-One Mentoring",
         "Age Group": "20+ Years",
         "Authorization": "SPEA Authorized & UAE Govt Attested"
@@ -38,7 +38,7 @@ const GMATCourse = () => {
                 <h2>Program <span className="text-gradient">Overview</span></h2>
                 <div className="overview-text">
                     <p style={{ marginBottom: '15px' }}>
-                        The Graduate Management Admission Test (GMAT) is a globally recognized standardized exam that evaluates a candidate's abilities in Quantitative Reasoning, Verbal Reasoning, and Analytical Writing. It is the gold standard for admission into MBA programs worldwide.
+                        The current Graduate Management Admission Test (GMAT) has three sections: Quantitative Reasoning, Verbal Reasoning, and Data Insights. Schools use GMAT scores as one part of graduate management admissions.
                     </p>
                     <p style={{ marginBottom: '15px' }}>
                         The GMAT Preparation Course at Nitaq is thoughtfully designed to equip students with the skills, strategies, and structured study approach required to perform confidently. Our program focuses not only on content mastery but also on test-taking efficiency and strategic thinking.
@@ -133,7 +133,7 @@ const GMATCourse = () => {
                     <details className="faq-accordion">
                         <summary>What is the GMAT exam?</summary>
                         <div className="faq-accordion-content">
-                            <p>Please contact our counselors for detailed information regarding the GMAT structure and requirements.</p>
+                            <p>The current GMAT has Quantitative Reasoning, Verbal Reasoning, and Data Insights sections. Check the official GMAT site for the latest question types and timing.</p>
                         </div>
                     </details>
                     <details className="faq-accordion">

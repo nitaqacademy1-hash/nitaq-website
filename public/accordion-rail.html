@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nitaq Academy — Accordion Sliver Rail</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at 50% 15%, #184d26 0%, #0e2d17 50%, #07190c 100%);
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      color: #f1f8e9;
+      padding: 40px 20px;
+      overflow-x: hidden;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+      max-width: 680px;
+    }
+
+    .header .eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #a4d66e;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+      background: rgba(164, 214, 110, 0.12);
+      padding: 6px 14px;
+      border-radius: 100px;
+      border: 1px solid rgba(164, 214, 110, 0.25);
+    }
+
+    .header .eyebrow::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #a4d66e;
+      box-shadow: 0 0 8px #a4d66e;
+    }
+
+    .header h1 {
+      font-size: clamp(32px, 4vw, 44px);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1.15;
+      color: #ffffff;
+      margin-bottom: 12px;
+    }
+
+    .header p {
+      font-size: 14px;
+      line-height: 1.7;
+      color: #c5dac0;
+    }
+
+    /* ─────────────────────────────────────────────────────────────
+       THE STAGE (container-type: inline-size)
+       ───────────────────────────────────────────────────────────── */
+    .stage {
+      container-type: inline-size;
+      width: 100%;
+      max-width: 1160px;
+      padding: 20px 0;
+    }
+
+    /* ─────────────────────────────────────────────────────────────
+       THE RAIL: flex row, fixed gap (1%), flex: 0 0 auto
+       ───────────────────────────────────────────────────────────── */
+    .rail {
+      display: flex;
+      gap: 1%;
+      width: 100%;
+      height: 520px;
+      align-items: stretch;
+      user-select: none;
+    }
+
+    .sliver {
+      flex: 0 0 auto;
+      width: 13%;
+      position: relative;
+      border-radius: 22px;
+      overflow: hidden;
+      cursor: pointer;
+      outline: none;
+      filter: brightness(0.8);
+      transition: width 0.62s cubic-bezier(0.22, 1, 0.36, 1),
+                  filter 0.62s cubic-bezier(0.22, 1, 0.36, 1),
+                  box-shadow 0.62s cubic-bezier(0.22, 1, 0.36, 1);
+      text-decoration: none;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    /* SLIVER GRADIENTS (Nitaq Academy deep rich academic palette) */
+    .sliver-1 {
+      background: linear-gradient(155deg, #1b5e20 0%, #113f17 50%, #0a250e 100%);
+      --blob-grad: linear-gradient(135deg, #388e3c, #1b5e20);
+    }
+    .sliver-2 {
+      background: linear-gradient(155deg, #246b2a 0%, #174d1e 50%, #0d2e13 100%);
+      --blob-grad: linear-gradient(135deg, #4caf50, #2e7d32);
+    }
+    .sliver-3 {
+      background: linear-gradient(155deg, #164627 0%, #0f331c 50%, #081f11 100%);
+      --blob-grad: linear-gradient(135deg, #2e7d32, #1b5e20);
+    }
+    .sliver-4 {
+      background: linear-gradient(155deg, #2e7d32 0%, #1a5624 50%, #0f3516 100%);
+      --blob-grad: linear-gradient(135deg, #66bb6a, #2e7d32);
+    }
+    .sliver-5 {
+      background: linear-gradient(155deg, #1e5425 0%, #143d1b 50%, #0a2410 100%);
+      --blob-grad: linear-gradient(135deg, #81c784, #388e3c);
+    }
+
+    /* 3D ORGANIC BLOB PSEUDO-ELEMENT */
+    .sliver::before {
+      content: '';
+      position: absolute;
+      top: 15%;
+      left: 50%;
+      width: 220px;
+      height: 220px;
+      transform: translate(-50%, 0);
+      border-radius: 46% 54% 58% 42% / 52% 44% 56% 48%;
+      background: radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.12) 42%, rgba(0, 0, 0, 0.3) 100%),
+                  var(--blob-grad);
+      box-shadow: 0 24px 50px rgba(0, 0, 0, 0.45),
+                  inset 0 2px 4px rgba(255, 255, 255, 0.55),
+                  inset 0 -4px 8px rgba(0, 0, 0, 0.35);
+      pointer-events: none;
+      transition: transform 0.62s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    /* BOTTOM-UP DARK SCRIM */
+    .sliver::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(4, 18, 9, 0.96) 0%, rgba(4, 18, 9, 0.65) 42%, rgba(4, 18, 9, 0) 75%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* TOP PILL BADGE */
+    .sliver-top {
+      position: absolute;
+      top: 22px;
+      left: 20px;
+      right: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 2;
+    }
+
+    .sliver-index {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 600;
+      color: #a4d66e;
+      background: rgba(164, 214, 110, 0.16);
+      padding: 4px 9px;
+      border-radius: 12px;
+      border: 1px solid rgba(164, 214, 110, 0.3);
+      backdrop-filter: blur(8px);
+    }
+
+    .sliver-arrow {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-size: 15px;
+      opacity: 0;
+      transform: scale(0.8);
+      transition: opacity 0.35s ease 0.12s, transform 0.35s ease 0.12s;
+    }
+
+    /* CLOSED VERTICAL TITLE */
+    .sliver-vertical-title {
+      position: absolute;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%) rotate(-90deg);
+      transform-origin: center center;
+      white-space: nowrap;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(215, 245, 206, 0.85);
+      z-index: 2;
+      transition: opacity 0.25s ease;
+      pointer-events: none;
+    }
+
+    /* ─────────────────────────────────────────────────────────────
+       THE CAPTION: width: 44cqw, white-space: nowrap
+       ───────────────────────────────────────────────────────────── */
+    .caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 44cqw;
+      padding: 34px 28px;
+      white-space: nowrap;
+      z-index: 2;
+      opacity: 0;
+      transform: translateY(6px);
+      pointer-events: none;
+      transition: opacity 0.4s ease 0.12s,
+                  transform 0.4s cubic-bezier(0.22, 1, 0.36, 1) 0.12s;
+    }
+
+    .caption .tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #a4d66e;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      margin-bottom: 8px;
+    }
+
+    .caption .tag::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #a4d66e;
+    }
+
+    .caption h2 {
+      font-size: clamp(22px, 2.2cqw, 30px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: #ffffff;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+
+    .caption p {
+      font-size: 13px;
+      color: #c2d6be;
+      white-space: normal;
+      max-width: 480px;
+      line-height: 1.65;
+    }
+
+    /* ─────────────────────────────────────────────────────────────
+       OPEN STATE: width: 44%, brightness(1.05)
+       ───────────────────────────────────────────────────────────── */
+    .sliver.is-open {
+      width: 44%;
+      filter: brightness(1.05);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+    }
+
+    .sliver.is-open::before {
+      transform: translate(-50%, -10px) scale(1.1);
+    }
+
+    .sliver.is-open .sliver-vertical-title {
+      opacity: 0;
+    }
+
+    .sliver.is-open .caption {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .sliver.is-open .sliver-arrow {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .sliver:focus-visible {
+      box-shadow: 0 0 0 3px #a4d66e, 0 24px 60px rgba(0, 0, 0, 0.6);
+    }
+
+    @media (max-width: 820px) {
+      .rail {
+        height: 480px;
+      }
+      .caption {
+        padding: 24px 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="eyebrow">Academic Programs</div>
+    <h1>Programs designed<br>around your goals.</h1>
+    <p>Hover or focus any track to slide neighbours aside and explore our curriculum.</p>
+  </header>
+
+  <div class="stage">
+    <div class="rail" id="sliver-rail" role="region" aria-label="Programs Accordion Rail">
+
+      <!-- ITEM 1: Digital SAT (Open by default) -->
+      <article class="sliver sliver-1 is-open" tabindex="0" data-index="0" aria-label="Digital SAT Preparation">
+        <div class="sliver-top">
+          <span class="sliver-index">01</span>
+          <span class="sliver-arrow">↗</span>
+        </div>
+        <div class="sliver-vertical-title">Digital SAT Prep</div>
+        <div class="caption">
+          <div class="tag">Standardized Exams</div>
+          <h2>Digital SAT Preparation</h2>
+          <p>Strategy, diagnostic pacing, and question-level feedback to achieve top competitive scores.</p>
+        </div>
+      </article>
+
+      <!-- ITEM 2: Language Training -->
+      <article class="sliver sliver-2" tabindex="0" data-index="1" aria-label="Language Training">
+        <div class="sliver-top">
+          <span class="sliver-index">02</span>
+          <span class="sliver-arrow">↗</span>
+        </div>
+        <div class="sliver-vertical-title">Language Training</div>
+        <div class="caption">
+          <div class="tag">Global Fluency</div>
+          <h2>Language Training</h2>
+          <p>Practical spoken Arabic and English tailored for business, academic study, and daily confidence.</p>
+        </div>
+      </article>
+
+      <!-- ITEM 3: Subject Tuition -->
+      <article class="sliver sliver-3" tabindex="0" data-index="2" aria-label="Subject Tuition">
+        <div class="sliver-top">
+          <span class="sliver-index">03</span>
+          <span class="sliver-arrow">↗</span>
+        </div>
+        <div class="sliver-vertical-title">Subject Tuition</div>
+        <div class="caption">
+          <div class="tag">Academic Mastery</div>
+          <h2>Subject Tuition</h2>
+          <p>Focused Math, Physics, Chemistry, and Biology tuition that turns confusing topics into clarity.</p>
+        </div>
+      </article>
+
+      <!-- ITEM 4: Professional Courses -->
+      <article class="sliver sliver-4" tabindex="0" data-index="3" aria-label="Other Courses">
+        <div class="sliver-top">
+          <span class="sliver-index">04</span>
+          <span class="sliver-arrow">↗</span>
+        </div>
+        <div class="sliver-vertical-title">Professional Courses</div>
+        <div class="caption">
+          <div class="tag">Career &amp; Tech</div>
+          <h2>Other Courses</h2>
+          <p>Business analytics, technology certificates, and career advancement workshops.</p>
+        </div>
+      </article>
+
+      <!-- ITEM 5: Academic Diagnostics -->
+      <article class="sliver sliver-5" tabindex="0" data-index="4" aria-label="Diagnostics &amp; Roadmap">
+        <div class="sliver-top">
+          <span class="sliver-index">05</span>
+          <span class="sliver-arrow">↗</span>
+        </div>
+        <div class="sliver-vertical-title">Diagnostic Pathways</div>
+        <div class="caption">
+          <div class="tag">Assessment &amp; Roadmap</div>
+          <h2>Diagnostic Pathways</h2>
+          <p>Benchmark current capabilities before starting to build an individualized roadmap to success.</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const rail = document.getElementById('sliver-rail');
+      const slivers = Array.from(rail.querySelectorAll('.sliver'));
+      let activeIndex = 0;
+      let touchTimer = null;
+      let isTouching = false;
+
+      function setActive(index) {
+        activeIndex = index;
+        slivers.forEach((sliver, i) => {
+          sliver.classList.toggle('is-open', i === index);
+        });
+      }
+
+      // Hover & Focus interactions
+      slivers.forEach((sliver, index) => {
+        sliver.addEventListener('mouseenter', () => {
+          if (!isTouching) setActive(index);
+        });
+        sliver.addEventListener('focus', () => {
+          setActive(index);
+        });
+      });
+
+      // On touch: cycle the open item every 2.2s permanently
+      function startTouchCycle() {
+        if (touchTimer) return;
+        isTouching = true;
+        touchTimer = setInterval(() => {
+          activeIndex = (activeIndex + 1) % slivers.length;
+          setActive(activeIndex);
+        }, 2200);
+      }
+
+      window.addEventListener('touchstart', startTouchCycle, { once: true, passive: true });
+    })();
+  </script>
+</body>
+</html>

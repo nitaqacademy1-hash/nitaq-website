@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nitaq Academy — Particle Cloak</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #081a0e;
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    }
+
+    /* HOST CONTAINER */
+    .stage {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at 50% 50%, #133a1e 0%, #092110 50%, #051409 100%);
+      overflow: hidden;
+      cursor: crosshair;
+    }
+
+    /* UNDERNEATH: PLATE OF CONTENT (DOM) */
+    .underneath {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 40px 24px;
+      max-width: 860px;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    .underneath .mono-caption {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: clamp(10px, 1.1vw, 13px);
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #a4d66e;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 24px;
+      background: rgba(164, 214, 110, 0.12);
+      padding: 7px 18px;
+      border-radius: 100px;
+      border: 1px solid rgba(164, 214, 110, 0.3);
+      backdrop-filter: blur(10px);
+    }
+
+    .underneath .mono-caption::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #a4d66e;
+      box-shadow: 0 0 10px #a4d66e;
+    }
+
+    .underneath h1 {
+      font-size: clamp(44px, 7vw, 92px);
+      font-weight: 800;
+      letter-spacing: -0.05em;
+      line-height: 1.05;
+      background: linear-gradient(135deg, #ffffff 0%, #e2f2dd 35%, #a4d66e 70%, #66bb6a 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+      margin-bottom: 20px;
+    }
+
+    .underneath p {
+      font-size: clamp(14px, 1.6vw, 19px);
+      color: #b7ceb2;
+      max-width: 580px;
+      margin: 0 auto;
+      line-height: 1.7;
+      font-weight: 400;
+    }
+
+    /* THE CLOAK: CANVAS OVERLAY */
+    .cloak-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .hud-hint {
+      position: absolute;
+      bottom: 28px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(183, 214, 176, 0.45);
+      z-index: 10;
+      pointer-events: none;
+      user-select: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="stage" id="stage">
+    
+    <!-- UNDERNEATH: Plate of content -->
+    <div class="underneath">
+      <div class="mono-caption">Nitaq Academy // Al Majaz 3, Sharjah</div>
+      <h1>From Potential<br>To Progress.</h1>
+      <p>Premium Digital SAT, language mastery, and academic tuition guided by diagnostic clarity.</p>
+    </div>
+
+    <!-- THE CLOAK: Canvas 2D over normal DOM -->
+    <canvas class="cloak-canvas" id="cloak"></canvas>
+
+    <div class="hud-hint">Move pointer across screen to part the cloak of particles</div>
+  </div>
+
+  <script>
+    (function () {
+      const stage = document.getElementById('stage');
+      const canvas = document.getElementById('cloak');
+      const ctx = canvas.getContext('2d');
+
+      const PARTICLE_RGB = '190, 235, 175'; // Luminous mint / emerald accent
+
+      let width = 0;
+      let height = 0;
+      let dpr = 1;
+      let particles = [];
+
+      let hasEntered = false;
+      let isTouch = false;
+      let targetX = 0;
+      let targetY = 0;
+      let easedX = 0;
+      let easedY = 0;
+
+      function resize() {
+        const rect = stage.getBoundingClientRect();
+        width = rect.width;
+        height = rect.height;
+        dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+        canvas.width = Math.round(width * dpr);
+        canvas.height = Math.round(height * dpr);
+        canvas.style.width = width + 'px';
+        canvas.style.height = height + 'px';
+
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+        // Fill with particles on a grid whose step is max(9, min(w,h)/22) px
+        const minDim = Math.min(width, height) || 1;
+        const step = Math.max(9, minDim / 22);
+
+        const cols = Math.ceil(width / step) + 2;
+        const rows = Math.ceil(height / step) + 2;
+
+        const offsetX = (width - (cols - 1) * step) / 2;
+        const offsetY = (height - (rows - 1) * step) / 2;
+
+        particles = [];
+        for (let r = 0; r < rows; r++) {
+          for (let c = 0; c < cols; c++) {
+            const hx = offsetX + c * step;
+            const hy = offsetY + r * step;
+            particles.push({
+              homeX: hx,
+              homeY: hy,
+              x: hx,
+              y: hy,
+              vx: 0,
+              vy: 0,
+              radius: 1.0 + Math.random() * 1.6 // 1 - 2.6px
+            });
+          }
+        }
+
+        if (!hasEntered) {
+          easedX = width * 0.5;
+          easedY = height * 0.5;
+          targetX = easedX;
+          targetY = easedY;
+        }
+      }
+
+      const ro = new ResizeObserver(() => resize());
+      ro.observe(stage);
+
+      function onPointerMove(e) {
+        if (isTouch) return;
+        hasEntered = true;
+        const rect = stage.getBoundingClientRect();
+        targetX = e.clientX - rect.left;
+        targetY = e.clientY - rect.top;
+      }
+
+      function onPointerEnter(e) {
+        if (isTouch) return;
+        hasEntered = true;
+        onPointerMove(e);
+      }
+
+      function onTouchStart() {
+        isTouch = true;
+      }
+
+      window.addEventListener('pointermove', onPointerMove, { passive: true });
+      stage.addEventListener('pointerenter', onPointerEnter, { passive: true });
+      window.addEventListener('touchstart', onTouchStart, { passive: true });
+
+      let startTime = null;
+
+      function render(now) {
+        if (!startTime) startTime = now;
+        const t = (now - startTime) * 0.001;
+
+        // Before pointer has entered, drift on a slow Lissajous; on touch keep that drift permanently
+        if (!hasEntered || isTouch) {
+          targetX = width * (0.5 + 0.32 * Math.sin(t * 0.7) * Math.cos(t * 0.23));
+          targetY = height * (0.5 + 0.28 * Math.sin(t * 0.52 + 1.1));
+        }
+
+        // Lerp the pointer at 0.16
+        easedX += (targetX - easedX) * 0.16;
+        easedY += (targetY - easedY) * 0.16;
+
+        const minDim = Math.min(width, height) || 1;
+        const R = 0.34 * minDim;
+
+        ctx.clearRect(0, 0, width, height);
+
+        for (let i = 0; i < particles.length; i++) {
+          const p = particles[i];
+
+          // d = distance from the eased pointer
+          const dx = p.x - easedX;
+          const dy = p.y - easedY;
+          const d = Math.hypot(dx, dy);
+
+          // if d < R: push the particle directly away from the pointer by f along its own normal
+          if (d < R) {
+            const f = Math.pow(1 - d / R, 2) * 3.4;
+            const normX = d > 0.0001 ? dx / d : (Math.random() - 0.5);
+            const normY = d > 0.0001 ? dy / d : (Math.random() - 0.5);
+            p.vx += normX * f;
+            p.vy += normY * f;
+          }
+
+          // always pull it home: v += (home - pos) * 0.024
+          p.vx += (p.homeX - p.x) * 0.024;
+          p.vy += (p.homeY - p.y) * 0.024;
+
+          // damp: v *= 0.86
+          p.vx *= 0.86;
+          p.vy *= 0.86;
+
+          // integrate: pos += v
+          p.x += p.vx;
+          p.y += p.vy;
+
+          // FADE BY DISPLACEMENT: alpha = max(0, 0.72 - distanceFromHome / 70)
+          const distHome = Math.hypot(p.x - p.homeX, p.y - p.homeY);
+          const alpha = Math.max(0, 0.72 - distHome / 70);
+
+          if (alpha > 0.005) {
+            ctx.fillStyle = `rgba(${PARTICLE_RGB}, ${alpha})`;
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+            ctx.fill();
+          }
+        }
+
+        requestAnimationFrame(render);
+      }
+
+      requestAnimationFrame(render);
+    })();
+  </script>
+</body>
+</html>

@@ -535,12 +535,12 @@ const ProfessionalDigitalMarketingCourse = () => {
                                 WhatsApp Advisor
                             </a>
                             <a 
-                                href="tel:+97165798313" 
+                                href="tel:+971527569908" 
                                 className="btn" 
                                 style={{ background: '#f1f5f9', color: '#1e293b' }}
                                 onClick={() => trackEvent(ANALYTICS_EVENTS.CALL, 'cta_overview_call')}
                             >
-                                Call +971 6 579 8313
+                                Call +971 52 756 9908
                             </a>
                         </div>
                     </div>

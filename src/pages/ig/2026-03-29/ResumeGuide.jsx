@@ -78,7 +78,7 @@ const ResumeGuide = () => {
             <div className="nitaq-stripe">
                 <div className="container stripe-content">
                     <span>🚀 Master Professional Skills with NITAQ ACADEMY</span>
-                    <a href="tel:+97165798313" className="stripe-link">
+                    <a href="tel:+971527569908" className="stripe-link">
                         Enroll Now <span className="arrow">→</span>
                     </a>
                 </div>

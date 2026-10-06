@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nitaq Academy — Gravitational Singularity Grid</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-color: #07130a;
+      background-image: radial-gradient(circle at 50% 50%, #0d2615 0%, #061209 100%);
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+
+    #canvas-container {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      cursor: crosshair;
+    }
+
+    canvas {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .hud {
+      position: absolute;
+      top: 28px;
+      left: 32px;
+      pointer-events: none;
+      color: rgba(215, 245, 206, 0.7);
+      user-select: none;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .hud strong {
+      color: #a4d66e;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hud strong::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #a4d66e;
+      box-shadow: 0 0 8px #a4d66e;
+    }
+
+    .hud span {
+      opacity: 0.6;
+      font-size: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hud">
+    <strong>Nitaq Academy // Singularity Well</strong>
+    <span>Move pointer to bend spacetime grid · Gaussian rubber sheet</span>
+  </div>
+
+  <div id="canvas-container">
+    <canvas id="warp-canvas"></canvas>
+  </div>
+
+  <script>
+    (function () {
+      const canvas = document.getElementById('warp-canvas');
+      const container = document.getElementById('canvas-container');
+      const ctx = canvas.getContext('2d');
+
+      const SPACING = 26;
+      const ACCENT_RGB = '175, 228, 142';
+      const LINE_RGB = '164, 214, 110';
+
+      let width = 0;
+      let height = 0;
+      let dpr = 1;
+      let cols = 0;
+      let rows = 0;
+      let grid = [];
+
+      let hasEntered = false;
+      let isTouch = false;
+      let targetX = 0;
+      let targetY = 0;
+      let easedX = 0;
+      let easedY = 0;
+
+      function resize() {
+        const rect = container.getBoundingClientRect();
+        width = rect.width;
+        height = rect.height;
+        dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+        canvas.width = Math.round(width * dpr);
+        canvas.height = Math.round(height * dpr);
+        canvas.style.width = width + 'px';
+        canvas.style.height = height + 'px';
+
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+        cols = Math.ceil(width / SPACING) + 2;
+        rows = Math.ceil(height / SPACING) + 2;
+
+        const offsetX = (width - (cols - 1) * SPACING) / 2;
+        const offsetY = (height - (rows - 1) * SPACING) / 2;
+
+        grid = [];
+        for (let r = 0; r < rows; r++) {
+          const rowArr = [];
+          for (let c = 0; c < cols; c++) {
+            rowArr.push({
+              origX: offsetX + c * SPACING,
+              origY: offsetY + r * SPACING,
+              curX: offsetX + c * SPACING,
+              curY: offsetY + r * SPACING,
+              g: 0
+            });
+          }
+          grid.push(rowArr);
+        }
+
+        if (!hasEntered) {
+          easedX = width * 0.5;
+          easedY = height * 0.5;
+          targetX = easedX;
+          targetY = easedY;
+        }
+      }
+
+      const ro = new ResizeObserver(() => resize());
+      ro.observe(container);
+
+      function onPointerMove(e) {
+        if (isTouch) return;
+        hasEntered = true;
+        const rect = canvas.getBoundingClientRect();
+        targetX = e.clientX - rect.left;
+        targetY = e.clientY - rect.top;
+      }
+
+      function onPointerEnter(e) {
+        if (isTouch) return;
+        hasEntered = true;
+        onPointerMove(e);
+      }
+
+      function onTouchStart() {
+        isTouch = true;
+      }
+
+      window.addEventListener('pointermove', onPointerMove, { passive: true });
+      canvas.addEventListener('pointerenter', onPointerEnter, { passive: true });
+      window.addEventListener('touchstart', onTouchStart, { passive: true });
+
+      let startTime = null;
+
+      function render(now) {
+        if (!startTime) startTime = now;
+        const t = (now - startTime) * 0.001;
+
+        if (!hasEntered || isTouch) {
+          targetX = width * (0.5 + 0.34 * Math.sin(t * 0.7) * Math.cos(t * 0.23));
+          targetY = height * (0.5 + 0.30 * Math.sin(t * 0.52 + 1.1));
+        }
+
+        easedX += (targetX - easedX) * 0.10;
+        easedY += (targetY - easedY) * 0.10;
+
+        const minDim = Math.min(width, height) || 1;
+        const SIG = 0.42 * minDim;
+        const PULL = 0.30 * minDim;
+        const twoSigSq = 2 * SIG * SIG;
+
+        for (let r = 0; r < rows; r++) {
+          const rowArr = grid[r];
+          for (let c = 0; c < cols; c++) {
+            const p = rowArr[c];
+            const dx = easedX - p.origX;
+            const dy = easedY - p.origY;
+            const d = Math.hypot(dx, dy);
+
+            const g = Math.exp(-(d * d) / twoSigSq);
+            p.g = g;
+
+            if (d > 0.0001) {
+              const pullAmount = g * PULL;
+              p.curX = p.origX + (dx / d) * pullAmount;
+              p.curY = p.origY + (dy / d) * pullAmount;
+            } else {
+              p.curX = p.origX;
+              p.curY = p.origY;
+            }
+          }
+        }
+
+        ctx.clearRect(0, 0, width, height);
+
+        // Lines
+        ctx.lineWidth = 1;
+        for (let r = 0; r < rows; r++) {
+          const rowArr = grid[r];
+          for (let c = 0; c < cols; c++) {
+            const p = rowArr[c];
+
+            if (c + 1 < cols) {
+              const right = rowArr[c + 1];
+              const avgG = (p.g + right.g) * 0.5;
+              if (avgG >= 0.004) {
+                const lineAlpha = 0.04 + avgG * 0.62;
+                ctx.strokeStyle = `rgba(${LINE_RGB}, ${lineAlpha})`;
+                ctx.beginPath();
+                ctx.moveTo(p.curX, p.curY);
+                ctx.lineTo(right.curX, right.curY);
+                ctx.stroke();
+              }
+            }
+
+            if (r + 1 < rows) {
+              const bottom = grid[r + 1][c];
+              const avgG = (p.g + bottom.g) * 0.5;
+              if (avgG >= 0.004) {
+                const lineAlpha = 0.04 + avgG * 0.62;
+                ctx.strokeStyle = `rgba(${LINE_RGB}, ${lineAlpha})`;
+                ctx.beginPath();
+                ctx.moveTo(p.curX, p.curY);
+                ctx.lineTo(bottom.curX, bottom.curY);
+                ctx.stroke();
+              }
+            }
+          }
+        }
+
+        // Dots
+        for (let r = 0; r < rows; r++) {
+          const rowArr = grid[r];
+          for (let c = 0; c < cols; c++) {
+            const p = rowArr[c];
+            const g = p.g;
+            const radius = 0.9 + g * 1.9;
+            const dotAlpha = 0.16 + g * 0.62;
+
+            ctx.fillStyle = `rgba(${ACCENT_RGB}, ${dotAlpha})`;
+            ctx.beginPath();
+            ctx.arc(p.curX, p.curY, radius, 0, Math.PI * 2);
+            ctx.fill();
+          }
+        }
+
+        requestAnimationFrame(render);
+      }
+
+      requestAnimationFrame(render);
+    })();
+  </script>
+</body>
+</html>

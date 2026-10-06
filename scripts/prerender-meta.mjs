@@ -172,13 +172,13 @@ function generatePageHtml(template, page) {
       "image": 'https://www.nitaqacademy.com/images/logo1.webp',
       "@id": 'https://www.nitaqacademy.com/contact',
       "url": 'https://www.nitaqacademy.com/contact',
-      "telephone": "+971545723181",
+      "telephone": "+971527569908",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Office 103, Floor F1, Abu Khamseen Tower",
-        "addressLocality": "Al Majaz 3",
+        "streetAddress": "Abu Khamseen Tower - Office : F103, Floor F1 - Al Majaz 3 - Al Majaz",
+        "addressLocality": "Sharjah",
         "addressRegion": "Sharjah",
-        "addressCountry": "AE"
+        "addressCountry": "United Arab Emirates"
       },
       "geo": { "@type": "GeoCoordinates", "latitude": 25.3259, "longitude": 55.3857 },
       "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "24" }

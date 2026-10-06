@@ -1,211 +1,404 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import { Menu, X, ArrowUpRight, ChevronDown, Plus, Minus } from 'lucide-react';
 import { Link } from '../i18n/Link';
 import { useLanguage } from '../i18n/context';
 import { stripLangPrefix } from '../i18n/config';
 import { trackEvent, ANALYTICS_EVENTS } from '../utils/analytics';
+import '../styles/header.css';
+
+const menu = {
+  en: {
+    sat: 'SAT Preparation',
+    languages: 'Language Training',
+    tuition: 'Subject Tuition',
+    other: 'Other Courses',
+    call: 'Call Admissions',
+    menu: 'Open navigation',
+    close: 'Close navigation',
+    general: 'Language courses',
+    exams: 'English exam preparation',
+    professional: 'Professional & technical',
+    business: 'Business & corporate',
+    finance: 'Finance & Accounting',
+    tech: 'Tech, AI & Digital',
+    businessMgmt: 'Business & Management',
+    testPrepFoundations: 'Test Prep & Foundations',
+    allLanguages: 'All Language Trainings →',
+    allTuition: 'All Subject Tuition →',
+    allCourses: 'All Other Courses →'
+  },
+  ar: {
+    sat: 'التحضير لاختبار SAT',
+    languages: 'تدريب اللغات',
+    tuition: 'الدروس الأكاديمية',
+    other: 'دورات أخرى',
+    call: 'اتصل بالقبول',
+    menu: 'فتح قائمة التنقل',
+    close: 'إغلاق قائمة التنقل',
+    general: 'دورات اللغات',
+    exams: 'اختبارات كفاءة الإنجليزية',
+    professional: 'دورات مهنية وتقنية',
+    business: 'الأعمال والتدريب المؤسسي',
+    finance: 'المحاسبة والمالية',
+    tech: 'التكنولوجيا والذكاء الاصطناعي',
+    businessMgmt: 'الأعمال والإدارة',
+    testPrepFoundations: 'اختبارات وتأسيس',
+    allLanguages: 'جميع تدريبات اللغات ←',
+    allTuition: 'جميع الدروس الأكاديمية ←',
+    allCourses: 'جميع الدورات الأخرى ←'
+  }
+};
 
 const Header = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [isScrolled, setIsScrolled] = useState(false);
-    const location = useLocation();
-    const { lang, t, switchLanguage } = useLanguage();
+  const [open, setOpen] = useState(false);
+  const [expanded, setExpanded] = useState(null);
+  const [scrolled, setScrolled] = useState(false);
+  const headerRef = useRef(null);
+  const toggleRef = useRef(null);
+  const location = useLocation();
+  const { lang, switchLanguage } = useLanguage();
+  const c = menu[lang] || menu.en;
+  const path = stripLangPrefix(location.pathname);
 
-    // Active-state checks must ignore the /ar prefix so the Arabic pages
-    // highlight the same nav items as their English counterparts.
-    const path = stripLangPrefix(location.pathname);
+  const close = () => {
+    setOpen(false);
+    setExpanded(null);
+    document.body.style.overflow = '';
+  };
 
-    const toggleLanguage = () => switchLanguage(lang === 'en' ? 'ar' : 'en');
+  const toggle = () => {
+    setOpen(prev => {
+      const next = !prev;
+      document.body.style.overflow = next ? 'hidden' : '';
+      return next;
+    });
+  };
 
-    useEffect(() => {
-        const handleScroll = () => {
-            if (window.scrollY > 20) {
-                setIsScrolled(true);
-            } else {
-                setIsScrolled(false);
-            }
-        };
+  const toggleExpand = (section, e) => {
+    e.stopPropagation();
+    setExpanded(prev => (prev === section ? null : section));
+  };
 
-        window.addEventListener('scroll', handleScroll, { passive: true });
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 16);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
-        if (!isMenuOpen) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = 'unset';
-        }
+  useEffect(() => {
+    const onKeyDown = event => {
+      if (event.key === 'Escape') {
+        close();
+        toggleRef.current?.focus();
+      }
     };
 
-    const closeMenu = () => {
-        setIsMenuOpen(false);
-        document.body.style.overflow = 'unset';
+    const onPointerDown = event => {
+      if (headerRef.current && !headerRef.current.contains(event.target)) {
+        close();
+      }
     };
 
+    const media = window.matchMedia('(min-width: 1101px)');
+    const onBreakpoint = () => {
+      if (media.matches) close();
+    };
 
+    document.addEventListener('keydown', onKeyDown);
+    document.addEventListener('pointerdown', onPointerDown);
+    media.addEventListener('change', onBreakpoint);
 
-    return (
-        <>
+    return () => {
+      document.removeEventListener('keydown', onKeyDown);
+      document.removeEventListener('pointerdown', onPointerDown);
+      media.removeEventListener('change', onBreakpoint);
+      document.body.style.overflow = '';
+    };
+  }, []);
 
-            <header className={`${isScrolled ? 'scrolled' : ''} ${path === '/' && !isScrolled ? 'home-top-header' : ''}`.trim()}>
-                <div className="container nav-wrapper">
-                    <Link to="/" className="logo" onClick={closeMenu}>
-                        <img
-                            src="/images/logo1.webp"
-                            alt="Nitaq Logo"
-                            width="160"
-                            height="60"
-                            style={{ height: '60px', width: 'auto', objectFit: 'contain' }}
-                            fetchPriority="high"
-                        />
-                    </Link>
+  // Check active states
+  const isSatActive = path === '/sat-preparation-sharjah' || path === '/sat-preparation-dubai';
+  const isLanguagesActive =
+    path === '/language-trainings' ||
+    ['/spoken-english', '/spoken-arabic', '/french', '/spanish', '/german', '/ielts-course', '/toefl-course', '/pte-course'].includes(path);
+  const isTuitionActive =
+    path === '/academic-excellence' ||
+    path.includes('tuition');
+  const isOtherActive =
+    path === '/courses' ||
+    ['/professional-certifications', '/ai-course', '/cybersecurity-course-sharjah', '/finance-courses', '/corporate-trainings', '/soft-skills-training', '/sales-negotiations', '/test-preparations'].includes(path);
 
-                    <button
-                        className={`mobile-menu-btn ${isMenuOpen ? 'active' : ''}`}
-                        aria-label={t('nav.toggleMenu')}
-                        onClick={toggleMenu}
-                    >
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
+  return (
+    <>
+      <header
+        ref={headerRef}
+        className={`nh-site-navbar nh-navbar ${scrolled ? 'is-scrolled' : ''}`}
+      >
+        {/* Brand Logo */}
+        <Link to="/" className="nh-logo" aria-label="Nitaq Academy" onClick={close}>
+          <img
+            src="/images/logo-white.webp"
+            alt="Nitaq Academy"
+            width="142"
+            height="53"
+            fetchPriority="high"
+          />
+        </Link>
 
-                    <nav className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
-                        <Link to="/" className={path === '/' ? 'active' : ''} onClick={closeMenu}>{t('nav.home')}</Link>
-                        <Link to="/about" className={path === '/about' ? 'active' : ''} onClick={closeMenu}>{t('nav.about')}</Link>
+        {/* Navigation Menu */}
+        <nav
+          id="site-navigation"
+          className={`nh-navigation ${open ? 'is-open' : ''}`}
+          aria-label={lang === 'ar' ? 'التنقل الرئيسي' : 'Main navigation'}
+        >
+          {/* 1. SAT Preparation */}
+          <div className="nh-nav-item">
+            <Link
+              to="/sat-preparation-sharjah"
+              className={`nh-nav-link ${isSatActive ? 'is-active' : ''}`}
+              onClick={close}
+            >
+              {c.sat}
+            </Link>
+          </div>
 
-                        <div className="dropdown">
-                            <span className={`dropbtn ${['/test-preparations', '/professional-certifications', '/language-trainings', '/corporate-trainings'].includes(path) ? 'active' : ''}`}>{t('nav.courses')} ▾</span>
-                            <div className="dropdown-content">
-                                <div className="submenu-item">
-                                    <Link to="/test-preparations" onClick={closeMenu}>{t('nav.testPreparations')} <span className="arrow-right">›</span></Link>
-                                    <div className="submenu-content">
-                                        <Link to="/ielts-course" onClick={closeMenu}>{t('nav.items.ielts')}</Link>
-                                        <Link to="/toefl-course" onClick={closeMenu}>{t('nav.items.toefl')}</Link>
-                                        <Link to="/pte-course" onClick={closeMenu}>{t('nav.items.pte')}</Link>
-                                        <Link to="/sat-preparation-sharjah" onClick={closeMenu}>{t('nav.items.sat')}</Link>
-                                        <Link to="/gmat-preparation" onClick={closeMenu}>{t('nav.items.gmat')}</Link>
-                                        <Link to="/gre-preparation" onClick={closeMenu}>{t('nav.items.gre')}</Link>
-                                        <Link to="/foundation-jee-neet" onClick={closeMenu}>{t('nav.items.jeeNeet')}</Link>
-                                        <Link to="/academic-excellence" onClick={closeMenu}>{t('nav.items.academicExcellence')}</Link>
-                                    </div>
-                                </div>
-                                <div className="submenu-item">
-                                    <Link to="/professional-certifications" onClick={closeMenu}>{t('nav.professionalCertifications')} <span className="arrow-right">›</span></Link>
-                                    <div className="submenu-content">
-                                        <Link to="/ai-course" onClick={closeMenu}>{t('nav.items.ai')}</Link>
-                                        <Link to="/cybersecurity-course-sharjah" onClick={closeMenu}>{t('nav.items.cybersecurity')}</Link>
-                                        <Link to="/power-bi-excel" onClick={closeMenu}>{t('nav.items.powerBi')}</Link>
-                                        <Link to="/sales-negotiations" onClick={closeMenu}>{t('nav.items.sales')}</Link>
-                                        <Link to="/courses/professional-digital-marketing-course-sharjah-uae" onClick={closeMenu}>{t('nav.items.digitalMarketing')}</Link>
-                                        <Link to="/professional-marketing-course" onClick={closeMenu}>{t('nav.items.professionalMarketing')}</Link>
-                                        <Link to="/software-engineering-diploma-sharjah" onClick={closeMenu}>{t('nav.items.softwareEngineering')}</Link>
-                                        <Link to="/cpcd-courses" onClick={closeMenu}>{t('nav.items.cpcd')}</Link>
-                                        <Link to="/data-management" onClick={closeMenu}>{t('nav.items.dataManagement')}</Link>
-                                        <Link to="/soft-skills-training" onClick={closeMenu}>{t('nav.items.softSkills')}</Link>
-                                    </div>
-                                </div>
-                                <div className="submenu-item">
-                                    <Link to="/language-trainings" onClick={closeMenu}>{t('nav.languageTrainings')} <span className="arrow-right">›</span></Link>
-                                    <div className="submenu-content">
-                                        <Link to="/spoken-english" onClick={closeMenu}>{t('nav.items.spokenEnglish')}</Link>
-                                        <Link to="/spoken-arabic" onClick={closeMenu}>{t('nav.items.spokenArabic')}</Link>
-                                        <Link to="/french" onClick={closeMenu}>{t('nav.items.french')}</Link>
-                                        <Link to="/spanish" onClick={closeMenu}>{t('nav.items.spanish')}</Link>
-                                        <Link to="/german" onClick={closeMenu}>{t('nav.items.german')}</Link>
-                                    </div>
-                                </div>
-                                <Link to="/corporate-trainings" onClick={closeMenu}>{t('nav.corporateTrainings')}</Link>
-                            </div>
-                        </div>
+          {/* 2. Language Training */}
+          <div className={`nh-nav-item ${expanded === 'languages' ? 'is-expanded' : ''}`}>
+            <div className="nh-mobile-item-row">
+              <Link
+                to="/language-trainings"
+                className={`nh-nav-link ${isLanguagesActive ? 'is-active' : ''}`}
+                onClick={close}
+              >
+                <span>{c.languages}</span>
+                <ChevronDown size={13} className="nh-dropdown-caret desktop-only-icon" />
+              </Link>
+              <button
+                type="button"
+                className="nh-mobile-expand-btn mobile-only-btn"
+                aria-label={(expanded === 'languages' ? 'Collapse ' : 'Expand ') + c.languages}
+                onClick={e => toggleExpand('languages', e)}
+              >
+                {expanded === 'languages' ? <Minus size={15} /> : <Plus size={15} />}
+              </button>
+            </div>
 
-                        <Link to="/contact" className={path === '/contact' ? 'active' : ''} onClick={closeMenu}>{t('nav.contact')}</Link>
-                        
-                        <button
-                            onClick={() => { toggleLanguage(); closeMenu(); }}
-                            className="lang-toggle mobile-only-btn"
-                            lang={lang === 'en' ? 'ar' : 'en'}
-                            aria-label={t('common.switchLanguage')}
-                            style={{
-                                padding: '10px 24px', 
-                                border: '1.5px solid var(--primary-color, #2e7d32)',
-                                borderRadius: '999px',
-                                background: 'transparent',
-                                color: 'var(--primary-color, #2e7d32)',
-                                fontWeight: '700',
-                                cursor: 'pointer',
-                                fontSize: '15px',
-                                marginTop: '10px',
-                                justifyContent: 'center'
-                            }}
-                        >
-                            {lang === 'en' ? 'العربية' : 'English'}
-                        </button>
-
-                        <a
-                            href="tel:+97165798313"
-                            className="btn btn-primary mobile-only-btn"
-                            onClick={() => trackEvent(ANALYTICS_EVENTS.CALL, 'header_mobile')}
-                        >
-                            {t('common.callUs')}
-                        </a>
-
-                    </nav>
-
-                    <div className="header-right-actions" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                        <button
-                            onClick={toggleLanguage}
-                            className="lang-toggle desktop-only-btn"
-                            lang={lang === 'en' ? 'ar' : 'en'}
-                            aria-label={t('common.switchLanguage')}
-                            style={{
-                                padding: '8px 20px', 
-                                border: '1.5px solid #2E7D32',
-                                borderRadius: '999px',
-                                background: '#ffffff',
-                                color: '#2E7D32',
-                                fontWeight: '700',
-                                cursor: 'pointer',
-                                fontSize: '14px',
-                                transition: 'all 0.2s ease'
-                            }}
-                        >
-                            {lang === 'en' ? 'العربية' : 'English'}
-                        </button>
-
-                        <a
-                            href="tel:+97165798313"
-                            className="btn desktop-only-btn"
-                            onClick={() => trackEvent(ANALYTICS_EVENTS.CALL, 'header_desktop')}
-                            style={{
-                                padding: '10px 24px',
-                                borderRadius: '999px',
-                                background: '#1E7E34',
-                                color: '#ffffff',
-                                fontWeight: '700',
-                                fontSize: '14px',
-                                border: 'none',
-                                textDecoration: 'none',
-                                boxShadow: '0 4px 14px rgba(30, 126, 52, 0.25)',
-                                display: 'inline-flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                transition: 'all 0.2s ease'
-                            }}
-                        >
-                            {t('common.callUs')}
-                        </a>
-                    </div>
+            <div className="nh-dropdown-menu">
+              <div className="nh-dropdown-mega two-col">
+                <div className="nh-dropdown-column">
+                  <strong>{c.general}</strong>
+                  <ul className="nh-dropdown-list">
+                    <li><Link to="/spoken-english" onClick={close}>{lang === 'ar' ? 'اللغة الإنجليزية والمحادثة' : 'English'}</Link></li>
+                    <li><Link to="/spoken-arabic" onClick={close}>{lang === 'ar' ? 'العربية للناطقين بغيرها' : 'العربية / Arabic'}</Link></li>
+                    <li><Link to="/french" onClick={close}>{lang === 'ar' ? 'اللغة الفرنسية' : 'French'}</Link></li>
+                    <li><Link to="/spanish" onClick={close}>{lang === 'ar' ? 'اللغة الإسبانية' : 'Spanish'}</Link></li>
+                    <li><Link to="/german" onClick={close}>{lang === 'ar' ? 'اللغة الألمانية' : 'German'}</Link></li>
+                  </ul>
                 </div>
-            </header>
+                <div className="nh-dropdown-column">
+                  <strong>{c.exams}</strong>
+                  <ul className="nh-dropdown-list">
+                    <li><Link to="/ielts-course" onClick={close}>{lang === 'ar' ? 'التحضير لاختبار IELTS' : 'IELTS Academic & General'}</Link></li>
+                    <li><Link to="/toefl-course" onClick={close}>{lang === 'ar' ? 'التحضير لاختبار TOEFL iBT' : 'TOEFL iBT'}</Link></li>
+                    <li><Link to="/pte-course" onClick={close}>{lang === 'ar' ? 'التحضير لاختبار PTE Academic' : 'PTE Academic'}</Link></li>
+                  </ul>
+                  <div className="nh-dropdown-footer">
+                    <Link to="/language-trainings" className="nh-dropdown-view-all" onClick={close}>
+                      {c.allLanguages}
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-            {isMenuOpen && (
-                <div className="mobile-nav-overlay active" onClick={closeMenu}></div>
-            )}
-        </>
-    );
+          {/* 3. Subject Tuition */}
+          <div className={`nh-nav-item ${expanded === 'tuition' ? 'is-expanded' : ''}`}>
+            <div className="nh-mobile-item-row">
+              <Link
+                to="/academic-excellence"
+                className={`nh-nav-link ${isTuitionActive ? 'is-active' : ''}`}
+                onClick={close}
+              >
+                <span>{c.tuition}</span>
+                <ChevronDown size={13} className="nh-dropdown-caret desktop-only-icon" />
+              </Link>
+              <button
+                type="button"
+                className="nh-mobile-expand-btn mobile-only-btn"
+                aria-label={(expanded === 'tuition' ? 'Collapse ' : 'Expand ') + c.tuition}
+                onClick={e => toggleExpand('tuition', e)}
+              >
+                {expanded === 'tuition' ? <Minus size={15} /> : <Plus size={15} />}
+              </button>
+            </div>
+
+            <div className="nh-dropdown-menu">
+              <div className="nh-dropdown-mega single-col">
+                <div className="nh-dropdown-column">
+                  <strong>{c.tuition}</strong>
+                  <ul className="nh-dropdown-list">
+                    <li><Link to="/maths-tuition-sharjah" onClick={close}>{lang === 'ar' ? 'دروس الرياضيات' : 'Mathematics Tuition'}</Link></li>
+                    <li><Link to="/science-tuition-sharjah" onClick={close}>{lang === 'ar' ? 'دروس العلوم العامة' : 'Science Tuition'}</Link></li>
+                    <li><Link to="/physics-tuition-sharjah" onClick={close}>{lang === 'ar' ? 'دروس الفيزياء' : 'Physics Tuition'}</Link></li>
+                    <li><Link to="/chemistry-tuition-sharjah" onClick={close}>{lang === 'ar' ? 'دروس الكيمياء' : 'Chemistry Tuition'}</Link></li>
+                    <li><Link to="/biology-tuition-sharjah" onClick={close}>{lang === 'ar' ? 'دروس الأحياء' : 'Biology Tuition'}</Link></li>
+                    <li><Link to="/english-tuition-sharjah" onClick={close}>{lang === 'ar' ? 'دروس اللغة الإنجليزية' : 'English Tuition'}</Link></li>
+                  </ul>
+                  <div className="nh-dropdown-footer">
+                    <Link to="/academic-excellence" className="nh-dropdown-view-all" onClick={close}>
+                      {c.allTuition}
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* 4. Other Courses */}
+          <div className={`nh-nav-item has-mega-dropdown ${expanded === 'other' ? 'is-expanded' : ''}`}>
+            <div className="nh-mobile-item-row">
+              <Link
+                to="/courses"
+                className={`nh-nav-link ${isOtherActive ? 'is-active' : ''}`}
+                onClick={close}
+              >
+                <span>{c.other}</span>
+                <ChevronDown size={13} className="nh-dropdown-caret desktop-only-icon" />
+              </Link>
+              <button
+                type="button"
+                className="nh-mobile-expand-btn mobile-only-btn"
+                aria-label={(expanded === 'other' ? 'Collapse ' : 'Expand ') + c.other}
+                onClick={e => toggleExpand('other', e)}
+              >
+                {expanded === 'other' ? <Minus size={15} /> : <Plus size={15} />}
+              </button>
+            </div>
+
+            <div className="nh-dropdown-menu">
+              <div className="nh-dropdown-mega four-col">
+                {/* Column 1: Finance & Accounting */}
+                <div className="nh-dropdown-column">
+                  <strong>{c.finance}</strong>
+                  <ul className="nh-dropdown-list">
+                    <li><Link to="/acca-course" onClick={close}>{lang === 'ar' ? 'شهادة ACCA' : 'ACCA Qualification'}</Link></li>
+                    <li><Link to="/cma-course" onClick={close}>{lang === 'ar' ? 'شهادة CMA' : 'CMA Preparation'}</Link></li>
+                    <li><Link to="/cpa-course" onClick={close}>{lang === 'ar' ? 'شهادة CPA' : 'CPA Preparation'}</Link></li>
+                    <li><Link to="/uae-corporate-tax" onClick={close}>{lang === 'ar' ? 'ضريبة الشركات في الإمارات' : 'UAE Corporate Tax'}</Link></li>
+                    <li><Link to="/uae-vat" onClick={close}>{lang === 'ar' ? 'ضريبة القيمة المضافة UAE VAT' : 'UAE VAT Training'}</Link></li>
+                    <li><Link to="/finance-courses" onClick={close}>{lang === 'ar' ? 'جميع الدورات المالية' : 'All Finance Courses'}</Link></li>
+                  </ul>
+                </div>
+
+                {/* Column 2: Tech, AI & Software */}
+                <div className="nh-dropdown-column">
+                  <strong>{c.tech}</strong>
+                  <ul className="nh-dropdown-list">
+                    <li><Link to="/ai-course" onClick={close}>{lang === 'ar' ? 'الذكاء الاصطناعي والتعلم الآلي' : 'AI & Machine Learning'}</Link></li>
+                    <li><Link to="/cybersecurity-course-sharjah" onClick={close}>{lang === 'ar' ? 'دبلوم الأمن السيبراني' : 'Cybersecurity Diploma'}</Link></li>
+                    <li><Link to="/software-engineering-diploma-sharjah" onClick={close}>{lang === 'ar' ? 'هندسة البرمجيات' : 'Software Engineering'}</Link></li>
+                    <li><Link to="/power-bi-excel" onClick={close}>{lang === 'ar' ? 'Power BI والإكسيل المتقدم' : 'Power BI & Excel'}</Link></li>
+                    <li><Link to="/courses/professional-digital-marketing-course-sharjah-uae" onClick={close}>{lang === 'ar' ? 'التسويق الرقمي' : 'Digital Marketing'}</Link></li>
+                    <li><Link to="/data-management" onClick={close}>{lang === 'ar' ? 'إدارة البيانات' : 'Data Management'}</Link></li>
+                  </ul>
+                </div>
+
+                {/* Column 3: Business & Management */}
+                <div className="nh-dropdown-column">
+                  <strong>{c.businessMgmt}</strong>
+                  <ul className="nh-dropdown-list">
+                    <li><Link to="/corporate-trainings" onClick={close}>{lang === 'ar' ? 'التدريب المؤسسي للشركات' : 'Corporate Training'}</Link></li>
+                    <li><Link to="/chrm" onClick={close}>{lang === 'ar' ? 'إدارة الموارد البشرية CHRM' : 'HR Management (CHRM)'}</Link></li>
+                    <li><Link to="/hrm-courses" onClick={close}>{lang === 'ar' ? 'دورات الموارد البشرية' : 'HRM Courses'}</Link></li>
+                    <li><Link to="/soft-skills-training" onClick={close}>{lang === 'ar' ? 'تطوير المهارات الشخصية' : 'Soft Skills Training'}</Link></li>
+                    <li><Link to="/sales-negotiations" onClick={close}>{lang === 'ar' ? 'المبيعات والتفاوض' : 'Sales & Negotiation'}</Link></li>
+                    <li><Link to="/professional-marketing-course" onClick={close}>{lang === 'ar' ? 'التسويق الاحترافي' : 'Professional Marketing'}</Link></li>
+                  </ul>
+                </div>
+
+                {/* Column 4: Other Test Prep & Foundations */}
+                <div className="nh-dropdown-column">
+                  <strong>{c.testPrepFoundations}</strong>
+                  <ul className="nh-dropdown-list">
+                    <li><Link to="/gmat-preparation" onClick={close}>{lang === 'ar' ? 'التحضير لاختبار GMAT' : 'GMAT Preparation'}</Link></li>
+                    <li><Link to="/gre-preparation" onClick={close}>{lang === 'ar' ? 'التحضير لاختبار GRE' : 'GRE Preparation'}</Link></li>
+                    <li><Link to="/foundation-jee-neet" onClick={close}>{lang === 'ar' ? 'برنامج التأسيس JEE / NEET' : 'Foundation JEE / NEET'}</Link></li>
+                    <li><Link to="/ai-robotics-kids" onClick={close}>{lang === 'ar' ? 'الروبوت والذكاء الاصطناعي للأطفال' : 'AI & Robotics for Kids'}</Link></li>
+                    <li><Link to="/test-preparations" onClick={close}>{lang === 'ar' ? 'جميع اختبارات القبول' : 'All Test Preparations'}</Link></li>
+                    <li><Link to="/professional-certifications" onClick={close}>{lang === 'ar' ? 'جميع الدورات المهنية' : 'All Professional Courses'}</Link></li>
+                  </ul>
+                  <div className="nh-dropdown-footer">
+                    <Link to="/courses" className="nh-dropdown-view-all" onClick={close}>
+                      {c.allCourses}
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Mobile Actions Inside Drawer */}
+          <div className="nh-mobile-actions-row mobile-only-block">
+            <button
+              type="button"
+              className="nh-language"
+              onClick={() => {
+                switchLanguage(lang === 'en' ? 'ar' : 'en');
+                close();
+              }}
+              aria-label={lang === 'en' ? 'Switch to Arabic' : 'Switch to English'}
+            >
+              {lang === 'en' ? 'العربية' : 'English'}
+            </button>
+            <a
+              className="nh-nav-call"
+              href="tel:+971527569908"
+              onClick={() => trackEvent(ANALYTICS_EVENTS.CALL, 'site_header_mobile')}
+            >
+              {c.call}
+              <ArrowUpRight size={15} />
+            </a>
+          </div>
+        </nav>
+
+        {/* Right Actions for Desktop */}
+        <div className="nh-nav-actions">
+          <button
+            type="button"
+            className="nh-language"
+            onClick={() => switchLanguage(lang === 'en' ? 'ar' : 'en')}
+            aria-label={lang === 'en' ? 'Switch to Arabic' : 'Switch to English'}
+          >
+            {lang === 'en' ? 'AR' : 'EN'}
+          </button>
+          <a
+            className="nh-nav-call"
+            href="tel:+971527569908"
+            onClick={() => trackEvent(ANALYTICS_EVENTS.CALL, 'site_header_desktop')}
+          >
+            {c.call}
+            <ArrowUpRight size={15} />
+          </a>
+          <button
+            type="button"
+            ref={toggleRef}
+            className="nh-menu-toggle"
+            aria-expanded={open}
+            aria-controls="site-navigation"
+            aria-label={open ? c.close : c.menu}
+            onClick={toggle}
+          >
+            {open ? <X size={22} /> : <Menu size={22} />}
+          </button>
+        </div>
+      </header>
+
+      {/* Backdrop overlay for mobile menu */}
+      {open && <div className="nh-mobile-backdrop" onClick={close} />}
+    </>
+  );
 };
 
 export default Header;

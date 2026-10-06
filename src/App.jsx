@@ -4,6 +4,7 @@ import { LanguageProvider } from './i18n/LanguageContext';
 import { useLanguage } from './i18n/context';
 import { stripLangPrefix } from './i18n/config';
 import Header from './components/Header';
+import PageExperience from './components/PageExperience';
 import Home from './pages/Home';
 import Footer from './components/Footer';
 const About = lazy(() => import('./pages/About'));
@@ -155,6 +156,11 @@ function AppContent() {
           <Route path="/sat/diagnostic/quiz" element={<QuizView />} />
           <Route path="/sat/diagnostic/math-report" element={<MathMiniReport />} />
           <Route path="/sat/diagnostic/results" element={<DiagnosticResults />} />
+          <Route path="/sat/results" element={<Navigate to="/sat/diagnostic/results" replace />} />
+          <Route path="/ar/sat/diagnostic/quiz" element={<QuizView />} />
+          <Route path="/ar/sat/diagnostic/math-report" element={<MathMiniReport />} />
+          <Route path="/ar/sat/diagnostic/results" element={<DiagnosticResults />} />
+          <Route path="/ar/sat/results" element={<Navigate to="/sat/diagnostic/results" replace />} />
 
           {/* ── Main Site (with header/footer) ────────────────────────── */}
           <Route path="/ar/*" element={<SiteLayout><LocalizedRoutes /></SiteLayout>} />
@@ -166,14 +172,19 @@ function AppContent() {
 }
 
 function SiteLayout({ children }) {
+  const { pathname } = useLocation();
+  // The cinematic homepage owns its chrome and animation lifecycle.
+  if (stripLangPrefix(pathname) === '/') return <><ScrollToTop />{children}</>;
   return (
     <>
       <ScrollToTop />
       <ScrollToHashElement />
       <Header />
-      <Suspense fallback={<div style={{ minHeight: '70vh' }} aria-busy="true" />}>
-        {children}
-      </Suspense>
+      <PageExperience key={pathname}>
+        <Suspense fallback={<div style={{ minHeight: '70vh' }} aria-busy="true" />}>
+          {children}
+        </Suspense>
+      </PageExperience>
       <FloatingWhatsAppCondition />
       <Footer />
     </>
@@ -232,10 +243,7 @@ function LocalizedRoutes() {
         <Route path="sat-preparation-sharjah" element={<SATCourse />} />
         <Route path="sat-preparation-dubai" element={<SATCourseDubai />} />
         <Route path="sat/diagnostic" element={<SATDiagnostic />} />
-        <Route path="sat/diagnostic/quiz" element={<QuizView />} />
-        <Route path="sat/diagnostic/results" element={<DiagnosticResults />} />
-        <Route path="sat/results" element={<DiagnosticResults />} />
-        <Route path="sat/diagnostic/math-report" element={<MathMiniReport />} />
+        <Route path="sat/results" element={<LocalizedNavigate to="/sat/diagnostic/results" replace />} />
         <Route path="sat-diagnostic" element={<LocalizedNavigate to="/sat/diagnostic" />} />
         <Route path="ielts-coaching-dubai" element={<IELTSCourseDubai />} />
         <Route path="sat-preparation" element={<LocalizedNavigate to="/sat-preparation-sharjah" />} />

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from '../../i18n/Link';
+import { useLanguage } from '../../i18n/context';
 import './SATDiagnosticSection.css';
 
 /**
@@ -242,7 +243,7 @@ const PhoneMockupPortal = () => {
         {/* Floating Circular 100% Free Badge */}
         <div className="sat-phone-free-badge">
           <span className="sat-phone-free-title">100%<br />FREE</span>
-          <span className="sat-phone-free-sub">No Sign-up<br />Required</span>
+          <span className="sat-phone-free-sub">Contact details<br />required</span>
         </div>
       </div>
     </div>
@@ -253,21 +254,24 @@ const PhoneMockupPortal = () => {
  * Section 2: "Know Exactly Where You Stand" (3 Step Cards)
  */
 const KnowWhereYouStand = () => {
+  const { lang } = useLanguage();
+  const isAr = lang === 'ar';
+
   const steps = [
     {
       num: '01',
-      title: 'Measure',
-      text: 'Understand your exact current SAT readiness with a realistic 24-question test.'
+      title: isAr ? 'قياس المستوى' : 'Measure',
+      text: isAr ? 'حدّد بدقة جاهزيتك الحالية لاختبار SAT عبر تقييم واقعي مكوّن من 24 سؤالاً تكيفياً.' : 'Understand your exact current SAT readiness with a realistic 24-question test.'
     },
     {
       num: '02',
-      title: 'Identify',
-      text: 'Discover your strongest domains and pinpoint exactly where you are losing points.'
+      title: isAr ? 'تحديد الثغرات' : 'Identify',
+      text: isAr ? 'اكتشف أقوى مجالاتك ونقاط الضعف المحددة التي تخسر فيها الدرجات في الرياضيات والقراءة.' : 'Discover your strongest domains and pinpoint exactly where you are losing points.'
     },
     {
       num: '03',
-      title: 'Improve',
-      text: 'Get an immediate score band and a step-by-step personalized prep roadmap.'
+      title: isAr ? 'التطوير والتفوق' : 'Improve',
+      text: isAr ? 'احصل فوراً على نطاق درجتك التقديرية وخطة دراسية مخصصة خطوة بخطوة للوصول لـ 1500+.' : 'Get an immediate score band and a step-by-step personalized prep roadmap.'
     }
   ];
 
@@ -275,10 +279,14 @@ const KnowWhereYouStand = () => {
     <section className="sat-steps-section" aria-labelledby="sat-steps-heading">
       <div className="sat-hero-container">
         <div className="sat-section-header-center">
-          <span className="sat-section-eyebrow">Clear Diagnostics</span>
-          <h2 className="sat-section-title" id="sat-steps-heading">Know Exactly Where You Stand</h2>
+          <span className="sat-section-eyebrow">{isAr ? 'تقييم تشخيصي دقيق' : 'Clear Diagnostics'}</span>
+          <h2 className="sat-section-title" id="sat-steps-heading">
+            {isAr ? 'اعرف مستواك الحقيقي بدقة تامة' : 'Know Exactly Where You Stand'}
+          </h2>
           <p className="sat-section-desc">
-            Stop guessing your score. Evaluate foundational skills in under 20 minutes before spending months studying.
+            {isAr
+              ? 'توقف عن تخمين درجتك. قيّم مهاراتك ومفاهيمك الأساسية في أقل من 20 دقيقة قبل أن تقضي شهوراً في المذاكرة العشوائية.'
+              : 'Stop guessing your score. Evaluate foundational skills in under 20 minutes before spending months studying.'}
           </p>
         </div>
 
@@ -300,21 +308,101 @@ const KnowWhereYouStand = () => {
  * Section 3: 8 SAT Domains Grid
  */
 const SATDomainsGrid = () => {
+  const { lang } = useLanguage();
+  const isAr = lang === 'ar';
+
+  const localizedDomains = [
+    {
+      id: 'rw_info',
+      name: isAr ? 'المعلومات والأفكار' : 'Information & Ideas',
+      section: isAr ? 'القراءة والكتابة' : 'Reading & Writing',
+      desc: isAr ? 'الفكرة الرئيسية، الأدلة النصية والبيانية، واستخلاص النتائج بدقة.' : 'Central ideas, textual evidence, quantitative evidence, and inferences.',
+      color: '#3B82F6',
+      bg: '#EFF6FF',
+      icon: SAT_DOMAINS_DETAILED[0].icon
+    },
+    {
+      id: 'rw_craft',
+      name: isAr ? 'الصياغة والبناء النصي' : 'Craft & Structure',
+      section: isAr ? 'القراءة والكتابة' : 'Reading & Writing',
+      desc: isAr ? 'الكلمات في السياق، هيكل النص، الغرض من الكاتب، والربط بين النصوص.' : 'Words in context, text structure, purpose, and cross-text connections.',
+      color: '#6C4CF1',
+      bg: '#F3E8FF',
+      icon: SAT_DOMAINS_DETAILED[1].icon
+    },
+    {
+      id: 'rw_expr',
+      name: isAr ? 'التعبير عن الأفكار' : 'Expression of Ideas',
+      section: isAr ? 'القراءة والكتابة' : 'Reading & Writing',
+      desc: isAr ? 'تنقيح النصوص لتحسين الترابط، التدفق المنطقي، وتحقيق أهداف البلاغة.' : 'Revising text to improve effectiveness and achieve rhetorical goals.',
+      color: '#10B981',
+      bg: '#ECFDF5',
+      icon: SAT_DOMAINS_DETAILED[2].icon
+    },
+    {
+      id: 'rw_eng',
+      name: isAr ? 'قواعد اللغة الإنجليزية المعيارية' : 'Standard English Conventions',
+      section: isAr ? 'القراءة والكتابة' : 'Reading & Writing',
+      desc: isAr ? 'بنية الجملة، علامات الترقيم، القواعد النحوية، والاتساق اللغوي.' : 'Sentence structure, boundaries, grammar, punctuation, and usage.',
+      color: '#FF9F43',
+      bg: '#FFF7ED',
+      icon: SAT_DOMAINS_DETAILED[3].icon
+    },
+    {
+      id: 'math_alg',
+      name: isAr ? 'الجبر الخطي' : 'Algebra',
+      section: isAr ? 'الرياضيات' : 'Mathematics',
+      desc: isAr ? 'المعادلات والمتباينات الخطية بمتغير ومتغيرين وأنظمة المعادلات.' : 'Linear equations in 1 & 2 variables, systems of linear equations, and inequalities.',
+      color: '#2E7D32',
+      bg: '#ECFDF5',
+      icon: SAT_DOMAINS_DETAILED[4].icon
+    },
+    {
+      id: 'math_adv',
+      name: isAr ? 'الرياضيات المتقدمة' : 'Advanced Math',
+      section: isAr ? 'الرياضيات' : 'Mathematics',
+      desc: isAr ? 'المعادلات غير الخطية، الدوال التربيعية، الرسوم الأسية، وكثيرات الحدود.' : 'Nonlinear equations, quadratic functions, exponential graphs, and polynomials.',
+      color: '#3B82F6',
+      bg: '#EFF6FF',
+      icon: SAT_DOMAINS_DETAILED[5].icon
+    },
+    {
+      id: 'math_ps',
+      name: isAr ? 'حل المشكلات وتحليل البيانات' : 'Problem-Solving & Data Analysis',
+      section: isAr ? 'الرياضيات' : 'Mathematics',
+      desc: isAr ? 'النسب، المعدلات، النسب المئوية، تحويل الوحدات، والنماذج الإحصائية.' : 'Ratios, rates, percentages, unit conversions, and statistical models.',
+      color: '#6C4CF1',
+      bg: '#F3E8FF',
+      icon: SAT_DOMAINS_DETAILED[6].icon
+    },
+    {
+      id: 'math_geo',
+      name: isAr ? 'الهندسة وحساب المثلثات' : 'Geometry & Trigonometry',
+      section: isAr ? 'الرياضيات' : 'Mathematics',
+      desc: isAr ? 'المساحات، الحجوم، الزوايا، المثلثات القائمة، الجيب وجيب التمام، ومعادلات الدائرة.' : 'Area & volume formulas, angles, right triangles, sine/cosine, and circle equations.',
+      color: '#10B981',
+      bg: '#ECFDF5',
+      icon: SAT_DOMAINS_DETAILED[7].icon
+    }
+  ];
+
   return (
     <section className="sat-domains-section" aria-labelledby="sat-domains-heading">
       <div className="sat-hero-container">
         <div className="sat-section-header-center">
-          <span className="sat-section-eyebrow">8-Domain Blueprint</span>
+          <span className="sat-section-eyebrow">{isAr ? 'مخطط المجالات الثمانية' : '8-Domain Blueprint'}</span>
           <h2 className="sat-section-title" id="sat-domains-heading">
-            Understand Your SAT Performance Across All 8 Domains
+            {isAr ? 'فهم أدائك في اختبار SAT عبر جميع المجالات الثمانية' : 'Understand Your SAT Performance Across All 8 Domains'}
           </h2>
           <p className="sat-section-desc">
-            Calibrated to evaluate key College Board Digital SAT specifications across Reading, Writing, and Math.
+            {isAr
+              ? 'تمت معايرة الاختبار وفق مواصفات College Board لاختبار Digital SAT في القراءة والكتابة والرياضيات.'
+              : 'Calibrated to evaluate key College Board Digital SAT specifications across Reading, Writing, and Math.'}
           </p>
         </div>
 
         <div className="sat-domains-grid">
-          {SAT_DOMAINS_DETAILED.map((domain) => (
+          {localizedDomains.map((domain) => (
             <div key={domain.id} className="sat-domain-card">
               <div className="sat-domain-icon-wrap" style={{ background: domain.bg, color: domain.color }}>
                 {domain.icon}
@@ -333,16 +421,21 @@ const SATDomainsGrid = () => {
  * Section 4: Scorecard & Personalized Roadmap Preview
  */
 const RoadmapScorecardPreview = () => {
+  const { lang } = useLanguage();
+  const isAr = lang === 'ar';
+
   return (
     <section className="sat-roadmap-section" aria-labelledby="sat-roadmap-heading">
       <div className="sat-hero-container">
         <div className="sat-section-header-center">
-          <span className="sat-section-eyebrow">Actionable Insights</span>
+          <span className="sat-section-eyebrow">{isAr ? 'نتائج ورؤى تحليلية' : 'Actionable Insights'}</span>
           <h2 className="sat-section-title" id="sat-roadmap-heading">
-            Instant Scorecard &amp; Customized Study Roadmap
+            {isAr ? 'بطاقة درجات فورية وخطة دراسية مخصصة' : 'Instant Scorecard & Customized Study Roadmap'}
           </h2>
           <p className="sat-section-desc">
-            As soon as you complete the assessment, our scoring engine generates your comprehensive diagnostic deliverable.
+            {isAr
+              ? 'بمجرد انتهائك من التقييم، يُنشئ محرك التصحيح الذكي تقريراً تشخيصياً شاملاً يوضح مستواك بالتفصيل.'
+              : 'As soon as you complete the assessment, our scoring engine generates your comprehensive diagnostic deliverable.'}
           </p>
         </div>
 
@@ -350,14 +443,14 @@ const RoadmapScorecardPreview = () => {
           {/* Mock Scorecard Card */}
           <div className="sat-scorecard-card">
             <div className="sat-scorecard-header">
-              <h3 className="sat-scorecard-title">Diagnostic Results Preview</h3>
-              <span className="sat-scorecard-tag">16 / 24 Score</span>
+              <h3 className="sat-scorecard-title">{isAr ? 'معاينة نتيجة التقييم' : 'Diagnostic Results Preview'}</h3>
+              <span className="sat-scorecard-tag">{isAr ? '16 / 24 درجة' : '16 / 24 Score'}</span>
             </div>
 
             <div className="sat-score-bar-group">
               <div className="sat-score-bar-label">
-                <span>Overall Readiness</span>
-                <span>67% Correct</span>
+                <span>{isAr ? 'الجاهزية الكلية' : 'Overall Readiness'}</span>
+                <span>{isAr ? '67% إجابات صحيحة' : '67% Correct'}</span>
               </div>
               <div className="sat-score-bar-track">
                 <div className="sat-score-bar-fill overall" style={{ width: '67%' }} />
@@ -366,8 +459,8 @@ const RoadmapScorecardPreview = () => {
 
             <div className="sat-score-bar-group">
               <div className="sat-score-bar-label">
-                <span>Reading &amp; Writing</span>
-                <span>7 / 12 Qs</span>
+                <span>{isAr ? 'القراءة والكتابة' : 'Reading & Writing'}</span>
+                <span>{isAr ? '7 / 12 سؤالاً' : '7 / 12 Qs'}</span>
               </div>
               <div className="sat-score-bar-track">
                 <div className="sat-score-bar-fill rw" style={{ width: '58%' }} />
@@ -376,8 +469,8 @@ const RoadmapScorecardPreview = () => {
 
             <div className="sat-score-bar-group">
               <div className="sat-score-bar-label">
-                <span>Mathematics</span>
-                <span>9 / 12 Qs</span>
+                <span>{isAr ? 'الرياضيات' : 'Mathematics'}</span>
+                <span>{isAr ? '9 / 12 سؤالاً' : '9 / 12 Qs'}</span>
               </div>
               <div className="sat-score-bar-track">
                 <div className="sat-score-bar-fill math" style={{ width: '75%' }} />
@@ -386,11 +479,14 @@ const RoadmapScorecardPreview = () => {
 
             <div style={{ marginTop: '10px', background: '#F8FAFC', padding: '16px', borderRadius: '12px', border: '1px solid #E2E8F0' }}>
               <div style={{ fontSize: '0.85rem', fontWeight: 700, color: '#1E293B', marginBottom: '4px' }}>
-                Recommended Focus Areas:
+                {isAr ? 'المجالات الموصى بالتركيز عليها:' : 'Recommended Focus Areas:'}
               </div>
               <div style={{ fontSize: '0.825rem', color: '#475569', lineHeight: 1.5 }}>
-                1. Advanced Math (Quadratic &amp; Exponential Functions)<br />
-                2. Standard English Conventions (Grammar &amp; Punctuation)
+                {isAr ? (
+                  <>1. الرياضيات المتقدمة (الدوال التربيعية والأسية)<br />2. قواعد اللغة الإنجليزية (علامات الترقيم وتراكيب الجمل)</>
+                ) : (
+                  <>1. Advanced Math (Quadratic &amp; Exponential Functions)<br />2. Standard English Conventions (Grammar &amp; Punctuation)</>
+                )}
               </div>
             </div>
           </div>
@@ -398,32 +494,32 @@ const RoadmapScorecardPreview = () => {
           {/* 4-Week Roadmap Timeline Card */}
           <div className="sat-roadmap-card">
             <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#101828', margin: 0 }}>
-              Your 4-Week Prep Roadmap
+              {isAr ? 'خطتك الدراسية لـ 4 أسابيع' : 'Your 4-Week Prep Roadmap'}
             </h3>
 
             <div className="sat-timeline-list">
               <div className="sat-timeline-item">
-                <span className="sat-timeline-week">Week 1</span>
-                <h4 className="sat-timeline-title">Strengthen Core Foundations</h4>
-                <p style={{ fontSize: '0.875rem', color: '#64748B', margin: 0 }}>Review fundamental concepts in Algebra &amp; Grammar.</p>
+                <span className="sat-timeline-week">{isAr ? 'الأسبوع 1' : 'Week 1'}</span>
+                <h4 className="sat-timeline-title">{isAr ? 'ترسيخ المفاهيم التأسيسية' : 'Strengthen Core Foundations'}</h4>
+                <p style={{ fontSize: '0.875rem', color: '#64748B', margin: 0 }}>{isAr ? 'مراجعة المبادئ الجوهرية في الجبر وقواعد اللغة.' : 'Review fundamental concepts in Algebra & Grammar.'}</p>
               </div>
 
               <div className="sat-timeline-item">
-                <span className="sat-timeline-week">Week 2</span>
-                <h4 className="sat-timeline-title">Target Weak Domains</h4>
-                <p style={{ fontSize: '0.875rem', color: '#64748B', margin: 0 }}>Focused drills on Advanced Math &amp; Craft &amp; Structure.</p>
+                <span className="sat-timeline-week">{isAr ? 'الأسبوع 2' : 'Week 2'}</span>
+                <h4 className="sat-timeline-title">{isAr ? 'علاج الثغرات في المجالات الصعبة' : 'Target Weak Domains'}</h4>
+                <p style={{ fontSize: '0.875rem', color: '#64748B', margin: 0 }}>{isAr ? 'تدريبات مكثفة على الرياضيات المتقدمة والصياغة النصية.' : 'Focused drills on Advanced Math & Craft & Structure.'}</p>
               </div>
 
               <div className="sat-timeline-item">
-                <span className="sat-timeline-week">Week 3</span>
-                <h4 className="sat-timeline-title">Timed Practice Drills</h4>
-                <p style={{ fontSize: '0.875rem', color: '#64748B', margin: 0 }}>Master Digital SAT pacing strategies and shortcut techniques.</p>
+                <span className="sat-timeline-week">{isAr ? 'الأسبوع 3' : 'Week 3'}</span>
+                <h4 className="sat-timeline-title">{isAr ? 'تدريبات محددة بوقت وسرعة الحل' : 'Timed Practice Drills'}</h4>
+                <p style={{ fontSize: '0.875rem', color: '#64748B', margin: 0 }}>{isAr ? 'إتقان استراتيجيات إدارة الوقت وتقنيات حاسبة Desmos.' : 'Master Digital SAT pacing strategies and shortcut techniques.'}</p>
               </div>
 
               <div className="sat-timeline-item">
-                <span className="sat-timeline-week">Week 4</span>
-                <h4 className="sat-timeline-title">Full Mock Exam &amp; Review</h4>
-                <p style={{ fontSize: '0.875rem', color: '#64748B', margin: 0 }}>Take a full-length digital mock test under exam conditions.</p>
+                <span className="sat-timeline-week">{isAr ? 'الأسبوع 4' : 'Week 4'}</span>
+                <h4 className="sat-timeline-title">{isAr ? 'اختبار محاكاة كامل وتحليل الأخطاء' : 'Full Mock Exam & Review'}</h4>
+                <p style={{ fontSize: '0.875rem', color: '#64748B', margin: 0 }}>{isAr ? 'أداء امتحان تجريبي كامل تحت ظروف الامتحان الرسمية.' : 'Take a full-length digital mock test under exam conditions.'}</p>
               </div>
             </div>
           </div>
@@ -437,35 +533,39 @@ const RoadmapScorecardPreview = () => {
  * Section 6: Final Conversion CTA Section
  */
 const FinalDiagnosticCTA = ({ onStartClick }) => {
+  const { lang } = useLanguage();
+  const isAr = lang === 'ar';
+
   return (
     <section className="sat-final-cta-section">
       <div className="sat-hero-container">
         <div className="sat-final-cta-card">
           <div className="sat-final-cta-glow" aria-hidden="true" />
-          <div className="sat-final-cta-content">
+          <div className="sat-final-cta-content" style={{ textAlign: isAr ? 'right' : 'center' }}>
             <h2 className="sat-final-cta-heading">
-              Know Your SAT Level Before You Start Studying
+              {isAr ? 'اعرف مستواك الحقيقي في اختبار SAT قبل أن تبدأ بالدراسة' : 'Know Your SAT Level Before You Start Studying'}
             </h2>
             <p className="sat-final-cta-desc">
-              Take the free 24-question diagnostic and discover exactly what areas to focus on for maximum score gains.
+              {isAr
+                ? 'خض التقييم التشخيصي المجاني (24 سؤالاً) واكتشف نقاط قوتك والمجالات التي تحتاج لتركيز إضافي لرفع درجتك لأقصى حد.'
+                : 'Take the free 24-question diagnostic and discover exactly what areas to focus on for maximum score gains.'}
             </p>
 
             <Link
-              to="/sat/diagnostic"
+              to={isAr ? '/ar/sat/diagnostic' : '/sat/diagnostic'}
               onClick={onStartClick}
               className="sat-hero-primary-btn"
               style={{ background: 'linear-gradient(90deg, #10B981 0%, #059669 100%)', boxShadow: '0 8px 24px rgba(16, 185, 129, 0.4)' }}
             >
-              <span>Start My Free Diagnostic</span>
-              <span className="sat-hero-primary-btn-arrow" aria-hidden="true">→</span>
+              <span>{isAr ? 'ابدأ تقييمي المجاني الآن ←' : 'Start My Free Diagnostic →'}</span>
             </Link>
 
-            <div className="sat-final-cta-meta">
-              <span>✓ 100% Free</span>
+            <div className="sat-final-cta-meta" style={{ justifyContent: 'center' }}>
+              <span>{isAr ? '✓ مجاني 100%' : '✓ 100% Free'}</span>
               <span>•</span>
-              <span>24 Questions</span>
+              <span>{isAr ? '24 سؤالاً' : '24 Questions'}</span>
               <span>•</span>
-              <span>15–20 Minutes</span>
+              <span>{isAr ? '15–20 دقيقة' : '15–20 Minutes'}</span>
             </div>
           </div>
         </div>
@@ -478,14 +578,17 @@ const FinalDiagnosticCTA = ({ onStartClick }) => {
  * Floating WhatsApp Support Button Component
  */
 const WhatsAppFloatingButton = () => {
+  const { lang } = useLanguage();
+  const isAr = lang === 'ar';
+
   return (
     <a
-      href="https://wa.me/971527569908?text=Hello%20Nitaq,%20I'd%20like%20guidance%20regarding%20the%20Free%20SAT%20Diagnostic."
+      href={`https://wa.me/971527569908?text=${encodeURIComponent(isAr ? 'مرحباً نطاق، أود الحصول على إرشاد بخصوص اختبار SAT التشخيصي المجاني.' : "Hello Nitaq, I'd like guidance regarding the Free SAT Diagnostic.")}`}
       target="_blank"
       rel="noopener noreferrer"
       className="sat-whatsapp-floating-btn"
-      aria-label="Ask a SAT Mentor on WhatsApp"
-      title="Ask a SAT Mentor on WhatsApp"
+      aria-label={isAr ? 'تواصل مع مستشار SAT عبر واتساب' : 'Ask a SAT Mentor on WhatsApp'}
+      title={isAr ? 'تواصل مع مستشار SAT عبر واتساب' : 'Ask a SAT Mentor on WhatsApp'}
     >
       <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
@@ -498,30 +601,39 @@ const WhatsAppFloatingButton = () => {
 /**
  * Main SATDiagnosticSection Component (Hero + Primary Section)
  */
-const SATDiagnosticSection = ({ className = '', showBreadcrumb = false, onStartClick }) => {
+const SATDiagnosticSection = ({ className = '', showBreadcrumb = false, onStartClick, headingLevel = 'h1' }) => {
+  const { lang } = useLanguage();
+  const isAr = lang === 'ar';
+  const Heading = headingLevel;
+
   return (
     <section className={`sat-landing-hero-section ${className}`} id="sat-diagnostic-section" aria-labelledby="sat-hero-heading">
       <div className="sat-hero-container">
         <div className="sat-hero-grid">
           {/* Left Column Content */}
-          <div className="sat-hero-left">
+          <div className="sat-hero-left" style={{ textAlign: isAr ? 'right' : 'left' }}>
             {showBreadcrumb && (
               <nav className="sat-hero-breadcrumb" aria-label="Breadcrumb">
-                <Link to="/" className="sat-hero-breadcrumb-link">Home</Link>
+                <Link to={isAr ? '/ar' : '/'} className="sat-hero-breadcrumb-link">{isAr ? 'الرئيسية' : 'Home'}</Link>
                 <span className="sat-hero-breadcrumb-sep">/</span>
-                <Link to="/sat-preparation-sharjah" className="sat-hero-breadcrumb-link">SAT Preparation</Link>
+                <Link to={isAr ? '/ar/sat-preparation-sharjah' : '/sat-preparation-sharjah'} className="sat-hero-breadcrumb-link">{isAr ? 'التحضير لاختبار SAT' : 'SAT Preparation'}</Link>
                 <span className="sat-hero-breadcrumb-sep">/</span>
-                <span className="sat-hero-breadcrumb-current">Free Diagnostic</span>
+                <span className="sat-hero-breadcrumb-current">{isAr ? 'التقييم التشخيصي المجاني' : 'Free Diagnostic'}</span>
               </nav>
             )}
 
-            <h1 className="sat-hero-heading" id="sat-hero-heading">
-              Free SAT
-              <span className="sat-hero-heading-gradient">Diagnostic Assessment</span>
-            </h1>
+            <Heading className="sat-hero-heading" id="sat-hero-heading">
+              {isAr ? (
+                <>التقييم التشخيصي المجاني <br /><span className="sat-hero-heading-gradient">لاختبار Digital SAT</span></>
+              ) : (
+                <>Free Digital SAT{' '}<span className="sat-hero-heading-gradient">Diagnostic Assessment</span></>
+              )}
+            </Heading>
 
             <p className="sat-hero-subtitle">
-              Accurately evaluate your readiness across all 8 Digital SAT domains in just 15–20 minutes. Get an immediate performance score card and a personalized prep roadmap before you start studying.
+              {isAr
+                ? 'قيّم مستواك بدقة في كافة مجالات Digital SAT الثمانية خلال 15-20 دقيقة فقط. حدد نقاط قوتك ومواطن الضعف في الرياضيات والقراءة والكتابة، واحصل على تقرير أداء فوري وتوصيات تدريبية مخصصة.'
+                : 'Accurately evaluate your readiness across all 8 Digital SAT domains in just 15–20 minutes. Benchmark your baseline Math and Reading & Writing performance, uncover question-level strengths and weaknesses, and receive personalized preparation recommendations.'}
             </p>
 
             {/* 4 Feature Statistics Cards */}
@@ -533,7 +645,7 @@ const SATDiagnosticSection = ({ className = '', showBreadcrumb = false, onStartC
                     <polyline points="12 6 12 12 16 14" />
                   </svg>
                 </div>
-                <span className="sat-hero-feature-label">15–20<br />Minutes</span>
+                <span className="sat-hero-feature-label">{isAr ? <>15–20<br />دقيقة فقط</> : <>15–20<br />Minutes</>}</span>
               </div>
 
               <div className="sat-hero-feature-card">
@@ -544,7 +656,7 @@ const SATDiagnosticSection = ({ className = '', showBreadcrumb = false, onStartC
                     <line x1="6" y1="20" x2="6" y2="14" />
                   </svg>
                 </div>
-                <span className="sat-hero-feature-label">8–Domain<br />Analysis</span>
+                <span className="sat-hero-feature-label">{isAr ? <>تحليل شامل<br />لـ 8 مجالات</> : <>8–Domain<br />Analysis</>}</span>
               </div>
 
               <div className="sat-hero-feature-card">
@@ -554,7 +666,7 @@ const SATDiagnosticSection = ({ className = '', showBreadcrumb = false, onStartC
                     <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
                   </svg>
                 </div>
-                <span className="sat-hero-feature-label">Personalized<br />Study Plan</span>
+                <span className="sat-hero-feature-label">{isAr ? <>خطة دراسية<br />مخصصة</> : <>Personalized<br />Study Plan</>}</span>
               </div>
 
               <div className="sat-hero-feature-card">
@@ -565,24 +677,23 @@ const SATDiagnosticSection = ({ className = '', showBreadcrumb = false, onStartC
                     <line x1="16" y1="12" x2="8" y2="12" />
                   </svg>
                 </div>
-                <span className="sat-hero-feature-label">100%<br />Free</span>
+                <span className="sat-hero-feature-label">{isAr ? <>100%<br />مجاني تماماً</> : <>100%<br />Free</>}</span>
               </div>
             </div>
 
             {/* CTAs */}
             <div className="sat-hero-cta-group">
               <Link
-                to="/sat/diagnostic"
+                to={isAr ? '/ar/sat/diagnostic' : '/sat/diagnostic'}
                 onClick={onStartClick}
                 className="sat-hero-primary-btn"
                 id="sat-diagnostic-start-btn"
               >
-                <span>Start Diagnostic Now</span>
-                <span className="sat-hero-primary-btn-arrow" aria-hidden="true">→</span>
+                <span>{isAr ? 'ابدأ التقييم التشخيصي الآن ←' : 'Start Diagnostic Now →'}</span>
               </Link>
 
               <a
-                href="https://wa.me/971527569908?text=Hello%20Nitaq,%20I'd%20like%20to%20know%20more%20about%20the%20Free%20SAT%20Diagnostic."
+                href={`https://wa.me/971527569908?text=${encodeURIComponent(isAr ? 'مرحباً أكاديمية نطاق، أود الاستفسار عن التقييم التشخيصي المجاني لاختبار SAT.' : "Hello Nitaq, I'd like to know more about the Free SAT Diagnostic.")}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="sat-hero-secondary-btn"
@@ -590,7 +701,7 @@ const SATDiagnosticSection = ({ className = '', showBreadcrumb = false, onStartC
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
                   <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
                 </svg>
-                <span>Ask a SAT Mentor</span>
+                <span>{isAr ? 'تحدث مع مدرب SAT' : 'Ask a SAT Mentor'}</span>
               </a>
             </div>
 
@@ -604,21 +715,21 @@ const SATDiagnosticSection = ({ className = '', showBreadcrumb = false, onStartC
                   </svg>
                 </div>
                 <div className="sat-hero-trust-text">
-                  <span className="sat-hero-trust-title">Trusted by Students</span>
-                  <span className="sat-hero-trust-sub">Join students preparing smarter with Nitaq Academy.</span>
+                  <span className="sat-hero-trust-title">{isAr ? 'موثوق من الطلاب في الشارقة ودبي والإمارات' : 'Trusted by Students in Sharjah, Dubai & UAE'}</span>
+                  <span className="sat-hero-trust-sub">{isAr ? 'تقييم تشخيصي واختبار تدريبي مجاني لتحديد مستوى الجاهزية بدقة.' : 'Free digital SAT baseline assessment & practice test for exam readiness.'}</span>
                 </div>
               </div>
 
               <div className="sat-hero-avatars-group">
                 <div className="sat-hero-avatars-stack">
-                  <img src="/images/h1.png" alt="Student" className="sat-hero-avatar-img" />
-                  <img src="/images/h2.png" alt="Student" className="sat-hero-avatar-img" />
-                  <img src="/images/h3.png" alt="Student" className="sat-hero-avatar-img" />
-                  <img src="/images/h4.png" alt="Student" className="sat-hero-avatar-img" />
+                  <img src="/images/h1.png" alt="" loading="lazy" decoding="async" className="sat-hero-avatar-img" />
+                  <img src="/images/h2.png" alt="" loading="lazy" decoding="async" className="sat-hero-avatar-img" />
+                  <img src="/images/h3.png" alt="" loading="lazy" decoding="async" className="sat-hero-avatar-img" />
+                  <img src="/images/h4.png" alt="" loading="lazy" decoding="async" className="sat-hero-avatar-img" />
                 </div>
                 <div className="sat-hero-rating-info">
                   <div className="sat-hero-stars">★★★★★</div>
-                  <span className="sat-hero-rating-score">4.9/5 Rating</span>
+                  <span className="sat-hero-rating-score">{isAr ? 'تقييم 4.9/5 نجوم' : '4.9/5 Rating'}</span>
                 </div>
               </div>
             </div>

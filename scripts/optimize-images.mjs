@@ -55,6 +55,9 @@ const HEAVY_PNGS = [
   'digital_marketing_overview.png',
   'digital_marketing_v2.png',
   'cybersecurity_v2.png',
+  'sat_hero_student_editorial.png',
+  'sat_hero_student_hoodie.png',
+  'sat_phone_portal.png',
 ]
 for (const name of HEAVY_PNGS) {
   const src = join(IMAGES, name)

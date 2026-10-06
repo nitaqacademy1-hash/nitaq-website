@@ -52,7 +52,7 @@ const CourseFAQ = () => {
                 <details className="faq-accordion">
                     <summary>Do you offer classroom training in Sharjah?</summary>
                     <div className="faq-accordion-content">
-                        <p>Yes, offline classroom sessions are held at our premium campus located at F103, Abu Khamseen Tower, Majaz 3, Sharjah.</p>
+                        <p>Yes, offline classroom sessions are held at our premium campus located at Abu Khamseen Tower - Office : F103, Floor F1 - Al Majaz 3 - Al Majaz - Sharjah - United Arab Emirates.</p>
                     </div>
                 </details>
 

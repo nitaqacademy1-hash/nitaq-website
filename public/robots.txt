@@ -3,33 +3,9 @@
 
 User-agent: *
 Allow: /
-Disallow: /admin/
+# Admin pages declare noindex in their responses; crawlers must be able to
+# fetch those responses to see that directive. Authentication controls access.
 Disallow: /.git/
 Disallow: /temp-landing/
-Disallow: /enquiry
-Disallow: /ar/enquiry
-
-# Explicit AI Search & LLM Crawlers
-User-agent: GPTBot
-Allow: /
-
-User-agent: OAI-SearchBot
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: Google-Extended
-Allow: /
-
-User-agent: Applebot-Extended
-Allow: /
-
-User-agent: bingbot
-Allow: /
 
 Sitemap: https://www.nitaqacademy.com/sitemap.xml
-

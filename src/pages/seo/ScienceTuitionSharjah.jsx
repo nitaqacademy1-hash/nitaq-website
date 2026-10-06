@@ -290,7 +290,7 @@ const ScienceTuitionSharjah = () => {
 
                         <details className="faq-card-item">
                             <summary>Where is Nitaq Academy's Sharjah campus located? <ChevronDown size={18} /></summary>
-                            <p>Our campus is located at Abu Khamseen Tower, Office F103, Floor F1, Al Majaz 3, Sharjah, UAE, within easy driving distance of King Faisal Street, Al Khan, and Al Majaz waterfront.</p>
+                            <p>Our campus is located at Abu Khamseen Tower - Office : F103, Floor F1 - Al Majaz 3 - Al Majaz - Sharjah - United Arab Emirates, within easy driving distance of King Faisal Street, Al Khan, and Al Majaz waterfront.</p>
                         </details>
 
                         <details className="faq-card-item">
@@ -300,7 +300,7 @@ const ScienceTuitionSharjah = () => {
 
                         <details className="faq-card-item">
                             <summary>How can I schedule a free science diagnostic assessment or demo? <ChevronDown size={18} /></summary>
-                            <p>You can book a free diagnostic test or demo session by contacting our admissions team on WhatsApp at +971 52 756 9908 or calling +971 6 579 8313.</p>
+                            <p>You can book a free diagnostic test or demo session by contacting our admissions team on WhatsApp at +971 52 756 9908 or calling +971 52 756 9908.</p>
                         </details>
 
                         <details className="faq-card-item">
@@ -355,7 +355,7 @@ const ScienceTuitionSharjah = () => {
                             <div className="campus-contact-icon"><MapPin size={20} /></div>
                             <div className="campus-contact-text">
                                 <h5>Campus Address</h5>
-                                <p>Abu Khamseen Tower, Office F103, Al Majaz 3, Sharjah</p>
+                                <p>Abu Khamseen Tower - Office : F103, Floor F1 - Al Majaz 3 - Al Majaz - Sharjah - United Arab Emirates</p>
                             </div>
                         </div>
 
@@ -363,7 +363,7 @@ const ScienceTuitionSharjah = () => {
                             <div className="campus-contact-icon"><Phone size={20} /></div>
                             <div className="campus-contact-text">
                                 <h5>Direct Call</h5>
-                                <p>+971 6 579 8313 / +971 52 756 9908</p>
+                                <p>+971 52 756 9908</p>
                             </div>
                         </div>
 

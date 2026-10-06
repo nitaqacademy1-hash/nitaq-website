@@ -13,9 +13,49 @@
       "permanent": true
     },
     {
+      "source": "/sat-diagnostic",
+      "destination": "/sat/diagnostic",
+      "permanent": true
+    },
+    {
+      "source": "/ar/sat-diagnostic",
+      "destination": "/ar/sat/diagnostic",
+      "permanent": true
+    },
+    {
+      "source": "/sat/results",
+      "destination": "/sat/diagnostic/results",
+      "permanent": true
+    },
+    {
+      "source": "/ar/sat/results",
+      "destination": "/ar/sat/diagnostic/results",
+      "permanent": true
+    },
+    {
       "source": "/webinar",
       "destination": "/webinar/ai",
       "permanent": false
+    }
+  ],
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/images/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=2592000, stale-while-revalidate=86400" }
+      ]
+    },
+    {
+      "source": "/(robots.txt|sitemap.xml)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=3600" }
+      ]
     }
   ],
   "rewrites": [
@@ -40,8 +80,20 @@
       "destination": "/ar/verify"
     },
     {
-      "source": "/((?!api/).*)",
-      "destination": "/index.html"
+      "source": "/certificate/verify/:certId*",
+      "destination": "/verify-certificate"
+    },
+    {
+      "source": "/certificate/verify",
+      "destination": "/verify-certificate"
+    },
+    {
+      "source": "/admin/students/:sessionId",
+      "destination": "/admin/students"
+    },
+    {
+      "source": "/admin/sat/students/:sessionId",
+      "destination": "/admin/sat/students"
     }
   ]
 }

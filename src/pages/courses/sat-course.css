@@ -2,12 +2,21 @@
 
 
 /* ==========================================
-   NITAQ ACADEMY — SAT PREPARATION LANDING PAGE
-   Exact Match to Reference Design (Arch Background + Rounded Floating Badge + Icons)
+   NITAQ ACADEMY — SAT & COURSE LANDING PAGES
+   Refined Design & Cohesive Typography System
    ========================================== */
 
-.sat-landing-page {
-  font-family: 'Plus Jakarta Sans', var(--font-sans, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+.sat-landing-page,
+.course-landing-page,
+.sat-landing-page *,
+.course-landing-page * {
+  font-family: 'Plus Jakarta Sans', var(--font-sans, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif) !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.sat-landing-page,
+.course-landing-page {
   color: #101828;
   background-color: #FFFFFF;
   line-height: 1.6;
@@ -51,31 +60,32 @@
 .sat-hero-eyebrow {
   display: inline-block;
   font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 0.1em;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #2E7D32;
+  color: #1E7E34;
   margin-bottom: 20px;
 }
 
 .sat-hero-heading {
-  font-size: clamp(2.5rem, 4.5vw, 3.6rem);
-  font-weight: 800;
-  line-height: 1.1;
+  font-size: clamp(2.3rem, 4vw, 3.4rem);
+  font-weight: 700;
+  line-height: 1.15;
   letter-spacing: -0.03em;
   color: #101828;
   margin: 0 0 20px 0;
 }
 
 .sat-hero-heading .accent-sat {
-  color: #2E7D32;
+  color: #1E7E34;
 }
 
 .sat-hero-description {
-  font-size: 1.1rem;
-  line-height: 1.65;
+  font-size: 1.05rem;
+  font-weight: 400;
+  line-height: 1.7;
   color: #475467;
-  max-width: 500px;
+  max-width: 520px;
   margin: 0 0 32px 0;
 }
 
@@ -97,7 +107,7 @@
   background: #1E7E34;
   color: #FFFFFF;
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: 600;
   border-radius: 12px;
   text-decoration: none;
   border: none;
@@ -121,7 +131,7 @@
   background: #FFFFFF;
   color: #344054;
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: 600;
   border-radius: 12px;
   text-decoration: none;
   border: 1px solid #D0D5DD;
@@ -154,7 +164,7 @@
   align-items: center;
   justify-content: center;
   font-size: 11px;
-  font-weight: 800;
+  font-weight: 700;
 }
 
 /* Hero Right Side Photography & Floating Card */
@@ -201,7 +211,7 @@
   height: 44px;
   border-radius: 12px;
   background: #EAF7EF;
-  color: #2E7D32;
+  color: #1E7E34;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -210,13 +220,14 @@
 
 .sat-floating-title {
   font-size: 0.95rem;
-  font-weight: 800;
+  font-weight: 600;
   color: #101828;
   line-height: 1.2;
 }
 
 .sat-floating-subtitle {
   font-size: 0.78rem;
+  font-weight: 400;
   color: #667085;
   margin-top: 2px;
 }
@@ -226,7 +237,7 @@
   background: #FFFFFF;
   border-top: 1px solid #E4E7EC;
   border-bottom: 1px solid #E4E7EC;
-  padding: 28px 0;
+  padding: 24px 0;
 }
 
 .sat-snapshot-container {
@@ -250,12 +261,12 @@
 }
 
 .sat-snapshot-icon-wrapper {
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
   border-radius: 12px;
   background: #F4FBF6;
   border: 1px solid #E2F3E7;
-  color: #2E7D32;
+  color: #1E7E34;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -263,8 +274,8 @@
 }
 
 .sat-snapshot-label {
-  font-size: 0.95rem;
-  font-weight: 800;
+  font-size: 0.92rem;
+  font-weight: 600;
   color: #101828;
   margin-bottom: 2px;
 }
@@ -272,7 +283,7 @@
 .sat-snapshot-value {
   font-size: 0.88rem;
   color: #475467;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 /* ── 3. Why Nitaq Section ──────────────────────── */
@@ -297,24 +308,24 @@
 
 .sat-why-eyebrow {
   font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 0.1em;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #2E7D32;
+  color: #1E7E34;
   margin-bottom: 16px;
 }
 
 .sat-why-title {
-  font-size: clamp(2rem, 3.5vw, 2.75rem);
-  font-weight: 800;
-  line-height: 1.15;
-  letter-spacing: -0.03em;
+  font-size: clamp(1.85rem, 3.2vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
   color: #101828;
   margin: 0;
 }
 
 .sat-why-title .accent-green {
-  color: #2E7D32;
+  color: #1E7E34;
 }
 
 .sat-why-items-col {
@@ -330,9 +341,9 @@
 }
 
 .sat-why-number-badge {
-  font-size: 0.85rem;
-  font-weight: 800;
-  color: #2E7D32;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #1E7E34;
   margin-bottom: 12px;
 }
 
@@ -342,7 +353,7 @@
   border-radius: 50%;
   background: #F4FBF6;
   border: 1px solid #E2F3E7;
-  color: #2E7D32;
+  color: #1E7E34;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -351,13 +362,14 @@
 
 .sat-why-item-title {
   font-size: 1.05rem;
-  font-weight: 800;
+  font-weight: 600;
   color: #101828;
   margin: 0 0 8px 0;
 }
 
 .sat-why-item-desc {
-  font-size: 0.88rem;
+  font-size: 0.9rem;
+  font-weight: 400;
   color: #475467;
   line-height: 1.6;
   margin: 0;
@@ -407,18 +419,18 @@
 }
 
 .sat-program-card.featured {
-  border: 2px solid #2E7D32;
-  box-shadow: 0 16px 40px rgba(46, 125, 50, 0.10);
+  border: 2px solid #1E7E34;
+  box-shadow: 0 16px 40px rgba(30, 126, 52, 0.10);
 }
 
 .sat-featured-badge {
   position: absolute;
   top: -13px;
   right: 28px;
-  background: #2E7D32;
+  background: #1E7E34;
   color: #FFFFFF;
   font-size: 0.7rem;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   padding: 4px 12px;
@@ -427,9 +439,9 @@
 
 .sat-program-duration {
   display: inline-block;
-  font-size: 0.8rem;
-  font-weight: 800;
-  color: #2E7D32;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #1E7E34;
   background: #EAF7EF;
   padding: 4px 10px;
   border-radius: 6px;
@@ -437,14 +449,15 @@
 }
 
 .sat-program-title {
-  font-size: 1.5rem;
-  font-weight: 800;
+  font-size: 1.35rem;
+  font-weight: 700;
   color: #101828;
   margin: 0 0 8px 0;
 }
 
 .sat-program-subtitle {
   font-size: 0.92rem;
+  font-weight: 400;
   color: #475467;
   margin-bottom: 24px;
 }
@@ -457,6 +470,7 @@
 
 .sat-program-list li {
   font-size: 0.92rem;
+  font-weight: 400;
   color: #344054;
   padding-left: 22px;
   position: relative;
@@ -468,8 +482,8 @@
   content: "✓";
   position: absolute;
   left: 0;
-  color: #2E7D32;
-  font-weight: 800;
+  color: #1E7E34;
+  font-weight: 700;
 }
 
 /* ── 5. Curriculum Domains Section ────────────── */
@@ -487,8 +501,8 @@
 }
 
 .sat-curriculum-panel-title {
-  font-size: 1.35rem;
-  font-weight: 800;
+  font-size: 1.25rem;
+  font-weight: 600;
   color: #101828;
   margin: 0 0 24px 0;
   display: flex;
@@ -541,14 +555,14 @@
 
 .sat-result-name {
   font-size: 1.05rem;
-  font-weight: 800;
+  font-weight: 600;
   color: #101828;
   margin: 0 0 4px 0;
 }
 
 .sat-result-jump {
   font-size: 2.2rem;
-  font-weight: 800;
+  font-weight: 700;
   color: #1E7E34;
   line-height: 1.1;
   margin-bottom: 4px;
@@ -556,13 +570,14 @@
 
 .sat-result-sub {
   font-size: 0.85rem;
-  font-weight: 700;
+  font-weight: 600;
   color: #027A48;
   margin-bottom: 16px;
 }
 
 .sat-result-text {
   font-size: 0.9rem;
+  font-weight: 400;
   color: #475467;
   line-height: 1.6;
   margin: 0;
@@ -583,15 +598,16 @@
 }
 
 .sat-final-cta-title {
-  font-size: clamp(2.1rem, 4vw, 3.1rem);
-  font-weight: 800;
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 700;
   color: #FFFFFF;
   margin: 0 0 16px 0;
   letter-spacing: -0.03em;
 }
 
 .sat-final-cta-desc {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
+  font-weight: 400;
   color: rgba(255, 255, 255, 0.9);
   line-height: 1.65;
   margin: 0 auto 36px auto;
@@ -601,12 +617,12 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 54px;
-  padding: 0 34px;
+  height: 52px;
+  padding: 0 32px;
   background: #FFFFFF;
   color: #1E7E34;
   font-size: 1rem;
-  font-weight: 800;
+  font-weight: 600;
   border-radius: 12px;
   text-decoration: none;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
@@ -615,30 +631,28 @@
 
 .sat-btn-cta-white:hover {
   background: #F8FAFC;
-  color: #1E7E34;
-  transform: translateY(-2px);
+  transform: translateY(-1px);
 }
 
 .sat-btn-cta-outline {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 54px;
+  height: 52px;
   padding: 0 30px;
   background: transparent;
   color: #FFFFFF;
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: 600;
   border-radius: 12px;
   text-decoration: none;
-  border: 1.5px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.4);
   transition: all 0.2s ease;
 }
 
 .sat-btn-cta-outline:hover {
   background: rgba(255, 255, 255, 0.1);
   border-color: #FFFFFF;
-  color: #FFFFFF;
 }
 
 /* ── Responsive Rules ───────────────────────── */
@@ -858,4 +872,613 @@
     border-radius: 12px;
   }
 }
+
+/* ==========================================================
+   Universal Course Landing Page Styles (Matching SAT Architecture)
+   ========================================================== */
+
+.course-landing-page {
+  font-family: 'Plus Jakarta Sans', var(--font-sans, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+  color: #101828;
+  background-color: #FFFFFF;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.course-landing-page .course-body-section {
+  padding: 80px 0 60px 0;
+  background: #FFFFFF;
+}
+
+/* Enhanced Content Cards */
+.course-landing-page .content-card {
+  background: #FFFFFF;
+  border: 1px solid #E4E7EC;
+  border-radius: 20px;
+  padding: 38px 36px;
+  margin-bottom: 32px;
+  box-shadow: 0 1px 3px rgba(16, 24, 40, 0.05), 0 1px 2px rgba(16, 24, 40, 0.03);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.course-landing-page .content-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px -4px rgba(16, 24, 40, 0.08);
+}
+
+.course-landing-page .content-card h2 {
+  font-size: clamp(1.6rem, 2.6vw, 2.1rem);
+  font-weight: 700;
+  color: #101828;
+  margin: 0 0 20px 0;
+  letter-spacing: -0.025em;
+  line-height: 1.25;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.course-landing-page .content-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #101828;
+  margin: 0 0 14px 0;
+  letter-spacing: -0.015em;
+  line-height: 1.35;
+}
+
+.course-landing-page .content-card h4 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #101828;
+  margin: 0 0 10px 0;
+}
+
+.course-landing-page .text-gradient {
+  color: #1E7E34;
+  background: linear-gradient(135deg, #1E7E34 0%, #166534 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.course-landing-page p,
+.course-landing-page .overview-text {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.75;
+  color: #475467;
+}
+
+.course-landing-page .overview-text p {
+  margin-bottom: 16px;
+}
+
+.course-landing-page .overview-text p:last-child {
+  margin-bottom: 0;
+}
+
+.course-landing-page .overview-text .lead-text {
+  font-size: 1.08rem;
+  font-weight: 400;
+  color: #344054;
+  line-height: 1.75;
+}
+
+/* Strong / bold tags: soft semi-bold rather than harsh extra-bold */
+.course-landing-page strong,
+.course-landing-page b {
+  font-weight: 600;
+  color: #101828;
+}
+
+/* Enhanced Tracks Grid */
+.course-landing-page .tracks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 20px;
+}
+
+.course-landing-page .feature-item {
+  background: #FFFFFF;
+  border: 1px solid #E4E7EC;
+  border-radius: 18px;
+  padding: 30px 24px;
+  transition: all 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.course-landing-page .feature-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(16, 24, 40, 0.06);
+}
+
+.course-landing-page .feature-item h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #101828;
+  margin-bottom: 6px;
+}
+
+.course-landing-page .feature-item p {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #667085;
+  margin-bottom: 14px;
+}
+
+/* Enhanced Styled Lists */
+.course-landing-page .styled-list {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 14px;
+}
+
+.course-landing-page .styled-list li {
+  position: relative;
+  padding-left: 26px;
+  font-size: 0.94rem;
+  font-weight: 400;
+  color: #475467;
+  line-height: 1.6;
+}
+
+.course-landing-page .styled-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #1E7E34;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+/* Enhanced Outcomes Grid */
+.course-landing-page .outcomes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+/* Enhanced Specification Table */
+.course-landing-page .spec-table-wrapper {
+  overflow-x: auto;
+  border: 1px solid #E4E7EC;
+  border-radius: 16px;
+  margin-top: 20px;
+}
+
+.course-landing-page .spec-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.92rem;
+}
+
+.course-landing-page .spec-table th {
+  background: #F8FBF9;
+  padding: 14px 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #475467;
+  border-bottom: 1px solid #E4E7EC;
+}
+
+.course-landing-page .spec-table td {
+  padding: 15px 20px;
+  font-size: 0.92rem;
+  font-weight: 400;
+  color: #475467;
+  border-bottom: 1px solid #F1F5F9;
+}
+
+.course-landing-page .spec-table .spec-label {
+  font-weight: 600;
+  color: #101828;
+  width: 220px;
+}
+
+.course-landing-page .spec-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Quick Answer Section */
+.course-landing-page .subject-quick-answer {
+  background: #F4FBF6;
+  border: 1px solid #CDECD7;
+  border-radius: 18px;
+  padding: 26px 30px;
+  margin-bottom: 32px;
+}
+
+.course-landing-page .subject-quick-answer-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1E7E34;
+  margin: 0 0 10px 0;
+}
+
+.course-landing-page .subject-quick-answer p {
+  font-size: 0.98rem;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #2E5939;
+  margin: 0;
+}
+
+.course-landing-page .subject-quick-answer strong {
+  font-weight: 600;
+  color: #144923;
+}
+
+/* FAQ Accordions */
+.course-landing-page .faq-accordion {
+  border: 1px solid #E4E7EC;
+  border-radius: 14px;
+  margin-bottom: 12px;
+  padding: 18px 22px;
+  background: #FFFFFF;
+  transition: all 0.2s ease;
+}
+
+.course-landing-page .faq-accordion summary {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #101828;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.course-landing-page .faq-accordion[open] {
+  border-color: #A3D8B4;
+  box-shadow: 0 4px 16px rgba(30, 126, 52, 0.05);
+}
+
+.course-landing-page .faq-accordion-content {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #F1F5F9;
+  color: #475467;
+  line-height: 1.65;
+}
+
+.course-landing-page .faq-accordion-content p {
+  font-size: 0.94rem;
+  font-weight: 400;
+  color: #475467;
+  line-height: 1.65;
+}
+
+@media (max-width: 768px) {
+  .course-landing-page .content-card {
+    padding: 24px 18px;
+    border-radius: 16px;
+    margin-bottom: 20px;
+  }
+
+  .course-landing-page .subject-quick-answer {
+    padding: 20px 16px;
+    border-radius: 16px;
+  }
+
+  .course-landing-page .styled-list {
+    grid-template-columns: 1fr;
+  }
+
+  .course-landing-page .outcomes-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================
+   RTL Styles for Arabic Mode
+   ========================================== */
+[dir="rtl"] .sat-landing-page,
+[dir="rtl"] .course-landing-page,
+[dir="rtl"] .sat-landing-page *,
+[dir="rtl"] .course-landing-page * {
+  font-family: 'Cairo', 'Plus Jakarta Sans', var(--font-sans, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif) !important;
+}
+
+[dir="rtl"] .sat-hero-arch-bg {
+  right: auto;
+  left: -5%;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 480px;
+  border-bottom-right-radius: 480px;
+}
+
+[dir="rtl"] .sat-hero-floating-badge {
+  left: auto;
+  right: -20px;
+}
+
+[dir="rtl"] .sat-hero-trust-line {
+  text-align: right;
+}
+
+[dir="rtl"] .sat-snapshot-item {
+  text-align: right;
+}
+
+[dir="rtl"] .sat-why-header-col {
+  text-align: right;
+}
+
+[dir="rtl"] .sat-why-item {
+  text-align: right;
+}
+
+[dir="rtl"] .course-landing-page .content-card {
+  text-align: right;
+}
+
+[dir="rtl"] .course-landing-page .styled-list li {
+  text-align: right;
+  padding-left: 0;
+  padding-right: 26px;
+}
+
+[dir="rtl"] .course-landing-page .styled-list li::before {
+  left: auto;
+  right: 0;
+}
+
+[dir="rtl"] .sat-hero-heading,
+[dir="rtl"] .course-landing-page .sat-hero-heading {
+  font-size: clamp(1.85rem, 3.2vw, 2.7rem) !important;
+  font-weight: 500 !important;
+  line-height: 1.25 !important;
+  letter-spacing: -0.025em !important;
+}
+
+[dir="rtl"] .sat-hero-description,
+[dir="rtl"] .course-landing-page .sat-hero-description {
+  font-size: 1.05rem !important;
+  font-weight: 400 !important;
+  line-height: 1.75 !important;
+  color: #475467;
+}
+
+[dir="rtl"] .sat-landing-page :is(h1, h2, h3, h4, h5, h6, [class*="title"], [class*="heading"]),
+[dir="rtl"] .course-landing-page :is(h1, h2, h3, h4, h5, h6, [class*="title"], [class*="heading"]),
+[lang="ar"] .sat-landing-page :is(h1, h2, h3, h4, h5, h6, [class*="title"], [class*="heading"]),
+[lang="ar"] .course-landing-page :is(h1, h2, h3, h4, h5, h6, [class*="title"], [class*="heading"]) {
+  font-family: 'Cairo', 'Segoe UI', sans-serif !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1.25 !important;
+}
+
+[dir="rtl"] .sat-landing-page .content-card h2,
+[dir="rtl"] .course-landing-page .content-card h2 {
+  font-size: clamp(1.4rem, 2.2vw, 1.85rem) !important;
+  font-weight: 500 !important;
+}
+
+[dir="rtl"] .sat-landing-page .content-card h3,
+[dir="rtl"] .course-landing-page .content-card h3 {
+  font-size: 1.2rem !important;
+  font-weight: 500 !important;
+}
+
+[dir="rtl"] .sat-hero-eyebrow {
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.05em !important;
+}
+
+[dir="rtl"] .sat-btn-primary,
+[dir="rtl"] .sat-btn-secondary {
+  font-weight: 500 !important;
+}
+
+[dir="rtl"] .sat-snapshot-value {
+  font-weight: 500 !important;
+}
+
+/* ── SAT Enhanced Content Styles ── */
+.sat-definition-section,
+.sat-details-section,
+.sat-faq-section,
+.sat-guides-section {
+  padding: 70px 0;
+  position: relative;
+}
+
+.sat-definition-card {
+  background: linear-gradient(135deg, #F0FDF4 0%, #FFFFFF 100%);
+  border: 1px solid #BBF7D0;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 4px 20px rgba(30, 126, 52, 0.04);
+}
+
+.sat-grid-2col {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.sat-info-card {
+  background: #FFFFFF;
+  border: 1px solid #E4E7EC;
+  border-radius: 16px;
+  padding: 28px;
+  transition: all 0.2s ease;
+}
+
+.sat-info-card:hover {
+  border-color: #A3D8B4;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+}
+
+.sat-info-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.sat-info-icon-box {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: #EAF4EC;
+  color: #1E7E34;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sat-info-card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #101828;
+  margin: 0;
+}
+
+.sat-info-card p {
+  color: #475467;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* FAQ Accordion inside SAT Landing */
+.sat-landing-page .faq-accordion {
+  border: 1px solid #E4E7EC;
+  border-radius: 14px;
+  margin-bottom: 14px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  transition: all 0.2s ease;
+}
+
+.sat-landing-page .faq-accordion summary {
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: #101828;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.sat-landing-page .faq-accordion summary::-webkit-details-marker {
+  display: none;
+}
+
+.sat-landing-page .faq-accordion .faq-toggle-icon {
+  font-size: 1.3rem;
+  color: #1E7E34;
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.sat-landing-page .faq-accordion[open] {
+  border-color: #86EFAC;
+  box-shadow: 0 4px 16px rgba(30, 126, 52, 0.06);
+}
+
+.sat-landing-page .faq-accordion[open] .faq-toggle-icon {
+  transform: rotate(45deg);
+}
+
+.sat-landing-page .faq-accordion-content {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid #F1F5F9;
+  color: #475467;
+  line-height: 1.7;
+  font-size: 0.96rem;
+}
+
+/* Related Guides Grid */
+.sat-guides-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 28px;
+}
+
+.sat-guide-card {
+  background: #FFFFFF;
+  border: 1px solid #E4E7EC;
+  border-radius: 14px;
+  padding: 22px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.2s ease;
+}
+
+.sat-guide-card:hover {
+  border-color: #1E7E34;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(30, 126, 52, 0.08);
+}
+
+.sat-guide-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #1E7E34;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 8px;
+}
+
+.sat-guide-title {
+  font-size: 1.025rem;
+  font-weight: 700;
+  color: #101828;
+  line-height: 1.45;
+  margin: 0 0 10px 0;
+}
+
+.sat-guide-desc {
+  font-size: 0.88rem;
+  color: #64748B;
+  line-height: 1.55;
+  margin: 0 0 14px 0;
+}
+
+.sat-guide-link-text {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #1E7E34;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+@media (max-width: 768px) {
+  .sat-definition-card {
+    padding: 24px 20px;
+  }
+  .sat-grid-2col {
+    grid-template-columns: 1fr;
+  }
+}
+
 

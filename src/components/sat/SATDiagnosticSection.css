@@ -1229,3 +1229,66 @@
     height: 52px;
   }
 }
+
+/* ==========================================================================
+   RTL & Arabic Standardized Typography for SAT Diagnostic
+   Matches landing page and hero section standards (Cairo 500)
+   ========================================================================== */
+
+html[dir="rtl"] {
+  --sat-font: 'Cairo', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
+
+[dir="rtl"] .sat-landing-hero-section,
+[lang="ar"] .sat-landing-hero-section,
+[dir="rtl"] .sat-steps-section,
+[lang="ar"] .sat-steps-section,
+[dir="rtl"] .sat-domains-section,
+[lang="ar"] .sat-domains-section,
+[dir="rtl"] .sat-preview-section,
+[lang="ar"] .sat-preview-section,
+[dir="rtl"] .sat-final-cta-section,
+[lang="ar"] .sat-final-cta-section {
+  font-family: 'Cairo', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="rtl"] :is(.sat-hero-heading, .sat-section-title, .sat-final-cta-heading),
+[lang="ar"] :is(.sat-hero-heading, .sat-section-title, .sat-final-cta-heading) {
+  font-family: 'Cairo', 'Segoe UI', sans-serif !important;
+  font-size: clamp(1.85rem, 3.2vw, 2.6rem) !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.025em !important;
+  line-height: 1.25 !important;
+}
+
+[dir="rtl"] :is(.sat-step-title, .sat-domain-card-name, .sat-timeline-title, .sat-scorecard-card h3, .sat-roadmap-card h3),
+[lang="ar"] :is(.sat-step-title, .sat-domain-card-name, .sat-timeline-title, .sat-scorecard-card h3, .sat-roadmap-card h3) {
+  font-family: 'Cairo', 'Segoe UI', sans-serif !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1.3 !important;
+}
+
+[dir="rtl"] :is(.sat-hero-subtitle, .sat-section-desc, .sat-final-cta-desc, .sat-step-text, .sat-domain-card-desc),
+[lang="ar"] :is(.sat-hero-subtitle, .sat-section-desc, .sat-final-cta-desc, .sat-step-text, .sat-domain-card-desc) {
+  font-family: 'Cairo', 'Segoe UI', sans-serif !important;
+  font-weight: 400 !important;
+  line-height: 1.75 !important;
+  font-size: 1rem !important;
+}
+
+[dir="rtl"] .sat-hero-left {
+  align-items: flex-start;
+  text-align: right;
+}
+
+[dir="rtl"] .sat-hero-cta-group {
+  justify-content: flex-start;
+}
+
+[dir="rtl"] .sat-whatsapp-floating-btn {
+  right: auto;
+  left: 28px;
+}

@@ -22,7 +22,10 @@ export const trackEvent = (eventName, eventLabel) => {
 export const ANALYTICS_EVENTS = {
   WHATSAPP: 'whatsapp_click',
   CALL: 'call_click',
-  FORM: 'form_submit'
+  FORM: 'form_submit',
+  CLICK: 'content_click',
+  DIAGNOSTIC_START: 'sat_diagnostic_start',
+  DIAGNOSTIC_COMPLETE: 'sat_diagnostic_complete'
 };
 
 /**
@@ -49,4 +52,3 @@ export const trackMetaLead = (submissionKey) => {
     console.warn('[Meta Pixel] window.fbq is not defined. Ensure Meta Pixel base code is loaded.');
   }
 };
-

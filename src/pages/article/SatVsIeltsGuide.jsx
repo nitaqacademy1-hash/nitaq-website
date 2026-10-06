@@ -72,7 +72,7 @@ const SatVsIeltsGuide = () => {
                             <p>
                                 even in countries like Canada, the UK, or Singapore, a strong SAT score can sometimes substitute for other entrance exams or bolster your application for competitive courses. In Sharjah, many international schools integrate SAT preparation into their curriculum for this reason.
                             </p>
-                            <p>Explore our <Link to="/sat-preparation-sharjah">SAT Coaching in Sharjah</Link> for more details.</p>
+                            <p>Explore our in-person <Link to="/sat-preparation-sharjah">SAT Coaching in Sharjah</Link> or our live <Link to="/sat-preparation-dubai">Online SAT Preparation in Dubai</Link> for structured exam strategies.</p>
 
                             <h2>When Do You Need the IELTS?</h2>
                             <p>
@@ -93,9 +93,9 @@ const SatVsIeltsGuide = () => {
                                 Deciding which exam to prioritize depends on your target universities and countries. However, starting your preparation early is the key to success for both.
                             </p>
                             <ul className="article-list">
-                                <li><strong>Research Requirements:</strong> Check the admission pages of your dream universities.</li>
-                                <li><strong>Assess Your Skills:</strong> Take a diagnostic test for both to see where you stand.</li>
-                                <li><strong>Seek Expert Guidance:</strong> A training institute can provide the structure needed to master both formats.</li>
+                                <li><strong>Research Requirements:</strong> Check the admission pages of your dream universities in the UAE and abroad.</li>
+                                <li><strong>Assess Your Baseline:</strong> Take our free 24-question <Link to="/sat/diagnostic">Digital SAT Diagnostic Assessment</Link> to evaluate your baseline aptitude, or consult our comprehensive <Link to="/article/digital-sat-preparation-guide-sharjah-dubai-uae">Digital SAT Preparation Guide</Link>.</li>
+                                <li><strong>Seek Expert Guidance:</strong> A licensed training institute provides the structure needed to master both formats.</li>
                             </ul>
 
                             <h2>Final Thoughts</h2>
@@ -106,10 +106,12 @@ const SatVsIeltsGuide = () => {
 
                         <aside className="article-sidebar">
                             <div className="enroll-sidebar-card">
-                                <h3>Expert Test Coaching</h3>
-                                <p>Whether it's SAT or IELTS, we help you master the exams and secure your future.</p>
-                                <Link to="/courses" className="btn btn-primary w-100 mb-15">Explore All Courses</Link>
-                                <a href="tel:+97165798313" className="btn btn-outline w-100">Talk to Advisor</a>
+                                <h3>Prepare with Experts</h3>
+                                <p>Whether you need SAT scores for UAE &amp; US universities or IELTS for language proficiency, we guide your journey.</p>
+                                <Link to="/sat-preparation-sharjah" className="btn btn-primary w-100 mb-15">SAT Course Sharjah</Link>
+                                <Link to="/sat-preparation-dubai" className="btn btn-outline w-100 mb-15">Online SAT Dubai</Link>
+                                <Link to="/sat/diagnostic" className="btn btn-outline w-100 mb-15">Free SAT Diagnostic</Link>
+                                <Link to="/ielts-course" className="btn btn-outline w-100">IELTS Training</Link>
                             </div>
                         </aside>
                     </div>

@@ -1,12 +1,16 @@
 import { useState } from 'react';
+import { useLanguage } from '../i18n/context';
 import { trackEvent, ANALYTICS_EVENTS } from '../utils/analytics';
 
 const ContactForm = ({ mode = 'contact' }) => {
+    const { lang } = useLanguage();
+    const isAr = lang === 'ar';
+
     const [formData, setFormData] = useState({
         name: '',
         email: '',
         phone: '',
-        subject: mode === 'contact' ? '' : 'Course Enquiry',
+        subject: mode === 'contact' ? '' : (isAr ? 'استفسار عن الدورات' : 'Course Enquiry'),
         course: '',
         message: ''
     });
@@ -24,7 +28,10 @@ const ContactForm = ({ mode = 'contact' }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setIsSubmitting(true);
-        setStatus({ type: 'info', message: 'Sending your message...' });
+        setStatus({
+            type: 'info',
+            message: isAr ? 'جاري إرسال رسالتك...' : 'Sending your message...'
+        });
 
         try {
             // Using URLSearchParams for easier integration with Apps Script e.parameter
@@ -35,12 +42,6 @@ const ContactForm = ({ mode = 'contact' }) => {
             params.append('timestamp', new Date().toISOString());
             params.append('form_type', mode);
 
-            // A URLSearchParams POST is a "simple request" (no preflight), and a
-            // publicly-deployed Apps Script answers it with CORS headers, so we
-            // can actually read the outcome. Only if the browser refuses the
-            // CORS read (TypeError) do we fall back to an opaque no-cors send —
-            // the pre-fix behavior — since the request itself still goes
-            // through in that case.
             let delivered = false;
             try {
                 const response = await fetch(SCRIPT_URL, { method: 'POST', body: params });
@@ -54,18 +55,23 @@ const ContactForm = ({ mode = 'contact' }) => {
                     await fetch(SCRIPT_URL, { method: 'POST', body: params, mode: 'no-cors' });
                     delivered = true;
                 } else {
-                    throw corsError; // real server-side failure — surface it
+                    throw corsError;
                 }
             }
 
             if (delivered) {
-                setStatus({ type: 'success', message: 'Thank you! Your message has been sent successfully.' });
+                setStatus({
+                    type: 'success',
+                    message: isAr
+                        ? 'شكراً لتواصلك معنا! تم إرسال رسالتك بنجاح وسيتواصل معك مستشارنا الأكاديمي قريباً.'
+                        : 'Thank you! Your message has been sent successfully.'
+                });
                 trackEvent(ANALYTICS_EVENTS.FORM, `form_submit_${mode}`);
                 setFormData({
                     name: '',
                     email: '',
                     phone: '',
-                    subject: mode === 'contact' ? '' : 'Course Enquiry',
+                    subject: mode === 'contact' ? '' : (isAr ? 'استفسار عن الدورات' : 'Course Enquiry'),
                     course: '',
                     message: ''
                 });
@@ -75,7 +81,9 @@ const ContactForm = ({ mode = 'contact' }) => {
             trackEvent(ANALYTICS_EVENTS.FORM, `form_error_${mode}`);
             setStatus({
                 type: 'error',
-                message: 'Something went wrong and your message was NOT sent. Please try again, or call us on +971 6 579 8313 / WhatsApp +971 52 756 9908.'
+                message: isAr
+                    ? 'حدث خطأ أثناء الإرسال. يرجى المحاولة مجدداً أو الاتصال بنا مباشرة على 9908 756 52 971+ / واتساب 9908 756 52 971+.'
+                    : 'Something went wrong and your message was NOT sent. Please try again, or call us on +971 52 756 9908 / WhatsApp +971 52 756 9908.'
             });
         } finally {
             setIsSubmitting(false);
@@ -101,7 +109,9 @@ const ContactForm = ({ mode = 'contact' }) => {
             <form onSubmit={handleSubmit} style={{ display: 'grid', gap: '20px' }}>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '20px' }}>
                     <div>
-                        <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, color: '#334155', marginBottom: '8px' }} htmlFor={`cf-${mode}-name`}>Full Name</label>
+                        <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, color: '#334155', marginBottom: '8px' }} htmlFor={`cf-${mode}-name`}>
+                            {isAr ? 'الاسم الكامل' : 'Full Name'}
+                        </label>
                         <input
                             id={`cf-${mode}-name`}
                             type="text"
@@ -109,12 +119,14 @@ const ContactForm = ({ mode = 'contact' }) => {
                             value={formData.name}
                             onChange={handleChange}
                             required
-                            placeholder="John Doe"
+                            placeholder={isAr ? 'محمد أحمد' : 'John Doe'}
                             style={{ width: '100%', padding: '14px 20px', borderRadius: '12px', border: '1px solid #e2e8f0', background: '#f8fafc', fontSize: '1rem' }}
                         />
                     </div>
                     <div>
-                        <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, color: '#334155', marginBottom: '8px' }} htmlFor={`cf-${mode}-email`}>Email Address</label>
+                        <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, color: '#334155', marginBottom: '8px' }} htmlFor={`cf-${mode}-email`}>
+                            {isAr ? 'البريد الإلكتروني' : 'Email Address'}
+                        </label>
                         <input
                             id={`cf-${mode}-email`}
                             type="email"
@@ -122,14 +134,16 @@ const ContactForm = ({ mode = 'contact' }) => {
                             value={formData.email}
                             onChange={handleChange}
                             required
-                            placeholder="john@example.com"
+                            placeholder="name@example.com"
                             style={{ width: '100%', padding: '14px 20px', borderRadius: '12px', border: '1px solid #e2e8f0', background: '#f8fafc', fontSize: '1rem' }}
                         />
                     </div>
                 </div>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '20px' }}>
                     <div>
-                        <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, color: '#334155', marginBottom: '8px' }} htmlFor={`cf-${mode}-phone`}>Phone Number</label>
+                        <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, color: '#334155', marginBottom: '8px' }} htmlFor={`cf-${mode}-phone`}>
+                            {isAr ? 'رقم الهاتف / واتساب' : 'Phone Number'}
+                        </label>
                         <input
                             id={`cf-${mode}-phone`}
                             type="tel"
@@ -138,12 +152,15 @@ const ContactForm = ({ mode = 'contact' }) => {
                             onChange={handleChange}
                             required
                             placeholder="+971 5X XXX XXXX"
+                            dir="ltr"
                             style={{ width: '100%', padding: '14px 20px', borderRadius: '12px', border: '1px solid #e2e8f0', background: '#f8fafc', fontSize: '1rem' }}
                         />
                     </div>
                     {mode === 'contact' ? (
                         <div>
-                            <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, color: '#334155', marginBottom: '8px' }} htmlFor={`cf-${mode}-subject`}>Subject</label>
+                            <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, color: '#334155', marginBottom: '8px' }} htmlFor={`cf-${mode}-subject`}>
+                                {isAr ? 'موضوع الرسالة' : 'Subject'}
+                            </label>
                             <input
                                 id={`cf-${mode}-subject`}
                                 type="text"
@@ -151,13 +168,15 @@ const ContactForm = ({ mode = 'contact' }) => {
                                 value={formData.subject}
                                 onChange={handleChange}
                                 required
-                                placeholder="How can we help?"
+                                placeholder={isAr ? 'كيف يمكننا مساعدتك؟' : 'How can we help?'}
                                 style={{ width: '100%', padding: '14px 20px', borderRadius: '12px', border: '1px solid #e2e8f0', background: '#f8fafc', fontSize: '1rem' }}
                             />
                         </div>
                     ) : (
                         <div>
-                            <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, color: '#334155', marginBottom: '8px' }} htmlFor={`cf-${mode}-course`}>Course Interested In</label>
+                            <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, color: '#334155', marginBottom: '8px' }} htmlFor={`cf-${mode}-course`}>
+                                {isAr ? 'الدورة أو البرنامج المطلوب' : 'Course Interested In'}
+                            </label>
                             <select
                                 id={`cf-${mode}-course`}
                                 name="course"
@@ -166,47 +185,51 @@ const ContactForm = ({ mode = 'contact' }) => {
                                 required
                                 style={{ width: '100%', padding: '14px 20px', borderRadius: '12px', border: '1px solid #e2e8f0', background: '#f8fafc', fontSize: '1rem' }}
                             >
-                                <option value="">Select a course</option>
-                                <optgroup label="Test Preparations">
-                                    <option value="IELTS">IELTS Preparation</option>
-                                    <option value="SAT">SAT Preparation</option>
-                                    <option value="GRE">GRE Preparation</option>
-                                    <option value="GMAT">GMAT Coaching</option>
-                                    <option value="TOEFL">TOEFL Preparation</option>
-                                    <option value="PTE">PTE Academic</option>
-                                    <option value="JEE-NEET">Foundation JEE/NEET</option>
-                                    <option value="AcademicExcellence">Academic Excellence</option>
+                                <option value="">{isAr ? 'اختر دورة أو برنامجاً' : 'Select a course'}</option>
+                                <optgroup label={isAr ? 'التحضير للاختبارات الدولية' : 'Test Preparations'}>
+                                    <option value="IELTS">{isAr ? 'التحضير لاختبار IELTS' : 'IELTS Preparation'}</option>
+                                    <option value="SAT">{isAr ? 'التحضير لاختبار Digital SAT' : 'SAT Preparation'}</option>
+                                    <option value="GRE">{isAr ? 'التحضير لاختبار GRE' : 'GRE Preparation'}</option>
+                                    <option value="GMAT">{isAr ? 'التحضير لاختبار GMAT' : 'GMAT Coaching'}</option>
+                                    <option value="TOEFL">{isAr ? 'التحضير لاختبار TOEFL iBT' : 'TOEFL Preparation'}</option>
+                                    <option value="PTE">{isAr ? 'اختبار PTE الأكاديمي' : 'PTE Academic'}</option>
+                                    <option value="JEE-NEET">{isAr ? 'البرنامج التأسيسي JEE / NEET' : 'Foundation JEE/NEET'}</option>
+                                    <option value="AcademicExcellence">{isAr ? 'الدروس الخصوصية والتقوية المدرسية' : 'Academic Excellence'}</option>
                                 </optgroup>
-                                <optgroup label="Professional Certifications">
-                                    <option value="ACCA">ACCA (UK)</option>
-                                    <option value="CMA">CMA (US)</option>
-                                    <option value="CPA">CPA (US)</option>
-                                    <option value="UAE-VAT">UAE VAT</option>
-                                    <option value="Corporate-Tax">UAE Corporate Tax</option>
-                                    <option value="AI-Mastery">AI Mastery (Basic-Adv)</option>
-                                    <option value="PowerBI-Excel">Power BI & Excel</option>
-                                    <option value="CHRM">CHRM</option>
-                                    <option value="HRM">HRM Professional</option>
-                                    <option value="CPCD">CPCD Professional</option>
-                                    <option value="Sales-Negotiations">Sales & Negotiations</option>
-                                    <option value="Marketing">Marketing Training</option>
-                                    <option value="Data-Management">Data Management</option>
-                                    <option value="Soft-Skills">Soft Skills Training</option>
-                                    <option value="Kids-Robotics">AI & Robotics for Kids</option>
+                                <optgroup label={isAr ? 'الشهادات والبرامج المهنية' : 'Professional Certifications'}>
+                                    <option value="ACCA">{isAr ? 'شهادة ACCA البريطانية' : 'ACCA (UK)'}</option>
+                                    <option value="CMA">{isAr ? 'شهادة CMA الأمريكية' : 'CMA (US)'}</option>
+                                    <option value="CPA">{isAr ? 'شهادة CPA الأمريكية' : 'CPA (US)'}</option>
+                                    <option value="UAE-VAT">{isAr ? 'ضريبة القيمة المضافة UAE VAT' : 'UAE VAT'}</option>
+                                    <option value="Corporate-Tax">{isAr ? 'ضريبة الشركات في الإمارات' : 'UAE Corporate Tax'}</option>
+                                    <option value="AI-Mastery">{isAr ? 'دبلوم الذكاء الاصطناعي وتعلم الآلة' : 'AI Mastery (Basic-Adv)'}</option>
+                                    <option value="PowerBI-Excel">{isAr ? 'تحليل البيانات Power BI & Excel' : 'Power BI & Excel'}</option>
+                                    <option value="Cybersecurity">{isAr ? 'الأمن السيبراني والاختراق الأخلاقي' : 'Cybersecurity & Ethical Hacking'}</option>
+                                    <option value="CHRM">{isAr ? 'إدارة الموارد البشرية CHRM' : 'CHRM'}</option>
+                                    <option value="HRM">{isAr ? 'الممارس المحترف للموارد البشرية HRM' : 'HRM Professional'}</option>
+                                    <option value="CPCD">{isAr ? 'التطوير المهني والاستشارات CPCD' : 'CPCD Professional'}</option>
+                                    <option value="Sales-Negotiations">{isAr ? 'المبيعات والتفاوض التجاري' : 'Sales & Negotiations'}</option>
+                                    <option value="Marketing">{isAr ? 'التسويق وإدارة العلامات التجارية' : 'Marketing Training'}</option>
+                                    <option value="Digital-Marketing">{isAr ? 'دبلوم التسويق الرقمي الشامل' : 'Digital Marketing Course'}</option>
+                                    <option value="Data-Management">{isAr ? 'إدارة البيانات ونظم المعلومات' : 'Data Management'}</option>
+                                    <option value="Soft-Skills">{isAr ? 'تطوير المهارات الشخصية والقيادة' : 'Soft Skills Training'}</option>
+                                    <option value="Kids-Robotics">{isAr ? 'الروبوت والبرمجة للأطفال' : 'AI & Robotics for Kids'}</option>
                                 </optgroup>
-                                <optgroup label="Language Trainings">
-                                    <option value="Spoken-English">Spoken English</option>
-                                    <option value="Spoken-Arabic">Spoken Arabic</option>
-                                    <option value="French">French Language</option>
-                                    <option value="Spanish">Spanish Language</option>
-                                    <option value="German">German Language</option>
+                                <optgroup label={isAr ? 'تدريب اللغات الحية' : 'Language Trainings'}>
+                                    <option value="Spoken-English">{isAr ? 'دورة اللغة الإنجليزية والمحادثة' : 'Spoken English'}</option>
+                                    <option value="Spoken-Arabic">{isAr ? 'دورة اللغة العربية والمحادثة' : 'Spoken Arabic'}</option>
+                                    <option value="French">{isAr ? 'دورة اللغة الفرنسية (DELF)' : 'French Language'}</option>
+                                    <option value="Spanish">{isAr ? 'دورة اللغة الإسبانية (DELE)' : 'Spanish Language'}</option>
+                                    <option value="German">{isAr ? 'دورة اللغة الألمانية (Goethe)' : 'German Language'}</option>
                                 </optgroup>
                             </select>
                         </div>
                     )}
                 </div>
                 <div>
-                    <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, color: '#334155', marginBottom: '8px' }} htmlFor={`cf-${mode}-message`}>Your Message</label>
+                    <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, color: '#334155', marginBottom: '8px' }} htmlFor={`cf-${mode}-message`}>
+                        {isAr ? 'تفاصيل رسالتك أو استفسارك' : 'Your Message'}
+                    </label>
                     <textarea
                         id={`cf-${mode}-message`}
                         name="message"
@@ -214,7 +237,7 @@ const ContactForm = ({ mode = 'contact' }) => {
                         onChange={handleChange}
                         required
                         rows="5"
-                        placeholder="Write your message here..."
+                        placeholder={isAr ? 'اكتب رسالتك أو استفسارك هنا...' : 'Write your message here...'}
                         style={{ width: '100%', padding: '14px 20px', borderRadius: '12px', border: '1px solid #e2e8f0', background: '#f8fafc', fontSize: '1rem', resize: 'vertical' }}
                     ></textarea>
                 </div>
@@ -229,7 +252,7 @@ const ContactForm = ({ mode = 'contact' }) => {
                         cursor: isSubmitting ? 'not-allowed' : 'pointer'
                     }}
                 >
-                    {isSubmitting ? 'Sending...' : 'Send Message Now'}
+                    {isSubmitting ? (isAr ? 'جاري الإرسال...' : 'Sending...') : (isAr ? 'إرسال الرسالة الآن' : 'Send Message Now')}
                 </button>
             </form>
         </div>

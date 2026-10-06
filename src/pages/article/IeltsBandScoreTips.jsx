@@ -111,7 +111,7 @@ const IeltsBandScoreTips = () => {
                                 <h3>Break Your Band Limit</h3>
                                 <p>Get the expert guidance you need to reach an IELTS 7.5 or higher.</p>
                                 <Link to="/ielts-course" className="btn btn-primary w-100 mb-15">Join Our Coaching</Link>
-                                <a href="tel:+97165798313" className="btn btn-outline w-100">WhatsApp for Demo</a>
+                                <a href="tel:+971527569908" className="btn btn-outline w-100">WhatsApp for Demo</a>
                             </div>
                         </aside>
                     </div>

@@ -16,9 +16,13 @@ import { fileURLToPath, pathToFileURL } from 'url'
 import { build } from 'vite'
 import { getSeoRoute } from '../src/seo-routes.js'
 import { LANGUAGES, langFromPath, stripLangPrefix, localizePath } from '../src/i18n/config.js'
+import { PUBLISHED_ARABIC_ROUTES } from '../src/i18n/published.js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const root = resolve(__dirname, '..')
+const escapeAttribute = value => String(value ?? '').replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;')
+const renderedTitle = html => html.match(/<title>([\s\S]*?)<\/title>/i)?.[1]
+const renderedMeta = (html, attribute, name) => html.match(new RegExp(`<meta\\s+${attribute}="${name}"\\s+content="([^"]*)"`, 'i'))?.[1]
 
 const ROUTES = [
   '/',
@@ -117,6 +121,9 @@ const ROUTES = [
   '/webinar/counselors',
   '/webinar/counselors/thank-you',
   '/sat/diagnostic',
+  '/sat/diagnostic/quiz',
+  '/sat/diagnostic/results',
+  '/sat/diagnostic/math-report',
   '/sat/results',
   '/admin',
   '/admin/login',
@@ -130,11 +137,34 @@ const ROUTES = [
   '/verify'
 ]
 
-// Every English route also ships an Arabic twin at /ar/... so crawlers get a
-// real document per locale instead of the SPA fallback.
+// Only publish Arabic routes whose complete page content has been reviewed.
+// Other Arabic URLs still resolve for users, but SEO.jsx marks them noindex.
+
+// Routes that exist ONLY in English and must NOT have an Arabic version prerendered:
+// 1. Admin portal routes (exist only under /admin/*)
+// 2. Interactive SAT test runner / student result routes (exist only under /sat/diagnostic/* and /sat/results)
+const NON_LOCALIZED_ROUTES = [
+  '/admin',
+  '/admin/login',
+  '/admin/dashboard',
+  '/admin/students',
+  '/admin/questions',
+  '/admin/certificates',
+  '/admin/sat/students',
+  '/admin/sat/questions',
+  '/sat/diagnostic/quiz',
+  '/sat/diagnostic/results',
+  '/sat/diagnostic/math-report',
+  '/sat/results',
+]
+
 const LOCALIZED_ROUTES = [
   ...ROUTES,
-  ...ROUTES.map((route) => localizePath(route, 'ar')),
+  // Serve the correct noindex head even for unreviewed Arabic routes. They
+  // remain accessible, but only the translated homepage enters the sitemap.
+  ...ROUTES
+    .filter((route) => !NON_LOCALIZED_ROUTES.some((nonLoc) => route === nonLoc || route.startsWith(nonLoc + '/')))
+    .map((route) => localizePath(route, 'ar')),
 ]
 
 async function prerender() {
@@ -205,39 +235,55 @@ async function prerender() {
       const localeMeta = LANGUAGES[lang];
 
       const routeData = getSeoRoute(basePath, lang) || {
-        title: "NITAQ ACADEMY Sharjah | IELTS, ACCA, AI & Language Courses",
-        description: "Top-rated training academy in Sharjah offering IELTS, TOEFL, ACCA, CMA, AI & language courses.",
+        title: "Nitaq Academy | Education and Training in Sharjah",
+        description: "Explore education and training programmes at Nitaq Academy in Al Majaz 3, Sharjah.",
       };
+      const shouldNoIndex = basePath.startsWith('/admin')
+        || basePath.startsWith('/verify')
+        || basePath === '/enquiry'
+        || basePath.startsWith('/ig/')
+        || basePath === '/sat/results'
+        || basePath.startsWith('/sat/diagnostic/results')
+        || basePath.startsWith('/sat/diagnostic/quiz')
+        || basePath.startsWith('/sat/diagnostic/math-report')
+        || basePath.endsWith('/thank-you')
+        || (lang === 'ar' && !PUBLISHED_ARABIC_ROUTES.includes(basePath));
 
       const fullUrl = `${siteUrl}${url}`;
-      const ogImageUrl = routeData.ogImage ? (routeData.ogImage.startsWith('http') ? routeData.ogImage : `${siteUrl}${routeData.ogImage}`) : `${siteUrl}/images/logo1.webp`;
+      // The rendered component is authoritative: some pages supply their own
+      // title/description via <SEO />, and the route table alone misses them.
+      const title = renderedTitle(html) || escapeAttribute(routeData.title)
+      const description = renderedMeta(html, 'name', 'description') || escapeAttribute(routeData.description)
+      const ogTitle = renderedMeta(html, 'property', 'og:title') || escapeAttribute(routeData.ogTitle || routeData.title)
+      const ogDescription = renderedMeta(html, 'property', 'og:description') || escapeAttribute(routeData.ogDescription || routeData.description)
+      const ogImageUrl = renderedMeta(html, 'property', 'og:image') || escapeAttribute(routeData.ogImage ? (routeData.ogImage.startsWith('http') ? routeData.ogImage : `${siteUrl}${routeData.ogImage}`) : `${siteUrl}/images/logo1.webp`)
 
-      const alternateLinks = Object.values(LANGUAGES)
-        .map((l) => `<link rel="alternate" hreflang="${l.code}" href="${siteUrl}${localizePath(basePath, l.code)}" />`)
-        .join('\n        ');
-      const alternateLocales = Object.values(LANGUAGES)
-        .filter((l) => l.code !== lang)
-        .map((l) => `<meta property="og:locale:alternate" content="${l.ogLocale}" />`)
-        .join('\n        ');
+      const isArabicAvailable = PUBLISHED_ARABIC_ROUTES.includes(basePath) && !shouldNoIndex;
+      const alternateLinks = isArabicAvailable ? Object.values(LANGUAGES)
+        .map((l) => `<link data-rh="true" rel="alternate" hreflang="${l.code}" href="${siteUrl}${localizePath(basePath, l.code)}" />`)
+        .join('\n        ') : '';
+      const xDefaultLink = isArabicAvailable
+        ? `<link data-rh="true" rel="alternate" hreflang="x-default" href="${siteUrl}${localizePath(basePath, 'en')}" />`
+        : '';
 
       // Build the pristine HTML header block manually
       const generatedHead = `
-        <title>${routeData.title}</title>
-        <meta name="description" content="${routeData.description}" />
-        <link rel="canonical" href="${fullUrl}" />
+        <title data-rh="true">${title}</title>
+        <meta data-rh="true" name="description" content="${description}" />
+        <meta data-rh="true" name="robots" content="${shouldNoIndex ? 'noindex, follow' : 'index, follow'}" />
+        <link data-rh="true" rel="canonical" href="${fullUrl}" />
         ${alternateLinks}
-        <link rel="alternate" hreflang="x-default" href="${siteUrl}${localizePath(basePath, 'en')}" />
-        <meta property="og:url" content="${fullUrl}" />
-        <meta property="og:title" content="${routeData.ogTitle || routeData.title}" />
-        <meta property="og:description" content="${routeData.ogDescription || routeData.description}" />
-        <meta property="og:type" content="website" />
-        <meta property="og:locale" content="${localeMeta.ogLocale}" />
-        ${alternateLocales}
-        <meta property="og:image" content="${ogImageUrl}" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="${routeData.ogTitle || routeData.title}" />
-        <meta name="twitter:description" content="${routeData.ogDescription || routeData.description}" />
-        <meta name="twitter:image" content="${ogImageUrl}" />
+        ${xDefaultLink}
+        <meta data-rh="true" property="og:url" content="${fullUrl}" />
+        <meta data-rh="true" property="og:title" content="${ogTitle}" />
+        <meta data-rh="true" property="og:description" content="${ogDescription}" />
+        <meta data-rh="true" property="og:type" content="${basePath.startsWith('/article/') ? 'article' : 'website'}" />
+        <meta data-rh="true" property="og:locale" content="${localeMeta.ogLocale}" />
+        <meta data-rh="true" property="og:image" content="${ogImageUrl}" />
+        <meta data-rh="true" name="twitter:card" content="summary_large_image" />
+        <meta data-rh="true" name="twitter:title" content="${ogTitle}" />
+        <meta data-rh="true" name="twitter:description" content="${ogDescription}" />
+        <meta data-rh="true" name="twitter:image" content="${ogImageUrl}" />
       `.trim();
 
       // React 19 renders <title>/<meta>/<link> in place and only hoists them
@@ -259,9 +305,18 @@ async function prerender() {
         html = html.slice(leadingMeta[0].length);
       }
 
+      // React 19 leaves Helmet's JSON-LD script in the streamed body. Move it
+      // into the head and mark it as Helmet-managed so hydration adopts it
+      // instead of creating a second schema graph.
+      let structuredData = '';
+      html = html.replace(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/i, (_match, json) => {
+        structuredData = `<script data-rh="true" type="application/ld+json">${json}</script>`;
+        return '';
+      });
+
       // 3. Inject strings safely into target templates
       let output = template
-        .replace(/<!--\s*JSON-LD managed by SEO\.jsx\s*-->|<!--\s*ssr-head\s*-->/i, generatedHead + hoistedHints)
+        .replace(/<!--\s*JSON-LD managed by SEO\.jsx\s*-->|<!--\s*ssr-head\s*-->/i, generatedHead + structuredData + hoistedHints)
         // The template ships a fixed lang="en"; each locale needs its own.
         .replace(/<html[^>]*>/i, `<html lang="${localeMeta.code}" dir="${localeMeta.dir}">`)
         .replace(/<div\s+id=["']root["'][^>]*>([\s\S]*?)<\/div>/i, `<div id="root">${html}</div>`);
@@ -295,7 +350,6 @@ async function prerender() {
 
   // 6. Generate Sitemap
   console.log('\n🗺️  Generating sitemap.xml...')
-  const today = new Date().toISOString().split('T')[0]
   let sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n`
 
   // One <url> per locale, each listing every locale as an alternate — that
@@ -303,29 +357,28 @@ async function prerender() {
   for (const route of LOCALIZED_ROUTES) {
     // Skip low-value pages and admin/utility pages from sitemap
     const basePath = stripLangPrefix(route)
-    if (basePath.includes('thank-you') || basePath.startsWith('/ig/') || basePath === '/enquiry' || basePath.startsWith('/admin') || basePath.startsWith('/verify')) {
+    if ((langFromPath(route) === 'ar' && !PUBLISHED_ARABIC_ROUTES.includes(basePath)) || basePath.includes('thank-you') || basePath.startsWith('/ig/') || basePath === '/enquiry' || basePath === '/sat/results' || basePath.startsWith('/sat/diagnostic/results') || basePath.startsWith('/sat/diagnostic/quiz') || basePath.startsWith('/sat/diagnostic/math-report') || basePath.startsWith('/admin') || basePath.startsWith('/verify')) {
       continue;
     }
 
-    let priority = '0.8'
-    if (basePath === '/') priority = '1.0'
-    else if (/course|prep|ielts|gre|gmat/.test(basePath)) priority = '0.9'
-
-    const alternates = Object.values(LANGUAGES)
+    const alternateLanguages = PUBLISHED_ARABIC_ROUTES.includes(basePath) ? Object.values(LANGUAGES) : []
+    const alternates = alternateLanguages
       .map((l) => `    <xhtml:link rel="alternate" hreflang="${l.code}" href="https://www.nitaqacademy.com${localizePath(basePath, l.code)}" />`)
       .join('\n')
 
-    sitemap += `  <url>\n    <loc>https://www.nitaqacademy.com${route}</loc>\n${alternates}\n    <lastmod>${today}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>${priority}</priority>\n  </url>\n`
+    sitemap += `  <url>\n    <loc>https://www.nitaqacademy.com${route}</loc>\n${alternates}\n  </url>\n`
   }
   sitemap += '</urlset>'
   writeFileSync(resolve(root, 'dist/sitemap.xml'), sitemap)
   writeFileSync(resolve(root, 'public/sitemap.xml'), sitemap)
   console.log('✅ sitemap.xml written to dist/ and public/')
 
-  // SPA fallback for dynamic routes on Vercel
-  writeFileSync(resolve(root, 'dist/404.html'), template)
-  writeFileSync(resolve(root, 'public/404.html'), template)
-  console.log('✅ 404.html SPA fallback written to dist/ and public/')
+  // SPA fallback for dynamic routes on Vercel (with proper noindex and 404 title)
+  const notFoundHtml = template
+    .replace(/<head>/i, '<head>\n  <title data-rh="true">Page Not Found | Nitaq Academy</title>\n  <meta data-rh="true" name="robots" content="noindex, follow" />')
+  writeFileSync(resolve(root, 'dist/404.html'), notFoundHtml)
+  writeFileSync(resolve(root, 'public/404.html'), notFoundHtml)
+  console.log('✅ 404.html SPA fallback with noindex written to dist/ and public/')
 
   console.log('\n==========================================')
   console.log(`🎉 Done: ${success} success, ${fail} failed`)

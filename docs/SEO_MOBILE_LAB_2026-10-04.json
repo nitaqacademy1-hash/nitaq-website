@@ -1,0 +1,122 @@
+[
+  {
+    "route": "/",
+    "run": 1,
+    "ttfb_ms": 18,
+    "fcp_ms": 216,
+    "cls": 0,
+    "lcp_available": false
+  },
+  {
+    "route": "/",
+    "run": 2,
+    "ttfb_ms": 3,
+    "fcp_ms": 92,
+    "cls": 0,
+    "lcp_available": false
+  },
+  {
+    "route": "/",
+    "run": 3,
+    "ttfb_ms": 3,
+    "fcp_ms": 84,
+    "cls": 0,
+    "lcp_available": false
+  },
+  {
+    "route": "/sat-preparation-sharjah",
+    "run": 1,
+    "ttfb_ms": 6,
+    "fcp_ms": 156,
+    "cls": 0,
+    "lcp_available": false
+  },
+  {
+    "route": "/sat-preparation-sharjah",
+    "run": 2,
+    "ttfb_ms": 3,
+    "fcp_ms": 64,
+    "cls": 0,
+    "lcp_available": false
+  },
+  {
+    "route": "/sat-preparation-sharjah",
+    "run": 3,
+    "ttfb_ms": 14,
+    "fcp_ms": 136,
+    "cls": 0,
+    "lcp_available": false
+  },
+  {
+    "route": "/academic-excellence",
+    "run": 1,
+    "ttfb_ms": 14,
+    "fcp_ms": 144,
+    "cls": 0,
+    "lcp_available": false
+  },
+  {
+    "route": "/academic-excellence",
+    "run": 2,
+    "ttfb_ms": 4,
+    "fcp_ms": 88,
+    "cls": 0,
+    "lcp_available": false
+  },
+  {
+    "route": "/academic-excellence",
+    "run": 3,
+    "ttfb_ms": 3,
+    "fcp_ms": 120,
+    "cls": 0,
+    "lcp_available": false
+  },
+  {
+    "route": "/language-trainings",
+    "run": 1,
+    "ttfb_ms": 7,
+    "fcp_ms": 168,
+    "cls": 0,
+    "lcp_available": false
+  },
+  {
+    "route": "/language-trainings",
+    "run": 2,
+    "ttfb_ms": 2,
+    "fcp_ms": 136,
+    "cls": 0,
+    "lcp_available": false
+  },
+  {
+    "route": "/language-trainings",
+    "run": 3,
+    "ttfb_ms": 3,
+    "fcp_ms": 104,
+    "cls": 0,
+    "lcp_available": false
+  },
+  {
+    "route": "/contact",
+    "run": 1,
+    "ttfb_ms": 3,
+    "fcp_ms": 108,
+    "cls": 0,
+    "lcp_available": false
+  },
+  {
+    "route": "/contact",
+    "run": 2,
+    "ttfb_ms": 7,
+    "fcp_ms": 120,
+    "cls": 0,
+    "lcp_available": false
+  },
+  {
+    "route": "/contact",
+    "run": 3,
+    "ttfb_ms": 2,
+    "fcp_ms": 116,
+    "cls": 0,
+    "lcp_available": false
+  }
+]

@@ -107,7 +107,7 @@ const ProfessionalCoursesSharjah = () => {
                                 <h3>Level Up Your Career</h3>
                                 <p>Explore our wide range of professional certifications and start your growth journey.</p>
                                 <Link to="/professional-certifications" className="btn btn-primary w-100 mb-15">View All Courses</Link>
-                                <a href="tel:+97165798313" className="btn btn-outline w-100">Consult Our Expert</a>
+                                <a href="tel:+971527569908" className="btn btn-outline w-100">Consult Our Expert</a>
                             </div>
                         </aside>
                     </div>

@@ -108,7 +108,7 @@ const BestTrainingInstituteSharjah = () => {
                                 <h3>Experience Excellence</h3>
                                 <p>Join the leading training institute in Sharjah and take the first step toward your success.</p>
                                 <Link to="/courses" className="btn btn-primary w-100 mb-15">Explore Courses</Link>
-                                <a href="tel:+97165798313" className="btn btn-outline w-100">Contact Us</a>
+                                <a href="tel:+971527569908" className="btn btn-outline w-100">Contact Us</a>
                             </div>
                         </aside>
                     </div>

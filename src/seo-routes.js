@@ -125,11 +125,11 @@ export const seoRoutes = [
   },
   {
     path: "/ielts-coaching-dubai",
-    title: "IELTS Coaching Dubai | Band 7+ Guaranteed | NITAQ ACADEMY",
-    description: "Achieve IELTS Band 7+ with elite preparation for Dubai residents. Flexible batches, expert trainers, and mock tests for Academic and General modules.",
+    title: "Online IELTS Preparation for Dubai Students | Nitaq Academy",
+    description: "Explore online IELTS preparation for Dubai residents, delivered by Nitaq Academy in Sharjah. Compare Academic and General Training support and speak with admissions.",
     canonical: "https://www.nitaqacademy.com/ielts-coaching-dubai",
-    ogTitle: "IELTS Coaching Dubai | Band 7+ Guaranteed | NITAQ ACADEMY",
-    ogDescription: "Achieve IELTS Band 7+ with elite preparation for Dubai residents.",
+    ogTitle: "Online IELTS Preparation for Dubai Students | Nitaq Academy",
+    ogDescription: "Explore online IELTS preparation for Dubai residents from Nitaq Academy in Sharjah, with Academic and General Training support.",
     ogImage: "/images/ielts_v2.webp",
     twitterCard: "summary_large_image",
     courseSchema: {
@@ -144,31 +144,82 @@ export const seoRoutes = [
   },
   {
     path: "/sat-preparation-dubai",
-    title: "SAT Preparation Dubai | 1400+ Guaranteed | NITAQ ACADEMY",
-    description: "Master the Digital SAT with elite coaching accessible from Dubai. Score 1400+ with native strategies, mock tests, and top-tier instructors.",
+    title: "Online Digital SAT Preparation for Dubai Students | Nitaq Academy",
+    description: "Live interactive online Digital SAT preparation for Dubai and UAE students. Small batches, official Desmos strategies, timed adaptive mocks, and personalized mentoring.",
     canonical: "https://www.nitaqacademy.com/sat-preparation-dubai",
-    ogTitle: "SAT Preparation Dubai | 1400+ Guaranteed | NITAQ ACADEMY",
-    ogDescription: "Master the Digital SAT with elite coaching accessible from Dubai.",
+    ogTitle: "Online Digital SAT Preparation for Dubai Students | Nitaq Academy",
+    ogDescription: "Live interactive online Digital SAT coaching for Dubai students. Small batches, adaptive practice drills, and full diagnostic feedback.",
     ogImage: "/images/sat_v2.webp",
     twitterCard: "summary_large_image",
     courseSchema: {
-        name: 'SAT Preparation Dubai',
-        description: 'Master the Digital SAT with elite adaptive coaching near Dubai.',
+        name: 'Online Digital SAT Preparation Dubai',
+        description: 'Live interactive online Digital SAT preparation for Dubai and UAE students by NITAQ ACADEMY. Small interactive batches, official Desmos graphing calculator masterclasses, and adaptive mock test simulations.',
         duration: 'P8W',
-        mode: ['onsite', 'online'],
-        educationalLevel: 'Intermediate to Advanced',
-        teaches: 'Digital SAT Reading, Writing, and Math',
+        mode: ['online', 'blended'],
+        educationalLevel: 'Secondary',
+        teaches: 'Digital SAT Mathematics, Evidence-Based Reading & Writing, Desmos Graphing Strategies, Adaptive Test Pacing',
         inLanguage: 'en',
-    }
+    },
+    faqSchema: [
+        {
+            question: 'How are online SAT classes conducted for Dubai students?',
+            answer: 'Classes are conducted live and interactively with experienced SAT mentors via high-definition video with shared digital whiteboards, real-time problem-solving, and interactive Desmos calculator demonstrations. Students participate actively, ask questions, and receive session recordings for review.',
+        },
+        {
+            question: 'Can Dubai students attend in-person mock exams or sessions in Sharjah?',
+            answer: 'Yes. Nitaq Academy offers a hybrid option where Dubai students attend live online interactive weekday classes and have the choice to sit full-length proctored computer-based mock exams at our campus in Al Majaz 3, Sharjah, located conveniently close to Dubai.',
+        },
+        {
+            question: 'What batch timings are available for online SAT prep in Dubai?',
+            answer: 'We offer flexible evening batches (Monday through Thursday) and weekend morning batches (Friday and Saturday) specifically structured around school timetables in Dubai and the wider UAE.',
+        },
+        {
+            question: 'How does Nitaq Academy track student progress in online SAT courses?',
+            answer: 'Students begin with a comprehensive diagnostic assessment, followed by bi-weekly timed module drills and full-length adaptive computer-based mock tests. Parents and students receive detailed performance scorecards tracking accuracy across all 8 official College Board domains.',
+        },
+    ]
+  },
+  {
+    path: "/sat/diagnostic",
+    title: "Free Digital SAT Diagnostic Assessment | Nitaq Academy",
+    description: "Take Nitaq Academy's free 24-question Digital SAT diagnostic test to evaluate your Math and Reading & Writing readiness across all 8 SAT domains.",
+    canonical: "https://www.nitaqacademy.com/sat/diagnostic",
+    ogTitle: "Free Digital SAT Diagnostic Assessment | Nitaq Academy",
+    ogDescription: "Evaluate your Digital SAT readiness across all 8 domains in 15–20 minutes with our free diagnostic test.",
+    ogImage: "/images/sat_v2.webp",
+    twitterCard: "summary_large_image",
+    courseSchema: null,
+    faqSchema: [
+        {
+            question: 'What is the Nitaq Academy Free Digital SAT Diagnostic Assessment?',
+            answer: 'It is a calibrated 24-question assessment (12 Mathematics and 12 Reading & Writing) mapped directly across the official 8 College Board Digital SAT domains, designed to measure your baseline readiness and pinpoint high-yield score improvement areas in 15 to 20 minutes.',
+        },
+        {
+            question: 'Does this diagnostic test generate an official College Board SAT score?',
+            answer: 'No. This diagnostic provides an estimated score benchmark (scaled to the 400–1600 range) and domain proficiency breakdown developed by Nitaq Academy educators. It helps students identify conceptual gaps and guide study planning, but is not an official College Board administration.',
+        },
+        {
+            question: 'Can I use a calculator during the Math section of the diagnostic?',
+            answer: 'Yes. In accordance with the official Digital SAT Bluebook format, calculator usage is permitted on all Math questions. We encourage students to test their problem-solving and graphing calculator techniques.',
+        },
+        {
+            question: 'What happens after I complete the diagnostic assessment?',
+            answer: 'You receive an instant comprehensive scorecard detailing your composite score band, section breakdown, 8-domain proficiency status, and step-by-step answer rationales. You can also consult with a senior SAT academic strategist via WhatsApp to design a personalized score roadmap.',
+        },
+        {
+            question: 'Is the Digital SAT diagnostic assessment free for UAE high school students?',
+            answer: 'Yes, the assessment is 100% free with no credit card or payment required. It is available online to all students across Sharjah, Dubai, Abu Dhabi, and globally.',
+        },
+    ]
   },
 
   {
     path: "/articles",
     title: "Articles & Educational Guides | NITAQ ACADEMY Sharjah",
-    description: "Expert SAT coaching Sharjah, IELTS training UAE, and professional career insights from NITAQ ACADEMY - the leading training institute in Sharjah. Stay ahead with our guides.",
+    description: "Read Nitaq Academy guides to SAT preparation, language learning, subject tuition and professional skills in Sharjah.",
     canonical: "https://www.nitaqacademy.com/articles",
     ogTitle: "Articles & Educational Guides | NITAQ ACADEMY Sharjah",
-    ogDescription: "Expert SAT coaching Sharjah, IELTS training UAE, and professional career insights from NITAQ ACADEMY - the leading training institute in Sharjah. Stay ahead with our guides.",
+    ogDescription: "Read Nitaq Academy guides to SAT preparation, language learning, subject tuition and professional skills in Sharjah.",
     ogImage: "/images/logo1.webp",
     twitterCard: "summary_large_image",
     courseSchema: null,
@@ -176,10 +227,10 @@ export const seoRoutes = [
   },
   {
     path: "/about",
-    title: "About NITAQ ACADEMY | Leading Training Center in Sharjah",
+    title: "About Nitaq Academy in Sharjah | Courses & Campus",
     description: "Discover NITAQ ACADEMY's mission to empower professionals and students in Sharjah with world-class education and certifications.",
     canonical: "https://www.nitaqacademy.com/about",
-    ogTitle: "About NITAQ ACADEMY | Leading Training Center in Sharjah",
+    ogTitle: "About Nitaq Academy in Sharjah | Courses & Campus",
     ogDescription: "Discover NITAQ ACADEMY's mission to empower professionals and students in Sharjah with world-class education and certifications.",
     ogImage: "/images/logo1.webp",
     twitterCard: "summary_large_image",
@@ -200,11 +251,11 @@ export const seoRoutes = [
   },
   {
     path: "/language-trainings",
-    title: "Language Training Classes Sharjah | English, Arabic, French, Spanish | NITAQ ACADEMY",
-    description: "Learn new languages with certified trainers in Sharjah. Our language courses include Spoken English, Arabic, French, German, and Spanish for all levels.",
+    title: "Language Courses in Sharjah | Nitaq Academy",
+    description: "Explore English, Arabic, French, Spanish and German language training in Al Majaz 3, Sharjah, plus IELTS, TOEFL and PTE preparation.",
     canonical: "https://www.nitaqacademy.com/language-trainings",
-    ogTitle: "Language Training Classes Sharjah | English, Arabic, French, Spanish | NITAQ ACADEMY",
-    ogDescription: "Learn new languages with certified trainers in Sharjah. Our language courses include Spoken English, Arabic, French, German, and Spanish for all levels.",
+    ogTitle: "Language Courses in Sharjah | Nitaq Academy",
+    ogDescription: "Explore English, Arabic, French, Spanish and German training in Al Majaz 3, Sharjah, alongside separate IELTS, TOEFL and PTE preparation.",
     ogImage: "/images/logo1.webp",
     twitterCard: "summary_large_image",
     courseSchema: null,
@@ -236,8 +287,8 @@ export const seoRoutes = [
   },
   {
     path: "/courses",
-    title: "Our Courses | NITAQ ACADEMY Sharjah",
-    description: "Explore all professional certifications, test preparations, and language trainings at NITAQ ACADEMY. Your path to excellence starts here.",
+    title: "Courses at Nitaq Academy | SAT, Languages, Tuition & More",
+    description: "Browse Digital SAT preparation, language training, subject tuition and additional professional courses at Nitaq Academy in Sharjah.",
     canonical: "https://www.nitaqacademy.com/courses",
     ogTitle: "Our Courses | NITAQ ACADEMY Sharjah",
     ogDescription: "Explore all professional certifications, test preparations, and language trainings at NITAQ ACADEMY. Your path to excellence starts here.",
@@ -272,11 +323,11 @@ export const seoRoutes = [
   },
   {
     path: "/",
-    title: "NITAQ ACADEMY Sharjah | IELTS, ACCA, AI & Language Courses",
-    description: "Top-rated training academy in Sharjah offering IELTS, TOEFL, ACCA, CMA, AI & language courses. Expert tutors, flexible timing. Enroll today at NITAQ ACADEMY.",
+    title: "SAT Preparation, Subject Tuition & Languages in Sharjah | Nitaq Academy",
+    description: "Explore Digital SAT preparation, language training and subject tuition at Nitaq Academy in Al Majaz 3, Sharjah. Find your programme and speak with admissions.",
     canonical: "https://www.nitaqacademy.com/",
-    ogTitle: "NITAQ ACADEMY Sharjah | IELTS, ACCA, AI & Language Courses",
-    ogDescription: "Top-rated training academy in Sharjah offering IELTS, TOEFL, ACCA, CMA, AI & language courses. Expert tutors, flexible timing. Enroll today at NITAQ ACADEMY.",
+    ogTitle: "SAT Preparation, Subject Tuition & Languages in Sharjah | Nitaq Academy",
+    ogDescription: "Explore Digital SAT preparation, academic subject tuition and language training at Nitaq Academy in Al Majaz 3, Sharjah.",
     ogImage: "/images/logo1.webp",
     twitterCard: "summary_large_image",
     courseSchema: null,
@@ -296,11 +347,11 @@ export const seoRoutes = [
   },
   {
     path: "/academic-excellence",
-    title: "Academic Excellence Sharjah | IGCSE, A-Level & IB Tuition | Nitaq Academy",
-    description: "Leading academic excellence & school tuition in Sharjah. Expert IGCSE classes, A-Level tuition, IB tutoring, Maths, Science & English support in Al Majaz 3, Sharjah.",
+    title: "Subject Tuition in Sharjah | School & University Support | Nitaq Academy",
+    description: "Explore school and university subject tuition in Mathematics, Science, Business, English and available tertiary academic disciplines at Nitaq Academy in Al Majaz 3, Sharjah.",
     canonical: "https://www.nitaqacademy.com/academic-excellence",
-    ogTitle: "Academic Excellence Sharjah | IGCSE, A-Level & IB Tuition | Nitaq Academy",
-    ogDescription: "Leading academic excellence & school tuition in Sharjah. Expert IGCSE classes, A-Level tuition, IB tutoring, Maths, Science & English support in Al Majaz 3, Sharjah.",
+    ogTitle: "Subject Tuition in Sharjah | School & University Support | Nitaq Academy",
+    ogDescription: "Explore school and university subject tuition in Mathematics, Science, Business, English and available tertiary academic disciplines at Nitaq Academy in Al Majaz 3, Sharjah.",
     ogImage: "/images/academic_v2.webp",
     twitterCard: "summary_large_image",
     courseSchema: {
@@ -319,7 +370,7 @@ export const seoRoutes = [
         },
         {
             question: "Where are your tuition classes conducted in Sharjah?",
-            answer: "Our campus is centrally located at Office F103, Floor F1, Abu Khamseen Tower, Al Majaz 3, Sharjah, UAE. We also offer interactive live online classes for students residing in Dubai, Abu Dhabi, Ajman, and across the UAE."
+            answer: "Our campus is centrally located at Abu Khamseen Tower - Office : F103, Floor F1 - Al Majaz 3 - Al Majaz - Sharjah - United Arab Emirates. We also offer interactive live online classes for students residing in Dubai, Abu Dhabi, Ajman, and across the UAE."
         },
         {
             question: "Do you offer specialized IGCSE and A-Level classes in Sharjah?",
@@ -393,10 +444,10 @@ export const seoRoutes = [
   },
   {
     path: "/ielts-course",
-    title: "IELTS Preparation Course Sharjah | Band 7+ Guaranteed | NITAQ ACADEMY",
-    description: "Achieve IELTS Band 7+ with NITAQ ACADEMY's expert-led preparation course in Sharjah. Flexible batches, mock tests & proven strategies for Academic and General modules.",
+    title: "IELTS Preparation Course in Sharjah | Nitaq Academy",
+    description: "Prepare for IELTS Academic or General Training at Nitaq Academy in Sharjah. Ask about current coaching options, schedules and mock-test practice.",
     canonical: "https://www.nitaqacademy.com/ielts-course",
-    ogTitle: "IELTS Preparation Course Sharjah | Band 7+ Guaranteed | NITAQ ACADEMY",
+    ogTitle: "IELTS Preparation in Sharjah | Nitaq Academy",
     ogDescription: "Achieve IELTS Band 7+ with NITAQ ACADEMY's expert-led preparation course in Sharjah. Flexible batches, mock tests & proven strategies for Academic and General modules.",
     ogImage: "/images/ielts_v2.webp",
     twitterCard: "summary_large_image",
@@ -447,25 +498,25 @@ export const seoRoutes = [
   {
     path: "/gmat-preparation",
     title: "GMAT Preparation Course Sharjah | MBA Exam Coaching UAE | NITAQ ACADEMY",
-    description: "Master the GMAT with NITAQ ACADEMY's expert coaching in Sharjah. 10 mock tests, Quant, Verbal & AWA training for top MBA admission. SPEA Authorized. Online & offline GMAT prep UAE.",
+    description: "Explore GMAT preparation in Sharjah with Nitaq Academy. Review Quantitative Reasoning, Verbal Reasoning and Data Insights for the current exam.",
     canonical: "https://www.nitaqacademy.com/gmat-preparation",
     ogTitle: "GMAT Preparation Course Sharjah | MBA Exam Coaching UAE | NITAQ ACADEMY",
-    ogDescription: "Master the GMAT with NITAQ ACADEMY's expert coaching in Sharjah. 10 mock tests, Quant, Verbal & AWA training for top MBA admission. SPEA Authorized. Online & offline GMAT prep UAE.",
+    ogDescription: "Explore GMAT preparation in Sharjah with Nitaq Academy. Review Quantitative Reasoning, Verbal Reasoning and Data Insights for the current exam.",
     ogImage: "/images/gmat_gre_v2.webp",
     twitterCard: "summary_large_image",
     courseSchema: {
         name: 'GMAT Preparation Course Sharjah',
-        description: 'Master the GMAT for admission into top-ranked global business schools. Expert GMAT coaching in Sharjah with 10 full-length mock tests, Quant, Verbal, and AWA training.',
+        description: 'GMAT preparation in Sharjah covering Quantitative Reasoning, Verbal Reasoning and Data Insights.',
         duration: 'PT50H',
         mode: ['onsite', 'online'],
         educationalLevel: 'Graduate',
-        teaches: 'GMAT Quantitative Reasoning, Verbal Reasoning, Analytical Writing Assessment',
+        teaches: 'GMAT Quantitative Reasoning, Verbal Reasoning, Data Insights',
         inLanguage: 'en',
     },
     faqSchema: [
         {
             question: 'What is the GMAT exam and who should take it?',
-            answer: 'The GMAT (Graduate Management Admission Test) is a globally recognized exam for MBA admission. It evaluates Quantitative Reasoning, Verbal Reasoning, and Analytical Writing. It is the gold standard for admission into MBA programs at top business schools worldwide.',
+            answer: 'The current GMAT assesses Quantitative Reasoning, Verbal Reasoning and Data Insights for graduate management admissions.',
         },
         {
             question: 'How long is the GMAT preparation course at NITAQ ACADEMY?',
@@ -544,11 +595,11 @@ export const seoRoutes = [
   },
   {
     path: "/sat-preparation-sharjah",
-    title: "SAT Preparation in Sharjah | Digital SAT Coaching UAE | NITAQ ACADEMY",
-    description: "SPEA Authorized SAT coaching in Sharjah. Digital SAT Math, Reading & Writing. Score 1300+. Online & offline batches. Enrol — +971 52 756 9908.",
+    title: "Digital SAT Preparation in Sharjah | Nitaq Academy",
+    description: "Prepare for Digital SAT Reading & Writing and Mathematics at Nitaq Academy in Al Majaz 3, Sharjah. Explore the programme and free diagnostic.",
     canonical: "https://www.nitaqacademy.com/sat-preparation-sharjah",
-    ogTitle: "SAT Preparation in Sharjah | Digital SAT Coaching UAE | NITAQ ACADEMY",
-    ogDescription: "SPEA Authorized SAT coaching in Sharjah. Digital SAT Math, Reading & Writing. Score 1300+. Online & offline batches. Enrol — +971 52 756 9908.",
+    ogTitle: "Digital SAT Preparation in Sharjah | Nitaq Academy",
+    ogDescription: "Prepare for Digital SAT Reading & Writing and Mathematics at Nitaq Academy in Al Majaz 3, Sharjah. Explore the programme and free diagnostic.",
     ogImage: "/images/og-sat.png",
     twitterCard: "summary_large_image",
     courseSchema: {
@@ -686,18 +737,18 @@ export const seoRoutes = [
   {
     path: "/cpa-course",
     title: "CPA Course Sharjah | Certified Public Accountant Training UAE | NITAQ ACADEMY",
-    description: "CPA (Certified Public Accountant) preparation at NITAQ ACADEMY Sharjah. Expert AICPA CPA exam coaching with comprehensive practice materials. SPEA Authorized.",
+    description: "Explore US CPA Exam preparation at Nitaq Academy in Sharjah. The current exam has AUD, FAR and REG core sections plus one chosen Discipline.",
     canonical: "https://www.nitaqacademy.com/cpa-course",
     ogTitle: "CPA Course Sharjah | Certified Public Accountant Training UAE | NITAQ ACADEMY",
-    ogDescription: "CPA (Certified Public Accountant) preparation at NITAQ ACADEMY Sharjah. Expert AICPA CPA exam coaching with comprehensive practice materials. SPEA Authorized.",
+    ogDescription: "Explore US CPA Exam preparation at Nitaq Academy in Sharjah. The current exam has AUD, FAR and REG core sections plus one chosen Discipline.",
     ogImage: "/images/cpa_v2.webp",
     twitterCard: "summary_large_image",
     courseSchema: {
         name: 'CPA Preparation Course Sharjah',
-        description: 'Comprehensive CPA (Certified Public Accountant) exam coaching in Sharjah. Covers AICPA syllabus including Financial Accounting, Auditing, Regulation, and Business Environment.',
+        description: 'US CPA Exam preparation in Sharjah covering the three Core sections and a chosen Discipline.',
         mode: ['onsite', 'online'],
         educationalLevel: 'Beginner to Advanced',
-        teaches: 'CPA: Financial Accounting & Reporting, Auditing, Business Environment, Regulation',
+        teaches: 'CPA: Auditing and Attestation, Financial Accounting and Reporting, Regulation, and a chosen Discipline',
         inLanguage: 'en',
     },
     faqSchema: [
@@ -711,7 +762,7 @@ export const seoRoutes = [
         },
         {
             question: 'What are the 4 sections of the CPA exam?',
-            answer: 'The CPA exam covers Financial Accounting & Reporting (FAR), Auditing & Attestation (AUD), Business Environment & Concepts (BEC), and Regulation (REG).',
+            answer: 'The current CPA Exam includes AUD, FAR and REG core sections, plus one chosen Discipline: BAR, ISC or TCP.',
         },
         {
             question: 'Is CPA valuable in the UAE job market?',
@@ -1434,10 +1485,10 @@ export const seoRoutes = [
   {
     path: "/finance-courses",
     title: "Finance Courses Sharjah | ACCA, CMA, CPA | NITAQ ACADEMY",
-    description: "Explore top professional finance certifications at NITAQ ACADEMY Sharjah. We offer expert coaching for ACCA, CMA, and CPA passing guarantee.",
+    description: "Explore finance courses and ACCA, CMA and CPA preparation at Nitaq Academy in Sharjah. Ask the admissions team about current programmes.",
     canonical: "https://www.nitaqacademy.com/finance-courses",
     ogTitle: "Finance Courses Sharjah | ACCA, CMA, CPA | NITAQ ACADEMY",
-    ogDescription: "Explore top professional finance certifications at NITAQ ACADEMY Sharjah. We offer expert coaching for ACCA, CMA, and CPA passing guarantee.",
+    ogDescription: "Explore finance courses and ACCA, CMA and CPA preparation at Nitaq Academy in Sharjah. Ask the admissions team about current programmes.",
     ogImage: "/images/Finance-course.webp",
     twitterCard: "summary_large_image",
     courseSchema: null,
@@ -1533,11 +1584,11 @@ export const seoRoutes = [
   },
   {
     path: "/professional-marketing-course",
-    title: "Professional Marketing Course Sharjah | Best Marketing Training UAE",
-    description: "Top-rated Professional Marketing Course in Sharjah. Learn Branding, Strategy & Customer Psychology. Perfect for beginners and entrepreneurs. Online & Offline UAE.",
+    title: "Professional Marketing Course in Sharjah | Nitaq Academy",
+    description: "Explore Nitaq Academy's professional marketing course in Sharjah, covering branding, strategy and customer psychology for learners and entrepreneurs.",
     canonical: "https://www.nitaqacademy.com/professional-marketing-course",
-    ogTitle: "Professional Marketing Course Sharjah | Best Marketing Training UAE",
-    ogDescription: "Top-rated Professional Marketing Course in Sharjah. Learn Branding, Strategy & Customer Psychology. Perfect for beginners and entrepreneurs. Online & Offline UAE.",
+    ogTitle: "Professional Marketing Course in Sharjah | Nitaq Academy",
+    ogDescription: "Explore Nitaq Academy's professional marketing course in Sharjah, covering branding, strategy and customer psychology for learners and entrepreneurs.",
     ogImage: "/images/marketing_v2.webp",
     twitterCard: "summary_large_image",
     courseSchema: {
@@ -1614,10 +1665,10 @@ export const seoRoutes = [
   {
     path: "/article/best-training-institute-sharjah",
     title: "Best Training Institute in Sharjah for Career & Academic Success | NITAQ ACADEMY",
-    description: "Looking for the best training institute in Sharjah? Discover why NITAQ ACADEMY is the leading center for SAT, IELTS, and professional certifications in the UAE.",
+    description: "Explore considerations when choosing a training institute in Sharjah and learn about SAT, IELTS and professional courses at Nitaq Academy.",
     canonical: "https://www.nitaqacademy.com/article/best-training-institute-sharjah",
     ogTitle: "Best Training Institute in Sharjah for Career & Academic Success | NITAQ ACADEMY",
-    ogDescription: "Looking for the best training institute in Sharjah? Discover why NITAQ ACADEMY is the leading center for SAT, IELTS, and professional certifications in the UAE.",
+    ogDescription: "Explore considerations when choosing a training institute in Sharjah and learn about SAT, IELTS and professional courses at Nitaq Academy.",
     ogImage: "/images/logo1.webp",
     twitterCard: "summary_large_image",
     courseSchema: null,
@@ -1637,12 +1688,12 @@ export const seoRoutes = [
   },
   {
     path: "/article/sat-coaching-sharjah",
-    title: "SAT Coaching in Sharjah: A Complete Guide to Scoring Higher in 2026 | NITAQ ACADEMY",
-    description: "Master the SAT in Sharjah with our updated 2026 guide. Learn about SAT structure, common challenges, and effective strategies for success.",
+    title: "How to Choose the Best SAT Coaching in Sharjah (2026 Guide) | NITAQ ACADEMY",
+    description: "Looking for SAT coaching in Sharjah? Explore our 2026 parent and student guide on evaluating test prep centers, batch sizes, faculty, and diagnostic methods.",
     canonical: "https://www.nitaqacademy.com/article/sat-coaching-sharjah",
-    ogTitle: "SAT Coaching in Sharjah: A Complete Guide to Scoring Higher in 2026 | NITAQ ACADEMY",
-    ogDescription: "Master the SAT in Sharjah with our updated 2026 guide. Learn about SAT structure, common challenges, and effective strategies for success.",
-    ogImage: "/images/logo1.webp",
+    ogTitle: "How to Choose the Best SAT Coaching in Sharjah (2026 Guide) | NITAQ ACADEMY",
+    ogDescription: "Looking for SAT coaching in Sharjah? Explore our 2026 parent and student guide on evaluating test prep centers, batch sizes, faculty, and diagnostic methods.",
+    ogImage: "/images/sat_v2.webp",
     twitterCard: "summary_large_image",
     courseSchema: null,
     faqSchema: null
@@ -1685,15 +1736,14 @@ export const seoRoutes = [
   },
   {
     path: "/article/sat-score-1300-guide",
-    title: "SAT Coaching in Sharjah: How to Score 1300+ in 2026 | NITAQ ACADEMY",
-    description: "Learn the exact strategies to score 1300+ on the Digital SAT in Sharjah. Our 2026 guide covers section-wise tips, timing, and preparation methods.",
+    title: "Digital SAT Score 1300+ Guide: Benchmarks, Strategies & UAE Universities | NITAQ ACADEMY",
+    description: "Aiming for a 1300+ Digital SAT score? Discover essential section accuracy targets, Desmos techniques, and score requirements for top UAE universities.",
     canonical: "https://www.nitaqacademy.com/article/sat-score-1300-guide",
-    ogTitle: "SAT Coaching in Sharjah: How to Score 1300+ in 2026 | NITAQ ACADEMY",
-    ogDescription: "Learn the exact strategies to score 1300+ on the Digital SAT in Sharjah. Our 2026 guide covers section-wise tips, timing, and preparation methods.",
-    ogImage: "/images/logo1.webp",
+    ogTitle: "Digital SAT Score 1300+ Guide: Benchmarks, Strategies & UAE Universities | NITAQ ACADEMY",
+    ogDescription: "Aiming for a 1300+ Digital SAT score? Discover essential section accuracy targets, Desmos techniques, and score requirements for top UAE universities.",
+    ogImage: "/images/sat_v2.webp",
     twitterCard: "summary_large_image",
     courseSchema: null,
-    faqSchema: null
   },
   {
     path: "/article/ielts-dubai-guide",
@@ -1768,6 +1818,30 @@ export const seoRoutes = [
     faqSchema: null
   },
   {
+    path: "/verify-certificate",
+    title: "Verify Certificate | Nitaq Academy Sharjah",
+    description: "Verify the authenticity of training certificates and credentials issued by Nitaq Academy in Sharjah, UAE.",
+    canonical: "https://www.nitaqacademy.com/verify-certificate",
+    ogTitle: "Verify Certificate | Nitaq Academy Sharjah",
+    ogDescription: "Verify the authenticity of training certificates and credentials issued by Nitaq Academy in Sharjah, UAE.",
+    ogImage: "/images/logo1.webp",
+    twitterCard: "summary_large_image",
+    courseSchema: null,
+    faqSchema: null
+  },
+  {
+    path: "/verify",
+    title: "Verify Certificate | Nitaq Academy Sharjah",
+    description: "Verify the authenticity of training certificates and credentials issued by Nitaq Academy in Sharjah, UAE.",
+    canonical: "https://www.nitaqacademy.com/verify",
+    ogTitle: "Verify Certificate | Nitaq Academy Sharjah",
+    ogDescription: "Verify the authenticity of training certificates and credentials issued by Nitaq Academy in Sharjah, UAE.",
+    ogImage: "/images/logo1.webp",
+    twitterCard: "summary_large_image",
+    courseSchema: null,
+    faqSchema: null
+  },
+  {
     path: "/article/top-skills-uae-2026",
     title: "Top Skills UAE 2026: Career Success & High-Income Skills | NITAQ ACADEMY",
     description: "Master the top skills UAE 2026 demands. Explore why AI, Digital Marketing, and Data Analytics are the best skills for students and professionals in Dubai & Sharjah.",
@@ -1804,7 +1878,7 @@ export const seoRoutes = [
     description: "Discover the best AI course Dubai offers at NITAQ ACADEMY. Master prompt engineering, Generative AI, and automation in our expert-led tech programs.",
     canonical: "https://www.nitaqacademy.com/article/best-ai-courses-dubai",
     ogTitle: "Best AI Course Dubai: Master Artificial Intelligence in 2026",
-    ogDescription: "Join the top-rated AI course in Dubai and Sharjah. Learn the latest in tech innovation, automation, and AI strategy from industry experts.",
+    ogDescription: "Explore AI course topics including automation and AI strategy in Nitaq Academy's guide for learners in the UAE.",
     ogImage: "/images/Aibasic-adv.webp",
     twitterCard: "summary_large_image",
     datePublished: "2026-05-15T09:00:00+04:00",
@@ -2312,7 +2386,7 @@ export const seoRoutes = [
       { question: "Do you provide exam practice papers?", answer: "Yes, students receive topic-wise worksheets, formula cheat sheets, and past 10-year examination paper compilations with detailed marking schemes." },
       { question: "Do you teach A-Level and Class 12 Mathematics?", answer: "Yes, we provide advanced Pure Mathematics, Mechanics, and Statistics tuition for A-Level and CBSE Class 11 and 12 board students." },
       { question: "How do you support IB Mathematics students?", answer: "We offer specialized tutoring for both IB Math Analysis & Approaches (AA HL/SL) and Applications & Interpretation (AI HL/SL), including Internal Assessment (IA) mentoring." },
-      { question: "Where is your tuition center located in Sharjah?", answer: "Our center is located at Office F103, Floor F1, Abu Khamseen Tower, Al Majaz 3, Sharjah, UAE, easily accessible from Dubai." },
+      { question: "Where is your tuition center located in Sharjah?", answer: "Our center is located at Abu Khamseen Tower - Office : F103, Floor F1 - Al Majaz 3 - Al Majaz - Sharjah - United Arab Emirates, easily accessible from Dubai." },
       { question: "Do you cover foundational Maths for Class 1 to 5?", answer: "Yes, our primary school program builds mental math agility, number sense, and word problem translation for Class 1 to Class 5 students." },
       { question: "Are 1-on-1 private tutoring sessions available in Dubai & Sharjah?", answer: "Yes, we provide dedicated 1-on-1 private tutoring sessions for students requiring customized one-on-one attention or urgent exam preparation." },
       { question: "Is Nitaq Academy an authorized training institute?", answer: "Yes, Nitaq Academy is an officially licensed and SPEA-authorized (Sharjah Private Education Authority) educational training center." },
@@ -2322,10 +2396,10 @@ export const seoRoutes = [
   {
     path: "/science-tuition-sharjah",
     title: "Science Tuition in Sharjah & Dubai | Physics, Chemistry, Biology Class 1-12 | Nitaq UAE",
-    description: "Top-rated Science tuition in Sharjah & Dubai for Class 1-12. Specialized Physics, Chemistry & Biology coaching for IGCSE, A-Level, IB & CBSE in Al Majaz 3, Sharjah & Online UAE.",
+    description: "Explore science tuition in Physics, Chemistry and Biology at Nitaq Academy in Al Majaz 3, Sharjah. Ask about current subjects and levels.",
     canonical: "https://www.nitaqacademy.com/science-tuition-sharjah",
     ogTitle: "Science Tuition in Sharjah & Dubai | Physics, Chemistry, Biology Class 1-12 | Nitaq UAE",
-    ogDescription: "Top-rated Science tuition in Sharjah & Dubai for Class 1-12. Specialized Physics, Chemistry & Biology coaching for IGCSE, A-Level, IB & CBSE in Al Majaz 3, Sharjah & Online UAE.",
+    ogDescription: "Explore science tuition in Physics, Chemistry and Biology at Nitaq Academy in Al Majaz 3, Sharjah. Ask about current subjects and levels.",
     ogImage: "/images/academic_v2.webp",
     twitterCard: "summary_large_image",
     datePublished: "2026-08-12T08:00:00+04:00",
@@ -2427,10 +2501,10 @@ export const seoRoutes = [
   {
     path: "/physics-tuition-sharjah",
     title: "Physics Tuition in Sharjah & Dubai | IGCSE, A-Level, IB & CBSE Class 8-12 | Nitaq UAE",
-    description: "Top-rated Physics tuition in Sharjah, Dubai & UAE for Class 8-12. Cambridge IGCSE (0625), Edexcel A-Level, IB Physics HL/SL & CBSE Class 11-12 in Al Majaz 3, Sharjah & Online UAE.",
+    description: "Explore Physics tuition at Nitaq Academy in Al Majaz 3, Sharjah. Contact admissions about the levels and curricula currently supported.",
     canonical: "https://www.nitaqacademy.com/physics-tuition-sharjah",
     ogTitle: "Physics Tuition in Sharjah & Dubai | IGCSE, A-Level, IB & CBSE Class 8-12 | Nitaq UAE",
-    ogDescription: "Top-rated Physics tuition in Sharjah, Dubai & UAE for Class 8-12. Cambridge IGCSE (0625), Edexcel A-Level, IB Physics HL/SL & CBSE Class 11-12 in Al Majaz 3, Sharjah & Online UAE.",
+    ogDescription: "Explore Physics tuition at Nitaq Academy in Al Majaz 3, Sharjah. Contact admissions about the levels and curricula currently supported.",
     ogImage: "/images/academic_v2.webp",
     twitterCard: "summary_large_image",
     datePublished: "2026-08-14T08:00:00+04:00",
@@ -2453,9 +2527,9 @@ export const seoRoutes = [
       { question: "Can you assist with IB Physics Internal Assessments (IA)?", answer: "Yes. Our IB certified physics mentors assist students with formulating high-scoring research questions, designing experimental methodologies, and processing raw data with uncertainty propagation." },
       { question: "How do you help CBSE Class 12 students master theoretical derivations?", answer: "We provide exclusive derivation booklets covering all mandatory CBSE physics derivations (such as Gauss's Law, Biot-Savart Law, Lens Maker's Formula) along with weekly written derivation tests." },
       { question: "What qualifications do your Physics teachers hold?", answer: "Our physics faculty hold Master's degrees in Physics or Engineering, with 6 to 15 years of proven international teaching experience in the UAE." },
-      { question: "Where is Nitaq Academy located in Sharjah for in-person classes?", answer: "Our campus is situated at Abu Khamseen Tower, Office F103, Floor F1, Al Majaz 3, Sharjah, UAE, within easy reach of Dubai, King Faisal Street and Buhaira Corniche." },
+      { question: "Where is Nitaq Academy located in Sharjah for in-person classes?", answer: "Our campus is situated at Abu Khamseen Tower - Office : F103, Floor F1 - Al Majaz 3 - Al Majaz - Sharjah - United Arab Emirates, within easy reach of Dubai, King Faisal Street and Buhaira Corniche." },
       { question: "Do you offer past paper practice for A-Level Physics exams?", answer: "Yes. Students solve the last 10 years of official Edexcel and Cambridge A-Level Physics past papers with detailed mark-scheme and examiner report analysis." },
-      { question: "How can I schedule a free physics assessment or demo class?", answer: "You can schedule a free diagnostic assessment or demo session by contacting our admissions team on WhatsApp at +971 52 756 9908 or calling +971 6 579 8313." },
+      { question: "How can I schedule a free physics assessment or demo class?", answer: "You can schedule a free diagnostic assessment or demo session by contacting our admissions team on WhatsApp at +971 52 756 9908 or calling +971 52 756 9908." },
       { question: "Are doubt-clearing sessions provided before school term exams?", answer: "Yes. Ahead of school midterms, mock examinations, and final board sessions, we organize intensive weekend numerical bootcamps and 1-on-1 doubt-clearing clinics." }
     ]
   },
@@ -2488,9 +2562,9 @@ export const seoRoutes = [
       { question: "Can you assist with IB Chemistry Internal Assessments (IA)?", answer: "Yes. Our IB certified faculty provides structured guidance on research question framing, designing experimental methodologies, processing raw data with uncertainty propagation, and formatting per rubrics." },
       { question: "How do you help CBSE students master organic named reactions and conversions?", answer: "We provide organic reaction roadmap charts, flashcards for named reactions (such as Williamson Ether Synthesis, Kolbe's Reaction), and weekly conversion mechanism drill worksheets." },
       { question: "What qualifications do your Chemistry tutors hold?", answer: "Our educators hold Master's and Doctorate degrees in Chemistry or Chemical Engineering, with 6 to 16 years of proven international teaching experience in the UAE." },
-      { question: "Where is Nitaq Academy located in Sharjah for in-person classes?", answer: "Our learning center is located at Abu Khamseen Tower, Office F103, Floor F1, Al Majaz 3, Sharjah, UAE, easily accessible from Dubai, King Faisal Street and Al Wahda Street." },
+      { question: "Where is Nitaq Academy located in Sharjah for in-person classes?", answer: "Our learning center is located at Abu Khamseen Tower - Office : F103, Floor F1 - Al Majaz 3 - Al Majaz - Sharjah - United Arab Emirates, easily accessible from Dubai, King Faisal Street and Al Wahda Street." },
       { question: "Do you offer past paper practice for A-Level Chemistry exams?", answer: "Yes. Students solve the last 10 years of official Edexcel and Cambridge A-Level Chemistry past papers with detailed mark-scheme and examiner report dissection." },
-      { question: "How can I book a free Chemistry assessment or demo class?", answer: "You can book a free diagnostic test or demo session by messaging our admissions team on WhatsApp at +971 52 756 9908 or calling +971 6 579 8313." },
+      { question: "How can I book a free Chemistry assessment or demo class?", answer: "You can book a free diagnostic test or demo session by messaging our admissions team on WhatsApp at +971 52 756 9908 or calling +971 52 756 9908." },
       { question: "Are intensive crash courses available before board exams?", answer: "Yes. Ahead of May/June and Oct/Nov board exam sessions, we offer intensive crash courses focusing on high-weightage topics, organic synthesis roadmaps, and rapid past paper solving." }
     ]
   },
@@ -2523,9 +2597,9 @@ export const seoRoutes = [
       { question: "Can you assist with IB Biology Internal Assessments (IA)?", answer: "Yes. Our IB certified faculty provides structured guidance on research question framing, designing ethical biological experiments, applying statistical tests, and formatting per rubrics." },
       { question: "How do you help CBSE Class 12 students prepare for board exams and medical foundation?", answer: "We provide line-by-line NCERT question banks, genetics pedigree chart workshops, diagram practice booklets, and 10 years of solved CBSE board papers." },
       { question: "What qualifications do your Biology tutors hold?", answer: "Our educators hold Master's and Doctorate degrees in Biology, Genetics, Biotechnology, or MBBS/Medical Sciences, with 6 to 15 years of proven international teaching experience in the UAE." },
-      { question: "Where is Nitaq Academy located in Sharjah for in-person classes?", answer: "Our learning center is located at Abu Khamseen Tower, Office F103, Floor F1, Al Majaz 3, Sharjah, UAE, easily accessible from Dubai, King Faisal Street and Al Majaz Waterfront." },
+      { question: "Where is Nitaq Academy located in Sharjah for in-person classes?", answer: "Our learning center is located at Abu Khamseen Tower - Office : F103, Floor F1 - Al Majaz 3 - Al Majaz - Sharjah - United Arab Emirates, easily accessible from Dubai, King Faisal Street and Al Majaz Waterfront." },
       { question: "Do you offer past paper practice for A-Level Biology exams?", answer: "Yes. Students solve the last 10 years of official Edexcel and Cambridge A-Level Biology past papers with detailed mark-scheme keyword and examiner report dissection." },
-      { question: "How can I schedule a free Biology assessment or demo class?", answer: "You can book a free diagnostic test or demo session by messaging our admissions team on WhatsApp at +971 52 756 9908 or calling +971 6 579 8313." },
+      { question: "How can I schedule a free Biology assessment or demo class?", answer: "You can book a free diagnostic test or demo session by messaging our admissions team on WhatsApp at +971 52 756 9908 or calling +971 52 756 9908." },
       { question: "Are intensive crash courses available before board exams?", answer: "Yes. Ahead of May/June and Oct/Nov board exam sessions, we offer intensive crash courses focusing on high-weightage topics, rapid past paper solving, and exam time management." }
     ]
   },
@@ -2558,9 +2632,9 @@ export const seoRoutes = [
       { question: "Can you assist with IB Business Management Internal Assessments (IA)?", answer: "Yes. Our IB certified faculty assists students with formulating real-world corporate research questions, gathering primary and secondary business data, and applying strategic decision tools." },
       { question: "How do you help CBSE Class 12 students master business case studies?", answer: "We provide exclusive case study drill booklets covering all 12 NCERT chapters with line-by-line concept identification frameworks." },
       { question: "What qualifications do your Business Studies tutors hold?", answer: "Our educators hold Master's degrees in Business Administration (MBA), Commerce, or Economics, with 6 to 15 years of proven international teaching experience in the UAE." },
-      { question: "Where is Nitaq Academy located in Sharjah for in-person classes?", answer: "Our learning center is located at Abu Khamseen Tower, Office F103, Floor F1, Al Majaz 3, Sharjah, UAE, within easy reach of Dubai, King Faisal Street and Buhaira Corniche." },
+      { question: "Where is Nitaq Academy located in Sharjah for in-person classes?", answer: "Our learning center is located at Abu Khamseen Tower - Office : F103, Floor F1 - Al Majaz 3 - Al Majaz - Sharjah - United Arab Emirates, within easy reach of Dubai, King Faisal Street and Buhaira Corniche." },
       { question: "Do you offer past paper practice for A-Level Business exams?", answer: "Yes. Students solve the last 10 years of official Edexcel and Cambridge A-Level Business past papers with detailed mark-scheme and examiner report analysis." },
-      { question: "How can I schedule a free Business Studies assessment or demo class?", answer: "You can schedule a free diagnostic assessment or demo session by contacting our admissions team on WhatsApp at +971 52 756 9908 or calling +971 6 579 8313." },
+      { question: "How can I schedule a free Business Studies assessment or demo class?", answer: "You can schedule a free diagnostic assessment or demo session by contacting our admissions team on WhatsApp at +971 52 756 9908 or calling +971 52 756 9908." },
       { question: "Are calculation workshops provided for break-even and financial ratio formulas?", answer: "Yes. Every enrolled student participates in quantitative finance workshops covering break-even charts, cash flow variance analysis, and profitability ratios." }
     ]
   },
@@ -2593,9 +2667,9 @@ export const seoRoutes = [
       { question: "How do you prepare CBSE Class 12 students for the 80-mark written board exam?", answer: "We conduct timed 3-hour full-length mock examinations modeled on the latest CBSE board pattern, chapter-wise diagnostic tests, and past 10 years' question paper dissection." },
       { question: "Do you help students understand Cash Flow Statements (AS-3 / IAS-7)?", answer: "Yes. We provide structured step-by-step worksheets to calculate Cash from Operating Activities, Cash from Investing Activities, and Cash from Financing Activities." },
       { question: "What qualifications do your Accountancy tutors hold?", answer: "Our faculty hold Master's degrees in Commerce (M.Com) or are qualified Chartered Accountants (CA / ACCA / CPA), with 7 to 18 years of proven international teaching experience in the UAE." },
-      { question: "Where is Nitaq Academy located in Sharjah for in-person classes?", answer: "Our learning center is located at Abu Khamseen Tower, Office F103, Floor F1, Al Majaz 3, Sharjah, UAE, easily accessible from Dubai, King Faisal Street and Al Wahda Street." },
+      { question: "Where is Nitaq Academy located in Sharjah for in-person classes?", answer: "Our learning center is located at Abu Khamseen Tower - Office : F103, Floor F1 - Al Majaz 3 - Al Majaz - Sharjah - United Arab Emirates, easily accessible from Dubai, King Faisal Street and Al Wahda Street." },
       { question: "Do you offer past paper practice for IGCSE Accounting exams?", answer: "Yes. Students solve the last 10 years of official Cambridge IGCSE Accounting past papers with detailed mark-scheme and examiner report analysis." },
-      { question: "How can I schedule a free Accountancy assessment or demo class?", answer: "You can schedule a free diagnostic assessment or demo session by contacting our admissions team on WhatsApp at +971 52 756 9908 or calling +971 6 579 8313." },
+      { question: "How can I schedule a free Accountancy assessment or demo class?", answer: "You can schedule a free diagnostic assessment or demo session by contacting our admissions team on WhatsApp at +971 52 756 9908 or calling +971 52 756 9908." },
       { question: "Are intensive crash courses available before board exams?", answer: "Yes. Ahead of board examination sessions, we offer intensive crash courses focusing on high-weightage topics (Partnership Dissolution, Share Capital, Cash Flow Statements, Ratio Analysis)." }
     ]
   },
@@ -2628,9 +2702,9 @@ export const seoRoutes = [
       { question: "How do you prepare CBSE Class 12 students for National Income calculations?", answer: "We provide comprehensive step-by-step calculation drill sheets for all three measurement methods: Value Added Method, Income Method, and Expenditure Method." },
       { question: "How do you prepare students for IGCSE Economics Paper 2 Section A Data Response?", answer: "Students practice extracting numerical evidence from economic tables and graphs and using that data to support 4-mark and 6-mark explanatory answers." },
       { question: "What qualifications do your Economics tutors hold?", answer: "Our faculty hold Master's degrees and Doctorates in Economics, Public Policy, or Finance, with 6 to 15 years of proven international teaching experience in the UAE." },
-      { question: "Where is Nitaq Academy located in Sharjah for in-person classes?", answer: "Our learning center is located at Abu Khamseen Tower, Office F103, Floor F1, Al Majaz 3, Sharjah, UAE, within easy reach of Dubai, King Faisal Street and Buhaira Corniche." },
+      { question: "Where is Nitaq Academy located in Sharjah for in-person classes?", answer: "Our learning center is located at Abu Khamseen Tower - Office : F103, Floor F1 - Al Majaz 3 - Al Majaz - Sharjah - United Arab Emirates, within easy reach of Dubai, King Faisal Street and Buhaira Corniche." },
       { question: "Do you offer past paper practice for A-Level Economics exams?", answer: "Yes. Students solve the last 10 years of official Edexcel and Cambridge A-Level Economics past papers with detailed mark-scheme and examiner report dissection." },
-      { question: "How can I schedule a free Economics assessment or demo class?", answer: "You can schedule a free diagnostic assessment or demo session by contacting our admissions team on WhatsApp at +971 52 756 9908 or calling +971 6 579 8313." },
+      { question: "How can I schedule a free Economics assessment or demo class?", answer: "You can schedule a free diagnostic assessment or demo session by contacting our admissions team on WhatsApp at +971 52 756 9908 or calling +971 52 756 9908." },
       { question: "Are intensive crash courses available before board exams?", answer: "Yes. Ahead of board examination sessions, we offer intensive crash courses focusing on high-weightage topics (Market Failure, Macro Policy Mix, Exchange Rates, Trade Protectionism)." }
     ]
   },
@@ -2647,9 +2721,9 @@ export const seoRoutes = [
     dateModified: "2026-08-14T15:00:00+04:00",
     faqSchema: [
       { question: "Can students enroll in individual subject modules or package bundles in Dubai & Sharjah?", answer: "Yes. Students have the flexibility to enroll in single subject modules (e.g., only Physics or only Accountancy) or comprehensive multi-subject tuition packages covering all school disciplines." },
-      { question: "Where is Nitaq Academy located for in-person tuition in Sharjah?", answer: "Our campus is centrally located at Office F103, Floor F1, Abu Khamseen Tower, Al Majaz 3, Sharjah, UAE, easily accessible from Dubai, King Faisal Street and Al Wahda Street." },
+      { question: "Where is Nitaq Academy located for in-person tuition in Sharjah?", answer: "Our campus is centrally located at Abu Khamseen Tower - Office : F103, Floor F1 - Al Majaz 3 - Al Majaz - Sharjah - United Arab Emirates, easily accessible from Dubai, King Faisal Street and Al Wahda Street." },
       { question: "Are online tuition classes available for students in Dubai, Abu Dhabi, and other Emirates?", answer: "Yes. Our live interactive online platform features HD digital whiteboards, screen-sharing problem solving, recorded sessions, and digital assignments across all of UAE." },
-      { question: "How can parents schedule a free diagnostic assessment?", answer: "You can schedule a free diagnostic evaluation or demo session by contacting our admissions desk via WhatsApp at +971 52 756 9908 or calling +971 6 579 8313." }
+      { question: "How can parents schedule a free diagnostic assessment?", answer: "You can schedule a free diagnostic evaluation or demo session by contacting our admissions desk via WhatsApp at +971 52 756 9908 or calling +971 52 756 9908." }
     ]
   },
   {
@@ -2704,7 +2778,7 @@ export const seoRoutes = [
     faqSchema: [
       {
         question: "Where is the best tuition center located near me in Sharjah?",
-        answer: "The premier tuition center in Sharjah is NITAQ Academy, centrally located in Al Majaz 3 at Abu Khamseen Tower (Floor F1, Office F103), easily accessible within 2–10 minutes from Al Majaz, Al Nahda, Al Taawun, Al Qasimia, Abu Shagara, and Al Khan."
+        answer: "The premier tuition center in Sharjah is NITAQ Academy, centrally located in Al Majaz 3 at Abu Khamseen Tower - Office : F103, Floor F1 - Al Majaz 3 - Al Majaz - Sharjah - United Arab Emirates, easily accessible within 2–10 minutes from Al Majaz, Al Nahda, Al Taawun, Al Qasimia, Abu Shagara, and Al Khan."
       },
       {
         question: "Is NITAQ Academy licensed by the Sharjah Private Education Authority (SPEA)?",
@@ -2743,10 +2817,10 @@ export const getSeoRoute = (path, lang = 'en') => {
  */
 const arabicSeo = {
   '/': {
-    title: 'أكاديمية نطاق الشارقة | دورات IELTS وACCA والذكاء الاصطناعي واللغات',
-    description: 'أكاديمية تدريب رائدة في الشارقة تقدم دورات IELTS وTOEFL وACCA وCMA والذكاء الاصطناعي واللغات. مدربون خبراء ومواعيد مرنة. سجّل اليوم في أكاديمية نطاق.',
-    ogTitle: 'أكاديمية نطاق الشارقة | دورات IELTS وACCA والذكاء الاصطناعي واللغات',
-    ogDescription: 'أكاديمية تدريب رائدة في الشارقة: اختبارات دولية، شهادات مهنية، لغات. مدربون خبراء ومواعيد مرنة.',
+    title: 'التحضير لاختبار SAT واللغات والدروس الأكاديمية في الشارقة | أكاديمية نطاق',
+    description: 'استكشف التحضير لاختبار SAT الرقمي وتدريب اللغات والدروس الأكاديمية في أكاديمية نطاق بالمجاز 3، الشارقة، وتواصل مع فريق القبول.',
+    ogTitle: 'التحضير لاختبار SAT واللغات والدروس الأكاديمية | أكاديمية نطاق',
+    ogDescription: 'تحضير لاختبار SAT الرقمي وتدريب اللغات ودروس أكاديمية في المجاز 3، الشارقة.',
   },
   '/about': {
     title: 'عن أكاديمية نطاق | مركز تدريب رائد في الشارقة',
@@ -2756,11 +2830,19 @@ const arabicSeo = {
   },
   '/contact': {
     title: 'تواصل مع أكاديمية نطاق الشارقة | اتصل بنا',
-    description: 'تواصل مع أكاديمية نطاق في الشارقة: استفسارات الدورات والتسجيل والمواعيد. هاتف +971 6 579 8313 أو زُر مقرنا في المجاز 3.',
+    description: 'تواصل مع أكاديمية نطاق في الشارقة: استفسارات الدورات والتسجيل والمواعيد. هاتف +971 52 756 9908 أو زُر مقرنا في المجاز 3.',
   },
   '/courses': {
-    title: 'جميع الدورات | أكاديمية نطاق الشارقة',
+    title: 'جميع الدورات والبرامج التدريبية | أكاديمية نطاق الشارقة',
     description: 'تصفح جميع دورات أكاديمية نطاق في الشارقة: التحضير للاختبارات الدولية، الشهادات المهنية، اللغات، والتدريب المؤسسي.',
+  },
+  '/articles': {
+    title: 'المقالات التعليمية ودليل الدراسة في الإمارات | أكاديمية نطاق',
+    description: 'استكشف مقالات وإرشادات تعليمية متخصصة حول اختبارات SAT وIELTS والشهادات المهنية والتطوير الوظيفي في دولة الإمارات.',
+  },
+  '/enquiry': {
+    title: 'طلب استفسار والتسجيل في الدورات | أكاديمية نطاق الشارقة',
+    description: 'أرسل استفسارك وسيقوم المستشار الأكاديمي بالتواصل معك لمساعدتك في اختيار البرنامج التعليمي والتدريبي الأنسب.',
   },
   '/test-preparations': {
     title: 'دورات التحضير للاختبارات في الشارقة | SAT وIELTS وGMAT | أكاديمية نطاق',
@@ -2771,24 +2853,210 @@ const arabicSeo = {
     description: 'احصل على شهادات مهنية معتمدة عالمياً في الشارقة: ACCA وCMA وCPA والذكاء الاصطناعي والتسويق الرقمي وإدارة الموارد البشرية.',
   },
   '/language-trainings': {
-    title: 'دورات اللغات في الشارقة | الإنجليزية والعربية والفرنسية | أكاديمية نطاق',
-    description: 'تعلّم لغة جديدة في الشارقة: الإنجليزية المحادثة، العربية، الفرنسية، الألمانية، والإسبانية مع مدربين متخصصين.',
+    title: 'دورات اللغات في الشارقة | أكاديمية نطاق',
+    description: 'استكشف دورات الإنجليزية والعربية والفرنسية والألمانية والإسبانية في المجاز 3، الشارقة، بالإضافة إلى التحضير لاختبارات IELTS وTOEFL وPTE.',
   },
   '/corporate-trainings': {
     title: 'التدريب المؤسسي في الشارقة والإمارات | أكاديمية نطاق',
     description: 'حلول تدريب مؤسسي مصممة خصيصاً للشركات في الإمارات لتطوير مهارات فرق العمل ورفع الأداء المؤسسي.',
   },
-  '/ielts-course': {
-    title: 'دورة IELTS في الشارقة | ضمان بند 7+ | أكاديمية نطاق',
-    description: 'دورة تحضيرية لاختبار IELTS في الشارقة بقسميه الأكاديمي والعام: خطط دراسية مخصصة واختبارات تجريبية أسبوعية مع مدربين خبراء.',
+  '/academic-excellence': {
+    title: 'الدروس الخصوصية والتقوية الأكاديمية في الشارقة | أكاديمية نطاق',
+    description: 'دروس تقوية وتأسيس أكاديمي شامل لطلاب المدارس والمناهج البريطانية والأمريكية والوزارية في الشارقة مع نخبة من المعلمين المتخصصين.',
   },
   '/sat-preparation-sharjah': {
-    title: 'دورة SAT في الشارقة | تدريب متخصص لدرجات أعلى | أكاديمية نطاق',
-    description: 'التحضير لاختبار SAT في الشارقة: استراتيجيات مثبتة، اختبارات محاكاة، ومتابعة فردية لتحقيق 1300+ ودخول أفضل الجامعات.',
+    title: 'التحضير لاختبار SAT الرقمي في الشارقة | أكاديمية نطاق',
+    description: 'استعد لقسمي القراءة والكتابة والرياضيات في اختبار SAT الرقمي مع أكاديمية نطاق في المجاز 3، الشارقة، واستكشف التقييم المجاني.',
+  },
+  '/sat-preparation-dubai': {
+    title: 'التحضير لاختبار SAT الرقمي لطلاب دبي | أكاديمية نطاق',
+    description: 'دورات تفاعلية ومباشرة عبر الإنترنت لاختبار Digital SAT لطلاب دبي والإمارات مع تدريب مخصص واختبارات تشخيصية مجانية.',
+  },
+  '/sat/diagnostic': {
+    title: 'التقييم التشخيصي المجاني لاختبار SAT | أكاديمية نطاق',
+    description: 'خض اختبار Digital SAT التشخيصي المجاني (24 سؤالاً) لتقييم مستواك بدقة في الرياضيات والقراءة والكتابة عبر جميع مجالات SAT الثمانية.',
+    ogTitle: 'التقييم التشخيصي المجاني لاختبار SAT | أكاديمية نطاق',
+    ogDescription: 'قيّم مستواك في اختبار Digital SAT خلال 15-20 دقيقة مع تحليل فوري وخطة دراسية مخصصة.',
+  },
+  '/terms-and-conditions': {
+    title: 'الشروط والأحكام | أكاديمية نطاق الشارقة',
+    description: 'الشروط والأحكام الخاصة بالتسجيل والتدريب والدورات التعليمية في أكاديمية نطاق بالشارقة، دولة الإمارات العربية المتحدة.',
+  },
+  '/privacy-policy': {
+    title: 'سياسة الخصوصية وحماية البيانات | أكاديمية نطاق',
+    description: 'سياسة الخصوصية وحماية البيانات الشخصية المعتمدة لدى أكاديمية نطاق، الشارقة، دولة الإمارات العربية المتحدة.',
+  },
+  '/verify-certificate': {
+    title: 'التحقق من صحة الشهادات التدريبية | أكاديمية نطاق',
+    description: 'خدمة التحقق الإلكتروني الفوري من صحة وموثوقية الشهادات الصادرة عن أكاديمية نطاق برقم الشهادة.',
+  },
+  '/verify': {
+    title: 'بوابة الاستعلام والتحقق من الشهادات | أكاديمية نطاق',
+    description: 'بوابة الاستعلام والتحقق من صحة الشهادات والاعتمادات التدريبية الصادرة عن أكاديمية نطاق بالشارقة.',
+  },
+  '/acca-course': {
+    title: 'دورة ACCA في الشارقة | شهادة المحاسبين القانونيين المعتمدين | أكاديمية نطاق',
+    description: 'انطلق نحو العالمية في المحاسبة والمالية مع برنامج ACCA البريطاني الشامل في الشارقة، تغطية لكافة المستويات من الأساسيات حتى المستوى الاستراتيجي.',
+  },
+  '/cma-course': {
+    title: 'دورة CMA في الشارقة | شهادة المحاسب الإداري المعتمد | أكاديمية نطاق',
+    description: 'احصل على شهادة CMA الأمريكية المعتمدة عالمياً في المحاسبة الإدارية والتحليل المالي الاستراتيجي مع خبراء معتمدين في الشارقة.',
+  },
+  '/cpa-course': {
+    title: 'دورة CPA في الشارقة | شهادة المحاسب القانوني المعتمد | أكاديمية نطاق',
+    description: 'تأهيل شامل لامتحان المحاسب القانوني المعتمد CPA وفق المعايير الأمريكية AICPA مع اختبارات تجريبية ودعم تدريبي متكامل في الشارقة.',
+  },
+  '/ielts-course': {
+    title: 'التحضير لاختبار IELTS في الشارقة | أكاديمية نطاق',
+    description: 'استعد لاختبار IELTS الأكاديمي أو العام في أكاديمية نطاق بالشارقة، واستفسر عن خيارات التدريب والجداول الحالية والاختبارات التجريبية.',
+  },
+  '/ielts-coaching-dubai': {
+    title: 'التحضير لاختبار IELTS لطلاب دبي | أكاديمية نطاق',
+    description: 'تدريب مكثف على اختبار IELTS الأكاديمي والعام لطلاب دبي والإمارات لتحقيق درجة Band 7.5+ للقبول الجامعي والهجرة.',
+  },
+  '/spoken-arabic': {
+    title: 'دورة المحادثة واللغة العربية في الشارقة | أكاديمية نطاق',
+    description: 'تعلّم التحدث بالعربية بطلاقة وثقة في الحياة اليومية وبيئة الأعمال في الإمارات مع مدربين ناطقين بالعربية في الشارقة.',
+  },
+  '/spoken-english': {
+    title: 'دورة المحادثة واللغة الإنجليزية في الشارقة | أكاديمية نطاق',
+    description: 'طوّر طلاقتك في التحدث بالإنجليزية وثقتك في مقابلات العمل والتواصل اليومي مع برامج المحادثة التفاعلية في الشارقة.',
+  },
+  '/french': {
+    title: 'دورة اللغة الفرنسية في الشارقة | تأهيل DELF | أكاديمية نطاق',
+    description: 'تعلم اللغة الفرنسية من المبتدئ إلى المتقدم (A1 - B2) مع مدربين معتمدين والتأهيل لاختبارات DELF في الشارقة.',
+  },
+  '/german': {
+    title: 'دورة اللغة الألمانية في الشارقة | شهادات Goethe | أكاديمية نطاق',
+    description: 'دورات معتمدة في اللغة الألمانية للدراسة والعمل في ألمانيا والنمسا مع التأهيل لاختبارات معهد جوته في الشارقة.',
+  },
+  '/spanish': {
+    title: 'دورة اللغة الإسبانية في الشارقة | تأهيل DELE | أكاديمية نطاق',
+    description: 'تحدث الإسبانية بسهولة وثقة مع دورات تفاعلية تغطي النطق والقواعد والمحادثة والتأهيل لاختبارات DELE في الشارقة.',
+  },
+  '/toefl-course': {
+    title: 'دورة التحضير لاختبار TOEFL iBT في الشارقة | أكاديمية نطاق',
+    description: 'استعد لاختبار TOEFL iBT للقبول الجامعي في الإمارات والجامعات الدولية مع نماذج تدريب رسمية ومعامل صوتية متطورة.',
+  },
+  '/pte-course': {
+    title: 'دورة التحضير لاختبار PTE Academic في الشارقة | أكاديمية نطاق',
+    description: 'حقق درجة 79+ في اختبار بيرسون الأكاديمي PTE للدراسة والهجرة مع تدريب عملي وتحليل دقيق لمعايير التقييم بالذكاء الاصطناعي.',
+  },
+  '/uae-vat': {
+    title: 'دورة ضريبة القيمة المضافة UAE VAT في الشارقة | أكاديمية نطاق',
+    description: 'دورة عملية في قوانين ضريبة القيمة المضافة وإعداد الإقرارات الضريبية والامتثال المالي للشركات في دولة الإمارات.',
+  },
+  '/uae-corporate-tax': {
+    title: 'دورة ضريبة الشركات في الإمارات Corporate Tax | أكاديمية نطاق',
+    description: 'تدريب عملي متقدم على قانون ضريبة الشركات الإماراتي وحساب الضرائب والتسعير التحويلي وإعداد الإقرارات مع خبراء الضرائب.',
   },
   '/ai-course': {
     title: 'دورة الذكاء الاصطناعي في الشارقة | من الأساسيات إلى الاحتراف | أكاديمية نطاق',
     description: 'أتقن أدوات الذكاء الاصطناعي عملياً في الشارقة: من الأساسيات إلى التطبيقات المتقدمة للعمل والدراسة، مع شهادة معتمدة.',
+  },
+  '/power-bi-excel': {
+    title: 'دورة Power BI وExcel المتقدم لتحليل البيانات في الشارقة | أكاديمية نطاق',
+    description: 'احترف بناء لوحات التحكم التفاعلية وتحليل البيانات وإعداد التقارير المالية الذكية باستخدام Power BI وExcel المتقدم.',
+  },
+  '/cybersecurity-course-sharjah': {
+    title: 'دبلوم الأمن السيبراني في الشارقة | دورة الاختراق الأخلاقي | أكاديمية نطاق',
+    description: 'تعلّم حماية الشبكات والأنظمة واختبار الاختراق الأخلاقي والاستجابة للحوادث السيبرانية مع تدريب عملي في معامل متطورة بالشارقة.',
+  },
+  '/software-engineering-diploma-sharjah': {
+    title: 'دبلوم هندسة البرمجيات وتطوير الويب في الشارقة | أكاديمية نطاق',
+    description: 'دبلوم تطبيقي شامل في البرمجة وتطوير البرمجيات Full-Stack وقواعد البيانات وبناء المشاريع الحقيقية في الشارقة.',
+  },
+  '/courses/professional-digital-marketing-course-sharjah-uae': {
+    title: 'دورة التسويق الرقمي الاحترافي في الشارقة | SEO والإعلانات | أكاديمية نطاق',
+    description: 'احترف إدارة الحملات الإعلانية على Google ووسائل التواصل الاجتماعي وتحسين محركات البحث SEO وصناعة المحتوى في الشارقة.',
+  },
+  '/professional-marketing-course': {
+    title: 'دورة التسويق الاحترافي وإدارة العلامات التجارية | أكاديمية نطاق',
+    description: 'تعلم استراتيجيات التسويق الحديث وبناء العلامات التجارية وتحليل سلوك المستهلك لتحقيق نمو الأعمال في سوق الإمارات.',
+  },
+  '/chrm': {
+    title: 'دورة المدير المعتمد للموارد البشرية CHRM في الشارقة | أكاديمية نطاق',
+    description: 'شهادة مهنية معتمدة في إدارة الموارد البشرية وتخطيط القوى العاملة وإدارة الأداء وقانون العمل الإماراتي الحديث.',
+  },
+  '/hrm-courses': {
+    title: 'دورات إدارة الموارد البشرية في الشارقة | أكاديمية نطاق',
+    description: 'برامج تدريبية متخصصة لتأهيل مدراء ومسؤولي الموارد البشرية في الاستقطاب وإدارة المواهب والتطوير التنظيمي في الإمارات.',
+  },
+  '/sales-negotiations': {
+    title: 'دورة مهارات المبيعات والتفاوض التجاري في الشارقة | أكاديمية نطاق',
+    description: 'اكتسب فنون الإقناع والتفاوض الاحترافي وإغلاق الصفقات الكبرى وبناء شراكات تجارية ناجحة ومستدامة.',
+  },
+  '/data-management': {
+    title: 'دورة إدارة البيانات ونظم المعلومات في الشارقة | أكاديمية نطاق',
+    description: 'تنظيم وإدارة البيانات المؤسسية وقواعد البيانات وحوكمة المعلومات لدعم اتخاذ القرارات والتحول الرقمي.',
+  },
+  '/soft-skills-training': {
+    title: 'دورة المهارات الشخصية وتطوير القيادة في الشارقة | أكاديمية نطاق',
+    description: 'تطوير مهارات الاتصال الفعال والذكاء العاطفي وإدارة الوقت والقيادة وحل المشكلات لبيئة العمل الحديثة.',
+  },
+  '/gmat-preparation': {
+    title: 'دورة التحضير لاختبار GMAT Focus في الشارقة | أكاديمية نطاق',
+    description: 'استعد لاختبار GMAT للقبول في برامج ماجستير إدارة الأعمال MBA العالمية مع استراتيجيات حل متقدمة وتدريب مكثف في الشارقة.',
+  },
+  '/gre-preparation': {
+    title: 'دورة التحضير لاختبار GRE في الشارقة | أكاديمية نطاق',
+    description: 'تحضير شامل لاختبار GRE العام للدراسات العليا في أقسام التحليل الكمي واللفظي والكتابة التحليلية مع نخبة من الخبراء.',
+  },
+  '/foundation-jee-neet': {
+    title: 'البرنامج التأسيسي لاختبارات JEE و NEET في الشارقة | أكاديمية نطاق',
+    description: 'تأسيس علمي قوي في الفيزياء والكيمياء والرياضيات والأحياء لاجتياز اختبارات القبول لكليات الهندسة والطب بتفوق.',
+  },
+  '/ai-robotics-kids': {
+    title: 'برنامج الذكاء الاصطناعي والروبوت للأطفال في الشارقة | أكاديمية نطاق',
+    description: 'برنامج تدريبي ممتع وتفاعلي للأطفال واليافعين لتعلم مبادئ البرمجة وبناء الروبوتات وتطبيقات الذكاء الاصطناعي.',
+  },
+  '/finance-courses': {
+    title: 'دورات المالية والمحاسبة والضرائب في الشارقة | أكاديمية نطاق',
+    description: 'استكشف الدورات المهنية في المحاسبة والمالية والضرائب والتحليل المالي المعتمدة في الشارقة والإمارات.',
+  },
+  '/cpcd-courses': {
+    title: 'دورات التطوير المهني والمؤسسي في الشارقة | أكاديمية نطاق',
+    description: 'برامج التطوير المهني المستمر والتنفيذي للكوادر والشركات لتعزيز الكفاءة والجاهزية لسوق العمل.',
+  },
+  '/maths-tuition-sharjah': {
+    title: 'دروس خصوصية في الرياضيات بالشارقة | IGCSE وIB والمناهج الوزارية | أكاديمية نطاق',
+    description: 'دروس تقوية متخصصة في مادة الرياضيات لجميع المراحل الدراسية في الشارقة مع شرح مبسط ومتابعة دورية لحل المسائل المعقدة.',
+  },
+  '/science-tuition-sharjah': {
+    title: 'دروس خصوصية في العلوم بالشارقة | مناهج بريطانية وأمريكية | أكاديمية نطاق',
+    description: 'تدريس متميز لمناهج العلوم العامة لطلاب المدارس بالشارقة مع تجارب عملية وتدريب على الاختبارات الدورية.',
+  },
+  '/physics-tuition-sharjah': {
+    title: 'دروس خصوصية في الفيزياء بالشارقة | IGCSE وA-Level وIB | أكاديمية نطاق',
+    description: 'معلمون متخصصون في مادة الفيزياء لتبسيط المفاهيم الفيزيائية وتطبيقات القوانين وحل أسئلة الامتحانات السابقة في الشارقة.',
+  },
+  '/chemistry-tuition-sharjah': {
+    title: 'دروس خصوصية في الكيمياء بالشارقة | مناهج دولية | أكاديمية نطاق',
+    description: 'شرح شامل ومبسط لمادة الكيمياء والمعادلات الكيميائية للمناهج البريطانية والأمريكية والوزارية في الشارقة.',
+  },
+  '/biology-tuition-sharjah': {
+    title: 'دروس خصوصية في الأحياء بالشارقة | IGCSE وCBSE وIB | أكاديمية نطاق',
+    description: 'دروس تقوية في مادة علم الأحياء مع رسوم توضيحية ومراجعات مكثفة لضمان أعلى الدرجات لطلاب المدارس بالشارقة.',
+  },
+  '/business-studies-tuition-sharjah': {
+    title: 'دروس خصوصية في دراسات الأعمال بالشارقة | أكاديمية نطاق',
+    description: 'تدريس مبادئ الأعمال والإدارة والتسويق لطلاب المرحلة الثانوية والمناهج الدولية في الشارقة.',
+  },
+  '/accountancy-tuition-sharjah': {
+    title: 'دروس خصوصية في المحاسبة المدرسية بالشارقة | أكاديمية نطاق',
+    description: 'تأسيس قوي في مبادئ المحاسبة ومسك الدفاتر والقوائم المالية لطلاب المدارس والمرحلة الثانوية في الشارقة.',
+  },
+  '/economics-tuition-sharjah': {
+    title: 'دروس خصوصية في الاقتصاد بالشارقة | IGCSE وA-Level | أكاديمية نطاق',
+    description: 'شرح مفاهيم الاقتصاد الجزئي والكلي والسياسات المالية لطلاب المناهج البريطانية والدولية في الشارقة.',
+  },
+  '/english-tuition-sharjah': {
+    title: 'دروس خصوصية في اللغة الإنجليزية المدرسية بالشارقة | أكاديمية نطاق',
+    description: 'تقوية مهارات القراءة والكتابة والنصوص الأدبية والقواعد لطلاب المدارس في كافة المراحل التعليمية بالشارقة.',
+  },
+  '/social-science-tuition-sharjah': {
+    title: 'دروس خصوصية في العلوم الاجتماعية بالشارقة | أكاديمية نطاق',
+    description: 'تدريس مواد الدراسات الاجتماعية والتاريخ والجغرافيا لطلاب المدارس في الشارقة بأسلوب تفاعلي منظم.',
   },
 };
 

@@ -1,0 +1,1053 @@
+/* ==========================================================================
+   MASTER COURSE & PROGRAM LISTING PAGES STYLES - NITAQ ACADEMY
+   Shared by /courses, /professional-certifications, /test-preparations, /language-trainings, /academic-excellence
+   Strictly aligned to the Nitaq Landing Page Design System & Typography Tokens
+   ========================================================================== */
+
+.lt-page,
+.listing-page {
+  --nh-green: #2e7d32;
+  --nh-ink: #153c29;
+  --nh-muted: #617067;
+  --nh-paper: #f7f9f4;
+  --nh-line: #dce5da;
+  background: var(--nh-paper);
+  color: var(--nh-ink);
+  font-family: 'Plus Jakarta Sans', Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 14px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* Base Headings: strictly 500 weight and negative letter-spacing from landing page */
+.lt-page :is(h1, h2, h3),
+.listing-page :is(h1, h2, h3) {
+  font-family: inherit;
+  font-weight: 500 !important;
+  letter-spacing: -.055em;
+  line-height: 1.13;
+  color: inherit;
+  margin: 0;
+}
+
+.lt-page :is(p, ul, ol, figure),
+.listing-page :is(p, ul, ol, figure) {
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   HERO SECTION (Matching Landing Page .nh-story model)
+   -------------------------------------------------------------------------- */
+.lt-hero,
+.listing-hero-v3 {
+  position: relative;
+  background: radial-gradient(ellipse at 62% 15%, #2e7d32 0, transparent 58%),
+    linear-gradient(135deg, #122e1c 0%, #174f2b 45%, #124124 100%);
+  color: #ffffff;
+  padding: 135px 0 65px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.lt-hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 52px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.lt-breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #a4c9ad;
+  margin-bottom: 18px;
+}
+
+.lt-breadcrumbs a {
+  color: #d1ebd4;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.lt-breadcrumbs a:hover {
+  color: #bbf797;
+}
+
+.lt-breadcrumbs .sep {
+  opacity: 0.5;
+}
+
+/* Eyebrows matching landing page .nh-eyebrow */
+.lt-page .nh-eyebrow,
+.lt-page .lt-eyebrow,
+.lt-hero-badge {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  line-height: 1.5;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #c9dec1;
+  margin-bottom: 14px;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.lt-page .nh-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  flex-shrink: 0;
+  background: #b4d79b;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(180, 215, 155, 0.15);
+}
+
+/* Hero H1: graceful, refined, NOT bold 800 */
+.lt-hero h1,
+.lt-hero .lt-hero-title,
+.listing-hero-v3 h1 {
+  font-size: clamp(34px, 3.8vw, 50px);
+  line-height: 1.1;
+  font-weight: 500 !important;
+  letter-spacing: -.055em;
+  color: #ffffff;
+  margin: 0 0 16px 0;
+}
+
+.lt-hero-title-soft,
+.lt-gradient-text {
+  color: #c3d9b8;
+  font-weight: 500;
+  background: none;
+  -webkit-text-fill-color: initial;
+}
+
+.lt-hero-intro {
+  font-size: 13.5px;
+  line-height: 1.75;
+  color: #cdd9c5;
+  max-width: 480px;
+  font-weight: 400;
+  margin: 0 0 24px 0;
+}
+
+.lt-hero-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.lt-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  color: #d1dfcb;
+  font-size: 11.5px;
+  font-weight: 400;
+}
+
+.lt-pill svg {
+  color: #bbf797;
+}
+
+.lt-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Buttons matching landing page .nh-button model */
+.lt-btn {
+  min-height: 46px;
+  padding: 12px 20px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.5;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s, border-color 0.2s;
+  cursor: pointer;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+.lt-btn-primary {
+  background: #eef5e5;
+  color: #19472b;
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.lt-btn-primary:hover {
+  background: #ffffff;
+  transform: translateY(-2px);
+  color: #153c29;
+}
+
+.lt-btn-secondary {
+  border-color: rgba(212, 231, 207, 0.29);
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(8px);
+}
+
+.lt-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #b4d79b;
+  transform: translateY(-2px);
+  color: #ffffff;
+}
+
+.lt-btn-whatsapp {
+  background: #25d366;
+  color: #ffffff;
+  border-color: transparent;
+}
+
+.lt-btn-whatsapp:hover {
+  background: #22bf5b;
+  transform: translateY(-2px);
+  color: #ffffff;
+}
+
+/* Hero Media Visual: matching landing page rounded wrap */
+.lt-hero-media {
+  position: relative;
+}
+
+.lt-hero-image-wrap {
+  position: relative;
+  border-radius: 120px 22px 22px 22px;
+  overflow: hidden;
+  background: #3a6e43;
+  box-shadow: 0 32px 90px rgba(5, 28, 16, 0.42);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  height: 440px;
+}
+
+.lt-hero-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.lt-hero-overlay-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 45%, rgba(9, 35, 20, 0.7) 100%);
+}
+
+.lt-hero-float-badge {
+  position: absolute;
+  bottom: 28px;
+  left: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(12px);
+  padding: 12px 16px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.lt-float-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: #eef5e5;
+  color: #2e7d32;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.lt-float-title {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #153c29;
+  margin-bottom: 2px;
+  letter-spacing: -.02em;
+}
+
+.lt-float-desc {
+  font-size: 11px;
+  color: #617067;
+  line-height: 1.4;
+}
+
+/* --------------------------------------------------------------------------
+   PARTNERS & CURRICULA STRIP
+   -------------------------------------------------------------------------- */
+.lt-partners-strip {
+  background: #ffffff;
+  border-bottom: 1px solid var(--nh-line);
+  padding: 18px 0;
+}
+
+.lt-partners-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.lt-partners-label {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--nh-muted);
+}
+
+.lt-partners-logos {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.lt-partner-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 11.5px;
+  font-weight: 500;
+  color: #3d5045;
+}
+
+.lt-partner-item img {
+  height: 22px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* --------------------------------------------------------------------------
+   CATALOG SECTION & SUBJECT CARDS (Landing Page Model)
+   -------------------------------------------------------------------------- */
+.lt-catalog-section {
+  padding: 70px 0 95px;
+  background: var(--nh-paper);
+}
+
+.lt-section-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 36px;
+}
+
+.lt-section-header .nh-eyebrow,
+.lt-section-header .lt-eyebrow {
+  justify-content: center;
+  color: #2e7d32;
+  margin-bottom: 8px;
+}
+
+.lt-section-header h2 {
+  font-size: clamp(28px, 3.2vw, 42px);
+  font-weight: 500 !important;
+  letter-spacing: -.05em;
+  color: var(--nh-ink);
+  line-height: 1.15;
+  margin: 0 0 12px 0;
+}
+
+.lt-section-header p {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--nh-muted);
+  font-weight: 400;
+  margin: 0;
+}
+
+/* Filter buttons */
+.lt-filter-wrap {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 42px;
+  flex-wrap: wrap;
+}
+
+.lt-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 18px;
+  border-radius: 10px;
+  background: #ffffff;
+  border: 1px solid var(--nh-line);
+  color: var(--nh-ink);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.lt-filter-btn:hover {
+  border-color: #b4d79b;
+  background: #fbfdf9;
+}
+
+.lt-filter-btn.is-active {
+  background: var(--nh-ink);
+  border-color: var(--nh-ink);
+  color: #ffffff;
+}
+
+.lt-filter-count {
+  font-size: 10px;
+  padding: 1px 6px;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.06);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+.lt-filter-btn.is-active .lt-filter-count {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+/* Cards Grid */
+.lt-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 22px;
+}
+
+.lt-card {
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--nh-line);
+  box-shadow: 0 4px 16px rgba(21, 60, 41, 0.04);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.lt-card:hover {
+  transform: translateY(-4px);
+  border-color: #a4d66e;
+  box-shadow: 0 16px 36px rgba(21, 60, 41, 0.08);
+}
+
+/* Card Image Header */
+.lt-card-image-wrap {
+  position: relative;
+  height: 185px;
+  overflow: hidden;
+  background: #0d281a;
+}
+
+.lt-card-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.lt-card:hover .lt-card-image-wrap img {
+  transform: scale(1.05);
+}
+
+.lt-card-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(9, 35, 20, 0.6) 100%);
+}
+
+.lt-card-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 4px 10px;
+  background: rgba(14, 46, 24, 0.85);
+  border: 1px solid rgba(164, 214, 110, 0.35);
+  backdrop-filter: blur(8px);
+  border-radius: 6px;
+  color: #bbf797;
+  font-size: 9.5px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.lt-card-mode {
+  position: absolute;
+  bottom: 10px;
+  right: 12px;
+  padding: 3px 8px;
+  background: rgba(0, 0, 0, 0.58);
+  backdrop-filter: blur(6px);
+  border-radius: 5px;
+  color: #eaf3eb;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+/* Card Content */
+.lt-card-content {
+  padding: 20px 20px 18px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.lt-card-category {
+  font-size: 10px;
+  font-weight: 600;
+  color: #2e7d32;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 6px;
+}
+
+/* Title: elegant 17px, font-weight: 500, tight tracking */
+.lt-card-title {
+  font-size: 17px;
+  font-weight: 500 !important;
+  color: var(--nh-ink);
+  line-height: 1.3;
+  letter-spacing: -.035em;
+  margin: 0 0 8px 0;
+}
+
+/* Description: 12.5px, normal weight 400, muted ink */
+.lt-card-desc {
+  font-size: 12.5px;
+  line-height: 1.65;
+  color: var(--nh-muted);
+  font-weight: 400;
+  margin: 0 0 14px 0;
+  flex-grow: 1;
+}
+
+/* Features list */
+.lt-card-features {
+  list-style: none;
+  padding: 12px 0 0 0;
+  margin: 0 0 14px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border-top: 1px solid #edf2eb;
+}
+
+.lt-card-features li {
+  font-size: 11.5px;
+  color: #3a4d41;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  line-height: 1.45;
+}
+
+.lt-card-features svg {
+  color: #2e7d32;
+  flex-shrink: 0;
+}
+
+/* Meta pill strip */
+.lt-card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background: #f4f8f2;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  font-size: 11px;
+  color: #617067;
+  font-weight: 400;
+}
+
+.lt-card-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.lt-card-meta-item svg {
+  color: #2e7d32;
+}
+
+/* Card Actions */
+.lt-card-actions {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.lt-card-btn-view {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 16px;
+  border-radius: 10px;
+  background: var(--nh-ink);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.lt-card-btn-view:hover {
+  background: #2e7d32;
+  color: #ffffff;
+}
+
+.lt-card-btn-wa {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: #eef7ee;
+  border: 1px solid #cce5ce;
+  color: #2e7d32;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.lt-card-btn-wa:hover {
+  background: #25d366;
+  border-color: #25d366;
+  color: #ffffff;
+}
+
+/* --------------------------------------------------------------------------
+   WHY CHOOSE NITAQ SECTION (Matching Landing Page .nh-benefits model)
+   -------------------------------------------------------------------------- */
+.lt-why-section {
+  background: #ffffff;
+  padding: 80px 0;
+  border-top: 1px solid var(--nh-line);
+  border-bottom: 1px solid var(--nh-line);
+}
+
+.lt-why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.lt-why-card {
+  padding: 24px 20px;
+  background: var(--nh-paper);
+  border-radius: 14px;
+  border: 1px solid var(--nh-line);
+  transition: all 0.25s ease;
+}
+
+.lt-why-card:hover {
+  background: #ffffff;
+  border-color: #a4d66e;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(21, 60, 41, 0.06);
+}
+
+.lt-why-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: #eef5e5;
+  color: #2e7d32;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.lt-why-card h3 {
+  font-size: 15px;
+  font-weight: 500 !important;
+  letter-spacing: -.03em;
+  color: var(--nh-ink);
+  margin: 0 0 6px 0;
+}
+
+.lt-why-card p {
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--nh-muted);
+  font-weight: 400;
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   CURRICULA & CEFR BREAKDOWN SECTION
+   -------------------------------------------------------------------------- */
+.lt-cefr-section {
+  padding: 80px 0;
+  background: var(--nh-paper);
+}
+
+.lt-cefr-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.lt-cefr-card {
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1px solid var(--nh-line);
+  padding: 26px 22px;
+  box-shadow: 0 4px 16px rgba(21, 60, 41, 0.03);
+}
+
+.lt-cefr-badge {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: #2e7d32;
+  background: #eef5e5;
+  padding: 3px 8px;
+  border-radius: 6px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.lt-cefr-card h3 {
+  font-size: 16px;
+  font-weight: 500 !important;
+  letter-spacing: -.03em;
+  color: var(--nh-ink);
+  margin: 0 0 8px 0;
+}
+
+.lt-cefr-card p {
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--nh-muted);
+  font-weight: 400;
+  margin: 0 0 14px 0;
+}
+
+.lt-cefr-bullets {
+  list-style: none;
+  padding: 12px 0 0 0;
+  margin: 0;
+  border-top: 1px solid #edf2eb;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.lt-cefr-bullets li {
+  font-size: 11.5px;
+  color: #3a4d41;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.lt-cefr-bullets svg {
+  color: #2e7d32;
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   CATEGORY SECTION DIVIDERS (FOR /courses MASTER EXPLORER)
+   -------------------------------------------------------------------------- */
+.courses-category-block {
+  margin-bottom: 50px;
+  scroll-margin-top: 90px;
+}
+
+.courses-category-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--nh-line);
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.courses-category-header h3 {
+  font-size: 20px;
+  font-weight: 500 !important;
+  color: var(--nh-ink);
+  letter-spacing: -.035em;
+  margin: 0 0 4px 0;
+}
+
+.courses-category-header p {
+  font-size: 12.5px;
+  color: var(--nh-muted);
+  font-weight: 400;
+  margin: 0;
+}
+
+.courses-category-viewall {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #2e7d32;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.courses-category-viewall:hover {
+  transform: translateX(3px);
+}
+
+/* --------------------------------------------------------------------------
+   CTA SECTION (Matching Landing Page .nh-cta model)
+   -------------------------------------------------------------------------- */
+.lt-cta-section {
+  padding: 60px 0 95px;
+  background: var(--nh-paper);
+}
+
+.lt-cta-banner {
+  background: linear-gradient(135deg, #122e1c 0%, #174f2b 45%, #124124 100%);
+  border-radius: 22px;
+  padding: 48px 40px;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(18, 46, 28, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.lt-cta-banner::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 280px;
+  height: 280px;
+  background: radial-gradient(circle, rgba(164, 214, 110, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.lt-cta-content {
+  max-width: 580px;
+  position: relative;
+  z-index: 2;
+}
+
+.lt-cta-banner h2 {
+  font-size: clamp(24px, 2.6vw, 34px);
+  font-weight: 500 !important;
+  line-height: 1.18;
+  color: #ffffff;
+  margin: 0 0 12px 0;
+  letter-spacing: -.045em;
+}
+
+.lt-cta-banner p {
+  font-size: 13px;
+  line-height: 1.7;
+  color: #cdd9c5;
+  font-weight: 400;
+  margin: 0 0 24px 0;
+}
+
+.lt-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE DESIGN (TABLETS & MOBILE)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .lt-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .lt-hero-media {
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .lt-why-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .lt-cefr-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 860px) {
+
+  .lt-hero,
+  .listing-hero-v3 {
+    padding: 110px 0 45px;
+  }
+
+  .lt-hero-image-wrap {
+    height: 320px;
+    border-radius: 60px 18px 18px 18px;
+  }
+
+  .lt-hero-float-badge {
+    bottom: 16px;
+    left: 12px;
+    right: 12px;
+    padding: 10px 12px;
+  }
+
+  .lt-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .lt-why-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lt-cta-banner {
+    padding: 32px 20px;
+    border-radius: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .lt-hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .lt-btn {
+    width: 100%;
+  }
+
+  .lt-card-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .lt-card-btn-wa {
+    width: 100%;
+    border-radius: 10px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   RTL SUPPORT (ARABIC)
+   -------------------------------------------------------------------------- */
+[dir="rtl"] .lt-page,
+.lt-page[dir="rtl"],
+[dir="rtl"] .listing-page,
+.listing-page[dir="rtl"] {
+  font-family: 'Cairo', 'Plus Jakarta Sans', sans-serif;
+  text-align: right;
+}
+
+[dir="rtl"] .lt-page :is(h1, h2, h3, h4, h5, h6, [class*="title"], [class*="heading"]),
+[dir="rtl"] .listing-page :is(h1, h2, h3, h4, h5, h6, [class*="title"], [class*="heading"]),
+[lang="ar"] .lt-page :is(h1, h2, h3, h4, h5, h6, [class*="title"], [class*="heading"]),
+[lang="ar"] .listing-page :is(h1, h2, h3, h4, h5, h6, [class*="title"], [class*="heading"]) {
+  font-family: 'Cairo', sans-serif !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.025em !important;
+  line-height: 1.25 !important;
+}
+
+[dir="rtl"] .lt-hero h1 {
+  font-size: clamp(1.85rem, 3.2vw, 2.7rem) !important;
+  font-weight: 500 !important;
+  line-height: 1.22 !important;
+}
+
+[dir="rtl"] .lt-hero-intro {
+  font-size: 1.05rem !important;
+  line-height: 1.75 !important;
+  font-weight: 400 !important;
+}
+
+[dir="rtl"] .lt-card-title {
+  font-size: 1.2rem !important;
+  font-weight: 500 !important;
+  line-height: 1.35 !important;
+}
+
+[dir="rtl"] .lt-hero-image-wrap {
+  border-radius: 22px 120px 22px 22px;
+}
+
+[dir="rtl"] .lt-hero-float-badge {
+  right: 20px;
+  left: 20px;
+}
+
+[dir="rtl"] .lt-card-badge {
+  left: auto;
+  right: 12px;
+}
+
+[dir="rtl"] .lt-card-mode {
+  right: auto;
+  left: 12px;
+}
+
+[dir="rtl"] .lt-card-features li {
+  text-align: right;
+}
+
+[dir="rtl"] .lt-card-actions {
+  grid-template-columns: 1fr auto;
+}
+
+[dir="rtl"] .lt-why-card {
+  text-align: right;
+}
+
+[dir="rtl"] .lt-cefr-card {
+  text-align: right;
+}
+
+[dir="rtl"] .lt-cta-banner {
+  text-align: right;
+}
+
+[dir="rtl"] .courses-category-header {
+  text-align: right;
+}
+
+[dir="rtl"] .courses-category-viewall svg,
+[dir="rtl"] .lt-card-btn-view svg {
+  transform: scaleX(-1);
+}

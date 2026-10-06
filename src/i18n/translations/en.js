@@ -98,7 +98,7 @@ const en = {
         support: 'Support',
         getInTouch: 'Get in Touch',
         viewAllArticles: 'View All Articles →',
-        address: 'Office : F103, Floor F1,\nAbu Khamseen Tower,\nMajaz 3, Sharjah, UAE',
+        address: 'Abu Khamseen Tower - Office : F103, Floor F1 - Al Majaz 3 - Al Majaz - Sharjah - United Arab Emirates',
         mobileLabel: 'Mobile',
         phoneLabel: 'Telephone',
         rights: '© {year} NITAQ ACADEMY. All rights reserved.',

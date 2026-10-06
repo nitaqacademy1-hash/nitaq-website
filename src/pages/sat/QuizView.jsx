@@ -8,6 +8,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import SEO from '../../components/SEO';
 import { getSectionQuestions, submitSection, ApiError } from '../../services/diagnosticApi';
 import MathText from '../../components/common/MathText';
+import { trackEvent, ANALYTICS_EVENTS } from '../../utils/analytics';
 import './sat.css';
 
 const SECTION_META = {
@@ -159,6 +160,7 @@ export default function QuizView() {
       } else {
         sessionStorage.removeItem('nitaq_current_section');
         sessionStorage.removeItem('nitaq_first_section');
+        trackEvent(ANALYTICS_EVENTS.DIAGNOSTIC_COMPLETE, 'both_sections');
         navigate('/sat/diagnostic/results');
       }
     } catch (e) {

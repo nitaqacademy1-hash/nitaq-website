@@ -121,7 +121,7 @@ const PTECourse = () => {
                     <details className="faq-accordion">
                         <summary>What is the PTE - Pearson Test of English exam?</summary>
                         <div className="faq-accordion-content">
-                            <p>Please contact our counselors for detailed information regarding the PTE - Pearson Test of English structure and requirements.</p>
+                            <p>PTE Academic assesses speaking, writing, reading and listening. Pearson added Summarize Group Discussion and Respond to a Situation to Speaking &amp; Writing in August 2025; check the official format before your test.</p>
                         </div>
                     </details>
                     <details className="faq-accordion">

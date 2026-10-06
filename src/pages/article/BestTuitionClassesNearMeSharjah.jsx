@@ -70,7 +70,7 @@ const BestTuitionClassesNearMeSharjah = () => {
     const faqs = [
         {
             question: "Where is the best tuition center located near me in Sharjah?",
-            answer: "The premier tuition center in Sharjah is NITAQ Academy, centrally located in Al Majaz 3 at Abu Khamseen Tower (Floor F1, Office F103). It is within a 2 to 10-minute drive from major Sharjah residential areas including Al Majaz 1, 2, 3, Al Nahda, Al Taawun, Al Qasimia, Abu Shagara, and Al Khan."
+            answer: "The premier tuition center in Sharjah is NITAQ Academy, centrally located in Al Majaz 3 at Abu Khamseen Tower - Office : F103, Floor F1 - Al Majaz 3 - Al Majaz - Sharjah - United Arab Emirates. It is within a 2 to 10-minute drive from major Sharjah residential areas including Al Majaz 1, 2, 3, Al Nahda, Al Taawun, Al Qasimia, Abu Shagara, and Al Khan."
         },
         {
             question: "Is NITAQ Academy licensed by the Sharjah Private Education Authority (SPEA)?",
@@ -98,7 +98,7 @@ const BestTuitionClassesNearMeSharjah = () => {
         },
         {
             question: "How can parents book a free diagnostic assessment or demo class?",
-            answer: "Parents can book a free academic evaluation and trial session by contacting our admissions desk via WhatsApp at +971 52 756 9908, calling +971 6 579 8313, or visiting our Al Majaz 3 center in Sharjah."
+            answer: "Parents can book a free academic evaluation and trial session by contacting our admissions desk via WhatsApp at +971 52 756 9908, calling +971 52 756 9908, or visiting our Al Majaz 3 center in Sharjah."
         }
     ];
 
@@ -502,12 +502,12 @@ const BestTuitionClassesNearMeSharjah = () => {
                                 </h3>
                                 <p style={{ fontSize: '0.9rem', color: '#334155', lineHeight: '1.5', marginBottom: '12px' }}>
                                     <strong>NITAQ Academy</strong><br />
-                                    Abu Khamseen Tower, Office F103, Floor F1<br />
+                                    Abu Khamseen Tower - Office : F103, Floor F1 - Al Majaz 3 - Al Majaz - Sharjah - United Arab Emirates<br />
                                     Al Majaz 3, Sharjah, UAE<br />
                                     <em>(Near Buhaira Corniche & King Faisal St)</em>
                                 </p>
                                 <p style={{ fontSize: '0.9rem', color: '#334155', lineHeight: '1.5', marginBottom: '16px' }}>
-                                    📞 <strong>Tel:</strong> +971 6 579 8313<br />
+                                    📞 <strong>Tel:</strong> +971 52 756 9908<br />
                                     💬 <strong>WhatsApp:</strong> +971 52 756 9908
                                 </p>
                                 <Link to="/enrolment.html" className="btn-primary" style={{ display: 'block', textAlign: 'center', padding: '12px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '0.95rem' }}>

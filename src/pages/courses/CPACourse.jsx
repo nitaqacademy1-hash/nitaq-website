@@ -4,7 +4,7 @@ import WhyNitaq from '../../components/WhyNitaq';
 const CPACourse = () => {
     const infoData = {
         "Qualification": "CPA (US) Preparation",
-        "Modules": "AUD, BEC, FAR, REG",
+        "Exam Sections": "AUD, FAR, REG + one discipline",
         "Duration": "12-18 Months",
         "Mode": "Online | Offline | Hybrid",
         "Target": "Accounting Professionals",
@@ -24,7 +24,7 @@ const CPACourse = () => {
                 <h2>Program <span className="text-gradient">Overview</span></h2>
                 <div className="overview-text">
                     <p style={{ marginBottom: '15px' }}>The Certified Public Accountant (CPA) is the highest standard of competence in the field of accountancy globally. Our preparation program at Nitaq is designed to help you navigate the rigors of the US CPA exam with precision.</p>
-                    <p>We provide expert tuition across all four sections of the exam, ensuring you master the accounting standards, auditing procedures, tax regulations, and business environments required for certification.</p>
+                    <p>The current US CPA Exam includes the three Core sections—AUD, FAR and REG—plus one chosen Discipline: BAR, ISC or TCP. Confirm the sections covered by Nitaq's current preparation programme before enrolling.</p>
                 </div>
             </div>
             <div className="content-card">
@@ -41,11 +41,11 @@ const CPACourse = () => {
                         </ul>
                     </div>
                     <div className="feature-item" style={{ borderTop: '4px solid var(--accent-color)' }}>
-                        <h3 style={{ color: 'var(--accent-color)', marginBottom: '10px' }}>REG & BEC</h3>
+                        <h3 style={{ color: 'var(--accent-color)', marginBottom: '10px' }}>REG & Disciplines</h3>
                         <p style={{ color: 'var(--text-gray)', fontSize: '0.85rem', marginBottom: '15px', fontWeight: 600 }}>Regulatory | Environment</p>
                         <ul className="styled-list">
                             <li>Regulation and US Tax laws</li>
-                            <li>Business Environment & Concepts</li>
+                            <li>BAR, ISC or TCP: choose one Discipline</li>
                             <li>Strategic financial management</li>
                             <li>Regulatory compliance mastery</li>
                         </ul>
@@ -88,7 +88,7 @@ const CPACourse = () => {
                     <details className="faq-accordion">
                         <summary>What is the CPA - Certified Public Accountant exam?</summary>
                         <div className="faq-accordion-content">
-                            <p>Please contact our counselors for detailed information regarding the CPA - Certified Public Accountant structure and requirements.</p>
+                            <p>The current US CPA Exam requires AUD, FAR and REG, plus one chosen Discipline: BAR, ISC or TCP. Eligibility and licensure rules depend on the relevant state board.</p>
                         </div>
                     </details>
                     <details className="faq-accordion">

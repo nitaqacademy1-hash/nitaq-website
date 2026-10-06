@@ -115,7 +115,7 @@ const IeltsDubaiGuide = () => {
                                 <h3>Reach Your IELTS Target</h3>
                                 <p>Join the leading training institute in Sharjah for comprehensive IELTS preparation.</p>
                                 <Link to="/ielts-course" className="btn btn-primary w-100 mb-15">View Course Details</Link>
-                                <a href="tel:+97165798313" className="btn btn-outline w-100">Talk to a Trainer</a>
+                                <a href="tel:+971527569908" className="btn btn-outline w-100">Talk to a Trainer</a>
                             </div>
                         </aside>
                     </div>

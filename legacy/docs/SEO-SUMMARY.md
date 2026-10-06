@@ -31,7 +31,7 @@ For each HTML file, add the SEO meta tags in the `<head>` section.
     
     <!-- SEO Meta Tags -->
     <title>IELTS Coaching in Sharjah | Best IELTS Training Center UAE | Nitaq</title>
-    <meta name="description" content="Achieve your IELTS target score with Nitaq's expert coaching in Sharjah. Proven methods, flexible timings, online & offline classes. Book free demo +971 54 572 3181">
+    <meta name="description" content="Achieve your IELTS target score with Nitaq's expert coaching in Sharjah. Proven methods, flexible timings, online & offline classes. Book free demo +971 52 756 9908">
     <meta name="keywords" content="IELTS Sharjah, IELTS coaching UAE, IELTS training Sharjah, IELTS preparation, British Council IELTS, study abroad UAE">
     <meta name="author" content="Nitaq Training Center">
     <meta name="robots" content="index, follow">

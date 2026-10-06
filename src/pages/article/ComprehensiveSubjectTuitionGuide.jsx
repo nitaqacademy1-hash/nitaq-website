@@ -261,7 +261,7 @@ const ComprehensiveSubjectTuitionGuide = () => {
 
                                 <details className="faq-card-item">
                                     <summary>Where is Nitaq Academy located for in-person tuition in Sharjah?</summary>
-                                    <p>Our campus is centrally located at Office F103, Floor F1, Abu Khamseen Tower, Al Majaz 3, Sharjah, UAE, easily accessible from King Faisal Street, Al Wahda Street, and Buhaira Corniche.</p>
+                                    <p>Our campus is centrally located at Abu Khamseen Tower - Office : F103, Floor F1 - Al Majaz 3 - Al Majaz - Sharjah - United Arab Emirates, easily accessible from King Faisal Street, Al Wahda Street, and Buhaira Corniche.</p>
                                 </details>
 
                                 <details className="faq-card-item">
@@ -271,7 +271,7 @@ const ComprehensiveSubjectTuitionGuide = () => {
 
                                 <details className="faq-card-item">
                                     <summary>How can parents schedule a free diagnostic assessment?</summary>
-                                    <p>You can schedule a free diagnostic evaluation or demo session by contacting our admissions desk via WhatsApp at +971 52 756 9908 or calling +971 6 579 8313.</p>
+                                    <p>You can schedule a free diagnostic evaluation or demo session by contacting our admissions desk via WhatsApp at +971 52 756 9908 or calling +971 52 756 9908.</p>
                                 </details>
                             </div>
                         </div>

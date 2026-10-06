@@ -343,7 +343,7 @@ export default function PremiumStudentPdfReport({ result }) {
             <div className="rpt-footer-left">
               <strong>Nitaq Training Institute</strong> · SAT Prep &amp; Academic Excellence
               <br />
-              Al Estiqlal St, Abu Shagara, Sharjah, UAE · +971 6 579 8313
+              Abu Khamseen Tower - Office : F103, Floor F1 - Al Majaz 3 - Al Majaz - Sharjah - United Arab Emirates · +971 52 756 9908
             </div>
             <div className="rpt-footer-right">
               www.nitaqacademy.com

@@ -311,7 +311,7 @@ const DigitalSatPreparationGuide = () => {
 
                                 <h3>The Stage 1 &rarr; Stage 2 Routing Mechanism:</h3>
                                 <p>
-                                    In both the Reading & Writing section and the Math section, you begin with <strong>Module 1</strong>, which contains an evenly distributed cross-section of easy, medium, and hard questions.
+                                    In both the Reading & Writing section and the Math section, you begin with <strong>Module 1</strong>, which contains an evenly distributed cross-section of easy, medium, and hard questions. Administered via the official College Board <strong>Bluebook app</strong>, learning <em>how to ace the SAT</em> begins with mastering this routing algorithm:
                                 </p>
                                 <ul>
                                     <li><strong>If you perform well in Module 1:</strong> You are routed to the <em>Harder Module 2</em>. Scoring high on the harder Module 2 unlocks the 650–800 score ceiling for that section.</li>
@@ -345,7 +345,7 @@ const DigitalSatPreparationGuide = () => {
                                     <div className="strategy-card">
                                         <h3>3. Standard English Conventions (~26%)</h3>
                                         <p><strong>Punctuation & Boundaries:</strong> Semicolons vs periods vs commas, colons for explanation, and dash pairs for non-essential clauses.</p>
-                                        <p><strong>Grammar Rules:</strong> Subject-verb agreement, modifier placement, pronoun clarity, and verb tenses.</p>
+                                        <p><strong>Core SAT Grammar Rules:</strong> Master subject-verb agreement, modifier placement, pronoun clarity, and verb tenses.</p>
                                     </div>
                                     <div className="strategy-card">
                                         <h3>4. Expression of Ideas (~20%)</h3>
@@ -356,7 +356,7 @@ const DigitalSatPreparationGuide = () => {
 
                                 <h3>Top 3 High-Scoring RW Hacks:</h3>
                                 <ol>
-                                    <li><strong>The "Grammar First" Strategy:</strong> Questions are organized by domain. Standard English Conventions and Transitions questions appear in the second half of the module. Tackle grammar questions first (they take 30–40 seconds each) to bank time for dense literature and scientific inference questions.</li>
+                                    <li><strong>The "Grammar First" Strategy:</strong> Questions are organized by domain. Standard English Conventions (SAT grammar rules) and Transitions questions appear in the second half of the module. Tackle grammar questions first (they take 30–40 seconds each) to bank time for dense literature and scientific inference questions.</li>
                                     <li><strong>The Transition Word Category Trick:</strong> Group transition options into <em>Continuation</em> (Furthermore, In addition), <em>Contrast</em> (However, Conversely), and <em>Causation</em> (Therefore, As a result). Often, three choices belong to one category, leaving the odd-one-out as the correct answer.</li>
                                     <li><strong>Eliminate Half-True Distractors:</strong> On evidence-based questions, incorrect choices frequently contain 80% accurate information paired with one unproven assumption. Always select the answer directly supported by textual evidence.</li>
                                 </ol>
@@ -371,7 +371,7 @@ const DigitalSatPreparationGuide = () => {
                                     The Digital SAT Math section tests four distinct areas: <strong>Algebra (35%)</strong>, <strong>Advanced Math (35%)</strong>, <strong>Problem-Solving & Data Analysis (15%)</strong>, and <strong>Geometry & Trigonometry (15%)</strong>.
                                 </p>
                                 <p>
-                                    The secret weapon on the Digital SAT is the <strong>built-in Desmos graphing calculator</strong>. At <Link to="/sat-preparation-sharjah">NITAQ Academy</Link>, we train students to solve up to 40% of the entire Math section using rapid Desmos graphing techniques, eliminating algebraic errors and slashing solving time.
+                                    The secret weapon on the Digital SAT is the <strong>built-in Desmos graphing calculator</strong>. At <Link to="/sat-preparation-sharjah">NITAQ Academy</Link>, our Desmos SAT training teaches students to solve up to 40% of the entire Math section using rapid graphing shortcuts, eliminating lengthy algebraic manipulation and avoiding common calculation errors.
                                 </p>
 
                                 <div style={{ background: '#f1f5f9', border: '1px solid #cbd5e1', borderRadius: '12px', padding: '24px', margin: '24px 0' }}>
@@ -385,6 +385,10 @@ const DigitalSatPreparationGuide = () => {
                                         <li><strong>4. Regression Table Modeling:</strong> When given a table of values and asked for an exponential or linear model, input the table into Desmos and use regression syntax (<code>y1 ~ mx1 + b</code> or <code>y1 ~ a(b)^x1</code>) to get the exact parameters.</li>
                                     </ul>
                                 </div>
+
+                                <p>
+                                    For high-yield <strong>SAT math practice</strong>, students should practice with authentic <strong>SAT math questions</strong> sourced directly from the official College Board <strong>SAT Suite Question Bank</strong> and Bluebook adaptive mocks rather than unofficial third-party problem sets. Learning when mental math is fastest versus when Desmos provides an instant visual answer is key to finishing Module 2 with time left to review.
+                                </p>
 
                                 <div className="article-inline-cta" style={{ background: '#e8f5ed', border: '1px solid #1a5c2e', borderRadius: '12px', padding: '20px', margin: '24px 0', textAlign: 'center' }}>
                                     <p style={{ margin: '0 0 12px', fontSize: '1.05rem', color: '#1a5c2e', fontWeight: '700' }}>
@@ -409,8 +413,8 @@ const DigitalSatPreparationGuide = () => {
                                     <div className="strategy-card">
                                         <h3>Phase 1: Diagnosis & Foundations (Weeks 1–4)</h3>
                                         <ul className="article-list">
-                                            <li>Take an official College Board Bluebook Diagnostic Test to establish your baseline.</li>
-                                            <li>Identify specific content gaps in Algebra, Grammar rules, and geometry theorems.</li>
+                                            <li>Take our free 24-question <Link to="/sat/diagnostic">Digital SAT Diagnostic Assessment</Link> or an official College Board Bluebook practice test to establish your baseline score.</li>
+                                            <li>Identify specific content gaps in Algebra, Standard English grammar rules, and geometry theorems.</li>
                                             <li>Build your daily active reading habit with high-level publications (Scientific American, The Economist).</li>
                                         </ul>
                                     </div>
@@ -438,6 +442,10 @@ const DigitalSatPreparationGuide = () => {
                                             <li>Rest, sleep 8+ hours, and prepare your admission ticket, Emirates ID/Passport, and charged laptop/iPad.</li>
                                         </ul>
                                     </div>
+                                </div>
+
+                                <div style={{ background: '#f8fafc', borderLeft: '4px solid #1a5c2e', padding: '16px', borderRadius: '0 8px 8px 0', margin: '24px 0' }}>
+                                    <strong style={{ color: '#1a5c2e' }}>📅 Planning SAT Dates &amp; Registration:</strong> Official College Board test dates occur throughout the year (March, May, June, August, October, November, and December). Because test centers across Dubai and the UAE fill quickly, we recommend completing your <strong>SAT registration</strong> on collegeboard.org at least 6 to 8 weeks in advance to secure your preferred date and venue.
                                 </div>
                             </section>
 
@@ -515,6 +523,10 @@ const DigitalSatPreparationGuide = () => {
                                         <p>SPEA-authorized expert mentorship, small micro-batches (5–8 students), personalized diagnostic gap analysis, specialized Desmos shortcut training, and unlimited adaptive mock test simulations with 1-on-1 review sessions.</p>
                                     </div>
                                 </div>
+
+                                <p style={{ marginTop: '20px' }}>
+                                    For parents and students evaluating local institutes, explore our in-depth guide on <Link to="/article/sat-coaching-sharjah">how to choose the best SAT coaching in Sharjah</Link>, review our <Link to="/sat-preparation-sharjah">Sharjah campus classroom course</Link>, or explore <Link to="/sat-preparation-dubai">online SAT coaching for Dubai students</Link>.
+                                </p>
                             </section>
 
                             <hr className="content-hr" />
@@ -605,10 +617,10 @@ const DigitalSatPreparationGuide = () => {
                                         Explore SAT Coaching in Sharjah <ArrowRight size={18} />
                                     </Link>
                                     <Link 
-                                        to="/contact" 
+                                        to="/sat/diagnostic" 
                                         style={{ background: 'rgba(255,255,255,0.15)', color: '#ffffff', border: '1px solid rgba(255,255,255,0.4)', padding: '14px 28px', borderRadius: '10px', fontWeight: '700', fontSize: '1rem', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px' }}
                                     >
-                                        Book Free Diagnostic Test
+                                        Take Free SAT Diagnostic
                                     </Link>
                                 </div>
                             </div>
@@ -625,18 +637,31 @@ const DigitalSatPreparationGuide = () => {
                                     <li>✅ <strong>99th Percentile Mentors</strong></li>
                                     <li>✅ <strong>Micro-Batches:</strong> 5–8 Students</li>
                                     <li>✅ <strong>Full Adaptive Bluebook Mocks</strong></li>
-                                    <li>✅ <strong>In-Person (Sharjah) & Live Online</strong></li>
+                                    <li>✅ <strong>In-Person (Sharjah) &amp; Live Online</strong></li>
                                     <li>✅ <strong>SPEA Licensed Institute</strong></li>
                                 </ul>
                                 <hr style={{ border: 'none', borderTop: '1px solid #e2e8f0', margin: '18px 0' }} />
-                                <Link to="/enrolment.html" className="btn-primary" style={{ display: 'block', textAlign: 'center', padding: '12px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '0.95rem' }}>
-                                    Register Online Now
+                                <Link to="/sat-preparation-sharjah" className="btn-primary" style={{ display: 'block', textAlign: 'center', padding: '12px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '0.95rem' }}>
+                                    Explore Sharjah Course
+                                </Link>
+                                <Link to="/sat/diagnostic" style={{ display: 'block', textAlign: 'center', marginTop: '10px', padding: '10px', borderRadius: '8px', textDecoration: 'none', fontWeight: '600', fontSize: '0.875rem', color: '#1a5c2e', border: '1px solid #1a5c2e' }}>
+                                    Take Free Diagnostic
                                 </Link>
                             </div>
 
                             <div className="sidebar-card" style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '14px', padding: '24px' }}>
                                 <h3 style={{ color: '#0f172a', fontSize: '1.15rem', marginBottom: '14px' }}>Related SAT Guides</h3>
                                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px', fontSize: '0.9rem' }}>
+                                    <li>
+                                        <Link to="/article/free-digital-sat-diagnostic-assessment-guide" style={{ color: '#1a5c2e', fontWeight: '600', textDecoration: 'none' }}>
+                                            → SAT Diagnostic Self-Evaluation Guide
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link to="/article/sat-coaching-sharjah" style={{ color: '#1a5c2e', fontWeight: '600', textDecoration: 'none' }}>
+                                            → How to Choose SAT Coaching in Sharjah
+                                        </Link>
+                                    </li>
                                     <li>
                                         <Link to="/article/sat-score-1300-guide" style={{ color: '#1a5c2e', fontWeight: '600', textDecoration: 'none' }}>
                                             → How to Score 1300+ on the SAT
@@ -654,7 +679,7 @@ const DigitalSatPreparationGuide = () => {
                                     </li>
                                     <li>
                                         <Link to="/sat-preparation-dubai" style={{ color: '#1a5c2e', fontWeight: '600', textDecoration: 'none' }}>
-                                            → SAT Coaching in Dubai (Online & Hybrid)
+                                            → SAT Coaching in Dubai (Online &amp; Hybrid)
                                         </Link>
                                     </li>
                                 </ul>

@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head>
+  <title data-rh="true">Page Not Found | Nitaq Academy</title>
+  <meta data-rh="true" name="robots" content="noindex, follow" />
   <meta charset="UTF-8" />
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-VZN7JBMNPN"></script>
@@ -40,17 +42,33 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     rel="preload" as="style"
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Poppins:wght@600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Caveat:wght@600;700&family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap"
     onload="this.onload=null;this.rel='stylesheet'">
   <noscript>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Poppins:wght@600;700;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Caveat:wght@600;700&family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap">
   </noscript>
 
 
-  <!-- Zoho SalesIQ -->
-  <script>window.$zoho = window.$zoho || {}; $zoho.salesiq = $zoho.salesiq || { ready: function () { } }</script>
-  <script id="zsiqscript" src="https://salesiq.zohopublic.com/widget?wc=siq8fd98430744ec5c5fdf3a5b27c1d4bb0"
-    defer></script>
+  <!-- Load chat after the initial render or first interaction to reduce LCP/INP contention. -->
+  <script>
+    window.$zoho = window.$zoho || {};
+    $zoho.salesiq = $zoho.salesiq || { ready: function () { } };
+    (function () {
+      var loaded = false;
+      function loadChat() {
+        if (loaded) return;
+        loaded = true;
+        var script = document.createElement('script');
+        script.id = 'zsiqscript';
+        script.src = 'https://salesiq.zohopublic.com/widget?wc=siq8fd98430744ec5c5fdf3a5b27c1d4bb0';
+        script.async = true;
+        document.head.appendChild(script);
+      }
+      window.addEventListener('load', function () { window.setTimeout(loadChat, 4000); }, { once: true });
+      window.addEventListener('pointerdown', loadChat, { once: true, passive: true });
+      window.addEventListener('keydown', loadChat, { once: true });
+    }());
+  </script>
 
   <!-- Arabic typography (Poppins/Inter carry no Arabic glyphs) -->
   <link
@@ -60,8 +78,8 @@
   <noscript>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap">
   </noscript>
-  <script type="module" crossorigin src="/assets/index-BahoEYw0.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-eI6x4Sx3.css">
+  <script type="module" crossorigin src="/assets/index-DpjqsUW-.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-DNlkyvhg.css">
 </head>
 
 <body>

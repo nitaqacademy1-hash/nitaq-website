@@ -109,7 +109,7 @@ const AiCoursesSharjah = () => {
                                 <h3>Future-Proof Your Career</h3>
                                 <p>Join our practical AI training and master the tools that are shaping the world.</p>
                                 <Link to="/ai-course" className="btn btn-primary w-100 mb-15">Explore AI Course</Link>
-                                <a href="tel:+97165798313" className="btn btn-outline w-100">Talk to Tech Expert</a>
+                                <a href="tel:+971527569908" className="btn btn-outline w-100">Talk to Tech Expert</a>
                             </div>
                         </aside>
                     </div>

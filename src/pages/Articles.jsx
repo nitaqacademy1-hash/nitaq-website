@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from '../i18n/Link';
+import { useLanguage } from '../i18n/context';
 import SEO from '../components/SEO';
 import { Calendar, User, ArrowRight, ExternalLink, Filter, Search } from 'lucide-react';
 
@@ -339,9 +340,19 @@ const articles = [
     }
 ];
 
-const categories = ["All", "Academic Excellence", "Digital Strategy & Growth", "SAT Preparation", "IELTS Training", "Career & Courses"];
+const CATEGORIES_DATA = [
+    { id: "All", en: "All", ar: "الكل" },
+    { id: "Academic Excellence", en: "Academic Excellence", ar: "التميز الأكاديمي" },
+    { id: "Digital Strategy & Growth", en: "Digital Strategy & Growth", ar: "التسويق الرقمي واستراتيجيات النمو" },
+    { id: "SAT Preparation", en: "SAT Preparation", ar: "التحضير لاختبار SAT" },
+    { id: "IELTS Training", en: "IELTS Training", ar: "تدريب اختبار IELTS" },
+    { id: "Career & Courses", en: "Career & Courses", ar: "المسار المهني والدورات" }
+];
 
 const Articles = () => {
+    const { lang } = useLanguage();
+    const isAr = lang === 'ar';
+
     const [activeCategory, setActiveCategory] = useState("All");
     const [currentPage, setCurrentPage] = useState(1);
     const articlesPerPage = 9;
@@ -369,9 +380,13 @@ const Articles = () => {
             {/* Hero Section */}
             <section className="articles-hero">
                 <div className="container">
-                    <span className="badge">Leading Training Institute in Sharjah</span>
-                    <h1>Educational <span className="text-gradient">Insights & Guides</span></h1>
-                    <p>Stay updated with expert perspectives on test preparation, professional certifications, and academic excellence in the UAE.</p>
+                    <span className="badge">{isAr ? 'معهد تدريب رائد في الشارقة' : 'Leading Training Institute in Sharjah'}</span>
+                    <h1>{isAr ? <>أحدث المقالات <span className="text-gradient">والأدلة التعليمية</span></> : <>Educational <span className="text-gradient">Insights & Guides</span></>}</h1>
+                    <p>
+                        {isAr
+                            ? 'تابع أحدث النصائح والرؤى الاحترافية حول التحضير للاختبارات الدولية والشهادات المهنية والتميز الأكاديمي في الإمارات.'
+                            : 'Stay updated with expert perspectives on test preparation, professional certifications, and academic excellence in the UAE.'}
+                    </p>
                 </div>
             </section>
 
@@ -379,17 +394,21 @@ const Articles = () => {
             <section className="articles-intro-section">
                 <div className="container">
                     <div className="articles-intro-card">
-                        <h2>Your Hub for <span className="text-gradient">Academic & Professional Growth</span></h2>
+                        <h2>{isAr ? <>بوابتك نحو <span className="text-gradient">النمو الأكاديمي والمهني</span></> : <>Your Hub for <span className="text-gradient">Academic & Professional Growth</span></>}</h2>
                         <p>
-                            Welcome to the NITAQ ACADEMY insights portal, the premier resource for students and professionals seeking a <strong>training institute in Sharjah</strong> that delivers real results. Our expert-curated articles are designed to bridge the gap between classroom learning and career success in the dynamic UAE market.
+                            {isAr
+                                ? 'مرحباً بكم في منصة مقالات وأدلة أكاديمية نطاق، المصدر الرائد للطلاب والمهنيين الباحثين عن التميز والنتائج الحقيقية في الشارقة ودولة الإمارات. مقالاتنا مصممة لربط التعليم الأكاديمي بالنجاح المهني الفعلي.'
+                                : 'Welcome to the NITAQ ACADEMY insights portal, the premier resource for students and professionals seeking a training institute in Sharjah that delivers real results. Our expert-curated articles are designed to bridge the gap between classroom learning and career success in the dynamic UAE market.'}
                         </p>
                         <p>
-                            Whether you are looking for high-impact <strong>SAT coaching in Sharjah</strong> to secure admission to top global universities, or specialized <strong>IELTS training in UAE</strong> to achieve your target band scores for migration and study, our guides provide actionable strategies and proven techniques. We also explore the latest trends in professional certifications, including AI, ACCA, and corporate training, ensuring you stay competitive in the 2026 job market.
+                            {isAr
+                                ? 'سواء كنت تبحث عن استراتيجيات اختبار Digital SAT للقبول بأرقى الجامعات، أو دورات IELTS لتحقيق درجة Band 7.5+ للهجرة والدراسة، أو أحدث المؤهلات المهنية في الذكاء الاصطناعي والمحاسبة والضرائب — نوفر لك أدلة تفصيلية وإرشادات عملية.'
+                                : 'Whether you are looking for high-impact SAT coaching in Sharjah to secure admission to top global universities, or specialized IELTS training in UAE to achieve your target band scores for migration and study, our guides provide actionable strategies and proven techniques.'}
                         </p>
                         <div className="quick-links-row">
-                            <Link to="/sat-preparation-sharjah" className="quick-link-item">👉 Explore SAT Coaching in Sharjah</Link>
-                            <Link to="/ielts-course" className="quick-link-item">👉 Join IELTS Training in Dubai</Link>
-                            <Link to="/courses" className="quick-link-item">👉 Browse All Courses in UAE</Link>
+                            <Link to="/sat-preparation-sharjah" className="quick-link-item">{isAr ? '👈 استكشف دورة SAT في الشارقة' : '👉 Explore SAT Coaching in Sharjah'}</Link>
+                            <Link to="/ielts-course" className="quick-link-item">{isAr ? '👈 تدريب IELTS في الإمارات' : '👉 Join IELTS Training in Dubai'}</Link>
+                            <Link to="/courses" className="quick-link-item">{isAr ? '👈 تصفح جميع الدورات في الإمارات' : '👉 Browse All Courses in UAE'}</Link>
                         </div>
                     </div>
                 </div>
@@ -401,16 +420,16 @@ const Articles = () => {
                     <div className="filter-wrapper">
                         <div className="filter-label">
                             <Filter size={18} />
-                            <span>Filter by Interest:</span>
+                            <span>{isAr ? 'تصفية حسب الاهتمام:' : 'Filter by Interest:'}</span>
                         </div>
                         <div className="filter-buttons">
-                            {categories.map(cat => (
+                            {CATEGORIES_DATA.map(cat => (
                                 <button 
-                                    key={cat} 
-                                    className={`filter-btn ${activeCategory === cat ? 'active' : ''}`}
-                                    onClick={() => handleCategoryChange(cat)}
+                                    key={cat.id} 
+                                    className={`filter-btn ${activeCategory === cat.id ? 'active' : ''}`}
+                                    onClick={() => handleCategoryChange(cat.id)}
                                 >
-                                    {cat}
+                                    {isAr ? cat.ar : cat.en}
                                 </button>
                             ))}
                         </div>
@@ -433,7 +452,7 @@ const Articles = () => {
                                 <div className="article-card-content">
                                     <div className="article-card-meta">
                                         <span><Calendar size={14} /> {article.date}</span>
-                                        <span><User size={14} /> Nitaq Editorial</span>
+                                        <span><User size={14} /> {isAr ? 'فريق تحرير نطاق' : 'Nitaq Editorial'}</span>
                                     </div>
                                     <Link to={article.path} className="article-title-link">
                                         <h3>{article.title}</h3>
@@ -442,7 +461,7 @@ const Articles = () => {
                                     
                                     <div className="article-card-actions">
                                         <Link to={article.path} className="read-more-inline">
-                                            Read Guide <ArrowRight size={16} />
+                                            {isAr ? 'قراءة الدليل' : 'Read Guide'} <ArrowRight size={16} />
                                         </Link>
                                         <Link to={article.coursePath} className="card-course-btn">
                                             {article.courseLabel} <ExternalLink size={14} />
@@ -455,7 +474,7 @@ const Articles = () => {
 
                     {filteredArticles.length === 0 && (
                         <div className="no-results text-center">
-                            <p>No articles found in this category. Please try another one.</p>
+                            <p>{isAr ? 'لم يتم العثور على مقالات في هذا القسم حالياً.' : 'No articles found in this category. Please try another one.'}</p>
                         </div>
                     )}
 
@@ -467,7 +486,7 @@ const Articles = () => {
                                 className="btn btn-outline btn-sm"
                                 style={{ padding: '8px 16px', borderRadius: '8px', opacity: currentPage === 1 ? 0.5 : 1, cursor: currentPage === 1 ? 'not-allowed' : 'pointer' }}
                             >
-                                Previous
+                                {isAr ? 'السابق' : 'Previous'}
                             </button>
                             
                             {[...Array(totalPages)].map((_, i) => (
@@ -487,18 +506,18 @@ const Articles = () => {
                                 className="btn btn-outline btn-sm"
                                 style={{ padding: '8px 16px', borderRadius: '8px', opacity: currentPage === totalPages ? 0.5 : 1, cursor: currentPage === totalPages ? 'not-allowed' : 'pointer' }}
                             >
-                                Next
+                                {isAr ? 'التالي' : 'Next'}
                             </button>
                         </div>
                     )}
 
                     {/* Bottom CTA for SEO Hub */}
                     <div className="articles-bottom-cta">
-                        <h3>Ready to Start Your Journey?</h3>
-                        <p>Join thousands of successful students at the most trusted training institute in Sharjah.</p>
+                        <h3>{isAr ? 'جاهز لبدء رحلتك التعليمية؟' : 'Ready to Start Your Journey?'}</h3>
+                        <p>{isAr ? 'انضم إلى نخبة الطلاب والمهنيين الناجحين في المركز التدريبي الأكثر ثقة في الشارقة.' : 'Join thousands of successful students at the most trusted training institute in Sharjah.'}</p>
                         <div className="cta-buttons">
-                            <Link to="/contact" className="btn btn-primary">Book Free Consultation</Link>
-                            <Link to="/courses" className="btn btn-outline">Explore Course Catalog</Link>
+                            <Link to="/contact" className="btn btn-primary">{isAr ? 'حجز استشارة مجانية' : 'Book Free Consultation'}</Link>
+                            <Link to="/courses" className="btn btn-outline">{isAr ? 'استعراض دليل الدورات' : 'Explore Course Catalog'}</Link>
                         </div>
                     </div>
                 </div>

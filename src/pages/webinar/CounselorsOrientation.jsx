@@ -133,7 +133,7 @@ export default function CounselorsOrientation() {
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
       </Helmet>
 
-      <div className="wbr-page">
+      <main className="wbr-page">
 
         {/* ═══ HERO ═══ */}
         <section className="w-hero">
@@ -331,7 +331,7 @@ export default function CounselorsOrientation() {
         </section>
 
         <div style={{ height: '60px' }} />
-      </div>
+      </main>
     </>
   );
 }

@@ -272,7 +272,7 @@ const EnglishTuitionSharjah = () => {
 
                         <details className="faq-card-item">
                             <summary>Where is Nitaq Academy's Sharjah learning center located? <ChevronDown size={18} /></summary>
-                            <p>We are centrally located at Abu Khamseen Tower, Office F103, Floor F1, Al Majaz 3, Sharjah, UAE, easily accessible from Buhaira Corniche and King Faisal Street.</p>
+                            <p>We are centrally located at Abu Khamseen Tower - Office : F103, Floor F1 - Al Majaz 3 - Al Majaz - Sharjah - United Arab Emirates, easily accessible from Buhaira Corniche and King Faisal Street.</p>
                         </details>
 
                         <details className="faq-card-item">
@@ -282,7 +282,7 @@ const EnglishTuitionSharjah = () => {
 
                         <details className="faq-card-item">
                             <summary>How can I book a free English evaluation or demo class? <ChevronDown size={18} /></summary>
-                            <p>You can book a free diagnostic assessment or demo class by messaging us on WhatsApp at +971 52 756 9908 or calling our center at +971 6 579 8313.</p>
+                            <p>You can book a free diagnostic assessment or demo class by messaging us on WhatsApp at +971 52 756 9908 or calling our center at +971 52 756 9908.</p>
                         </details>
 
                         <details className="faq-card-item">
@@ -337,7 +337,7 @@ const EnglishTuitionSharjah = () => {
                             <div className="campus-contact-icon"><MapPin size={20} /></div>
                             <div className="campus-contact-text">
                                 <h5>Campus Address</h5>
-                                <p>Abu Khamseen Tower, Office F103, Al Majaz 3, Sharjah</p>
+                                <p>Abu Khamseen Tower - Office : F103, Floor F1 - Al Majaz 3 - Al Majaz - Sharjah - United Arab Emirates</p>
                             </div>
                         </div>
 
@@ -345,7 +345,7 @@ const EnglishTuitionSharjah = () => {
                             <div className="campus-contact-icon"><Phone size={20} /></div>
                             <div className="campus-contact-text">
                                 <h5>Direct Call</h5>
-                                <p>+971 6 579 8313 / +971 52 756 9908</p>
+                                <p>+971 52 756 9908</p>
                             </div>
                         </div>
 

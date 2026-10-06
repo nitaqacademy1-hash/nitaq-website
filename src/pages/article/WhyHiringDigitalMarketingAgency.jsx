@@ -198,7 +198,7 @@ const WhyHiringDigitalMarketingAgency = () => {
                     {/* Featured Image */}
                     <div className="article-featured-img premium-shadow">
                         <img 
-                            src="/images/digital_marketing_overview.png" 
+                            src="/images/digital_marketing_overview.webp" 
                             alt="Why Hiring a Digital Marketing Agency Can Transform Your Business in Sharjah, Dubai, UAE" 
                         />
                     </div>

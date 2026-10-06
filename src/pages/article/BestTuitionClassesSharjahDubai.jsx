@@ -230,7 +230,7 @@ const BestTuitionClassesSharjahDubai = () => {
 
                                 <details className="faq-accordion">
                                     <summary>Where is Nitaq Academy located in Sharjah?</summary>
-                                    <p>Our center is located at Office F103, Floor F1, Abu Khamseen Tower, Al Majaz 3, Sharjah, easily accessible from Buhaira Corniche, Al Qasba, and King Faisal Street.</p>
+                                    <p>Our center is located at Abu Khamseen Tower - Office : F103, Floor F1 - Al Majaz 3 - Al Majaz - Sharjah - United Arab Emirates, easily accessible from Buhaira Corniche, Al Qasba, and King Faisal Street.</p>
                                 </details>
 
                                 <details className="faq-accordion">
@@ -302,7 +302,7 @@ const BestTuitionClassesSharjahDubai = () => {
                                 <div style={{ marginTop: '25px', paddingTop: '20px', borderTop: '1px solid #e2e8f0', textAlign: 'left', fontSize: '0.85rem', color: '#64748b' }}>
                                     <p style={{ display: 'flex', alignItems: 'flex-start', gap: '6px', marginBottom: '8px' }}>
                                         <MapPin size={16} style={{ flexShrink: 0, marginTop: '2px' }} />
-                                        <span>Office F103, Abu Khamseen Tower, Al Majaz 3, Sharjah</span>
+                                        <span>Abu Khamseen Tower - Office : F103, Floor F1 - Al Majaz 3 - Al Majaz - Sharjah - United Arab Emirates</span>
                                     </p>
                                     <p style={{ display: 'flex', alignItems: 'center', gap: '6px', margin: 0 }}>
                                         <ShieldCheck size={16} style={{ flexShrink: 0 }} />
