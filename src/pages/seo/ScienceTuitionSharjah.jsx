@@ -289,8 +289,8 @@ const ScienceTuitionSharjah = () => {
                         </details>
 
                         <details className="faq-card-item">
-                            <summary>Where is Nitaq Academy's Sharjah campus located? <ChevronDown size={18} /></summary>
-                            <p>Our campus is located at Abu Khamseen Tower - Office : F103, Floor F1 - Al Majaz 3 - Al Majaz - Sharjah - United Arab Emirates, within easy driving distance of King Faisal Street, Al Khan, and Al Majaz waterfront.</p>
+                            <summary>Where can I find the best Science tuition or science coaching near me in Sharjah? <ChevronDown size={18} /></summary>
+                            <p>If you are searching for "science tuition near me", "physics chemistry biology tuition near me", or "science classes in Sharjah", Nitaq Academy is situated at Abu Khamseen Tower - Office : F103, Floor F1 - Al Majaz 3 - Al Majaz - Sharjah - United Arab Emirates. We are within 5 to 10 minutes of Al Nahda, Al Khan, Al Taawun, and Al Qasimia, offering dedicated IGCSE, CBSE, and IB coaching.</p>
                         </details>
 
                         <details className="faq-card-item">

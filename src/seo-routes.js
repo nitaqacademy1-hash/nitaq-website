@@ -1,5 +1,60 @@
 export const seoRoutes = [
   {
+    path: "/article/how-to-register-for-sat-exam-uae-guide",
+    title: "How to Register for the Digital SAT in UAE (2026/2027 Step-by-Step Guide) | Nitaq Academy",
+    description: "Learn how to register for the Digital SAT in UAE. Step-by-step College Board registration guide, Sharjah & Dubai test centers, fees, Bluebook requirements, deadlines & tips.",
+    canonical: "https://www.nitaqacademy.com/article/how-to-register-for-sat-exam-uae-guide",
+    ogTitle: "How to Register for the Digital SAT in UAE: Step-by-Step Guide | Nitaq Academy",
+    ogDescription: "Complete guide on how to register for the SAT in UAE: College Board account setup, choosing test centers in Sharjah & Dubai, fees in AED, photo requirements & Bluebook setup.",
+    ogImage: "/images/sat_v2.webp",
+    twitterCard: "summary_large_image",
+    datePublished: "2026-10-08T08:00:00+04:00",
+    dateModified: "2026-10-08T08:00:00+04:00",
+    keywords: "how to register for sat in uae, how to register for sat, sat registration uae, sat registration sharjah, sat registration dubai, sat test dates uae 2026 2027, sat test centers sharjah dubai, college board registration uae, sat exam fee uae, bluebook sat setup, digital sat preparation sharjah, sat coaching sharjah, free sat diagnostic test, sat registration step by step, nitaq academy sat",
+    faqSchema: [
+      {
+        question: "How do I register for the Digital SAT in the UAE?",
+        answer: "To register for the Digital SAT in the UAE, visit the official College Board website (satsuite.collegeboard.org), sign in or create an account, fill in your student and high school profile, select your preferred test date and UAE test center (in Sharjah, Dubai, or Abu Dhabi), upload a passport-compliant photo, and pay the registration fee via credit card."
+      },
+      {
+        question: "How much does the SAT exam cost in the UAE?",
+        answer: "The official College Board SAT registration fee for international students in the UAE is $68 (standard registration) plus a $43 international region fee, totaling $111 USD (approximately AED 408 to AED 410). If you register during the late registration window, an additional late fee of $34 applies."
+      },
+      {
+        question: "What identification (ID) is required for SAT test day in UAE?",
+        answer: "Students testing in the UAE must present a valid, government-issued photo ID. An original valid Passport or an original UAE Federal Emirates ID card is mandatory. The first and last names on your ID must exactly match the name on your official SAT Admission Ticket."
+      },
+      {
+        question: "Can I take the Digital SAT on my own laptop or tablet?",
+        answer: "Yes. The Digital SAT is administered via the official Bluebook application, which can be installed on personal Windows laptops, Apple MacBooks, iPads, or school-managed Chromebooks. The Bluebook app must be downloaded and exam setup completed 1 to 5 days before test day."
+      },
+      {
+        question: "When should UAE high school students register for the SAT?",
+        answer: "We strongly recommend registering at least 5 to 8 weeks before your desired test date. Test centers in Sharjah (Al Majaz, Muwaileh) and Dubai fill up quickly for high-demand sessions like October, November, and March. Booking early ensures you secure your closest neighborhood test center."
+      },
+      {
+        question: "What is the difference between registration deadlines and late registration?",
+        answer: "The regular registration deadline is typically 3 to 4 weeks prior to the test date. Late registration remains open for another 10 to 14 days, but incurs an extra $34 fee. After the late registration deadline passes, no further registrations or waitlists are permitted."
+      },
+      {
+        question: "How can I change my SAT test center or test date after registering?",
+        answer: "You can change your test center or reschedule your test date by logging into your College Board account and selecting 'Change Registration'. Note that College Board charges a $29 change fee, and seat availability at your new chosen center is not guaranteed."
+      },
+      {
+        question: "What should I do immediately after completing SAT registration?",
+        answer: "Immediately after registering, establish your baseline score by taking a free diagnostic assessment. At Nitaq Academy in Sharjah, we provide a 24-question adaptive Digital SAT diagnostic assessment that breaks down your strengths across Algebra, Advanced Math, and Reading & Writing to build a targeted preparation plan."
+      },
+      {
+        question: "Are calculators provided at UAE test centers, or can I use Desmos?",
+        answer: "The Digital SAT exam software (Bluebook) comes with a built-in full-featured Desmos graphing calculator directly on your testing screen for all Math questions. You may also bring an approved handheld graphing or scientific calculator as a backup."
+      },
+      {
+        question: "How long are SAT scores valid for university admissions in the UAE?",
+        answer: "Official SAT scores are valid for 5 years. UAE universities such as American University of Sharjah (AUS), Khalifa University, University of Sharjah, and NYU Abu Dhabi accept scores from tests taken within their respective admission guidelines."
+      }
+    ]
+  },
+  {
     path: "/article/free-digital-sat-diagnostic-assessment-guide",
     title: "Free Digital SAT Diagnostic Assessment & Self-Evaluation Guide (2026) | Nitaq Academy",
     description: "Take Nitaq Academy's free Digital SAT diagnostic test with 24 adaptive questions, instant domain performance analytics, score prediction, and step-by-step answer explanations.",

@@ -6,6 +6,17 @@ import { Calendar, User, ArrowRight, ExternalLink, Filter, Search } from 'lucide
 
 const articles = [
     {
+        id: 30,
+        title: "How to Register for the Digital SAT in UAE: Official Step-by-Step Guide (2026–2027)",
+        excerpt: "Complete guide on how to register for the SAT in UAE. College Board account setup, Sharjah & Dubai test centers, registration fees in AED, Bluebook setup, and admission tickets.",
+        category: "SAT Registration & Prep",
+        path: "/article/how-to-register-for-sat-exam-uae-guide",
+        coursePath: "/sat-preparation-sharjah",
+        courseLabel: "SAT Course",
+        date: "October 8, 2026",
+        image: "/images/sat_v2.webp"
+    },
+    {
         id: 29,
         title: "Free Digital SAT Diagnostic Assessment & Self-Evaluation Guide (2026)",
         excerpt: "Evaluate your Digital SAT readiness with our free 24-question adaptive diagnostic quiz, instant domain performance analysis, score predictor, and detailed answer explanations.",

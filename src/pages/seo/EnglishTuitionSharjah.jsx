@@ -271,8 +271,8 @@ const EnglishTuitionSharjah = () => {
                         </details>
 
                         <details className="faq-card-item">
-                            <summary>Where is Nitaq Academy's Sharjah learning center located? <ChevronDown size={18} /></summary>
-                            <p>We are centrally located at Abu Khamseen Tower - Office : F103, Floor F1 - Al Majaz 3 - Al Majaz - Sharjah - United Arab Emirates, easily accessible from Buhaira Corniche and King Faisal Street.</p>
+                            <summary>Where can I find the best English tuition or English coaching near me in Sharjah? <ChevronDown size={18} /></summary>
+                            <p>If you are searching for "English tuition near me", "English classes near me", or "English coaching in Sharjah", Nitaq Academy is centrally located at Abu Khamseen Tower - Office : F103, Floor F1 - Al Majaz 3 - Al Majaz - Sharjah - United Arab Emirates. Convenient for students from Al Majaz, Al Nahda, Al Taawun, Al Khan, and Dubai, we provide personalized English language and literature tutoring for Class 1 to 12.</p>
                         </details>
 
                         <details className="faq-card-item">

@@ -293,8 +293,8 @@ const MathsTuitionSharjah = () => {
                         </details>
 
                         <details className="faq-card-item">
-                            <summary>Where is Nitaq Academy located in Sharjah for in-person classes? <ChevronDown size={18} /></summary>
-                            <p>Our physical campus is centrally located at Abu Khamseen Tower - Office : F103, Floor F1 - Al Majaz 3 - Al Majaz - Sharjah - United Arab Emirates, easily accessible from King Faisal Street and Al Wahda Street.</p>
+                            <summary>Where can I find the best Maths tuition or maths coaching near me in Sharjah? <ChevronDown size={18} /></summary>
+                            <p>If you are searching for "maths tuition near me", "maths coaching near me", or "maths classes in Sharjah", Nitaq Academy is centrally located at Abu Khamseen Tower - Office : F103, Floor F1 - Al Majaz 3 - Al Majaz - Sharjah - United Arab Emirates. We are conveniently situated 5 to 10 minutes from Al Nahda, Al Khan, Al Taawun, Al Qasimia, and Buhaira Corniche, offering expert in-person coaching and interactive online maths classes across Dubai and the UAE.</p>
                         </details>
 
                         <details className="faq-card-item">

@@ -3,9 +3,40 @@
 
 User-agent: *
 Allow: /
-# Admin pages declare noindex in their responses; crawlers must be able to
-# fetch those responses to see that directive. Authentication controls access.
-Disallow: /.git/
-Disallow: /temp-landing/
 
+# Admin Portal & Internal Tools
+Disallow: /admin
+Disallow: /admin/
+
+# Interactive Quiz Runner & Result Pages (Prevent crawl budget waste on dynamic test sessions)
+Disallow: /sat/diagnostic/quiz
+Disallow: /sat/diagnostic/results
+Disallow: /sat/diagnostic/math-report
+Disallow: /sat/results
+Disallow: /ar/sat/diagnostic/quiz
+Disallow: /ar/sat/diagnostic/results
+Disallow: /ar/sat/diagnostic/math-report
+Disallow: /ar/sat/results
+
+# Certificate Verification Utility
+Disallow: /verify
+Disallow: /verify/
+Disallow: /verify-certificate
+Disallow: /verify-certificate/
+Disallow: /certificate/verify
+Disallow: /certificate/verify/
+Disallow: /ar/verify
+Disallow: /ar/verify/
+Disallow: /ar/verify-certificate
+Disallow: /ar/verify-certificate/
+Disallow: /ar/certificate/verify
+Disallow: /ar/certificate/verify/
+
+# Conversion & Campaign Pages
+Disallow: /*thank-you*
+Disallow: /ig/
+Disallow: /temp-landing/
+Disallow: /.git/
+
+# XML Sitemap
 Sitemap: https://www.nitaqacademy.com/sitemap.xml
