@@ -110,6 +110,9 @@ const BestTuitionClassesNearMeSharjah = lazy(() => import('./pages/article/BestT
 const ComprehensiveSubjectTuitionGuide = lazy(() => import('./pages/article/ComprehensiveSubjectTuitionGuide'));
 const FreeDigitalSatDiagnosticArticle = lazy(() => import('./pages/article/FreeDigitalSatDiagnosticArticle'));
 const HowToRegisterForSatGuide = lazy(() => import('./pages/article/HowToRegisterForSatGuide'));
+const SatGrammarRulesGuide = lazy(() => import('./pages/article/SatGrammarRulesGuide'));
+const SatMathFormulaSheetDesmosGuide = lazy(() => import('./pages/article/SatMathFormulaSheetDesmosGuide'));
+const SatTestCentersUaeGuide = lazy(() => import('./pages/article/SatTestCentersUaeGuide'));
 
 const TermsAndConditions = lazy(() => import('./pages/legal/TermsAndConditions'));
 const PrivacyPolicy = lazy(() => import('./pages/legal/PrivacyPolicy'));
@@ -299,6 +302,9 @@ function LocalizedRoutes() {
         <Route path="article/best-tuition-classes-near-me-sharjah" element={<BestTuitionClassesNearMeSharjah />} />
         <Route path="article/free-digital-sat-diagnostic-assessment-guide" element={<FreeDigitalSatDiagnosticArticle />} />
         <Route path="article/how-to-register-for-sat-exam-uae-guide" element={<HowToRegisterForSatGuide />} />
+        <Route path="article/sat-grammar-rules-digital-reading-writing-guide" element={<SatGrammarRulesGuide />} />
+        <Route path="article/sat-math-formula-sheet-desmos-calculator-guide" element={<SatMathFormulaSheetDesmosGuide />} />
+        <Route path="article/sat-test-centers-uae-sharjah-dubai-guide" element={<SatTestCentersUaeGuide />} />
 
         {/* IG Landing Pages */}
         <Route path="ig/2026-03-29" element={<ResumeGuide />} />

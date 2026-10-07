@@ -1,5 +1,110 @@
 export const seoRoutes = [
   {
+    path: "/article/sat-grammar-rules-digital-reading-writing-guide",
+    title: "SAT Grammar Rules: The Complete Digital SAT Reading & Writing Guide | Nitaq Academy",
+    description: "Master Digital SAT grammar rules with our complete Standard English Conventions guide: punctuation, semicolons, colons, dangling modifiers, transitions & practice tips.",
+    canonical: "https://www.nitaqacademy.com/article/sat-grammar-rules-digital-reading-writing-guide",
+    ogTitle: "SAT Grammar Rules: Complete Digital SAT Reading & Writing Guide | Nitaq Academy",
+    ogDescription: "Master high-scoring SAT grammar rules: punctuation, subject-verb agreement, dangling modifiers, and transition words for UAE students.",
+    ogImage: "/images/sat_v2.webp",
+    twitterCard: "summary_large_image",
+    datePublished: "2026-10-08T08:00:00+04:00",
+    dateModified: "2026-10-08T08:00:00+04:00",
+    keywords: "sat grammar rules, digital sat grammar, sat reading and writing guide, sat punctuation rules, sat subject verb agreement, digital sat reading writing tips, sat grammar cheat sheet, sat preparation sharjah, sat english coaching dubai, sat semicolon rules",
+    faqSchema: [
+      {
+        question: "How many grammar questions are on the Digital SAT Reading and Writing section?",
+        answer: "Standard English Conventions (grammar, usage, and punctuation) account for approximately 11 to 15 questions per test (roughly 26% of the entire Reading and Writing section). Because these questions follow strict mechanical rules, they represent the fastest path to increasing your verbal score."
+      },
+      {
+        question: "Are semicolons and periods tested the exact same way on the SAT?",
+        answer: "Yes! Semicolons and periods both separate two independent clauses. On the Digital SAT, if two multiple-choice options are identical except that one uses a semicolon and the other uses a period, both options are grammatically equivalent and therefore both must be incorrect."
+      },
+      {
+        question: "What is the single most common punctuation mistake students make?",
+        answer: "The comma splice—joining two independent clauses with only a comma. Remember: a comma alone can NEVER connect two complete sentences unless accompanied by a FANBOYS coordinating conjunction (for, and, nor, but, or, yet, so)."
+      },
+      {
+        question: "How does the Digital SAT test vocabulary in 2026?",
+        answer: "The Digital SAT tests Words in Context rather than obscure dictionary definitions. You will read short passages (25–150 words) with a blank and must identify the word that fits the tone, logical transition, and academic context. Mastering prefix/suffix roots and nuance is key."
+      },
+      {
+        question: "How long does it take to master SAT grammar rules with coaching?",
+        answer: "With focused diagnostic preparation at Nitaq Academy, students typically master all 8 core grammar conventions within 2 to 3 weeks of targeted drills and timed Bluebook module practice."
+      }
+    ]
+  },
+  {
+    path: "/article/sat-math-formula-sheet-desmos-calculator-guide",
+    title: "SAT Math Formula Sheet & Desmos Calculator Shortcuts (2026 Guide) | Nitaq Academy",
+    description: "Master Digital SAT Math with our formula reference sheet, 8 unlisted must-memorize formulas, and 6 high-speed Desmos graphing calculator hacks for an 800 score.",
+    canonical: "https://www.nitaqacademy.com/article/sat-math-formula-sheet-desmos-calculator-guide",
+    ogTitle: "SAT Math Formula Sheet & Desmos Calculator Shortcuts | Nitaq Academy",
+    ogDescription: "Digital SAT Math formulas and Desmos hacks: unlisted formulas, vertex form, circle equations, regressions & slider tricks.",
+    ogImage: "/images/sat_v2.webp",
+    twitterCard: "summary_large_image",
+    datePublished: "2026-10-08T08:00:00+04:00",
+    dateModified: "2026-10-08T08:00:00+04:00",
+    keywords: "sat math formula sheet, sat desmos shortcuts, digital sat calculator hacks, unlisted sat math formulas, sat math cheatsheet, digital sat desmos tricks, sat preparation sharjah math, sat math 800 guide, vertex form sat math",
+    faqSchema: [
+      {
+        question: "Is Desmos allowed on the entire SAT Math section in 2026?",
+        answer: "Yes! On the Digital SAT, the built-in Desmos graphing calculator is permanently available on both Module 1 and Module 2 of the Math section. Unlike the old paper SAT, there is no longer any 'No-Calculator' section. You can use Desmos for all 44 Math questions."
+      },
+      {
+        question: "Can I bring my own handheld calculator (like TI-84 or Casio) in addition to Desmos?",
+        answer: "Yes. You are allowed to bring an approved handheld graphing or scientific calculator (such as TI-84 Plus CE, Casio fx-991EX, or Casio fx-CG50) into UAE test centers. Many top-scoring students use Desmos for graphing and visual intersections, and their handheld calculator for fast basic arithmetic and matrix operations."
+      },
+      {
+        question: "Why do students still lose marks on SAT Math if Desmos is available?",
+        answer: "Desmos is powerful, but it cannot interpret complex word problems, define unknown variables, or solve questions with abstract constants where numerical values are withheld. Students who score 750+ master both algebraic conceptual theory and high-speed Desmos verification tricks."
+      },
+      {
+        question: "Where can I find the official reference formula sheet during the digital exam?",
+        answer: "In the Bluebook app, click the 'Reference' icon at the top right of your screen during the Math section. A pop-up modal will display the 12 standard geometry formulas (triangles, circles, and 3D solid volumes) at any time."
+      },
+      {
+        question: "What is the fastest way to improve from a 600 to a 750+ on Digital SAT Math?",
+        answer: "The fastest jump comes from two steps: First, memorize the 8 unlisted formulas (vertex form, sum/product of roots, circle equations, and exponent rules). Second, master the top 6 Desmos graphing hacks to eliminate arithmetic mistakes on Module 1 so you unlock the harder Module 2 with full score potential."
+      }
+    ]
+  },
+  {
+    path: "/article/sat-test-centers-uae-sharjah-dubai-guide",
+    title: "SAT Test Centers in UAE: Sharjah vs. Dubai School List (2026) | Nitaq Academy",
+    description: "Complete list of authorized College Board SAT test centers in Sharjah and Dubai. Compare Wesgreen, ASCS, Dubai College, ASD, Saturday commute, and test-day rules.",
+    canonical: "https://www.nitaqacademy.com/article/sat-test-centers-uae-sharjah-dubai-guide",
+    ogTitle: "SAT Test Centers in UAE: Sharjah vs Dubai School List | Nitaq Academy",
+    ogDescription: "Find verified College Board test centers across Sharjah and Dubai. Check school venues, traffic tips, Bluebook test day rules, and mandatory ID requirements.",
+    ogImage: "/images/sat_v2.webp",
+    twitterCard: "summary_large_image",
+    datePublished: "2026-10-08T08:00:00+04:00",
+    dateModified: "2026-10-08T08:00:00+04:00",
+    keywords: "sat test centers uae, sat test centers sharjah, sat test centers dubai, wesgreen sat center, ascs sat sharjah, dubai college sat center, sat test day rules uae, uae sat schools list, college board uae centers",
+    faqSchema: [
+      {
+        question: "Which test center is better: Sharjah or Dubai?",
+        answer: "The exam experience is identical because all authorized centers follow strict College Board Bluebook guidelines. However, if you live in Sharjah, Ajman, or Northern Emirates, booking a Sharjah school (like Wesgreen or ASCS) saves you 45+ minutes of early morning Saturday highway driving and avoids potential border traffic."
+      },
+      {
+        question: "Can a student residing in Sharjah take the SAT at a Dubai school (or vice versa)?",
+        answer: "Yes, absolutely. The College Board allows any registered student to book any authorized test center with open capacity, regardless of where they attend school or reside in the UAE."
+      },
+      {
+        question: "What exact identification is accepted at UAE SAT test centers in 2026?",
+        answer: "You MUST present either your original physical Emirates ID or your original physical Passport. Digital scans, photographs on your mobile phone, expired IDs, or student school IDs are strictly REJECTED at the door with no exceptions."
+      },
+      {
+        question: "What time must I arrive at the UAE test center on exam day?",
+        answer: "Test center doors open between 7:30 AM and 7:45 AM. Doors close strictly at 8:00 AM. Students arriving after 8:00 AM are barred from entry and forfeit their exam fee. We recommend arriving at the school gates by 7:15 AM."
+      },
+      {
+        question: "What happens if my laptop battery dies during the exam at the center?",
+        answer: "While test centers are encouraged to provide access to wall sockets, power cords are not guaranteed for every single desk. Your device MUST be 100% fully charged to hold at least 3 to 4 hours of battery life. Bring your charging brick and an extension cable just in case."
+      }
+    ]
+  },
+  {
     path: "/article/how-to-register-for-sat-exam-uae-guide",
     title: "How to Register for the Digital SAT in UAE (2026/2027 Step-by-Step Guide) | Nitaq Academy",
     description: "Learn how to register for the Digital SAT in UAE. Step-by-step College Board registration guide, Sharjah & Dubai test centers, fees, Bluebook requirements, deadlines & tips.",

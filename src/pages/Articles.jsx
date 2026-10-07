@@ -6,6 +6,39 @@ import { Calendar, User, ArrowRight, ExternalLink, Filter, Search } from 'lucide
 
 const articles = [
     {
+        id: 33,
+        title: "SAT Grammar Rules: The Complete Digital SAT Reading & Writing Guide",
+        excerpt: "Master all 8 core Standard English Conventions rules tested on the Digital SAT: punctuation, semicolons, colons, dangling modifiers, and transition word strategies.",
+        category: "SAT Reading & Writing",
+        path: "/article/sat-grammar-rules-digital-reading-writing-guide",
+        coursePath: "/sat-preparation-sharjah",
+        courseLabel: "SAT Course",
+        date: "October 8, 2026",
+        image: "/images/sat_v2.webp"
+    },
+    {
+        id: 32,
+        title: "SAT Math Formula Sheet & Desmos Calculator Shortcuts (2026 Guide)",
+        excerpt: "Official College Board formula reference sheet, 8 unlisted must-memorize formulas, and 6 high-speed Desmos graphing calculator hacks for an 800 math score.",
+        category: "SAT Math & Desmos",
+        path: "/article/sat-math-formula-sheet-desmos-calculator-guide",
+        coursePath: "/sat/diagnostic",
+        courseLabel: "Take Diagnostic",
+        date: "October 8, 2026",
+        image: "/images/sat_v2.webp"
+    },
+    {
+        id: 31,
+        title: "SAT Test Centers in UAE: Sharjah vs. Dubai School List & Selection Guide",
+        excerpt: "Complete list of authorized College Board SAT test centers in Sharjah and Dubai. Compare Wesgreen, ASCS, Dubai College, ASD, Saturday morning traffic, and test-day rules.",
+        category: "SAT Test Centers & Advice",
+        path: "/article/sat-test-centers-uae-sharjah-dubai-guide",
+        coursePath: "/sat-preparation-sharjah",
+        courseLabel: "SAT Course",
+        date: "October 8, 2026",
+        image: "/images/sat_v2.webp"
+    },
+    {
         id: 30,
         title: "How to Register for the Digital SAT in UAE: Official Step-by-Step Guide (2026–2027)",
         excerpt: "Complete guide on how to register for the SAT in UAE. College Board account setup, Sharjah & Dubai test centers, registration fees in AED, Bluebook setup, and admission tickets.",
