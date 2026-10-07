@@ -143,7 +143,17 @@ body > #root header .dropdown:focus-within .dropdown-content.two-columns { displ
 
 /* Articles: editorial header, readable measure, compact contextual sidebar. */
 .academy-experience .article-details-page { color: var(--experience-ink); }
-.academy-experience .article-details-page .breadcrumb-wrapper { background: #f8faf8; border-color: var(--experience-line); }
+.academy-experience .article-details-page .breadcrumb-wrapper { 
+  background: #f8faf8; 
+  border-color: var(--experience-line); 
+  padding-top: 118px; 
+  padding-bottom: 18px; 
+}
+@media (max-width: 768px) {
+  .academy-experience .article-details-page .breadcrumb-wrapper {
+    padding-top: 100px;
+  }
+}
 .academy-experience .article-breadcrumb { flex-wrap: wrap; font-size: .78rem; row-gap: 6px; }
 .academy-experience .article-container { padding: 60px 0 88px; }
 .academy-experience .article-container > .container { max-width: 1148px; }

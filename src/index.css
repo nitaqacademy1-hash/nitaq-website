@@ -3617,8 +3617,14 @@ textarea:focus {
 }
 
 .breadcrumb-wrapper {
-    padding: 24px 0;
+    padding: 118px 0 20px;
     border-bottom: 1px solid #f1f5f9;
+}
+
+@media (max-width: 768px) {
+    .breadcrumb-wrapper {
+        padding: 100px 0 16px;
+    }
 }
 
 .article-breadcrumb {

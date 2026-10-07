@@ -97,7 +97,7 @@ const HowToRegisterForSatGuide = () => {
         <div className="container">
           
           {/* Article Header */}
-          <header className="article-header" style={{ maxWidth: '900px', margin: '0 auto 40px' }}>
+          <div className="article-header" style={{ maxWidth: '900px', margin: '0 auto 40px' }}>
             <span className="article-category" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
               <Sparkles size={14} /> Official UAE Admissions &amp; Registration Guide
             </span>
@@ -133,7 +133,7 @@ const HowToRegisterForSatGuide = () => {
                 </div>
               </div>
             </div>
-          </header>
+          </div>
 
           {/* Featured Image */}
           <div className="article-featured-img" style={{ maxWidth: '900px', margin: '0 auto 50px', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.08)' }}>
@@ -535,7 +535,7 @@ const HowToRegisterForSatGuide = () => {
             </section>
 
             {/* ADMISSIONS CONTACT FOOTER CARD */}
-            <footer style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '16px', padding: '30px', textAlign: 'center', marginTop: '40px' }}>
+            <div className="article-contact-footer" style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '16px', padding: '30px', textAlign: 'center', marginTop: '40px' }}>
               <h3 style={{ fontSize: '1.3rem', color: '#0f172a', marginBottom: '8px' }}>
                 Need Help with SAT Registration or Score Improvement?
               </h3>
@@ -558,7 +558,7 @@ const HowToRegisterForSatGuide = () => {
                   Visit Office: Al Majaz 3, Sharjah
                 </Link>
               </div>
-            </footer>
+            </div>
 
           </div>
         </div>
