@@ -13,6 +13,18 @@ import './sat-course.css';
 
 const SHARJAH_FAQS = [
   {
+    question: 'Looking for SAT classes near me in Sharjah — why choose Nitaq Academy?',
+    questionAr: 'تبحث عن حصص SAT قريبة مني في الشارقة — لماذا تختار أكاديمية نطاق؟',
+    answer: 'Conveniently located at Abu Khamseen Tower in Al Majaz 3, Sharjah, Nitaq Academy is the top choice for students searching for accredited SAT classes near me across Al Majaz, Buhaira Corniche, Al Khan, Al Taawun, Al Nahda, and Muwaileh. Our SPEA-authorized Digital SAT course features small batches (8–12 students), personalized 1-on-1 tutoring, advanced Desmos shortcuts, full-length adaptive Bluebook mock exams, and proven score improvements of 150–250+ points.',
+    answerAr: 'بموقعها الاستراتيجي في برج أبو خمسين بالمجاز 3، الشارقة، تُعد أكاديمية نطاق الوجهة الأولى للطلاب الباحثين عن حصص ودورات SAT قريبة ومعتمدة من هيئة الشارقة للتعليم الخاص. نوفر فصولاً دراسية صغيرة (8-12 طالباً)، وتدريباً فردياً، وحيل آلة Desmos، ونماذج امتحانات محاكاة تكيفية لرفع الدرجات بمقدار 150-250+ نقطة.'
+  },
+  {
+    question: 'What is included in the Digital SAT course at Nitaq Academy in Sharjah?',
+    questionAr: 'ما الذي تشمله دورة Digital SAT في أكاديمية نطاق بالشارقة؟',
+    answer: 'Our comprehensive SAT course covers all 8 College Board domains across Reading & Writing and Mathematics. It includes hands-on Desmos graphing calculator masterclasses, weekly timed adaptive mock exams on Bluebook, official question banks, grammar conventions, vocabulary in context, and individual progress scorecards.',
+    answerAr: 'تشمل الدورة تغطية شاملة لجميع مجالات الاختبار الثمانية في القراءة والكتابة والرياضيات، مع تدريب متقدم على آلة Desmos البيانية، وامتحانات محاكاة أسبوعية على تطبيق Bluebook، وبنوك أسئلة رسمية، ومتابعة فردية للأداء.'
+  },
+  {
     question: 'What is the Digital SAT and how is it different from the old SAT?',
     questionAr: 'ما هو اختبار Digital SAT وكيف يختلف عن اختبار SAT القديم؟',
     answer: "The Digital SAT is the official computer-based format of the Scholastic Assessment Test, taken on a laptop or tablet using the College Board's Bluebook app. It is multistage adaptive — meaning question difficulty in Module 2 adjusts based on your Module 1 performance. The total exam time is 2 hours and 14 minutes across Reading & Writing and Mathematics.",
@@ -114,24 +126,24 @@ const SATCourse = ({ locationName = 'Sharjah' }) => {
             <div className="sat-hero-content">
               <div className="sat-hero-eyebrow">
                 {isDubai
-                  ? (isAr ? 'مباشر وتفاعلي عبر الإنترنت · تدريب DIGITAL SAT لطلاب دبي والإمارات' : 'LIVE INTERACTIVE ONLINE · DIGITAL SAT COACHING FOR DUBAI & UAE')
-                  : (isAr ? 'معتمد من هيئة الشارقة للتعليم الخاص · تدريب DIGITAL SAT في الشارقة · المجاز 3' : 'SPEA AUTHORIZED · DIGITAL SAT COACHING IN SHARJAH · AL MAJAZ 3')}
+                  ? (isAr ? 'مباشر وتفاعلي عبر الإنترنت · دورة وحصص DIGITAL SAT لطلاب دبي والإمارات' : 'LIVE INTERACTIVE ONLINE · DIGITAL SAT COURSE & CLASSES FOR DUBAI & UAE')
+                  : (isAr ? 'معتمد من هيئة الشارقة للتعليم الخاص · دورة وحصص DIGITAL SAT في الشارقة · المجاز 3' : 'SPEA AUTHORIZED · DIGITAL SAT COURSE & CLASSES IN SHARJAH · AL MAJAZ 3')}
               </div>
 
               <h1 className="sat-hero-heading">
                 {isDubai
-                  ? (isAr ? 'التحضير لاختبار Digital SAT عبر الإنترنت لطلاب دبي' : 'Online Digital SAT Preparation for Dubai Students')
-                  : (isAr ? 'التحضير لاختبار Digital SAT في الشارقة' : 'Digital SAT Preparation in Sharjah')}
+                  ? (isAr ? 'دورة وحصص Digital SAT عبر الإنترنت لطلاب دبي' : 'Digital SAT Course & Online Classes for Dubai Students')
+                  : (isAr ? 'دورة وحصص Digital SAT في الشارقة' : 'Digital SAT Course & Classes in Sharjah')}
               </h1>
 
               <p className="sat-hero-description">
                 {isDubai
                   ? (isAr
-                    ? 'دورات تفاعلية ومباشرة عبر الإنترنت لاختبار Digital SAT لطلاب دبي والإمارات. تدريب تطبيقي على حيل آلة Desmos، ونماذج امتحانات محاكاة تكيفية بنظام Bluebook، وتقييم تشخيصي دقيق للوصول إلى 1500+.'
-                    : 'Master the Digital SAT with live interactive online SAT preparation and tutoring designed for Dubai and UAE students. Real-time Desmos masterclasses, adaptive Bluebook-format mock exams, diagnostic assessments, and personalized score-improvement milestones.')
+                    ? 'دورات وحصص تفاعلية ومباشرة عبر الإنترنت لاختبار Digital SAT لطلاب دبي والإمارات مع خيار الحضور الهجين للامتحانات التجريبية. تدريب تطبيقي على حيل آلة Desmos، ونماذج امتحانات محاكاة تكيفية بنظام Bluebook، وتقييم تشخيصي دقيق للوصول إلى 1500+.'
+                    : 'Master the Digital SAT with our top-rated SAT course and live interactive online SAT classes designed for Dubai and UAE students. Real-time Desmos masterclasses, 1-on-1 tutoring, adaptive Bluebook-format mock exams, diagnostic assessments, and hybrid campus mock test access.')
                   : (isAr
-                    ? 'البرنامج الرائد في الشارقة والمعتمد من هيئة الشارقة للتعليم الخاص لاختبار Digital SAT في برج أبو خمسين، المجاز 3. تدريب متقدم على صعوبة الاختبار التكيفي، وآلة Desmos، ونماذج امتحانات Bluebook واستراتيجيات القراءة والكتابة والرياضيات.'
-                    : "Sharjah's premier SPEA-authorized Digital SAT preparation and coaching program at Abu Khamseen Tower, Al Majaz 3. Master adaptive test difficulty, Desmos graphing shortcuts, Bluebook mock practice, and high-yield Reading & Writing strategies with proven score gains.")}
+                    ? 'تبحث عن أفضل دورة وحصص SAT قريبة منك في الشارقة؟ يقدم معهد أكاديمية نطاق المعتمد من هيئة الشارقة للتعليم الخاص في برج أبو خمسين بالمجاز 3 فصولاً دراسية متقدمة لاختبار Digital SAT. تدريب على صعوبة الاختبار التكيفي، وحيل آلة Desmos، وحصص عطلة نهاية الأسبوع للوصول إلى 1500+.'
+                    : "Searching for top-rated SAT classes near me or a comprehensive SAT course in Sharjah? Nitaq Academy's premier SPEA-authorized Digital SAT coaching at Abu Khamseen Tower, Al Majaz 3 delivers small-batch classroom training, 1-on-1 tutoring, Desmos graphing shortcuts, and adaptive Bluebook mock practice with proven 150–250+ point score gains.")}
               </p>
 
               <div className="sat-hero-cta-group">
@@ -304,6 +316,26 @@ const SATCourse = ({ locationName = 'Sharjah' }) => {
                   </p>
                 </div>
               </div>
+
+              {/* High-Intent SEO Callout: SAT Classes Near Me & SAT Course */}
+              <div style={{ marginTop: '28px', background: '#F0FDF4', border: '1px solid #BBF7D0', borderRadius: '14px', padding: '24px 28px' }}>
+                <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#166534', margin: '0 0 10px 0' }}>
+                  {isAr 
+                    ? 'أفضل دورة وحصص SAT قريبة منك في الشارقة (المجاز 3)' 
+                    : 'Premier Digital SAT Course & In-Person SAT Classes Near Me in Sharjah'}
+                </h3>
+                <p style={{ margin: 0, color: '#15803d', fontSize: '0.98rem', lineHeight: 1.7 }}>
+                  {isAr ? (
+                    <>
+                      إذا كنت تبحث عن <strong>حصص SAT قريبة مني</strong> أو <strong>دورة SAT معتمدة في الشارقة</strong>، فإن موقع أكاديمية نطاق في برج أبو خمسين بالمجاز 3 يوفر سهولة وصول استثنائية لطلاب كورنيش البحيرة، الخان، التعاون، النهدة، ومويلح. نضمن فصولاً دراسية مجهزة بأحدث أدوات Bluebook، ومجموعات صغيرة (8-12 طالباً)، وحصصاً تدريبية مكثفة في عطلة نهاية الأسبوع لرفع درجاتك إلى 1500+.
+                    </>
+                  ) : (
+                    <>
+                      Searching for <strong>SAT classes near me</strong> or the highest-rated <strong>SAT course in Sharjah</strong>? Conveniently located at Abu Khamseen Tower in Al Majaz 3, Nitaq Academy offers effortless neighborhood access for high school students across Al Majaz, Buhaira Corniche, Al Khan, Al Taawun, Al Nahda, and Muwaileh. Unlike generic school tuition, our dedicated <strong>SAT classes</strong> focus exclusively on official College Board adaptive test mechanics, high-speed Desmos graphing hacks, timed module pacing, and targeted score improvement.
+                    </>
+                  )}
+                </p>
+              </div>
             </div>
           </div>
         </section>
@@ -314,7 +346,7 @@ const SATCourse = ({ locationName = 'Sharjah' }) => {
             <div className="sat-section-header-center">
               <div className="sat-why-eyebrow">{isAr ? 'الرسوم والمواعيد' : 'FEES & BATCH SCHEDULES'}</div>
               <h2 className="sat-why-title" style={{ fontSize: '2.4rem' }}>
-                {isAr ? 'وضوح تام في الرسوم ومرونة في أوقات التدريب' : 'Transparent Investment & Flexible Timetables'}
+                {isAr ? 'رسوم دورة SAT ومواعيد الحصص في الشارقة' : 'SAT Course Fees & Class Timetables in Sharjah & UAE'}
               </h2>
             </div>
 
@@ -330,7 +362,7 @@ const SATCourse = ({ locationName = 'Sharjah' }) => {
                       {isAr ? 'الرسوم التدريبية' : 'COURSE FEES'}
                     </span>
                     <h3 style={{ fontSize: '1.35rem', marginTop: '2px' }}>
-                      {isAr ? 'هيكل الرسوم وخيارات السداد' : 'Course Fee Structure in Sharjah & UAE'}
+                      {isAr ? 'هيكل رسوم دورة SAT وخيارات السداد' : 'Digital SAT Course Fee Structure in Sharjah & UAE'}
                     </h3>
                   </div>
                 </div>
@@ -338,11 +370,11 @@ const SATCourse = ({ locationName = 'Sharjah' }) => {
                 <p style={{ marginBottom: '16px' }}>
                   {isAr ? (
                     <>
-                      تتراوح رسوم دورات التحضير لاختبار SAT في أكاديمية نطاق عادة بين <strong>1,800 درهم و4,000 درهم إماراتي</strong>، وتعتمد التكلفة الدقيقة على:
+                      تتراوح رسوم دورات وحصص التحضير لاختبار SAT في أكاديمية نطاق عادة بين <strong>1,800 درهم و4,000 درهم إماراتي</strong>، وتعتمد التكلفة الدقيقة على:
                     </>
                   ) : (
                     <>
-                      Digital SAT preparation course fees at Nitaq Academy typically range from <strong>AED 1,800 to AED 4,000</strong> depending on:
+                      Digital SAT course fees and class tuition at Nitaq Academy typically range from <strong>AED 1,800 to AED 4,000</strong> depending on:
                     </>
                   )}
                 </p>
@@ -354,7 +386,7 @@ const SATCourse = ({ locationName = 'Sharjah' }) => {
                   </li>
                   <li style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                     <CheckCircle2 size={18} color="#1E7E34" />
-                    <span>{isAr ? 'نمط التدريب: مجموعات صغيرة (8-12 طالباً) أو تدريب فردي 1-على-1 مخصص' : 'Delivery format: Small group micro-batches (8–12 students) or 1-on-1 private mentoring'}</span>
+                    <span>{isAr ? 'نمط التدريب: مجموعات صغيرة (8-12 طالباً) أو حصص فردية 1-على-1 مخصصة' : 'Delivery format: Small group micro-batches (8–12 students) or 1-on-1 private tutoring'}</span>
                   </li>
                   <li style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                     <CheckCircle2 size={18} color="#1E7E34" />
@@ -393,7 +425,7 @@ const SATCourse = ({ locationName = 'Sharjah' }) => {
                       {isAr ? 'المواعيد والأوقات' : 'BATCH SCHEDULES'}
                     </span>
                     <h3 style={{ fontSize: '1.35rem', marginTop: '2px' }}>
-                      {isAr ? 'حصص عطلة نهاية الأسبوع والفترات المسائية' : 'Weekend & Weekday Class Timetables'}
+                      {isAr ? 'حصص عطلة نهاية الأسبوع والفترات المسائية' : 'Weekend SAT Classes & Weekday Evening Batches'}
                     </h3>
                   </div>
                 </div>
@@ -459,9 +491,9 @@ const SATCourse = ({ locationName = 'Sharjah' }) => {
         <section className="sat-programs-section">
           <div className="sat-section-container">
             <div className="sat-section-header-center">
-              <div className="sat-why-eyebrow">{isAr ? 'اختيار المسار التدريبي' : 'PROGRAMME SELECTION'}</div>
+              <div className="sat-why-eyebrow">{isAr ? 'اختيار المسار التدريبي' : 'SAT COURSE TRACKS'}</div>
               <h2 className="sat-why-title" style={{ fontSize: '2.4rem' }}>
-                {isAr ? 'ابدأ من مستواك الحالي نحو درجتك المستهدفة' : 'Start with your current level and target.'}
+                {isAr ? 'اختر مسار دورة SAT المناسب لمستواك ودرجتك المستهدفة' : 'Choose Your Ideal Digital SAT Course Track'}
               </h2>
             </div>
 
@@ -470,7 +502,7 @@ const SATCourse = ({ locationName = 'Sharjah' }) => {
               <div className="sat-program-card">
                 <div>
                   <span className="sat-program-duration">{isAr ? 'المهارات الأساسية (12 أسبوعاً)' : 'CORE SKILLS · 12 WEEKS'}</span>
-                  <h3 className="sat-program-title">{isAr ? 'المسار التأسيسي (Foundation)' : 'Foundation Track'}</h3>
+                  <h3 className="sat-program-title">{isAr ? 'دورة التأسيس (Foundation SAT Course)' : 'Foundation SAT Course (12 Wks)'}</h3>
                   <p className="sat-program-subtitle">
                     {isAr ? 'بناء المفاهيم الأساسية وسد الفجوات في الجبر واللغة الإنجليزية.' : 'Build foundational concepts in algebra and reading comprehension.'}
                   </p>
@@ -496,7 +528,7 @@ const SATCourse = ({ locationName = 'Sharjah' }) => {
                 <div className="sat-featured-badge">{isAr ? 'الأكثر طلباً' : 'MOST POPULAR'}</div>
                 <div>
                   <span className="sat-program-duration">{isAr ? 'تحضير شامل متكامل (8 أسابيع)' : 'COMPLETE PREPARATION · 8 WEEKS'}</span>
-                  <h3 className="sat-program-title">{isAr ? 'المسار الشامل (Comprehensive)' : 'Comprehensive Track'}</h3>
+                  <h3 className="sat-program-title">{isAr ? 'الدورة الشاملة (Comprehensive SAT Course)' : 'Comprehensive SAT Course (8 Wks)'}</h3>
                   <p className="sat-program-subtitle">
                     {isAr ? 'جاهزية تامة وتفوق في كلا قسمي الاختبار للوصول إلى 1450+.' : 'Develop complete Digital SAT mastery across all 8 domains.'}
                   </p>
@@ -521,7 +553,7 @@ const SATCourse = ({ locationName = 'Sharjah' }) => {
               <div className="sat-program-card">
                 <div>
                   <span className="sat-program-duration">{isAr ? 'تدريب مكثف سريع (4 أسابيع)' : 'TARGETED SPRINT · 4 WEEKS'}</span>
-                  <h3 className="sat-program-title">{isAr ? 'المسار المكثف (Intensive)' : 'Intensive Track'}</h3>
+                  <h3 className="sat-program-title">{isAr ? 'حصص مكثفة سريعة (Intensive SAT Classes)' : 'Intensive SAT Classes Sprint (4 Wks)'}</h3>
                   <p className="sat-program-subtitle">
                     {isAr ? 'تدريب سريع ومكثف لرفع الدرجة لأقصى حد قبل موعد الامتحان.' : 'High-impact score-push for retakers and upcoming test dates.'}
                   </p>
@@ -646,11 +678,11 @@ const SATCourse = ({ locationName = 'Sharjah' }) => {
                 ) : (
                   isAr ? (
                     <>
-                      يقع معهد أكاديمية نطاق في <strong>مكتب F103، الطابق F1، برج أبو خمسين، المجاز 3، الشارقة</strong>. يُعد معهدنا الخيار المثالي للعائلات التي تبحث عن أفضل معهد SAT في الشارقة أو دروس SAT قريبة في منطقة المجاز، كورنيش البحيرة، الخان، التعاون، النهدة، ومناطق دبي المجاورة، حيث نوفر فصولاً دراسية مجهزة بأحدث التقنيات وبيئة اختبارات محاكاة تكيفية ومجموعات صغيرة معتمدة من هيئة الشارقة للتعليم الخاص.
+                      يقع معهد أكاديمية نطاق في <strong>مكتب F103، الطابق F1، برج أبو خمسين، المجاز 3، الشارقة</strong>. يُعد معهدنا الخيار المثالي للعائلات التي تبحث عن أفضل دورة SAT في الشارقة أو حصص SAT قريبة مني في منطقة المجاز، كورنيش البحيرة، الخان، التعاون، النهدة، ومويلح، حيث نوفر فصولاً دراسية مجهزة بأحدث التقنيات وبيئة اختبارات محاكاة تكيفية ومجموعات صغيرة معتمدة من هيئة الشارقة للتعليم الخاص.
                     </>
                   ) : (
                     <>
-                      For families seeking the best SAT institute in Sharjah or searching for accredited SAT classes near me in Al Majaz, Buhaira Corniche, Al Khan, Al Taawun, and Al Nahda, Nitaq Academy provides a premier SPEA-authorized learning environment. Located at <strong>Abu Khamseen Tower - Office : F103, Floor F1 - Al Majaz 3 - Al Majaz - Sharjah - United Arab Emirates</strong>, our center features high-tech classrooms, small interactive cohorts, dedicated study spaces, and distraction-free proctored adaptive testing facilities.
+                      For families seeking the best <strong>SAT course</strong> or accredited <strong>SAT classes in Sharjah</strong>, or searching for trusted <strong>SAT classes near me</strong> across Al Majaz, Buhaira Corniche, Al Khan, Al Taawun, Al Nahda, and Muwaileh, Nitaq Academy provides a premier SPEA-authorized learning environment. Located at <strong>Abu Khamseen Tower - Office : F103, Floor F1 - Al Majaz 3 - Al Majaz - Sharjah - United Arab Emirates</strong>, our center features high-tech classrooms, small interactive cohorts, dedicated study spaces, and distraction-free proctored adaptive testing facilities.
                     </>
                   )
                 )}
