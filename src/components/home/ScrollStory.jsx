@@ -5,12 +5,11 @@ import WarpGridCanvas from './WarpGridCanvas';
 export default function ScrollStory({ c }) {
   return (
     <section className="nh-story" aria-labelledby="nh-hero-title">
-      {/* Interactive gravitational singularity rubber-sheet dot grid */}
+      {/* Clean ambient hero atmosphere with soft gradient */}
       <div className="nh-atmosphere" aria-hidden="true">
         <WarpGridCanvas />
         <span className="nh-orbit nh-orbit-one" />
         <span className="nh-orbit nh-orbit-two" />
-        <span className="nh-academic">x² &nbsp; √ &nbsp; +</span>
       </div>
 
       <div className="nh-story-inner nh-hero-grid">

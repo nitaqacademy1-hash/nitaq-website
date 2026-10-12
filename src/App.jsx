@@ -113,6 +113,17 @@ const HowToRegisterForSatGuide = lazy(() => import('./pages/article/HowToRegiste
 const SatGrammarRulesGuide = lazy(() => import('./pages/article/SatGrammarRulesGuide'));
 const SatMathFormulaSheetDesmosGuide = lazy(() => import('./pages/article/SatMathFormulaSheetDesmosGuide'));
 const SatTestCentersUaeGuide = lazy(() => import('./pages/article/SatTestCentersUaeGuide'));
+const SatDatesUaeGuide = lazy(() => import('./pages/article/SatDatesUaeGuide'));
+const BluebookSatGuide = lazy(() => import('./pages/article/BluebookSatGuide'));
+const DesmosSatGuide = lazy(() => import('./pages/article/DesmosSatGuide'));
+const SatSuiteQuestionBankGuide = lazy(() => import('./pages/article/SatSuiteQuestionBankGuide'));
+const HowToAceSatGuide = lazy(() => import('./pages/article/HowToAceSatGuide'));
+const SatMathPracticeGuide = lazy(() => import('./pages/article/SatMathPracticeGuide'));
+const KhanAcademySatComparisonGuide = lazy(() => import('./pages/article/KhanAcademySatComparisonGuide'));
+const SatPrepOptionsUaeComparisonGuide = lazy(() => import('./pages/article/SatPrepOptionsUaeComparisonGuide'));
+const SatUniversityRequirementsGuide = lazy(() => import('./pages/article/SatUniversityRequirementsGuide'));
+const SatEnglishReadingWritingGuide = lazy(() => import('./pages/article/SatEnglishReadingWritingGuide'));
+const WhatDoesSatStandForGuide = lazy(() => import('./pages/article/WhatDoesSatStandForGuide'));
 
 const TermsAndConditions = lazy(() => import('./pages/legal/TermsAndConditions'));
 const PrivacyPolicy = lazy(() => import('./pages/legal/PrivacyPolicy'));
@@ -305,6 +316,17 @@ function LocalizedRoutes() {
         <Route path="article/sat-grammar-rules-digital-reading-writing-guide" element={<SatGrammarRulesGuide />} />
         <Route path="article/sat-math-formula-sheet-desmos-calculator-guide" element={<SatMathFormulaSheetDesmosGuide />} />
         <Route path="article/sat-test-centers-uae-sharjah-dubai-guide" element={<SatTestCentersUaeGuide />} />
+        <Route path="article/sat-dates-uae-2026-2027-test-dates" element={<SatDatesUaeGuide />} />
+        <Route path="article/bluebook-sat-guide-digital-exam-app" element={<BluebookSatGuide />} />
+        <Route path="article/desmos-sat-guide-math-calculator-strategies" element={<DesmosSatGuide />} />
+        <Route path="article/sat-suite-question-bank-practice-guide" element={<SatSuiteQuestionBankGuide />} />
+        <Route path="article/how-to-ace-sat-study-plan-guide" element={<HowToAceSatGuide />} />
+        <Route path="article/sat-math-practice-questions-traps-guide" element={<SatMathPracticeGuide />} />
+        <Route path="article/khan-academy-sat-vs-structured-coaching" element={<KhanAcademySatComparisonGuide />} />
+        <Route path="article/sat-prep-options-uae-academy-comparison" element={<SatPrepOptionsUaeComparisonGuide />} />
+        <Route path="article/sat-requirements-uae-top-universities-harvard" element={<SatUniversityRequirementsGuide />} />
+        <Route path="article/sat-english-reading-writing-practice-guide" element={<SatEnglishReadingWritingGuide />} />
+        <Route path="article/what-does-sat-stand-for-digital-sat-explained" element={<WhatDoesSatStandForGuide />} />
 
         {/* IG Landing Pages */}
         <Route path="ig/2026-03-29" element={<ResumeGuide />} />

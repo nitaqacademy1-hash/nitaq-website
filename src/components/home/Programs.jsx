@@ -197,7 +197,7 @@ export default function Programs({ c }) {
                         <h3 className="nh-sliver-title">{title}</h3>
                         <p className="nh-sliver-desc">{body}</p>
                         <div className="nh-sliver-cta">
-                          <span>{c.discover}</span>
+                          <span>{c.programs[i][4] || c.discover}</span>
                           <ArrowUpRight size={15} />
                         </div>
                       </div>

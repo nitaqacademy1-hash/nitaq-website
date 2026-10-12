@@ -2,48 +2,45 @@ import React from 'react';
 
 const ORGANIZATIONS = [
   {
-    id: 'british-council',
-    name: 'BRITISH COUNCIL',
-    logo: '/images/partner_british_council.webp',
-    width: 140,
-    height: 40,
-    alt: 'British Council accredited partner',
-  },
-  {
-    id: 'ielts',
-    name: 'IELTS',
-    logo: '/images/partner_ielts_trans.webp',
-    width: 80,
-    height: 44,
-    alt: 'IELTS official test preparation partner',
-  },
-  {
     id: 'spea',
     name: 'SPEA SHARJAH',
+    role: 'Licensed Institute',
     logo: '/images/partner_spea_trans.webp',
     width: 65,
     height: 46,
     alt: 'Sharjah Private Education Authority licensed institute',
   },
   {
+    id: 'ielts',
+    name: 'IELTS PREPARATION',
+    role: 'Preparation & Registration Assistance',
+    logo: '/images/partner_ielts_trans.webp',
+    width: 80,
+    height: 44,
+    alt: 'Official IELTS Preparation & Registration Assistance',
+  },
+  {
     id: 'pearson',
     name: 'PEARSON PTE',
+    role: 'Academic Preparation',
     logo: '/images/partner_pearson.webp',
     width: 135,
     height: 40,
-    alt: 'Pearson PTE academic testing partner',
+    alt: 'Pearson PTE academic testing preparation',
   },
   {
     id: 'toefl',
     name: 'ETS TOEFL',
+    role: 'Exam Preparation',
     logo: '/images/partner_toefl_trans.webp',
     width: 130,
     height: 38,
-    alt: 'ETS TOEFL authorized preparation center',
+    alt: 'ETS TOEFL test preparation',
   },
   {
     id: 'acca',
     name: 'ACCA GLOBAL',
+    role: 'Professional Tuition',
     logo: '/images/partner_acca_trans.webp',
     width: 48,
     height: 48,
@@ -80,6 +77,7 @@ export default function TrustedOrganizations({ c }) {
                 />
               </div>
               <span className="nh-trusted-label">{org.name}</span>
+              {org.role && <span className="nh-trusted-role text-xs text-slate-400 block mt-0.5">{org.role}</span>}
             </div>
           ))}
         </div>

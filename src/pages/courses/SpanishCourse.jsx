@@ -37,41 +37,33 @@ const SpanishCourse = () => {
                 </div>
             </div>
 
-            {/* Spanish Programs */}
+            {/* Spanish Learning Tracks */}
             <div className="content-card">
-                <h2>Our Spanish <span className="text-gradient">Specializations</span></h2>
+                <h2>Choose Your <span className="text-gradient">Learning Track</span></h2>
+                <p style={{ color: 'var(--text-gray)', fontSize: '0.95rem', marginBottom: '25px', lineHeight: 1.6 }}>
+                    Your recommended study hours depend on your starting level and target goal. A standard course package provides a dedicated number of guided lessons; mastering a complete CEFR level typically combines classroom instruction with independent conversational practice.
+                </p>
                 <div className="tracks-grid">
 
                     <div className="feature-item" style={{ borderTop: '4px solid var(--primary-color)' }}>
-                        <h3 style={{ color: 'var(--primary-color)', marginBottom: '10px' }}>General Spanish</h3>
-                        <p style={{ color: 'var(--text-gray)', fontSize: '0.85rem', marginBottom: '15px', fontWeight: 600 }}>A1-C2 | Interactive</p>
+                        <h3 style={{ color: 'var(--primary-color)', marginBottom: '10px' }}>General Spanish (A1–C1)</h3>
+                        <p style={{ color: 'var(--text-gray)', fontSize: '0.85rem', marginBottom: '15px', fontWeight: 600 }}>Everyday Communication & Work</p>
                         <ul className="styled-list">
-                            <li>Balanced four-skill focus sessions</li>
-                            <li>Practical daily vocabulary drills</li>
-                            <li>Cultural immersion and discussion</li>
-                            <li>Supportive small group dynamics</li>
+                            <li>Placement assessment based on current ability</li>
+                            <li>Balanced speaking, listening, reading & writing</li>
+                            <li>Practical conversational simulations for travel & business</li>
+                            <li>Interactive small-group dynamics in Sharjah or online</li>
                         </ul>
                     </div>
 
                     <div className="feature-item" style={{ borderTop: '4px solid var(--accent-color)' }}>
-                        <h3 style={{ color: 'var(--accent-color)', marginBottom: '10px' }}>DELE Exam Prep</h3>
-                        <p style={{ color: 'var(--text-gray)', fontSize: '0.85rem', marginBottom: '15px', fontWeight: 600 }}>Certification | Intensive</p>
+                        <h3 style={{ color: 'var(--accent-color)', marginBottom: '10px' }}>Exam Preparation (DELE & SIELE)</h3>
+                        <p style={{ color: 'var(--text-gray)', fontSize: '0.85rem', marginBottom: '15px', fontWeight: 600 }}>Official International Certification</p>
                         <ul className="styled-list">
-                            <li>Requirement comprehensive review</li>
-                            <li>Past exam paper intensive practice</li>
-                            <li>Oral & written module techniques</li>
-                            <li>Individualized coaching sessions</li>
-                        </ul>
-                    </div>
-
-                    <div className="feature-item" style={{ borderTop: '4px solid var(--primary-color)' }}>
-                        <h3 style={{ color: 'var(--primary-color)', marginBottom: '10px' }}>Spanish for Travel</h3>
-                        <p style={{ color: 'var(--text-gray)', fontSize: '0.85rem', marginBottom: '15px', fontWeight: 600 }}>Practical | Fast-Track</p>
-                        <ul className="styled-list">
-                            <li>Essential phrases for travelers</li>
-                            <li>Real-world navigation simulations</li>
-                            <li>Social interaction etiquette</li>
-                            <li>Regional dialectal culture tips</li>
+                            <li>Targeted preparation for official Instituto Cervantes diplomas</li>
+                            <li>Timed module practice across reading, listening, writing & speaking</li>
+                            <li>Past exam paper drills with detailed examiner feedback</li>
+                            <li>Specialized task strategies for DELE Escolar or SIELE Global</li>
                         </ul>
                     </div>
 
@@ -82,12 +74,11 @@ const SpanishCourse = () => {
             <div className="content-card">
                 <h2>Why Choose <span className="text-gradient">Nitaq for Spanish?</span></h2>
                 <ul className="styled-list">
-                    <li><strong>Experienced Trainers:</strong> passionate instructors with deep linguistic and cultural expertise.</li>
-                    <li><strong>Active Learning:</strong> strong focus on speaking and listening through immersive role-plays.</li>
-                    <li><strong>Flexible Batches:</strong> convenient weekday and weekend options to fit your lifestyle.</li>
-                    <li><strong>Personalized Attention:</strong> small class sizes ensuring a tailored and encouraging atmosphere.</li>
-                    <li><strong>Global Standards:</strong> modern curriculum strictly aligned with the international CEFR framework.</li>
-                    <li><strong>Modern Resources:</strong> full access to premium study materials and digital interactive tools.</li>
+                    <li><strong>Certified Native & Bilingual Instructors:</strong> Passionate language specialists with deep linguistic expertise.</li>
+                    <li><strong>Active Communicative Approach:</strong> Immediate focus on speaking and listening through real-world dialogue.</li>
+                    <li><strong>Flexible Schedules:</strong> Weekday evening and weekend morning batches designed for working adults and school students.</li>
+                    <li><strong>Small Class Sizes:</strong> Micro-batches (4–8 learners) ensuring ample speaking time and individualized correction.</li>
+                    <li><strong>CEFR International Framework:</strong> Systematic progression from A1 (Breakthrough) to B2/C1 (Proficiency).</li>
                 </ul>
             </div>
 
@@ -96,68 +87,49 @@ const SpanishCourse = () => {
                 <div className="content-card" style={{ marginBottom: 0 }}>
                     <h3 style={{ fontSize: '1.4rem' }}>Ideal For</h3>
                     <ul className="styled-list">
-                        <li>Travelers visiting Spain or Latin America</li>
-                        <li>Professionals with Spanish-speaking partners</li>
-                        <li>Students adding a global language profile</li>
-                        <li>Culture enthusiasts and avid explorers</li>
+                        <li>Professionals expanding business connections in Spain & Latin America</li>
+                        <li>High school students preparing for DELE Escolar or university language credits</li>
+                        <li>Travel enthusiasts seeking authentic conversational confidence</li>
+                        <li>Expats seeking to master a globally spoken third language</li>
                     </ul>
                 </div>
                 <div className="content-card" style={{ marginBottom: 0 }}>
                     <h3 style={{ fontSize: '1.4rem' }}>Learning Outcomes</h3>
                     <ul className="styled-list">
-                        <li>Speak confidently in everyday interactions</li>
-                        <li>Understand native speakers in various contexts</li>
-                        <li>Read and write Spanish texts with clarity</li>
-                        <li>Pass official DELE proficiency examinations</li>
+                        <li>Conduct fluent everyday conversations in Spanish</li>
+                        <li>Understand diverse native accents and media</li>
+                        <li>Compose structured personal and professional correspondence</li>
+                        <li>Attain certified DELE or SIELE proficiency credentials</li>
                     </ul>
                 </div>
             </div>
 
-            
-            {/* FAQ Section */}
+            {/* Specific FAQ Section */}
             <div className="content-card">
-                <h2>Spanish Language <span className="text-gradient">FAQs</span></h2>
+                <h2>Spanish Language & Exam <span className="text-gradient">FAQs</span></h2>
                 <div className="faq-accordion-group">
                     <details className="faq-accordion">
-                        <summary>What is the Spanish Language exam?</summary>
+                        <summary>What is the difference between the DELE and SIELE Spanish exams?</summary>
                         <div className="faq-accordion-content">
-                            <p>Please contact our counselors for detailed information regarding the Spanish Language structure and requirements.</p>
+                            <p><strong>DELE</strong> (Diploma de Español como Lengua Extranjera) is a lifetime official diploma issued by Instituto Cervantes on fixed dates. <strong>SIELE</strong> (Servicio Internacional de Evaluación de la Lengua Española) is a flexible, digitally administered proficiency certificate valid for 5 years with multi-level scoring. Our academic advisors help you choose the right exam based on your university or visa timeline.</p>
                         </div>
                     </details>
                     <details className="faq-accordion">
-                        <summary>How long is the course?</summary>
+                        <summary>How many hours does it take to complete a full Spanish level (e.g., A1 or A2)?</summary>
                         <div className="faq-accordion-content">
-                            <p>The duration varies based on the proficiency level and chosen track. Most programs range from 20 to 50 hours.</p>
+                            <p>According to CEFR guidelines, achieving A1 proficiency typically requires 60 to 80 guided instructional hours combined with regular practice. Nitaq offers intensive tracks (8–10 weeks) and standard tracks (12–16 weeks) to meet your schedule.</p>
                         </div>
                     </details>
                     <details className="faq-accordion">
-                        <summary>What score is required?</summary>
+                        <summary>Can I take a placement test before enrolling?</summary>
                         <div className="faq-accordion-content">
-                            <p>Target scores depend on your specific university or professional goals. We provide customized plans to help you reach your required score.</p>
+                            <p>Yes. If you have prior experience with Spanish, our instructors conduct a free 15-minute diagnostic assessment covering speaking and grammar to place you into the exact CEFR level that fits you.</p>
                         </div>
                     </details>
                     <details className="faq-accordion">
-                        <summary>Do you provide mock tests?</summary>
+                        <summary>Are classes available in-person at your Sharjah center and online?</summary>
                         <div className="faq-accordion-content">
-                            <p>Yes, comprehensive mock tests and practice materials are an integral part of all our training programs.</p>
-                        </div>
-                    </details>
-                    <details className="faq-accordion">
-                        <summary>Is online available?</summary>
-                        <div className="faq-accordion-content">
-                            <p>Yes, we offer both interactive online classes and traditional offline in-person training formats.</p>
-                        </div>
-                    </details>
-                    <details className="faq-accordion">
-                        <summary>What is the fee?</summary>
-                        <div className="faq-accordion-content">
-                            <p>Our fees are highly competitive. Please reach out to our admission team for the latest pricing and ongoing offers.</p>
-                        </div>
-                    </details>
-                    <details className="faq-accordion">
-                        <summary>When can I start?</summary>
-                        <div className="faq-accordion-content">
-                            <p>We have flexible intake dates with new batches starting frequently. Contact us to find the next available schedule.</p>
+                            <p>Yes. You can attend in-person classes at our modern training center in Abu Khamseen Tower, Al Majaz 3, Sharjah, or join live interactive online sessions via Zoom with live instructor feedback.</p>
                         </div>
                     </details>
                 </div>

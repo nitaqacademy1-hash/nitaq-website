@@ -193,6 +193,28 @@ export default function Navbar({ c }) {
             </div>
           </div>
 
+          {/* 5. Articles */}
+          <div className="nh-nav-item">
+            <Link
+              to="/articles"
+              className="nh-nav-link"
+              onClick={close}
+            >
+              {isAr ? 'المقالات والأدلة' : 'Articles'}
+            </Link>
+          </div>
+
+          {/* 6. Contact */}
+          <div className="nh-nav-item">
+            <Link
+              to="/contact"
+              className="nh-nav-link"
+              onClick={close}
+            >
+              {isAr ? 'تواصل معنا' : 'Contact'}
+            </Link>
+          </div>
+
           {/* Mobile Actions Inside Drawer */}
           <div className="nh-mobile-actions-row mobile-only-block">
             <button

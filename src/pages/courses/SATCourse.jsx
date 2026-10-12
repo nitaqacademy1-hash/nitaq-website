@@ -815,14 +815,14 @@ const SATCourse = ({ locationName = 'Sharjah' }) => {
               )}
             </div>
 
-            <div style={{ marginTop: '36px', textAlign: 'center', fontSize: '0.95rem', color: '#475467' }}>
+            <div style={{ marginTop: '36px', textAlign: 'center', fontSize: '0.95rem', color: '#475467', lineHeight: '1.8' }}>
               {isAr ? (
                 <>
-                  هل تفاضل بين اختبار SAT واختبار IELTS لأهداف الدراسة بالخارج والقبول الجامعي؟ اقرأ <Link to="/article/sat-vs-ielts-guide" style={{ color: '#166534', fontWeight: 700, textDecoration: 'underline' }}>دليل المقارنة بين SAT وIELTS</Link>.
+                  هل تبحث عن المزيد من مصادر الاختبار؟ استكشف <Link to="/article/sat-dates-uae-2026-2027-test-dates" style={{ color: '#166534', fontWeight: 700, textDecoration: 'underline' }}>مواعيد SAT في الإمارات 2026–2027</Link>، أو <Link to="/article/desmos-sat-guide-math-calculator-strategies" style={{ color: '#166534', fontWeight: 700, textDecoration: 'underline' }}>استراتيجيات آلة Desmos</Link>، أو <Link to="/article/bluebook-sat-guide-digital-exam-app" style={{ color: '#166534', fontWeight: 700, textDecoration: 'underline' }}>دليل تطبيق Bluebook</Link>، أو اقرأ <Link to="/article/sat-vs-ielts-guide" style={{ color: '#166534', fontWeight: 700, textDecoration: 'underline' }}>دليل المقارنة بين SAT وIELTS</Link>.
                 </>
               ) : (
                 <>
-                  Deciding between the SAT and IELTS for university admissions and study abroad? Read our <Link to="/article/sat-vs-ielts-guide" style={{ color: '#166534', fontWeight: 700, textDecoration: 'underline' }}>SAT vs. IELTS comparison guide</Link>.
+                  Looking for more official exam resources? Explore the <Link to="/article/sat-dates-uae-2026-2027-test-dates" style={{ color: '#166534', fontWeight: 700, textDecoration: 'underline' }}>SAT Dates UAE 2026–2027 Guide</Link>, master the <Link to="/article/desmos-sat-guide-math-calculator-strategies" style={{ color: '#166534', fontWeight: 700, textDecoration: 'underline' }}>Desmos Calculator Strategies</Link>, check the <Link to="/article/bluebook-sat-guide-digital-exam-app" style={{ color: '#166534', fontWeight: 700, textDecoration: 'underline' }}>Bluebook Digital App Guide</Link>, or read our <Link to="/article/sat-vs-ielts-guide" style={{ color: '#166534', fontWeight: 700, textDecoration: 'underline' }}>SAT vs. IELTS comparison guide</Link>.
                 </>
               )}
             </div>

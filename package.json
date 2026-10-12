@@ -10,6 +10,9 @@
     "inventory": "node scripts/generate-route-inventory.mjs",
     "seo:check": "node scripts/check-seo.mjs",
     "seo:sitemap-diff": "node scripts/generate-sitemap-diff.mjs",
+    "release:today": "node scripts/daily-publisher.mjs today",
+    "release:status": "node scripts/daily-publisher.mjs status",
+    "release:cron": "node scripts/daily-publisher.mjs cron-info",
     "lint": "eslint .",
     "preview": "vite preview"
   },

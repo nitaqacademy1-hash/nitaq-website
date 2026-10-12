@@ -28,12 +28,12 @@ export function initHomeAnimations(root) {
     // Navbar entrance
     gsap.fromTo(nav, { y: -15, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, ease: 'power2.out' });
 
-    // Hero content entrance (staggered)
+    // Hero content entrance: keep immediately readable, gentle non-blocking entrance
     const heroContent = query('.nh-hero-content > *');
     gsap.fromTo(
       heroContent,
-      { y: 32, opacity: 0 },
-      { y: 0, opacity: 1, stagger: 0.08, duration: 0.65, ease: 'power2.out', delay: 0.25 }
+      { y: 12, opacity: 0.85 },
+      { y: 0, opacity: 1, stagger: 0.04, duration: 0.45, ease: 'power2.out' }
     );
 
     // Hero visual entrance

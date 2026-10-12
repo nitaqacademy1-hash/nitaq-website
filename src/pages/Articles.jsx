@@ -6,6 +6,127 @@ import { Calendar, User, ArrowRight, ExternalLink, Filter, Search } from 'lucide
 
 const articles = [
     {
+        id: 44,
+        title: "What Does SAT Stand For? Digital SAT Explained for UAE Students",
+        excerpt: "Learn what the SAT acronym means, how the 2 hour 14 minute digital exam is structured, scoring scale from 400 to 1600, and why it is critical for UAE university admissions.",
+        category: "Digital SAT Explained",
+        path: "/article/what-does-sat-stand-for-digital-sat-explained",
+        coursePath: "/sat-preparation-sharjah",
+        courseLabel: "SAT Course",
+        date: "October 25, 2026",
+        image: "/images/sat_v2.webp"
+    },
+    {
+        id: 43,
+        title: "SAT English & Reading & Writing: What Students Need to Practice",
+        excerpt: "Breakdown of the 4 verbal domains: Information & Ideas, Craft & Structure, Grammar Conventions, and Rhetorical Synthesis note-taking shortcuts.",
+        category: "SAT Reading & Writing",
+        path: "/article/sat-english-reading-writing-practice-guide",
+        coursePath: "/sat/diagnostic",
+        courseLabel: "Take Diagnostic",
+        date: "October 24, 2026",
+        image: "/images/sat_v2.webp"
+    },
+    {
+        id: 42,
+        title: "SAT Requirements for UAE & Top International Universities (2026–2027)",
+        excerpt: "Compare minimum cutoffs and competitive score bands for American University of Sharjah, Khalifa University, NYU Abu Dhabi, and Ivy League benchmarks like Harvard.",
+        category: "University Admissions",
+        path: "/article/sat-requirements-uae-top-universities-harvard",
+        coursePath: "/sat-preparation-sharjah",
+        courseLabel: "SAT Course",
+        date: "October 23, 2026",
+        image: "/images/sat_v2.webp"
+    },
+    {
+        id: 41,
+        title: "SAT Prep Options in the UAE: What to Compare Before Choosing an Academy",
+        excerpt: "A parent and student guide to evaluating SAT coaching across Sharjah and Dubai. Compare licensing, batch size, adaptive software, and mentorship models objectively.",
+        category: "SAT Academy Guide",
+        path: "/article/sat-prep-options-uae-academy-comparison",
+        coursePath: "/sat-preparation-sharjah",
+        courseLabel: "SAT Course",
+        date: "October 22, 2026",
+        image: "/images/sat_v2.webp"
+    },
+    {
+        id: 40,
+        title: "Khan Academy SAT vs Structured SAT Coaching: Which Approach Fits You?",
+        excerpt: "An objective, practical guide exploring the strengths of Khan Academy’s official free platform and when UAE students benefit from structured, teacher-led coaching.",
+        category: "SAT Prep Comparison",
+        path: "/article/khan-academy-sat-vs-structured-coaching",
+        coursePath: "/sat/diagnostic",
+        courseLabel: "Take Diagnostic",
+        date: "October 21, 2026",
+        image: "/images/sat_v2.webp"
+    },
+    {
+        id: 39,
+        title: "SAT Math Practice: Questions, Strategy & Common Traps",
+        excerpt: "Master the trickiest question types on the Digital SAT Math section: discriminant constants, extraneous solutions, function shifts, and Desmos verification shortcuts.",
+        category: "SAT Math Practice",
+        path: "/article/sat-math-practice-questions-traps-guide",
+        coursePath: "/sat/diagnostic",
+        courseLabel: "Take Diagnostic",
+        date: "October 20, 2026",
+        image: "/images/sat_v2.webp"
+    },
+    {
+        id: 38,
+        title: "How to Ace the SAT: A 30/60/90-Day Preparation Plan for UAE Students",
+        excerpt: "A comprehensive, step-by-step preparation blueprint tailored for UAE students. Master pacing strategies, score target benchmarks (1400–1550+), and school curriculum balance.",
+        category: "SAT Study Roadmap",
+        path: "/article/how-to-ace-sat-study-plan-guide",
+        coursePath: "/sat-preparation-sharjah",
+        courseLabel: "SAT Course",
+        date: "October 19, 2026",
+        image: "/images/sat_v2.webp"
+    },
+    {
+        id: 37,
+        title: "SAT Suite Question Bank: How to Practice Effectively in UAE",
+        excerpt: "Access thousands of official College Board practice questions. Learn how to filter by skill, avoid spoiling official Bluebook practice tests, and build an error-tracking system.",
+        category: "SAT Question Bank",
+        path: "/article/sat-suite-question-bank-practice-guide",
+        coursePath: "/sat/diagnostic",
+        courseLabel: "Take Diagnostic",
+        date: "October 18, 2026",
+        image: "/images/sat_v2.webp"
+    },
+    {
+        id: 36,
+        title: "Desmos SAT Guide: Top Calculator Strategies for Digital SAT Math",
+        excerpt: "Unlock the full power of the built-in Desmos graphing calculator. Learn regression formulas, slider hacks, root-finding shortcuts, and system-solving tricks for an 800 Math score.",
+        category: "SAT Math & Desmos",
+        path: "/article/desmos-sat-guide-math-calculator-strategies",
+        coursePath: "/sat/diagnostic",
+        courseLabel: "Take Diagnostic",
+        date: "October 17, 2026",
+        image: "/images/sat_v2.webp"
+    },
+    {
+        id: 35,
+        title: "Bluebook SAT Guide: How the Digital SAT Test App Works",
+        excerpt: "Master the official College Board testing application. Explore built-in test tools, adaptive module routing, approved device requirements, and exam-day offline protocols.",
+        category: "Bluebook App Guide",
+        path: "/article/bluebook-sat-guide-digital-exam-app",
+        coursePath: "/sat/diagnostic",
+        courseLabel: "Take Diagnostic",
+        date: "October 16, 2026",
+        image: "/images/sat_v2.webp"
+    },
+    {
+        id: 34,
+        title: "SAT Dates UAE 2026–2027: October, November & December Test Dates",
+        excerpt: "Complete schedule of upcoming Digital SAT exam dates in UAE, registration deadlines, Sharjah & Dubai center availability, AED test fees, and late registration rules.",
+        category: "SAT Dates & Deadlines",
+        path: "/article/sat-dates-uae-2026-2027-test-dates",
+        coursePath: "/sat-preparation-sharjah",
+        courseLabel: "SAT Course",
+        date: "October 15, 2026",
+        image: "/images/sat_v2.webp"
+    },
+    {
         id: 33,
         title: "SAT Grammar Rules: The Complete Digital SAT Reading & Writing Guide",
         excerpt: "Master all 8 core Standard English Conventions rules tested on the Digital SAT: punctuation, semicolons, colons, dangling modifiers, and transition word strategies.",

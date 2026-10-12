@@ -1,19 +1,48 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { useLanguage } from '../i18n/context';
 import { trackEvent, ANALYTICS_EVENTS } from '../utils/analytics';
 
 const ContactForm = ({ mode = 'contact' }) => {
     const { lang } = useLanguage();
     const isAr = lang === 'ar';
+    const location = useLocation();
+
+    // Check URL query parameters for pre-selected course and assessment purpose
+    const searchParams = new URLSearchParams(location.search);
+    const paramCourse = searchParams.get('course') || '';
+    const paramPurpose = searchParams.get('purpose') || '';
+    const isAssessment = mode === 'assessment' || paramPurpose === 'assessment';
+
+    const getInitialCourse = () => {
+        if (!paramCourse) return '';
+        const c = paramCourse.toLowerCase();
+        if (c.includes('sat')) return 'SAT';
+        if (c.includes('ielts')) return 'IELTS';
+        if (c.includes('math') || c.includes('tuition') || c.includes('academic')) return 'AcademicExcellence';
+        if (c.includes('spanish')) return 'Spanish';
+        if (c.includes('arabic')) return 'Spoken-Arabic';
+        if (c.includes('english')) return 'Spoken-English';
+        return paramCourse;
+    };
 
     const [formData, setFormData] = useState({
         name: '',
         email: '',
         phone: '',
-        subject: mode === 'contact' ? '' : (isAr ? 'استفسار عن الدورات' : 'Course Enquiry'),
-        course: '',
+        subject: mode === 'contact' ? '' : (isAssessment ? (isAr ? 'طلب تقييم دراسي للطفل' : 'Student Assessment Request') : (isAr ? 'استفسار عن الدورات' : 'Course Enquiry')),
+        course: getInitialCourse(),
+        grade: '',
+        curriculum: '',
         message: ''
     });
+
+    useEffect(() => {
+        const initial = getInitialCourse();
+        if (initial && !formData.course) {
+            setFormData(prev => ({ ...prev, course: initial }));
+        }
+    }, [location.search]);
     const [status, setStatus] = useState({ type: '', message: '' });
     const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -225,19 +254,64 @@ const ContactForm = ({ mode = 'contact' }) => {
                             </select>
                         </div>
                     )}
+                    {isAssessment && (
+                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '20px', marginTop: '20px' }}>
+                            <div>
+                                <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, color: '#334155', marginBottom: '8px' }} htmlFor={`cf-${mode}-grade`}>
+                                    {isAr ? 'الصف الدراسي للطالب' : "Student's Current Grade"}
+                                </label>
+                                <select
+                                    id={`cf-${mode}-grade`}
+                                    name="grade"
+                                    value={formData.grade}
+                                    onChange={handleChange}
+                                    style={{ width: '100%', padding: '14px 20px', borderRadius: '12px', border: '1px solid #e2e8f0', background: '#f8fafc', fontSize: '1rem' }}
+                                >
+                                    <option value="">{isAr ? 'اختر الصف' : 'Select Grade'}</option>
+                                    <option value="Grade 6">{isAr ? 'الصف 6 / السنة 7' : 'Grade 6 / Year 7'}</option>
+                                    <option value="Grade 7">{isAr ? 'الصف 7 / السنة 8' : 'Grade 7 / Year 8'}</option>
+                                    <option value="Grade 8">{isAr ? 'الصف 8 / السنة 9' : 'Grade 8 / Year 9'}</option>
+                                    <option value="Grade 9">{isAr ? 'الصف 9 / السنة 10 (IGCSE)' : 'Grade 9 / Year 10'}</option>
+                                    <option value="Grade 10">{isAr ? 'الصف 10 / السنة 11' : 'Grade 10 / Year 11'}</option>
+                                    <option value="Grade 11">{isAr ? 'الصف 11 / السنة 12 (IB/A-Level)' : 'Grade 11 / Year 12'}</option>
+                                    <option value="Grade 12">{isAr ? 'الصف 12 / السنة 13' : 'Grade 12 / Year 13'}</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, color: '#334155', marginBottom: '8px' }} htmlFor={`cf-${mode}-curriculum`}>
+                                    {isAr ? 'المنهج الدراسي' : 'School Curriculum'}
+                                </label>
+                                <select
+                                    id={`cf-${mode}-curriculum`}
+                                    name="curriculum"
+                                    value={formData.curriculum}
+                                    onChange={handleChange}
+                                    style={{ width: '100%', padding: '14px 20px', borderRadius: '12px', border: '1px solid #e2e8f0', background: '#f8fafc', fontSize: '1rem' }}
+                                >
+                                    <option value="">{isAr ? 'اختر المنهج' : 'Select Curriculum'}</option>
+                                    <option value="CBSE">CBSE (Indian)</option>
+                                    <option value="British / IGCSE">British / Cambridge / Edexcel</option>
+                                    <option value="IB">International Baccalaureate (IB)</option>
+                                    <option value="American">American Curriculum</option>
+                                    <option value="MoE">UAE National MoE</option>
+                                    <option value="Other">{isAr ? 'منهج آخر' : 'Other'}</option>
+                                </select>
+                            </div>
+                        </div>
+                    )}
                 </div>
                 <div>
                     <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, color: '#334155', marginBottom: '8px' }} htmlFor={`cf-${mode}-message`}>
-                        {isAr ? 'تفاصيل رسالتك أو استفسارك' : 'Your Message'}
+                        {isAr ? (isAssessment ? 'المواضيع أو النقاط التي يحتاج طفلك دعماً فيها' : 'تفاصيل رسالتك أو استفسارك') : (isAssessment ? 'Specific topics or challenges your child needs help with' : 'Your Message')}
                     </label>
                     <textarea
                         id={`cf-${mode}-message`}
                         name="message"
                         value={formData.message}
                         onChange={handleChange}
-                        required
-                        rows="5"
-                        placeholder={isAr ? 'اكتب رسالتك أو استفسارك هنا...' : 'Write your message here...'}
+                        required={!isAssessment}
+                        rows="4"
+                        placeholder={isAr ? 'اكتب تفاصيل إضافية هنا (اختياري)...' : (isAssessment ? 'e.g. Algebra word problems, quadratic equations, chemistry formulas...' : 'Write your message here...')}
                         style={{ width: '100%', padding: '14px 20px', borderRadius: '12px', border: '1px solid #e2e8f0', background: '#f8fafc', fontSize: '1rem', resize: 'vertical' }}
                     ></textarea>
                 </div>
@@ -252,7 +326,11 @@ const ContactForm = ({ mode = 'contact' }) => {
                         cursor: isSubmitting ? 'not-allowed' : 'pointer'
                     }}
                 >
-                    {isSubmitting ? (isAr ? 'جاري الإرسال...' : 'Sending...') : (isAr ? 'إرسال الرسالة الآن' : 'Send Message Now')}
+                    {isSubmitting 
+                        ? (isAr ? 'جاري الإرسال...' : 'Sending...') 
+                        : (isAssessment 
+                            ? (isAr ? 'طلب التقييم الدراسي الآن' : 'Request an Assessment') 
+                            : (isAr ? 'إرسال الرسالة الآن' : 'Send Message Now'))}
                 </button>
             </form>
         </div>

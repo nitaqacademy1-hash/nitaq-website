@@ -567,6 +567,12 @@ const FinalDiagnosticCTA = ({ onStartClick }) => {
               <span>•</span>
               <span>{isAr ? '15–20 دقيقة' : '15–20 Minutes'}</span>
             </div>
+
+            <p style={{ fontSize: '0.78rem', color: '#94A3B8', marginTop: '14px', maxWidth: '520px', margin: '14px auto 0', lineHeight: 1.5 }}>
+              {isAr
+                ? 'ملاحظة: هذا التقييم هو فحص تشخيصي أولي لتحديد نقاط القوة والضعف، وليس تنبؤاً رسمياً بدرجة College Board في اختبار SAT.'
+                : 'Note: Get an initial overview of strengths and areas for improvement. This screening is a diagnostic baseline, not an official College Board SAT score prediction.'}
+            </p>
           </div>
         </div>
       </div>

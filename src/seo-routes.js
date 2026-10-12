@@ -1,5 +1,302 @@
 export const seoRoutes = [
   {
+    path: "/article/sat-dates-uae-2026-2027-test-dates",
+    title: "SAT Dates UAE 2026–2027: October, November & December Test Dates | Nitaq Academy",
+    description: "Complete schedule of upcoming Digital SAT exam dates in UAE: registration deadlines, Sharjah & Dubai test center booking, AED fees, and late registration rules.",
+    canonical: "https://www.nitaqacademy.com/article/sat-dates-uae-2026-2027-test-dates",
+    ogTitle: "SAT Dates UAE 2026–2027: Test Dates & Deadlines | Nitaq Academy",
+    ogDescription: "Official Digital SAT exam dates, registration deadlines, and center availability in Sharjah and Dubai for UAE students.",
+    ogImage: "/images/sat_v2.webp",
+    twitterCard: "summary_large_image",
+    datePublished: "2026-10-15T08:00:00+04:00",
+    dateModified: "2026-10-15T08:00:00+04:00",
+    keywords: "sat dates uae, november sat date, october sat, when is november sat, sat dates 2027, sat registration deadline uae, digital sat dates sharjah, sat test centers dubai dates, sat fees aed",
+    faqSchema: [
+      {
+        question: "When is the November SAT in the UAE for 2026?",
+        answer: "The November Digital SAT takes place on Saturday, November 7, 2026. The regular registration deadline is October 23, 2026, and late registration closes on October 27, 2026."
+      },
+      {
+        question: "What is the total fee to take the Digital SAT in UAE in AED?",
+        answer: "The standard international Digital SAT fee is USD 111 (approximately AED 405), which includes the base exam fee of USD 68 and the International Regional Fee of USD 43."
+      },
+      {
+        question: "When are Digital SAT test scores released in UAE?",
+        answer: "Digital SAT scores are released online 13 to 14 days after exam day via your personal College Board student account."
+      }
+    ]
+  },
+  {
+    path: "/article/bluebook-sat-guide-digital-exam-app",
+    title: "Bluebook SAT Guide: How the Digital SAT Test App Works (2026–2027) | Nitaq Academy",
+    description: "Complete Bluebook app guide for UAE SAT takers: testing tools, built-in timer, mark for review, adaptive module routing, and approved laptop requirements.",
+    canonical: "https://www.nitaqacademy.com/article/bluebook-sat-guide-digital-exam-app",
+    ogTitle: "Bluebook SAT Guide: Official Exam Software Breakdown | Nitaq Academy",
+    ogDescription: "Master the College Board Bluebook testing app: adaptive test mechanics, Desmos integration, and exam day battery checklist.",
+    ogImage: "/images/sat_v2.webp",
+    twitterCard: "summary_large_image",
+    datePublished: "2026-10-16T08:00:00+04:00",
+    dateModified: "2026-10-16T08:00:00+04:00",
+    keywords: "bluebook sat, bluebook app, digital sat app, college board bluebook uae, bluebook adaptive modules, bluebook test day requirements, sat testing software",
+    faqSchema: [
+      {
+        question: "What happens if Wi-Fi disconnects during the test?",
+        answer: "Bluebook operates fully offline during the exam. If connection drops, all answers continue saving locally on your device without interruption."
+      },
+      {
+        question: "Can I bring an external mouse to the test center?",
+        answer: "Yes, external wired or Bluetooth mice and mouse pads are permitted for laptops and iPads at UAE test centers."
+      },
+      {
+        question: "When must I complete the Bluebook exam setup?",
+        answer: "You must open Bluebook 1 to 5 days prior to test day to complete exam check-in and download your admission ticket."
+      }
+    ]
+  },
+  {
+    path: "/article/desmos-sat-guide-math-calculator-strategies",
+    title: "Desmos SAT Guide: Top Calculator Strategies for Digital SAT Math | Nitaq Academy",
+    description: "Master the built-in Desmos graphing calculator for Digital SAT Math: regressions, system of equations intersections, sliders for constants, and speed shortcuts.",
+    canonical: "https://www.nitaqacademy.com/article/desmos-sat-guide-math-calculator-strategies",
+    ogTitle: "Desmos SAT Guide: Top Math Calculator Shortcuts | Nitaq Academy",
+    ogDescription: "Top 8 Desmos hacks for 800 SAT Math: regressions (~), system intersections, sliders, and root identification.",
+    ogImage: "/images/sat_v2.webp",
+    twitterCard: "summary_large_image",
+    datePublished: "2026-10-17T08:00:00+04:00",
+    dateModified: "2026-10-17T08:00:00+04:00",
+    keywords: "desmos sat, sat desmos shortcuts, desmos graphing calculator sat, james lu sat desmos, digital sat math calculator hacks, desmos regression sat, sat math 800 desmos",
+    faqSchema: [
+      {
+        question: "Is Desmos allowed on all Digital SAT Math questions?",
+        answer: "Yes, the built-in Desmos calculator is available across all 44 Math questions on both Module 1 and Module 2."
+      },
+      {
+        question: "How do regressions work in Desmos on the SAT?",
+        answer: "Use the tilde operator (~) to model quadratic equations (y1 ~ ax1^2 + bx1 + c) from table points without manual algebra."
+      },
+      {
+        question: "Can I convert decimals to fractions in Desmos?",
+        answer: "Yes, clicking the circle icon with [a/b] immediately converts any non-integer decimal into a simplified fraction."
+      }
+    ]
+  },
+  {
+    path: "/article/sat-suite-question-bank-practice-guide",
+    title: "SAT Suite Question Bank: How to Practice Effectively in UAE | Nitaq Academy",
+    description: "Official College Board SAT Suite Question Bank guide: how to filter by domain, avoid spoiling official Bluebook practice tests, and build an active error log.",
+    canonical: "https://www.nitaqacademy.com/article/sat-suite-question-bank-practice-guide",
+    ogTitle: "SAT Suite Question Bank Practice Guide | Nitaq Academy",
+    ogDescription: "How to use the College Board Question Bank effectively: filtering by skill, avoiding mock test spoilers, and active error logging.",
+    ogImage: "/images/sat_v2.webp",
+    twitterCard: "summary_large_image",
+    datePublished: "2026-10-18T08:00:00+04:00",
+    dateModified: "2026-10-18T08:00:00+04:00",
+    keywords: "sat suite question bank, question bank sat, college board question bank, sat practice questions uae, sat math question bank, sat reading writing question bank",
+    faqSchema: [
+      {
+        question: "Is the SAT Suite Question Bank free?",
+        answer: "Yes, the question bank is an official, free public web tool provided by the College Board for students and educators."
+      },
+      {
+        question: "Why should I filter out active practice test items?",
+        answer: "The Question Bank contains identical questions from official Bluebook Tests 1–6. Practicing them beforehand will inflate your diagnostic test scores."
+      },
+      {
+        question: "How many questions are in the Question Bank?",
+        answer: "It contains over 3,000 official College Board items across Reading & Writing and Math from recent digital testing pools."
+      }
+    ]
+  },
+  {
+    path: "/article/how-to-ace-sat-study-plan-guide",
+    title: "How to Ace the SAT: A 30/60/90-Day Preparation Plan for UAE Students | Nitaq Academy",
+    description: "Proven 30, 60, and 90-day Digital SAT preparation blueprints for UAE students. Master pacing strategies, score target benchmarks (1400–1550+), and school exam balance.",
+    canonical: "https://www.nitaqacademy.com/article/how-to-ace-sat-study-plan-guide",
+    ogTitle: "How to Ace the SAT: 30/60/90-Day Study Plan | Nitaq Academy",
+    ogDescription: "Step-by-step Digital SAT study schedules for 1400–1550+ score targets, balanced with UAE school board exams.",
+    ogImage: "/images/sat_v2.webp",
+    twitterCard: "summary_large_image",
+    datePublished: "2026-10-19T08:00:00+04:00",
+    dateModified: "2026-10-19T08:00:00+04:00",
+    keywords: "how to ace the sat, sat study plan uae, 30 day sat plan, 60 day sat schedule, how to score 1500 sat, digital sat study roadmap, sat preparation sharjah plan",
+    faqSchema: [
+      {
+        question: "How many study hours are needed for a 200-point increase?",
+        answer: "Most students require 60 to 80 hours of structured study covering concepts, Desmos shortcuts, and timed mock test analysis."
+      },
+      {
+        question: "How should UAE students balance school exams with SAT prep?",
+        answer: "Focus on SAT during weekends and school breaks, leveraging curriculum overlaps between Grade 11 algebra and SAT Math."
+      },
+      {
+        question: "Can I take the SAT multiple times?",
+        answer: "Yes, the College Board allows multiple attempts, and most UAE and international universities superscore your highest sections."
+      }
+    ]
+  },
+  {
+    path: "/article/sat-math-practice-questions-traps-guide",
+    title: "SAT Math Practice: Questions, Strategy & Common Traps | Nitaq Academy",
+    description: "Master hard Digital SAT Math questions and avoid College Board trap choices: discriminant constants, rational extraneous roots, function shifts, and Desmos verification.",
+    canonical: "https://www.nitaqacademy.com/article/sat-math-practice-questions-traps-guide",
+    ogTitle: "SAT Math Practice: Questions & Traps Guide | Nitaq Academy",
+    ogDescription: "Hard Digital SAT Math question walkthroughs: quadratic constants, function shifts, and Desmos verification tricks.",
+    ogImage: "/images/sat_v2.webp",
+    twitterCard: "summary_large_image",
+    datePublished: "2026-10-20T08:00:00+04:00",
+    dateModified: "2026-10-20T08:00:00+04:00",
+    keywords: "sat math practice, sat math questions, hard sat math questions, sat math traps, digital sat math module 2, sat math 800 guide, sat math formulas sharjah",
+    faqSchema: [
+      {
+        question: "How many grid-in questions are on the SAT Math section?",
+        answer: "Approximately 25% of questions (around 5 to 6 per module) are student-produced responses with no multiple-choice options."
+      },
+      {
+        question: "Can grid-in answers be negative on the Digital SAT?",
+        answer: "Yes, the Digital SAT supports negative numbers and fractions in the student-produced response entry box."
+      },
+      {
+        question: "How can I verify algebraic answers before submitting?",
+        answer: "Graph both sides of the equation in Desmos as two functions and verify where they intersect."
+      }
+    ]
+  },
+  {
+    path: "/article/khan-academy-sat-vs-structured-coaching",
+    title: "Khan Academy SAT vs Structured SAT Coaching: Which Fits You? | Nitaq Academy",
+    description: "Objective comparison of Khan Academy official free drills vs structured SAT coaching in UAE: self-study plateaus, Desmos speed training, and diagnostic scorecards.",
+    canonical: "https://www.nitaqacademy.com/article/khan-academy-sat-vs-structured-coaching",
+    ogTitle: "Khan Academy SAT vs Structured Coaching | Nitaq Academy",
+    ogDescription: "Compare free self-study drills with structured teacher-led coaching: when to choose which approach for your SAT score goal.",
+    ogImage: "/images/sat_v2.webp",
+    twitterCard: "summary_large_image",
+    datePublished: "2026-10-21T08:00:00+04:00",
+    dateModified: "2026-10-21T08:00:00+04:00",
+    keywords: "khan academy sat, free sat prep vs coaching, sat coaching sharjah, khan academy digital sat uae, best sat prep dubai, sat self study vs coaching",
+    faqSchema: [
+      {
+        question: "Can a student score 1500+ with only Khan Academy?",
+        answer: "Yes, for highly self-disciplined students. However, structured coaching provides timed pacing routines and advanced Desmos shortcuts that accelerate score jumps."
+      },
+      {
+        question: "Are Khan Academy questions identical to the real exam?",
+        answer: "They are authentic College Board materials, but practice modules are typically untimed, unlike the real adaptive test."
+      },
+      {
+        question: "How does Nitaq Academy use Khan Academy?",
+        answer: "We assign specific Khan Academy skill drills as targeted homework between live mentor-led classroom sessions."
+      }
+    ]
+  },
+  {
+    path: "/article/sat-prep-options-uae-academy-comparison",
+    title: "SAT Prep Options in the UAE: What to Compare Before Choosing an Academy | Nitaq Academy",
+    description: "A transparent guide to evaluating SAT coaching institutes across Sharjah and Dubai. Compare licensing, batch size, adaptive mock software, and mentorship models.",
+    canonical: "https://www.nitaqacademy.com/article/sat-prep-options-uae-academy-comparison",
+    ogTitle: "SAT Prep Options in UAE: Academy Comparison Guide | Nitaq Academy",
+    ogDescription: "What parents should look for in UAE SAT institutes: SPEA licensing, batch size, Desmos training, and adaptive software.",
+    ogImage: "/images/sat_v2.webp",
+    twitterCard: "summary_large_image",
+    datePublished: "2026-10-22T08:00:00+04:00",
+    dateModified: "2026-10-22T08:00:00+04:00",
+    keywords: "sat prep options uae, bedrock sat, one prep sat, sat coaching sharjah, best sat institute dubai, sat tutoring near me, compare sat coaching uae",
+    faqSchema: [
+      {
+        question: "What are typical SAT prep course fees in UAE?",
+        answer: "Fees typically range from AED 1,800 to AED 4,500 depending on instructional hours, batch size, and group vs 1-on-1 private mentoring."
+      },
+      {
+        question: "Is in-person coaching better than online in UAE?",
+        answer: "In-person classes in Sharjah provide direct focus, while live online classes save commuting time for Dubai and Northern Emirates families."
+      },
+      {
+        question: "When should high school students start SAT coaching?",
+        answer: "Starting in Grade 11 allows students to complete their tests before Grade 12 board exams and university deadlines."
+      }
+    ]
+  },
+  {
+    path: "/article/sat-requirements-uae-top-universities-harvard",
+    title: "SAT Requirements for UAE & Top International Universities | Nitaq Academy",
+    description: "Compare SAT cutoffs and competitive score bands for American University of Sharjah, Khalifa University, NYU Abu Dhabi, and Ivy League benchmarks like Harvard.",
+    canonical: "https://www.nitaqacademy.com/article/sat-requirements-uae-top-universities-harvard",
+    ogTitle: "SAT Requirements for UAE Universities & Harvard | Nitaq Academy",
+    ogDescription: "Score cutoffs and merit scholarship tiers for AUS, Khalifa University, NYU Abu Dhabi, and Ivy League benchmarks.",
+    ogImage: "/images/sat_v2.webp",
+    twitterCard: "summary_large_image",
+    datePublished: "2026-10-23T08:00:00+04:00",
+    dateModified: "2026-10-23T08:00:00+04:00",
+    keywords: "harvard sat requirements, aus sat score, khalifa university sat requirement, nyu abu dhabi sat score, uae university sat requirements, sat merit scholarship uae",
+    faqSchema: [
+      {
+        question: "Do UAE universities require the SAT for high school equivalency?",
+        answer: "For American Curriculum diploma holders, the UAE Ministry of Education requires standardized test scores (such as SAT Math) for official high school equivalency."
+      },
+      {
+        question: "What SAT score does Harvard require in 2026?",
+        answer: "Harvard's middle 50% composite score is 1500 to 1580 (Math 760–800, Reading & Writing 740–780)."
+      },
+      {
+        question: "What score is needed for merit scholarships in UAE?",
+        answer: "Scores of 1350+ unlock 20% to 50% tuition merit reductions at private UAE universities like AUS and AUD."
+      }
+    ]
+  },
+  {
+    path: "/article/sat-english-reading-writing-practice-guide",
+    title: "SAT English & Reading & Writing: What Students Need to Practice | Nitaq Academy",
+    description: "Comprehensive breakdown of all 4 verbal domains: Information & Ideas, Craft & Structure, Grammar Conventions, and Rhetorical Synthesis note-taking shortcuts.",
+    canonical: "https://www.nitaqacademy.com/article/sat-english-reading-writing-practice-guide",
+    ogTitle: "SAT English & Reading & Writing Practice Guide | Nitaq Academy",
+    ogDescription: "Master all 4 Digital SAT verbal domains: vocabulary in context, graph evidence, transitions, and rhetorical synthesis.",
+    ogImage: "/images/sat_v2.webp",
+    twitterCard: "summary_large_image",
+    datePublished: "2026-10-24T08:00:00+04:00",
+    dateModified: "2026-10-24T08:00:00+04:00",
+    keywords: "sat english, digital sat reading writing tips, sat reading practice uae, sat rhetorical synthesis shortcut, words in context sat, sat verbal score booster",
+    faqSchema: [
+      {
+        question: "How many questions are on the Reading & Writing section?",
+        answer: "There are 54 total questions split across two 32-minute modules (~71 seconds per question)."
+      },
+      {
+        question: "How are vocabulary questions tested on the Digital SAT?",
+        answer: "Words in Context questions test your ability to determine precise meaning from academic context clues rather than obscure dictionary lists."
+      },
+      {
+        question: "What is the best shortcut for Rhetorical Synthesis questions?",
+        answer: "Read the prompt goal first at the bottom before reading the student bullet points, and match the corresponding transition or keyword."
+      }
+    ]
+  },
+  {
+    path: "/article/what-does-sat-stand-for-digital-sat-explained",
+    title: "What Does SAT Stand For? Digital SAT Explained for UAE Students | Nitaq Academy",
+    description: "Everything parents and students need to know about the Digital SAT: acronym origin, test structure, 400–1600 scoring scale, test timing, and UAE university equivalency.",
+    canonical: "https://www.nitaqacademy.com/article/what-does-sat-stand-for-digital-sat-explained",
+    ogTitle: "What Does SAT Stand For? Digital SAT Explained | Nitaq Academy",
+    ogDescription: "Beginner guide for UAE families: what SAT stands for, exam length, scoring scale, and why UAE universities evaluate it.",
+    ogImage: "/images/sat_v2.webp",
+    twitterCard: "summary_large_image",
+    datePublished: "2026-10-25T08:00:00+04:00",
+    dateModified: "2026-10-25T08:00:00+04:00",
+    keywords: "what does sat stand for, digital sat explained, sat score scale 400 1600, what is sat exam, sat exam sharjah, sat equivalency uae moe",
+    faqSchema: [
+      {
+        question: "What does the SAT acronym stand for?",
+        answer: "Originally 'Scholastic Aptitude Test', it was renamed 'Scholastic Assessment Test' in 1993, and is now simply known as the SAT."
+      },
+      {
+        question: "What is the total duration of the Digital SAT?",
+        answer: "The exam lasts 2 hours and 14 minutes, plus a 10-minute break between Reading & Writing and Math."
+      },
+      {
+        question: "Is there a penalty for wrong answers?",
+        answer: "No, the Digital SAT has no negative marking. Unanswered and incorrect questions receive zero points."
+      }
+    ]
+  },
+  {
     path: "/article/sat-grammar-rules-digital-reading-writing-guide",
     title: "SAT Grammar Rules: The Complete Digital SAT Reading & Writing Guide | Nitaq Academy",
     description: "Master Digital SAT grammar rules with our complete Standard English Conventions guide: punctuation, semicolons, colons, dangling modifiers, transitions & practice tips.",

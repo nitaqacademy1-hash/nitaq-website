@@ -113,6 +113,17 @@ const ROUTES = [
   '/article/sat-grammar-rules-digital-reading-writing-guide',
   '/article/sat-math-formula-sheet-desmos-calculator-guide',
   '/article/sat-test-centers-uae-sharjah-dubai-guide',
+  '/article/sat-dates-uae-2026-2027-test-dates',
+  '/article/bluebook-sat-guide-digital-exam-app',
+  '/article/desmos-sat-guide-math-calculator-strategies',
+  '/article/sat-suite-question-bank-practice-guide',
+  '/article/how-to-ace-sat-study-plan-guide',
+  '/article/sat-math-practice-questions-traps-guide',
+  '/article/khan-academy-sat-vs-structured-coaching',
+  '/article/sat-prep-options-uae-academy-comparison',
+  '/article/sat-requirements-uae-top-universities-harvard',
+  '/article/sat-english-reading-writing-practice-guide',
+  '/article/what-does-sat-stand-for-digital-sat-explained',
   '/terms-and-conditions',
 
 

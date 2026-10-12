@@ -1,0 +1,161 @@
+{
+  "releases": [
+    {
+      "day": 1,
+      "date": "2026-10-12",
+      "title": "Homepage UX & Credibility Overhaul",
+      "routes": [
+        "/"
+      ],
+      "commitMessage": "feat(ux): Day 1 - Homepage redesign with immediate hero rendering, 3 program cards & SPEA licensing clarity",
+      "status": "published",
+      "publishedAt": "2026-10-12T08:28:50.912Z"
+    },
+    {
+      "day": 2,
+      "date": "2026-10-13",
+      "title": "Parent Assessment Journey & Context Retention",
+      "routes": [
+        "/enquiry",
+        "/contact"
+      ],
+      "commitMessage": "feat(enquiry): Day 2 - Context-aware parent assessment flow with grade, curriculum retention & WhatsApp integration",
+      "status": "pending",
+      "publishedAt": null
+    },
+    {
+      "day": 3,
+      "date": "2026-10-14",
+      "title": "Course Pages Transparency & Spanish Tracks",
+      "routes": [
+        "/sat-preparation-sharjah",
+        "/sat-preparation-dubai",
+        "/spanish"
+      ],
+      "commitMessage": "feat(courses): Day 3 - IELTS compliance wording, digital SAT Desmos clarity & General vs DELE Spanish separation",
+      "status": "pending",
+      "publishedAt": null
+    },
+    {
+      "day": 4,
+      "date": "2026-10-15",
+      "title": "P0 SAT Dates UAE 2026–2027 Guide",
+      "routes": [
+        "/article/sat-dates-uae-2026-2027-test-dates"
+      ],
+      "commitMessage": "feat(seo): Day 4 - Publish SAT Dates UAE 2026-2027 guide (October, November & December test deadlines)",
+      "status": "pending",
+      "publishedAt": null
+    },
+    {
+      "day": 5,
+      "date": "2026-10-16",
+      "title": "P0 Bluebook SAT App Guide",
+      "routes": [
+        "/article/bluebook-sat-guide-digital-exam-app"
+      ],
+      "commitMessage": "feat(seo): Day 5 - Publish Bluebook SAT Guide (Digital test tools, adaptive routing & device requirements)",
+      "status": "pending",
+      "publishedAt": null
+    },
+    {
+      "day": 6,
+      "date": "2026-10-17",
+      "title": "P0 Desmos SAT Calculator Masterclass",
+      "routes": [
+        "/article/desmos-sat-guide-math-calculator-strategies"
+      ],
+      "commitMessage": "feat(seo): Day 6 - Publish Desmos SAT Guide (Top calculator strategies, regressions & slider tricks)",
+      "status": "pending",
+      "publishedAt": null
+    },
+    {
+      "day": 7,
+      "date": "2026-10-18",
+      "title": "P0 SAT Suite Question Bank Practice Guide",
+      "routes": [
+        "/article/sat-suite-question-bank-practice-guide"
+      ],
+      "commitMessage": "feat(seo): Day 7 - Publish SAT Suite Question Bank practice guide and error tracking routine",
+      "status": "pending",
+      "publishedAt": null
+    },
+    {
+      "day": 8,
+      "date": "2026-10-19",
+      "title": "P1 How to Ace the SAT (30/60/90-Day Plans)",
+      "routes": [
+        "/article/how-to-ace-sat-study-plan-guide"
+      ],
+      "commitMessage": "feat(seo): Day 8 - Publish How to Ace the SAT guide (30, 60, and 90-day study roadmaps for UAE students)",
+      "status": "pending",
+      "publishedAt": null
+    },
+    {
+      "day": 9,
+      "date": "2026-10-20",
+      "title": "P1 SAT Math Practice Questions & Traps",
+      "routes": [
+        "/article/sat-math-practice-questions-traps-guide"
+      ],
+      "commitMessage": "feat(seo): Day 9 - Publish SAT Math Practice Questions & Traps guide (Module 2 hard questions)",
+      "status": "pending",
+      "publishedAt": null
+    },
+    {
+      "day": 10,
+      "date": "2026-10-21",
+      "title": "P1 Khan Academy vs. Structured Coaching",
+      "routes": [
+        "/article/khan-academy-sat-vs-structured-coaching"
+      ],
+      "commitMessage": "feat(seo): Day 10 - Publish Khan Academy SAT vs Structured Coaching objective decision guide",
+      "status": "pending",
+      "publishedAt": null
+    },
+    {
+      "day": 11,
+      "date": "2026-10-22",
+      "title": "P1 UAE SAT Prep Options Comparison",
+      "routes": [
+        "/article/sat-prep-options-uae-academy-comparison"
+      ],
+      "commitMessage": "feat(seo): Day 11 - Publish SAT Prep Options in the UAE: What to Compare Before Choosing an Academy",
+      "status": "pending",
+      "publishedAt": null
+    },
+    {
+      "day": 12,
+      "date": "2026-10-23",
+      "title": "P1 SAT Requirements for UAE & Top Universities",
+      "routes": [
+        "/article/sat-requirements-uae-top-universities-harvard"
+      ],
+      "commitMessage": "feat(seo): Day 12 - Publish SAT Requirements for UAE & Top International Universities (Harvard, AUS, Khalifa)",
+      "status": "pending",
+      "publishedAt": null
+    },
+    {
+      "day": 13,
+      "date": "2026-10-24",
+      "title": "P2 SAT English Reading & Writing Practice Guide",
+      "routes": [
+        "/article/sat-english-reading-writing-practice-guide"
+      ],
+      "commitMessage": "feat(seo): Day 13 - Publish SAT English & Reading & Writing Practice Guide (4 verbal domains)",
+      "status": "pending",
+      "publishedAt": null
+    },
+    {
+      "day": 14,
+      "date": "2026-10-25",
+      "title": "P2 What Does SAT Stand For & Final Cluster Linking",
+      "routes": [
+        "/article/what-does-sat-stand-for-digital-sat-explained"
+      ],
+      "commitMessage": "feat(seo): Day 14 - Publish What Does SAT Stand For guide and complete full SAT cluster linking matrix",
+      "status": "pending",
+      "publishedAt": null
+    }
+  ]
+}
