@@ -179,11 +179,15 @@ const SATCourse = ({ locationName = 'Sharjah' }) => {
               <div className="sat-hero-image-wrapper">
                 <img
                   src="/images/sat_hero_student_hoodie.webp"
+                  srcSet="/images/sat_hero_student_hoodie-480.webp 480w, /images/sat_hero_student_hoodie-720.webp 720w, /images/sat_hero_student_hoodie.webp 1024w"
+                  sizes="(max-width: 768px) calc(100vw - 48px), 500px"
                   alt={`Student preparing for the Digital SAT with Nitaq Academy in ${locationName}`}
                   title={`Student preparing for the Digital SAT with Nitaq Academy in ${locationName}`}
-                  width="540"
+                  width="500"
                   height="500"
                   fetchPriority="high"
+                  loading="eager"
+                  decoding="async"
                 />
 
                 <div className="sat-hero-floating-badge">

@@ -186,7 +186,7 @@ const PhoneMockupPortal = () => {
 
             {/* Greeting */}
             <div className="sat-portal-user-row">
-              <h4 className="sat-portal-greeting">Hi, Ayaan! 👋</h4>
+              <div className="sat-portal-greeting">Hi, Ayaan! 👋</div>
               <p className="sat-portal-subtext">Ready to assess your SAT skills?</p>
             </div>
 

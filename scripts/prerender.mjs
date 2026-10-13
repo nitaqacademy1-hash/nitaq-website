@@ -354,6 +354,21 @@ async function prerender() {
       } else {
         output = output.replace(/<\/head>/i, `${headInjection}</head>`);
       }
+
+      // Route-specific LCP hero preloads
+      let lcpPreload = '';
+      if (basePath === '/' || basePath === '/ar') {
+        lcpPreload = `\n  <link rel="preload" as="image" href="/nitaq/hero/student-desk-800.webp" imagesrcset="/nitaq/hero/student-desk-480.webp 480w, /nitaq/hero/student-desk-800.webp 800w, /nitaq/hero/student-desk.webp 1376w" imagesizes="(max-width: 767px) calc(100vw - 40px), (max-width: 1200px) 46vw, 600px" fetchpriority="high">\n`;
+      } else if (
+        basePath === '/sat-preparation-sharjah' ||
+        basePath === '/sat-preparation-dubai' ||
+        basePath === '/ar/sat-preparation-sharjah' ||
+        basePath === '/ar/sat-preparation-dubai'
+      ) {
+        lcpPreload = `\n  <link rel="preload" as="image" href="/images/sat_hero_student_hoodie-480.webp" imagesrcset="/images/sat_hero_student_hoodie-480.webp 480w, /images/sat_hero_student_hoodie-720.webp 720w, /images/sat_hero_student_hoodie.webp 1024w" imagesizes="(max-width: 768px) calc(100vw - 48px), 500px" fetchpriority="high">\n`;
+      }
+      output = output.replace(/<!--\s*lcp-preload\s*-->/i, lcpPreload);
+
       output = output
         .replace(/<html[^>]*>/i, `<html lang="${localeMeta.code}" dir="${localeMeta.dir}">`)
         .replace(/<div\s+id=["']root["'][^>]*>([\s\S]*?)<\/div>/i, `<div id="root">${html}</div>`);
