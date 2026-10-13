@@ -140,6 +140,7 @@ const Header = () => {
           <img
             src="/images/logo-white.webp"
             alt="Nitaq Academy"
+            title="Nitaq Academy"
             width="142"
             height="53"
             fetchPriority="high"

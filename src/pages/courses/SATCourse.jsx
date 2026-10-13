@@ -180,6 +180,7 @@ const SATCourse = ({ locationName = 'Sharjah' }) => {
                 <img
                   src="/images/sat_hero_student_hoodie.webp"
                   alt={`Student preparing for the Digital SAT with Nitaq Academy in ${locationName}`}
+                  title={`Student preparing for the Digital SAT with Nitaq Academy in ${locationName}`}
                   width="540"
                   height="500"
                   fetchPriority="high"

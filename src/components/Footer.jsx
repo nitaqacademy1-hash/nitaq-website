@@ -74,7 +74,7 @@ const Footer = () => {
       <div className="container">
         <div className="footer-content">
           <div className="footer-brand">
-            <img src="/images/logo1.webp" alt="Nitaq Academy" width="150" height="56" loading="lazy" />
+            <img src="/images/logo1.webp" alt="Nitaq Academy" title="Nitaq Academy" width="150" height="56" loading="lazy" />
             <p>{c.tagline}</p>
           </div>
           <div className="footer-nav priority-footer">

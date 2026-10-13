@@ -22,7 +22,9 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const root = resolve(__dirname, '..')
 const escapeAttribute = value => String(value ?? '').replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;')
 const renderedTitle = html => html.match(/<title>([\s\S]*?)<\/title>/i)?.[1]
-const renderedMeta = (html, attribute, name) => html.match(new RegExp(`<meta\\s+${attribute}="${name}"\\s+content="([^"]*)"`, 'i'))?.[1]
+const renderedMeta = (html, attribute, name) =>
+  html.match(new RegExp(`<meta[^>]*?\\s${attribute}=["']${name}["'][^>]*?\\scontent=["']([^"']*)["']`, 'i'))?.[1] ||
+  html.match(new RegExp(`<meta[^>]*?\\scontent=["']([^"']*)["'][^>]*?\\s${attribute}=["']${name}["']`, 'i'))?.[1]
 
 const ROUTES = [
   '/',
@@ -269,6 +271,9 @@ async function prerender() {
       // title/description via <SEO />, and the route table alone misses them.
       const title = renderedTitle(html) || escapeAttribute(routeData.title)
       const description = renderedMeta(html, 'name', 'description') || escapeAttribute(routeData.description)
+      const keywords = renderedMeta(html, 'name', 'keywords') || escapeAttribute(routeData.keywords || 'Nitaq Academy, Education Sharjah, Training Institute')
+      const author = renderedMeta(html, 'name', 'author') || escapeAttribute(routeData.author || 'Nitaq Academy')
+      const publisher = renderedMeta(html, 'name', 'publisher') || escapeAttribute(routeData.publisher || 'Nitaq Academy')
       const ogTitle = renderedMeta(html, 'property', 'og:title') || escapeAttribute(routeData.ogTitle || routeData.title)
       const ogDescription = renderedMeta(html, 'property', 'og:description') || escapeAttribute(routeData.ogDescription || routeData.description)
       const ogImageUrl = renderedMeta(html, 'property', 'og:image') || escapeAttribute(routeData.ogImage ? (routeData.ogImage.startsWith('http') ? routeData.ogImage : `${siteUrl}${routeData.ogImage}`) : `${siteUrl}/images/logo1.webp`)
@@ -285,6 +290,9 @@ async function prerender() {
       const generatedHead = `
         <title data-rh="true">${title}</title>
         <meta data-rh="true" name="description" content="${description}" />
+        <meta data-rh="true" name="keywords" content="${keywords}" />
+        <meta data-rh="true" name="author" content="${author}" />
+        <meta data-rh="true" name="publisher" content="${publisher}" />
         <meta data-rh="true" name="robots" content="${shouldNoIndex ? 'noindex, follow' : 'index, follow'}" />
         <link data-rh="true" rel="canonical" href="${fullUrl}" />
         ${alternateLinks}
@@ -330,9 +338,14 @@ async function prerender() {
       });
 
       // 3. Inject strings safely into target templates
-      let output = template
-        .replace(/<!--\s*JSON-LD managed by SEO\.jsx\s*-->|<!--\s*ssr-head\s*-->/i, generatedHead + structuredData + hoistedHints)
-        // The template ships a fixed lang="en"; each locale needs its own.
+      const headInjection = `\n    ${generatedHead}\n    ${structuredData}\n    ${hoistedHints}\n`;
+      let output = template;
+      if (/<!--\s*JSON-LD managed by SEO\.jsx\s*-->|<!--\s*ssr-head\s*-->/i.test(output)) {
+        output = output.replace(/<!--\s*JSON-LD managed by SEO\.jsx\s*-->|<!--\s*ssr-head\s*-->/i, headInjection);
+      } else {
+        output = output.replace(/<\/head>/i, `${headInjection}</head>`);
+      }
+      output = output
         .replace(/<html[^>]*>/i, `<html lang="${localeMeta.code}" dir="${localeMeta.dir}">`)
         .replace(/<div\s+id=["']root["'][^>]*>([\s\S]*?)<\/div>/i, `<div id="root">${html}</div>`);
 

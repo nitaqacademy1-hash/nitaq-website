@@ -728,10 +728,10 @@ const SATDiagnosticSection = ({ className = '', showBreadcrumb = false, onStartC
 
               <div className="sat-hero-avatars-group">
                 <div className="sat-hero-avatars-stack">
-                  <img src="/images/h1.png" alt="" loading="lazy" decoding="async" className="sat-hero-avatar-img" />
-                  <img src="/images/h2.png" alt="" loading="lazy" decoding="async" className="sat-hero-avatar-img" />
-                  <img src="/images/h3.png" alt="" loading="lazy" decoding="async" className="sat-hero-avatar-img" />
-                  <img src="/images/h4.png" alt="" loading="lazy" decoding="async" className="sat-hero-avatar-img" />
+                  <img src="/images/h1.webp" alt="Nitaq Academy SAT Student in Sharjah" title="Nitaq SAT Student" width="40" height="40" loading="lazy" decoding="async" className="sat-hero-avatar-img" />
+                  <img src="/images/h2.webp" alt="Digital SAT Candidate in Sharjah" title="Digital SAT Candidate" width="40" height="40" loading="lazy" decoding="async" className="sat-hero-avatar-img" />
+                  <img src="/images/h3.webp" alt="SAT Exam High Scorer in UAE" title="SAT High Scorer" width="40" height="40" loading="lazy" decoding="async" className="sat-hero-avatar-img" />
+                  <img src="/images/h4.webp" alt="University Prep Student at Nitaq Academy" title="University Prep Student" width="40" height="40" loading="lazy" decoding="async" className="sat-hero-avatar-img" />
                 </div>
                 <div className="sat-hero-rating-info">
                   <div className="sat-hero-stars">★★★★★</div>

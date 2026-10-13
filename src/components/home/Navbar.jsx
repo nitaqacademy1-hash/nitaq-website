@@ -68,7 +68,7 @@ export default function Navbar({ c }) {
       <header className="nh-navbar nh-site-navbar" ref={nav}>
         {/* Brand Logo */}
         <Link className="nh-logo" to="/" aria-label="Nitaq Academy" onClick={close}>
-          <img src="/images/logo-white.webp" width="142" height="53" alt="Nitaq Academy" />
+          <img src="/images/logo-white.webp" width="142" height="53" alt="Nitaq Academy" title="Nitaq Academy" />
         </Link>
 
         {/* Navigation Links */}

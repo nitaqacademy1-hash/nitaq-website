@@ -62,6 +62,9 @@ const SEO = ({ title, description, faqSchema, ogTitle, ogDescription, ogImage, n
 
   return <Helmet htmlAttributes={{ lang: locale.code, dir: locale.dir }}>
     <title>{data.title}</title><meta name="description" content={data.description} />
+    <meta name="author" content="Nitaq Academy" />
+    <meta name="publisher" content="Nitaq Academy" />
+    {data.keywords && <meta name="keywords" content={data.keywords} />}
     <meta name="robots" content={shouldNoIndex ? 'noindex, follow' : 'index, follow'} /><link rel="canonical" href={canonical} />
     {!shouldNoIndex && isArabicPublished(basePath) && [
       <link key="en" rel="alternate" hrefLang="en" href={`${SITE_URL}${basePath === '/' ? '/' : basePath}`} />,
