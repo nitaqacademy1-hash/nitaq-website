@@ -3,13 +3,12 @@ import { Link } from '../../i18n/Link';
 import SEO from '../../components/SEO';
 import { 
   Target, CheckCircle2, AlertCircle, Clock, ShieldCheck, 
-  HelpCircle, ArrowRight, Award, Zap, Calendar, BookOpen, TrendingUp
+  HelpCircle, ArrowRight, Award, Zap, Calendar, BookOpen, TrendingUp, ChevronRight
 } from 'lucide-react';
 
 const HowToAceSatGuide = () => {
   const [openFaq, setOpenFaq] = useState(null);
   const toggleFaq = (index) => setOpenFaq(openFaq === index ? null : index);
-
   const [activePlan, setActivePlan] = useState('60day');
 
   const plans = {
@@ -18,7 +17,7 @@ const HowToAceSatGuide = () => {
       audience: 'Best for Grade 12 students with an upcoming test date (November/December) who need an immediate 80–150 point jump.',
       schedule: [
         { week: 'Week 1', focus: 'Diagnostic & P0 Grammar Rules', tasks: 'Take Bluebook Practice Test 1. Master the 8 Standard English Conventions (commas, semicolons, dashes, transitions).' },
-        { week: 'Week 2', focus: 'Desmos Masterclass & Math Module 1', tasks: 'Drill system of equations, regressions, and vertex shortcuts. Eliminate careless arithmetic errors in Math Module 1.' },
+        { week: 'Week 2', focus: 'Desmos Masterclass & Math Module 1', tasks: 'Drill systems of equations, regressions, and vertex shortcuts. Eliminate careless arithmetic errors in Math Module 1.' },
         { week: 'Week 3', focus: 'Adaptive Module 2 Hard Questions & Pacing', tasks: 'Target Advanced Math (quadratics, circle theorems) and Reading Craft & Structure. Take Bluebook Test 2 under strict timing.' },
         { week: 'Week 4', focus: 'Mock Exam Calibration & Weakness Review', tasks: 'Take Bluebook Test 3 on Saturday morning at 8:00 AM. Review error log. Light review 48 hours prior to test day.' }
       ]
@@ -45,203 +44,219 @@ const HowToAceSatGuide = () => {
   };
 
   return (
-    <div className="article-page bg-white text-slate-800">
+    <main className="article-details-page sat-guide-page">
       <SEO />
 
-      {/* Hero Header */}
-      <div className="bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 text-white py-16 px-4 sm:px-6 lg:px-8 border-b border-slate-700">
-        <div className="max-w-4xl mx-auto">
-          <div className="flex items-center gap-2 text-emerald-400 font-semibold text-xs tracking-wider uppercase mb-3">
-            <Target size={14} />
-            <span>UAE High Scorer Roadmap (2026–2027)</span>
-          </div>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight leading-tight mb-4">
-            How to Ace the SAT: A 30/60/90-Day Preparation Plan
-          </h1>
-          <p className="text-slate-300 text-base sm:text-lg leading-relaxed mb-6">
-            A comprehensive, step-by-step preparation blueprint tailored for UAE students. Master pacing strategies, score target benchmarks (1400–1550+), and school curriculum balance.
-          </p>
-          <div className="flex flex-wrap items-center gap-4 text-xs sm:text-sm text-slate-400 border-t border-slate-700/80 pt-4">
-            <span className="flex items-center gap-1.5"><Clock size={14} className="text-emerald-400" /> 11-Minute Read</span>
-            <span className="flex items-center gap-1.5"><TrendingUp size={14} className="text-emerald-400" /> Surging Query (+900%)</span>
-            <span className="flex items-center gap-1.5"><ShieldCheck size={14} className="text-emerald-400" /> SPEA-Aligned Guidance</span>
-          </div>
+      {/* Breadcrumb Navigation */}
+      <div className="sat-guide-breadcrumbs-wrap">
+        <div className="sat-guide-container">
+          <nav className="sat-guide-breadcrumbs" aria-label="Breadcrumb">
+            <Link to="/">Home</Link>
+            <ChevronRight size={14} />
+            <Link to="/articles">Articles</Link>
+            <ChevronRight size={14} />
+            <span>How to Ace the SAT Guide</span>
+          </nav>
         </div>
       </div>
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Score Benchmark Table */}
-        <section className="mb-14">
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-6 flex items-center gap-2">
-            <Award className="text-emerald-600" size={28} />
+      <article className="sat-guide-container">
+        {/* Header */}
+        <header className="sat-guide-header">
+          <span className="sat-guide-category-badge">
+            <Target size={14} /> High Scorer Roadmap (2026–2027)
+          </span>
+          <h1 className="sat-guide-title">
+            How to Ace the SAT: A 30/60/90-Day Preparation Plan for UAE Students
+          </h1>
+          <p className="sat-guide-lead">
+            A comprehensive, step-by-step preparation blueprint tailored for UAE students. Master pacing strategies, score target benchmarks (1400–1550+), and school curriculum balance.
+          </p>
+
+          <div className="sat-guide-meta-row">
+            <span className="sat-guide-meta-item">
+              <Clock size={15} color="#166534" /> 11-Minute Read
+            </span>
+            <span className="sat-guide-meta-item">
+              <TrendingUp size={15} color="#166534" /> Surging Query (+900%)
+            </span>
+            <span className="sat-guide-meta-item">
+              <ShieldCheck size={15} color="#166534" /> SPEA-Aligned Guidance
+            </span>
+          </div>
+        </header>
+
+        {/* Featured Image */}
+        <img
+          src="/images/sat_v2.webp"
+          alt="How to Ace the SAT Study Plans for UAE Students - Nitaq Academy"
+          className="sat-guide-featured-img"
+        />
+
+        <div className="sat-guide-content">
+          {/* Score Benchmark Table */}
+          <h2>
+            <Award size={24} color="#166534" />
             What Does It Take to "Ace" the Digital SAT?
           </h2>
-          <div className="overflow-x-auto rounded-xl border border-slate-200 shadow-sm mb-6">
-            <table className="w-full text-left text-sm text-slate-700">
-              <thead className="bg-slate-50 text-slate-900 font-bold border-b border-slate-200">
+
+          <div className="sat-table-wrap">
+            <table className="sat-table">
+              <thead>
                 <tr>
-                  <th className="py-3 px-4">Score Range</th>
-                  <th className="py-3 px-4">Percentile</th>
-                  <th className="py-3 px-4">University Target</th>
-                  <th className="py-3 px-4">Preparation Focus</th>
+                  <th>Score Range</th>
+                  <th>Percentile</th>
+                  <th>University Target</th>
+                  <th>Preparation Focus</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-100">
+              <tbody>
                 <tr>
-                  <td className="py-3 px-4 font-bold text-slate-900">1500 – 1600</td>
-                  <td className="py-3 px-4 text-emerald-700 font-bold">Top 1% (99th)</td>
-                  <td className="py-3 px-4 text-xs">Ivy League, Stanford, MIT, NYU Abu Dhabi (Full Merit)</td>
-                  <td className="py-3 px-4 text-xs text-slate-500">Zero tolerance for careless errors on Module 1; hard Module 2 speed mastery.</td>
+                  <td><strong>1500 – 1600</strong></td>
+                  <td><span className="sat-badge sat-badge-hot">Top 1% (99th)</span></td>
+                  <td style={{ fontSize: '0.88rem' }}>Ivy League, Stanford, MIT, NYU Abu Dhabi (Full Merit)</td>
+                  <td style={{ fontSize: '0.85rem', color: '#64748b' }}>Zero tolerance for careless errors on Module 1; hard Module 2 speed mastery.</td>
                 </tr>
                 <tr>
-                  <td className="py-3 px-4 font-bold text-slate-900">1400 – 1490</td>
-                  <td className="py-3 px-4 text-emerald-700 font-bold">Top 5% (94th–98th)</td>
-                  <td className="py-3 px-4 text-xs">AUS Engineering/Business, Khalifa University, Top UK/Canada</td>
-                  <td className="py-3 px-4 text-xs text-slate-500">Master Desmos hacks; eliminate grammar punctuation mistakes entirely.</td>
+                  <td><strong>1400 – 1490</strong></td>
+                  <td><span className="sat-badge sat-badge-open">Top 5% (94th–98th)</span></td>
+                  <td style={{ fontSize: '0.88rem' }}>AUS Engineering/Business, Khalifa University, Top UK/Canada</td>
+                  <td style={{ fontSize: '0.85rem', color: '#64748b' }}>Master Desmos hacks; eliminate grammar punctuation mistakes entirely.</td>
                 </tr>
                 <tr>
-                  <td className="py-3 px-4 font-bold text-slate-900">1250 – 1390</td>
-                  <td className="py-3 px-4 text-slate-700 font-medium">Top 20% (80th–93rd)</td>
-                  <td className="py-3 px-4 text-xs">Competitive UAE private universities, AUD, Heriot-Watt Dubai</td>
-                  <td className="py-3 px-4 text-xs text-slate-500">Solidify foundational algebra; master standard conventions and transitions.</td>
+                  <td><strong>1300 – 1390</strong></td>
+                  <td><span className="sat-badge sat-badge-future">Top 15% (86th–93rd)</span></td>
+                  <td style={{ fontSize: '0.88rem' }}>AUS General Admissions, University of Sharjah, Heriot-Watt Dubai</td>
+                  <td style={{ fontSize: '0.85rem', color: '#64748b' }}>Solidify core algebra; drill vocabulary in context and linear systems.</td>
+                </tr>
+                <tr>
+                  <td><strong>1150 – 1290</strong></td>
+                  <td><span className="sat-badge sat-badge-past">50th–80th Percentile</span></td>
+                  <td style={{ fontSize: '0.88rem' }}>Foundation threshold for UAE private universities</td>
+                  <td style={{ fontSize: '0.85rem', color: '#64748b' }}>Overcome content gaps in exponents, quadratics, and sentence boundaries.</td>
                 </tr>
               </tbody>
             </table>
           </div>
-        </section>
 
-        {/* Study Plan Tabs */}
-        <section className="mb-14">
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-6 flex items-center gap-2">
-            <Calendar className="text-emerald-600" size={28} />
-            Choose Your Preparation Runway
+          {/* Interactive Study Plan Selector */}
+          <h2>
+            <Calendar size={24} color="#166534" />
+            Select Your Preparation Roadmap
           </h2>
 
-          <div className="flex flex-wrap gap-2 mb-6">
-            <button
-              onClick={() => setActivePlan('60day')}
-              className={`px-4 py-2.5 rounded-xl text-sm font-bold transition-all ${
-                activePlan === '60day'
-                  ? 'bg-emerald-600 text-white shadow-md'
-                  : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
-              }`}
-            >
-              60-Day Standard Plan (Recommended)
-            </button>
-            <button
-              onClick={() => setActivePlan('30day')}
-              className={`px-4 py-2.5 rounded-xl text-sm font-bold transition-all ${
-                activePlan === '30day'
-                  ? 'bg-emerald-600 text-white shadow-md'
-                  : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
-              }`}
-            >
-              30-Day Intensive Crash Plan
-            </button>
-            <button
-              onClick={() => setActivePlan('90day')}
-              className={`px-4 py-2.5 rounded-xl text-sm font-bold transition-all ${
-                activePlan === '90day'
-                  ? 'bg-emerald-600 text-white shadow-md'
-                  : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
-              }`}
-            >
-              90-Day Mastery Plan (Top 1%)
-            </button>
+          <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '24px' }}>
+            {[
+              { id: '30day', label: '30-Day Crash Plan' },
+              { id: '60day', label: '60-Day Plan (Recommended)' },
+              { id: '90day', label: '90-Day Mastery Roadmap' }
+            ].map(p => (
+              <button
+                key={p.id}
+                type="button"
+                onClick={() => setActivePlan(p.id)}
+                style={{
+                  background: activePlan === p.id ? '#166534' : '#f1f5f9',
+                  color: activePlan === p.id ? '#ffffff' : '#334155',
+                  border: 'none',
+                  borderRadius: '10px',
+                  padding: '10px 18px',
+                  fontWeight: 700,
+                  fontSize: '0.88rem',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s ease'
+                }}
+              >
+                {p.label}
+              </button>
+            ))}
           </div>
 
-          <div className="p-6 rounded-2xl border border-slate-200 bg-white shadow-sm">
-            <h3 className="text-xl font-bold text-slate-900 mb-2">{plans[activePlan].title}</h3>
-            <p className="text-sm text-slate-600 mb-6 leading-relaxed">{plans[activePlan].audience}</p>
+          {/* Selected Plan Details */}
+          <div className="sat-card" style={{ marginBottom: '36px', padding: '28px' }}>
+            <h3 style={{ margin: '0 0 8px', fontSize: '1.3rem', color: '#0f172a' }}>{plans[activePlan].title}</h3>
+            <p style={{ fontSize: '0.95rem', color: '#64748b', marginBottom: '22px' }}>{plans[activePlan].audience}</p>
 
-            <div className="space-y-4">
-              {plans[activePlan].schedule.map((slot, idx) => (
-                <div key={idx} className="p-4 rounded-xl bg-slate-50 border border-slate-200">
-                  <div className="flex flex-wrap items-center justify-between gap-2 mb-1.5">
-                    <span className="font-bold text-slate-900 text-sm">{slot.week}</span>
-                    <span className="px-2.5 py-0.5 text-xs font-bold rounded-full bg-emerald-100 text-emerald-800">{slot.focus}</span>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+              {plans[activePlan].schedule.map((s, idx) => (
+                <div key={idx} style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '12px', padding: '16px 20px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '6px' }}>
+                    <span className="sat-badge sat-badge-open">{s.week}</span>
+                    <strong style={{ color: '#0f172a', fontSize: '1rem' }}>{s.focus}</strong>
                   </div>
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">{slot.tasks}</p>
+                  <p style={{ margin: 0, fontSize: '0.9rem', color: '#475569', lineHeight: 1.6 }}>{s.tasks}</p>
                 </div>
               ))}
             </div>
           </div>
-        </section>
 
-        {/* Diagnostic Assessment CTA Card */}
-        <div className="bg-gradient-to-r from-emerald-900 via-slate-900 to-emerald-950 text-white rounded-2xl p-8 mb-14 shadow-lg text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-6">
-          <div className="max-w-xl">
-            <div className="inline-flex items-center gap-1.5 text-emerald-400 font-bold text-xs uppercase tracking-wider mb-2">
-              <Award size={14} /> Step 1 in Every Successful Plan
+          {/* Diagnostic Assessment CTA Card */}
+          <div className="sat-cta-banner">
+            <div>
+              <div className="sat-cta-eyebrow">
+                <Award size={15} /> Know Your Starting Point
+              </div>
+              <h3 className="sat-cta-title">Take the Free 24-Question SAT Diagnostic</h3>
+              <p className="sat-cta-desc">
+                Identify whether a 30-day crash course or a 60-day structured program fits your target score. Get your instant domain breakdown with tailored mentor advice.
+              </p>
             </div>
-            <h3 className="text-2xl font-black text-white tracking-tight mb-2">Start with Nitaq's Free Diagnostic</h3>
-            <p className="text-slate-300 text-sm leading-relaxed">
-              Before setting your study calendar, discover your exact baseline score across all 8 College Board domains. Receive an instant score prediction and targeted study roadmap.
-            </p>
+            <Link to="/sat/diagnostic" className="sat-cta-btn-primary">
+              Take Free Diagnostic <ArrowRight size={16} />
+            </Link>
           </div>
-          <Link
-            to="/sat/diagnostic"
-            className="shrink-0 inline-flex items-center gap-2 px-6 py-3.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-sm rounded-xl transition-all shadow-md"
-          >
-            Start Free Diagnostic <ArrowRight size={16} />
-          </Link>
-        </div>
 
-        {/* FAQ Section */}
-        <section className="mb-14">
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-6 flex items-center gap-2">
-            <HelpCircle className="text-emerald-600" size={28} />
+          {/* Frequently Asked Questions */}
+          <h2>
+            <HelpCircle size={24} color="#166534" />
             Frequently Asked Questions: Acing the SAT
           </h2>
-          <div className="space-y-3">
+
+          <div className="sat-faq-wrap">
             {[
               {
-                q: 'How many total hours should I study to increase my score by 200 points?',
-                a: 'On average, students who achieve a 150–200 point improvement invest between 60 and 80 hours of focused preparation, comprising 40% conceptual theory/grammar, 30% Desmos and pacing drills, and 30% full-length timed adaptive mock analysis.'
+                q: 'How many hours a week should UAE students study for the SAT?',
+                a: 'For students with 8–10 weeks before the exam, 8 to 10 focused hours per week (split into 3 weekday sessions of 90 minutes plus a 3-hour weekend mock/review block) yields the highest consistency without impacting school grades.'
               },
               {
-                q: 'How do I balance CBSE or IGCSE board exam prep with SAT prep in UAE?',
-                a: 'The key is curriculum synergy: The Digital SAT Math syllabus overlaps heavily with Grade 10 and 11 algebra and trigonometry in CBSE and IGCSE. Focus on SAT-specific techniques (Desmos and Reading & Writing conventions) during weekends and holidays, reserving weekdays for school board homework.'
+                q: 'Is it better to self-study or join a coaching academy in Sharjah?',
+                a: 'Students who already score 1400+ on their baseline diagnostic often succeed with self-study via Khan Academy and Bluebook. Students scoring below 1300 typically gain 150–250+ points much faster in structured coaching with experienced mentors who teach Desmos hacks and eliminate grammar traps.'
               },
               {
-                q: 'Is it bad to take the SAT more than twice?',
-                a: 'No. The College Board allows you to take the test as many times as you wish, and most UAE and international universities accept "Score Choice" or "Super Scoring"—taking your highest Math score from one date and your highest Reading & Writing score from another.'
-              },
-              {
-                q: 'What is the biggest pacing mistake students make on the Digital SAT?',
-                a: 'Spending more than 2 minutes on a single hard question in Module 1. Remember: all questions carry equal weight. If a question is difficult, flag it, pick your best educated guess, and return to it during the final 5 minutes.'
+                q: 'How can I balance SAT prep with CBSE or IGCSE school board exams?',
+                a: 'Plan your SAT for March or May of Grade 11 before your final board exams peak. Alternatively, target the October sitting at the beginning of Grade 12 before midterms begin.'
               }
             ].map((faq, idx) => (
-              <div key={idx} className="border border-slate-200 rounded-xl overflow-hidden transition-colors">
+              <div key={idx} className="sat-faq-item">
                 <button
                   type="button"
                   onClick={() => toggleFaq(idx)}
-                  className="w-full text-left p-4 sm:p-5 flex items-center justify-between gap-4 font-bold text-slate-900 hover:bg-slate-50"
+                  className="sat-faq-btn"
                 >
-                  <span className="text-sm sm:text-base">{faq.q}</span>
-                  <span className="text-emerald-600 text-lg font-bold shrink-0">{openFaq === idx ? '−' : '+'}</span>
+                  <span>{faq.q}</span>
+                  <span className="sat-faq-icon">{openFaq === idx ? '−' : '+'}</span>
                 </button>
                 {openFaq === idx && (
-                  <div className="px-4 sm:px-5 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3 bg-slate-50/50">
+                  <div className="sat-faq-body">
                     {faq.a}
                   </div>
                 )}
               </div>
             ))}
           </div>
-        </section>
 
-        {/* Next Reading / Related Links */}
-        <div className="border-t border-slate-200 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-slate-600">
-          <Link to="/article/sat-suite-question-bank-practice-guide" className="text-emerald-600 hover:underline font-semibold flex items-center gap-1">
-            ← SAT Suite Question Bank Practice Guide
-          </Link>
-          <Link to="/article/sat-math-practice-questions-traps-guide" className="text-emerald-600 hover:underline font-semibold flex items-center gap-1">
-            Next: SAT Math Practice Questions & Traps Guide →
-          </Link>
+          {/* Related Links */}
+          <div className="sat-guide-footer-links">
+            <Link to="/article/sat-suite-question-bank-practice-guide">
+              ← SAT Suite Question Bank Practice Guide
+            </Link>
+            <Link to="/article/sat-math-practice-questions-traps-guide">
+              Next: SAT Math Practice Questions & Traps Guide →
+            </Link>
+          </div>
         </div>
-      </div>
-    </div>
+      </article>
+    </main>
   );
 };
 

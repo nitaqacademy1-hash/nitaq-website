@@ -3,7 +3,7 @@ import { Link } from '../../i18n/Link';
 import SEO from '../../components/SEO';
 import { 
   BookOpen, CheckCircle2, AlertCircle, Clock, ShieldCheck, 
-  HelpCircle, ArrowRight, Award, Zap, Filter, ListFilter, Target
+  HelpCircle, ArrowRight, Award, Zap, Filter, ListFilter, Target, ChevronRight
 } from 'lucide-react';
 
 const SatSuiteQuestionBankGuide = () => {
@@ -34,144 +34,141 @@ const SatSuiteQuestionBankGuide = () => {
   ];
 
   return (
-    <div className="article-page bg-white text-slate-800">
+    <main className="article-details-page sat-guide-page">
       <SEO />
 
-      {/* Hero Header */}
-      <div className="bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 text-white py-16 px-4 sm:px-6 lg:px-8 border-b border-slate-700">
-        <div className="max-w-4xl mx-auto">
-          <div className="flex items-center gap-2 text-emerald-400 font-semibold text-xs tracking-wider uppercase mb-3">
-            <BookOpen size={14} />
-            <span>Official Practice Resources • Question Bank Strategy (2026–2027)</span>
-          </div>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight leading-tight mb-4">
-            SAT Suite Question Bank: How to Practice Effectively in UAE
-          </h1>
-          <p className="text-slate-300 text-base sm:text-lg leading-relaxed mb-6">
-            Access thousands of official College Board practice questions. Learn how to filter by skill, avoid spoiling official Bluebook practice tests, and build an error-tracking system for maximum score growth.
-          </p>
-          <div className="flex flex-wrap items-center gap-4 text-xs sm:text-sm text-slate-400 border-t border-slate-700/80 pt-4">
-            <span className="flex items-center gap-1.5"><Clock size={14} className="text-emerald-400" /> 9-Minute Read</span>
-            <span className="flex items-center gap-1.5"><ShieldCheck size={14} className="text-emerald-400" /> Official College Board Suite</span>
-            <span className="flex items-center gap-1.5"><Zap size={14} className="text-emerald-400" /> Breakout Query (+2,000%)</span>
-          </div>
+      {/* Breadcrumb Navigation */}
+      <div className="sat-guide-breadcrumbs-wrap">
+        <div className="sat-guide-container">
+          <nav className="sat-guide-breadcrumbs" aria-label="Breadcrumb">
+            <Link to="/">Home</Link>
+            <ChevronRight size={14} />
+            <Link to="/articles">Articles</Link>
+            <ChevronRight size={14} />
+            <span>SAT Suite Question Bank Guide</span>
+          </nav>
         </div>
       </div>
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Core Warning Box */}
-        <div className="bg-rose-50 border-l-4 border-rose-500 p-5 rounded-r-xl mb-10 shadow-sm">
-          <div className="flex items-start gap-3">
-            <AlertCircle size={22} className="text-rose-600 shrink-0 mt-0.5" />
+      <article className="sat-guide-container">
+        {/* Header */}
+        <header className="sat-guide-header">
+          <span className="sat-guide-category-badge">
+            <BookOpen size={14} /> Official Practice Resources • Question Bank Guide
+          </span>
+          <h1 className="sat-guide-title">
+            SAT Suite Question Bank: How to Practice Effectively in UAE
+          </h1>
+          <p className="sat-guide-lead">
+            Access thousands of official College Board practice questions. Learn how to filter by skill, avoid spoiling official Bluebook practice tests, and build an error-tracking system for maximum score growth.
+          </p>
+
+          <div className="sat-guide-meta-row">
+            <span className="sat-guide-meta-item">
+              <Clock size={15} color="#166534" /> 9-Minute Read
+            </span>
+            <span className="sat-guide-meta-item">
+              <ShieldCheck size={15} color="#166534" /> Official College Board Suite
+            </span>
+            <span className="sat-guide-meta-item">
+              <Zap size={15} color="#166534" /> Breakout Query (+2,000%)
+            </span>
+          </div>
+        </header>
+
+        {/* Featured Image */}
+        <img
+          src="/images/sat_v2.webp"
+          alt="SAT Suite Question Bank Practice Guide for Digital SAT"
+          className="sat-guide-featured-img"
+        />
+
+        <div className="sat-guide-content">
+          {/* Core Warning Box */}
+          <div className="sat-alert-box" style={{ background: '#fef2f2', borderLeftColor: '#ef4444' }}>
+            <AlertCircle size={24} color="#ef4444" style={{ flexShrink: 0, marginTop: '2px' }} />
             <div>
-              <h3 className="font-bold text-rose-950 text-sm sm:text-base">Warning: Do Not "Burn" Official Bluebook Test Questions</h3>
-              <p className="text-rose-900 text-xs sm:text-sm mt-1 leading-relaxed">
+              <h3 className="sat-alert-title" style={{ color: '#991b1b' }}>Warning: Do Not "Burn" Official Bluebook Test Questions</h3>
+              <p className="sat-alert-desc" style={{ color: '#7f1d1d' }}>
                 The College Board's SAT Suite Question Bank includes identical questions from official Bluebook Practice Tests 1 through 6. If you practice questions without filtering, you will encounter familiar questions during your full mock tests, artificially inflating your diagnostic score and masking real weaknesses.
               </p>
             </div>
           </div>
-        </div>
 
-        {/* Step by Step Strategy */}
-        <section className="mb-14">
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-6 flex items-center gap-2">
-            <ListFilter className="text-emerald-600" size={28} />
+          {/* Step by Step Strategy */}
+          <h2>
+            <ListFilter size={24} color="#166534" />
             The 4-Step Practice Routine for UAE Students
           </h2>
-          <div className="grid sm:grid-cols-2 gap-4">
+          <p>
+            Maximize the value of official College Board questions with this disciplined four-step protocol:
+          </p>
+
+          <div className="sat-cards-grid">
             {steps.map((st, i) => (
-              <div key={i} className="p-5 rounded-xl border border-slate-200 bg-white hover:border-emerald-300 transition-colors shadow-sm">
-                <span className="text-2xl font-black text-emerald-500 mb-1 block">{st.num}</span>
-                <h3 className="font-bold text-slate-900 text-base mb-2">{st.title}</h3>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">{st.desc}</p>
+              <div key={i} className="sat-card">
+                <div className="sat-card-tag" style={{ color: '#166534', fontSize: '1rem', fontWeight: 800 }}>{st.num}</div>
+                <h3 style={{ margin: '8px 0', fontSize: '1.15rem', color: '#0f172a' }}>{st.title}</h3>
+                <p className="sat-card-desc">{st.desc}</p>
               </div>
             ))}
           </div>
-        </section>
 
-        {/* Breakdown of Available Domains */}
-        <section className="mb-14">
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-6 flex items-center gap-2">
-            <Filter className="text-emerald-600" size={28} />
-            What Content is in the SAT Suite Question Bank?
+          {/* Breakdown of Available Domains */}
+          <h2>
+            <Filter size={24} color="#166534" />
+            What Content is Tested in the Question Bank?
           </h2>
-          <div className="grid sm:grid-cols-2 gap-6">
-            <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200">
-              <h3 className="font-bold text-slate-900 text-lg mb-3 flex items-center gap-2">
-                <Target size={18} className="text-emerald-600" /> Reading & Writing (4 Domains)
+
+          <div className="sat-cards-grid">
+            <div className="sat-card">
+              <h3 style={{ color: '#166534', fontSize: '1.2rem', marginTop: 0, display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <Target size={20} /> Reading & Writing (4 Domains)
               </h3>
-              <ul className="space-y-2 text-xs sm:text-sm text-slate-600">
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 size={16} className="text-emerald-500 shrink-0 mt-0.5" />
-                  <span><strong>Craft & Structure:</strong> Words in Context, Text Structure & Purpose, Cross-Text Connections.</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 size={16} className="text-emerald-500 shrink-0 mt-0.5" />
-                  <span><strong>Information & Ideas:</strong> Central Ideas, Command of Evidence (Textual & Quantitative), Inferences.</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 size={16} className="text-emerald-500 shrink-0 mt-0.5" />
-                  <span><strong>Standard English Conventions:</strong> Boundaries, Form, Structure, and Sense (Grammar & Punctuation).</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 size={16} className="text-emerald-500 shrink-0 mt-0.5" />
-                  <span><strong>Expression of Ideas:</strong> Rhetorical Synthesis (Bullet Notes) and Transitions.</span>
-                </li>
+              <ul style={{ paddingLeft: '18px', color: '#475569', fontSize: '0.92rem', lineHeight: 1.7, margin: 0 }}>
+                <li><strong>Craft & Structure:</strong> Words in Context, Text Structure & Purpose, Cross-Text Connections.</li>
+                <li><strong>Information & Ideas:</strong> Central Ideas, Command of Evidence, Inferences.</li>
+                <li><strong>Standard English Conventions:</strong> Boundaries, Form, Structure, and Sense (Grammar).</li>
+                <li><strong>Expression of Ideas:</strong> Rhetorical Synthesis (Bullet Notes) and Transitions.</li>
               </ul>
             </div>
 
-            <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200">
-              <h3 className="font-bold text-slate-900 text-lg mb-3 flex items-center gap-2">
-                <Target size={18} className="text-emerald-600" /> Mathematics (4 Domains)
+            <div className="sat-card">
+              <h3 style={{ color: '#166534', fontSize: '1.2rem', marginTop: 0, display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <Target size={20} /> Mathematics (4 Domains)
               </h3>
-              <ul className="space-y-2 text-xs sm:text-sm text-slate-600">
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 size={16} className="text-emerald-500 shrink-0 mt-0.5" />
-                  <span><strong>Algebra:</strong> Linear equations in one/two variables, linear functions, linear systems, inequalities.</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 size={16} className="text-emerald-500 shrink-0 mt-0.5" />
-                  <span><strong>Advanced Math:</strong> Equivalent expressions, nonlinear equations (quadratics, polynomials), nonlinear functions.</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 size={16} className="text-emerald-500 shrink-0 mt-0.5" />
-                  <span><strong>Problem-Solving & Data:</strong> Ratios, rates, percentages, probability, unit conversions, distributions.</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 size={16} className="text-emerald-500 shrink-0 mt-0.5" />
-                  <span><strong>Geometry & Trigonometry:</strong> Area and volume, angles, right triangles and trigonometry, circle theorems.</span>
-                </li>
+              <ul style={{ paddingLeft: '18px', color: '#475569', fontSize: '0.92rem', lineHeight: 1.7, margin: 0 }}>
+                <li><strong>Algebra:</strong> Linear equations in one/two variables, linear functions, linear systems, inequalities.</li>
+                <li><strong>Advanced Math:</strong> Equivalent expressions, quadratics, polynomials, nonlinear functions.</li>
+                <li><strong>Problem-Solving & Data:</strong> Ratios, rates, percentages, probability, unit conversions.</li>
+                <li><strong>Geometry & Trigonometry:</strong> Area, volume, circle theorems, right triangle trigonometry.</li>
               </ul>
             </div>
           </div>
-        </section>
 
-        {/* Diagnostic Assessment CTA Card */}
-        <div className="bg-gradient-to-r from-emerald-900 via-slate-900 to-emerald-950 text-white rounded-2xl p-8 mb-14 shadow-lg text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-6">
-          <div className="max-w-xl">
-            <div className="inline-flex items-center gap-1.5 text-emerald-400 font-bold text-xs uppercase tracking-wider mb-2">
-              <Award size={14} /> Measure Your Question-Solving Speed
+          {/* Diagnostic Assessment CTA Card */}
+          <div className="sat-cta-banner">
+            <div>
+              <div className="sat-cta-eyebrow">
+                <Award size={15} /> Measure Your Question-Solving Speed
+              </div>
+              <h3 className="sat-cta-title">Take Nitaq's Free Adaptive Diagnostic</h3>
+              <p className="sat-cta-desc">
+                Before jumping into hundreds of uncurated question bank items, establish which of the 8 College Board domains need immediate reinforcement. Get your instant report today.
+              </p>
             </div>
-            <h3 className="text-2xl font-black text-white tracking-tight mb-2">Take Nitaq's Free Adaptive Diagnostic</h3>
-            <p className="text-slate-300 text-sm leading-relaxed">
-              Before jumping into hundreds of uncurated question bank items, establish which of the 8 College Board domains need immediate reinforcement. Get your instant report today.
-            </p>
+            <Link to="/sat/diagnostic" className="sat-cta-btn-primary">
+              Start Free Diagnostic <ArrowRight size={16} />
+            </Link>
           </div>
-          <Link
-            to="/sat/diagnostic"
-            className="shrink-0 inline-flex items-center gap-2 px-6 py-3.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-sm rounded-xl transition-all shadow-md"
-          >
-            Start Free Diagnostic <ArrowRight size={16} />
-          </Link>
-        </div>
 
-        {/* FAQ Section */}
-        <section className="mb-14">
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-6 flex items-center gap-2">
-            <HelpCircle className="text-emerald-600" size={28} />
+          {/* FAQ Section */}
+          <h2>
+            <HelpCircle size={24} color="#166534" />
             Frequently Asked Questions: SAT Suite Question Bank
           </h2>
-          <div className="space-y-3">
+
+          <div className="sat-faq-wrap">
             {[
               {
                 q: 'Is the SAT Suite Question Bank completely free to use?',
@@ -190,36 +187,36 @@ const SatSuiteQuestionBankGuide = () => {
                 a: 'Yes. The platform allows you to select question checkboxes and click "Export to PDF" with or without the answer key, which is great for offline weekend study sessions.'
               }
             ].map((faq, idx) => (
-              <div key={idx} className="border border-slate-200 rounded-xl overflow-hidden transition-colors">
+              <div key={idx} className="sat-faq-item">
                 <button
                   type="button"
                   onClick={() => toggleFaq(idx)}
-                  className="w-full text-left p-4 sm:p-5 flex items-center justify-between gap-4 font-bold text-slate-900 hover:bg-slate-50"
+                  className="sat-faq-btn"
                 >
-                  <span className="text-sm sm:text-base">{faq.q}</span>
-                  <span className="text-emerald-600 text-lg font-bold shrink-0">{openFaq === idx ? '−' : '+'}</span>
+                  <span>{faq.q}</span>
+                  <span className="sat-faq-icon">{openFaq === idx ? '−' : '+'}</span>
                 </button>
                 {openFaq === idx && (
-                  <div className="px-4 sm:px-5 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3 bg-slate-50/50">
+                  <div className="sat-faq-body">
                     {faq.a}
                   </div>
                 )}
               </div>
             ))}
           </div>
-        </section>
 
-        {/* Next Reading / Related Links */}
-        <div className="border-t border-slate-200 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-slate-600">
-          <Link to="/article/desmos-sat-guide-math-calculator-strategies" className="text-emerald-600 hover:underline font-semibold flex items-center gap-1">
-            ← Desmos SAT Math Calculator Strategies
-          </Link>
-          <Link to="/article/how-to-ace-sat-study-plan-guide" className="text-emerald-600 hover:underline font-semibold flex items-center gap-1">
-            Next: How to Ace the SAT: 30/60/90-Day Study Plan →
-          </Link>
+          {/* Related Links */}
+          <div className="sat-guide-footer-links">
+            <Link to="/article/desmos-sat-guide-math-calculator-strategies">
+              ← Desmos SAT Math Calculator Strategies
+            </Link>
+            <Link to="/article/how-to-ace-sat-study-plan-guide">
+              Next: How to Ace the SAT: 30/60/90-Day Study Plan →
+            </Link>
+          </div>
         </div>
-      </div>
-    </div>
+      </article>
+    </main>
   );
 };
 

@@ -3,7 +3,7 @@ import { Link } from '../../i18n/Link';
 import SEO from '../../components/SEO';
 import { 
   Building2, CheckCircle2, AlertCircle, Clock, ShieldCheck, 
-  HelpCircle, ArrowRight, Award, Zap, Users, Check, Search
+  HelpCircle, ArrowRight, Award, Zap, Users, Check, Search, ChevronRight
 } from 'lucide-react';
 
 const SatPrepOptionsUaeComparisonGuide = () => {
@@ -39,165 +39,182 @@ const SatPrepOptionsUaeComparisonGuide = () => {
   ];
 
   return (
-    <div className="article-page bg-white text-slate-800">
+    <div className="sat-guide-page">
       <SEO />
 
+      {/* Breadcrumbs with 120px top offset to clear navbar */}
+      <div className="sat-guide-breadcrumbs-wrap">
+        <div className="sat-guide-container">
+          <nav className="sat-guide-breadcrumbs" aria-label="Breadcrumb">
+            <Link to="/">Home</Link>
+            <ChevronRight size={14} className="sat-breadcrumb-separator" />
+            <Link to="/article">Articles</Link>
+            <ChevronRight size={14} className="sat-breadcrumb-separator" />
+            <span>SAT Prep Options UAE Comparison</span>
+          </nav>
+        </div>
+      </div>
+
       {/* Hero Header */}
-      <div className="bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 text-white py-16 px-4 sm:px-6 lg:px-8 border-b border-slate-700">
-        <div className="max-w-4xl mx-auto">
-          <div className="flex items-center gap-2 text-emerald-400 font-semibold text-xs tracking-wider uppercase mb-3">
+      <header className="sat-guide-hero">
+        <div className="sat-guide-container">
+          <div className="sat-guide-badge">
             <Building2 size={14} />
             <span>UAE Academy Evaluation Guide (2026–2027)</span>
           </div>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight leading-tight mb-4">
-            SAT Prep Options in the UAE: What to Compare Before Choosing an Academy
-          </h1>
-          <p className="text-slate-300 text-base sm:text-lg leading-relaxed mb-6">
+          <h1>SAT Prep Options in the UAE: What to Compare Before Choosing an Academy</h1>
+          <p className="sat-guide-lead">
             A parent and student guide to evaluating SAT coaching options across Sharjah, Dubai, and Northern Emirates. Compare licensing, batch sizes, adaptive mock software, and mentorship models objectively.
           </p>
-          <div className="flex flex-wrap items-center gap-4 text-xs sm:text-sm text-slate-400 border-t border-slate-700/80 pt-4">
-            <span className="flex items-center gap-1.5"><Clock size={14} className="text-emerald-400" /> 9-Minute Read</span>
-            <span className="flex items-center gap-1.5"><ShieldCheck size={14} className="text-emerald-400" /> Objective Parent Checklist</span>
-            <span className="flex items-center gap-1.5"><Zap size={14} className="text-emerald-400" /> Trending Search (+3,950%)</span>
+          <div className="sat-guide-meta">
+            <span className="sat-meta-item"><Clock size={14} /> 9-Minute Read</span>
+            <span className="sat-meta-item"><ShieldCheck size={14} /> Objective Parent Checklist</span>
+            <span className="sat-meta-item"><Zap size={14} /> Trending Search (+3,950%)</span>
           </div>
         </div>
-      </div>
+      </header>
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Objective Checklist Intro */}
-        <div className="bg-emerald-50/70 border border-emerald-200 rounded-2xl p-6 mb-12">
-          <h2 className="text-lg font-bold text-emerald-950 mb-2 flex items-center gap-2">
-            <Search className="text-emerald-600" size={20} /> Navigating the UAE SAT Prep Market
-          </h2>
-          <p className="text-sm text-emerald-900 leading-relaxed">
-            With rising searches for preparation providers such as <em>Bedrock SAT</em>, <em>One Prep SAT</em>, and local coaching centers across Dubai and Sharjah, families are faced with diverse prep formats—from self-study app platforms to boutique in-person coaching institutes. This guide outlines 5 transparent criteria to help you choose the right learning environment for your child's specific score target.
-          </p>
-        </div>
-
-        {/* 5 Evaluation Criteria */}
-        <section className="mb-14">
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-6 flex items-center gap-2">
-            <CheckCircle2 className="text-emerald-600" size={28} />
-            5 Critical Questions to Ask Before Enrolling
-          </h2>
-
-          <div className="space-y-4">
-            {evaluationCriteria.map((c, idx) => (
-              <div key={idx} className="p-6 rounded-2xl border border-slate-200 bg-white hover:border-emerald-300 transition-colors shadow-sm">
-                <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-2">{c.criterion}</h3>
-                <p className="text-xs sm:text-sm text-slate-600 mb-3 leading-relaxed">{c.why}</p>
-                <div className="p-3 bg-slate-50 rounded-lg border border-slate-200 text-xs sm:text-sm text-slate-700 flex items-center gap-2">
-                  <Check size={15} className="text-emerald-600 shrink-0" />
-                  <span><strong>What to ask the admissions advisor:</strong> {c.tip}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* The Nitaq Academy Framework */}
-        <section className="mb-14">
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-6 flex items-center gap-2">
-            <Building2 className="text-emerald-600" size={28} />
-            How Nitaq Academy Structures Digital SAT Preparation
-          </h2>
-
-          <div className="grid sm:grid-cols-3 gap-4">
-            <div className="p-5 rounded-xl bg-slate-50 border border-slate-200">
-              <span className="px-2.5 py-0.5 text-xs font-bold rounded-full bg-emerald-100 text-emerald-800 mb-2 inline-block">Micro-Batches</span>
-              <h4 className="font-bold text-slate-900 mb-1">8 to 12 Students</h4>
-              <p className="text-xs text-slate-600">
-                Small group sizes ensure every student receives interactive feedback, question troubleshooting, and individualized homework reviews.
-              </p>
+      {/* Main Content */}
+      <main className="sat-guide-main">
+        <div className="sat-guide-container">
+          {/* Objective Checklist Intro */}
+          <div className="sat-callout sat-callout-emerald">
+            <div className="sat-callout-title">
+              <Search size={20} />
+              <span>Navigating the UAE SAT Prep Market</span>
             </div>
-
-            <div className="p-5 rounded-xl bg-slate-50 border border-slate-200">
-              <span className="px-2.5 py-0.5 text-xs font-bold rounded-full bg-emerald-100 text-emerald-800 mb-2 inline-block">Desmos Integration</span>
-              <h4 className="font-bold text-slate-900 mb-1">Visual Speed Drills</h4>
-              <p className="text-xs text-slate-600">
-                Weekly masterclasses on the College Board's built-in Desmos graphing calculator, teaching regression hacks, sliders, and root identification.
-              </p>
-            </div>
-
-            <div className="p-5 rounded-xl bg-slate-50 border border-slate-200">
-              <span className="px-2.5 py-0.5 text-xs font-bold rounded-full bg-emerald-100 text-emerald-800 mb-2 inline-block">Adaptive Mocks</span>
-              <h4 className="font-bold text-slate-900 mb-1">Timed Diagnostic Analytics</h4>
-              <p className="text-xs text-slate-600">
-                Computer-delivered full-length adaptive tests that simulate the real Bluebook test-day experience and provide domain-by-domain diagnostic scorecards.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Diagnostic Assessment CTA Card */}
-        <div className="bg-gradient-to-r from-emerald-900 via-slate-900 to-emerald-950 text-white rounded-2xl p-8 mb-14 shadow-lg text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-6">
-          <div className="max-w-xl">
-            <div className="inline-flex items-center gap-1.5 text-emerald-400 font-bold text-xs uppercase tracking-wider mb-2">
-              <Award size={14} /> Objective Assessment First
-            </div>
-            <h3 className="text-2xl font-black text-white tracking-tight mb-2">Book a Free SAT Diagnostic Consultation</h3>
-            <p className="text-slate-300 text-sm leading-relaxed">
-              Before committing to any course package, complete our 24-question adaptive screening. Receive an objective diagnostic score report and speak with an academic mentor.
+            <p className="sat-callout-text">
+              With rising searches for preparation providers such as <em>Bedrock SAT</em>, <em>One Prep SAT</em>, and local coaching centers across Dubai and Sharjah, families are faced with diverse prep formats—from self-study app platforms to boutique in-person coaching institutes. This guide outlines 5 transparent criteria to help you choose the right learning environment for your child's specific score target.
             </p>
           </div>
-          <Link
-            to="/sat/diagnostic"
-            className="shrink-0 inline-flex items-center gap-2 px-6 py-3.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-sm rounded-xl transition-all shadow-md"
-          >
-            Take Free Diagnostic <ArrowRight size={16} />
-          </Link>
-        </div>
 
-        {/* FAQ Section */}
-        <section className="mb-14">
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-6 flex items-center gap-2">
-            <HelpCircle className="text-emerald-600" size={28} />
-            Frequently Asked Questions: Choosing an SAT Academy in UAE
-          </h2>
-          <div className="space-y-3">
-            {[
-              {
-                q: 'What are typical SAT preparation course fees in Sharjah and Dubai?',
-                a: 'Course fees across authorized UAE institutes typically range from AED 1,800 to AED 4,500 depending on the total instructional hours (4-week intensive crash courses vs. 10-week comprehensive tracks), batch size, and whether group or 1-on-1 private mentoring is selected.'
-              },
-              {
-                q: 'Is in-person coaching better than online SAT tutoring for UAE students?',
-                a: 'In-person coaching at our Al Majaz 3 centre in Sharjah offers structured focus and direct classroom peer motivation. However, for students residing in Dubai or across the Northern Emirates, live interactive online sessions offer identical curriculum coverage with zero highway commuting time.'
-              },
-              {
-                q: 'When should high school students begin preparation?',
-                a: 'The recommended window is the summer after Grade 10 or the first term of Grade 11. Starting in Grade 11 allows students to complete their official test attempts before Grade 12 board exams and university application deadlines.'
-              }
-            ].map((faq, idx) => (
-              <div key={idx} className="border border-slate-200 rounded-xl overflow-hidden transition-colors">
-                <button
-                  type="button"
-                  onClick={() => toggleFaq(idx)}
-                  className="w-full text-left p-4 sm:p-5 flex items-center justify-between gap-4 font-bold text-slate-900 hover:bg-slate-50"
-                >
-                  <span className="text-sm sm:text-base">{faq.q}</span>
-                  <span className="text-emerald-600 text-lg font-bold shrink-0">{openFaq === idx ? '−' : '+'}</span>
-                </button>
-                {openFaq === idx && (
-                  <div className="px-4 sm:px-5 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3 bg-slate-50/50">
-                    {faq.a}
+          {/* 5 Evaluation Criteria */}
+          <section className="sat-section">
+            <h2 className="sat-section-title">
+              <CheckCircle2 size={26} />
+              5 Critical Questions to Ask Before Enrolling
+            </h2>
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              {evaluationCriteria.map((c, idx) => (
+                <div key={idx} className="sat-card">
+                  <h3 style={{ fontSize: '1.2rem', fontWeight: 800, color: '#0f172a', marginBottom: '8px' }}>{c.criterion}</h3>
+                  <p style={{ fontSize: '0.92rem', color: '#475569', marginBottom: '14px', lineHeight: 1.6 }}>{c.why}</p>
+                  <div className="sat-callout sat-callout-blue" style={{ margin: 0, padding: '10px 14px' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <Check size={16} style={{ color: '#2563eb', flexShrink: 0 }} />
+                      <span style={{ fontSize: '0.86rem', color: '#1e3a8a' }}>
+                        <strong style={{ color: '#1e3a8a' }}>What to ask the admissions advisor:</strong> {c.tip}
+                      </span>
+                    </div>
                   </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </section>
+                </div>
+              ))}
+            </div>
+          </section>
 
-        {/* Next Reading / Related Links */}
-        <div className="border-t border-slate-200 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-slate-600">
-          <Link to="/article/khan-academy-sat-vs-structured-coaching" className="text-emerald-600 hover:underline font-semibold flex items-center gap-1">
-            ← Khan Academy vs Structured Coaching
-          </Link>
-          <Link to="/article/sat-requirements-uae-top-universities-harvard" className="text-emerald-600 hover:underline font-semibold flex items-center gap-1">
-            Next: SAT Requirements for UAE & Top Universities (Harvard, AUS) →
-          </Link>
+          {/* The Nitaq Academy Framework */}
+          <section className="sat-section">
+            <h2 className="sat-section-title">
+              <Building2 size={26} />
+              How Nitaq Academy Structures Digital SAT Preparation
+            </h2>
+
+            <div className="sat-grid sat-grid-3">
+              <div className="sat-card">
+                <span className="sat-badge sat-badge-emerald" style={{ marginBottom: '12px' }}>Micro-Batches</span>
+                <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: '#0f172a', marginBottom: '8px' }}>8 to 12 Students</h3>
+                <p style={{ fontSize: '0.88rem', color: '#475569', lineHeight: 1.6 }}>
+                  Small group sizes ensure every student receives interactive feedback, question troubleshooting, and individualized homework reviews.
+                </p>
+              </div>
+
+              <div className="sat-card">
+                <span className="sat-badge sat-badge-emerald" style={{ marginBottom: '12px' }}>Desmos Integration</span>
+                <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: '#0f172a', marginBottom: '8px' }}>Visual Speed Drills</h3>
+                <p style={{ fontSize: '0.88rem', color: '#475569', lineHeight: 1.6 }}>
+                  Weekly masterclasses on the College Board's built-in Desmos graphing calculator, teaching regression hacks, sliders, and root identification.
+                </p>
+              </div>
+
+              <div className="sat-card">
+                <span className="sat-badge sat-badge-emerald" style={{ marginBottom: '12px' }}>Adaptive Mocks</span>
+                <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: '#0f172a', marginBottom: '8px' }}>Timed Diagnostic Analytics</h3>
+                <p style={{ fontSize: '0.88rem', color: '#475569', lineHeight: 1.6 }}>
+                  Computer-delivered full-length adaptive tests that simulate the real Bluebook test-day experience and provide domain-by-domain diagnostic scorecards.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* Diagnostic Assessment CTA Card */}
+          <div className="sat-cta-banner">
+            <div className="sat-cta-content">
+              <div className="sat-cta-badge">
+                <Award size={14} /> Objective Assessment First
+              </div>
+              <h3 className="sat-cta-title">Book a Free SAT Diagnostic Consultation</h3>
+              <p className="sat-cta-desc">
+                Before committing to any course package, complete our 24-question adaptive screening. Receive an objective diagnostic score report and speak with an academic mentor.
+              </p>
+            </div>
+            <Link to="/sat/diagnostic" className="sat-cta-btn">
+              Take Free Diagnostic <ArrowRight size={16} />
+            </Link>
+          </div>
+
+          {/* FAQ Section */}
+          <section className="sat-section">
+            <h2 className="sat-section-title">
+              <HelpCircle size={26} />
+              Frequently Asked Questions: Choosing an SAT Academy in UAE
+            </h2>
+            <div className="sat-faq-list">
+              {[
+                {
+                  q: 'What are typical SAT preparation course fees in Sharjah and Dubai?',
+                  a: 'Course fees across authorized UAE institutes typically range from AED 1,800 to AED 4,500 depending on the total instructional hours (4-week intensive crash courses vs. 10-week comprehensive tracks), batch size, and whether group or 1-on-1 private mentoring is selected.'
+                },
+                {
+                  q: 'Is in-person coaching better than online SAT tutoring for UAE students?',
+                  a: 'In-person coaching at our Al Majaz 3 centre in Sharjah offers structured focus and direct classroom peer motivation. However, for students residing in Dubai or across the Northern Emirates, live interactive online sessions offer identical curriculum coverage with zero highway commuting time.'
+                },
+                {
+                  q: 'When should high school students begin preparation?',
+                  a: 'The recommended window is the summer after Grade 10 or the first term of Grade 11. Starting in Grade 11 allows students to complete their official test attempts before Grade 12 board exams and university application deadlines.'
+                }
+              ].map((faq, idx) => (
+                <div key={idx} className="sat-faq-item">
+                  <button
+                    type="button"
+                    onClick={() => toggleFaq(idx)}
+                    className="sat-faq-trigger"
+                    aria-expanded={openFaq === idx}
+                  >
+                    <span>{faq.q}</span>
+                    <span className="sat-faq-icon">{openFaq === idx ? '−' : '+'}</span>
+                  </button>
+                  {openFaq === idx && (
+                    <div className="sat-faq-answer">
+                      {faq.a}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Next Reading / Related Links */}
+          <nav className="sat-guide-nav" aria-label="Article navigation">
+            <Link to="/article/khan-academy-sat-vs-structured-coaching" className="sat-nav-prev">
+              ← Khan Academy vs Structured Coaching
+            </Link>
+            <Link to="/article/sat-requirements-uae-top-universities-harvard" className="sat-nav-next">
+              Next: SAT Requirements for UAE & Top Universities (Harvard, AUS) →
+            </Link>
+          </nav>
         </div>
-      </div>
+      </main>
     </div>
   );
 };
