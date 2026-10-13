@@ -20,8 +20,8 @@
         "/contact"
       ],
       "commitMessage": "feat(enquiry): Day 2 - Context-aware parent assessment flow with grade, curriculum retention & WhatsApp integration",
-      "status": "pending",
-      "publishedAt": null
+      "status": "published",
+      "publishedAt": "2026-10-13T05:08:16.304Z"
     },
     {
       "day": 3,

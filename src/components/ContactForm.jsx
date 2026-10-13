@@ -26,10 +26,19 @@ const ContactForm = ({ mode = 'contact' }) => {
         return paramCourse;
     };
 
+    const paramBranch = searchParams.get('branch') || '';
+    const getInitialBranch = () => {
+        if (!paramBranch) return 'Sharjah Campus (Al Majaz 3)';
+        const b = paramBranch.toLowerCase();
+        if (b.includes('dubai') || b.includes('online')) return 'Dubai & Online';
+        return 'Sharjah Campus (Al Majaz 3)';
+    };
+
     const [formData, setFormData] = useState({
         name: '',
         email: '',
         phone: '',
+        branch: getInitialBranch(),
         subject: mode === 'contact' ? '' : (isAssessment ? (isAr ? 'طلب تقييم دراسي للطفل' : 'Student Assessment Request') : (isAr ? 'استفسار عن الدورات' : 'Course Enquiry')),
         course: getInitialCourse(),
         grade: '',
@@ -41,6 +50,9 @@ const ContactForm = ({ mode = 'contact' }) => {
         const initial = getInitialCourse();
         if (initial && !formData.course) {
             setFormData(prev => ({ ...prev, course: initial }));
+        }
+        if (paramBranch) {
+            setFormData(prev => ({ ...prev, branch: getInitialBranch() }));
         }
     }, [location.search]);
     const [status, setStatus] = useState({ type: '', message: '' });
@@ -100,8 +112,11 @@ const ContactForm = ({ mode = 'contact' }) => {
                     name: '',
                     email: '',
                     phone: '',
-                    subject: mode === 'contact' ? '' : (isAr ? 'استفسار عن الدورات' : 'Course Enquiry'),
+                    branch: getInitialBranch(),
+                    subject: mode === 'contact' ? '' : (isAssessment ? (isAr ? 'طلب تقييم دراسي للطفل' : 'Student Assessment Request') : (isAr ? 'استفسار عن الدورات' : 'Course Enquiry')),
                     course: '',
+                    grade: '',
+                    curriculum: '',
                     message: ''
                 });
             }
@@ -185,27 +200,48 @@ const ContactForm = ({ mode = 'contact' }) => {
                             style={{ width: '100%', padding: '14px 20px', borderRadius: '12px', border: '1px solid #e2e8f0', background: '#f8fafc', fontSize: '1rem' }}
                         />
                     </div>
-                    {mode === 'contact' ? (
-                        <div>
-                            <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, color: '#334155', marginBottom: '8px' }} htmlFor={`cf-${mode}-subject`}>
-                                {isAr ? 'موضوع الرسالة' : 'Subject'}
-                            </label>
-                            <input
-                                id={`cf-${mode}-subject`}
-                                type="text"
-                                name="subject"
-                                value={formData.subject}
-                                onChange={handleChange}
-                                required
-                                placeholder={isAr ? 'كيف يمكننا مساعدتك؟' : 'How can we help?'}
-                                style={{ width: '100%', padding: '14px 20px', borderRadius: '12px', border: '1px solid #e2e8f0', background: '#f8fafc', fontSize: '1rem' }}
-                            />
-                        </div>
-                    ) : (
-                        <div>
-                            <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, color: '#334155', marginBottom: '8px' }} htmlFor={`cf-${mode}-course`}>
-                                {isAr ? 'الدورة أو البرنامج المطلوب' : 'Course Interested In'}
-                            </label>
+                    <div>
+                        <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, color: '#334155', marginBottom: '8px' }} htmlFor={`cf-${mode}-branch`}>
+                            {isAr ? 'الفرع أو المركز المفضل' : 'Preferred Campus / Branch'}
+                        </label>
+                        <select
+                            id={`cf-${mode}-branch`}
+                            name="branch"
+                            value={formData.branch}
+                            onChange={handleChange}
+                            required
+                            style={{ width: '100%', padding: '14px 20px', borderRadius: '12px', border: '1px solid #e2e8f0', background: '#f8fafc', fontSize: '1rem' }}
+                        >
+                            <option value="Sharjah Campus (Al Majaz 3)">
+                                {isAr ? 'فرع الشارقة — برج أبو خمسين، المجاز 3 (حضوري)' : 'Sharjah Campus — Abu Khamseen Tower, Al Majaz 3 (In-Person)'}
+                            </option>
+                            <option value="Dubai & Online">
+                                {isAr ? 'دبي والإمارات الأخرى — فصول تفاعلية عبر الإنترنت' : 'Dubai & UAE — Live Interactive Online Cohorts'}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                {mode === 'contact' ? (
+                    <div>
+                        <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, color: '#334155', marginBottom: '8px' }} htmlFor={`cf-${mode}-subject`}>
+                            {isAr ? 'موضوع الرسالة' : 'Subject'}
+                        </label>
+                        <input
+                            id={`cf-${mode}-subject`}
+                            type="text"
+                            name="subject"
+                            value={formData.subject}
+                            onChange={handleChange}
+                            required
+                            placeholder={isAr ? 'كيف يمكننا مساعدتك؟' : 'How can we help?'}
+                            style={{ width: '100%', padding: '14px 20px', borderRadius: '12px', border: '1px solid #e2e8f0', background: '#f8fafc', fontSize: '1rem' }}
+                        />
+                    </div>
+                ) : (
+                    <div>
+                        <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, color: '#334155', marginBottom: '8px' }} htmlFor={`cf-${mode}-course`}>
+                            {isAr ? 'الدورة أو البرنامج المطلوب' : 'Course Interested In'}
+                        </label>
                             <select
                                 id={`cf-${mode}-course`}
                                 name="course"
@@ -299,7 +335,6 @@ const ContactForm = ({ mode = 'contact' }) => {
                             </div>
                         </div>
                     )}
-                </div>
                 <div>
                     <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, color: '#334155', marginBottom: '8px' }} htmlFor={`cf-${mode}-message`}>
                         {isAr ? (isAssessment ? 'المواضيع أو النقاط التي يحتاج طفلك دعماً فيها' : 'تفاصيل رسالتك أو استفسارك') : (isAssessment ? 'Specific topics or challenges your child needs help with' : 'Your Message')}
