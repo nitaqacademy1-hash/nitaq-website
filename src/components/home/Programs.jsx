@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from '../../i18n/Link';
 
 const programMedia = {
@@ -21,6 +21,7 @@ export default function Programs({ c }) {
   const activeIndexRef = useRef(0);
   const sectionRef = useRef(null);
   const tabsRef = useRef(null);
+  const touchStartX = useRef(null);
 
   // Auto-scroll the mobile tab bar to keep the active pill centered
   useEffect(() => {
@@ -35,6 +36,25 @@ export default function Programs({ c }) {
   const selectCard = (index) => {
     setActiveIndex(index);
     activeIndexRef.current = index;
+  };
+
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e) => {
+    if (touchStartX.current === null) return;
+    const diff = e.changedTouches[0].clientX - touchStartX.current;
+    if (Math.abs(diff) > 40) {
+      if (diff < 0) {
+        // Swiped left -> Next
+        setActiveIndex((prev) => (prev + 1) % c.programs.length);
+      } else {
+        // Swiped right -> Prev
+        setActiveIndex((prev) => (prev - 1 + c.programs.length) % c.programs.length);
+      }
+    }
+    touchStartX.current = null;
   };
 
   return (
@@ -82,7 +102,11 @@ export default function Programs({ c }) {
           </div>
 
           {/* Accordion Sliver Rail Stage */}
-          <div className="nh-accordion-stage">
+          <div
+            className="nh-accordion-stage"
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
+          >
             <div className="nh-accordion-rail" role="region" aria-label="Course Programs Accordion Rail">
               {c.programs.map(([title, body, tags, alt], i) => {
                 const isOpen = i === activeIndex;
@@ -112,11 +136,11 @@ export default function Programs({ c }) {
                       <img
                         src={info.small}
                         srcSet={`${info.small} 480w, ${info.full} 960w`}
-                        sizes="(max-width: 768px) 90vw, 360px"
+                        sizes="(max-width: 768px) 420px, 360px"
                         alt={alt || title}
                         width="480"
                         height="436"
-                        loading="lazy"
+                        loading={i === 0 ? "eager" : "lazy"}
                         decoding="async"
                       />
                       <div className="nh-sliver-overlay" />
@@ -152,6 +176,37 @@ export default function Programs({ c }) {
                 );
               })}
             </div>
+          </div>
+
+          {/* Mobile Card Switcher Navigation */}
+          <div className="nh-programs-mobile-nav" aria-label="Program pagination">
+            <button
+              type="button"
+              className="nh-program-nav-btn prev"
+              onClick={() => setActiveIndex((prev) => (prev - 1 + c.programs.length) % c.programs.length)}
+              aria-label="Previous Program"
+            >
+              <ChevronLeft size={18} />
+            </button>
+            <div className="nh-program-nav-dots">
+              {c.programs.map(([title], i) => (
+                <button
+                  key={title}
+                  type="button"
+                  className={`nh-program-dot ${i === activeIndex ? 'is-active' : ''}`}
+                  onClick={() => selectCard(i)}
+                  aria-label={`Go to program ${i + 1}`}
+                />
+              ))}
+            </div>
+            <button
+              type="button"
+              className="nh-program-nav-btn next"
+              onClick={() => setActiveIndex((prev) => (prev + 1) % c.programs.length)}
+              aria-label="Next Program"
+            >
+              <ChevronRight size={18} />
+            </button>
           </div>
         </div>
       </div>
