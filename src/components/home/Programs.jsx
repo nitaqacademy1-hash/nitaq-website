@@ -1,10 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { ArrowUpRight } from 'lucide-react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Link } from '../../i18n/Link';
-
-gsap.registerPlugin(ScrollTrigger);
 
 const programMedia = {
   sat: { full: '/nitaq/courses/sat.webp', small: '/nitaq/courses/sat-480.webp', path: '/sat-preparation-sharjah' },
@@ -25,8 +21,6 @@ export default function Programs({ c }) {
   const activeIndexRef = useRef(0);
   const sectionRef = useRef(null);
   const tabsRef = useRef(null);
-  const isAutoScrollingRef = useRef(false);
-  const scrollTriggerRef = useRef(null);
 
   // Auto-scroll the mobile tab bar to keep the active pill centered
   useEffect(() => {
@@ -38,69 +32,9 @@ export default function Programs({ c }) {
     }
   }, [activeIndex]);
 
-  // Mobile scroll-driven progression using GSAP ScrollTrigger:
-  // Card 01 -> Card 02 -> Card 03 -> Card 04 opens sequentially as user scrolls down
-  useEffect(() => {
-    const section = sectionRef.current;
-    if (!section) return;
-
-    const mm = gsap.matchMedia();
-
-    mm.add('(max-width: 860px)', () => {
-      const numPrograms = c.programs.length;
-      // Scroll distance gives ~380px per card (approx 2 natural thumb swipes each)
-      const scrollDistance = Math.max(window.innerHeight * 1.5, numPrograms * 380);
-
-      const trigger = ScrollTrigger.create({
-        trigger: section,
-        pin: true,
-        start: 'top top+=68',
-        end: () => `+=${scrollDistance}`,
-        pinSpacing: true,
-        anticipatePin: 1,
-        fastScrollEnd: true,
-        onUpdate: (self) => {
-          if (isAutoScrollingRef.current) return;
-          const clamped = Math.min(Math.max(self.progress, 0), 0.9999);
-          const newIndex = Math.floor(clamped * numPrograms);
-          if (newIndex !== activeIndexRef.current) {
-            activeIndexRef.current = newIndex;
-            setActiveIndex(newIndex);
-          }
-        },
-      });
-
-      scrollTriggerRef.current = trigger;
-    });
-
-    return () => {
-      mm.revert();
-      scrollTriggerRef.current = null;
-    };
-  }, [c.programs.length]);
-
-  // Smooth-scroll into the matching card slice when user taps a pill
   const selectCard = (index) => {
     setActiveIndex(index);
     activeIndexRef.current = index;
-
-    const trigger = scrollTriggerRef.current;
-    if (trigger && window.innerWidth <= 860) {
-      const totalProg = c.programs.length;
-      // Target progress is centered in that card's slice
-      const targetProgress = (index + 0.5) / totalProg;
-      const targetScroll = trigger.start + targetProgress * (trigger.end - trigger.start);
-
-      isAutoScrollingRef.current = true;
-      gsap.to(window, {
-        scrollTo: targetScroll,
-        duration: 0.45,
-        ease: 'power2.out',
-        onComplete: () => {
-          isAutoScrollingRef.current = false;
-        },
-      });
-    }
   };
 
   return (

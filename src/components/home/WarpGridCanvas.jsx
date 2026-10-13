@@ -4,6 +4,11 @@ export default function WarpGridCanvas() {
   const canvasRef = useRef(null);
 
   useEffect(() => {
+    // Disable intensive canvas particle calculations on mobile devices (< 768px) or reduced motion
+    if (typeof window === 'undefined' || window.innerWidth < 768 || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      return;
+    }
+
     const canvas = canvasRef.current;
     if (!canvas) return;
 

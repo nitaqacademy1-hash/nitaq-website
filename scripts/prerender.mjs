@@ -322,7 +322,12 @@ async function prerender() {
       if (leadingMeta) {
         for (const tag of leadingMeta[0].match(/<link\b[^>]*>/gi) || []) {
           if (/rel=["'](?:preload|preconnect|prefetch|dns-prefetch)["']/i.test(tag)) {
-            hoistedHints += `\n        ${tag}`;
+            const hrefMatch = tag.match(/href=["']([^"']*)["']/i);
+            const srcMatch = tag.match(/imageSrcSet=["']([^"']*)["']/i);
+            const identifier = hrefMatch?.[1] || srcMatch?.[1]?.split(' ')?.[0];
+            if (!identifier || !template.includes(identifier)) {
+              hoistedHints += `\n        ${tag}`;
+            }
           }
         }
         html = html.slice(leadingMeta[0].length);

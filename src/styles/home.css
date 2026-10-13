@@ -2920,6 +2920,7 @@
   position: absolute;
   inset: 0;
   background: linear-gradient(to bottom, transparent 50%, rgba(9, 35, 20, 0.65));
+  pointer-events: none;
 }
 
 /* Floating diagnostic badge */
@@ -3054,6 +3055,14 @@
     padding-bottom: 44px;
     min-height: 0;
     align-items: flex-start
+  }
+
+  .nh-story-inner {
+    width: min(1320px, calc(100% - 40px));
+  }
+
+  .nh-warp-canvas {
+    display: none !important;
   }
 
   .nh-hero-grid {

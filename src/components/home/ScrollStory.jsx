@@ -70,11 +70,11 @@ export default function ScrollStory({ c }) {
           {/* Main image */}
           <div className="nh-hero-image-wrap">
             <img
-              src="/nitaq/hero/student-desk.webp"
-              srcSet="/nitaq/hero/student-desk-800.webp 800w, /nitaq/hero/student-desk.webp 1376w"
-              sizes="(max-width: 767px) calc(100vw - 112px), 48vw"
-              width="1376"
-              height="768"
+              src="/nitaq/hero/student-desk-800.webp"
+              srcSet="/nitaq/hero/student-desk-480.webp 480w, /nitaq/hero/student-desk-800.webp 800w, /nitaq/hero/student-desk.webp 1376w"
+              sizes="(max-width: 767px) calc(100vw - 40px), (max-width: 1200px) 46vw, 600px"
+              width="800"
+              height="446"
               fetchPriority="high"
               loading="eager"
               decoding="async"

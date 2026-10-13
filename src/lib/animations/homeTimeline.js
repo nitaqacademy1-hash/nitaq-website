@@ -25,24 +25,6 @@ export function initHomeAnimations(root) {
     const tick = time => lenis.raf(time * 1000);
     gsap.ticker.add(tick);
 
-    // Navbar entrance
-    gsap.fromTo(nav, { y: -15, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, ease: 'power2.out' });
-
-    // Hero content entrance: keep immediately readable, gentle non-blocking entrance
-    const heroContent = query('.nh-hero-content > *');
-    gsap.fromTo(
-      heroContent,
-      { y: 12, opacity: 0.85 },
-      { y: 0, opacity: 1, stagger: 0.04, duration: 0.45, ease: 'power2.out' }
-    );
-
-    // Hero visual entrance (keep hero image visible immediately to eliminate LCP delay)
-    gsap.fromTo(
-      query('.nh-hero-float-badge'),
-      { x: -20, opacity: 0 },
-      { x: 0, opacity: 1, duration: 0.7, ease: 'back.out(1.5)', delay: 0.2 }
-    );
-
     // Reveal sections below the hero as they enter viewport
     query('.nh-reveal').forEach(element => {
       gsap.fromTo(

@@ -42,22 +42,9 @@ export default function Home() {
     };
     events.forEach(evt => window.addEventListener(evt, handleInteraction, { once: true, passive: true }));
 
-    // Or run when main thread is idle after initial render
-    let idleId;
-    if ('requestIdleCallback' in window) {
-      idleId = window.requestIdleCallback(startAnimations, { timeout: 1500 });
-    } else {
-      idleId = setTimeout(startAnimations, 800);
-    }
-
     return () => {
       cancelled = true;
       events.forEach(evt => window.removeEventListener(evt, handleInteraction));
-      if ('cancelIdleCallback' in window && typeof idleId === 'number') {
-        window.cancelIdleCallback(idleId);
-      } else {
-        clearTimeout(idleId);
-      }
       cleanup?.();
     };
   }, [lang]);
