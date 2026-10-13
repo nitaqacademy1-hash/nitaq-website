@@ -108,14 +108,15 @@
 
 .nh-chip-count {
   font-size: 11px;
-  opacity: 0.85;
+  font-weight: 700;
+  opacity: 1;
 }
 
 .nh-chip-more {
   background: #f8fafc;
-  font-weight: 600;
-  color: #0284c7;
-  border-color: #bae6fd;
+  font-weight: 700;
+  color: #0369a1;
+  border-color: #7dd3fc;
 }
 
 .nh-chip-more:hover {

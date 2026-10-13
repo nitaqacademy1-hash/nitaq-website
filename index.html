@@ -3,18 +3,32 @@
 
 <head>
   <meta charset="UTF-8" />
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VZN7JBMNPN"></script>
+  
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/favicon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Preconnect to critical CDNs -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Unified Typography Preload with font-display: swap -->
+  <link
+    rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Caveat:wght@600;700&family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap"
+    onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Caveat:wght@600;700&family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap">
+  </noscript>
+
+  <!-- Performance-Optimized Third-Party Analytics (GTM & Meta Pixel) -->
+  <!-- Stubs prevent any runtime errors while deferring heavy scripts until after initial paint & hydration -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-
     gtag('config', 'G-VZN7JBMNPN');
-  </script>
 
-  <!-- Meta Pixel Code -->
-  <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
     n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -25,29 +39,35 @@
     'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '3710720559082121');
     fbq('track', 'PageView');
+
+    // Defer heavy network script evaluation for GTM to protect TBT and LCP
+    (function () {
+      var gtmLoaded = false;
+      function loadGTM() {
+        if (gtmLoaded) return;
+        gtmLoaded = true;
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-VZN7JBMNPN';
+        document.head.appendChild(s);
+      }
+
+      if ('requestIdleCallback' in window) {
+        window.requestIdleCallback(function () {
+          setTimeout(loadGTM, 1500);
+        });
+      } else {
+        window.addEventListener('load', function () {
+          setTimeout(loadGTM, 2500);
+        }, { once: true });
+      }
+      window.addEventListener('scroll', loadGTM, { once: true, passive: true });
+      window.addEventListener('pointerdown', loadGTM, { once: true, passive: true });
+      window.addEventListener('keydown', loadGTM, { once: true });
+    })();
   </script>
-  <!-- End Meta Pixel Code -->
 
-  <link rel="icon" type="image/png" href="/favicon.png" />
-  <link rel="apple-touch-icon" href="/favicon.png" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- JSON-LD managed by SEO.jsx -->
-
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    rel="preload" as="style"
-    href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Caveat:wght@600;700&family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap"
-    onload="this.onload=null;this.rel='stylesheet'">
-  <noscript>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Caveat:wght@600;700&family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap">
-  </noscript>
-
-
-  <!-- Load chat after the initial render or first interaction to reduce LCP/INP contention. -->
+  <!-- Zoho SalesIQ Chat: Loaded after initial render or interaction -->
   <script>
     window.$zoho = window.$zoho || {};
     $zoho.salesiq = $zoho.salesiq || { ready: function () { } };
@@ -67,15 +87,6 @@
       window.addEventListener('keydown', loadChat, { once: true });
     }());
   </script>
-
-  <!-- Arabic typography (Poppins/Inter carry no Arabic glyphs) -->
-  <link
-    rel="preload" as="style"
-    href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap"
-    onload="this.onload=null;this.rel='stylesheet'">
-  <noscript>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap">
-  </noscript>
 </head>
 
 <body>

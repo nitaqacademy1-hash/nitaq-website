@@ -1,8 +1,8 @@
 /* Homepage-only design system; shared course and account styles are untouched. */
 .nitaq-home {
-  --nh-green: #2e7d32;
-  --nh-ink: #153c29;
-  --nh-muted: #617067;
+  --nh-green: #15803d;
+  --nh-ink: #0f2d1e;
+  --nh-muted: #2d3f35;
   --nh-paper: #f7f9f4;
   --nh-line: #dce5da;
   background: var(--nh-paper);
@@ -68,14 +68,15 @@
 }
 
 .nh-eyebrow {
-  font-size: 10px;
-  font-weight: 600;
+  font-size: 11px;
+  font-weight: 700;
   letter-spacing: .16em;
   text-transform: uppercase;
   line-height: 1.5;
   display: flex;
   align-items: center;
-  gap: 9px
+  gap: 9px;
+  color: #14532d;
 }
 
 .nh-dot {
@@ -83,9 +84,9 @@
   width: 6px;
   height: 6px;
   flex-shrink: 0;
-  background: #b4d79b;
+  background: #15803d;
   border-radius: 50%;
-  box-shadow: 0 0 0 4px #b4d79b12
+  box-shadow: 0 0 0 4px rgba(21, 128, 61, 0.15)
 }
 
 .nh-button {
@@ -97,7 +98,7 @@
   justify-content: center;
   gap: 14px;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.5;
   border: 1px solid transparent;
   white-space: nowrap
@@ -105,7 +106,7 @@
 
 .nh-button-light {
   background: #eef5e5;
-  color: #19472b
+  color: #0d4223
 }
 
 .nh-button-light:hover {
@@ -130,7 +131,7 @@
 }
 
 .nh-button-green:hover {
-  background: #1b5e20;
+  background: #14532d;
   transform: translateY(-2px)
 }
 
@@ -885,7 +886,8 @@
 .nh-why .nh-eyebrow,
 .nh-process .nh-eyebrow,
 .nh-location .nh-eyebrow {
-  color: #4f6c49;
+  color: #14532d;
+  font-weight: 700;
   margin-bottom: 20px
 }
 
@@ -1688,8 +1690,9 @@
 }
 
 .nh-benefit>small {
-  color: #84917a;
-  font-size: 10px;
+  color: #14532d;
+  font-weight: 800;
+  font-size: 11px;
   margin-inline-start: auto
 }
 
@@ -1719,8 +1722,8 @@
 
 .nh-why-mark span:nth-child(4) {
   height: 100%;
-  background: #2e7d32;
-  border-color: #2e7d32
+  background: #15803d;
+  border-color: #15803d
 }
 
 .nh-process-list {
@@ -1746,14 +1749,16 @@
 }
 
 .nh-process-number {
-  border: 1px solid #bdcfb4;
+  border: 1.5px solid #14532d;
   border-radius: 50%;
   width: 48px;
   height: 48px;
   display: grid;
   place-items: center;
-  font-size: 12px;
-  color: #537447;
+  font-size: 13px;
+  font-weight: 800;
+  color: #14532d;
+  background: #ffffff;
   margin-bottom: 25px
 }
 
@@ -1834,12 +1839,17 @@
   padding-top: 23px;
   margin: 26px 0;
   max-width: 350px;
-  font-size: 12px;
-  line-height: 1.8
+  font-size: 13px;
+  line-height: 1.8;
+  color: #1e293b;
+}
+
+.nh-location address span {
+  color: #1e293b;
 }
 
 .nh-location address svg {
-  color: #2e7d32;
+  color: #15803d;
   margin-top: 2px
 }
 
@@ -1893,7 +1903,7 @@
 
 .nh-footer {
   padding: 65px 0 25px;
-  background: #f1f5ed
+  background: #edf2e8
 }
 
 .nh-footer-grid {
@@ -1903,15 +1913,17 @@
 }
 
 .nh-footer h3 {
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0;
-  font-weight: 600;
+  font-weight: 700;
+  color: #0f172a;
   margin-bottom: 22px
 }
 
 .nh-footer-grid>div>a {
-  font-size: 11px;
-  color: #617067;
+  font-size: 12px;
+  color: #1e293b;
+  font-weight: 500;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -1920,13 +1932,13 @@
 }
 
 .nh-footer-grid>div>a:hover {
-  color: #2e7d32
+  color: #15803d
 }
 
 .nh-footer p {
-  font-size: 11px;
+  font-size: 12px;
   max-width: 240px;
-  color: #617067;
+  color: #2d3f35;
   margin-top: 20px
 }
 
@@ -1943,16 +1955,28 @@
   display: flex;
   justify-content: space-between;
   gap: 20px;
-  border-top: 1px solid #dce5da;
+  border-top: 1px solid #c8d8c2;
   margin-top: 55px;
   padding-top: 23px;
-  font-size: 9px;
-  color: #75816e
+  font-size: 12px;
+  color: #1e293b;
+  font-weight: 500;
 }
 
 .nh-footer-bottom>div {
   display: flex;
   gap: 25px
+}
+
+.nh-footer-bottom a {
+  color: #14532d;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.nh-footer-bottom a:hover {
+  color: #0f3d20;
 }
 
 .nitaq-home[dir=rtl] :is(h1, h2, h3) {
@@ -2484,7 +2508,8 @@
   }
 
   .nh-eyebrow {
-    font-size: 9px
+    font-size: 10.5px;
+    font-weight: 700;
   }
 
   .nh-section-heading .nh-eyebrow,
@@ -3112,9 +3137,9 @@
 .nh-trusted-subtitle {
   font-size: clamp(14.5px, 1.4vw, 16px);
   line-height: 1.65;
-  color: #475569;
+  color: #1e293b;
   margin: 0;
-  font-weight: 450;
+  font-weight: 500;
 }
 
 .nh-trusted-grid {

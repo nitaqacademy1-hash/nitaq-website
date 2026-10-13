@@ -336,7 +336,7 @@ export default function GoogleReviews() {
         {/* Header matching screenshot */}
         <div className="nh-reviews-header">
           <h2 className="nh-reviews-title">EXCELLENT</h2>
-          <div className="nh-reviews-stars" aria-label="5 out of 5 stars">
+          <div className="nh-reviews-stars" role="img" aria-label="5 out of 5 stars">
             {[...Array(5)].map((_, i) => (
               <svg key={i} className="nh-star-icon" viewBox="0 0 24 24" fill="#FBBC04" width="28" height="28">
                 <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
@@ -446,7 +446,7 @@ export default function GoogleReviews() {
                 </div>
 
                 <div className="nh-review-rating-row">
-                  <div className="nh-review-card-stars" aria-label="5 stars">
+                  <div className="nh-review-card-stars" role="img" aria-label="5 stars">
                     {[...Array(review.rating)].map((_, i) => (
                       <svg key={i} viewBox="0 0 24 24" fill="#FBBC04" width="16" height="16">
                         <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />

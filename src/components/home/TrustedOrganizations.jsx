@@ -76,8 +76,12 @@ export default function TrustedOrganizations({ c }) {
                   className="nh-trusted-logo-img"
                 />
               </div>
-              <span className="nh-trusted-label">{org.name}</span>
-              {org.role && <span className="nh-trusted-role text-xs text-slate-400 block mt-0.5">{org.role}</span>}
+              <span className="nh-trusted-label" style={{ color: '#0f172a', fontWeight: 700 }}>{org.name}</span>
+              {org.role && (
+                <span className="nh-trusted-role" style={{ color: '#334155', fontSize: '11px', fontWeight: 600, display: 'block', marginTop: '2px' }}>
+                  {org.role}
+                </span>
+              )}
             </div>
           ))}
         </div>

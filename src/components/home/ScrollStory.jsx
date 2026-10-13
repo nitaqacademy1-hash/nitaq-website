@@ -66,7 +66,7 @@ export default function ScrollStory({ c }) {
         </div>
 
         {/* ── Right: Visual ── */}
-        <div className="nh-hero-visual" aria-hidden="true">
+        <div className="nh-hero-visual">
           {/* Main image */}
           <div className="nh-hero-image-wrap">
             <img
@@ -78,7 +78,7 @@ export default function ScrollStory({ c }) {
               fetchPriority="high"
               loading="eager"
               decoding="async"
-              alt=""
+              alt={c.studentAlt || "Nitaq Academy students learning in modern micro-batch classroom"}
               onError={e => {
                 if (!e.currentTarget.dataset.fb) {
                   e.currentTarget.dataset.fb = '1';
@@ -86,11 +86,11 @@ export default function ScrollStory({ c }) {
                 }
               }}
             />
-            <div className="nh-hero-shade" />
+            <div className="nh-hero-shade" aria-hidden="true" />
           </div>
 
           {/* Floating badge card */}
-          <div className="nh-hero-float-badge nh-float">
+          <div className="nh-hero-float-badge nh-float" aria-hidden="true">
             <div className="nh-card-icon">
               <ScanLine size={18} />
             </div>
