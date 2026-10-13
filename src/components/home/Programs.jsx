@@ -18,6 +18,7 @@ function getProgramInfo(title) {
 
 export default function Programs({ c }) {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [viewedIndices, setViewedIndices] = useState(() => new Set([0]));
   const activeIndexRef = useRef(0);
   const sectionRef = useRef(null);
   const tabsRef = useRef(null);
@@ -25,6 +26,19 @@ export default function Programs({ c }) {
 
   // Auto-scroll the mobile tab bar to keep the active pill centered
   useEffect(() => {
+    if (typeof window !== 'undefined' && window.innerWidth > 860) {
+      setViewedIndices(new Set([0, 1, 2, 3]));
+    }
+  }, []);
+
+  useEffect(() => {
+    setViewedIndices((prev) => {
+      if (prev.has(activeIndex)) return prev;
+      const next = new Set(prev);
+      next.add(activeIndex);
+      return next;
+    });
+
     if (tabsRef.current && window.innerWidth <= 860) {
       const activeBtn = tabsRef.current.children[activeIndex];
       if (activeBtn) {
@@ -133,16 +147,18 @@ export default function Programs({ c }) {
                   >
                     {/* Photo Background & Dark Scrim */}
                     <div className="nh-sliver-bg">
-                      <img
-                        src={info.small}
-                        srcSet={`${info.small} 480w, ${info.full} 960w`}
-                        sizes="(max-width: 768px) 420px, 360px"
-                        alt={alt || title}
-                        width="480"
-                        height="436"
-                        loading={i === 0 ? "eager" : "lazy"}
-                        decoding="async"
-                      />
+                      {(isOpen || viewedIndices.has(i)) && (
+                        <img
+                          src={info.small}
+                          srcSet={`${info.small} 480w, ${info.full} 960w`}
+                          sizes="(max-width: 768px) 420px, 360px"
+                          alt={alt || title}
+                          width="480"
+                          height="436"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      )}
                       <div className="nh-sliver-overlay" />
                     </div>
 

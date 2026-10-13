@@ -322,6 +322,10 @@ async function prerender() {
       if (leadingMeta) {
         for (const tag of leadingMeta[0].match(/<link\b[^>]*>/gi) || []) {
           if (/rel=["'](?:preload|preconnect|prefetch|dns-prefetch)["']/i.test(tag)) {
+            // Do not hoist component-level image preloads into <head> (hero image is already preloaded in index.html)
+            if (/as=["']image["']/i.test(tag)) {
+              continue;
+            }
             const hrefMatch = tag.match(/href=["']([^"']*)["']/i);
             const srcMatch = tag.match(/imageSrcSet=["']([^"']*)["']/i);
             const identifier = hrefMatch?.[1] || srcMatch?.[1]?.split(' ')?.[0];
