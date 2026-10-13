@@ -41,9 +41,9 @@ export default function WarpGridCanvas() {
 
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-      // Grid step: max(9, min(w,h)/22) px
+      // Grid step: max(22, minDim / 18) px for silky-smooth performance with reduced CPU overhead
       const minDim = Math.min(width, height) || 1;
-      const step = Math.max(9, minDim / 22);
+      const step = Math.max(22, minDim / 18);
 
       const cols = Math.ceil(width / step) + 2;
       const rows = Math.ceil(height / step) + 2;
@@ -167,10 +167,36 @@ export default function WarpGridCanvas() {
     }
 
     resize();
-    animId = requestAnimationFrame(render);
+
+    // Pause rendering when canvas is not visible in viewport to save CPU
+    let isVisible = true;
+    const io = new IntersectionObserver(([entry]) => {
+      isVisible = entry.isIntersecting;
+      if (isVisible) {
+        if (!animId) animId = requestAnimationFrame(render);
+      } else {
+        if (animId) {
+          cancelAnimationFrame(animId);
+          animId = null;
+        }
+      }
+    });
+    io.observe(canvas);
+
+    // Defer initial render until main thread is idle
+    if ('requestIdleCallback' in window) {
+      window.requestIdleCallback(() => {
+        if (isVisible && !animId) animId = requestAnimationFrame(render);
+      });
+    } else {
+      setTimeout(() => {
+        if (isVisible && !animId) animId = requestAnimationFrame(render);
+      }, 500);
+    }
 
     return () => {
       if (animId) cancelAnimationFrame(animId);
+      io.disconnect();
       ro.disconnect();
       window.removeEventListener('pointermove', onPointerMove);
       window.removeEventListener('touchstart', onTouchStart);

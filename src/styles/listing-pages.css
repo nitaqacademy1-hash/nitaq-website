@@ -8,7 +8,7 @@
 .listing-page {
   --nh-green: #2e7d32;
   --nh-ink: #153c29;
-  --nh-muted: #617067;
+  --nh-muted: #2e3d34;
   --nh-paper: #f7f9f4;
   --nh-line: #dce5da;
   background: var(--nh-paper);
@@ -293,7 +293,7 @@
 
 .lt-float-desc {
   font-size: 11px;
-  color: #617067;
+  color: #2e3d34;
   line-height: 1.4;
 }
 
@@ -584,7 +584,7 @@
   border-radius: 8px;
   margin-bottom: 16px;
   font-size: 11px;
-  color: #617067;
+  color: #2e3d34;
   font-weight: 400;
 }
 

@@ -171,7 +171,7 @@ export default function Programs({ c }) {
                       }
                     }}
                     aria-expanded={isOpen}
-                    aria-label={title}
+                    aria-label={`${title} - ${c.programs[i]?.[4] || c.discover}`}
                   >
                     {/* Photo Background & Dark Scrim */}
                     <div className="nh-sliver-bg">

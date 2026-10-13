@@ -24,8 +24,8 @@ const ORGANIZATIONS = [
     name: 'PEARSON PTE',
     role: 'Academic Preparation',
     logo: '/images/partner_pearson.webp',
-    width: 135,
-    height: 40,
+    width: 159,
+    height: 48,
     alt: 'Pearson PTE academic testing preparation',
   },
   {
@@ -33,8 +33,8 @@ const ORGANIZATIONS = [
     name: 'ETS TOEFL',
     role: 'Exam Preparation',
     logo: '/images/partner_toefl_trans.webp',
-    width: 130,
-    height: 38,
+    width: 171,
+    height: 47,
     alt: 'ETS TOEFL test preparation',
   },
   {

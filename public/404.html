@@ -14,6 +14,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+  <!-- High-Priority Preload for LCP Hero Image -->
+  <link
+    rel="preload"
+    as="image"
+    href="/nitaq/hero/student-desk-800.webp"
+    imagesrcset="/nitaq/hero/student-desk-800.webp 800w, /nitaq/hero/student-desk.webp 1376w"
+    imagesizes="(max-width: 767px) calc(100vw - 112px), 48vw"
+    fetchpriority="high">
+
   <!-- Unified Typography Preload with font-display: swap -->
   <link
     rel="preload" as="style"
@@ -24,48 +33,67 @@
   </noscript>
 
   <!-- Performance-Optimized Third-Party Analytics (GTM & Meta Pixel) -->
-  <!-- Stubs prevent any runtime errors while deferring heavy scripts until after initial paint & hydration -->
+  <!-- Non-blocking stubs queue all events immediately; scripts load on user interaction or idle -->
   <script>
+    // 1. Google Tag Manager / Analytics stub
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'G-VZN7JBMNPN');
 
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
+    // 2. Meta Pixel stub (queues events safely so zero tracking data is lost)
+    if (!window.fbq) {
+      window.fbq = function () {
+        if (window.fbq.callMethod) {
+          window.fbq.callMethod.apply(window.fbq, arguments);
+        } else {
+          window.fbq.queue.push(arguments);
+        }
+      };
+      window._fbq = window.fbq;
+      window.fbq.push = window.fbq;
+      window.fbq.loaded = false;
+      window.fbq.version = '2.0';
+      window.fbq.queue = [];
+    }
     fbq('init', '3710720559082121');
     fbq('track', 'PageView');
 
-    // Defer heavy network script evaluation for GTM to protect TBT and LCP
+    // 3. Defer third-party script downloads until after initial render / interaction to keep TBT at 0ms
     (function () {
-      var gtmLoaded = false;
-      function loadGTM() {
-        if (gtmLoaded) return;
-        gtmLoaded = true;
-        var s = document.createElement('script');
-        s.async = true;
-        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-VZN7JBMNPN';
-        document.head.appendChild(s);
+      var scriptsLoaded = false;
+      function loadThirdPartyScripts() {
+        if (scriptsLoaded) return;
+        scriptsLoaded = true;
+
+        // Meta Pixel script
+        var fb = document.createElement('script');
+        fb.async = true;
+        fb.src = 'https://connect.facebook.net/en_US/fbevents.js';
+        document.head.appendChild(fb);
+
+        // Google Tag Manager script
+        var gtm = document.createElement('script');
+        gtm.async = true;
+        gtm.src = 'https://www.googletagmanager.com/gtag/js?id=G-VZN7JBMNPN';
+        document.head.appendChild(gtm);
       }
 
+      // Load immediately on real user interaction
+      ['scroll', 'pointerdown', 'keydown', 'touchstart'].forEach(function (evt) {
+        window.addEventListener(evt, loadThirdPartyScripts, { once: true, passive: true });
+      });
+
+      // Fallback: load after initial render has completely settled (4.5s idle)
       if ('requestIdleCallback' in window) {
         window.requestIdleCallback(function () {
-          setTimeout(loadGTM, 1500);
+          setTimeout(loadThirdPartyScripts, 4500);
         });
       } else {
         window.addEventListener('load', function () {
-          setTimeout(loadGTM, 2500);
+          setTimeout(loadThirdPartyScripts, 4500);
         }, { once: true });
       }
-      window.addEventListener('scroll', loadGTM, { once: true, passive: true });
-      window.addEventListener('pointerdown', loadGTM, { once: true, passive: true });
-      window.addEventListener('keydown', loadGTM, { once: true });
     })();
   </script>
 
@@ -89,8 +117,8 @@
       window.addEventListener('keydown', loadChat, { once: true });
     }());
   </script>
-  <script type="module" crossorigin src="/assets/index-_deN-vBO.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-_6SKIr7L.css">
+  <script type="module" crossorigin src="/assets/index-BK8rYONh.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-BiE5_aVS.css">
 </head>
 
 <body>

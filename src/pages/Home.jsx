@@ -23,16 +23,41 @@ export default function Home() {
     let cleanup;
     let cancelled = false;
 
-    import('../lib/animations/homeTimeline').then(({ initHomeAnimations }) => {
-      if (!cancelled && root.current) {
-        cleanup = initHomeAnimations(root.current);
-      }
-    }).catch(() => {
-      /* The static homepage remains fully usable */
-    });
+    const startAnimations = () => {
+      if (cancelled || !root.current) return;
+      import('../lib/animations/homeTimeline').then(({ initHomeAnimations }) => {
+        if (!cancelled && root.current) {
+          cleanup = initHomeAnimations(root.current);
+        }
+      }).catch(() => {
+        /* The static homepage remains fully usable */
+      });
+    };
+
+    // Trigger immediately on first user scroll, touch or pointer interaction
+    const events = ['scroll', 'pointerdown', 'touchstart'];
+    const handleInteraction = () => {
+      events.forEach(evt => window.removeEventListener(evt, handleInteraction));
+      startAnimations();
+    };
+    events.forEach(evt => window.addEventListener(evt, handleInteraction, { once: true, passive: true }));
+
+    // Or run when main thread is idle after initial render
+    let idleId;
+    if ('requestIdleCallback' in window) {
+      idleId = window.requestIdleCallback(startAnimations, { timeout: 1500 });
+    } else {
+      idleId = setTimeout(startAnimations, 800);
+    }
 
     return () => {
       cancelled = true;
+      events.forEach(evt => window.removeEventListener(evt, handleInteraction));
+      if ('cancelIdleCallback' in window && typeof idleId === 'number') {
+        window.cancelIdleCallback(idleId);
+      } else {
+        clearTimeout(idleId);
+      }
       cleanup?.();
     };
   }, [lang]);

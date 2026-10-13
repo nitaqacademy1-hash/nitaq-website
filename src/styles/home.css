@@ -551,7 +551,7 @@
 
 .nh-float small {
   font-size: 10px;
-  color: #627360;
+  color: #2e432d;
   display: block
 }
 
@@ -560,7 +560,7 @@
   display: flex;
   gap: 6px;
   align-items: center;
-  color: #496345
+  color: #1f381c;
 }
 
 .nh-card-icon {
@@ -965,7 +965,7 @@
 }
 
 .nh-program-body>small {
-  color: #617067;
+  color: #2e3d34;
   font-size: 8px;
   letter-spacing: .015em
 }
@@ -979,7 +979,7 @@
 
 .nh-program-body p {
   font-size: 12px;
-  color: #617067;
+  color: #2e3d34;
   line-height: 1.9
 }
 
@@ -2850,7 +2850,7 @@
 .nh-hero-intro {
   font-size: 13.5px;
   line-height: 1.75;
-  color: #cdd9c5;
+  color: #e2ede0;
   max-width: 440px;
   margin-bottom: 2px;
 }
@@ -2876,7 +2876,7 @@
 
 .nh-hero-stat span {
   font-size: 9px;
-  color: #9ab58d;
+  color: #e2eee0;
   letter-spacing: .07em;
   text-transform: uppercase;
   display: block;

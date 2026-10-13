@@ -36,16 +36,11 @@ export function initHomeAnimations(root) {
       { y: 0, opacity: 1, stagger: 0.04, duration: 0.45, ease: 'power2.out' }
     );
 
-    // Hero visual entrance
-    gsap.fromTo(
-      query('.nh-hero-image-wrap'),
-      { y: 24, opacity: 0, scale: 0.97 },
-      { y: 0, opacity: 1, scale: 1, duration: 0.9, ease: 'power2.out', delay: 0.35 }
-    );
+    // Hero visual entrance (keep hero image visible immediately to eliminate LCP delay)
     gsap.fromTo(
       query('.nh-hero-float-badge'),
       { x: -20, opacity: 0 },
-      { x: 0, opacity: 1, duration: 0.7, ease: 'back.out(1.5)', delay: 0.9 }
+      { x: 0, opacity: 1, duration: 0.7, ease: 'back.out(1.5)', delay: 0.2 }
     );
 
     // Reveal sections below the hero as they enter viewport
@@ -67,7 +62,11 @@ export function initHomeAnimations(root) {
     };
   }, root);
 
-  const refresh = () => ScrollTrigger.refresh();
+  const refresh = () => {
+    requestAnimationFrame(() => {
+      if (root.isConnected) ScrollTrigger.refresh();
+    });
+  };
   document.fonts?.ready.then(() => { if (root.isConnected) refresh(); });
   window.addEventListener('load', refresh);
 

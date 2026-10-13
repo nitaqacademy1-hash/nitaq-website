@@ -115,7 +115,7 @@
 .nh-chip-more {
   background: #f8fafc;
   font-weight: 700;
-  color: #0369a1;
+  color: #075985;
   border-color: #7dd3fc;
 }
 
@@ -137,7 +137,7 @@
 
 .nh-sort-label {
   font-size: 13px;
-  color: #64748b;
+  color: #475569;
   font-weight: 500;
   white-space: nowrap;
 }
@@ -274,7 +274,7 @@
 
 .nh-review-time {
   font-size: 12px;
-  color: #64748b;
+  color: #475569;
   display: block;
   margin-top: 2px;
 }
