@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import { Menu, X, ArrowUpRight, ChevronDown, Plus, Minus } from 'lucide-react';
+import { Menu, X, ArrowUpRight, ChevronDown, Plus, Minus, Youtube, Instagram, Facebook, Linkedin, MessageCircle } from 'lucide-react';
 import { Link } from '../i18n/Link';
 import { useLanguage } from '../i18n/context';
 import { stripLangPrefix } from '../i18n/config';
@@ -361,6 +361,23 @@ const Header = () => {
               {c.call}
               <ArrowUpRight size={15} />
             </a>
+            <div className="nh-mobile-socials" style={{ display: 'flex', gap: '12px', justifyContent: 'center', alignItems: 'center', width: '100%', paddingTop: '16px', borderTop: '1px solid rgba(255, 255, 255, 0.1)' }}>
+              <a href="https://www.youtube.com/@NitaqAcademy" target="_blank" rel="noopener noreferrer" aria-label="YouTube @NitaqAcademy" title="YouTube: @NitaqAcademy" style={{ color: '#ef4444', background: 'rgba(239, 68, 68, 0.15)', padding: '10px', borderRadius: '50%', display: 'inline-flex' }}>
+                <Youtube size={18} />
+              </a>
+              <a href="https://www.instagram.com/nitaqtraining" target="_blank" rel="noopener noreferrer" aria-label="Instagram @nitaqtraining" title="Instagram: @nitaqtraining" style={{ color: '#ec4899', background: 'rgba(236, 72, 153, 0.15)', padding: '10px', borderRadius: '50%', display: 'inline-flex' }}>
+                <Instagram size={18} />
+              </a>
+              <a href="https://www.facebook.com/nitaqtraining" target="_blank" rel="noopener noreferrer" aria-label="Facebook @nitaqtraining" title="Facebook: @nitaqtraining" style={{ color: '#3b82f6', background: 'rgba(59, 130, 246, 0.15)', padding: '10px', borderRadius: '50%', display: 'inline-flex' }}>
+                <Facebook size={18} />
+              </a>
+              <a href="https://www.linkedin.com/company/nitaqtraining" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn @nitaqtraining" title="LinkedIn: Nitaq Academy" style={{ color: '#38bdf8', background: 'rgba(56, 189, 248, 0.15)', padding: '10px', borderRadius: '50%', display: 'inline-flex' }}>
+                <Linkedin size={18} />
+              </a>
+              <a href="https://wa.me/971527569908" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" title="WhatsApp: +971 52 756 9908" style={{ color: '#22c55e', background: 'rgba(34, 197, 94, 0.15)', padding: '10px', borderRadius: '50%', display: 'inline-flex' }}>
+                <MessageCircle size={18} />
+              </a>
+            </div>
           </div>
         </nav>
 

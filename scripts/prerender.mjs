@@ -303,6 +303,10 @@ async function prerender() {
         <meta data-rh="true" property="og:type" content="${basePath.startsWith('/article/') ? 'article' : 'website'}" />
         <meta data-rh="true" property="og:locale" content="${localeMeta.ogLocale}" />
         <meta data-rh="true" property="og:image" content="${ogImageUrl}" />
+        <meta data-rh="true" property="og:see_also" content="https://www.youtube.com/@NitaqAcademy" />
+        <meta data-rh="true" property="og:see_also" content="https://www.instagram.com/nitaqtraining" />
+        <meta data-rh="true" property="og:see_also" content="https://www.facebook.com/nitaqtraining" />
+        <meta data-rh="true" property="og:see_also" content="https://www.linkedin.com/company/nitaqtraining" />
         <meta data-rh="true" name="twitter:card" content="summary_large_image" />
         <meta data-rh="true" name="twitter:title" content="${ogTitle}" />
         <meta data-rh="true" name="twitter:description" content="${ogDescription}" />

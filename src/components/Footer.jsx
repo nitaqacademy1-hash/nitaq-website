@@ -1,6 +1,7 @@
 import { Link } from '../i18n/Link';
 import { useLanguage } from '../i18n/context';
 import { trackEvent, ANALYTICS_EVENTS } from '../utils/analytics';
+import { Youtube, Instagram, Facebook, Linkedin, MessageCircle } from 'lucide-react';
 
 const labels = {
   en: {
@@ -76,6 +77,23 @@ const Footer = () => {
           <div className="footer-brand">
             <img src="/images/logo1.webp" alt="Nitaq Academy" title="Nitaq Academy" width="150" height="56" loading="lazy" />
             <p>{c.tagline}</p>
+            <div style={{ display: 'flex', gap: '10px', marginTop: '18px' }} aria-label="Social media channels">
+              <a href="https://www.youtube.com/@NitaqAcademy" target="_blank" rel="noopener noreferrer" aria-label="YouTube @NitaqAcademy" style={{ color: '#ef4444', background: 'rgba(239, 68, 68, 0.15)', padding: '8px', borderRadius: '50%', display: 'inline-flex' }}>
+                <Youtube size={17} />
+              </a>
+              <a href="https://www.instagram.com/nitaqtraining" target="_blank" rel="noopener noreferrer" aria-label="Instagram @nitaqtraining" style={{ color: '#ec4899', background: 'rgba(236, 72, 153, 0.15)', padding: '8px', borderRadius: '50%', display: 'inline-flex' }}>
+                <Instagram size={17} />
+              </a>
+              <a href="https://www.facebook.com/nitaqtraining" target="_blank" rel="noopener noreferrer" aria-label="Facebook @nitaqtraining" style={{ color: '#3b82f6', background: 'rgba(59, 130, 246, 0.15)', padding: '8px', borderRadius: '50%', display: 'inline-flex' }}>
+                <Facebook size={17} />
+              </a>
+              <a href="https://www.linkedin.com/company/nitaqtraining" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn @nitaqtraining" style={{ color: '#38bdf8', background: 'rgba(56, 189, 248, 0.15)', padding: '8px', borderRadius: '50%', display: 'inline-flex' }}>
+                <Linkedin size={17} />
+              </a>
+              <a href="https://wa.me/971527569908" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" style={{ color: '#22c55e', background: 'rgba(34, 197, 94, 0.15)', padding: '8px', borderRadius: '50%', display: 'inline-flex' }}>
+                <MessageCircle size={17} />
+              </a>
+            </div>
           </div>
           <div className="footer-nav priority-footer">
             <div>
@@ -128,6 +146,23 @@ const Footer = () => {
           <div>
             <p>© {new Date().getFullYear()} Nitaq Academy. {c.rights}</p>
             <p className="legal-operator">{c.operator}</p>
+          </div>
+          <div className="social-links" aria-label="Social media links">
+            <a href="https://www.youtube.com/@NitaqAcademy" target="_blank" rel="noopener noreferrer" aria-label="YouTube Channel @NitaqAcademy" title="YouTube: @NitaqAcademy">
+              <Youtube size={18} />
+            </a>
+            <a href="https://www.instagram.com/nitaqtraining" target="_blank" rel="noopener noreferrer" aria-label="Instagram @nitaqtraining" title="Instagram: @nitaqtraining">
+              <Instagram size={18} />
+            </a>
+            <a href="https://www.facebook.com/nitaqtraining" target="_blank" rel="noopener noreferrer" aria-label="Facebook @nitaqtraining" title="Facebook: @nitaqtraining">
+              <Facebook size={18} />
+            </a>
+            <a href="https://www.linkedin.com/company/nitaqtraining" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Nitaq Academy" title="LinkedIn: Nitaq Academy">
+              <Linkedin size={18} />
+            </a>
+            <a href="https://wa.me/971527569908" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp +971 52 756 9908" title="WhatsApp: +971 52 756 9908">
+              <MessageCircle size={18} />
+            </a>
           </div>
         </div>
       </div>

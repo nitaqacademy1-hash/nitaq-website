@@ -1,6 +1,6 @@
 import { Link } from '../i18n/Link';
 import { useLanguage } from '../i18n/context';
-import { Phone, Mail, MapPin, Clock } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Youtube, Instagram, Facebook, Linkedin, MessageCircle, ExternalLink } from 'lucide-react';
 import ContactForm from '../components/ContactForm';
 import SEO from '../components/SEO';
 
@@ -101,6 +101,70 @@ const Contact = () => {
                                         </p>
                                     </div>
                                 </div>
+
+                                {/* Official Social Media Channels */}
+                                <div style={{ display: 'flex', gap: '20px', alignItems: 'flex-start' }}>
+                                    <div style={{ background: 'rgba(239, 68, 68, 0.1)', color: '#EF4444', padding: '15px', borderRadius: '16px' }}>
+                                        <Youtube size={24} />
+                                    </div>
+                                    <div style={{ flex: 1 }}>
+                                        <h4 style={{ fontSize: '1.2rem', color: '#0f172a', marginBottom: '8px' }}>
+                                            {isAr ? 'قنواتنا الرسمية على وسائل التواصل' : 'Official Social Channels'}
+                                        </h4>
+                                        <div style={{ display: 'grid', gap: '10px' }}>
+                                            <a
+                                                href="https://www.youtube.com/@NitaqAcademy"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '12px 16px', borderRadius: '12px', background: '#FEF2F2', border: '1px solid #FEE2E2', color: '#DC2626', fontWeight: 600, fontSize: '0.95rem', textDecoration: 'none' }}
+                                            >
+                                                <span style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                                                    <Youtube size={20} />
+                                                    <span>YouTube: @NitaqAcademy</span>
+                                                </span>
+                                                <ExternalLink size={15} />
+                                            </a>
+                                            <a
+                                                href="https://www.instagram.com/nitaqtraining"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '12px 16px', borderRadius: '12px', background: '#FDF2F8', border: '1px solid #FCE7F3', color: '#DB2777', fontWeight: 600, fontSize: '0.95rem', textDecoration: 'none' }}
+                                            >
+                                                <span style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                                                    <Instagram size={20} />
+                                                    <span>Instagram: @nitaqtraining</span>
+                                                </span>
+                                                <ExternalLink size={15} />
+                                            </a>
+                                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: '10px' }}>
+                                                <a
+                                                    href="https://www.facebook.com/nitaqtraining"
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '10px 14px', borderRadius: '12px', background: '#EFF6FF', border: '1px solid #DBEAFE', color: '#2563EB', fontWeight: 600, fontSize: '0.92rem', textDecoration: 'none' }}
+                                                >
+                                                    <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                                        <Facebook size={18} />
+                                                        <span>Facebook</span>
+                                                    </span>
+                                                    <ExternalLink size={13} />
+                                                </a>
+                                                <a
+                                                    href="https://www.linkedin.com/company/nitaqtraining"
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '10px 14px', borderRadius: '12px', background: '#F0F9FF', border: '1px solid #E0F2FE', color: '#0284C7', fontWeight: 600, fontSize: '0.92rem', textDecoration: 'none' }}
+                                                >
+                                                    <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                                        <Linkedin size={18} />
+                                                        <span>LinkedIn</span>
+                                                    </span>
+                                                    <ExternalLink size={13} />
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
 
                             {/* Map Box */}
@@ -141,16 +205,69 @@ const Contact = () => {
             {/* Social Connect CTA */}
             <section className="section-padding" style={{ background: '#f8fafc', borderTop: '1px solid #f1f5f9' }}>
                 <div className="container">
-                    <div style={{ background: 'white', padding: '60px', borderRadius: '40px', textAlign: 'center', border: '1px solid rgba(0,0,0,0.02)', boxShadow: '0 20px 60px rgba(0,0,0,0.03)' }}>
+                    <div style={{ background: 'white', padding: '60px 30px', borderRadius: '40px', textAlign: 'center', border: '1px solid rgba(0,0,0,0.02)', boxShadow: '0 20px 60px rgba(0,0,0,0.03)' }}>
                         <h2 style={{ fontSize: '2.5rem', marginBottom: '20px', color: '#0f172a' }}>
-                            {isAr ? <>تفضل المحادثة <span className="text-gradient">الفورية؟</span></> : <>Prefer an Instant <span className="text-gradient">Chat?</span></>}
+                            {isAr ? <>تواصل وتعلّم <span className="text-gradient">معنا</span></> : <>Connect & Learn <span className="text-gradient">With Us</span></>}
                         </h2>
-                        <p style={{ fontSize: '1.2rem', color: '#64748b', marginBottom: '40px' }}>
-                            {isAr ? 'مستشارونا متاحون عبر واتساب للرد السريع على استفساراتك.' : 'Our advisors are active on WhatsApp for quick responses.'}
+                        <p style={{ fontSize: '1.2rem', color: '#64748b', marginBottom: '40px', maxWidth: '640px', margin: '0 auto 40px' }}>
+                            {isAr
+                                ? 'تابع شروحاتنا ودروسنا المجانية على يوتيوب، أو تحدث مباشرة مع مستشارينا الأكاديميين عبر واتساب للحصول على استشارة فورية.'
+                                : 'Subscribe to our free tutorials on YouTube or connect with our academic advisors on WhatsApp for immediate guidance.'}
                         </p>
-                        <a href="https://wa.me/971527569908" className="btn" style={{ background: '#25D366', color: 'white', fontSize: '1.2rem', padding: '20px 40px' }}>
-                            {isAr ? 'تواصل معنا عبر واتساب' : 'Message us on WhatsApp'}
-                        </a>
+                        <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '32px' }}>
+                            <a
+                                href="https://www.youtube.com/@NitaqAcademy"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="btn"
+                                style={{ background: '#FF0000', color: 'white', fontSize: '1.1rem', padding: '18px 36px', display: 'inline-flex', alignItems: 'center', gap: '10px', textDecoration: 'none', borderRadius: '16px', fontWeight: 600 }}
+                            >
+                                <Youtube size={22} />
+                                {isAr ? 'قناة يوتيوب: @NitaqAcademy' : 'Subscribe on YouTube'}
+                            </a>
+                            <a
+                                href="https://wa.me/971527569908"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="btn"
+                                style={{ background: '#25D366', color: 'white', fontSize: '1.1rem', padding: '18px 36px', display: 'inline-flex', alignItems: 'center', gap: '10px', textDecoration: 'none', borderRadius: '16px', fontWeight: 600 }}
+                            >
+                                <MessageCircle size={22} />
+                                {isAr ? 'محادثة فورية عبر واتساب' : 'Chat on WhatsApp'}
+                            </a>
+                        </div>
+                        <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap' }}>
+                            <span style={{ fontSize: '0.95rem', color: '#64748b', fontWeight: 500, marginRight: '6px' }}>
+                                {isAr ? 'تابعنا أيضاً على:' : 'Also follow us on:'}
+                            </span>
+                            <a
+                                href="https://www.instagram.com/nitaqtraining"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Instagram @nitaqtraining"
+                                style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', padding: '8px 16px', borderRadius: '30px', background: '#F1F5F9', color: '#0F172A', fontSize: '0.9rem', fontWeight: 600, textDecoration: 'none' }}
+                            >
+                                <Instagram size={16} color="#E1306C" /> Instagram
+                            </a>
+                            <a
+                                href="https://www.facebook.com/nitaqtraining"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Facebook @nitaqtraining"
+                                style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', padding: '8px 16px', borderRadius: '30px', background: '#F1F5F9', color: '#0F172A', fontSize: '0.9rem', fontWeight: 600, textDecoration: 'none' }}
+                            >
+                                <Facebook size={16} color="#1877F2" /> Facebook
+                            </a>
+                            <a
+                                href="https://www.linkedin.com/company/nitaqtraining"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="LinkedIn Nitaq Academy"
+                                style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', padding: '8px 16px', borderRadius: '30px', background: '#F1F5F9', color: '#0F172A', fontSize: '0.9rem', fontWeight: 600, textDecoration: 'none' }}
+                            >
+                                <Linkedin size={16} color="#0A66C2" /> LinkedIn
+                            </a>
+                        </div>
                     </div>
                 </div>
             </section>

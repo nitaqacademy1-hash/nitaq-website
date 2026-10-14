@@ -145,12 +145,24 @@ const BestTuitionClassesUaeGuide = () => {
                 "author": {
                     "@type": "Organization",
                     "name": "NITAQ Academy",
-                    "url": "https://www.nitaqacademy.com"
+                    "url": "https://www.nitaqacademy.com",
+                    "sameAs": [
+                        "https://www.youtube.com/@NitaqAcademy",
+                        "https://www.instagram.com/nitaqtraining",
+                        "https://www.facebook.com/nitaqtraining",
+                        "https://www.linkedin.com/company/nitaqtraining"
+                    ]
                 },
                 "publisher": {
                     "@type": "Organization",
                     "name": "NITAQ Academy",
-                    "url": "https://www.nitaqacademy.com"
+                    "url": "https://www.nitaqacademy.com",
+                    "sameAs": [
+                        "https://www.youtube.com/@NitaqAcademy",
+                        "https://www.instagram.com/nitaqtraining",
+                        "https://www.facebook.com/nitaqtraining",
+                        "https://www.linkedin.com/company/nitaqtraining"
+                    ]
                 }
             }
         ]

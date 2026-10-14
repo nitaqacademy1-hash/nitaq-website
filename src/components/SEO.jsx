@@ -8,6 +8,13 @@ const SITE_URL = 'https://www.nitaqacademy.com';
 const REVIEWED_COURSE_SCHEMA_PATHS = new Set(['/sat-preparation-sharjah', '/sat-preparation-dubai']);
 const NOINDEX_PATHS = [/^\/admin(?:\/|$)/, /^\/sat\/(?:results|diagnostic\/results|diagnostic\/quiz|diagnostic\/math-report)/, /^\/verify(?:-|\/|$)/, /^\/enquiry$/, /^\/ig\//, /thank-you$/];
 
+const SOCIAL_PROFILES = [
+  'https://www.youtube.com/@NitaqAcademy',
+  'https://www.instagram.com/nitaqtraining',
+  'https://www.facebook.com/nitaqtraining',
+  'https://www.linkedin.com/company/nitaqtraining'
+];
+
 const SEO = ({ title, description, faqSchema, ogTitle, ogDescription, ogImage, noIndex = false } = {}) => {
   const location = useLocation();
   const lang = langFromPath(location.pathname);
@@ -43,6 +50,7 @@ const SEO = ({ title, description, faqSchema, ogTitle, ogDescription, ogImage, n
       logo: { '@type': 'ImageObject', url: `${SITE_URL}/images/logo1.webp` }, telephone: '+971527569908', email: 'info@nitaqacademy.com',
       address: { '@type': 'PostalAddress', streetAddress: 'Abu Khamseen Tower - Office : F103, Floor F1 - Al Majaz 3 - Al Majaz', addressLocality: 'Sharjah', addressRegion: 'Sharjah', addressCountry: 'United Arab Emirates' },
       areaServed: { '@type': 'City', name: 'Sharjah' },
+      sameAs: SOCIAL_PROFILES,
       hasOfferCatalog: basePath === '/' ? { '@type': 'OfferCatalog', name: 'Core programmes', itemListElement: [
         { '@type': 'Offer', itemOffered: { '@type': 'Course', name: 'Digital SAT Preparation' }, url: `${SITE_URL}/sat-preparation-sharjah` },
         { '@type': 'Offer', itemOffered: { '@type': 'Course', name: 'Language Training' }, url: `${SITE_URL}/language-trainings` },
@@ -72,6 +80,9 @@ const SEO = ({ title, description, faqSchema, ogTitle, ogDescription, ogImage, n
       <link key="xd" rel="alternate" hrefLang="x-default" href={`${SITE_URL}${basePath === '/' ? '/' : basePath}`} />
     ]}
     <meta property="og:url" content={canonical} /><meta property="og:title" content={socialTitle} /><meta property="og:description" content={socialDescription} /><meta property="og:type" content={basePath.startsWith('/article/') ? 'article' : 'website'} /><meta property="og:locale" content={locale.ogLocale} /><meta property="og:image" content={image} />
+    {SOCIAL_PROFILES.map((url) => (
+      <meta key={url} property="og:see_also" content={url} />
+    ))}
     <meta name="twitter:card" content="summary_large_image" /><meta name="twitter:title" content={socialTitle} /><meta name="twitter:description" content={socialDescription} /><meta name="twitter:image" content={image} />
     {!shouldNoIndex && <script type="application/ld+json">{JSON.stringify({ '@context': 'https://schema.org', '@graph': schemas })}</script>}
   </Helmet>;

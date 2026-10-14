@@ -1116,6 +1116,19 @@ header.scrolled {
     color: white;
 }
 
+.footer-minimal .social-links a {
+    background: rgba(255, 255, 255, 0.08);
+    color: #f1f5f9;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.footer-minimal .social-links a:hover {
+    background: var(--primary-color);
+    color: #ffffff;
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
 /* Animations */
 .reveal-on-scroll {
     opacity: 0;
