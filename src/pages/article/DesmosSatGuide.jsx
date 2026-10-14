@@ -3,7 +3,7 @@ import { Link } from '../../i18n/Link';
 import SEO from '../../components/SEO';
 import { 
   Calculator, CheckCircle2, AlertCircle, Clock, ShieldCheck, 
-  HelpCircle, ArrowRight, Award, Zap, Sliders, ChevronRight, BarChart3
+  HelpCircle, ArrowRight, Award, Zap, Sliders, ChevronRight, BarChart3, Sparkles
 } from 'lucide-react';
 
 const DesmosSatGuide = () => {
@@ -92,7 +92,7 @@ const DesmosSatGuide = () => {
               <ShieldCheck size={15} color="#166534" /> College Board Bluebook Compliant
             </span>
             <span className="sat-guide-meta-item">
-              <Zap size={15} color="#166534" /> Breakout Query (+2,650%)
+              <Sparkles size={15} color="#166534" /> 800-Level Desmos Strategies
             </span>
           </div>
         </header>
@@ -157,7 +157,7 @@ const DesmosSatGuide = () => {
               </div>
               <p style={{ fontSize: '0.98rem', color: '#475569', marginBottom: '18px', lineHeight: 1.6 }}>{item.concept}</p>
               
-              <div style={{ background: '#0f172a', color: '#4ade80', padding: '18px 20px', borderRadius: '12px', fontFamily: 'monospace', fontSize: '0.92rem', lineHeight: 1.6, whiteSpace: 'pre-wrap', marginBottom: '18px' }}>
+              <div style={{ background: '#f8fafc', color: '#0f172a', border: '1px solid #e2e8f0', padding: '18px 20px', borderRadius: '12px', fontFamily: 'monospace', fontSize: '0.92rem', fontWeight: 600, lineHeight: 1.6, whiteSpace: 'pre-wrap', marginBottom: '18px' }}>
                 {item.code}
               </div>
 

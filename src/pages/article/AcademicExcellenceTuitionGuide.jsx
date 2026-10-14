@@ -234,11 +234,11 @@ const AcademicExcellenceTuitionGuide = () => {
                             <div style={{ overflowX: 'auto', margin: '30px 0' }}>
                                 <table style={{ width: '100%', borderCollapse: 'collapse', background: '#f8fafc', borderRadius: '12px', overflow: 'hidden', border: '1px solid #e2e8f0' }}>
                                     <thead>
-                                        <tr style={{ background: '#0f172a', color: '#ffffff', textAlign: 'left' }}>
-                                            <th style={{ padding: '16px 20px' }}>Curriculum</th>
-                                            <th style={{ padding: '16px 20px' }}>Key Focus Areas</th>
-                                            <th style={{ padding: '16px 20px' }}>NITAQ Coaching Methodology</th>
-                                            <th style={{ padding: '16px 20px' }}>Exam Benchmarks</th>
+                                        <tr style={{ background: '#f8fafc', color: '#0f172a', textAlign: 'left', borderBottom: '2px solid #e2e8f0' }}>
+                                            <th style={{ padding: '16px 20px', fontWeight: 700 }}>Curriculum</th>
+                                            <th style={{ padding: '16px 20px', fontWeight: 700 }}>Key Focus Areas</th>
+                                            <th style={{ padding: '16px 20px', fontWeight: 700 }}>NITAQ Coaching Methodology</th>
+                                            <th style={{ padding: '16px 20px', fontWeight: 700 }}>Exam Benchmarks</th>
                                         </tr>
                                     </thead>
                                     <tbody style={{ fontSize: '0.95rem', color: '#334155' }}>

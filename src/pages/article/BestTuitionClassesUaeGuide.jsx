@@ -273,19 +273,20 @@ const BestTuitionClassesUaeGuide = () => {
 
                             {/* CTA Box 1 */}
                             <div className="article-cta-card" style={{
-                                background: 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)',
+                                background: 'linear-gradient(135deg, #0f3d20 0%, #166534 100%)',
                                 color: '#ffffff',
-                                padding: '30px',
+                                padding: '32px 30px',
                                 borderRadius: '20px',
                                 margin: '40px 0',
-                                boxShadow: '0 20px 40px rgba(0,0,0,0.15)'
+                                boxShadow: '0 16px 36px rgba(15, 61, 32, 0.16)',
+                                border: '1px solid rgba(255, 255, 255, 0.15)'
                             }}>
-                                <span style={{ background: 'rgba(59,130,246,0.2)', color: '#60a5fa', padding: '4px 12px', borderRadius: '20px', fontSize: '0.8rem', fontWeight: 'bold', textTransform: 'uppercase' }}>Academic Guidance</span>
-                                <h3 style={{ color: '#ffffff', marginTop: '12px', fontSize: '1.4rem' }}>Looking for Expert Tuition Support in Sharjah or Dubai?</h3>
-                                <p style={{ color: '#94a3b8', fontSize: '1rem', marginBottom: '20px' }}>
+                                <span style={{ background: 'rgba(255,255,255,0.15)', color: '#bbf7d0', padding: '5px 14px', borderRadius: '20px', fontSize: '0.8rem', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '0.04em' }}>Academic Guidance</span>
+                                <h3 style={{ color: '#ffffff', marginTop: '14px', fontSize: '1.45rem', fontWeight: 800 }}>Looking for Expert Tuition Support in Sharjah or Dubai?</h3>
+                                <p style={{ color: '#e2e8f0', fontSize: '1rem', lineHeight: 1.6, marginBottom: '22px' }}>
                                     NITAQ Academy provides SPEA-licensed academic coaching, language programs, and expert tuition for school subjects. Book a free student assessment today.
                                 </p>
-                                <Link to="/contact" className="btn btn-primary" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '12px 24px', borderRadius: '10px', textDecoration: 'none' }}>
+                                <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '12px 24px', borderRadius: '10px', textDecoration: 'none', background: '#ffffff', color: '#14532d', fontWeight: 700, boxShadow: '0 4px 12px rgba(0,0,0,0.08)' }}>
                                     Book a Free Academic Assessment <ArrowRight size={16} />
                                 </Link>
                             </div>
@@ -365,10 +366,10 @@ const BestTuitionClassesUaeGuide = () => {
                             <div style={{ overflowX: 'auto', margin: '20px 0' }}>
                                 <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '0.95rem' }}>
                                     <thead>
-                                        <tr style={{ background: '#0f172a', color: '#ffffff' }}>
-                                            <th style={{ padding: '12px', border: '1px solid #1e293b' }}>Criteria</th>
-                                            <th style={{ padding: '12px', border: '1px solid #1e293b' }}>Online Tuition</th>
-                                            <th style={{ padding: '12px', border: '1px solid #1e293b' }}>Offline / Classroom</th>
+                                        <tr style={{ background: '#f8fafc', color: '#0f172a' }}>
+                                            <th style={{ padding: '12px', border: '1px solid #e2e8f0', fontWeight: 700 }}>Criteria</th>
+                                            <th style={{ padding: '12px', border: '1px solid #e2e8f0', fontWeight: 700 }}>Online Tuition</th>
+                                            <th style={{ padding: '12px', border: '1px solid #e2e8f0', fontWeight: 700 }}>Offline / Classroom</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -395,10 +396,10 @@ const BestTuitionClassesUaeGuide = () => {
                             <div style={{ overflowX: 'auto', margin: '20px 0' }}>
                                 <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '0.95rem' }}>
                                     <thead>
-                                        <tr style={{ background: '#1e293b', color: '#ffffff' }}>
-                                            <th style={{ padding: '12px', border: '1px solid #334155' }}>Aspect</th>
-                                            <th style={{ padding: '12px', border: '1px solid #334155' }}>Private Home Tutor</th>
-                                            <th style={{ padding: '12px', border: '1px solid #334155' }}>Tuition Centre (e.g. NITAQ)</th>
+                                        <tr style={{ background: '#f8fafc', color: '#0f172a' }}>
+                                            <th style={{ padding: '12px', border: '1px solid #e2e8f0', fontWeight: 700 }}>Aspect</th>
+                                            <th style={{ padding: '12px', border: '1px solid #e2e8f0', fontWeight: 700 }}>Private Home Tutor</th>
+                                            <th style={{ padding: '12px', border: '1px solid #e2e8f0', fontWeight: 700 }}>Tuition Centre (e.g. NITAQ)</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -420,11 +421,11 @@ const BestTuitionClassesUaeGuide = () => {
                             <div style={{ overflowX: 'auto', margin: '20px 0' }}>
                                 <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '0.95rem' }}>
                                     <thead>
-                                        <tr style={{ background: '#0f172a', color: '#ffffff' }}>
-                                            <th style={{ padding: '12px', border: '1px solid #1e293b' }}>Curriculum</th>
-                                            <th style={{ padding: '12px', border: '1px solid #1e293b' }}>Age Group</th>
-                                            <th style={{ padding: '12px', border: '1px solid #1e293b' }}>Subject Scope</th>
-                                            <th style={{ padding: '12px', border: '1px solid #1e293b' }}>Assessment Style</th>
+                                        <tr style={{ background: '#f8fafc', color: '#0f172a' }}>
+                                            <th style={{ padding: '12px', border: '1px solid #e2e8f0', fontWeight: 700 }}>Curriculum</th>
+                                            <th style={{ padding: '12px', border: '1px solid #e2e8f0', fontWeight: 700 }}>Age Group</th>
+                                            <th style={{ padding: '12px', border: '1px solid #e2e8f0', fontWeight: 700 }}>Subject Scope</th>
+                                            <th style={{ padding: '12px', border: '1px solid #e2e8f0', fontWeight: 700 }}>Assessment Style</th>
                                         </tr>
                                     </thead>
                                     <tbody>

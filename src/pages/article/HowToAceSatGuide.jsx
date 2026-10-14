@@ -3,7 +3,7 @@ import { Link } from '../../i18n/Link';
 import SEO from '../../components/SEO';
 import { 
   Target, CheckCircle2, AlertCircle, Clock, ShieldCheck, 
-  HelpCircle, ArrowRight, Award, Zap, Calendar, BookOpen, TrendingUp, ChevronRight
+  HelpCircle, ArrowRight, Award, Zap, Calendar, BookOpen, TrendingUp, ChevronRight, Sparkles
 } from 'lucide-react';
 
 const HowToAceSatGuide = () => {
@@ -78,7 +78,7 @@ const HowToAceSatGuide = () => {
               <Clock size={15} color="#166534" /> 11-Minute Read
             </span>
             <span className="sat-guide-meta-item">
-              <TrendingUp size={15} color="#166534" /> Surging Query (+900%)
+              <Sparkles size={15} color="#166534" /> 1500+ Top Scorer Roadmap
             </span>
             <span className="sat-guide-meta-item">
               <ShieldCheck size={15} color="#166534" /> SPEA-Aligned Guidance

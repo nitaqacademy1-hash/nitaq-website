@@ -42,13 +42,13 @@ const SatPrepOptionsUaeComparisonGuide = () => {
     <div className="sat-guide-page">
       <SEO />
 
-      {/* Breadcrumbs with 120px top offset to clear navbar */}
+      {/* Breadcrumbs with clearance */}
       <div className="sat-guide-breadcrumbs-wrap">
         <div className="sat-guide-container">
           <nav className="sat-guide-breadcrumbs" aria-label="Breadcrumb">
             <Link to="/">Home</Link>
             <ChevronRight size={14} className="sat-breadcrumb-separator" />
-            <Link to="/article">Articles</Link>
+            <Link to="/articles">Articles</Link>
             <ChevronRight size={14} className="sat-breadcrumb-separator" />
             <span>SAT Prep Options UAE Comparison</span>
           </nav>
@@ -69,7 +69,7 @@ const SatPrepOptionsUaeComparisonGuide = () => {
           <div className="sat-guide-meta">
             <span className="sat-meta-item"><Clock size={14} /> 9-Minute Read</span>
             <span className="sat-meta-item"><ShieldCheck size={14} /> Objective Parent Checklist</span>
-            <span className="sat-meta-item"><Zap size={14} /> Trending Search (+3,950%)</span>
+            <span className="sat-meta-item"><CheckCircle2 size={14} /> Comprehensive UAE Prep Guide</span>
           </div>
         </div>
       </header>

@@ -3,7 +3,7 @@ import { Link } from '../../i18n/Link';
 import SEO from '../../components/SEO';
 import { 
   Calculator, CheckCircle2, AlertCircle, Clock, ShieldCheck, 
-  HelpCircle, ArrowRight, Award, Zap, Code, Target, Crosshair, ChevronRight
+  HelpCircle, ArrowRight, Award, Zap, Code, Target, Crosshair, ChevronRight, Sparkles
 } from 'lucide-react';
 
 const SatMathPracticeGuide = () => {
@@ -47,13 +47,13 @@ const SatMathPracticeGuide = () => {
     <div className="sat-guide-page">
       <SEO />
 
-      {/* Breadcrumbs with 120px top offset to clear navbar */}
+      {/* Breadcrumbs with clearance */}
       <div className="sat-guide-breadcrumbs-wrap">
         <div className="sat-guide-container">
           <nav className="sat-guide-breadcrumbs" aria-label="Breadcrumb">
             <Link to="/">Home</Link>
             <ChevronRight size={14} className="sat-breadcrumb-separator" />
-            <Link to="/article">Articles</Link>
+            <Link to="/articles">Articles</Link>
             <ChevronRight size={14} className="sat-breadcrumb-separator" />
             <span>SAT Math Practice & Traps</span>
           </nav>
@@ -73,7 +73,7 @@ const SatMathPracticeGuide = () => {
           </p>
           <div className="sat-guide-meta">
             <span className="sat-meta-item"><Clock size={14} /> 10-Minute Deep Dive</span>
-            <span className="sat-meta-item"><Zap size={14} /> High-Yield Demand (+40%)</span>
+            <span className="sat-meta-item"><Sparkles size={14} /> 800-Level Trap Strategies</span>
             <span className="sat-meta-item"><ShieldCheck size={14} /> 800-Level Hard Questions</span>
           </div>
         </div>

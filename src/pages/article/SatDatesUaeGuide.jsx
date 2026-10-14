@@ -28,7 +28,7 @@ const SatDatesUaeGuide = () => {
       lateDeadline: 'October 27, 2026',
       status: 'High Demand',
       badgeClass: 'sat-badge-hot',
-      badgeText: 'Breakout Demand (+3,350%)',
+      badgeText: 'High Demand — Book Early',
       notes: 'Peak test date in UAE. Sharjah & Dubai centers typically fill 3 weeks prior.'
     },
     {
@@ -38,7 +38,7 @@ const SatDatesUaeGuide = () => {
       lateDeadline: 'November 24, 2026',
       status: 'Registration Open',
       badgeClass: 'sat-badge-open',
-      badgeText: 'Upcoming (+1,950%)',
+      badgeText: 'Registration Open',
       notes: 'Final chance for January 2027 university regular decision cutoffs.'
     },
     {
@@ -48,7 +48,7 @@ const SatDatesUaeGuide = () => {
       lateDeadline: 'March 2, 2027',
       status: 'Early Booking',
       badgeClass: 'sat-badge-future',
-      badgeText: 'Future Cycle (+2,850%)',
+      badgeText: 'Registration Opening Soon',
       notes: 'Ideal baseline testing sitting for Grade 11 high school students.'
     },
     {

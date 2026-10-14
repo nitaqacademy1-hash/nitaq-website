@@ -149,10 +149,10 @@ const BestTuitionClassesSharjahDubai = () => {
                             <div style={{ overflowX: 'auto', margin: '30px 0' }}>
                                 <table style={{ width: '100%', borderCollapse: 'collapse', background: '#f8fafc', borderRadius: '12px', overflow: 'hidden', border: '1px solid #e2e8f0' }}>
                                     <thead>
-                                        <tr style={{ background: '#0f172a', color: '#ffffff', textAlign: 'left' }}>
-                                            <th style={{ padding: '16px 20px' }}>Tuition Format</th>
-                                            <th style={{ padding: '16px 20px' }}>Key Advantages</th>
-                                            <th style={{ padding: '16px 20px' }}>Best Suited For</th>
+                                        <tr style={{ background: '#f8fafc', color: '#0f172a', textAlign: 'left', borderBottom: '2px solid #e2e8f0' }}>
+                                            <th style={{ padding: '16px 20px', fontWeight: 700 }}>Tuition Format</th>
+                                            <th style={{ padding: '16px 20px', fontWeight: 700 }}>Key Advantages</th>
+                                            <th style={{ padding: '16px 20px', fontWeight: 700 }}>Best Suited For</th>
                                         </tr>
                                     </thead>
                                     <tbody style={{ fontSize: '0.95rem', color: '#334155' }}>

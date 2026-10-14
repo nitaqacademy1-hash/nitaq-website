@@ -255,19 +255,20 @@ const WhyHiringDigitalMarketingAgency = () => {
 
                             {/* CTA Box 1 */}
                             <div className="article-cta-card" style={{
-                                background: 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)',
+                                background: 'linear-gradient(135deg, #0f3d20 0%, #166534 100%)',
                                 color: '#ffffff',
-                                padding: '30px',
+                                padding: '32px 30px',
                                 borderRadius: '20px',
                                 margin: '40px 0',
-                                boxShadow: '0 20px 40px rgba(0,0,0,0.15)'
+                                boxShadow: '0 16px 36px rgba(15, 61, 32, 0.16)',
+                                border: '1px solid rgba(255, 255, 255, 0.15)'
                             }}>
-                                <span style={{ background: 'rgba(59,130,246,0.2)', color: '#60a5fa', padding: '4px 12px', borderRadius: '20px', fontSize: '0.8rem', fontWeight: 'bold', textTransform: 'uppercase' }}>Expert Advisory</span>
-                                <h3 style={{ color: '#ffffff', marginTop: '12px', fontSize: '1.4rem' }}>Ready to Scale Your Digital Revenue in the UAE?</h3>
-                                <p style={{ color: '#94a3b8', fontSize: '1rem', marginBottom: '20px' }}>
+                                <span style={{ background: 'rgba(255,255,255,0.15)', color: '#bbf7d0', padding: '5px 14px', borderRadius: '20px', fontSize: '0.8rem', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '0.04em' }}>Expert Advisory</span>
+                                <h3 style={{ color: '#ffffff', marginTop: '14px', fontSize: '1.45rem', fontWeight: 800 }}>Ready to Scale Your Digital Revenue in the UAE?</h3>
+                                <p style={{ color: '#e2e8f0', fontSize: '1rem', lineHeight: 1.6, marginBottom: '22px' }}>
                                     Whether you need full-service agency execution or want to upskill your internal marketing team, NITAQ Academy provides tailored digital marketing strategies and SPEA-certified training.
                                 </p>
-                                <Link to="/contact" className="btn btn-primary" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '12px 24px', borderRadius: '10px', textDecoration: 'none' }}>
+                                <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '12px 24px', borderRadius: '10px', textDecoration: 'none', background: '#ffffff', color: '#14532d', fontWeight: 700, boxShadow: '0 4px 12px rgba(0,0,0,0.08)' }}>
                                     Talk to a Digital Marketing Expert <ArrowRight size={16} />
                                 </Link>
                             </div>
@@ -377,11 +378,11 @@ const WhyHiringDigitalMarketingAgency = () => {
                             <div style={{ overflowX: 'auto', margin: '25px 0' }}>
                                 <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '0.95rem' }}>
                                     <thead>
-                                        <tr style={{ background: '#0f172a', color: '#ffffff' }}>
-                                            <th style={{ padding: '14px', border: '1px solid #1e293b' }}>Evaluation Metric</th>
-                                            <th style={{ padding: '14px', border: '1px solid #1e293b' }}>Full-Service Agency</th>
-                                            <th style={{ padding: '14px', border: '1px solid #1e293b' }}>Independent Freelancer</th>
-                                            <th style={{ padding: '14px', border: '1px solid #1e293b' }}>In-House Team</th>
+                                        <tr style={{ background: '#f8fafc', color: '#0f172a' }}>
+                                            <th style={{ padding: '14px', border: '1px solid #e2e8f0', fontWeight: 700 }}>Evaluation Metric</th>
+                                            <th style={{ padding: '14px', border: '1px solid #e2e8f0', fontWeight: 700 }}>Full-Service Agency</th>
+                                            <th style={{ padding: '14px', border: '1px solid #e2e8f0', fontWeight: 700 }}>Independent Freelancer</th>
+                                            <th style={{ padding: '14px', border: '1px solid #e2e8f0', fontWeight: 700 }}>In-House Team</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -417,10 +418,10 @@ const WhyHiringDigitalMarketingAgency = () => {
                             <div style={{ overflowX: 'auto', margin: '25px 0' }}>
                                 <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '0.95rem' }}>
                                     <thead>
-                                        <tr style={{ background: '#1e293b', color: '#ffffff' }}>
-                                            <th style={{ padding: '14px', border: '1px solid #334155' }}>Feature</th>
-                                            <th style={{ padding: '14px', border: '1px solid #334155' }}>Search Engine Optimization (SEO)</th>
-                                            <th style={{ padding: '14px', border: '1px solid #334155' }}>Google Ads (Pay-Per-Click)</th>
+                                        <tr style={{ background: '#f8fafc', color: '#0f172a' }}>
+                                            <th style={{ padding: '14px', border: '1px solid #e2e8f0', fontWeight: 700 }}>Feature</th>
+                                            <th style={{ padding: '14px', border: '1px solid #e2e8f0', fontWeight: 700 }}>Search Engine Optimization (SEO)</th>
+                                            <th style={{ padding: '14px', border: '1px solid #e2e8f0', fontWeight: 700 }}>Google Ads (Pay-Per-Click)</th>
                                         </tr>
                                     </thead>
                                     <tbody>

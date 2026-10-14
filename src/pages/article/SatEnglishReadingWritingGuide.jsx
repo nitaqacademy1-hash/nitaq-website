@@ -37,13 +37,13 @@ const SatEnglishReadingWritingGuide = () => {
     <div className="sat-guide-page">
       <SEO />
 
-      {/* Breadcrumbs with 120px top offset to clear navbar */}
+      {/* Breadcrumbs with clearance */}
       <div className="sat-guide-breadcrumbs-wrap">
         <div className="sat-guide-container">
           <nav className="sat-guide-breadcrumbs" aria-label="Breadcrumb">
             <Link to="/">Home</Link>
             <ChevronRight size={14} className="sat-breadcrumb-separator" />
-            <Link to="/article">Articles</Link>
+            <Link to="/articles">Articles</Link>
             <ChevronRight size={14} className="sat-breadcrumb-separator" />
             <span>SAT English Reading & Writing Practice</span>
           </nav>
@@ -122,8 +122,8 @@ const SatEnglishReadingWritingGuide = () => {
               The 15-Second Rhetorical Synthesis Hack
             </h2>
 
-            <div style={{ background: '#0f172a', color: '#ffffff', borderRadius: '16px', padding: '28px', border: '1px solid #334155', boxShadow: '0 10px 25px -5px rgba(0,0,0,0.2)' }}>
-              <p style={{ fontSize: '0.92rem', color: '#cbd5e1', lineHeight: 1.6, marginBottom: '16px' }}>
+            <div style={{ background: '#f8fafc', color: '#1e293b', borderRadius: '16px', padding: '28px', border: '1px solid #e2e8f0', boxShadow: '0 4px 16px rgba(0,0,0,0.03)' }}>
+              <p style={{ fontSize: '0.94rem', color: '#475569', lineHeight: 1.6, marginBottom: '16px' }}>
                 Rhetorical Synthesis questions present a list of 4–5 bullet points from a student's research notes. <strong>Do NOT read the bullet points first!</strong>
               </p>
               <div className="sat-code-block" style={{ margin: 0 }}>

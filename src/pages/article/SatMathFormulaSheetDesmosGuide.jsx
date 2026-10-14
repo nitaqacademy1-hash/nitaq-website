@@ -329,7 +329,7 @@ const SatMathFormulaSheetDesmosGuide = () => {
                     <CheckCircle2 size={18} style={{ color: '#1a5c2e', flexShrink: 0 }} />
                     <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#0f172a', margin: 0 }}>{f.name}</h3>
                   </div>
-                  <div style={{ background: '#0f172a', color: '#38bdf8', padding: '12px 16px', borderRadius: '8px', fontFamily: 'monospace', fontSize: '0.95rem', marginBottom: '10px', whiteSpace: 'pre-line' }}>
+                  <div style={{ background: '#f8fafc', color: '#0f172a', border: '1px solid #e2e8f0', padding: '12px 16px', borderRadius: '8px', fontFamily: 'monospace', fontSize: '0.95rem', fontWeight: 600, marginBottom: '10px', whiteSpace: 'pre-line' }}>
                     {f.formula}
                   </div>
                   <p style={{ color: '#475569', fontSize: '0.88rem', margin: 0, lineHeight: 1.5 }}>

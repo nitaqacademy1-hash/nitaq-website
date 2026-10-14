@@ -577,11 +577,11 @@ const FreeDigitalSatDiagnosticArticle = () => {
                 <div style={{ overflowX: 'auto', margin: '20px 0' }}>
                   <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '0.92rem', border: '1px solid #e2e8f0' }}>
                     <thead>
-                      <tr style={{ background: '#0f172a', color: '#ffffff' }}>
-                        <th style={{ padding: '12px 14px' }}>University / Institution</th>
-                        <th style={{ padding: '12px 14px' }}>Minimum Baseline</th>
-                        <th style={{ padding: '12px 14px' }}>Competitive Score</th>
-                        <th style={{ padding: '12px 14px' }}>Merit Scholarship Range</th>
+                      <tr style={{ background: '#f8fafc', color: '#0f172a' }}>
+                        <th style={{ padding: '12px 14px', border: '1px solid #e2e8f0', fontWeight: 700 }}>University / Institution</th>
+                        <th style={{ padding: '12px 14px', border: '1px solid #e2e8f0', fontWeight: 700 }}>Minimum Baseline</th>
+                        <th style={{ padding: '12px 14px', border: '1px solid #e2e8f0', fontWeight: 700 }}>Competitive Score</th>
+                        <th style={{ padding: '12px 14px', border: '1px solid #e2e8f0', fontWeight: 700 }}>Merit Scholarship Range</th>
                       </tr>
                     </thead>
                     <tbody>

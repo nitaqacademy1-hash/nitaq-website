@@ -3,7 +3,7 @@ import { Link } from '../../i18n/Link';
 import SEO from '../../components/SEO';
 import { 
   HelpCircle, CheckCircle2, AlertCircle, Clock, ShieldCheck, 
-  ArrowRight, Award, Zap, Laptop, BookOpen, GraduationCap, ChevronRight
+  ArrowRight, Award, Zap, Laptop, BookOpen, GraduationCap, ChevronRight, Sparkles
 } from 'lucide-react';
 
 const WhatDoesSatStandForGuide = () => {
@@ -14,13 +14,13 @@ const WhatDoesSatStandForGuide = () => {
     <div className="sat-guide-page">
       <SEO />
 
-      {/* Breadcrumbs with 120px top offset to clear navbar */}
+      {/* Breadcrumbs with clearance */}
       <div className="sat-guide-breadcrumbs-wrap">
         <div className="sat-guide-container">
           <nav className="sat-guide-breadcrumbs" aria-label="Breadcrumb">
             <Link to="/">Home</Link>
             <ChevronRight size={14} className="sat-breadcrumb-separator" />
-            <Link to="/article">Articles</Link>
+            <Link to="/articles">Articles</Link>
             <ChevronRight size={14} className="sat-breadcrumb-separator" />
             <span>What Does SAT Stand For?</span>
           </nav>
@@ -41,7 +41,7 @@ const WhatDoesSatStandForGuide = () => {
           <div className="sat-guide-meta">
             <span className="sat-meta-item"><Clock size={14} /> 8-Minute Read</span>
             <span className="sat-meta-item"><ShieldCheck size={14} /> Official College Board Format</span>
-            <span className="sat-meta-item"><Zap size={14} /> High-Growth Search (+1,400%)</span>
+            <span className="sat-meta-item"><Sparkles size={14} /> Official Testing Guide</span>
           </div>
         </div>
       </header>

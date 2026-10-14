@@ -52,13 +52,13 @@ const SatUniversityRequirementsGuide = () => {
     <div className="sat-guide-page">
       <SEO />
 
-      {/* Breadcrumbs with 120px top offset to clear navbar */}
+      {/* Breadcrumbs with clearance */}
       <div className="sat-guide-breadcrumbs-wrap">
         <div className="sat-guide-container">
           <nav className="sat-guide-breadcrumbs" aria-label="Breadcrumb">
             <Link to="/">Home</Link>
             <ChevronRight size={14} className="sat-breadcrumb-separator" />
-            <Link to="/article">Articles</Link>
+            <Link to="/articles">Articles</Link>
             <ChevronRight size={14} className="sat-breadcrumb-separator" />
             <span>SAT University Requirements UAE & Harvard</span>
           </nav>
@@ -79,7 +79,7 @@ const SatUniversityRequirementsGuide = () => {
           <div className="sat-guide-meta">
             <span className="sat-meta-item"><Clock size={14} /> 11-Minute Read</span>
             <span className="sat-meta-item"><Globe2 size={14} /> UAE & Global Higher Education</span>
-            <span className="sat-meta-item"><Zap size={14} /> Breakout Query (+1,250%)</span>
+            <span className="sat-meta-item"><Sparkles size={14} /> Verified 2026–2027 Cutoffs</span>
           </div>
         </div>
       </header>
@@ -89,28 +89,28 @@ const SatUniversityRequirementsGuide = () => {
         <div className="sat-guide-container">
           {/* Harvard & Ivy League Focus Section */}
           <section className="sat-section">
-            <div style={{ background: '#0f172a', color: '#ffffff', borderRadius: '16px', padding: '32px 28px', border: '1px solid #334155', boxShadow: '0 10px 25px -5px rgba(0,0,0,0.2)' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#fbbf24', fontWeight: 800, fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '12px' }}>
+            <div style={{ background: '#f8fafc', color: '#1e293b', borderRadius: '16px', padding: '32px 28px', border: '1px solid #e2e8f0', boxShadow: '0 4px 16px rgba(0,0,0,0.03)' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#b45309', fontWeight: 800, fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '12px' }}>
                 <Sparkles size={16} /> Global Ivy League Benchmark
               </div>
-              <h2 style={{ fontSize: '1.75rem', fontWeight: 900, color: '#ffffff', marginBottom: '14px', lineHeight: 1.3 }}>
+              <h2 style={{ fontSize: '1.75rem', fontWeight: 800, color: '#0f172a', marginBottom: '14px', lineHeight: 1.3 }}>
                 What SAT Score Does Harvard University Require in 2026?
               </h2>
-              <p style={{ color: '#cbd5e1', fontSize: '0.96rem', lineHeight: 1.65, marginBottom: '24px' }}>
+              <p style={{ color: '#475569', fontSize: '0.98rem', lineHeight: 1.7, marginBottom: '24px' }}>
                 Harvard reinstated required standardized testing for all undergraduate applicants. For UAE and international students applying to Harvard and peer Ivy League institutions (Columbia, Yale, Princeton, MIT), standardized scores are a central factor in holistic evaluations.
               </p>
-              <div className="sat-grid sat-grid-3" style={{ borderTop: '1px solid #334155', paddingTop: '20px' }}>
-                <div>
-                  <span style={{ fontSize: '0.8rem', color: '#94a3b8', display: 'block', marginBottom: '4px' }}>Middle 50% Composite</span>
-                  <strong style={{ fontSize: '1.75rem', fontWeight: 900, color: '#34d399' }}>1500 – 1580</strong>
+              <div className="sat-grid sat-grid-3" style={{ borderTop: '1px solid #e2e8f0', paddingTop: '20px' }}>
+                <div style={{ background: '#ffffff', padding: '18px 20px', borderRadius: '12px', border: '1px solid #e2e8f0' }}>
+                  <span style={{ fontSize: '0.82rem', color: '#64748b', display: 'block', marginBottom: '6px', fontWeight: 600 }}>Middle 50% Composite</span>
+                  <strong style={{ fontSize: '1.85rem', fontWeight: 900, color: '#166534' }}>1500 – 1580</strong>
                 </div>
-                <div>
-                  <span style={{ fontSize: '0.8rem', color: '#94a3b8', display: 'block', marginBottom: '4px' }}>Middle 50% Math</span>
-                  <strong style={{ fontSize: '1.75rem', fontWeight: 900, color: '#34d399' }}>760 – 800</strong>
+                <div style={{ background: '#ffffff', padding: '18px 20px', borderRadius: '12px', border: '1px solid #e2e8f0' }}>
+                  <span style={{ fontSize: '0.82rem', color: '#64748b', display: 'block', marginBottom: '6px', fontWeight: 600 }}>Middle 50% Math</span>
+                  <strong style={{ fontSize: '1.85rem', fontWeight: 900, color: '#166534' }}>760 – 800</strong>
                 </div>
-                <div>
-                  <span style={{ fontSize: '0.8rem', color: '#94a3b8', display: 'block', marginBottom: '4px' }}>Middle 50% Reading & Writing</span>
-                  <strong style={{ fontSize: '1.75rem', fontWeight: 900, color: '#34d399' }}>740 – 780</strong>
+                <div style={{ background: '#ffffff', padding: '18px 20px', borderRadius: '12px', border: '1px solid #e2e8f0' }}>
+                  <span style={{ fontSize: '0.82rem', color: '#64748b', display: 'block', marginBottom: '6px', fontWeight: 600 }}>Middle 50% Reading & Writing</span>
+                  <strong style={{ fontSize: '1.85rem', fontWeight: 900, color: '#166534' }}>740 – 780</strong>
                 </div>
               </div>
             </div>

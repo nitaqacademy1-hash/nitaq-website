@@ -47,13 +47,13 @@ const KhanAcademySatComparisonGuide = () => {
     <div className="sat-guide-page">
       <SEO />
 
-      {/* Breadcrumbs with 120px top offset to clear navbar */}
+      {/* Breadcrumbs with clearance */}
       <div className="sat-guide-breadcrumbs-wrap">
         <div className="sat-guide-container">
           <nav className="sat-guide-breadcrumbs" aria-label="Breadcrumb">
             <Link to="/">Home</Link>
             <ChevronRight size={14} className="sat-breadcrumb-separator" />
-            <Link to="/article">Articles</Link>
+            <Link to="/articles">Articles</Link>
             <ChevronRight size={14} className="sat-breadcrumb-separator" />
             <span>Khan Academy vs Structured Coaching</span>
           </nav>
@@ -73,7 +73,7 @@ const KhanAcademySatComparisonGuide = () => {
           </p>
           <div className="sat-guide-meta">
             <span className="sat-meta-item"><Clock size={14} /> 8-Minute Read</span>
-            <span className="sat-meta-item"><Zap size={14} /> Ecosystem Trend (+20%)</span>
+            <span className="sat-meta-item"><Sparkles size={14} /> Score Progression Strategy</span>
             <span className="sat-meta-item"><ShieldCheck size={14} /> Objective Decision Framework</span>
           </div>
         </div>

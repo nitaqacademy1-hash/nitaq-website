@@ -3,7 +3,7 @@ import { Link } from '../../i18n/Link';
 import SEO from '../../components/SEO';
 import { 
   BookOpen, CheckCircle2, AlertCircle, Clock, ShieldCheck, 
-  HelpCircle, ArrowRight, Award, Zap, Filter, ListFilter, Target, ChevronRight
+  HelpCircle, ArrowRight, Award, Zap, Filter, ListFilter, Target, ChevronRight, Sparkles
 } from 'lucide-react';
 
 const SatSuiteQuestionBankGuide = () => {
@@ -71,7 +71,7 @@ const SatSuiteQuestionBankGuide = () => {
               <ShieldCheck size={15} color="#166534" /> Official College Board Suite
             </span>
             <span className="sat-guide-meta-item">
-              <Zap size={15} color="#166534" /> Breakout Query (+2,000%)
+              <Sparkles size={15} color="#166534" /> Official College Board Bank
             </span>
           </div>
         </header>

@@ -3,7 +3,7 @@ import { Link } from '../../i18n/Link';
 import SEO from '../../components/SEO';
 import { 
   Laptop, CheckCircle2, AlertCircle, Clock, ShieldCheck, 
-  HelpCircle, ArrowRight, Award, Zap, Bookmark, Calculator, EyeOff, ChevronRight
+  HelpCircle, ArrowRight, Award, Zap, Bookmark, Calculator, EyeOff, ChevronRight, Sparkles
 } from 'lucide-react';
 
 const BluebookSatGuide = () => {
@@ -87,7 +87,7 @@ const BluebookSatGuide = () => {
               <ShieldCheck size={15} color="#166534" /> College Board Bluebook Verified
             </span>
             <span className="sat-guide-meta-item">
-              <Zap size={15} color="#166534" /> Trending Search (+1,600%)
+              <Sparkles size={15} color="#166534" /> Official Testing Software
             </span>
           </div>
         </header>
