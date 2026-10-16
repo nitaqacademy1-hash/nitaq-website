@@ -2,6 +2,7 @@ import { Link } from '../i18n/Link';
 import { useLanguage } from '../i18n/context';
 import { trackEvent, ANALYTICS_EVENTS } from '../utils/analytics';
 import { Youtube, Instagram, Facebook, Linkedin, MessageCircle } from 'lucide-react';
+import { primaryNavigation, navigationLabel } from '../data/siteNavigation';
 
 const labels = {
   en: {
@@ -67,12 +68,18 @@ const labels = {
 };
 
 const Footer = () => {
-  const { lang } = useLanguage();
+  const { lang, switchLanguage } = useLanguage();
   const c = labels[lang] || labels.en;
 
   return (
     <footer className="footer-minimal" dir={lang === 'ar' ? 'rtl' : 'ltr'}>
       <div className="container">
+        <nav className="footer-primary-navigation" aria-label={lang === 'ar' ? 'روابط الموقع' : 'Site links'}>
+          {primaryNavigation.map(entry => <Link key={entry.id} to={entry.path}>{navigationLabel(entry, lang)}</Link>)}
+          <button type="button" onClick={() => switchLanguage(lang === 'en' ? 'ar' : 'en')}>
+            {lang === 'en' ? 'العربية' : 'English'}
+          </button>
+        </nav>
         <div className="footer-content">
           <div className="footer-brand">
             <img src="/images/logo1.webp" alt="Nitaq Academy" title="Nitaq Academy" width="150" height="56" loading="lazy" />
@@ -97,13 +104,17 @@ const Footer = () => {
           </div>
           <div className="footer-nav priority-footer">
             <div>
-              <h4>{c.sat}</h4>
+              <h3>{c.sat}</h3>
               <Link to="/sat-preparation-sharjah">{c.digitalSat}</Link>
               <Link to="/sat/diagnostic">{c.diagnostic}</Link>
-              <Link to="/article/digital-sat-preparation-guide-sharjah-dubai-uae">{c.satGuide}</Link>
+              {lang === 'ar' ? (
+                <a href="/article/digital-sat-preparation-guide-sharjah-dubai-uae" lang="en">{c.satGuide} (English)</a>
+              ) : (
+                <Link to="/article/digital-sat-preparation-guide-sharjah-dubai-uae">{c.satGuide}</Link>
+              )}
             </div>
             <div>
-              <h4>{c.languages}</h4>
+              <h3>{c.languages}</h3>
               <Link to="/language-trainings">{c.languages}</Link>
               <Link to="/spoken-english">{c.english}</Link>
               <Link to="/spoken-arabic">{c.arabic}</Link>
@@ -111,21 +122,21 @@ const Footer = () => {
               <Link to="/ielts-course">{c.ielts}</Link>
             </div>
             <div>
-              <h4>{c.tuition}</h4>
+              <h3>{c.tuition}</h3>
               <Link to="/academic-excellence">{c.tuition}</Link>
               <Link to="/maths-tuition-sharjah">{c.maths}</Link>
               <Link to="/science-tuition-sharjah">{c.science}</Link>
               <Link to="/english-tuition-sharjah">{c.englishTuition}</Link>
             </div>
             <div>
-              <h4>{c.other}</h4>
+              <h3>{c.other}</h3>
               <Link to="/courses">{c.all}</Link>
               <Link to="/professional-certifications">{c.professional}</Link>
               <Link to="/corporate-trainings">{c.corporate}</Link>
               <Link to="/test-preparations">{c.otherExam}</Link>
             </div>
             <div>
-              <h4>{c.academy}</h4>
+              <h3>{c.academy}</h3>
               <Link to="/about">{c.about}</Link>
               <Link to="/contact">{c.contact}</Link>
               <Link to="/articles">{c.resources}</Link>
@@ -133,7 +144,7 @@ const Footer = () => {
               <Link to="/terms-and-conditions">{c.terms}</Link>
             </div>
             <div>
-              <h4>{c.contact}</h4>
+              <h3>{c.contact}</h3>
               <p style={{ whiteSpace: 'pre-line' }}>{c.address}</p>
               <a href="tel:+971527569908" onClick={() => trackEvent(ANALYTICS_EVENTS.CALL, 'footer_mobile')}>
                 +971 52 756 9908

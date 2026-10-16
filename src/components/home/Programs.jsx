@@ -18,38 +18,26 @@ function getProgramInfo(title) {
 
 export default function Programs({ c }) {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [viewedIndices, setViewedIndices] = useState(() => new Set([0]));
-  const activeIndexRef = useRef(0);
+  const hasSelectedProgram = useRef(false);
   const sectionRef = useRef(null);
   const tabsRef = useRef(null);
   const touchStartX = useRef(null);
 
-  // Auto-scroll the mobile tab bar to keep the active pill centered
   useEffect(() => {
-    if (typeof window !== 'undefined' && window.innerWidth > 860) {
-      setViewedIndices(new Set([0, 1, 2, 3]));
-    }
-  }, []);
-
-  useEffect(() => {
-    setViewedIndices((prev) => {
-      if (prev.has(activeIndex)) return prev;
-      const next = new Set(prev);
-      next.add(activeIndex);
-      return next;
-    });
-
-    if (tabsRef.current && window.innerWidth <= 860) {
+    if (hasSelectedProgram.current && tabsRef.current && window.innerWidth <= 860) {
       const activeBtn = tabsRef.current.children[activeIndex];
       if (activeBtn) {
-        activeBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        // Only move the horizontal tab strip. scrollIntoView also moved the page on load.
+        const strip = tabsRef.current;
+        const left = activeBtn.offsetLeft - (strip.clientWidth - activeBtn.clientWidth) / 2;
+        strip.scrollTo({ left, behavior: 'smooth' });
       }
     }
   }, [activeIndex]);
 
   const selectCard = (index) => {
+    hasSelectedProgram.current = true;
     setActiveIndex(index);
-    activeIndexRef.current = index;
   };
 
   const handleTouchStart = (e) => {
@@ -62,10 +50,10 @@ export default function Programs({ c }) {
     if (Math.abs(diff) > 40) {
       if (diff < 0) {
         // Swiped left -> Next
-        setActiveIndex((prev) => (prev + 1) % c.programs.length);
+        selectCard((activeIndex + 1) % c.programs.length);
       } else {
         // Swiped right -> Prev
-        setActiveIndex((prev) => (prev - 1 + c.programs.length) % c.programs.length);
+        selectCard((activeIndex - 1 + c.programs.length) % c.programs.length);
       }
     }
     touchStartX.current = null;
@@ -92,11 +80,10 @@ export default function Programs({ c }) {
         </div>
 
         {/* Rail Carousel */}
-        <div className="nh-accordion-wrapper nh-reveal">
+        <div className="nh-accordion-wrapper">
           {/* Mobile Selector Pills */}
           <div
             className="nh-programs-mobile-tabs"
-            role="tablist"
             ref={tabsRef}
             aria-label={c.programsTitle}
           >
@@ -104,8 +91,7 @@ export default function Programs({ c }) {
               <button
                 key={title}
                 type="button"
-                role="tab"
-                aria-selected={i === activeIndex}
+                aria-pressed={i === activeIndex}
                 className={`nh-program-tab-btn ${i === activeIndex ? 'is-active' : ''}`}
                 onClick={() => selectCard(i)}
               >
@@ -130,25 +116,15 @@ export default function Programs({ c }) {
                     to={info.path}
                     key={title}
                     className={`nh-sliver nh-sliver-${i + 1}${isOpen ? ' is-open' : ''}`}
-                    tabIndex="0"
                     onMouseEnter={() => {
                       if (window.innerWidth > 860) setActiveIndex(i);
                     }}
                     onFocus={() => setActiveIndex(i)}
-                    onClick={(e) => {
-                      // On touch / mobile screens: tapping a closed card opens it instead of navigating away
-                      if (!isOpen) {
-                        e.preventDefault();
-                        selectCard(i);
-                      }
-                    }}
-                    aria-expanded={isOpen}
-                    aria-label={`${title} - ${c.programs[i]?.[4] || c.discover}`}
+                    onClick={() => selectCard(i)}
                   >
                     {/* Photo Background & Dark Scrim */}
                     <div className="nh-sliver-bg">
-                      {(isOpen || viewedIndices.has(i)) && (
-                        <img
+                      <img
                           src={info.small}
                           srcSet={`${info.small} 480w, ${info.full} 960w`}
                           sizes="(max-width: 768px) 420px, 360px"
@@ -158,7 +134,6 @@ export default function Programs({ c }) {
                           loading="lazy"
                           decoding="async"
                         />
-                      )}
                       <div className="nh-sliver-overlay" />
                     </div>
 
@@ -176,7 +151,7 @@ export default function Programs({ c }) {
                     </div>
 
                     {/* Caption when card is open */}
-                    <div className="nh-sliver-caption" aria-hidden={!isOpen}>
+                    <div className="nh-sliver-caption">
                       <div className="nh-sliver-tag">
                         <span className="nh-sliver-tag-dot" />
                         {tags}
@@ -199,8 +174,8 @@ export default function Programs({ c }) {
             <button
               type="button"
               className="nh-program-nav-btn prev"
-              onClick={() => setActiveIndex((prev) => (prev - 1 + c.programs.length) % c.programs.length)}
-              aria-label="Previous Program"
+              onClick={() => selectCard((activeIndex - 1 + c.programs.length) % c.programs.length)}
+              aria-label={c.previousProgram || 'Previous program'}
             >
               <ChevronLeft size={18} />
             </button>
@@ -211,15 +186,15 @@ export default function Programs({ c }) {
                   type="button"
                   className={`nh-program-dot ${i === activeIndex ? 'is-active' : ''}`}
                   onClick={() => selectCard(i)}
-                  aria-label={`Go to program ${i + 1}`}
+                  aria-label={`${c.view || 'View'} ${title}`}
                 />
               ))}
             </div>
             <button
               type="button"
               className="nh-program-nav-btn next"
-              onClick={() => setActiveIndex((prev) => (prev + 1) % c.programs.length)}
-              aria-label="Next Program"
+              onClick={() => selectCard((activeIndex + 1) % c.programs.length)}
+              aria-label={c.nextProgram || 'Next program'}
             >
               <ChevronRight size={18} />
             </button>

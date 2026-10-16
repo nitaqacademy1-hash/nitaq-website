@@ -548,3 +548,16 @@ body > #root header.nh-site-navbar.is-scrolled {
   z-index: 995 !important;
   transition: opacity 0.2s ease !important;
 }
+
+/* Phase 1 shared navigation refinements. */
+.nh-site-navbar .nh-navigation { gap: 13px !important; }
+.nh-site-navbar .nh-nav-link { font-size: 12px !important; }
+.nh-site-navbar :is(a, button):focus-visible { outline: 3px solid #d8f2c7 !important; outline-offset: 3px !important; }
+.nh-site-navbar .nh-nav-item.has-mega-dropdown .nh-dropdown-menu { inset-inline-end: -140px !important; }
+@media (max-width: 1100px) {
+  .nh-site-navbar .nh-navigation { gap: 0 !important; }
+  .nh-site-navbar .nh-mobile-item-row { min-height: 48px; }
+  .nh-site-navbar .nh-nav-link { font-size: 15px !important; }
+  .nh-site-navbar .nh-mobile-expand-btn { width: 44px !important; height: 44px !important; }
+  .nh-site-navbar .nh-nav-item.has-mega-dropdown .nh-dropdown-menu { inset-inline-end: auto !important; }
+}

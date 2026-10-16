@@ -2,9 +2,9 @@ export const programPaths = ['/sat-preparation-sharjah', '/academic-excellence',
 export const contact = { phone: '+971527569908', mobile: '+971527569908', email: 'info@nitaqacademy.com' };
 export const homeCopy = {
   en: {
-    eyebrow: 'PREMIUM EDUCATION IN AL MAJAZ 3, SHARJAH', title: ['SAT Preparation.', 'Subject Tuition.', 'Language Training.'],
-    intro: 'Prepare for the Digital SAT, strengthen your subject knowledge and develop your language skills with personalized academic support at Nitaq Academy.',
-    explore: 'Explore Programs', admissions: 'Speak with Admissions', call: 'Call Admissions', book: 'Book a Diagnostic', view: 'View Programs',
+    eyebrow: 'EDUCATION IN AL MAJAZ 3, SHARJAH', title: ['SAT Preparation,', 'School Tuition &', 'Language Training in Sharjah'],
+    intro: 'Build academic confidence with structured exam preparation, personalised tutoring and practical language training at Nitaq Academy in Al Majaz 3, Sharjah.',
+    explore: 'Explore Our Programs', admissions: 'Speak with Admissions', call: 'Call Admissions', book: 'Start Free SAT Diagnostic', view: 'View Programs',
     trust: ['Diagnostic-led guidance', 'Experienced tutors', 'Small-group learning'],
     highlights: [['Digital SAT', 'Focused preparation'], ['Subjects', 'Academic support'], ['Al Majaz 3', 'Sharjah, UAE']],
     journey: 'FROM POTENTIAL TO PROGRESS', scroll: 'Scroll to explore', skip: 'Skip to programs', start: 'Your next chapter starts here.',
@@ -27,8 +27,8 @@ export const homeCopy = {
       ['Other Courses', 'Explore professional, business and technology courses for the next stage of your journey.', 'Professional · Business · Technology', 'Books and learning materials on a study desk', 'Explore All Courses'],
     ],
     discover: 'Discover program',
-    trustedTitle: 'TRUSTED BY LEADING ORGANIZATIONS',
-    trustedSubtitle: "We deliver globally recognised professional training programs, built in partnership with the world's leading international organisations and certification bodies.",
+    trustedTitle: 'EDUCATION & EXAM REFERENCES',
+    trustedSubtitle: 'Explore our course pages for details on the exams and qualifications we help learners prepare for.',
     whyEyebrow: 'THE NITAQ APPROACH', whyTitle: 'Thoughtful support.\nMeaningful progress.', whyIntro: 'Good learning is personal. We bring structure, attention and purpose to every step of the journey.',
     benefits: [['Personalized Guidance', 'Start with your level, your priorities and the goals that matter to you.'], ['Focused Learning', 'A calm space to ask questions, explore ideas and build understanding.'], ['Experienced Tutors', 'Learn with educators who make challenging concepts feel approachable.'], ['Progress Tracking', 'Regular feedback helps you recognise growth and plan the next step.']],
     processEyebrow: 'A CLEAR WAY FORWARD', processTitle: 'Small steps. Lasting progress.', process: [['Assess', 'Understand your starting point.'], ['Plan', 'Build your learning pathway.'], ['Learn', 'Develop deeper understanding.'], ['Practice', 'Put your knowledge to work.'], ['Improve', 'Reflect, refine and move forward.']],
@@ -37,9 +37,9 @@ export const homeCopy = {
     footerLine: 'A clearer path from potential to progress.', academy: 'Academy', contact: 'Get in touch', about: 'About Nitaq', resources: 'Learning resources', privacy: 'Privacy policy', terms: 'Terms & conditions', rights: 'All rights reserved.', menu: 'Open navigation', close: 'Close navigation', studentAlt: 'Focused university-age student studying at a modern desk with an open book, notebook and laptop',
   },
   ar: {
-    eyebrow: 'تعليم متميز في المجاز 3، الشارقة', title: ['التحضير لاختبار SAT.', 'الدروس الأكاديمية.', 'تدريب اللغات.'],
-    intro: 'استعد لاختبار SAT الرقمي، وعزّز معرفتك بالمواد الدراسية، وطوّر مهاراتك اللغوية مع دعم أكاديمي مخصص في أكاديمية نطاق.',
-    explore: 'استكشف البرامج', admissions: 'تحدث مع القبول', call: 'اتصل بالقبول', book: 'احجز تقييماً', view: 'عرض البرامج', trust: ['إرشاد يبدأ بالتقييم', 'مدرسون ذوو خبرة', 'مجموعات صغيرة'], highlights: [['SAT الرقمي', 'تحضير مركّز'], ['المواد الدراسية', 'دعم أكاديمي'], ['المجاز 3', 'الشارقة، الإمارات']],
+    eyebrow: 'التعليم في المجاز 3، الشارقة', title: ['التحضير لاختبار SAT،', 'الدروس المدرسية و', 'تدريب اللغات في الشارقة'],
+    intro: 'ابنِ ثقتك الأكاديمية عبر التحضير المنظّم للاختبارات والدروس المخصصة والتدريب العملي على اللغات في أكاديمية نطاق بالمجاز 3، الشارقة.',
+    explore: 'استكشف برامجنا', admissions: 'تحدث مع القبول', call: 'اتصل بالقبول', book: 'ابدأ تقييم SAT المجاني', view: 'عرض البرامج', trust: ['إرشاد يبدأ بالتقييم', 'مدرسون ذوو خبرة', 'مجموعات صغيرة'], highlights: [['SAT الرقمي', 'تحضير مركّز'], ['المواد الدراسية', 'دعم أكاديمي'], ['المجاز 3', 'الشارقة، الإمارات']],
     journey: 'من الإمكانات إلى التقدّم', scroll: 'مرّر للاستكشاف', skip: 'انتقل إلى البرامج', start: 'فصلك القادم يبدأ هنا.',
     stages: [
       ['الأساس', 'ابنِ أساساً لنتائج أفضل.', 'تبدأ كل خطوة مهمة بفهم مستواك الحالي.'], ['التقييم التشخيصي', 'الوضوح أولاً.', 'افهم مستواك الحالي قبل تحديد الخطوة التالية.'], ['خطة تعلّم مخصصة', 'خطة تعلّم مصممة لك.', 'أهدافك ومستواك ومسار واضح يناسبك.'], ['التعلّم المركّز', 'تعلّم بتركيز.', 'افهم بعمق مع مدرسين ذوي خبرة ودعم فردي.'], ['التدريب الموجّه', 'تدرّب بهدف.', 'حوّل الفهم إلى ثقة، سؤالاً بعد سؤال.'], ['متابعة التقدّم', 'تقدّم يمكنك رؤيته.', 'تابع تحسّنك وحدّد أولوياتك من خلال الملاحظات المنتظمة.'], ['خطوتك القادمة', 'هل أنت مستعد لخطوتك التالية؟', 'ابدأ مع أكاديمية نطاق وابنِ مساراً أوضح نحو أهدافك الأكاديمية.'],
@@ -47,14 +47,14 @@ export const homeCopy = {
     diagnostic: 'التقييم', strengths: 'تحديد نقاط القوة', focus: 'تحديد مجالات التحسين', pathway: 'مسار تعلّمك', subjects: ['SAT', 'الإنجليزية', 'الرياضيات', 'العلوم'], tutor: 'مدرسون خبراء', tutorSub: 'تعلّم موجّه · دعم مخصص', practice: 'تدريب مركّز', question: 'سؤال واحد. فهم أوضح.', completion: 'تدرّب، تأمل، تحسّن', readiness: 'الاستعداد لاختبار SAT', example: 'مثال توضيحي للتقدّم · ليس نتائج فعلية', success: 'مسار أوضح إلى الأمام',
     programsEyebrow: 'اكتشف اتجاهك', programsTitle: 'برامج مصممة\nحول أهدافك.', programsIntro: 'خطوة طموحة وأساس أقوى. مهما كان هدفك، ابدأ بالدعم المناسب.',
     programs: [
-      ['التحضير لاختبار SAT', 'استعد بثقة لاختبار SAT الرقمي مع استراتيجيات وتدريب موجّه وملاحظات واضحة.', 'SAT الرقمي · استراتيجيات · بالإنجليزية', 'طالبة تستعد للاختبار باستخدام حاسوب', 'استكشف التحضير لاختبار SAT'],
-      ['الدروس الأكاديمية', 'عزّز فهمك للمفاهيم الصعبة مع دعم أكاديمي مركّز لطلاب المدارس والجامعات.', 'الرياضيات · العلوم · بالإنجليزية', 'طالب يحل مسألة بمساعدة مدرّس', 'استكشف الدروس الأكاديمية'],
-      ['تدريب اللغات', 'طوّر تواصلك للدراسة والعمل والحياة اليومية من خلال تعلّم عملي.', 'الإنجليزية · العربية · بالإنجليزية', 'متعلّمات يتدربن على المحادثة', 'استكشف تدريب اللغات'],
-      ['دورات أخرى', 'اكتشف الدورات المهنية والتجارية والتقنية لمرحلتك القادمة.', 'المهارات المهنية · الأعمال · بالإنجليزية', 'كتب وأدوات تعلّم على مكتب', 'استكشف جميع الدورات']
+      ['التحضير لاختبار SAT', 'استعد بثقة لاختبار SAT الرقمي مع استراتيجيات وتدريب موجّه وملاحظات واضحة.', 'SAT الرقمي · استراتيجيات · تدريب', 'طالبة تستعد للاختبار باستخدام حاسوب', 'استكشف التحضير لاختبار SAT'],
+      ['الدروس الأكاديمية', 'عزّز فهمك للمفاهيم الصعبة مع دعم أكاديمي مركّز لطلاب المدارس والجامعات.', 'الرياضيات · العلوم · دعم أكاديمي', 'طالب يحل مسألة بمساعدة مدرّس', 'استكشف الدروس الأكاديمية'],
+      ['تدريب اللغات', 'طوّر تواصلك للدراسة والعمل والحياة اليومية من خلال تعلّم عملي.', 'الإنجليزية · العربية · الإسبانية', 'متعلّمات يتدربن على المحادثة', 'استكشف تدريب اللغات'],
+      ['دورات أخرى', 'اكتشف الدورات المهنية والتجارية والتقنية لمرحلتك القادمة.', 'المهارات المهنية · الأعمال · التقنية', 'كتب وأدوات تعلّم على مكتب', 'استكشف جميع الدورات']
     ],
     discover: 'عرض تفاصيل البرنامج',
-    trustedTitle: 'موثوق من قبل المنظمات الرائدة',
-    trustedSubtitle: 'نقدم برامج تدريبية مهنية معترف بها عالمياً، بالشراكة مع كبرى المنظمات الدولية وهيئات الاعتماد العالمية.',
+    trustedTitle: 'جهات تعليمية واختبارات ذات صلة',
+    trustedSubtitle: 'استكشف صفحات الدورات لمعرفة تفاصيل الاختبارات والمؤهلات التي نساعد المتعلمين على الاستعداد لها.',
     whyEyebrow: 'نهج نطاق', whyTitle: 'دعم مدروس.\nتقدّم ملموس.', whyIntro: 'التعلّم الجيد تجربة شخصية. نقدّم الاهتمام والتنظيم والهدف في كل خطوة.',
     benefits: [['إرشاد مخصص', 'ابدأ بمستواك وأولوياتك والأهداف التي تهمّك.'], ['تعلّم مركّز', 'مساحة هادئة للأسئلة واستكشاف الأفكار وبناء الفهم.'], ['مدرسون ذوو خبرة', 'تعلّم مع مدرسين يبسّطون المفاهيم الصعبة.'], ['متابعة التقدّم', 'ملاحظات منتظمة لفهم تحسّنك والتخطيط للخطوة التالية.']],
     processEyebrow: 'طريق واضح إلى الأمام', processTitle: 'خطوات صغيرة. تقدّم مستمر.', process: [['قيّم', 'افهم نقطة انطلاقك.'], ['خطط', 'ابنِ مسار تعلّمك.'], ['تعلّم', 'طوّر فهماً أعمق.'], ['تدرّب', 'طبّق ما تعلّمته.'], ['تحسّن', 'راجع وطوّر وتقدّم.']],

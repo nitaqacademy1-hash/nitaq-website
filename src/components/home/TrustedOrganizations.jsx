@@ -5,50 +5,55 @@ const ORGANIZATIONS = [
     id: 'spea',
     name: 'SPEA SHARJAH',
     role: 'Licensed Institute',
+    roleAr: 'معهد مرخّص',
     logo: '/images/partner_spea_trans.webp',
     width: 65,
     height: 46,
-    alt: 'Sharjah Private Education Authority licensed institute',
+    alt: 'Sharjah Private Education Authority logo',
   },
   {
     id: 'ielts',
     name: 'IELTS PREPARATION',
     role: 'Preparation & Registration Assistance',
+    roleAr: 'مساعدة في التحضير والتسجيل',
     logo: '/images/partner_ielts_trans.webp',
     width: 80,
     height: 44,
-    alt: 'Official IELTS Preparation & Registration Assistance',
+    alt: 'IELTS logo',
   },
   {
     id: 'pearson',
     name: 'PEARSON PTE',
     role: 'Academic Preparation',
+    roleAr: 'تحضير أكاديمي',
     logo: '/images/partner_pearson.webp',
     width: 159,
     height: 48,
-    alt: 'Pearson PTE academic testing preparation',
+    alt: 'Pearson PTE logo',
   },
   {
     id: 'toefl',
     name: 'ETS TOEFL',
     role: 'Exam Preparation',
+    roleAr: 'تحضير للاختبار',
     logo: '/images/partner_toefl_trans.webp',
     width: 171,
     height: 47,
-    alt: 'ETS TOEFL test preparation',
+    alt: 'ETS TOEFL logo',
   },
   {
     id: 'acca',
     name: 'ACCA GLOBAL',
     role: 'Professional Tuition',
+    roleAr: 'دروس مهنية',
     logo: '/images/partner_acca_trans.webp',
     width: 48,
     height: 48,
-    alt: 'ACCA Global tuition provider',
+    alt: 'ACCA Global logo',
   },
 ];
 
-export default function TrustedOrganizations({ c }) {
+export default function TrustedOrganizations({ c, lang = 'en' }) {
   return (
     <section className="nh-trusted-section" aria-labelledby="nh-trusted-title">
       <div className="nh-container">
@@ -79,7 +84,7 @@ export default function TrustedOrganizations({ c }) {
               <span className="nh-trusted-label" style={{ color: '#0f172a', fontWeight: 700 }}>{org.name}</span>
               {org.role && (
                 <span className="nh-trusted-role" style={{ color: '#334155', fontSize: '11px', fontWeight: 600, display: 'block', marginTop: '2px' }}>
-                  {org.role}
+                  {lang === 'ar' ? org.roleAr : org.role}
                 </span>
               )}
             </div>

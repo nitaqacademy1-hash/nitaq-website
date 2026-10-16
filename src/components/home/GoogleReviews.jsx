@@ -387,7 +387,7 @@ export default function GoogleReviews() {
               type="button"
               className={`nh-chip nh-chip-more ${showExtraTags ? 'active' : ''}`}
               onClick={() => setShowExtraTags(!showExtraTags)}
-              aria-label="Toggle more filter tags"
+              aria-label={showExtraTags ? '− Less review filters' : '+6 more review filters'}
             >
               {showExtraTags ? '− Less' : '+6'}
             </button>

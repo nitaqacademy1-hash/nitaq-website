@@ -3200,3 +3200,82 @@
     white-space: normal;
   }
 }
+/* Phase 1: readable hero, factual trust band and always-discoverable programs. */
+.nitaq-home .nh-story .nh-eyebrow { color: #e4f4dc; font-size: 13px; letter-spacing: .1em; }
+.nitaq-home .nh-hero-h1 { font-size: clamp(36px, 3.9vw, 56px); line-height: 1.12; letter-spacing: -.045em; margin-block: 20px 20px; }
+.nitaq-home .nh-hero-intro { font-size: 16px; line-height: 1.65; max-width: 560px; }
+.nitaq-home .nh-trust { font-size: 12px; line-height: 1.5; }
+.nitaq-home .nh-hero-stat span { font-size: 12px; letter-spacing: .02em; }
+.nitaq-home .nh-hero-float-badge { width: 300px; transform: none; }
+.nitaq-home .nh-hero-float-badge small { font-size: 12px; color: #344054; }
+.nitaq-home .nh-hero-float-badge strong { font-size: 17px; color: #0f2d1e; }
+.nitaq-home .nh-hero-float-badge span { font-size: 12px; color: #344054; }
+.nitaq-home .nh-hero-caption, .nitaq-home .nh-hero-caption-link { font-size: 12px; }
+.nitaq-home .nh-button { min-height: 48px; font-size: 14px; padding: 12px 18px; }
+.nitaq-home .nh-admissions-link { display: inline-flex; align-items: center; gap: 8px; color: #fff; min-height: 48px; font-size: 14px; font-weight: 700; padding-inline: 8px; text-decoration: underline; text-underline-offset: 4px; }
+.nitaq-home .nh-admissions-link:hover { color: #d6f2c5; }
+.nitaq-home .nh-actions { align-items: center; }
+.nh-facts { background: #fff; border-block: 1px solid #dce5da; padding-block: 22px; }
+.nh-facts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.nh-facts a { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 50px; color: #0f2d1e; font-size: 14px; font-weight: 700; padding-inline: 14px; border-inline-start: 3px solid #15803d; }
+.nh-facts a:hover { background: #f7f9f4; }
+.nh-facts a span { color: #15803d; font-size: 21px; }
+
+/* Keep the existing program links and selector logic; expose every card by default. */
+.nitaq-home .nh-accordion-rail { display: grid !important; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px !important; height: auto !important; }
+.nitaq-home .nh-sliver, .nitaq-home .nh-sliver.is-open { display: block !important; width: auto !important; height: 370px !important; filter: none !important; box-shadow: none !important; border-radius: 18px !important; }
+.nitaq-home .nh-sliver:hover, .nitaq-home .nh-sliver:focus-visible { box-shadow: 0 14px 35px rgba(15,45,30,.18) !important; }
+.nitaq-home .nh-sliver:nth-child(4) { grid-column: 1 / -1; height: 160px !important; }
+.nitaq-home .nh-sliver-bg, .nitaq-home .nh-sliver-bg img { border-radius: inherit; }
+.nitaq-home .nh-sliver-vertical-title { display: none !important; }
+.nitaq-home .nh-sliver-caption, .nitaq-home .nh-sliver.is-open .nh-sliver-caption { opacity: 1 !important; transform: none !important; pointer-events: auto !important; width: 100% !important; white-space: normal !important; padding: 28px !important; }
+.nitaq-home .nh-sliver-arrow { opacity: 1 !important; transform: none !important; }
+.nitaq-home .nh-sliver-desc { font-size: 14px !important; line-height: 1.55 !important; }
+.nitaq-home .nh-sliver-cta { font-size: 14px !important; min-height: 44px; padding: 9px 16px !important; }
+.nitaq-home .nh-sliver:nth-child(4) .nh-sliver-caption { padding: 20px 26px !important; }
+.nitaq-home .nh-sliver:nth-child(4) .nh-sliver-tag { display: none; }
+.nitaq-home .nh-sliver:nth-child(4) .nh-sliver-title { font-size: 23px; }
+.nitaq-home .nh-sliver:nth-child(4) .nh-sliver-desc { max-width: none; }
+.nitaq-home .nh-sliver:nth-child(4) .nh-sliver-cta { margin-top: 8px; }
+
+/* Neutral image strip keeps the institutions' original colors legible. */
+.nitaq-home .nh-trusted-section { background: #fff; border-block: 1px solid #dce5da; }
+.nitaq-home .nh-trusted-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 18px; align-items: center; }
+.nitaq-home .nh-trusted-item { min-width: 0; gap: 10px; padding: 16px 8px; }
+.nitaq-home .nh-trusted-logo-img { filter: none; opacity: 1; max-height: 54px; }
+.nitaq-home .nh-trusted-role { font-size: 12px !important; line-height: 1.4; }
+.nitaq-home .nh-chip.active span { color: #fff !important; }
+
+@media (max-width: 1100px) {
+  .nitaq-home .nh-hero-h1 { font-size: clamp(34px, 4vw, 48px); }
+  .nitaq-home .nh-accordion-rail { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .nitaq-home .nh-sliver:nth-child(4) { grid-column: auto; height: 370px !important; }
+  .nitaq-home .nh-trusted-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 767px) {
+  .nitaq-home .nh-story { padding-top: 120px; }
+  .nitaq-home .nh-hero-h1 { font-size: clamp(31px, 8vw, 40px); line-height: 1.17; margin-block: 16px; }
+  .nitaq-home .nh-hero-intro { font-size: 16px; }
+  .nitaq-home .nh-actions { gap: 10px; margin-top: 22px; }
+  .nitaq-home .nh-actions .nh-button { flex: 1 1 220px; }
+  .nitaq-home .nh-admissions-link { flex: 1 1 100%; justify-content: center; }
+  .nitaq-home .nh-hero-stats { gap: 14px; }
+  .nitaq-home .nh-hero-stat strong { font-size: 15px; }
+  .nh-facts-grid { grid-template-columns: 1fr; gap: 2px; }
+  .nh-facts a { min-height: 44px; font-size: 14px; }
+  .nitaq-home .nh-programs { padding-block: 54px !important; }
+  .nitaq-home .nh-accordion-rail { grid-template-columns: 1fr; gap: 14px !important; }
+  .nitaq-home .nh-sliver, .nitaq-home .nh-sliver.is-open, .nitaq-home .nh-sliver:not(.is-open), .nitaq-home .nh-sliver:nth-child(4) { display: block !important; width: 100% !important; height: 280px !important; border-radius: 18px !important; box-shadow: none !important; }
+  .nitaq-home .nh-sliver:nth-child(4) { height: 215px !important; }
+  .nitaq-home .nh-sliver-caption, .nitaq-home .nh-sliver.is-open .nh-sliver-caption { position: absolute !important; inset: auto 0 0 !important; width: 100% !important; padding: 18px !important; opacity: 1 !important; visibility: visible !important; background: linear-gradient(transparent, rgba(4,18,9,.93)) !important; }
+  .nitaq-home .nh-sliver-desc, .nitaq-home .nh-sliver.is-open .nh-sliver-desc { display: block !important; overflow: visible !important; font-size: 14px !important; line-height: 1.45 !important; }
+  .nitaq-home .nh-sliver-title, .nitaq-home .nh-sliver.is-open .nh-sliver-title { font-size: 22px !important; }
+  .nitaq-home .nh-sliver-cta, .nitaq-home .nh-sliver.is-open .nh-sliver-cta { min-height: 44px; font-size: 14px !important; margin-top: 10px !important; }
+  .nitaq-home .nh-programs-mobile-nav { display: flex !important; }
+  .nitaq-home .nh-program-nav-dots { gap: 0; }
+  .nitaq-home .nh-program-dot, .nitaq-home .nh-program-dot.is-active { width: 44px !important; height: 44px !important; position: relative; background: transparent !important; border: 0 !important; box-shadow: none !important; }
+  .nitaq-home .nh-program-dot::after { content: ''; position: absolute; width: 10px; height: 10px; border-radius: 6px; background: #819982; top: 17px; left: 17px; }
+  .nitaq-home .nh-program-dot.is-active::after { width: 24px; height: 8px; top: 18px; left: 10px; background: #15803d; }
+  .nitaq-home .nh-program-tab-btn { min-height: 44px; font-size: 13px; }
+  .nitaq-home .nh-trusted-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}

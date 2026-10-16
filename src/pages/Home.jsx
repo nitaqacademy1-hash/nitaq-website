@@ -1,8 +1,9 @@
 import { useEffect, useRef } from 'react';
 import { useLanguage } from '../i18n/context';
 import SEO from '../components/SEO';
-import Navbar from '../components/home/Navbar';
+import Header from '../components/Header';
 import ScrollStory from '../components/home/ScrollStory';
+import TrustBar from '../components/home/TrustBar';
 import Programs from '../components/home/Programs';
 import TrustedOrganizations from '../components/home/TrustedOrganizations';
 import WhyNitaq from '../components/home/WhyNitaq';
@@ -10,7 +11,7 @@ import LearningProcess from '../components/home/LearningProcess';
 import Location from '../components/home/Location';
 import GoogleReviews from '../components/home/GoogleReviews';
 import CTA from '../components/home/CTA';
-import Footer from '../components/home/Footer';
+import Footer from '../components/Footer';
 import { homeCopy } from '../components/home/content';
 import '../styles/home.css';
 
@@ -53,18 +54,19 @@ export default function Home() {
     <div className="nitaq-home" ref={root} dir={lang === 'ar' ? 'rtl' : 'ltr'}>
       <SEO ogImage="/nitaq/hero/student-desk.webp" />
       <a className="nh-keyboard-skip" href="#programs">{c.skip}</a>
-      <Navbar c={c} />
+      <Header />
       <main>
         <ScrollStory c={c} />
+        <TrustBar />
         <Programs c={c} />
-        <TrustedOrganizations c={c} />
         <WhyNitaq c={c} />
         <LearningProcess c={c} />
-        <Location c={c} />
         <GoogleReviews c={c} />
+        <Location c={c} />
+        <TrustedOrganizations c={c} lang={lang} />
         <CTA c={c} />
       </main>
-      <Footer c={c} />
+      <Footer />
     </div>
   );
 }

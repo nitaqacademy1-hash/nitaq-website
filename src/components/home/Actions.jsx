@@ -1,6 +1,5 @@
 import { ArrowUpRight, Phone } from 'lucide-react';
 import { Link } from '../../i18n/Link';
-import { contact } from './content';
 import { trackEvent, ANALYTICS_EVENTS } from '../../utils/analytics';
 
 export default function Actions({ c, diagnostic = false }) {
@@ -14,20 +13,21 @@ export default function Actions({ c, diagnostic = false }) {
       {diagnostic ? (
         <Link
           className="nh-button nh-button-light"
-          to="/enquiry"
+          to="/sat/diagnostic"
           onClick={() => trackEvent(ANALYTICS_EVENTS.CLICK, 'home_book_diagnostic')}
         >
           {c.book}
           <ArrowUpRight size={18} />
         </Link>
       ) : (
-        <a className="nh-button nh-button-light" href="#programs">
-          {c.explore}
+        <Link className="nh-button nh-button-light" to="/sat/diagnostic" onClick={() => trackEvent(ANALYTICS_EVENTS.CLICK, 'home_sat_diagnostic')}>
+          {c.book}
           <ArrowUpRight size={18} />
-        </a>
+        </Link>
       )}
+      {!diagnostic && <a className="nh-button nh-button-outline" href="#programs">{c.explore}<ArrowUpRight size={17} /></a>}
       <a
-        className="nh-button nh-button-outline"
+        className="nh-admissions-link"
         href={`https://wa.me/971527569908?text=${encodeURIComponent(waMsg)}`}
         target="_blank"
         rel="noopener noreferrer"
