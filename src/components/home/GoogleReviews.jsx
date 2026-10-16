@@ -1,6 +1,10 @@
 import { useState, useRef, useMemo } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ExternalLink, Award, TrendingUp, CheckCircle2 } from 'lucide-react';
+import { useLanguage } from '../../i18n/context';
 import '../../styles/reviews.css';
+
+const GOOGLE_PROFILE_URL = 'https://g.page/r/CVwmfMU8WAHsEAI';
+const GOOGLE_WRITE_REVIEW_URL = 'https://g.page/r/CVwmfMU8WAHsEAI/review';
 
 const REVIEWS_DATA = [
   {
@@ -257,8 +261,6 @@ const REVIEWS_DATA = [
   },
 ];
 
-// Primary tags matching user specifications:
-// All, practical course2, supportive team2, webinar2, maths4, +6
 const TAG_FILTERS = [
   { key: 'all', label: 'All', count: null },
   { key: 'practical course', label: 'practical course', count: 2 },
@@ -277,6 +279,8 @@ const EXTRA_TAGS = [
 ];
 
 export default function GoogleReviews() {
+  const { lang } = useLanguage();
+  const isAr = lang === 'ar';
   const [activeTag, setActiveTag] = useState('all');
   const [showExtraTags, setShowExtraTags] = useState(false);
   const [sortBy, setSortBy] = useState('relevant');
@@ -303,7 +307,11 @@ export default function GoogleReviews() {
           return r.text.toLowerCase().includes('digital marketing');
         }
         if (activeTag === 'tutors') {
-          return r.tags.includes('supportive team') || r.text.toLowerCase().includes('tutor') || r.text.toLowerCase().includes('teacher');
+          return (
+            r.tags.includes('supportive team') ||
+            r.text.toLowerCase().includes('tutor') ||
+            r.text.toLowerCase().includes('teacher')
+          );
         }
         return r.tags.includes(activeTag);
       });
@@ -316,7 +324,6 @@ export default function GoogleReviews() {
     } else if (sortBy === 'lowest') {
       list.sort((a, b) => a.rating - b.rating);
     } else {
-      // most relevant: keep detailed reviews first
       list.sort((a, b) => b.text.length - a.text.length);
     }
 
@@ -333,16 +340,38 @@ export default function GoogleReviews() {
   return (
     <section className="nh-section nh-reviews-section" id="reviews" aria-label="Student and Parent Reviews">
       <div className="nh-container">
-        {/* Header matching screenshot */}
-        <div className="nh-reviews-header">
-          <h2 className="nh-reviews-title">EXCELLENT</h2>
-          <div className="nh-reviews-stars" role="img" aria-label="5 out of 5 stars">
-            {[...Array(5)].map((_, i) => (
-              <svg key={i} className="nh-star-icon" viewBox="0 0 24 24" fill="#FBBC04" width="28" height="28">
-                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-              </svg>
-            ))}
-          </div>
+        {/* Header with verified rating & link to real Google Business profile */}
+        <div className="nh-reviews-header nh-reveal">
+          <a
+            href={GOOGLE_PROFILE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="nh-reviews-rating-badge"
+            title="View verified rating on Google Maps"
+          >
+            <span className="nh-rating-score">4.9</span>
+            <div className="nh-reviews-stars" role="img" aria-label="4.9 out of 5 stars">
+              {[...Array(5)].map((_, i) => (
+                <svg key={i} className="nh-star-icon" viewBox="0 0 24 24" fill="#FBBC04" width="22" height="22">
+                  <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                </svg>
+              ))}
+            </div>
+            <span className="nh-rating-source-link">
+              <span>{isAr ? 'تقييم Google المعتمد (50+ تقييم)' : '50+ Verified Google Reviews'}</span>
+              <ExternalLink size={13} aria-hidden="true" />
+            </span>
+          </a>
+
+          <h2 className="nh-reviews-title">
+            {isAr ? 'تجارب طلابنا وأولياء الأمور' : 'EXCELLENT RATINGS'}
+          </h2>
+          <p className="nh-reviews-subtitle">
+            {isAr
+              ? 'تجارب حقيقية لطلاب التحضير لاختبارات SAT والدروس المدرسية والدورات المهنية في مقرنا بالشارقة.'
+              : 'Genuine feedback from SAT test-takers, school tutoring students, and career learners at our Sharjah campus.'}
+          </p>
+
           <div className="nh-google-logo-wrap">
             <span className="nh-google-logo">
               <span style={{ color: '#4285F4' }}>G</span>
@@ -355,8 +384,41 @@ export default function GoogleReviews() {
           </div>
         </div>
 
+        {/* Verified Student Achievements & Milestones Strip */}
+        <div className="nh-reviews-achievements-banner nh-reveal">
+          <div className="nh-achieve-item">
+            <div className="nh-achieve-icon" aria-hidden="true">
+              <TrendingUp size={20} />
+            </div>
+            <div>
+              <strong>{isAr ? 'مسار أهداف SAT (1400+)' : 'SAT 1400+ Target Pathway'}</strong>
+              <small>{isAr ? 'تدريب منهجي وفق التقييم التشخيصي' : 'Diagnostic-driven score milestones'}</small>
+            </div>
+          </div>
+
+          <div className="nh-achieve-item">
+            <div className="nh-achieve-icon" aria-hidden="true">
+              <Award size={20} />
+            </div>
+            <div>
+              <strong>{isAr ? 'تفوق في مواد IGCSE و A-Level' : 'IGCSE & A-Level Progress'}</strong>
+              <small>{isAr ? 'الرياضيات، الفيزياء، الكيمياء واللغات' : 'Mathematics, Physics, Chemistry & Arabic'}</small>
+            </div>
+          </div>
+
+          <div className="nh-achieve-item">
+            <div className="nh-achieve-icon" aria-hidden="true">
+              <CheckCircle2 size={20} />
+            </div>
+            <div>
+              <strong>{isAr ? 'جاهزية القبول الجامعي والمنح' : 'University & Career Readiness'}</strong>
+              <small>{isAr ? 'تأهيل أكاديمي موثوق للجامعات والمنح' : 'Grounded preparation for top programs'}</small>
+            </div>
+          </div>
+        </div>
+
         {/* Filter and Sort Toolbar */}
-        <div className="nh-reviews-toolbar">
+        <div className="nh-reviews-toolbar nh-reveal">
           <div className="nh-filter-chips" role="group" aria-label="Filter reviews by tag">
             {TAG_FILTERS.map((tag) => (
               <button
@@ -394,23 +456,25 @@ export default function GoogleReviews() {
           </div>
 
           <div className="nh-sort-wrapper">
-            <label htmlFor="reviews-sort" className="nh-sort-label">Sort by</label>
+            <label htmlFor="reviews-sort" className="nh-sort-label">
+              {isAr ? 'ترتيب حسب' : 'Sort by'}
+            </label>
             <select
               id="reviews-sort"
               className="nh-sort-select"
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value)}
             >
-              <option value="relevant">Most relevant</option>
-              <option value="newest">Newest</option>
-              <option value="highest">Highest rating</option>
-              <option value="lowest">Lowest rating</option>
+              <option value="relevant">{isAr ? 'الأكثر صلة' : 'Most relevant'}</option>
+              <option value="newest">{isAr ? 'الأحدث' : 'Newest'}</option>
+              <option value="highest">{isAr ? 'الأعلى تقييماً' : 'Highest rating'}</option>
+              <option value="lowest">{isAr ? 'الأقل تقييماً' : 'Lowest rating'}</option>
             </select>
           </div>
         </div>
 
         {/* Reviews Carousel Slider */}
-        <div className="nh-reviews-slider-wrap">
+        <div className="nh-reviews-slider-wrap nh-reveal">
           <button
             type="button"
             className="nh-carousel-arrow prev"
@@ -435,14 +499,20 @@ export default function GoogleReviews() {
                     <h3 className="nh-review-author">{review.name}</h3>
                     <time className="nh-review-time">{review.time}</time>
                   </div>
-                  <div className="nh-google-g-badge" title="Google Verified Review">
+                  <a
+                    href={GOOGLE_PROFILE_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="nh-google-g-badge"
+                    title="Verified on Google"
+                  >
                     <svg viewBox="0 0 24 24" width="20" height="20">
                       <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.8-2.4 3.66v3.05h3.87c2.27-2.09 3.675-5.17 3.675-9.15z" />
                       <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.87-3.05c-1.08.72-2.45 1.16-4.06 1.16-3.13 0-5.78-2.11-6.73-4.96H1.27v3.15C3.26 21.36 7.36 24 12 24z" />
                       <path fill="#FBBC05" d="M5.27 14.24c-.25-.72-.38-1.49-.38-2.24s.13-1.52.38-2.24V6.61H1.27C.46 8.23 0 10.06 0 12s.46 3.77 1.27 5.39l4-3.15z" />
                       <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.36 0 3.26 2.64 1.27 6.61l4 3.15c.95-2.85 3.6-4.96 6.73-4.96z" />
                     </svg>
-                  </div>
+                  </a>
                 </div>
 
                 <div className="nh-review-rating-row">
@@ -453,7 +523,6 @@ export default function GoogleReviews() {
                       </svg>
                     ))}
                   </div>
-                  {/* Verified check badge */}
                   <span className="nh-review-verified" title="Verified Customer">
                     <svg viewBox="0 0 24 24" width="15" height="15" fill="#1A73E8">
                       <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
@@ -478,18 +547,28 @@ export default function GoogleReviews() {
           </button>
         </div>
 
-        {/* Write a Review Button */}
-        <div className="nh-reviews-cta-wrap">
+        {/* Dual Actions: Link directly to real Google Business Profile & Write a Review */}
+        <div className="nh-reviews-cta-wrap nh-reveal">
           <a
-            href="https://g.page/r/CVwmfMU8WAHsEAI/review"
+            href={GOOGLE_PROFILE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="nh-reviews-link-btn"
+          >
+            <span>{isAr ? 'عرض جميع التقييمات على Google' : 'Read All 50+ Google Reviews'}</span>
+            <ExternalLink size={16} aria-hidden="true" />
+          </a>
+          <a
+            href={GOOGLE_WRITE_REVIEW_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="nh-write-review-btn"
           >
-            Write a Review
+            {isAr ? 'أضف تقييمك على Google' : 'Write a Review'}
           </a>
         </div>
       </div>
     </section>
   );
 }
+

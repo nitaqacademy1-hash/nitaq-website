@@ -7,6 +7,8 @@ import TrustBar from '../components/home/TrustBar';
 import Programs from '../components/home/Programs';
 import TrustedOrganizations from '../components/home/TrustedOrganizations';
 import WhyNitaq from '../components/home/WhyNitaq';
+import Instructors from '../components/home/Instructors';
+import CampusGallery from '../components/home/CampusGallery';
 import LearningProcess from '../components/home/LearningProcess';
 import Location from '../components/home/Location';
 import GoogleReviews from '../components/home/GoogleReviews';
@@ -60,6 +62,8 @@ export default function Home() {
         <TrustBar />
         <Programs c={c} />
         <WhyNitaq c={c} />
+        <Instructors c={c} />
+        <CampusGallery c={c} />
         <LearningProcess c={c} />
         <GoogleReviews c={c} />
         <Location c={c} />

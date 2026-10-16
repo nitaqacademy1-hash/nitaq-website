@@ -29,6 +29,78 @@ export const homeCopy = {
     discover: 'Discover program',
     trustedTitle: 'EDUCATION & EXAM REFERENCES',
     trustedSubtitle: 'Explore our course pages for details on the exams and qualifications we help learners prepare for.',
+    instructorsEyebrow: 'EXPERT FACULTY & MENTORS',
+    instructorsTitle: 'Learn from verified educators\nand practitioners.',
+    instructorsIntro: 'Our mentors combine deep subject mastery with compassionate, personalized guidance to help every learner achieve their full potential.',
+    instructorsBadge: 'Verified Faculty',
+    instructorsCta: 'Consult an Academic Advisor',
+    instructorsDiag: 'Book a Diagnostic Session',
+    instructors: [
+      {
+        name: 'Eng. Mohamed Marwan Shahin',
+        role: 'Lead AI Trainer & Emerging Tech Specialist',
+        image: '/images/mohammed-marwan.jpeg',
+        badge: '13+ Years Exp',
+        qualifications: 'Master Degree in AI (2023) · Microsoft MCT & Certified ILM Trainer',
+        subjects: ['Artificial Intelligence', 'Data Science & Python', 'Machine Learning', 'Business Intelligence'],
+        experience: '13+ years experience · 10,000+ training hours globally',
+        bio: 'Specializing in practical data science, automation, and modern artificial intelligence, Eng. Mohamed brings high-energy, industry-tested instruction to learners in Sharjah.'
+      },
+      {
+        name: 'Syed Abbas',
+        role: 'Leadership & Emotional Intelligence Specialist',
+        image: '/images/syed-abbas.jpeg',
+        badge: 'ILM Approved',
+        qualifications: 'ILM Approved Master Practitioner in Emotional Intelligence',
+        subjects: ['Emotional Intelligence', 'Educator Workshops', 'Student Confidence & Communication', 'Leadership'],
+        experience: 'Senior Executive Educator & Certified Master Practitioner',
+        bio: 'Empowers students, school counselors, and professionals to build resilience, strong interpersonal communication, and the confidence needed for academic and career success.'
+      },
+      {
+        name: 'Academic Tutoring & Test Prep Faculty',
+        role: 'Curriculum Specialists & Examination Mentors',
+        badge: 'SPEA Authorized Standards',
+        qualifications: 'Specialized subject graduates & certified curriculum tutors',
+        subjects: ['Digital SAT (Math & Reading/Writing)', 'IGCSE & GCSE Sciences & Maths', 'A-Level Chemistry & Physics', 'Languages (Arabic, French, Spanish)'],
+        experience: 'Curriculum-tailored micro-batch instruction (5–8 students)',
+        bio: 'Including recognized mentors such as Mr. Khaled Ayoub (Math & Physics) and Ms. Shyma (Arabic), dedicated to simplifying complex syllabi into clear, manageable steps.',
+        isPanel: true
+      }
+    ],
+    campusEyebrow: 'CAMPUS & FACILITIES',
+    campusTitle: 'A focused learning environment\nin Al Majaz 3, Sharjah.',
+    campusIntro: 'Located on Floor F1 of Abu Khamseen Tower, our academy is purpose-built for distraction-free learning, collaborative discussion, and individual growth.',
+    campusCta: 'Visit Our Sharjah Campus',
+    campusFacilities: [
+      {
+        image: '/images/nitaq_rooted_sharjah_logo.webp',
+        tag: 'Reception & Student Lounge',
+        title: 'Executive Welcoming Area',
+        desc: 'An inspiring reception space for student admissions, parent consultations, and quiet study before classes.'
+      },
+      {
+        image: '/images/nitaq_classroom_front.webp',
+        tag: 'Interactive Classrooms',
+        title: 'Micro-Batch Learning Rooms',
+        desc: 'Equipped with ergonomic tablet chairs, digital smartboards, and instructor podiums designed for 5–8 students.'
+      },
+      {
+        image: '/images/nitaq_classroom_window.webp',
+        tag: 'Natural Daylight',
+        title: 'Panoramic Learning Suites',
+        desc: 'Floor-to-ceiling daylight windows overlooking Sharjah, creating an alert, comfortable and inspiring atmosphere.'
+      },
+      {
+        image: '/images/nitaq_corridor_hallway.webp',
+        tag: 'Quiet Academic Corridors',
+        title: 'Modern Study Bays',
+        desc: 'Acoustically treated discussion bays and tutoring zones ensuring quiet focus and zero distraction.'
+      }
+    ],
+    resultsEyebrow: 'ACADEMIC MILESTONES',
+    resultsTitle: 'Grounded progress.\nVerified benchmarks.',
+    resultsIntro: 'Every student begins with a diagnostic assessment to establish a realistic baseline and customized milestone targets.',
+    resultsNotice: 'Milestones reflect curriculum benchmarks and authentic student review journeys. Individual progress varies based on starting assessment.',
     whyEyebrow: 'THE NITAQ APPROACH', whyTitle: 'Thoughtful support.\nMeaningful progress.', whyIntro: 'Good learning is personal. We bring structure, attention and purpose to every step of the journey.',
     benefits: [['Personalized Guidance', 'Start with your level, your priorities and the goals that matter to you.'], ['Focused Learning', 'A calm space to ask questions, explore ideas and build understanding.'], ['Experienced Tutors', 'Learn with educators who make challenging concepts feel approachable.'], ['Progress Tracking', 'Regular feedback helps you recognise growth and plan the next step.']],
     processEyebrow: 'A CLEAR WAY FORWARD', processTitle: 'Small steps. Lasting progress.', process: [['Assess', 'Understand your starting point.'], ['Plan', 'Build your learning pathway.'], ['Learn', 'Develop deeper understanding.'], ['Practice', 'Put your knowledge to work.'], ['Improve', 'Reflect, refine and move forward.']],
@@ -55,6 +127,78 @@ export const homeCopy = {
     discover: 'عرض تفاصيل البرنامج',
     trustedTitle: 'جهات تعليمية واختبارات ذات صلة',
     trustedSubtitle: 'استكشف صفحات الدورات لمعرفة تفاصيل الاختبارات والمؤهلات التي نساعد المتعلمين على الاستعداد لها.',
+    instructorsEyebrow: 'هيئة التدريس والمشرفون المعتمدون',
+    instructorsTitle: 'تعلّم على أيدي معلمين\nوممارسين مؤهلين.',
+    instructorsIntro: 'يجمع معلمونا بين التمكن الأكاديمي العميق والتوجيه الفردي المتفاني لمساعدة كل طالب على بلوغ أقصى إمكاناته.',
+    instructorsBadge: 'هيئة تدريس معتمدة',
+    instructorsCta: 'تحدث مع مستشار أكاديمي',
+    instructorsDiag: 'حجز جلسة تشخيصية',
+    instructors: [
+      {
+        name: 'م. محمد مروان شاهين',
+        role: 'مدرب معتمد في الذكاء الاصطناعي والتقنيات الحديثة',
+        image: '/images/mohammed-marwan.jpeg',
+        badge: 'خبرة +13 سنة',
+        qualifications: 'ماجستير في الذكاء الاصطناعي (2023) · مدرب معتمد من مايكروسوفت MCT و ILM',
+        subjects: ['الذكاء الاصطناعي', 'علم البيانات وبايثون', 'التعلم الآلي', 'ذكاء الأعمال'],
+        experience: '+13 عاماً من الخبرة · أكثر من 10,000 ساعة تدريبية دولية',
+        bio: 'خبير متخصص في التقنيات المتقدمة وعلوم البيانات، يقدّم تدريباً تطبيقياً تفاعلياً مصمماً لمتطلبات المستقبل وسوق العمل.'
+      },
+      {
+        name: 'سيد عباس',
+        role: 'أخصائي معتمد في الذكاء العاطفي والتطوير المهني',
+        image: '/images/syed-abbas.jpeg',
+        badge: 'معتمد من ILM',
+        qualifications: 'ممارس خبير معتمد من ILM في الذكاء العاطفي',
+        subjects: ['الذكاء العاطفي', 'ورش عمل المرشدين التربويين', 'مهارات التواصل وبناء الثقة', 'القيادة'],
+        experience: 'مستشار تربوي معتمد في التطوير الإداري والأكاديمي',
+        bio: 'يساعد الطلاب والمرشدين والمهنيين على بناء المرونة والتواصل الفعّال والثقة المطلوبة للتميز الدراسي والمهني.'
+      },
+      {
+        name: 'هيئة تدريس المواد المدرسية واختبارات القبول',
+        role: 'أخصائيو المناهج البريطانية والأمريكية واللغات',
+        badge: 'معايير هيئة الشارقة للتعليم الخاص',
+        qualifications: 'نخبة من خريجي التخصصات والمدرسين المعتمدين',
+        subjects: ['اختبار SAT الرقمي (الرياضيات والقراءة)', 'مناهج IGCSE و GCSE (العلوم والرياضيات)', 'المستوى المتقدم A-Level', 'اللغات (العربية، الفرنسية، الإسبانية)'],
+        experience: 'تعليم في مجموعات مصغرة مخصصة (5–8 طلاب)',
+        bio: 'تضم نخبة متميزة مثل أ. خالد أيوب (الرياضيات والفيزياء) وأ. شيماء (اللغة العربية)، مع تركيز كامل على تبسيط المفاهيم الصعبة خطوة بخطوة.',
+        isPanel: true
+      }
+    ],
+    campusEyebrow: 'المقر والمرافق الأكاديمية',
+    campusTitle: 'بيئة تعليمية محفزة\nفي المجاز 3، الشارقة.',
+    campusIntro: 'يقع مقرنا في الطابق F1 ببرج أبو خمسين، وصُمم خصيصاً لتوفير أجواء دراسية هادئة وتفاعلية تساعد الطلاب على التركيز.',
+    campusCta: 'حجز زيارة للمقر في الشارقة',
+    campusFacilities: [
+      {
+        image: '/images/nitaq_rooted_sharjah_logo.webp',
+        tag: 'الاستقبال واستراحة الطلاب',
+        title: 'منطقة الاستقبال والترحيب',
+        desc: 'مساحة مريحة ومهيأة لاستقبال الطلاب واستشارات أولياء الأمور والدراسة الهادئة قبل بدء الحصص.'
+      },
+      {
+        image: '/images/nitaq_classroom_front.webp',
+        tag: 'قاعات تفاعلية',
+        title: 'قاعات المجموعات المصغرة',
+        desc: 'مجهزة بمقاعد مريحة وشاشات ذكية ومنصة للمدرب مخصصة لمجموعات من 5 إلى 8 طلاب لضمان أقصى تفاعل.'
+      },
+      {
+        image: '/images/nitaq_classroom_window.webp',
+        tag: 'إضاءة طبيعية',
+        title: 'قاعات بإطلالة بانورامية',
+        desc: 'نوافذ واسعة تسمح بدخول الضوء الطبيعي وتطل على أفق الشارقة، مما يجدد النشاط ويزيد التركيز.'
+      },
+      {
+        image: '/images/nitaq_corridor_hallway.webp',
+        tag: 'ممرات ومساحات أكاديمية',
+        title: 'أجنحة دراسية هادئة',
+        desc: 'مساحات مخصصة للنقاش وقاعات عازلة للصوت مصممة لتفادي أي تشتيت أثناء التدريس.'
+      }
+    ],
+    resultsEyebrow: 'المعايير والنتائج الأكاديمية',
+    resultsTitle: 'تقدّم مدروس.\nنتائج موثوقة.',
+    resultsIntro: 'يبدأ كل طالب بتقييم تشخيصي دقيق لتحديد مستواه الفعلي ووضع خطة مرحلية واضحة لبلوغ أهدافه.',
+    resultsNotice: 'المعايير الموضحة مبنية على أهداف المناهج المعتمدة وتجارب الطلاب الحقيقية. تختلف النتائج الفردية بناءً على مستوى التقييم الأولي والالتزام الدراسي.',
     whyEyebrow: 'نهج نطاق', whyTitle: 'دعم مدروس.\nتقدّم ملموس.', whyIntro: 'التعلّم الجيد تجربة شخصية. نقدّم الاهتمام والتنظيم والهدف في كل خطوة.',
     benefits: [['إرشاد مخصص', 'ابدأ بمستواك وأولوياتك والأهداف التي تهمّك.'], ['تعلّم مركّز', 'مساحة هادئة للأسئلة واستكشاف الأفكار وبناء الفهم.'], ['مدرسون ذوو خبرة', 'تعلّم مع مدرسين يبسّطون المفاهيم الصعبة.'], ['متابعة التقدّم', 'ملاحظات منتظمة لفهم تحسّنك والتخطيط للخطوة التالية.']],
     processEyebrow: 'طريق واضح إلى الأمام', processTitle: 'خطوات صغيرة. تقدّم مستمر.', process: [['قيّم', 'افهم نقطة انطلاقك.'], ['خطط', 'ابنِ مسار تعلّمك.'], ['تعلّم', 'طوّر فهماً أعمق.'], ['تدرّب', 'طبّق ما تعلّمته.'], ['تحسّن', 'راجع وطوّر وتقدّم.']],
