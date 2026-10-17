@@ -4,6 +4,7 @@ import { useLanguage } from '../../i18n/context';
 import WhyNitaq from '../../components/WhyNitaq';
 import SEO from '../../components/SEO';
 import SATDiagnosticSection from '../../components/sat/SATDiagnosticSection';
+import SATFaculty from '../../components/sat/SATFaculty';
 import { trackEvent, ANALYTICS_EVENTS } from '../../utils/analytics';
 import { 
   BookOpen, Clock, Calendar, MapPin, Award, CheckCircle2, 
@@ -651,6 +652,9 @@ const SATCourse = ({ locationName = 'Sharjah' }) => {
             </div>
           </div>
         </section>
+
+        {/* ── 6.5. DIGITAL SAT SPECIALIST FACULTY (DEMO TEMPLATE) ────── */}
+        <SATFaculty />
 
         {/* ── 7. CAMPUS LOCATION / HYBRID DELIVERY INFO ─────────────── */}
         <section style={{ padding: '60px 0', background: '#F8FBF9' }}>
