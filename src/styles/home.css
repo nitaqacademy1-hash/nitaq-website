@@ -3221,22 +3221,158 @@
 .nh-facts a:hover { background: #f7f9f4; }
 .nh-facts a span { color: #15803d; font-size: 21px; }
 
-/* Keep the existing program links and selector logic; expose every card by default. */
-.nitaq-home .nh-accordion-rail { display: grid !important; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px !important; height: auto !important; }
-.nitaq-home .nh-sliver, .nitaq-home .nh-sliver.is-open { display: block !important; width: auto !important; height: 370px !important; filter: none !important; box-shadow: none !important; border-radius: 18px !important; }
-.nitaq-home .nh-sliver:hover, .nitaq-home .nh-sliver:focus-visible { box-shadow: 0 14px 35px rgba(15,45,30,.18) !important; }
-.nitaq-home .nh-sliver:nth-child(4) { grid-column: 1 / -1; height: 160px !important; }
-.nitaq-home .nh-sliver-bg, .nitaq-home .nh-sliver-bg img { border-radius: inherit; }
-.nitaq-home .nh-sliver-vertical-title { display: none !important; }
-.nitaq-home .nh-sliver-caption, .nitaq-home .nh-sliver.is-open .nh-sliver-caption { opacity: 1 !important; transform: none !important; pointer-events: auto !important; width: 100% !important; white-space: normal !important; padding: 28px !important; }
-.nitaq-home .nh-sliver-arrow { opacity: 1 !important; transform: none !important; }
-.nitaq-home .nh-sliver-desc { font-size: 14px !important; line-height: 1.55 !important; }
-.nitaq-home .nh-sliver-cta { font-size: 14px !important; min-height: 44px; padding: 9px 16px !important; }
-.nitaq-home .nh-sliver:nth-child(4) .nh-sliver-caption { padding: 20px 26px !important; }
-.nitaq-home .nh-sliver:nth-child(4) .nh-sliver-tag { display: none; }
-.nitaq-home .nh-sliver:nth-child(4) .nh-sliver-title { font-size: 23px; }
-.nitaq-home .nh-sliver:nth-child(4) .nh-sliver-desc { max-width: none; }
-.nitaq-home .nh-sliver:nth-child(4) .nh-sliver-cta { margin-top: 8px; }
+/* Balanced, modern 4-card grid on desktop so all programs are equal and prominent */
+.nitaq-home .nh-accordion-rail {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 18px !important;
+  height: auto !important;
+}
+
+.nitaq-home .nh-sliver,
+.nitaq-home .nh-sliver.is-open {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  width: auto !important;
+  height: 440px !important;
+  filter: none !important;
+  box-shadow: 0 4px 18px rgba(15, 45, 30, 0.08) !important;
+  border-radius: 20px !important;
+  position: relative !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  transition: transform 0.3s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.3s ease !important;
+}
+
+.nitaq-home .nh-sliver:hover,
+.nitaq-home .nh-sliver:focus-visible {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 16px 40px rgba(15, 45, 30, 0.22) !important;
+}
+
+.nitaq-home .nh-sliver:nth-child(4) {
+  grid-column: auto !important;
+  height: 440px !important;
+}
+
+.nitaq-home .nh-sliver-bg,
+.nitaq-home .nh-sliver-bg img {
+  border-radius: inherit;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.nitaq-home .nh-sliver:hover .nh-sliver-bg img {
+  transform: scale(1.05);
+}
+
+.nitaq-home .nh-sliver-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(7, 24, 13, 0.94) 0%,
+    rgba(7, 24, 13, 0.62) 45%,
+    rgba(7, 24, 13, 0.12) 75%,
+    rgba(7, 24, 13, 0.35) 100%
+  ) !important;
+  transition: background 0.3s ease;
+}
+
+.nitaq-home .nh-sliver-top {
+  position: relative;
+  z-index: 3;
+  padding: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nitaq-home .nh-sliver-vertical-title {
+  display: none !important;
+}
+
+.nitaq-home .nh-sliver-caption,
+.nitaq-home .nh-sliver.is-open .nh-sliver-caption {
+  position: relative !important;
+  z-index: 3;
+  opacity: 1 !important;
+  transform: none !important;
+  pointer-events: auto !important;
+  width: 100% !important;
+  white-space: normal !important;
+  padding: 20px 18px 20px 18px !important;
+  margin-top: auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.nitaq-home .nh-sliver-arrow {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.nitaq-home .nh-sliver:hover .nh-sliver-arrow {
+  transform: scale(1.1) !important;
+  background: #15803d !important;
+}
+
+.nitaq-home .nh-sliver-tag {
+  display: inline-flex !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  color: #bbf797 !important;
+  margin-bottom: 8px !important;
+  max-width: 100%;
+  white-space: normal !important;
+}
+
+.nitaq-home .nh-sliver-title {
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  margin: 0 0 6px 0 !important;
+  line-height: 1.25 !important;
+}
+
+.nitaq-home .nh-sliver-desc {
+  font-size: 13px !important;
+  line-height: 1.5 !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  margin: 0 0 16px 0 !important;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.nitaq-home .nh-sliver-cta {
+  font-size: 13px !important;
+  min-height: 42px !important;
+  padding: 8px 16px !important;
+  background: #15803d !important;
+  color: #ffffff !important;
+  border-radius: 10px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  margin-top: 0 !important;
+  font-weight: 700 !important;
+  transition: all 0.2s ease !important;
+  box-shadow: 0 4px 14px rgba(21, 128, 61, 0.3) !important;
+}
+
+.nitaq-home .nh-sliver:hover .nh-sliver-cta {
+  background: #16a34a !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 6px 18px rgba(21, 128, 61, 0.45) !important;
+}
 
 /* Neutral image strip keeps the institutions' original colors legible. */
 .nitaq-home .nh-trusted-section { background: #fff; border-block: 1px solid #dce5da; }
@@ -3248,8 +3384,8 @@
 
 @media (max-width: 1100px) {
   .nitaq-home .nh-hero-h1 { font-size: clamp(34px, 4vw, 48px); }
-  .nitaq-home .nh-accordion-rail { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .nitaq-home .nh-sliver:nth-child(4) { grid-column: auto; height: 370px !important; }
+  .nitaq-home .nh-accordion-rail { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 18px !important; }
+  .nitaq-home .nh-sliver, .nitaq-home .nh-sliver:nth-child(4) { grid-column: auto !important; height: 410px !important; }
   .nitaq-home .nh-trusted-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 @media (max-width: 767px) {
@@ -3264,13 +3400,12 @@
   .nh-facts-grid { grid-template-columns: 1fr; gap: 2px; }
   .nh-facts a { min-height: 44px; font-size: 14px; }
   .nitaq-home .nh-programs { padding-block: 54px !important; }
-  .nitaq-home .nh-accordion-rail { grid-template-columns: 1fr; gap: 14px !important; }
-  .nitaq-home .nh-sliver, .nitaq-home .nh-sliver.is-open, .nitaq-home .nh-sliver:not(.is-open), .nitaq-home .nh-sliver:nth-child(4) { display: block !important; width: 100% !important; height: 280px !important; border-radius: 18px !important; box-shadow: none !important; }
-  .nitaq-home .nh-sliver:nth-child(4) { height: 215px !important; }
-  .nitaq-home .nh-sliver-caption, .nitaq-home .nh-sliver.is-open .nh-sliver-caption { position: absolute !important; inset: auto 0 0 !important; width: 100% !important; padding: 18px !important; opacity: 1 !important; visibility: visible !important; background: linear-gradient(transparent, rgba(4,18,9,.93)) !important; }
-  .nitaq-home .nh-sliver-desc, .nitaq-home .nh-sliver.is-open .nh-sliver-desc { display: block !important; overflow: visible !important; font-size: 14px !important; line-height: 1.45 !important; }
-  .nitaq-home .nh-sliver-title, .nitaq-home .nh-sliver.is-open .nh-sliver-title { font-size: 22px !important; }
-  .nitaq-home .nh-sliver-cta, .nitaq-home .nh-sliver.is-open .nh-sliver-cta { min-height: 44px; font-size: 14px !important; margin-top: 10px !important; }
+  .nitaq-home .nh-accordion-rail { grid-template-columns: 1fr !important; gap: 16px !important; }
+  .nitaq-home .nh-sliver, .nitaq-home .nh-sliver.is-open, .nitaq-home .nh-sliver:not(.is-open), .nitaq-home .nh-sliver:nth-child(4) { display: flex !important; flex-direction: column !important; justify-content: space-between !important; width: 100% !important; height: 380px !important; border-radius: 18px !important; box-shadow: none !important; }
+  .nitaq-home .nh-sliver-caption, .nitaq-home .nh-sliver.is-open .nh-sliver-caption { position: relative !important; width: 100% !important; padding: 20px 18px !important; opacity: 1 !important; visibility: visible !important; }
+  .nitaq-home .nh-sliver-desc, .nitaq-home .nh-sliver.is-open .nh-sliver-desc { display: -webkit-box !important; -webkit-line-clamp: 2 !important; -webkit-box-orient: vertical !important; font-size: 13px !important; line-height: 1.45 !important; }
+  .nitaq-home .nh-sliver-title, .nitaq-home .nh-sliver.is-open .nh-sliver-title { font-size: 20px !important; }
+  .nitaq-home .nh-sliver-cta, .nitaq-home .nh-sliver.is-open .nh-sliver-cta { min-height: 42px; font-size: 13px !important; margin-top: 10px !important; }
   .nitaq-home .nh-programs-mobile-nav { display: flex !important; }
   .nitaq-home .nh-program-nav-dots { gap: 0; }
   .nitaq-home .nh-program-dot, .nitaq-home .nh-program-dot.is-active { width: 44px !important; height: 44px !important; position: relative; background: transparent !important; border: 0 !important; box-shadow: none !important; }

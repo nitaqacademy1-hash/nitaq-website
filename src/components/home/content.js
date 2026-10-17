@@ -21,10 +21,10 @@ export const homeCopy = {
     tutor: 'Expert Tutors', tutorSub: 'Guided learning · Personalized support', practice: 'FOCUSED PRACTICE', question: 'One question. A clearer understanding.', completion: 'Practice, reflect, improve', readiness: 'SAT readiness', example: 'Example learning progression · Not actual results', success: 'A clearer path forward',
     programsEyebrow: 'FIND YOUR DIRECTION', programsTitle: 'Programs designed\naround your goals.', programsIntro: 'An ambitious next step. A stronger foundation. Whatever your goal, start with the right support.',
     programs: [
-      ['SAT Preparation', 'Digital SAT Math and Reading & Writing, with targeted practice based on your starting level.', 'Digital SAT · Strategy · Practice', 'Student preparing for a test on a laptop', 'Explore SAT Preparation'],
-      ['Subject Tuition', "Focused support for your child's subjects, curriculum and upcoming assessments.", 'Maths · Science · Academic support', 'Student working through a problem with a tutor', 'Find Subject Support'],
-      ['Language Training', 'Build practical communication skills or prepare for your chosen language exam.', 'English · Arabic · Spanish', 'Adult learners practising conversation together', 'Find Your Language Course'],
-      ['Other Courses', 'Explore professional, business and technology courses for the next stage of your journey.', 'Professional · Business · Technology', 'Books and learning materials on a study desk', 'Explore All Courses'],
+      ['SAT Preparation', 'Digital SAT Math and Reading & Writing, with targeted practice based on your starting level.', 'Digital SAT · Strategy · Practice', 'High school student studying Digital SAT on laptop at study desk', 'Explore SAT Preparation'],
+      ['Subject Tuition', "Focused support for your child's subjects, curriculum and upcoming assessments.", 'Maths · Science · Academic support', 'Professional tutor helping high school student with math in classroom', 'Find Subject Support'],
+      ['Language Training', 'Build practical communication skills or prepare for your chosen language exam.', 'English · Arabic · Spanish', 'Diverse learners in an interactive language seminar room', 'Find Your Language Course'],
+      ['Professional Courses', 'Explore accredited career, corporate finance, AI, and business technology courses.', 'Professional · Business · Tech', 'Working professionals attending an executive training workshop in UAE', 'Explore All Courses'],
     ],
     discover: 'Discover program',
     trustedTitle: 'EDUCATION & EXAM REFERENCES',
@@ -119,10 +119,10 @@ export const homeCopy = {
     diagnostic: 'التقييم', strengths: 'تحديد نقاط القوة', focus: 'تحديد مجالات التحسين', pathway: 'مسار تعلّمك', subjects: ['SAT', 'الإنجليزية', 'الرياضيات', 'العلوم'], tutor: 'مدرسون خبراء', tutorSub: 'تعلّم موجّه · دعم مخصص', practice: 'تدريب مركّز', question: 'سؤال واحد. فهم أوضح.', completion: 'تدرّب، تأمل، تحسّن', readiness: 'الاستعداد لاختبار SAT', example: 'مثال توضيحي للتقدّم · ليس نتائج فعلية', success: 'مسار أوضح إلى الأمام',
     programsEyebrow: 'اكتشف اتجاهك', programsTitle: 'برامج مصممة\nحول أهدافك.', programsIntro: 'خطوة طموحة وأساس أقوى. مهما كان هدفك، ابدأ بالدعم المناسب.',
     programs: [
-      ['التحضير لاختبار SAT', 'استعد بثقة لاختبار SAT الرقمي مع استراتيجيات وتدريب موجّه وملاحظات واضحة.', 'SAT الرقمي · استراتيجيات · تدريب', 'طالبة تستعد للاختبار باستخدام حاسوب', 'استكشف التحضير لاختبار SAT'],
-      ['الدروس الأكاديمية', 'عزّز فهمك للمفاهيم الصعبة مع دعم أكاديمي مركّز لطلاب المدارس والجامعات.', 'الرياضيات · العلوم · دعم أكاديمي', 'طالب يحل مسألة بمساعدة مدرّس', 'استكشف الدروس الأكاديمية'],
-      ['تدريب اللغات', 'طوّر تواصلك للدراسة والعمل والحياة اليومية من خلال تعلّم عملي.', 'الإنجليزية · العربية · الإسبانية', 'متعلّمات يتدربن على المحادثة', 'استكشف تدريب اللغات'],
-      ['دورات أخرى', 'اكتشف الدورات المهنية والتجارية والتقنية لمرحلتك القادمة.', 'المهارات المهنية · الأعمال · التقنية', 'كتب وأدوات تعلّم على مكتب', 'استكشف جميع الدورات']
+      ['التحضير لاختبار SAT', 'استعد بثقة لاختبار SAT الرقمي مع استراتيجيات وتدريب موجّه وملاحظات واضحة.', 'SAT الرقمي · استراتيجيات · تدريب', 'طالبة تستعد لاختبار SAT الرقمي عبر الحاسوب', 'استكشف التحضير لاختبار SAT'],
+      ['الدروس الأكاديمية', 'عزّز فهمك للمفاهيم الصعبة مع دعم أكاديمي مركّز لطلاب المدارس والجامعات.', 'الرياضيات · العلوم · دعم أكاديمي', 'مدرّس يساعد طالباً في حل مسائل الرياضيات والعلوم', 'استكشف الدروس الأكاديمية'],
+      ['تدريب اللغات', 'طوّر تواصلك للدراسة والعمل والحياة اليومية من خلال تعلّم عملي.', 'الإنجليزية · العربية · الإسبانية', 'متعلّمون يتدربون على مهارات المحادثة التفاعلية', 'استكشف تدريب اللغات'],
+      ['الدورات المهنية', 'اكتشف البرامج المهنية المعتمدة في المالية والضرائب والذكاء الاصطناعي وإدارة الأعمال.', 'المهارات المهنية · الأعمال · التقنية', 'مهنيون يشاركون في ورشة تدريبية تنفيذية معاصرة', 'استكشف جميع الدورات']
     ],
     discover: 'عرض تفاصيل البرنامج',
     trustedTitle: 'جهات تعليمية واختبارات ذات صلة',
