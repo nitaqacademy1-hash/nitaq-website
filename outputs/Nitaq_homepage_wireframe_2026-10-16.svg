@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1570" viewBox="0 0 1200 1570" role="img" aria-labelledby="title desc">
+  <title id="title">Nitaq Academy proposed homepage hierarchy</title>
+  <desc id="desc">A non-production wireframe showing a compact green header, warm-white hero, evidence bar, three core program cards, staff and reviews, campus, institutional logo strip, and final call to action.</desc>
+  <style>
+    text{font-family:Arial,sans-serif;fill:#0f2d1e} .small{font-size:18px;fill:#344054} .label{font-size:15px;font-weight:bold;letter-spacing:1.7px;fill:#15803d} .heading{font-size:38px;font-weight:bold} .white{fill:white} .muted{fill:#667085} .line{stroke:#dce5da;stroke-width:2}
+  </style>
+  <rect width="1200" height="1570" fill="#f7f9f4"/>
+  <rect x="40" y="30" width="1120" height="78" rx="17" fill="#144626"/>
+  <text x="70" y="79" font-size="27" font-weight="bold" class="white">NITAQ ACADEMY</text>
+  <text x="385" y="78" font-size="18" class="white">SAT   School Tuition   Languages   Professional   About</text>
+  <rect x="978" y="46" width="156" height="45" rx="11" fill="#fff"/><text x="993" y="75" font-size="16" font-weight="bold">Assessment</text>
+  <rect x="40" y="130" width="1120" height="320" rx="25" fill="#fff"/>
+  <text x="82" y="180" class="label">EDUCATION IN AL MAJAZ 3, SHARJAH</text>
+  <text x="82" y="240" class="heading">A clearer path to progress.</text>
+  <text x="82" y="277" class="small">Digital SAT preparation, school tuition and language training</text>
+  <text x="82" y="305" class="small">with guidance matched to each learner.</text>
+  <rect x="82" y="335" width="220" height="55" rx="12" fill="#15803d"/><text x="101" y="369" font-size="17" font-weight="bold" class="white">Start SAT diagnostic</text>
+  <rect x="316" y="335" width="180" height="55" rx="12" fill="#fff" stroke="#15803d" stroke-width="2"/><text x="337" y="369" font-size="17" font-weight="bold">Explore programs</text>
+  <rect x="752" y="158" width="370" height="265" rx="22" fill="#dce5da"/><text x="815" y="282" class="small">Existing campus or learning photo</text>
+  <rect x="40" y="470" width="1120" height="92" rx="18" fill="#e9f2e8"/>
+  <text x="75" y="507" class="label">VERIFIED TRUST ONLY</text>
+  <text x="75" y="538" class="small">Licence / review facts / learning format after confirmation</text>
+  <text x="40" y="625" class="label">FIND THE RIGHT PROGRAM</text>
+  <text x="40" y="671" class="heading">Three clear starting points</text>
+  <g>
+    <rect x="40" y="700" width="350" height="210" rx="20" fill="#fff" stroke="#dce5da"/>
+    <rect x="425" y="700" width="350" height="210" rx="20" fill="#fff" stroke="#dce5da"/>
+    <rect x="810" y="700" width="350" height="210" rx="20" fill="#fff" stroke="#dce5da"/>
+    <rect x="40" y="700" width="350" height="8" rx="4" fill="#15803d"/>
+    <rect x="425" y="700" width="350" height="8" rx="4" fill="#15803d"/>
+    <rect x="810" y="700" width="350" height="8" rx="4" fill="#2bbbad"/>
+    <text x="68" y="753" font-size="25" font-weight="bold">Digital SAT</text><text x="68" y="790" class="small">Tracks, diagnostic, current fees</text><text x="68" y="869" class="label">EXPLORE SAT  →</text>
+    <text x="453" y="753" font-size="25" font-weight="bold">School Tuition</text><text x="453" y="790" class="small">Boards, subjects, assessment</text><text x="453" y="869" class="label">FIND SUPPORT  →</text>
+    <text x="838" y="753" font-size="25" font-weight="bold">Languages</text><text x="838" y="790" class="small">Conversation and exam prep</text><text x="838" y="869" class="label">VIEW COURSES  →</text>
+  </g>
+  <rect x="40" y="932" width="1120" height="67" rx="15" fill="#eef3ed"/><text x="70" y="972" font-size="20" font-weight="bold">Professional courses</text><text x="340" y="972" class="small">Finance, technology and business programs  →</text>
+  <rect x="40" y="1024" width="1120" height="210" rx="22" fill="#fff"/>
+  <text x="72" y="1068" class="label">WHY NITAQ · PEOPLE · PROOF</text>
+  <text x="72" y="1112" font-size="30" font-weight="bold">How learning works  /  Real tutors  /  Verified outcomes</text>
+  <text x="72" y="1150" class="small">Use existing process; add consented profiles and evidence only when available.</text>
+  <rect x="72" y="1180" width="305" height="28" rx="8" fill="#dce5da"/><rect x="394" y="1180" width="305" height="28" rx="8" fill="#dce5da"/><rect x="716" y="1180" width="305" height="28" rx="8" fill="#dce5da"/>
+  <rect x="40" y="1253" width="545" height="135" rx="20" fill="#e7f3f0"/><text x="70" y="1298" font-size="25" font-weight="bold">Reviews and campus</text><text x="70" y="1332" class="small">Authentic feedback and real facilities</text>
+  <rect x="605" y="1253" width="555" height="135" rx="20" fill="#fff" stroke="#dce5da"/><text x="635" y="1298" font-size="25" font-weight="bold">Institutional logo strip</text><text x="635" y="1332" class="small">Approved graphics, accurate captions</text>
+  <rect x="40" y="1410" width="1120" height="97" rx="22" fill="#144626"/><text x="72" y="1451" font-size="26" font-weight="bold" class="white">Ready to plan the next step?</text><text x="72" y="1484" font-size="17" class="white">Assessment · campus visit · WhatsApp</text>
+  <rect x="940" y="1430" width="180" height="55" rx="12" fill="#fff"/><text x="961" y="1465" font-size="16" font-weight="bold">Contact Nitaq  →</text>
+  <text x="42" y="1545" font-size="15" class="muted">Directional wireframe only · No unverified rating, price or student result shown</text>
+</svg>
