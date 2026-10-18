@@ -114,6 +114,24 @@
   transform: translateY(-2px)
 }
 
+/* Primary High-Conversion Diagnostic CTA */
+.nh-button-diagnostic {
+  background: #ffffff;
+  color: #0c3619;
+  font-weight: 800;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.22), 0 0 0 1px rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  transition: transform 0.25s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.nh-button-diagnostic:hover,
+.nh-button-diagnostic:focus-visible {
+  background: #f0fdf4;
+  color: #14532d;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.32), 0 0 0 2px #22c55e;
+}
+
 .nh-button-outline {
   border-color: #d4e7cf4a;
   color: #fff;

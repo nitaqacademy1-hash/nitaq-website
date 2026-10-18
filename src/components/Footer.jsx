@@ -97,7 +97,14 @@ const Footer = () => {
               <a href="https://www.linkedin.com/company/nitaqtraining" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn @nitaqtraining" style={{ color: '#38bdf8', background: 'rgba(56, 189, 248, 0.15)', padding: '8px', borderRadius: '50%', display: 'inline-flex' }}>
                 <Linkedin size={17} />
               </a>
-              <a href="https://wa.me/971527569908" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" style={{ color: '#22c55e', background: 'rgba(34, 197, 94, 0.15)', padding: '8px', borderRadius: '50%', display: 'inline-flex' }}>
+              <a
+                href="https://wa.me/971527569908"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+                onClick={() => trackEvent(ANALYTICS_EVENTS.WHATSAPP, 'footer_social')}
+                style={{ color: '#22c55e', background: 'rgba(34, 197, 94, 0.15)', padding: '8px', borderRadius: '50%', display: 'inline-flex' }}
+              >
                 <MessageCircle size={17} />
               </a>
             </div>
@@ -107,11 +114,7 @@ const Footer = () => {
               <h3>{c.sat}</h3>
               <Link to="/sat-preparation-sharjah">{c.digitalSat}</Link>
               <Link to="/sat/diagnostic">{c.diagnostic}</Link>
-              {lang === 'ar' ? (
-                <a href="/article/digital-sat-preparation-guide-sharjah-dubai-uae" lang="en">{c.satGuide} (English)</a>
-              ) : (
-                <Link to="/article/digital-sat-preparation-guide-sharjah-dubai-uae">{c.satGuide}</Link>
-              )}
+              <Link to="/article/digital-sat-preparation-guide-sharjah-dubai-uae">{c.satGuide}</Link>
             </div>
             <div>
               <h3>{c.languages}</h3>
@@ -171,7 +174,14 @@ const Footer = () => {
             <a href="https://www.linkedin.com/company/nitaqtraining" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Nitaq Academy" title="LinkedIn: Nitaq Academy">
               <Linkedin size={18} />
             </a>
-            <a href="https://wa.me/971527569908" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp +971 52 756 9908" title="WhatsApp: +971 52 756 9908">
+            <a
+              href="https://wa.me/971527569908"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="WhatsApp +971 52 756 9908"
+              title="WhatsApp: +971 52 756 9908"
+              onClick={() => trackEvent(ANALYTICS_EVENTS.WHATSAPP, 'footer_social')}
+            >
               <MessageCircle size={18} />
             </a>
           </div>

@@ -132,7 +132,7 @@ const SatGrammarRulesGuide = () => {
               SAT Grammar Rules: The Complete Digital SAT Reading &amp; Writing Guide (2026)
             </h1>
             <p className="lead-text" style={{ fontSize: '1.15rem', color: '#475569', lineHeight: 1.7 }}>
-              Master the official Standard English Conventions tested on the Digital SAT. Learn the clause boundary formulas, modifier rules, punctuation shortcuts, and transition frameworks that guarantee 750+ on the Reading &amp; Writing section.
+              Master the official Standard English Conventions tested on the Digital SAT. Learn the clause boundary formulas, modifier rules, punctuation shortcuts, and transition frameworks to help target 750+ on the Reading &amp; Writing section.
             </p>
 
             <div className="article-meta" style={{ display: 'flex', flexWrap: 'wrap', gap: '18px', marginTop: '24px', alignItems: 'center' }}>

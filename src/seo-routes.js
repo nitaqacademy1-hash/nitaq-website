@@ -116,8 +116,8 @@ export const seoRoutes = [
     ogDescription: "Step-by-step Digital SAT study schedules for 1400–1550+ score targets, balanced with UAE school board exams.",
     ogImage: "/images/sat_v2.webp",
     twitterCard: "summary_large_image",
-    datePublished: "2026-10-19T08:00:00+04:00",
-    dateModified: "2026-10-19T08:00:00+04:00",
+    datePublished: "2026-10-17T14:00:00+04:00",
+    dateModified: "2026-10-17T14:00:00+04:00",
     keywords: "how to ace the sat, sat study plan uae, 30 day sat plan, 60 day sat schedule, how to score 1500 sat, digital sat study roadmap, sat preparation sharjah plan",
     faqSchema: [
       {
@@ -143,8 +143,8 @@ export const seoRoutes = [
     ogDescription: "Hard Digital SAT Math question walkthroughs: quadratic constants, function shifts, and Desmos verification tricks.",
     ogImage: "/images/sat_v2.webp",
     twitterCard: "summary_large_image",
-    datePublished: "2026-10-20T08:00:00+04:00",
-    dateModified: "2026-10-20T08:00:00+04:00",
+    datePublished: "2026-10-17T16:00:00+04:00",
+    dateModified: "2026-10-17T16:00:00+04:00",
     keywords: "sat math practice, sat math questions, hard sat math questions, sat math traps, digital sat math module 2, sat math 800 guide, sat math formulas sharjah",
     faqSchema: [
       {
@@ -170,8 +170,8 @@ export const seoRoutes = [
     ogDescription: "Compare free self-study drills with structured teacher-led coaching: when to choose which approach for your SAT score goal.",
     ogImage: "/images/sat_v2.webp",
     twitterCard: "summary_large_image",
-    datePublished: "2026-10-21T08:00:00+04:00",
-    dateModified: "2026-10-21T08:00:00+04:00",
+    datePublished: "2026-10-17T18:00:00+04:00",
+    dateModified: "2026-10-17T18:00:00+04:00",
     keywords: "khan academy sat, free sat prep vs coaching, sat coaching sharjah, khan academy digital sat uae, best sat prep dubai, sat self study vs coaching",
     faqSchema: [
       {
@@ -197,8 +197,8 @@ export const seoRoutes = [
     ogDescription: "What parents should look for in UAE SAT institutes: SPEA licensing, batch size, Desmos training, and adaptive software.",
     ogImage: "/images/sat_v2.webp",
     twitterCard: "summary_large_image",
-    datePublished: "2026-10-22T08:00:00+04:00",
-    dateModified: "2026-10-22T08:00:00+04:00",
+    datePublished: "2026-10-18T08:00:00+04:00",
+    dateModified: "2026-10-18T08:00:00+04:00",
     keywords: "sat prep options uae, bedrock sat, one prep sat, sat coaching sharjah, best sat institute dubai, sat tutoring near me, compare sat coaching uae",
     faqSchema: [
       {
@@ -224,8 +224,8 @@ export const seoRoutes = [
     ogDescription: "Score cutoffs and merit scholarship tiers for AUS, Khalifa University, NYU Abu Dhabi, and Ivy League benchmarks.",
     ogImage: "/images/sat_v2.webp",
     twitterCard: "summary_large_image",
-    datePublished: "2026-10-23T08:00:00+04:00",
-    dateModified: "2026-10-23T08:00:00+04:00",
+    datePublished: "2026-10-18T09:00:00+04:00",
+    dateModified: "2026-10-18T09:00:00+04:00",
     keywords: "harvard sat requirements, aus sat score, khalifa university sat requirement, nyu abu dhabi sat score, uae university sat requirements, sat merit scholarship uae",
     faqSchema: [
       {
@@ -251,8 +251,8 @@ export const seoRoutes = [
     ogDescription: "Master all 4 Digital SAT verbal domains: vocabulary in context, graph evidence, transitions, and rhetorical synthesis.",
     ogImage: "/images/sat_v2.webp",
     twitterCard: "summary_large_image",
-    datePublished: "2026-10-24T08:00:00+04:00",
-    dateModified: "2026-10-24T08:00:00+04:00",
+    datePublished: "2026-10-18T10:00:00+04:00",
+    dateModified: "2026-10-18T10:00:00+04:00",
     keywords: "sat english, digital sat reading writing tips, sat reading practice uae, sat rhetorical synthesis shortcut, words in context sat, sat verbal score booster",
     faqSchema: [
       {
@@ -278,8 +278,8 @@ export const seoRoutes = [
     ogDescription: "Beginner guide for UAE families: what SAT stands for, exam length, scoring scale, and why UAE universities evaluate it.",
     ogImage: "/images/sat_v2.webp",
     twitterCard: "summary_large_image",
-    datePublished: "2026-10-25T08:00:00+04:00",
-    dateModified: "2026-10-25T08:00:00+04:00",
+    datePublished: "2026-10-18T11:00:00+04:00",
+    dateModified: "2026-10-18T11:00:00+04:00",
     keywords: "what does sat stand for, digital sat explained, sat score scale 400 1600, what is sat exam, sat exam sharjah, sat equivalency uae moe",
     faqSchema: [
       {

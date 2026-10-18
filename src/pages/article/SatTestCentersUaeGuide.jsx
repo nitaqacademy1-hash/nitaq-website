@@ -390,7 +390,7 @@ const SatTestCentersUaeGuide = () => {
               Ready for the SAT? Get Coached by Top 1% Scorers at Nitaq Academy
             </h3>
             <p style={{ fontSize: '1rem', opacity: 0.9, lineHeight: 1.6, marginBottom: '24px' }}>
-              Located centrally at Abu Khamseen Tower in Al Majaz 3, Sharjah, Nitaq Academy provides full-length proctored Bluebook mock tests, score-guaranteed coaching, and direct admissions support for AUS, UoS, Khalifa, and US universities.
+              Located centrally at Abu Khamseen Tower in Al Majaz 3, Sharjah, Nitaq Academy provides full-length proctored Bluebook mock tests, structured milestone-driven coaching, and direct admissions support for AUS, UoS, Khalifa, and US universities.
             </p>
             <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap' }}>
               <Link 

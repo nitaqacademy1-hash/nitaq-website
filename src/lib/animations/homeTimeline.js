@@ -15,12 +15,14 @@ export function initHomeAnimations(root) {
     onUpdate: self => nav?.classList.toggle('is-scrolled', self.scroll() > 50),
   });
 
-  media.add('(prefers-reduced-motion: no-preference)', () => {
+  // Only enable Lenis virtual smooth-scrolling on desktop devices.
+  // Mobile touch devices use native momentum scrolling to prevent jump-on-touch and unwanted auto-scrolling.
+  media.add('(min-width: 861px) and (prefers-reduced-motion: no-preference)', () => {
     const previousScroll = document.documentElement.style.scrollBehavior;
     document.documentElement.style.scrollBehavior = 'auto';
 
-    // Lenis smooth scroll
-    const lenis = new Lenis({ duration: 1.05, smoothWheel: true, syncTouch: false, anchors: true });
+    // Lenis smooth scroll on desktop
+    const lenis = new Lenis({ duration: 1.05, smoothWheel: true, syncTouch: false, anchors: false });
     lenis.on('scroll', ScrollTrigger.update);
     const tick = time => lenis.raf(time * 1000);
     gsap.ticker.add(tick);

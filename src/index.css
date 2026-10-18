@@ -3086,10 +3086,26 @@ textarea:focus {
 
 @media (max-width: 768px) {
     .floating-whatsapp {
-        bottom: 20px;
-        left: 20px;
+        bottom: calc(20px + env(safe-area-inset-bottom));
+        left: calc(20px + env(safe-area-inset-left));
         width: 55px;
         height: 55px;
+        z-index: 998;
+    }
+}
+
+/* In RTL mode, position WhatsApp on the right side so it never collides with Zoho chat widget on the left */
+html[dir="rtl"] .floating-whatsapp,
+[dir="rtl"] .floating-whatsapp {
+    left: auto !important;
+    right: 30px !important;
+}
+
+@media (max-width: 768px) {
+    html[dir="rtl"] .floating-whatsapp,
+    [dir="rtl"] .floating-whatsapp {
+        left: auto !important;
+        right: calc(20px + env(safe-area-inset-right)) !important;
     }
 }
 
@@ -7323,5 +7339,5 @@ html[lang="ar"] .footer-primary-navigation a, html[lang="ar"] .footer-primary-na
   .footer-primary-navigation { gap: 4px 16px; }
   .footer-primary-navigation a { flex: 1 1 42%; }
   .footer-primary-navigation button { margin-inline-start: 0; }
-  .floating-whatsapp { bottom: calc(20px + env(safe-area-inset-bottom)); left: calc(20px + env(safe-area-inset-left)); }
+  html:not([dir="rtl"]) .floating-whatsapp { bottom: calc(20px + env(safe-area-inset-bottom)); left: calc(20px + env(safe-area-inset-left)); }
 }

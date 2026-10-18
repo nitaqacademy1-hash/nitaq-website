@@ -12,7 +12,7 @@ export default function Actions({ c, diagnostic = false }) {
     <div className="nh-actions">
       {diagnostic ? (
         <Link
-          className="nh-button nh-button-light"
+          className="nh-button nh-button-diagnostic"
           to="/sat/diagnostic"
           onClick={() => trackEvent(ANALYTICS_EVENTS.CLICK, 'home_book_diagnostic')}
         >
@@ -20,7 +20,11 @@ export default function Actions({ c, diagnostic = false }) {
           <ArrowUpRight size={18} />
         </Link>
       ) : (
-        <Link className="nh-button nh-button-light" to="/sat/diagnostic" onClick={() => trackEvent(ANALYTICS_EVENTS.CLICK, 'home_sat_diagnostic')}>
+        <Link
+          className="nh-button nh-button-diagnostic"
+          to="/sat/diagnostic"
+          onClick={() => trackEvent(ANALYTICS_EVENTS.CLICK, 'home_sat_diagnostic')}
+        >
           {c.book}
           <ArrowUpRight size={18} />
         </Link>

@@ -262,20 +262,20 @@ const REVIEWS_DATA = [
 ];
 
 const TAG_FILTERS = [
-  { key: 'all', label: 'All', count: null },
-  { key: 'practical course', label: 'practical course', count: 2 },
-  { key: 'supportive team', label: 'supportive team', count: 2 },
-  { key: 'webinar', label: 'webinar', count: 2 },
-  { key: 'maths', label: 'maths', count: 4 },
+  { key: 'all', label: { en: 'All', ar: 'الكل' }, count: null },
+  { key: 'practical course', label: { en: 'practical course', ar: 'دورات عملية' }, count: 2 },
+  { key: 'supportive team', label: { en: 'supportive team', ar: 'فريق متعاون' }, count: 2 },
+  { key: 'webinar', label: { en: 'webinar', ar: 'ندوات تدريبية' }, count: 2 },
+  { key: 'maths', label: { en: 'maths', ar: 'الرياضيات' }, count: 4 },
 ];
 
 const EXTRA_TAGS = [
-  { key: 'sat prep', label: 'sat prep', count: 3 },
-  { key: 'corporate tax', label: 'corporate tax', count: 3 },
-  { key: 'physics', label: 'physics', count: 1 },
-  { key: 'arabic', label: 'arabic language', count: 1 },
-  { key: 'digital marketing', label: 'digital marketing', count: 1 },
-  { key: 'tutors', label: 'supportive tutors', count: 4 },
+  { key: 'sat prep', label: { en: 'sat prep', ar: 'تحضير SAT' }, count: 3 },
+  { key: 'corporate tax', label: { en: 'corporate tax', ar: 'ضريبة الشركات' }, count: 3 },
+  { key: 'physics', label: { en: 'physics', ar: 'الفيزياء' }, count: 1 },
+  { key: 'arabic', label: { en: 'arabic language', ar: 'اللغة العربية' }, count: 1 },
+  { key: 'digital marketing', label: { en: 'digital marketing', ar: 'التسويق الرقمي' }, count: 1 },
+  { key: 'tutors', label: { en: 'supportive tutors', ar: 'معلمون متميزون' }, count: 4 },
 ];
 
 export default function GoogleReviews() {
@@ -427,7 +427,7 @@ export default function GoogleReviews() {
                 className={`nh-chip ${activeTag === tag.key ? 'active' : ''}`}
                 onClick={() => setActiveTag(tag.key)}
               >
-                <span>{tag.label}</span>
+                <span>{isAr ? tag.label.ar : tag.label.en}</span>
                 {tag.count !== null && <span className="nh-chip-count">{tag.count}</span>}
               </button>
             ))}
@@ -440,7 +440,7 @@ export default function GoogleReviews() {
                   className={`nh-chip ${activeTag === tag.key ? 'active' : ''}`}
                   onClick={() => setActiveTag(tag.key)}
                 >
-                  <span>{tag.label}</span>
+                  <span>{isAr ? tag.label.ar : tag.label.en}</span>
                   {tag.count !== null && <span className="nh-chip-count">{tag.count}</span>}
                 </button>
               ))}
@@ -449,9 +449,9 @@ export default function GoogleReviews() {
               type="button"
               className={`nh-chip nh-chip-more ${showExtraTags ? 'active' : ''}`}
               onClick={() => setShowExtraTags(!showExtraTags)}
-              aria-label={showExtraTags ? '− Less review filters' : '+6 more review filters'}
+              aria-label={showExtraTags ? (isAr ? 'عرض أقل' : '− Less review filters') : (isAr ? '+6 تصنيفات إضافية' : '+6 more review filters')}
             >
-              {showExtraTags ? '− Less' : '+6'}
+              {showExtraTags ? (isAr ? '− أقل' : '− Less') : '+6'}
             </button>
           </div>
 
