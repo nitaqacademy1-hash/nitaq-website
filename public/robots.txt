@@ -3,6 +3,8 @@
 
 User-agent: *
 Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
 
 # Admin Portal & Internal Tools
 Disallow: /admin
@@ -40,5 +42,6 @@ Disallow: /.git/
 
 # XML Sitemap & LLM Discovery
 Sitemap: https://www.nitaqacademy.com/sitemap.xml
-# AI Guide
+# AI Agents & LLM Guides
 # https://www.nitaqacademy.com/llms.txt
+# https://www.nitaqacademy.com/llms-full.txt

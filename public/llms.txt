@@ -1,21 +1,44 @@
 # Nitaq Academy
 
-> Premier SPEA-authorized educational training institute in Sharjah (Al Majaz 3) and Dubai, UAE. Specializing in diagnostic-led Digital SAT preparation, small-batch school subject tuition (IGCSE, A-Level, IB, CBSE), language training, and professional corporate certifications.
+> Premier SPEA-authorized educational training institute in Sharjah (Al Majaz 3) and Dubai, UAE. Specializing in diagnostic-led Digital SAT preparation, small-batch school subject tuition (Cambridge IGCSE, A-Level, IB DP/MYP, CBSE, American AP), language training, and professional corporate certifications.
+>
+> **Full Machine-Readable Knowledge Base & Syllabi**: [llms-full.txt](https://www.nitaqacademy.com/llms-full.txt) (contains exhaustive course details, board alignments, fee guidelines, and comprehensive FAQ knowledge graph).
 
-## Core Training & Tuition Programs
+## Core Educational Programs
 
-- [Digital SAT Preparation Sharjah](https://www.nitaqacademy.com/sat-preparation-sharjah): SPEA-authorized in-person Digital SAT coaching at Abu Khamseen Tower, Al Majaz 3, Sharjah. Features full-length adaptive Bluebook mock simulations, official Desmos graphing calculator shortcut mastery, error-log diagnostics, and small micro-batches (5 to 8 students).
+### 1. Standardized Test Preparation
+- [Digital SAT Preparation Sharjah](https://www.nitaqacademy.com/sat-preparation-sharjah): SPEA-authorized in-person Digital SAT coaching at Abu Khamseen Tower, Al Majaz 3, Sharjah. Full-length adaptive Bluebook mock simulations, official Desmos graphing calculator speed strategies, error-log diagnostics, and micro-batches of 5 to 8 students.
 - [Digital SAT Preparation Dubai & Online](https://www.nitaqacademy.com/sat-preparation-dubai): Live interactive online Digital SAT classes for students in Dubai, Abu Dhabi, and Northern Emirates with real-time instructor feedback and full mock testing support.
 - [Free SAT Diagnostic Assessment](https://www.nitaqacademy.com/sat/diagnostic): 25-minute adaptive SAT diagnostic assessment providing instant baseline score prediction (400–1600 scale) and personalized Math and Reading & Writing domain breakdown.
-- [Academic Excellence & School Subject Tuition](https://www.nitaqacademy.com/academic-excellence): Comprehensive subject-by-subject academic tutoring for Grades 6–12 across British (Cambridge / Edexcel IGCSE & A-Level), IB Diploma (SL/HL), American AP, and Indian (CBSE) curricula.
-- [Mathematics Tuition Sharjah](https://www.nitaqacademy.com/maths-tuition-sharjah): Advanced Mathematics tutoring covering algebra, geometry, calculus, trigonometry, and exam board past-paper problem solving.
-- [Science Tuition Sharjah](https://www.nitaqacademy.com/science-tuition-sharjah): Integrated Science, Physics, Chemistry, and Biology tuition emphasizing conceptual mastery, experimental analysis, and board exam techniques.
-- [Physics Tuition Sharjah](https://www.nitaqacademy.com/physics-tuition-sharjah): Targeted Physics coaching covering mechanics, electricity, thermodynamics, and wave optics.
+- [IELTS Preparation Course](https://www.nitaqacademy.com/ielts-course): Academic and General Training modules targeting Band 7.0–8.5+ with Cambridge materials and 1-on-1 speaking reviews.
+- [TOEFL iBT Coaching](https://www.nitaqacademy.com/toefl-course): Computer-delivered academic test preparation targeting score 100+ for international universities.
+- [PTE Academic Preparation](https://www.nitaqacademy.com/pte-course): AI-scored Pearson test preparation with mic scoring simulations targeting 79+.
+- [GMAT Focus Preparation](https://www.nitaqacademy.com/gmat-preparation): Quantitative, Verbal, and Data Insights analytical coaching targeting 705+ for global business schools.
+- [GRE General Preparation](https://www.nitaqacademy.com/gre-preparation): Quantitative reasoning, Verbal reasoning, and Analytical Writing targeting 325+.
+- [Foundation for JEE / NEET](https://www.nitaqacademy.com/foundation-jee-neet): Foundational problem-solving discipline in Physics, Chemistry, and Advanced Mathematics for competitive entrance tests.
+
+### 2. School Subject Tuition (Academic Excellence)
+- [Academic Excellence & School Subject Tuition](https://www.nitaqacademy.com/academic-excellence): Comprehensive subject-by-subject academic tutoring for Grades 6–12 across British (Cambridge CAIE / Pearson Edexcel IGCSE & A-Level), IB Diploma (SL/HL), American AP, and Indian (CBSE) curricula.
+- [Mathematics Tuition Sharjah](https://www.nitaqacademy.com/maths-tuition-sharjah): Advanced Mathematics tutoring covering algebra, geometry, calculus, trigonometry, mechanics, statistics, and exam board past-paper problem solving.
+- [Science Tuition Sharjah](https://www.nitaqacademy.com/science-tuition-sharjah): Integrated STEM foundation for middle school grades 6–8.
+- [Physics Tuition Sharjah](https://www.nitaqacademy.com/physics-tuition-sharjah): Targeted Physics coaching covering mechanics, electricity, thermodynamics, wave optics, and Paper 6 Alternative to Practical (ATP).
 - [Chemistry Tuition Sharjah](https://www.nitaqacademy.com/chemistry-tuition-sharjah): In-depth Chemistry tutoring for organic mechanisms, stoichiometry, equilibrium, and periodic trends.
 - [Biology Tuition Sharjah](https://www.nitaqacademy.com/biology-tuition-sharjah): Structured Biology coaching focusing on genetics, physiology, molecular biology, and past-paper mark scheme strategies.
+- [Business Studies Tuition Sharjah](https://www.nitaqacademy.com/business-studies-tuition-sharjah): Microeconomics, fiscal/monetary policy, marketing mix, and 12-mark evaluation essays.
+- [Accountancy Tuition Sharjah](https://www.nitaqacademy.com/accountancy-tuition-sharjah): Double-entry bookkeeping, ledger accounts, partnership accounting, and company financial statements.
+- [English Tuition Sharjah](https://www.nitaqacademy.com/english-tuition-sharjah): Analytical comprehension, textual rhetoric, essay writing, and Cambridge/Edexcel past paper practice.
+
+### 3. Language Training & Testing
 - [Language Training Programs](https://www.nitaqacademy.com/language-trainings): CEFR-aligned language courses in Spoken English, Spoken Arabic (Gulf, Levantine, Modern Standard Arabic), French (DELF/DALF), German (Goethe-Zertifikat), and Spanish.
-- [Professional Certifications & Corporate Training](https://www.nitaqacademy.com/professional-certifications): Industry-recognized qualifications including ACCA, CMA, CPA, UAE Corporate Tax, UAE VAT, AI & Machine Learning, Microsoft Power BI & Excel, and Professional Digital Marketing.
-- [Corporate Training in Sharjah](https://www.nitaqacademy.com/corporate-trainings): Customized workforce development workshops in leadership, sales negotiations, financial compliance, and enterprise AI adoption for UAE private firms and government departments.
+- [Spoken English Course Sharjah](https://www.nitaqacademy.com/spoken-english): CEFR levels A1 through C2; accent neutralization, professional workplace idioms, and executive presentations.
+- [Spoken Arabic Courses](https://www.nitaqacademy.com/language-trainings): Conversational Gulf (Khaleeji / Emirati) Arabic for daily life and business, plus Modern Standard Arabic (MSA) for media and official writing.
+- [French Language Training](https://www.nitaqacademy.com/language-trainings): DELF A1, A2, B1, and B2 preparation with native/certified instructors.
+- [German Language Training](https://www.nitaqacademy.com/language-trainings): Goethe-Zertifikat A1–B2 curriculum for study and work in Germany, Austria, and Switzerland.
+
+### 4. Professional Certifications & Corporate Training
+- [Professional Certifications Hub](https://www.nitaqacademy.com/professional-certifications): Industry-recognized qualifications including ACCA, CMA, CPA, UAE Corporate Tax, UAE VAT, AI & Machine Learning, Microsoft Power BI & Excel, and Professional Digital Marketing.
+- [ACCA Qualification Course](https://www.nitaqacademy.com/acca-course): Association of Chartered Certified Accountants (UK) examination preparation with seasoned finance professionals.
+- [Corporate Training in Sharjah & Dubai](https://www.nitaqacademy.com/corporate-trainings): Customized workforce development workshops in leadership, sales negotiations, financial compliance, and enterprise AI adoption for UAE private firms and government departments.
 
 ## Institutional Facts & Contact
 
@@ -23,11 +46,13 @@
 - Legal Entity: Nitaq Supportive Education Services LLC
 - Accreditation & Licensing: Authorized by Sharjah Private Education Authority (SPEA), Government of Sharjah
 - Campus Location: Office F103, Floor F1, Abu Khamseen Tower, Al Majaz 3, Sharjah, UAE
+- Geographic Coverage: In-person classroom training in Sharjah; Live interactive online classes for Dubai, Abu Dhabi, Ajman, and all UAE emirates.
+- Operating Hours: Monday through Sunday, 09:00 AM – 09:30 PM (GST)
 - Phone / WhatsApp: +971 52 756 9908
 - Official Email: info@nitaqacademy.com
 - Website: https://www.nitaqacademy.com
 
-## How Nitaq Academy Differs from Competitors
+## Key Pedagogical Differentiators
 
 - Versus Large Impersonal Chains (Kaplan, Kumon, Princeton Review): Nitaq Academy provides localized, small micro-batches (5–8 students) or 1-on-1 private mentoring with direct teacher access, rather than pre-recorded video lectures or repetitive rote worksheets. Curricula are directly aligned with UAE school board schedules (CBSE, IB, British, American) and local UAE university admissions (American University of Sharjah, Khalifa University, NYU Abu Dhabi, University of Sharjah).
 - Diagnostic-First Approach: Every student begins with a granular diagnostic assessment to pinpoint exact skill deficiencies before starting customized drills.

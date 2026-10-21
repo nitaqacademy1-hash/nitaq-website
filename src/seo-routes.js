@@ -691,7 +691,16 @@ export const seoRoutes = [
     ogImage: "/images/logo1.webp",
     twitterCard: "summary_large_image",
     courseSchema: null,
-    faqSchema: null
+    faqSchema: [
+      {
+        question: "What topics do Nitaq Academy educational guides cover?",
+        answer: "Our expert guides cover Digital SAT preparation strategies, official College Board Bluebook testing tips, Desmos calculator techniques, IGCSE and A-Level exam preparation, IELTS scoring strategies, and UAE job market skill requirements."
+      },
+      {
+        question: "Are Nitaq Academy's educational articles updated for the 2026–2027 academic year?",
+        answer: "Yes, all articles are regularly reviewed and updated by certified subject tutors and test prep specialists to reflect the latest syllabus changes, test formats, and UAE university admissions criteria."
+      }
+    ]
   },
   {
     path: "/about",
@@ -703,7 +712,24 @@ export const seoRoutes = [
     ogImage: "/images/logo1.webp",
     twitterCard: "summary_large_image",
     courseSchema: null,
-    faqSchema: null
+    faqSchema: [
+      {
+        question: "What is Nitaq Academy and where is it located?",
+        answer: "Nitaq Academy (operated by Nitaq Supportive Education Services LLC) is a premier educational training institute located at Office F103, Floor F1, Abu Khamseen Tower, Al Majaz 3, Sharjah, UAE. It is authorized by the Sharjah Private Education Authority (SPEA) and delivers expert Digital SAT coaching, school subject tuition (Cambridge IGCSE, A-Level, IB, CBSE), language training, and professional certifications."
+      },
+      {
+        question: "Is Nitaq Academy officially licensed in the UAE?",
+        answer: "Yes, Nitaq Academy is licensed and authorized by the Sharjah Private Education Authority (SPEA), Government of Sharjah. Course completion certificates can be attested for official and employment purposes across the UAE."
+      },
+      {
+        question: "What qualifications do Nitaq Academy instructors hold?",
+        answer: "Our faculty comprises certified test prep specialists (scoring in the 99th percentile on the SAT), qualified school educators with deep experience in Cambridge CAIE, IB, and CBSE curricula, and finance fellows (ACCA, CPA, CMA) for professional courses."
+      },
+      {
+        question: "What makes Nitaq Academy different from large chain tutoring centers?",
+        answer: "Unlike large impersonal lecture halls or repetitive worksheet centers, Nitaq Academy provides diagnostic-first individualized learning, micro-batches of only 5 to 8 students (or 1-on-1 private tuition), direct access to expert educators, and curricula aligned with UAE school boards and local university admissions."
+      }
+    ]
   },
   {
     path: "/professional-certifications",
@@ -716,7 +742,24 @@ export const seoRoutes = [
     twitterCard: "summary_large_image",
     keywords: "professional certifications sharjah, acca course uae, cma coaching, corporate tax course, cpa classes sharjah, nitaq academy",
     courseSchema: null,
-    faqSchema: null
+    faqSchema: [
+      {
+        question: "Which professional certification courses are offered at Nitaq Academy in Sharjah?",
+        answer: "Nitaq Academy offers recognized certification programs in ACCA (Association of Chartered Certified Accountants, UK), US CMA (Certified Management Accountant), US CPA, UAE Corporate Tax Diploma (Decree-Law No. 47/2022), UAE VAT Practitioner, Microsoft Power BI, Advanced Excel Financial Modeling, Applied AI & Python Programming, and Professional Digital Marketing."
+      },
+      {
+        question: "Are professional certification classes available online and on weekends?",
+        answer: "Yes, classes are scheduled on weekday evenings (after office hours) and weekends (Saturdays and Sundays), available both on-campus in Al Majaz 3, Sharjah and via live interactive online sessions for professionals in Dubai, Abu Dhabi, and across the UAE."
+      },
+      {
+        question: "What is covered in the UAE Corporate Tax Diploma?",
+        answer: "The UAE Corporate Tax course provides practical instruction on Federal Decree-Law No. 47 of 2022, corporate tax calculations, Qualifying Free Zone Person (QFZP) rules, interest deduction limitations, transfer pricing documentation, and tax filing on the FTA EmaraTax portal."
+      },
+      {
+        question: "Can certificates issued by Nitaq Academy be attested by UAE government bodies?",
+        answer: "Yes, as an SPEA-authorized institute, training certificates issued by Nitaq Academy can be attested by the UAE Ministry of Foreign Affairs (MOFA) and educational authorities for employment and visa requirements."
+      }
+    ]
   },
   {
     path: "/language-trainings",
@@ -754,7 +797,20 @@ export const seoRoutes = [
     ogImage: "/images/logo1.webp",
     twitterCard: "summary_large_image",
     courseSchema: null,
-    faqSchema: null
+    faqSchema: [
+      {
+        question: "How do I enquire or enroll in courses at Nitaq Academy?",
+        answer: "You can submit an online enquiry via our website, call or WhatsApp our admissions team at +971 52 756 9908, or visit our campus at Office F103, Abu Khamseen Tower, Al Majaz 3, Sharjah. Initial consultations and level assessments are completely free."
+      },
+      {
+        question: "What information is needed to start my course enquiry?",
+        answer: "You only need to provide your name, contact phone/WhatsApp number, current academic grade or professional goal, and target course. Formal documentation such as Emirates ID is only required at the official registration stage."
+      },
+      {
+        question: "How quickly does the admissions team respond to enquiries?",
+        answer: "Our admissions advisors typically respond within 1 to 2 business hours during operating hours (Monday to Sunday, 9:00 AM – 9:30 PM GST) to schedule your free diagnostic assessment or consultation."
+      }
+    ]
   },
   {
     path: "/corporate-trainings",
@@ -793,7 +849,24 @@ export const seoRoutes = [
     twitterCard: "summary_large_image",
     keywords: "courses in sharjah, sat prep sharjah, language courses, tuition classes sharjah, training institute sharjah, nitaq academy",
     courseSchema: null,
-    faqSchema: null
+    faqSchema: [
+      {
+        question: "What courses and educational programs does Nitaq Academy offer in Sharjah?",
+        answer: "Nitaq Academy offers four core learning tracks: 1) Standardized Test Preparation (Digital SAT, IELTS, TOEFL, PTE, GMAT Focus, GRE), 2) School Subject Tuition (Grades 1–12 Maths, Physics, Chemistry, Biology, Business, Economics, Accountancy across Cambridge IGCSE, A-Level, IB, and CBSE), 3) Language Training (Spoken English, Spoken Arabic, French, German, Spanish), and 4) Professional Certifications (ACCA, CMA, UAE Corporate Tax, VAT, Power BI, AI & Digital Marketing)."
+      },
+      {
+        question: "Are courses available both in-person in Sharjah and online for Dubai students?",
+        answer: "Yes, students can attend in-person classes at our campus in Abu Khamseen Tower, Al Majaz 3, Sharjah, or join live interactive online batches from Dubai, Abu Dhabi, and across the UAE."
+      },
+      {
+        question: "What is the average batch size for courses at Nitaq Academy?",
+        answer: "To ensure individualized attention and prompt doubt clearance, all group courses are strictly capped at 5 to 8 students per batch. 1-on-1 private tutoring is also available for personalized pacing."
+      },
+      {
+        question: "How do I determine which course level is right for me or my child?",
+        answer: "We provide comprehensive diagnostic testing and personalized consultations before course commencement to evaluate existing proficiency and design a tailored learning roadmap."
+      }
+    ]
   },
   {
     path: "/test-preparations",
@@ -806,7 +879,24 @@ export const seoRoutes = [
     twitterCard: "summary_large_image",
     keywords: "test preparation courses sharjah, ielts coaching, toefl course, sat prep, gmat gre sharjah, nitaq academy",
     courseSchema: null,
-    faqSchema: null
+    faqSchema: [
+      {
+        question: "Which test preparation courses are offered at Nitaq Academy Sharjah?",
+        answer: "Nitaq Academy offers expert coaching for the Digital SAT, IELTS Academic & General Training, TOEFL iBT, PTE Academic, GMAT Focus Edition, GRE General Test, and Foundation for IIT-JEE/NEET."
+      },
+      {
+        question: "How does Nitaq Academy prepare students for the Digital SAT?",
+        answer: "Our Digital SAT preparation combines adaptive mock tests on official College Board Bluebook software, proprietary Desmos graphing calculator speed techniques, mastery of the 8 Reading/Writing and Math domains, and individual error-log analytics in micro-batches of 5 to 8 students."
+      },
+      {
+        question: "Can I take a free SAT diagnostic test before enrolling?",
+        answer: "Yes. Students can take our free 24-question adaptive Digital SAT diagnostic assessment at https://www.nitaqacademy.com/sat/diagnostic to evaluate their baseline score (400–1600 scale) and identify specific domain weaknesses."
+      },
+      {
+        question: "What target band scores do students achieve in IELTS at Nitaq Academy?",
+        answer: "Our structured IELTS courses target Band 7.0 to 8.5+, featuring full-length Cambridge practice mocks, 1-on-1 certified speaking examiner simulations, and essay blueprint reviews for Writing Tasks 1 and 2."
+      }
+    ]
   },
   {
     path: "/contact",
@@ -819,7 +909,20 @@ export const seoRoutes = [
     twitterCard: "summary_large_image",
     keywords: "contact nitaq academy, education institute sharjah address, nitaq academy phone number, al majaz 3 sharjah",
     courseSchema: null,
-    faqSchema: null
+    faqSchema: [
+      {
+        question: "Where is Nitaq Academy located and how can I visit?",
+        answer: "Nitaq Academy is located at Office F103, Floor F1, Abu Khamseen Tower, Al Majaz 3, Sharjah, UAE. The campus is easily accessible via Buhaira Corniche, King Faisal Street, and Al Wahda Street, with ample public and visitor parking nearby."
+      },
+      {
+        question: "How can I contact Nitaq Academy admissions?",
+        answer: "You can call or WhatsApp our admissions team directly at +971 52 756 9908, or email info@nitaqacademy.com. We are open Monday through Sunday from 09:00 AM to 09:30 PM GST."
+      },
+      {
+        question: "Can I schedule a free consultation or academic assessment before visiting?",
+        answer: "Yes, you can contact us via phone, WhatsApp, or our online enquiry form to schedule a free academic consultation or free Digital SAT diagnostic assessment at your convenience."
+      }
+    ]
   },
   {
     path: "/",
@@ -832,7 +935,28 @@ export const seoRoutes = [
     twitterCard: "summary_large_image",
     keywords: "sat preparation sharjah, tuition classes sharjah, language courses uae, education institute sharjah, nitaq academy",
     courseSchema: null,
-    faqSchema: null
+    faqSchema: [
+      {
+        question: "What educational programs does Nitaq Academy offer in Sharjah and Dubai?",
+        answer: "Nitaq Academy provides SPEA-authorized educational programs across four key divisions: 1) Diagnostic-led Digital SAT & standardized test preparation (IELTS, TOEFL, PTE, GMAT, GRE), 2) Small-batch school subject tuition for Grades 1–12 (Maths, Physics, Chemistry, Biology, Business, Economics, Accounting) across Cambridge IGCSE, A-Level, IB, and CBSE, 3) Language training in Spoken English, Spoken Arabic, French, German, and Spanish, and 4) Professional certifications in ACCA, CMA, UAE Corporate Tax, VAT, Power BI, and Digital Marketing."
+      },
+      {
+        question: "Where is Nitaq Academy located in the UAE?",
+        answer: "Our physical campus is located at Office F103, Floor F1, Abu Khamseen Tower, Al Majaz 3, Sharjah, UAE. We serve students in-person from Sharjah, Ajman, and Dubai, and deliver live interactive online classes across Dubai, Abu Dhabi, and the Northern Emirates."
+      },
+      {
+        question: "What makes Nitaq Academy's tutoring methodology unique?",
+        answer: "We prioritize a diagnostic-first approach where every student is evaluated for conceptual gaps before instruction begins. All batches are capped at 5 to 8 students (or 1-on-1 private tutoring) to ensure personalized attention, and courses are taught by verified subject specialists with continuous parent reporting."
+      },
+      {
+        question: "Is Nitaq Academy officially licensed by UAE government authorities?",
+        answer: "Yes, Nitaq Academy is officially licensed and authorized by the Sharjah Private Education Authority (SPEA), Government of Sharjah. Course certificates are recognized and attestable for official academic and career purposes."
+      },
+      {
+        question: "How can students start with a free assessment?",
+        answer: "High school students can take our free online adaptive Digital SAT diagnostic test at https://www.nitaqacademy.com/sat/diagnostic, or contact our admissions office at +971 52 756 9908 to schedule an in-person academic evaluation at our Al Majaz 3 campus."
+      }
+    ]
   },
   {
     path: "/ig/2026-03-29",
@@ -2019,7 +2143,24 @@ export const seoRoutes = [
     twitterCard: "summary_large_image",
     keywords: "finance courses sharjah, acca cma cpa uae, accounting courses sharjah, financial certification uae, nitaq academy",
     courseSchema: null,
-    faqSchema: null
+    faqSchema: [
+      {
+        question: "What finance and accounting courses are offered at Nitaq Academy in Sharjah?",
+        answer: "Nitaq Academy offers comprehensive preparation for global qualifications including ACCA (UK), US CMA (Institute of Management Accountants), and US CPA, as well as practical certifications in UAE Corporate Tax (Decree-Law No. 47/2022), UAE VAT compliance, and Financial Modeling with Microsoft Power BI & Excel."
+      },
+      {
+        question: "Which qualification is more in demand in the UAE: ACCA or CMA?",
+        answer: "Both qualifications are highly valued across Dubai and Sharjah. ACCA is ideal for careers in statutory auditing, financial reporting, and advisory roles, while US CMA focuses on corporate financial planning, budgeting, analytics, and executive decision support."
+      },
+      {
+        question: "Are finance classes suitable for working professionals?",
+        answer: "Yes, our finance courses feature evening batches (7:00 PM – 9:30 PM) and weekend cohorts (Saturdays and Sundays), available in-person at our Al Majaz 3 campus or live online via interactive sessions."
+      },
+      {
+        question: "Does Nitaq Academy provide practical tax return filing experience?",
+        answer: "Yes, our UAE Corporate Tax and VAT courses include practical case studies and walkthroughs on the FTA EmaraTax portal, equipping learners with real-world compliance skills."
+      }
+    ]
   },
   {
     path: "/spoken-english",
@@ -2203,7 +2344,20 @@ export const seoRoutes = [
     ogImage: "/images/logo1.webp",
     twitterCard: "summary_large_image",
     courseSchema: null,
-    faqSchema: null
+    faqSchema: [
+      {
+        question: "How do I choose the best training institute in Sharjah?",
+        answer: "When evaluating training institutes in Sharjah, verify: 1) Official Sharjah Private Education Authority (SPEA) licensing, 2) Qualified faculty with proven track records, 3) Small micro-batch sizes (5 to 8 students) rather than large lecture halls, 4) Up-to-date curricula aligned with UAE industry and academic boards, and 5) Transparent fee structures."
+      },
+      {
+        question: "Why is SPEA authorization important for training certificates in Sharjah?",
+        answer: "SPEA authorization guarantees that the training institute meets rigorous UAE educational standards. Certificates from authorized institutes like Nitaq Academy can be attested by the UAE Ministry of Foreign Affairs (MOFA) for official employment, career progression, and university credits."
+      },
+      {
+        question: "What courses are offered at Nitaq Academy in Sharjah?",
+        answer: "Nitaq Academy offers Digital SAT preparation, school subject tuition (Cambridge IGCSE, A-Level, IB, CBSE), language courses (Spoken English, Arabic, French, German, Spanish), and professional certifications (ACCA, CMA, UAE Corporate Tax, VAT, Power BI, and Digital Marketing)."
+      }
+    ]
   },
   {
     path: "/article/sat-vs-ielts-guide",
@@ -2215,7 +2369,20 @@ export const seoRoutes = [
     ogImage: "/images/logo1.webp",
     twitterCard: "summary_large_image",
     courseSchema: null,
-    faqSchema: null
+    faqSchema: [
+      {
+        question: "What is the key difference between the SAT and IELTS exams?",
+        answer: "The SAT is an academic reasoning and aptitude test measuring high school Math and Evidence-Based Reading and Writing, required primarily for undergraduate admissions in the US, Canada, and UAE (e.g. AUS, Khalifa University). IELTS evaluates English language proficiency across Listening, Reading, Writing, and Speaking, required by universities and immigration authorities globally."
+      },
+      {
+        question: "Do UAE universities require both the SAT and IELTS?",
+        answer: "Many UAE universities require both for international students: the SAT to satisfy general academic aptitude (especially Math benchmarks for engineering/business) and IELTS (typically 6.0 to 6.5+) to satisfy English language proficiency requirements."
+      },
+      {
+        question: "Which exam should UAE students prepare for first?",
+        answer: "High school students should typically prepare for the SAT during Grade 11 or early Grade 12 to secure early admission and scholarship deadlines. IELTS is best taken 3 to 6 months before university matriculation since scores remain valid for two years."
+      }
+    ]
   },
   {
     path: "/article/sat-coaching-sharjah",
@@ -2227,7 +2394,20 @@ export const seoRoutes = [
     ogImage: "/images/sat_v2.webp",
     twitterCard: "summary_large_image",
     courseSchema: null,
-    faqSchema: null
+    faqSchema: [
+      {
+        question: "How do I choose the best SAT coaching institute in Sharjah?",
+        answer: "Choose an institute that specializes in the computer-adaptive Digital SAT on official College Board Bluebook software, provides in-depth training on the built-in Desmos graphing calculator, caps batch sizes at 5 to 8 students, and conducts full diagnostic error analyses like Nitaq Academy in Al Majaz 3."
+      },
+      {
+        question: "Why is Desmos calculator mastery essential for Digital SAT coaching?",
+        answer: "The built-in Desmos graphing calculator is available throughout all 44 Math questions on the Digital SAT. Mastering graphical regressions, sliders, and coordinate intersections allows students to solve up to 40% of questions visually in under 30 seconds."
+      },
+      {
+        question: "How much does SAT coaching cost in Sharjah and Dubai?",
+        answer: "SAT coaching typically ranges from AED 1,800 for intensive 4-week crash courses to AED 4,200 for comprehensive 8-to-10 week masterclasses including mock exam simulations, diagnostic assessments, and full study materials."
+      }
+    ]
   },
   {
     path: "/article/common-sat-mistakes",
@@ -2239,7 +2419,20 @@ export const seoRoutes = [
     ogImage: "/images/logo1.webp",
     twitterCard: "summary_large_image",
     courseSchema: null,
-    faqSchema: null
+    faqSchema: [
+      {
+        question: "What are the most common mistakes UAE students make on the Digital SAT?",
+        answer: "The top mistakes include: 1) Overlooking the built-in Desmos calculator on Math Module 1 and 2, 2) Spending too long on difficult early questions instead of using 'Mark for Review', 3) Failing to adapt to the adaptive scoring algorithm, 4) Ignoring Standard English Conventions grammar boundaries, and 5) Not practicing with official College Board Bluebook mock exams."
+      },
+      {
+        question: "How does the Digital SAT adaptive module routing affect your score?",
+        answer: "Performance on Module 1 determines whether you receive the easier or harder Module 2. Securing the harder Module 2 is mathematically required to achieve scores of 1200+ up to 1600. Rushing through Module 1 and making careless errors severely limits your maximum possible score."
+      },
+      {
+        question: "How can students avoid time exhaustion on the Reading and Writing section?",
+        answer: "Practice pacing at roughly 71 seconds per question. Tackle Standard English Conventions and transition questions first to bank time, leaving sufficient minutes for complex scientific and literary inference passages."
+      }
+    ]
   },
   {
     path: "/article/improve-ielts-band-score",
@@ -2251,7 +2444,20 @@ export const seoRoutes = [
     ogImage: "/images/logo1.webp",
     twitterCard: "summary_large_image",
     courseSchema: null,
-    faqSchema: null
+    faqSchema: [
+      {
+        question: "How can I improve my IELTS band score from 6.0 to 7.5 or 8.0?",
+        answer: "Improving to Band 7.5+ requires: 1) Mastering Writing Task 2 four-paragraph essay structures with clear topic sentences and cohesive devices, 2) Expanding lexical resource with topic-specific academic vocabulary rather than obscure words, 3) Practicing active skimming and scanning for True/False/Not Given reading questions, and 4) Participating in 1-on-1 speaking interview simulations."
+      },
+      {
+        question: "What are the common reasons students get stuck at IELTS Band 6.0 in Writing?",
+        answer: "Most students stall at Band 6.0 due to underdeveloped main arguments in Task 2, imprecise lexical collocations, over-repetition of basic transitional words, or neglecting Task 1 overview summaries."
+      },
+      {
+        question: "How long does it take to increase an IELTS band score by 1.0?",
+        answer: "With structured training in small batches at Nitaq Academy, students typically achieve a 0.5 to 1.0 band score improvement over a 4 to 8-week period (30 to 45 hours of instruction and practice mocks)."
+      }
+    ]
   },
   {
     path: "/article/choose-right-course-uae",
@@ -2263,7 +2469,16 @@ export const seoRoutes = [
     ogImage: "/images/article-future-skills-uae.webp",
     twitterCard: "summary_large_image",
     courseSchema: null,
-    faqSchema: null
+    faqSchema: [
+      {
+        question: "How do I choose the right professional course for the UAE job market?",
+        answer: "Align your certification with high-demand UAE economic sectors: 1) Finance & Accounting (ACCA, CMA, UAE Corporate Tax), 2) Data & Business Intelligence (Power BI, Python, AI literacy), 3) Digital Marketing & Growth (SEO, Performance Ads), or 4) Executive Leadership and Corporate Communication."
+      },
+      {
+        question: "Are certifications or university degrees more important for career growth in the UAE?",
+        answer: "Both work together. A university degree establishes your baseline qualification, but practical, globally recognized certifications (such as ACCA, CMA, or Google/Meta credentials) demonstrate immediate job-ready competence that differentiates candidates in competitive UAE recruitment."
+      }
+    ]
   },
   {
     path: "/article/sat-score-1300-guide",
@@ -2286,7 +2501,16 @@ export const seoRoutes = [
     ogImage: "/images/logo1.webp",
     twitterCard: "summary_large_image",
     courseSchema: null,
-    faqSchema: null
+    faqSchema: [
+      {
+        question: "Where can I take IELTS coaching in Dubai and Sharjah?",
+        answer: "Nitaq Academy offers comprehensive IELTS Academic and General Training coaching at its Al Majaz 3 campus in Sharjah (conveniently accessible from Dubai via Al Wahda Street/E11) as well as live interactive online classes for students across Dubai and the Northern Emirates."
+      },
+      {
+        question: "What is the fee for taking the official IELTS test in the UAE?",
+        answer: "The official IELTS test fee in the UAE typically ranges between AED 1,150 and AED 1,350 depending on whether you choose computer-delivered or paper-based testing through the British Council or IDP."
+      }
+    ]
   },
   {
     path: "/article/ai-courses-sharjah-essential",
@@ -2298,7 +2522,16 @@ export const seoRoutes = [
     ogImage: "/images/ai_v2.webp",
     twitterCard: "summary_large_image",
     courseSchema: null,
-    faqSchema: null
+    faqSchema: [
+      {
+        question: "Why is learning AI essential for students and professionals in the UAE in 2026?",
+        answer: "Under the UAE National Artificial Intelligence Strategy 2031, AI literacy is becoming mandatory across banking, government, marketing, and logistics. Professionals skilled in prompt engineering, automated workflows, Python, and predictive analytics enjoy significant competitive advantage and higher remuneration."
+      },
+      {
+        question: "What does the AI and Machine Learning course at Nitaq Academy cover?",
+        answer: "The course covers practical AI tools, foundational Python programming, neural networks, natural language processing, data analysis with pandas, and applying generative AI to business operations and academic research."
+      }
+    ]
   },
   {
     path: "/article/acca-coaching-uae-benefits",
@@ -2310,7 +2543,16 @@ export const seoRoutes = [
     ogImage: "/images/logo1.webp",
     twitterCard: "summary_large_image",
     courseSchema: null,
-    faqSchema: null
+    faqSchema: [
+      {
+        question: "What career opportunities does ACCA qualification offer in the UAE?",
+        answer: "ACCA qualified professionals are recruited by Big 4 accounting firms, multinational corporations, UAE banks, and government organizations for roles such as Financial Controller, Senior Auditor, Financial Analyst, and Tax Consultant, with starting salaries ranging from AED 12,000 to AED 25,000+ per month."
+      },
+      {
+        question: "How long does it take to complete the ACCA qualification in the UAE?",
+        answer: "Depending on prior university degree exemptions (which can waive up to 9 applied papers), students typically complete the remaining ACCA papers within 1.5 to 3 years of structured study at Nitaq Academy."
+      }
+    ]
   },
   {
     path: "/article/professional-courses-sharjah-growth",
@@ -2322,7 +2564,16 @@ export const seoRoutes = [
     ogImage: "/images/course-corporate.webp",
     twitterCard: "summary_large_image",
     courseSchema: null,
-    faqSchema: null
+    faqSchema: [
+      {
+        question: "Why are professional courses in Sharjah critical for career advancement?",
+        answer: "Sharjah and Dubai have dynamic, competitive job markets where employers prioritize candidates who hold up-to-date, specialized certifications in finance, tax compliance, data analytics, and digital management. Professional courses demonstrate proactive upskilling and practical competence."
+      },
+      {
+        question: "Which professional courses offer the highest ROI in the UAE?",
+        answer: "Courses in UAE Corporate Tax and VAT, US CMA, ACCA, Microsoft Power BI data modeling, and Digital Marketing currently deliver the highest return on investment due to urgent corporate compliance and business intelligence requirements across the UAE."
+      }
+    ]
   },
   {
     path: "/terms-and-conditions",
@@ -2822,7 +3073,16 @@ export const seoRoutes = [
     ogImage: "/images/course-marketing.webp",
     twitterCard: "summary_large_image",
     courseSchema: null,
-    faqSchema: null
+    faqSchema: [
+      {
+        question: "How important is SEO for businesses in the UAE?",
+        answer: "With high internet penetration across the UAE, search engine optimization is essential for customer acquisition in competitive industries such as real estate, education, healthcare, and retail."
+      },
+      {
+        question: "What skills are required for a digital marketing career in Sharjah and Dubai?",
+        answer: "Key skills include Google Analytics 4 (GA4), search engine optimization (SEO), Google Search & Display Ads, Meta Ads Manager, conversion rate optimization, and generative AI content strategies."
+      }
+    ]
   },
   {
     path: "/article/best-digital-marketing-course-uae",
@@ -2834,7 +3094,16 @@ export const seoRoutes = [
     ogImage: "/images/course-marketing.webp",
     twitterCard: "summary_large_image",
     courseSchema: null,
-    faqSchema: null
+    faqSchema: [
+      {
+        question: "What should I look for in a UAE digital marketing course?",
+        answer: "Prioritize courses offering hands-on campaign execution with real advertising budgets, preparation for official Google and Meta certifications, mentorship by active UAE digital practitioners, and SPEA authorization."
+      },
+      {
+        question: "What is the fee for digital marketing courses in the UAE?",
+        answer: "Fees typically range between AED 2,500 and AED 5,000 for comprehensive 30 to 60-hour programs covering SEO, paid advertising, and social media marketing."
+      }
+    ]
   },
   {
     path: "/article/professional-digital-marketing-course-overview",
@@ -2846,7 +3115,16 @@ export const seoRoutes = [
     ogImage: "/images/digital_marketing_v2.webp",
     twitterCard: "summary_large_image",
     courseSchema: null,
-    faqSchema: null
+    faqSchema: [
+      {
+        question: "What modules are included in Nitaq Academy's digital marketing course?",
+        answer: "Modules include: Website Optimization & SEO, Google Search & Performance Max Ads, Meta (Facebook & Instagram) Advertising, Social Media Strategy, Email Marketing, and GA4 Data Analytics."
+      },
+      {
+        question: "Do students work on live marketing projects?",
+        answer: "Yes, students build and optimize live search and social media campaigns, analyze traffic metrics, and create portfolio-ready case studies during the course."
+      }
+    ]
   },
   {
     path: "/webinar/ai",
