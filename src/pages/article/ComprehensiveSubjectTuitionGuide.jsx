@@ -68,7 +68,7 @@ const ComprehensiveSubjectTuitionGuide = () => {
                             </p>
 
                             <p>
-                                At <Link to="/academic-excellence" className="inline-link">NITAQ Academy</Link>, we understand that every academic discipline requires a specialized pedagogical approach. A student mastering multi-step calculus problems in <Link to="/maths-tuition-sharjah" className="inline-link">Mathematics</Link> needs different cognitive tools than a student writing 20-mark strategic evaluation essays in <Link to="/business-studies-tuition-sharjah" className="inline-link">Business Studies</Link> or balancing pro-rata share allotments in <Link to="/accountancy-tuition-sharjah" className="inline-link">Accountancy</Link>.
+                                At <Link to="/academic-excellence" className="inline-link">Nitaq Academy</Link>, we understand that every academic discipline requires a specialized pedagogical approach. A student mastering multi-step calculus problems in <Link to="/maths-tuition-sharjah" className="inline-link">Mathematics</Link> needs different cognitive tools than a student writing 20-mark strategic evaluation essays in <Link to="/business-studies-tuition-sharjah" className="inline-link">Business Studies</Link> or balancing pro-rata share allotments in <Link to="/accountancy-tuition-sharjah" className="inline-link">Accountancy</Link>.
                             </p>
 
                             <p>
@@ -237,7 +237,7 @@ const ComprehensiveSubjectTuitionGuide = () => {
                                 </table>
                             </div>
 
-                            {/* SECTION 5: WHY NITAQ ACADEMY */}
+                            {/* SECTION 5: WHY Nitaq Academy */}
                             <h2>5. Why Families Across Sharjah & Dubai Choose Nitaq Academy</h2>
                             <p>
                                 Achieving sustainable academic growth requires a proven learning ecosystem. Here is why parents trust Nitaq Academy for their children's educational journey:

@@ -32,7 +32,7 @@ const SatCoachingSharjah = () => {
                                 <div className="author-avatar">NA</div>
                                 <div className="meta-text">
                                     <span className="meta-label">Author</span>
-                                    <span className="meta-value">NITAQ ACADEMY Academic Editorial</span>
+                                    <span className="meta-value">Nitaq Academy Academic Editorial</span>
                                 </div>
                             </div>
                             <div className="meta-divider"></div>

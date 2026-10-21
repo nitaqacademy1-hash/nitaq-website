@@ -436,7 +436,7 @@ const SoftwareEngineeringCourse = () => {
                             Software Engineering is one of the most in-demand careers globally, offering unparalleled opportunities for growth, innovation, and high-earning potential. Modern software engineers build applications, websites, enterprise systems, mobile apps, AI-powered solutions, and cloud platforms that shape the digital world.
                         </p>
                         <p style={{ marginBottom: '20px' }}>
-                            At NITAQ Academy in Sharjah, our comprehensive Software Engineering Diploma equips you with the end-to-end skills needed to succeed in the tech industry. This program is designed to transform beginners into job-ready professionals by covering essential topics such as programming fundamentals, software development lifecycles, database management, and system architecture.
+                            At Nitaq Academy in Sharjah, our comprehensive Software Engineering Diploma equips you with the end-to-end skills needed to succeed in the tech industry. This program is designed to transform beginners into job-ready professionals by covering essential topics such as programming fundamentals, software development lifecycles, database management, and system architecture.
                         </p>
                         <p style={{ marginBottom: '20px' }}>
                             Learning software engineering in Sharjah and the UAE opens doors to career opportunities across the GCC and international markets. The demand for skilled developers, backend engineers, and software architects continues to rise as businesses undergo digital transformation. Through practical, hands-on projects, you will learn to write clean code, debug effectively, and utilize modern tools like Git, SQL, and VS Code.
@@ -708,7 +708,7 @@ const SoftwareEngineeringCourse = () => {
                         </a>
                     </div>
                     <div className="cert-box-image">
-                        <img src="/images/whatsapp-img-3.png" alt="NITAQ Academy Software Engineering Certificate" />
+                        <img src="/images/whatsapp-img-3.png" alt="Nitaq Academy Software Engineering Certificate" />
                     </div>
                 </div>
 

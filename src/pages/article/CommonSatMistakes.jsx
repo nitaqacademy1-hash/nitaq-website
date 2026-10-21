@@ -31,7 +31,7 @@ const CommonSatMistakes = () => {
                                 <div className="author-avatar">NA</div>
                                 <div className="meta-text">
                                     <span className="meta-label">Author</span>
-                                    <span className="meta-value">NITAQ ACADEMY Team</span>
+                                    <span className="meta-value">Nitaq Academy Team</span>
                                 </div>
                             </div>
                             <div className="meta-divider"></div>
@@ -96,7 +96,7 @@ const CommonSatMistakes = () => {
 
                             <h2>Why Expert Guidance Matters</h2>
                             <p>
-                                Avoiding these mistakes is much easier when you have experienced mentors identifying your blind spots. At NITAQ ACADEMY, our SPEA-authorized faculty provide diagnostic gap analysis, show you exactly where points are lost, and help you eliminate test-day traps.
+                                Avoiding these mistakes is much easier when you have experienced mentors identifying your blind spots. At Nitaq Academy, our SPEA-authorized faculty provide diagnostic gap analysis, show you exactly where points are lost, and help you eliminate test-day traps.
                             </p>
 
                             <div className="article-inline-cta">

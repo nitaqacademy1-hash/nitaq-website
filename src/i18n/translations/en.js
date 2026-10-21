@@ -60,7 +60,7 @@ const en = {
         heroTag: 'SPEA Approved Training Institute in Sharjah',
         heroTitle: 'Top Training Institute in Sharjah for SAT, IELTS, AI & Professional Courses',
         heroSubtitle:
-            'Advance your career and academic future with expert-led coaching, practical training, and globally recognized programs at NITAQ ACADEMY in Sharjah.',
+            'Advance your career and academic future with expert-led coaching, practical training, and globally recognized programs at Nitaq Academy in Sharjah.',
         courseExplorer: 'Course Explorer',
         slideLabel: 'Go to slide',
         trust: {
@@ -101,8 +101,8 @@ const en = {
         address: 'Abu Khamseen Tower - Office : F103, Floor F1 - Al Majaz 3 - Al Majaz - Sharjah - United Arab Emirates',
         mobileLabel: 'Mobile',
         phoneLabel: 'Telephone',
-        rights: '© {year} NITAQ ACADEMY. All rights reserved.',
-        operatedBy: 'NITAQ ACADEMY is operated by Nitaq Supportive Education Services LLC',
+        rights: '© {year} Nitaq Academy. All rights reserved.',
+        operatedBy: 'Nitaq Academy is operated by Nitaq Supportive Education Services LLC',
         links: {
             academicExcellence: 'Academic Excellence',
             jeeNeet: 'Foundation JEE/NEET',

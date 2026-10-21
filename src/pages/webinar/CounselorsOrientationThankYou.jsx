@@ -19,7 +19,7 @@ export default function CounselorsOrientationThankYou() {
   return (
     <>
       <Helmet>
-        <title>Reservation Confirmed | Counselors Orientation | NITAQ ACADEMY</title>
+        <title>Reservation Confirmed | Counselors Orientation | Nitaq Academy</title>
         <meta name="robots" content="noindex, nofollow" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
       </Helmet>
@@ -56,7 +56,7 @@ export default function CounselorsOrientationThankYou() {
               ))}
             </div>
 
-            <Link to="/" className="w-ty__home" style={{marginTop:'32px', display:'inline-block'}}>← Back to NITAQ ACADEMY</Link>
+            <Link to="/" className="w-ty__home" style={{marginTop:'32px', display:'inline-block'}}>← Back to Nitaq Academy</Link>
           </div>
         </div>
       </div>

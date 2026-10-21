@@ -141,7 +141,7 @@ const FreeDigitalSatDiagnosticArticle = () => {
                 <div className="author-avatar">NA</div>
                 <div className="meta-text">
                   <span className="meta-label">Author</span>
-                  <span className="meta-value">NITAQ Academy Academic Board</span>
+                  <span className="meta-value">Nitaq Academy Academic Board</span>
                 </div>
               </div>
               <div className="meta-divider" />

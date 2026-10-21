@@ -106,8 +106,8 @@ const WhyHiringDigitalMarketingAgency = () => {
             answer: "The UAE is a multicultural nation where both English and Arabic are vital commercial languages. While English dominates many expatriate business interactions, Arabic is critical for reaching government entities, local UAE nationals, and regional GCC buyers. A sophisticated agency creates tailored bilingual campaigns, ensuring ad copy and search keywords resonate authentically across all demographics."
         },
         {
-            question: "How can NITAQ Academy help my internal team or business?",
-            answer: "NITAQ Academy provides industry-leading digital marketing training courses in Sharjah and Dubai. Whether you are an entrepreneur wanting to understand digital strategy, a business owner looking to upskill your internal staff, or a professional seeking Google and Meta certifications, NITAQ Academy delivers hands-on, practical instruction led by seasoned marketing experts."
+            question: "How can Nitaq Academy help my internal team or business?",
+            answer: "Nitaq Academy provides industry-leading digital marketing training courses in Sharjah and Dubai. Whether you are an entrepreneur wanting to understand digital strategy, a business owner looking to upskill your internal staff, or a professional seeking Google and Meta certifications, Nitaq Academy delivers hands-on, practical instruction led by seasoned marketing experts."
         }
     ];
 
@@ -123,7 +123,7 @@ const WhyHiringDigitalMarketingAgency = () => {
                 "mainEntityOfPage": "https://www.nitaqacademy.com/article/why-hiring-digital-marketing-agency-transform-business",
                 "author": {
                     "@type": "Organization",
-                    "name": "NITAQ Academy",
+                    "name": "Nitaq Academy",
                     "url": "https://www.nitaqacademy.com",
                     "sameAs": [
                         "https://www.youtube.com/@NitaqAcademy",
@@ -134,7 +134,7 @@ const WhyHiringDigitalMarketingAgency = () => {
                 },
                 "publisher": {
                     "@type": "Organization",
-                    "name": "NITAQ Academy",
+                    "name": "Nitaq Academy",
                     "url": "https://www.nitaqacademy.com",
                     "sameAs": [
                         "https://www.youtube.com/@NitaqAcademy",
@@ -150,7 +150,7 @@ const WhyHiringDigitalMarketingAgency = () => {
     return (
         <main className="article-details-page">
             <SEO 
-                title="Why Hiring a Digital Marketing Agency Can Transform Your Business | NITAQ Academy UAE"
+                title="Why Hiring a Digital Marketing Agency Can Transform Your Business | Nitaq Academy UAE"
                 description="Discover how hiring a top digital marketing agency in Sharjah & Dubai can transform your business. Complete 2026 guide to SEO, PPC, Meta Ads, AI SEO & ROI."
                 keywords="Digital Marketing Agency Sharjah, Digital Marketing Agency Dubai, Digital Marketing Agency UAE, Best Digital Marketing Agency, Digital Marketing Company Sharjah, Marketing Agency Sharjah, Digital Marketing Services UAE, Digital Marketing Experts Dubai, Digital Marketing Company UAE, SEO Agency Sharjah, SEO Company Dubai, Google Ads Agency UAE, Meta Ads Agency Sharjah, Social Media Marketing Agency UAE, Digital Marketing Agency Near Me, Marketing Agency Near Me, Best Marketing Agency in UAE"
             />
@@ -266,7 +266,7 @@ const WhyHiringDigitalMarketingAgency = () => {
                                 <span style={{ background: 'rgba(255,255,255,0.15)', color: '#bbf7d0', padding: '5px 14px', borderRadius: '20px', fontSize: '0.8rem', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '0.04em' }}>Expert Advisory</span>
                                 <h3 style={{ color: '#ffffff', marginTop: '14px', fontSize: '1.45rem', fontWeight: 800 }}>Ready to Scale Your Digital Revenue in the UAE?</h3>
                                 <p style={{ color: '#e2e8f0', fontSize: '1rem', lineHeight: 1.6, marginBottom: '22px' }}>
-                                    Whether you need full-service agency execution or want to upskill your internal marketing team, NITAQ Academy provides tailored digital marketing strategies and SPEA-certified training.
+                                    Whether you need full-service agency execution or want to upskill your internal marketing team, Nitaq Academy provides tailored digital marketing strategies and SPEA-certified training.
                                 </p>
                                 <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '12px 24px', borderRadius: '10px', textDecoration: 'none', background: '#ffffff', color: '#14532d', fontWeight: 700, boxShadow: '0 4px 12px rgba(0,0,0,0.08)' }}>
                                     Talk to a Digital Marketing Expert <ArrowRight size={16} />
@@ -462,7 +462,7 @@ const WhyHiringDigitalMarketingAgency = () => {
                                 boxShadow: '0 20px 40px rgba(0,0,0,0.15)'
                             }}>
                                 <span style={{ background: 'rgba(255,255,255,0.2)', color: '#ffffff', padding: '4px 12px', borderRadius: '20px', fontSize: '0.8rem', fontWeight: 'bold', textTransform: 'uppercase' }}>Professional Training & Upskilling</span>
-                                <h3 style={{ color: '#ffffff', marginTop: '12px', fontSize: '1.4rem' }}>Master Digital Marketing & AI Tools at NITAQ Academy</h3>
+                                <h3 style={{ color: '#ffffff', marginTop: '12px', fontSize: '1.4rem' }}>Master Digital Marketing & AI Tools at Nitaq Academy</h3>
                                 <p style={{ color: '#dcfce7', fontSize: '1rem', marginBottom: '20px' }}>
                                     Empower your career or upskill your internal company staff with SPEA-certified digital marketing courses in Sharjah & Dubai.
                                 </p>

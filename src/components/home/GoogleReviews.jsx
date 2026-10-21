@@ -161,7 +161,7 @@ const REVIEWS_DATA = [
     timestamp: 90,
     rating: 5,
     tags: ['practical course'],
-    text: 'I had the opportunity to complete the Digital Marketing course at NITAQ Academy, and it was an excellent learning experience. The course was well-structured, practical, and helped me develop valuable digital marketing skills that I could immediately apply.',
+    text: 'I had the opportunity to complete the Digital Marketing course at Nitaq Academy, and it was an excellent learning experience. The course was well-structured, practical, and helped me develop valuable digital marketing skills that I could immediately apply.',
   },
   {
     id: 'anonymous',

@@ -15,10 +15,18 @@ export default function ScrollStory({ c }) {
       <div className="nh-story-inner nh-hero-grid">
         {/* ── Left: Content ── */}
         <div className="nh-hero-content">
-          <p className="nh-eyebrow">
-            <span className="nh-dot" />
-            {c.eyebrow}
-          </p>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap', marginBottom: '8px' }}>
+            <p className="nh-eyebrow" style={{ margin: 0 }}>
+              <span className="nh-dot" />
+              {c.eyebrow}
+            </p>
+            {c.lastUpdated && (
+              <span style={{ display: 'inline-flex', alignItems: 'center', gap: '5px', fontSize: '0.75rem', color: '#86efac', background: 'rgba(34, 197, 94, 0.12)', border: '1px solid rgba(34, 197, 94, 0.3)', padding: '2px 10px', borderRadius: '100px', fontWeight: 600 }}>
+                <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#22c55e' }} />
+                <time dateTime="2026-10-21">{c.lastUpdated}</time>
+              </span>
+            )}
+          </div>
 
           <h1 id="nh-hero-title" className="nh-hero-h1">
             {c.title.map((line, i) => (

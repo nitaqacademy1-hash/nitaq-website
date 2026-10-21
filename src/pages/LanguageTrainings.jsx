@@ -778,6 +778,68 @@ export default function LanguageTrainings() {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section className="lt-faq-section" style={{ padding: '60px 0', background: '#F8FAFC', borderTop: '1px solid #E2E8F0' }}>
+        <div className="container" style={{ maxWidth: '860px', margin: '0 auto' }}>
+          <div className="lt-section-header" style={{ textAlign: 'center', marginBottom: '36px' }}>
+            <p className="lt-eyebrow" style={{ justifyContent: 'center' }}>
+              <span className="nh-dot" />
+              {lang === 'ar' ? 'الأسئلة الشائعة' : 'Frequently Asked Questions'}
+            </p>
+            <h2 style={{ fontSize: '1.8rem', fontWeight: 800, color: '#0F172A' }}>
+              {lang === 'ar' ? 'الأسئلة الشائعة حول دورات اللغات' : 'Language Training FAQs'}
+            </h2>
+          </div>
+
+          <div className="faq-accordion-group" style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+            <details className="faq-accordion" style={{ background: '#FFFFFF', border: '1px solid #E2E8F0', borderRadius: '14px', padding: '16px 20px' }}>
+              <summary style={{ fontWeight: 700, fontSize: '1rem', color: '#0F172A', cursor: 'pointer' }}>
+                {lang === 'ar'
+                  ? 'هل تتوفر برامج تدريب لغوي فعالة وموثوقة للطلاب في الشارقة؟'
+                  : 'Are there effective language training programs available for students in Sharjah?'}
+              </summary>
+              <div className="faq-accordion-content" style={{ marginTop: '10px', color: '#475569', fontSize: '0.92rem', lineHeight: 1.65 }}>
+                <p>
+                  {lang === 'ar'
+                    ? 'نعم، تتوفر برامج تدريب لغوي متقدمة ومعتمدة في الشارقة لدى أكاديمية نطاق (برج أبو خمسين، المجاز 3). تشمل البرامج دورات اللغة الإنجليزية للمحادثة، اللغة العربية (اللهجة الخليجية والعربية الفصحى)، الفرنسية (DELF/DALF)، الألمانية (Goethe-Zertifikat)، والإسبانية. تتميز الفصول بمجموعات مصغرة (5 إلى 8 طلاب) وجداول مرنة تناسب الطلاب والمهنيين.'
+                    : 'Yes. Highly effective, CEFR-aligned language training programs in Sharjah are available at Nitaq Academy (Abu Khamseen Tower, Al Majaz 3). Programs include Spoken English (accent neutrality and presentation fluency), Spoken Arabic (Gulf/Khaleeji and Modern Standard Arabic), French (DELF/DALF), German (Goethe-Zertifikat), and Spanish. Classes feature micro-batches of 5 to 8 students, certified native-speaker educators, and flexible weekend and weekday evening schedules.'}
+                </p>
+              </div>
+            </details>
+
+            <details className="faq-accordion" style={{ background: '#FFFFFF', border: '1px solid #E2E8F0', borderRadius: '14px', padding: '16px 20px' }}>
+              <summary style={{ fontWeight: 700, fontSize: '1rem', color: '#0F172A', cursor: 'pointer' }}>
+                {lang === 'ar'
+                  ? 'ما هي اللغات التي يمكنني تعلمها في أكاديمية نطاق بالشارقة؟'
+                  : 'What languages can I learn at Nitaq Academy in Sharjah?'}
+              </summary>
+              <div className="faq-accordion-content" style={{ marginTop: '10px', color: '#475569', fontSize: '0.92rem', lineHeight: 1.65 }}>
+                <p>
+                  {lang === 'ar'
+                    ? 'تقدم أكاديمية نطاق دورات شاملة في المحادثة باللغات الإنجليزية والعربية والفرنسية والألمانية والإسبانية، بالإضافة إلى برامج الإعداد المعتمدة لاختبارات IELTS وTOEFL وPTE.'
+                    : 'Nitaq Academy offers comprehensive courses in Spoken English, Spoken Arabic, French, German, and Spanish, as well as official test preparation for IELTS, TOEFL, and PTE.'}
+                </p>
+              </div>
+            </details>
+
+            <details className="faq-accordion" style={{ background: '#FFFFFF', border: '1px solid #E2E8F0', borderRadius: '14px', padding: '16px 20px' }}>
+              <summary style={{ fontWeight: 700, fontSize: '1rem', color: '#0F172A', cursor: 'pointer' }}>
+                {lang === 'ar'
+                  ? 'هل دورات اللغات في أكاديمية نطاق معتمدة من هيئة الشارقة للتعليم الخاص (SPEA)؟'
+                  : 'Are language courses at Nitaq Academy SPEA authorized?'}
+              </summary>
+              <div className="faq-accordion-content" style={{ marginTop: '10px', color: '#475569', fontSize: '0.92rem', lineHeight: 1.65 }}>
+                <p>
+                  {lang === 'ar'
+                    ? 'نعم، أكاديمية نطاق مرخصة ومعتمدة من هيئة الشارقة للتعليم الخاص (SPEA). يحصل المتدرب على شهادة إتمام تدريبية معتمدة وقابلة للتصديق الرسمي.'
+                    : 'Yes, Nitaq Academy is authorized by the Sharjah Private Education Authority (SPEA). Students receive official attested training certificates upon level completion.'}
+                </p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
       {/* Free Diagnostic Assessment CTA */}
       <section className="lt-cta-section">
         <div className="container">

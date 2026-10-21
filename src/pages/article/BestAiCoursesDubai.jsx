@@ -110,7 +110,7 @@ const BestAiCoursesDubai = () => {
                             </ul>
 
                             <p>
-                                At NITAQ ACADEMY, we have designed our <Link to="/ai-course" className="text-link">AI Training Program</Link> to meet these exact standards. Our curriculum is continuously updated to reflect the latest breakthroughs in the field, ensuring our students are always a step ahead.
+                                At Nitaq Academy, we have designed our <Link to="/ai-course" className="text-link">AI Training Program</Link> to meet these exact standards. Our curriculum is continuously updated to reflect the latest breakthroughs in the field, ensuring our students are always a step ahead.
                             </p>
 
                             <div className="featured-quote-block">
@@ -140,9 +140,9 @@ const BestAiCoursesDubai = () => {
                                 </div>
                             </div>
 
-                            <h2>Why NITAQ ACADEMY is the Choice for AI in the UAE</h2>
+                            <h2>Why Nitaq Academy is the Choice for AI in the UAE</h2>
                             <p>
-                                While many institutes offer generic training, NITAQ ACADEMY provides a localized, practical approach. We understand the specific needs of the Dubai/Sharjah market. Our <Link to="/ai-course" className="text-link">AI Course page</Link> provides a detailed breakdown of how we help professionals from non-technical backgrounds master AI tools.
+                                While many institutes offer generic training, Nitaq Academy provides a localized, practical approach. We understand the specific needs of the Dubai/Sharjah market. Our <Link to="/ai-course" className="text-link">AI Course page</Link> provides a detailed breakdown of how we help professionals from non-technical backgrounds master AI tools.
                             </p>
                             
                             <p>
@@ -165,7 +165,7 @@ const BestAiCoursesDubai = () => {
                         <aside className="article-sidebar">
                             <div className="sidebar-static-card">
                                 <h3>Quick Enroll</h3>
-                                <p>Start your AI journey with NITAQ ACADEMY's expert-led program.</p>
+                                <p>Start your AI journey with Nitaq Academy's expert-led program.</p>
                                 <Link to="/ai-course" className="btn btn-primary w-100">Join the AI Program</Link>
                             </div>
 

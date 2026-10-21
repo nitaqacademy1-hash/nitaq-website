@@ -109,7 +109,7 @@ const DigitalMarketingSeoGuide = () => {
                             <div className="whatsapp-cta-section">
                                 <div className="cta-content">
                                     <h3>Start Your Digital Marketing Journey Today</h3>
-                                    <p>Are you ready to become a digital marketing expert? Join NITAQ Academy's offline classes in Sharjah or live online sessions from anywhere in the UAE.</p>
+                                    <p>Are you ready to become a digital marketing expert? Join Nitaq Academy's offline classes in Sharjah or live online sessions from anywhere in the UAE.</p>
                                 </div>
                                 <a 
                                     href="https://wa.me/971527569908?text=I'm%20interested%20in%20the%20Digital%20Marketing%20course" 
@@ -123,7 +123,7 @@ const DigitalMarketingSeoGuide = () => {
 
                             <h2>Start Your Digital Marketing Journey Today</h2>
                             <p>
-                                Are you ready to become a digital marketing expert? Whether you want to attend offline classes in <strong>Sharjah</strong> or join live online sessions from <strong>Dubai</strong> or anywhere in the <strong>UAE</strong>, NITAQ Academy offers the perfect learning path for you.
+                                Are you ready to become a digital marketing expert? Whether you want to attend offline classes in <strong>Sharjah</strong> or join live online sessions from <strong>Dubai</strong> or anywhere in the <strong>UAE</strong>, Nitaq Academy offers the perfect learning path for you.
                             </p>
                             <p>
                                 Our program is designed to take you from a beginner to a strategic thinker capable of executing high-performing campaigns across SEO, Google Ads, and Meta Ads. 

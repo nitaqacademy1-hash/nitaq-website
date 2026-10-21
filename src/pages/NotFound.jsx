@@ -14,7 +14,7 @@ const NotFound = () => {
     return (
         <main style={{ minHeight: '60vh', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '120px 20px 60px' }}>
             <Helmet>
-                <title>{t('notFound.title')} | NITAQ ACADEMY</title>
+                <title>{t('notFound.title')} | Nitaq Academy</title>
                 <meta name="robots" content="noindex" />
             </Helmet>
             <div style={{ textAlign: 'center', maxWidth: '480px' }}>

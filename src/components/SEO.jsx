@@ -46,19 +46,60 @@ const SEO = ({ title, description, faqSchema, ogTitle, ogDescription, ogImage, n
   const shouldNoIndex = noIndex || isUntranslatedArabic || NOINDEX_PATHS.some((rule) => rule.test(basePath));
   const schemas = [
     {
-      '@type': ['EducationalOrganization', 'LocalBusiness'], '@id': `${SITE_URL}/#organization`, name: 'Nitaq Academy', legalName: 'Nitaq Supportive Education Services LLC', url: `${SITE_URL}/`,
-      logo: { '@type': 'ImageObject', url: `${SITE_URL}/images/logo1.webp` }, telephone: '+971527569908', email: 'info@nitaqacademy.com',
-      address: { '@type': 'PostalAddress', streetAddress: 'Abu Khamseen Tower - Office : F103, Floor F1 - Al Majaz 3 - Al Majaz', addressLocality: 'Sharjah', addressRegion: 'Sharjah', addressCountry: 'United Arab Emirates' },
-      areaServed: { '@type': 'City', name: 'Sharjah' },
+      '@type': ['EducationalOrganization', 'LocalBusiness'],
+      '@id': `${SITE_URL}/#organization`,
+      name: 'Nitaq Academy',
+      legalName: 'Nitaq Supportive Education Services LLC',
+      url: `${SITE_URL}/`,
+      description: isAr
+        ? 'أكاديمية نطاق للتدريب والتعليم في الشارقة (المجاز 3) ودبي - معهد معتمد من هيئة الشارقة للتعليم الخاص (SPEA) لتحضير اختبارات SAT الرقمية، دروس تقوية المناهج المدرسية، دورات اللغات والشهادات المهنية.'
+        : 'SPEA-authorized educational training institute in Sharjah (Al Majaz 3) and Dubai, UAE. Specializing in diagnostic-led Digital SAT preparation, small-batch school subject tuition (IGCSE, A-Level, IB, CBSE), language training, and professional corporate certifications.',
+      logo: { '@type': 'ImageObject', url: `${SITE_URL}/images/logo1.webp` },
+      telephone: '+971527569908',
+      email: 'info@nitaqacademy.com',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Abu Khamseen Tower - Office : F103, Floor F1 - Al Majaz 3 - Al Majaz',
+        addressLocality: 'Sharjah',
+        addressRegion: 'Sharjah',
+        addressCountry: 'United Arab Emirates'
+      },
+      areaServed: [
+        { '@type': 'City', name: 'Sharjah' },
+        { '@type': 'City', name: 'Dubai' },
+        { '@type': 'Country', name: 'United Arab Emirates' }
+      ],
       sameAs: SOCIAL_PROFILES,
-      hasOfferCatalog: basePath === '/' ? { '@type': 'OfferCatalog', name: 'Core programmes', itemListElement: [
-        { '@type': 'Offer', itemOffered: { '@type': 'Course', name: 'Digital SAT Preparation' }, url: `${SITE_URL}/sat-preparation-sharjah` },
-        { '@type': 'Offer', itemOffered: { '@type': 'Course', name: 'Language Training' }, url: `${SITE_URL}/language-trainings` },
-        { '@type': 'Offer', itemOffered: { '@type': 'Course', name: 'Subject Tuition' }, url: `${SITE_URL}/academic-excellence` }
-      ] } : undefined
+      hasOfferCatalog: basePath === '/' ? {
+        '@type': 'OfferCatalog',
+        name: 'Core programmes',
+        itemListElement: [
+          { '@type': 'Offer', itemOffered: { '@type': 'Course', name: 'Digital SAT Preparation' }, url: `${SITE_URL}/sat-preparation-sharjah` },
+          { '@type': 'Offer', itemOffered: { '@type': 'Course', name: 'Language Training' }, url: `${SITE_URL}/language-trainings` },
+          { '@type': 'Offer', itemOffered: { '@type': 'Course', name: 'Subject Tuition' }, url: `${SITE_URL}/academic-excellence` }
+        ]
+      } : undefined
     },
-    { '@type': 'WebSite', '@id': `${SITE_URL}/#website`, url: `${SITE_URL}/`, name: 'Nitaq Academy', publisher: { '@id': `${SITE_URL}/#organization` }, inLanguage: lang },
-    { '@type': 'WebPage', '@id': canonical, url: canonical, name: data.title, description: data.description, isPartOf: { '@id': `${SITE_URL}/#website` }, about: { '@id': `${SITE_URL}/#organization` }, inLanguage: lang }
+    {
+      '@type': 'WebSite',
+      '@id': `${SITE_URL}/#website`,
+      url: `${SITE_URL}/`,
+      name: 'Nitaq Academy',
+      publisher: { '@id': `${SITE_URL}/#organization` },
+      inLanguage: lang
+    },
+    {
+      '@type': 'WebPage',
+      '@id': canonical,
+      url: canonical,
+      name: data.title,
+      description: data.description,
+      isPartOf: { '@id': `${SITE_URL}/#website` },
+      about: { '@id': `${SITE_URL}/#organization` },
+      inLanguage: lang,
+      datePublished: data.datePublished || '2026-01-15T08:00:00+04:00',
+      dateModified: data.dateModified || '2026-10-21T12:00:00+04:00'
+    }
   ];
   // Breadcrumb markup needs to match the visible trail, which varies across
   // article and course templates. Do not infer a hierarchy from URL segments.

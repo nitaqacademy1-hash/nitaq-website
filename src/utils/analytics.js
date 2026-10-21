@@ -1,5 +1,5 @@
 /**
- * Reusable Analytics Utility for NITAQ ACADEMY
+ * Reusable Analytics Utility for Nitaq Academy
  * Standardizes event tracking across the entire platform.
  */
 

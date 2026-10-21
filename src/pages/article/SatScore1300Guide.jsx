@@ -31,7 +31,7 @@ const SatScore1300Guide = () => {
                                 <div className="author-avatar">NA</div>
                                 <div className="meta-text">
                                     <span className="meta-label">Author</span>
-                                    <span className="meta-value">NITAQ ACADEMY Academic Editorial</span>
+                                    <span className="meta-value">Nitaq Academy Academic Editorial</span>
                                 </div>
                             </div>
                             <div className="meta-divider"></div>
@@ -39,7 +39,7 @@ const SatScore1300Guide = () => {
                                 <Calendar size={18} className="meta-icon" />
                                 <div className="meta-text">
                                     <span className="meta-label">Updated</span>
-                                    <span className="meta-value">2026 Edition</span>
+                                    <time dateTime="2026-10-18" className="meta-value">October 18, 2026</time>
                                 </div>
                             </div>
                         </div>

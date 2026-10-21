@@ -144,7 +144,7 @@ const ImproveEnglishBetterJobs = () => {
 
                             <div className="article-footer-cta">
                                 <h2>Don't Let Language Hold You Back</h2>
-                                <p>Start your journey toward career excellence today with NITAQ ACADEMY.</p>
+                                <p>Start your journey toward career excellence today with Nitaq Academy.</p>
                                 <div className="btn-group">
                                     <Link to="/spoken-english" className="btn btn-primary btn-large">Join Spoken English Course</Link>
                                     <a href="https://wa.me/971527569908" className="btn btn-whatsapp btn-large">

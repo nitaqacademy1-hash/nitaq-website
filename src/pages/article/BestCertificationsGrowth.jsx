@@ -88,7 +88,7 @@ const BestCertificationsGrowth = () => {
 
                             <h2>Why Professional Certifications in Sharjah and UAE Matter</h2>
                             <p>
-                                Employers in the UAE look for three things: local relevance, proven expertise, and the ability to handle modern challenges like AI and new tax regulations. A certification from a recognized **training institute in Sharjah** like NITAQ ACADEMY proves that you have all three.
+                                Employers in the UAE look for three things: local relevance, proven expertise, and the ability to handle modern challenges like AI and new tax regulations. A certification from a recognized **training institute in Sharjah** like Nitaq Academy proves that you have all three.
                             </p>
 
                             <div className="certs-grid-premium">
@@ -185,12 +185,12 @@ const BestCertificationsGrowth = () => {
 
                             <h2>Conclusion</h2>
                             <p>
-                                Investing in **professional certifications UAE** is the highest return investment you can make in your own future. Whether you're starting your journey in Sharjah or leveling up in Dubai, NITAQ ACADEMY is here to provide the expertise and support you need to succeed.
+                                Investing in **professional certifications UAE** is the highest return investment you can make in your own future. Whether you're starting your journey in Sharjah or leveling up in Dubai, Nitaq Academy is here to provide the expertise and support you need to succeed.
                             </p>
 
                             <div className="article-action-banner">
                                 <h3>Ready to Build Your Professional Profile?</h3>
-                                <p>Join the thousands of professionals who have accelerated their careers with NITAQ ACADEMY.</p>
+                                <p>Join the thousands of professionals who have accelerated their careers with Nitaq Academy.</p>
                                 <div className="action-btns">
                                     <Link to="/professional-certifications" className="btn btn-primary">Browse All Certifications</Link>
                                     <a href="tel:+971527569908" className="btn btn-outline">Free Skill Assessment</a>

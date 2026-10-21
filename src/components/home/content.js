@@ -3,6 +3,7 @@ export const contact = { phone: '+971527569908', mobile: '+971527569908', email:
 export const homeCopy = {
   en: {
     eyebrow: 'EDUCATION IN AL MAJAZ 3, SHARJAH', title: ['SAT Preparation,', 'School Tuition &', 'Language Training in Sharjah'],
+    lastUpdated: 'Updated: October 2026 • 2026–2027 Academic Year',
     intro: 'Build academic confidence with structured exam preparation, personalised tutoring and practical language training at Nitaq Academy in Al Majaz 3, Sharjah.',
     explore: 'Explore Our Programs', admissions: 'Speak with Admissions', call: 'Call Admissions', book: 'Start Free SAT Diagnostic', view: 'View Programs',
     trust: ['Diagnostic-led guidance', 'Experienced tutors', 'Small-group learning'],
@@ -110,6 +111,7 @@ export const homeCopy = {
   },
   ar: {
     eyebrow: 'التعليم في المجاز 3، الشارقة', title: ['التحضير لاختبار SAT،', 'الدروس المدرسية و', 'تدريب اللغات في الشارقة'],
+    lastUpdated: 'آخر تحديث: أكتوبر 2026 • العام الأكاديمي 2026–2027',
     intro: 'ابنِ ثقتك الأكاديمية عبر التحضير المنظّم للاختبارات والدروس المخصصة والتدريب العملي على اللغات في أكاديمية نطاق بالمجاز 3، الشارقة.',
     explore: 'استكشف برامجنا', admissions: 'تحدث مع القبول', call: 'اتصل بالقبول', book: 'ابدأ تقييم SAT المجاني', view: 'عرض البرامج', trust: ['إرشاد يبدأ بالتقييم', 'مدرسون ذوو خبرة', 'مجموعات صغيرة'], highlights: [['SAT الرقمي', 'تحضير مركّز'], ['المواد الدراسية', 'دعم أكاديمي'], ['المجاز 3', 'الشارقة، الإمارات']],
     journey: 'من الإمكانات إلى التقدّم', scroll: 'مرّر للاستكشاف', skip: 'انتقل إلى البرامج', start: 'فصلك القادم يبدأ هنا.',

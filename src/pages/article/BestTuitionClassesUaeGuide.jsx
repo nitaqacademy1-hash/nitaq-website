@@ -84,7 +84,7 @@ const BestTuitionClassesUaeGuide = () => {
         },
         {
             question: "What is the difference between a home tutor and a coaching institute in the UAE?",
-            answer: "A home tutor provides one-on-one instruction in your residence, offering customized attention and convenience, though quality depends entirely on the individual tutor. A licensed tuition center (such as NITAQ Academy) operates within structured educational facilities authorized by SPEA or KHDA, offering vetted subject specialists, small peer group motivation, and structured mock exam series at cost-effective rates."
+            answer: "A home tutor provides one-on-one instruction in your residence, offering customized attention and convenience, though quality depends entirely on the individual tutor. A licensed tuition center (such as Nitaq Academy) operates within structured educational facilities authorized by SPEA or KHDA, offering vetted subject specialists, small peer group motivation, and structured mock exam series at cost-effective rates."
         },
         {
             question: "Are group tuition classes better than 1-on-1 tutoring?",
@@ -127,8 +127,8 @@ const BestTuitionClassesUaeGuide = () => {
             answer: "Yes, transitioning between different school systems—such as moving from a CBSE school to an IGCSE/IB program—can be challenging. Specialized bridge tuition helps students catch up on prerequisite concepts, master unfamiliar examination styles, and adapt smoothly to new grading criteria."
         },
         {
-            question: "How does NITAQ Academy support student learning in Sharjah and Dubai?",
-            answer: "NITAQ Academy is a SPEA-licensed training institute offering comprehensive academic support across Sharjah, Dubai, and the UAE. Combining expert subject tutors, small class sizes, structured curriculum maps, and state-of-the-art learning facilities, NITAQ Academy provides specialized tuition for school subjects, language programs (Arabic, English), professional certifications, and competitive exam preparation."
+            question: "How does Nitaq Academy support student learning in Sharjah and Dubai?",
+            answer: "Nitaq Academy is a SPEA-licensed training institute offering comprehensive academic support across Sharjah, Dubai, and the UAE. Combining expert subject tutors, small class sizes, structured curriculum maps, and state-of-the-art learning facilities, Nitaq Academy provides specialized tuition for school subjects, language programs (Arabic, English), professional certifications, and competitive exam preparation."
         }
     ];
 
@@ -144,7 +144,7 @@ const BestTuitionClassesUaeGuide = () => {
                 "mainEntityOfPage": "https://www.nitaqacademy.com/article/complete-guide-best-tuition-classes-dubai-sharjah-uae",
                 "author": {
                     "@type": "Organization",
-                    "name": "NITAQ Academy",
+                    "name": "Nitaq Academy",
                     "url": "https://www.nitaqacademy.com",
                     "sameAs": [
                         "https://www.youtube.com/@NitaqAcademy",
@@ -155,7 +155,7 @@ const BestTuitionClassesUaeGuide = () => {
                 },
                 "publisher": {
                     "@type": "Organization",
-                    "name": "NITAQ Academy",
+                    "name": "Nitaq Academy",
                     "url": "https://www.nitaqacademy.com",
                     "sameAs": [
                         "https://www.youtube.com/@NitaqAcademy",
@@ -284,7 +284,7 @@ const BestTuitionClassesUaeGuide = () => {
                                 <span style={{ background: 'rgba(255,255,255,0.15)', color: '#bbf7d0', padding: '5px 14px', borderRadius: '20px', fontSize: '0.8rem', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '0.04em' }}>Academic Guidance</span>
                                 <h3 style={{ color: '#ffffff', marginTop: '14px', fontSize: '1.45rem', fontWeight: 800 }}>Looking for Expert Tuition Support in Sharjah or Dubai?</h3>
                                 <p style={{ color: '#e2e8f0', fontSize: '1rem', lineHeight: 1.6, marginBottom: '22px' }}>
-                                    NITAQ Academy provides SPEA-licensed academic coaching, language programs, and expert tuition for school subjects. Book a free student assessment today.
+                                    Nitaq Academy provides SPEA-licensed academic coaching, language programs, and expert tuition for school subjects. Book a free student assessment today.
                                 </p>
                                 <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '12px 24px', borderRadius: '10px', textDecoration: 'none', background: '#ffffff', color: '#14532d', fontWeight: 700, boxShadow: '0 4px 12px rgba(0,0,0,0.08)' }}>
                                     Book a Free Academic Assessment <ArrowRight size={16} />
@@ -475,7 +475,7 @@ const BestTuitionClassesUaeGuide = () => {
                                 boxShadow: '0 20px 40px rgba(0,0,0,0.15)'
                             }}>
                                 <span style={{ background: 'rgba(255,255,255,0.2)', color: '#ffffff', padding: '4px 12px', borderRadius: '20px', fontSize: '0.8rem', fontWeight: 'bold', textTransform: 'uppercase' }}>Academic Excellence</span>
-                                <h3 style={{ color: '#ffffff', marginTop: '12px', fontSize: '1.4rem' }}>Boost Your Exam Grades with NITAQ Academy</h3>
+                                <h3 style={{ color: '#ffffff', marginTop: '12px', fontSize: '1.4rem' }}>Boost Your Exam Grades with Nitaq Academy</h3>
                                 <p style={{ color: '#dcfce7', fontSize: '1rem', marginBottom: '20px' }}>
                                     SPEA-certified training institute in Sharjah offering language mastery, STEM support, and specialized exam coaching.
                                 </p>

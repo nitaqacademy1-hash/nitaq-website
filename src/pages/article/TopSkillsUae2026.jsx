@@ -28,8 +28,8 @@ const TopSkillsUae2026 = () => {
             answer: "To future-proof your career, focus on building a 'T-shaped' skill set: deep expertise in one area (like Finance or HR) and broad literacy in emerging technologies like AI and Data Analytics."
         },
         {
-            question: "Does NITAQ ACADEMY provide certification for these skills?",
-            answer: "Yes, NITAQ ACADEMY offers SPEA-approved certifications in AI, Marketing, HR, and Finance, designed specifically for the UAE market requirements."
+            question: "Does Nitaq Academy provide certification for these skills?",
+            answer: "Yes, Nitaq Academy offers SPEA-approved certifications in AI, Marketing, HR, and Finance, designed specifically for the UAE market requirements."
         }
     ];
 
@@ -180,12 +180,12 @@ const TopSkillsUae2026 = () => {
                                 The **top skills UAE 2026** represent a blend of high-tech proficiency and timeless human capability. The best time to start learning was yesterday; the second best time is today.
                             </p>
                             <p>
-                                NITAQ ACADEMY is dedicated to providing the residents of Sharjah and the UAE with the tools they need to lead. From academic excellence with SAT prep to professional mastery in AI and Marketing, we are your bridge to 2026 success.
+                                Nitaq Academy is dedicated to providing the residents of Sharjah and the UAE with the tools they need to lead. From academic excellence with SAT prep to professional mastery in AI and Marketing, we are your bridge to 2026 success.
                             </p>
 
                             <div className="article-footer-cta">
                                 <h2>Ready to Take the Next Step?</h2>
-                                <p>Join thousands of successful alumni at NITAQ ACADEMY.</p>
+                                <p>Join thousands of successful alumni at Nitaq Academy.</p>
                                 <div className="btn-group">
                                     <Link to="/courses" className="btn btn-primary btn-large">Browse All Courses</Link>
                                     <a href="https://wa.me/971527569908" className="btn btn-whatsapp btn-large">

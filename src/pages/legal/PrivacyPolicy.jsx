@@ -28,7 +28,7 @@ const PrivacyPolicy = () => {
                         <li>Website usage</li>
                         <li>Offline and online enrollment</li>
                         <li>Communication channels (email, phone, WhatsApp, social media)</li>
-                        <li>Third-party integrations used by NITAQ ACADEMY</li>
+                        <li>Third-party integrations used by Nitaq Academy</li>
                     </ul>
                 </>
             )
@@ -81,7 +81,7 @@ const PrivacyPolicy = () => {
             title: "7. Contact & Data Access Requests",
             content: (
                 <div style={{ background: '#f9fafb', padding: '20px', borderRadius: '12px' }}>
-                    <strong>NITAQ ACADEMY (Nitaq Supportive Education Services LLC)</strong><br />
+                    <strong>Nitaq Academy (Nitaq Supportive Education Services LLC)</strong><br />
                     Abu Khamseen Tower - Office : F103, Floor F1 - Al Majaz 3 - Al Majaz - Sharjah - United Arab Emirates<br />
                     📧 info@nitaqacademy.com | 📞 +971 52 756 9908
                 </div>
@@ -179,7 +179,7 @@ const PrivacyPolicy = () => {
             <div className="container">
                 <div style={{ maxWidth: '850px', margin: '0 auto', textAlign: isAr ? 'right' : 'left' }}>
                     <h1 style={{ color: '#2e7d32', marginBottom: '20px' }}>
-                        {isAr ? 'سياسة الخصوصية وحماية البيانات – أكاديمية نطاق' : 'Privacy Policy – NITAQ ACADEMY'}
+                        {isAr ? 'سياسة الخصوصية وحماية البيانات – أكاديمية نطاق' : 'Privacy Policy – Nitaq Academy'}
                     </h1>
                     <p style={{ color: '#6b7280', marginBottom: '40px' }}>
                         {isAr ? 'تاريخ السريان: 26 مارس 2026' : 'Effective Date: March 26, 2026'}
@@ -188,7 +188,7 @@ const PrivacyPolicy = () => {
                     <p style={{ marginBottom: '30px', lineHeight: '1.8' }}>
                         {isAr
                             ? 'تحترم أكاديمية نطاق ("الأكاديمية" أو "نحن") خصوصيتك وتلتزم التزاماً كاملاً بحماية بياناتك الشخصية وحقوقك الرقمية وفق القوانين والأنظمة المعمول بها في دولة الإمارات العربية المتحدة. توضح هذه السياسة كيفية جمع بياناتك واستخدامها وحمايتها عند تصفح موقعنا أو التسجيل في برامجنا التدريبية.'
-                            : 'NITAQ ACADEMY (“Company”, “we”, “our”, or “us”) respects your privacy and is committed to protecting your personal data. This Privacy Policy explains in detail how we collect, use, store, disclose, and safeguard your information when you visit our website, enroll in our programs, or interact with us.'}
+                            : 'Nitaq Academy (“Company”, “we”, “our”, or “us”) respects your privacy and is committed to protecting your personal data. This Privacy Policy explains in detail how we collect, use, store, disclose, and safeguard your information when you visit our website, enroll in our programs, or interact with us.'}
                     </p>
                     <p style={{ marginBottom: '40px', lineHeight: '1.8', fontWeight: 500 }}>
                         {isAr

@@ -61,8 +61,8 @@ const DigitalSatPreparationGuide = () => {
             answer: "Most high school students need between 8 to 12 weeks of structured preparation (approximately 60–100 hours of study including conceptual coaching, practice sets, and full-length adaptive mock tests). Students starting with larger baseline gaps (e.g., aiming for a 250+ point jump) benefit from a 16-week comprehensive roadmap."
         },
         {
-            question: "How is NITAQ Academy's SAT Coaching in Sharjah and Dubai structured?",
-            answer: "NITAQ Academy provides SPEA-authorized SAT preparation available both in-person at our Al Majaz 3 Sharjah campus and via interactive live online batches across Dubai and the UAE. Our program features diagnostic testing, Desmos shortcut mastery, customized error logs, micro-batches (5–8 students), and unlimited full-length adaptive proctored simulations."
+            question: "How is Nitaq Academy's SAT Coaching in Sharjah and Dubai structured?",
+            answer: "Nitaq Academy provides SPEA-authorized SAT preparation available both in-person at our Al Majaz 3 Sharjah campus and via interactive live online batches across Dubai and the UAE. Our program features diagnostic testing, Desmos shortcut mastery, customized error logs, micro-batches (5–8 students), and unlimited full-length adaptive proctored simulations."
         },
         {
             question: "When are the upcoming SAT test dates in UAE for 2026?",
@@ -371,7 +371,7 @@ const DigitalSatPreparationGuide = () => {
                                     The Digital SAT Math section tests four distinct areas: <strong>Algebra (35%)</strong>, <strong>Advanced Math (35%)</strong>, <strong>Problem-Solving & Data Analysis (15%)</strong>, and <strong>Geometry & Trigonometry (15%)</strong>.
                                 </p>
                                 <p>
-                                    The secret weapon on the Digital SAT is the <strong>built-in Desmos graphing calculator</strong>. At <Link to="/sat-preparation-sharjah">NITAQ Academy</Link>, our Desmos SAT training teaches students to solve up to 40% of the entire Math section using rapid graphing shortcuts, eliminating lengthy algebraic manipulation and avoiding common calculation errors.
+                                    The secret weapon on the Digital SAT is the <strong>built-in Desmos graphing calculator</strong>. At <Link to="/sat-preparation-sharjah">Nitaq Academy</Link>, our Desmos SAT training teaches students to solve up to 40% of the entire Math section using rapid graphing shortcuts, eliminating lengthy algebraic manipulation and avoiding common calculation errors.
                                 </p>
 
                                 <div style={{ background: '#f1f5f9', border: '1px solid #cbd5e1', borderRadius: '12px', padding: '24px', margin: '24px 0' }}>
@@ -519,7 +519,7 @@ const DigitalSatPreparationGuide = () => {
                                         <p>Students often repeat the same mistakes without understanding the underlying grammar rule or algebraic logic. Unsupervised self-study lacks proctored adaptive simulation tools and expert accountability.</p>
                                     </div>
                                     <div className="strategy-card">
-                                        <h3>NITAQ Academy Coaching Advantage</h3>
+                                        <h3>Nitaq Academy Coaching Advantage</h3>
                                         <p>SPEA-authorized expert mentorship, small micro-batches (5–8 students), personalized diagnostic gap analysis, specialized Desmos shortcut training, and unlimited adaptive mock test simulations with 1-on-1 review sessions.</p>
                                     </div>
                                 </div>
@@ -607,7 +607,7 @@ const DigitalSatPreparationGuide = () => {
                                     Ready to Achieve a 1500+ on Your Digital SAT?
                                 </h3>
                                 <p style={{ fontSize: '1.05rem', opacity: 0.95, maxWidth: '650px', margin: '0 auto 24px', lineHeight: '1.6' }}>
-                                    Join NITAQ Academy’s top-rated Digital SAT prep program. Get SPEA-authorized faculty mentorship, personalized diagnostic assessments, Desmos shortcut masterclasses, and full adaptive test simulations in Sharjah & Dubai.
+                                    Join Nitaq Academy’s top-rated Digital SAT prep program. Get SPEA-authorized faculty mentorship, personalized diagnostic assessments, Desmos shortcut masterclasses, and full adaptive test simulations in Sharjah & Dubai.
                                 </p>
                                 <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap' }}>
                                     <Link 

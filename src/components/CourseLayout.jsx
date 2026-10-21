@@ -349,7 +349,7 @@ function getCourseVisuals(title = '', customImage = null, customBadgeTitle = nul
   if (customImage) {
     return {
       heroImage: customImage,
-      eyebrow: customEyebrow || 'NITAQ ACADEMY · EXPERT GUIDANCE · PROVEN PROGRESS',
+      eyebrow: customEyebrow || 'Nitaq Academy · EXPERT GUIDANCE · PROVEN PROGRESS',
       badgeTitle: customBadgeTitle || 'Verified Curriculum',
       badgeSubtitle: customBadgeSubtitle || 'Structured. Effective. Results-driven.',
       badgeIcon: 'award'
@@ -637,7 +637,7 @@ function getCourseVisuals(title = '', customImage = null, customBadgeTitle = nul
   // Default fallback
   return {
     heroImage: '/images/course_academic_tuition.webp',
-    eyebrow: 'NITAQ ACADEMY · EXPERT GUIDANCE · PROVEN PROGRESS',
+    eyebrow: 'Nitaq Academy · EXPERT GUIDANCE · PROVEN PROGRESS',
     badgeTitle: 'Academic Excellence',
     badgeSubtitle: 'Structured. Effective. Results-driven.',
     badgeIcon: 'award'
@@ -747,6 +747,13 @@ const CourseLayout = ({
           <div className="sat-hero-content">
             <div className="sat-hero-eyebrow">
               {effectiveEyebrow}
+            </div>
+
+            <div className="sat-hero-updated-pill" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '0.8rem', color: '#166534', background: '#dcfce7', padding: '4px 12px', borderRadius: '100px', fontWeight: 700, margin: '6px 0 14px', width: 'fit-content', border: '1px solid #bbf7d0' }}>
+              <Calendar size={13} />
+              <time dateTime="2026-10-21">
+                {isAr ? 'محدث للعام الأكاديمي 2026–2027 (أكتوبر 2026)' : 'Updated: October 2026 • 2026–2027 Academic Session'}
+              </time>
             </div>
 
             <h1 className="sat-hero-heading">

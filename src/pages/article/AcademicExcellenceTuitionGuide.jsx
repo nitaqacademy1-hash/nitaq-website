@@ -66,7 +66,7 @@ const AcademicExcellenceTuitionGuide = () => {
                             </p>
 
                             <p>
-                                At <Link to="/academic-excellence" className="inline-link">NITAQ Academy</Link>, our <strong>Academic Excellence Program</strong> is tailored to help students from Grade 1 to Grade 12 bridge learning gaps, master core disciplines, and excel in both school evaluations and international board examinations across Sharjah, Dubai, and the wider UAE.
+                                At <Link to="/academic-excellence" className="inline-link">Nitaq Academy</Link>, our <strong>Academic Excellence Program</strong> is tailored to help students from Grade 1 to Grade 12 bridge learning gaps, master core disciplines, and excel in both school evaluations and international board examinations across Sharjah, Dubai, and the wider UAE.
                             </p>
 
                             <div className="course-overview-box">
@@ -136,7 +136,7 @@ const AcademicExcellenceTuitionGuide = () => {
                             {/* SCIENCE TUITION SECTION */}
                             <h2>2. Science Tutors Dubai & Physics Chemistry Biology Tuition Sharjah</h2>
                             <p>
-                                Science requires a dual mastery of theoretical laws and practical analytical applications. At NITAQ Academy, our network of experienced <strong>Science Tutors Dubai</strong> and <strong>Physics Chemistry Biology Tuition Sharjah</strong> empowers students to visualize abstract scientific laws and excel in school labs and written examinations.
+                                Science requires a dual mastery of theoretical laws and practical analytical applications. At Nitaq Academy, our network of experienced <strong>Science Tutors Dubai</strong> and <strong>Physics Chemistry Biology Tuition Sharjah</strong> empowers students to visualize abstract scientific laws and excel in school labs and written examinations.
                             </p>
 
                             <h3>Physics Tuition (Sharjah, Dubai & Online)</h3>
@@ -197,7 +197,7 @@ const AcademicExcellenceTuitionGuide = () => {
                             </p>
 
                             <p>
-                                NITAQ Academy offers the most comprehensive <strong>Arabic Classes Sharjah</strong> and dedicated <strong>Arabic Tutors Dubai</strong> for every learning level:
+                                Nitaq Academy offers the most comprehensive <strong>Arabic Classes Sharjah</strong> and dedicated <strong>Arabic Tutors Dubai</strong> for every learning level:
                             </p>
 
                             <ul className="course-features-list">
@@ -270,7 +270,7 @@ const AcademicExcellenceTuitionGuide = () => {
                                 </table>
                             </div>
 
-                            <h2>6. Grade-by-Grade Academic Roadmaps at NITAQ Academy</h2>
+                            <h2>6. Grade-by-Grade Academic Roadmaps at Nitaq Academy</h2>
                             <p>
                                 Every stage of a child’s academic journey presents unique milestones:
                             </p>
@@ -292,7 +292,7 @@ const AcademicExcellenceTuitionGuide = () => {
 
                             <h2>7. Why Parents & Students Across Dubai & Sharjah Choose NITAQ</h2>
                             <p>
-                                Selecting a tuition center is an investment in your child’s future. Here is why NITAQ Academy stands out as Sharjah’s leading SPEA-authorized learning institution:
+                                Selecting a tuition center is an investment in your child’s future. Here is why Nitaq Academy stands out as Sharjah’s leading SPEA-authorized learning institution:
                             </p>
 
                             <ul className="course-features-list">
@@ -331,7 +331,7 @@ const AcademicExcellenceTuitionGuide = () => {
                                 </details>
 
                                 <details className="faq-accordion">
-                                    <summary>What is the batch size for tuition classes at NITAQ Academy?</summary>
+                                    <summary>What is the batch size for tuition classes at Nitaq Academy?</summary>
                                     <p>To ensure individual attention, our group classes maintain small micro-batches of only 5 to 8 students. We also offer dedicated 1-on-1 private tutoring sessions upon request.</p>
                                 </details>
 
@@ -354,7 +354,7 @@ const AcademicExcellenceTuitionGuide = () => {
                             <div className="whatsapp-cta-section" style={{ marginTop: '50px' }}>
                                 <div className="cta-content">
                                     <h3>Ready to Elevate Your Child's Academic Journey?</h3>
-                                    <p>Join hundreds of successful students across Sharjah, Dubai, and the UAE who have achieved top grades with NITAQ Academy.</p>
+                                    <p>Join hundreds of successful students across Sharjah, Dubai, and the UAE who have achieved top grades with Nitaq Academy.</p>
                                 </div>
                                 <div style={{ display: 'flex', gap: '15px', flexWrap: 'wrap' }}>
                                     <Link to="/academic-excellence" className="btn-primary" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '12px 24px', borderRadius: '50px', background: 'var(--primary-color)', color: '#fff', fontWeight: 'bold' }}>

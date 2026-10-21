@@ -113,7 +113,7 @@ const HowToRegisterForSatGuide = () => {
                 <div className="author-avatar" style={{ background: '#1a5c2e', color: 'white', fontWeight: 'bold' }}>NA</div>
                 <div className="meta-text">
                   <span className="meta-label">Author</span>
-                  <span className="meta-value">NITAQ ACADEMY Academic Editorial</span>
+                  <span className="meta-value">Nitaq Academy Academic Editorial</span>
                 </div>
               </div>
               <div className="meta-divider"></div>

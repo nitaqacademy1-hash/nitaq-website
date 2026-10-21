@@ -616,10 +616,16 @@ export default function AcademicExcellenceCourse() {
                 <span>{c.breadcrumbCurrent}</span>
               </nav>
 
-              <p className="nh-eyebrow">
-                <span className="nh-dot" />
-                {c.heroEyebrow}
-              </p>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap', marginBottom: '8px' }}>
+                <p className="nh-eyebrow" style={{ margin: 0 }}>
+                  <span className="nh-dot" />
+                  {c.heroEyebrow}
+                </p>
+                <span style={{ display: 'inline-flex', alignItems: 'center', gap: '5px', fontSize: '0.78rem', color: '#166534', background: '#dcfce7', border: '1px solid #bbf7d0', padding: '3px 12px', borderRadius: '100px', fontWeight: 700 }}>
+                  <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#22c55e' }} />
+                  <time dateTime="2026-10-21">{lang === 'ar' ? 'آخر تحديث: أكتوبر 2026 • 2026–2027' : 'Updated: October 2026 • 2026–2027 Academic Year'}</time>
+                </span>
+              </div>
 
               <h1 className="lt-hero-title">
                 {c.heroTitle} <span className="lt-hero-title-soft">{c.heroTitleSoft}</span>
@@ -880,6 +886,68 @@ export default function AcademicExcellenceCourse() {
                 </ul>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="lt-faq-section" style={{ padding: '60px 0', background: '#F8FAFC', borderTop: '1px solid #E2E8F0' }}>
+        <div className="container" style={{ maxWidth: '860px', margin: '0 auto' }}>
+          <div className="lt-section-header" style={{ textAlign: 'center', marginBottom: '36px' }}>
+            <p className="lt-eyebrow" style={{ justifyContent: 'center' }}>
+              <span className="nh-dot" />
+              {lang === 'ar' ? 'الأسئلة الشائعة' : 'Frequently Asked Questions'}
+            </p>
+            <h2 style={{ fontSize: '1.8rem', fontWeight: 800, color: '#0F172A' }}>
+              {lang === 'ar' ? 'الأسئلة الأكثر شيوعاً حول الدروس الأكاديمية' : 'Tuition & Academic Support FAQs'}
+            </h2>
+          </div>
+
+          <div className="faq-accordion-group" style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+            <details className="faq-accordion" style={{ background: '#FFFFFF', border: '1px solid #E2E8F0', borderRadius: '14px', padding: '16px 20px' }}>
+              <summary style={{ fontWeight: 700, fontSize: '1rem', color: '#0F172A', cursor: 'pointer' }}>
+                {lang === 'ar'
+                  ? 'ما هي البدائل المتاحة لبرنامج كومون (Kumon) للدروس المدرسية في الشارقة؟'
+                  : 'What are some alternatives to Kumon for school subject tuition in Sharjah?'}
+              </summary>
+              <div className="faq-accordion-content" style={{ marginTop: '10px', color: '#475569', fontSize: '0.92rem', lineHeight: 1.65 }}>
+                <p>
+                  {lang === 'ar'
+                    ? 'لأولياء الأمور الباحثين عن بدائل لتمارين كومون التكرارية في الشارقة، توفر أكاديمية نطاق (برج أبو خمسين، المجاز 3) تدريساً أكاديمياً قائماً على الفهم وتأسيس المفاهيم يقوده معلمون متخصصون في الرياضيات والفيزياء والكيمياء والأحياء واللغة الإنجليزية. وخلافاً للتعلم الذاتي القائم على حفظ التمارين في كومون، توفر أكاديمية نطاق مجموعات صغيرة (5 إلى 8 طلاب) وجلسات فردية خاصة تتبع مباشرة المنهاج الدراسي لمدرسة الطالب (كامبريدج IGCSE/A-Level، البكالوريا الدولية IB، ومنهاج CBSE) مع حل نماذج الامتحانات السابقة.'
+                    : 'For parents seeking alternatives to Kumon\'s repetitive worksheets in Sharjah, Nitaq Academy at Abu Khamseen Tower, Al Majaz 3 offers conceptual, teacher-led subject tuition across Mathematics, Physics, Chemistry, Biology, and English. Unlike Kumon\'s self-directed rote learning, Nitaq Academy provides interactive small micro-batches (5 to 8 students) and 1-on-1 private tutoring aligned directly with your child\'s school board (Cambridge IGCSE/A-Level, IB MYP/DP, and CBSE) with full exam past-paper solving.'}
+                </p>
+              </div>
+            </details>
+
+            <details className="faq-accordion" style={{ background: '#FFFFFF', border: '1px solid #E2E8F0', borderRadius: '14px', padding: '16px 20px' }}>
+              <summary style={{ fontWeight: 700, fontSize: '1rem', color: '#0F172A', cursor: 'pointer' }}>
+                {lang === 'ar'
+                  ? 'ما هي المناهج الدراسية المعتمدة لدروس التقوية في أكاديمية نطاق؟'
+                  : 'Which school curricula are supported for subject tuition at Nitaq Academy?'}
+              </summary>
+              <div className="faq-accordion-content" style={{ marginTop: '10px', color: '#475569', fontSize: '0.92rem', lineHeight: 1.65 }}>
+                <p>
+                  {lang === 'ar'
+                    ? 'نغطي المنهج البريطاني (كامبريدج CAIE وإدكسل Pearson IGCSE وA-Levels)، البكالوريا الدولية (IB MYP وIB DP)، المنهج الأمريكي، والمنهاج الهندي (CBSE من الصف 6 إلى 12).'
+                    : 'We support British curriculum (Cambridge CAIE and Pearson Edexcel IGCSE & A-Levels), International Baccalaureate (IB MYP and IB DP), American AP diploma, and Indian CBSE (Classes 6 to 12).'}
+                </p>
+              </div>
+            </details>
+
+            <details className="faq-accordion" style={{ background: '#FFFFFF', border: '1px solid #E2E8F0', borderRadius: '14px', padding: '16px 20px' }}>
+              <summary style={{ fontWeight: 700, fontSize: '1rem', color: '#0F172A', cursor: 'pointer' }}>
+                {lang === 'ar'
+                  ? 'هل تتوفر حصص دروس خصوصية فردية (1-على-1)؟'
+                  : 'Are one-on-one private tuition sessions available in Sharjah and online?'}
+              </summary>
+              <div className="faq-accordion-content" style={{ marginTop: '10px', color: '#475569', fontSize: '0.92rem', lineHeight: 1.65 }}>
+                <p>
+                  {lang === 'ar'
+                    ? 'نعم، بالإضافة إلى المجموعات المصغرة (5 إلى 8 طلاب)، توفر أكاديمية نطاق جلسات خصوصية فردية حضورياً في مقرنا بالشارقة (المجاز 3) أو عبر الإنترنت في دبي وجميع أنحاء الإمارات.'
+                    : 'Yes. In addition to our small micro-batches of 5 to 8 students, Nitaq Academy offers individualized 1-on-1 private tutoring both in-person at our Al Majaz 3 Sharjah campus and live online across Dubai and the UAE.'}
+                </p>
+              </div>
+            </details>
           </div>
         </div>
       </section>

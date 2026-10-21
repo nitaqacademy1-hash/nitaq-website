@@ -28,7 +28,7 @@ const TermsAndConditions = () => {
                         <p>
                             {isAr
                                 ? 'مرحباً بكم في أكاديمية نطاق. من خلال التسجيل في دوراتنا أو الاستفادة من خدماتنا، فإنك توافق على الالتزام بالشروط والأحكام الموضحة أدناه. تُدار أكاديمية نطاق بواسطة "خدمات نطاق للتعليم المساند ذ.م.م"، وهي منشأة مسجلة ومرخصة في إمارة الشارقة، دولة الإمارات العربية المتحدة.'
-                                : 'Welcome to NITAQ ACADEMY. By enrolling in our courses or using our services, you agree to the following terms and conditions. NITAQ ACADEMY is operated by Nitaq Supportive Education Services LLC, registered in Sharjah, UAE.'}
+                                : 'Welcome to Nitaq Academy. By enrolling in our courses or using our services, you agree to the following terms and conditions. Nitaq Academy is operated by Nitaq Supportive Education Services LLC, registered in Sharjah, UAE.'}
                         </p>
                     </section>
 
@@ -39,7 +39,7 @@ const TermsAndConditions = () => {
                         <p>
                             {isAr
                                 ? 'يخضع التسجيل في أي دورة لتوفر المقاعد وسداد الرسوم المقررة. وتحتفظ أكاديمية نطاق بالحق في قبول أو رفض أي طلب تسجيل وفق تقديرها المهني. يتحمل المتدرب أو ولي أمره مسؤولية تقديم معلومات دقيقة وصحيحة أثناء التسجيل.'
-                                : 'Enrollment in any course is subject to availability and payment of the required fees. NITAQ ACADEMY reserves the right to refuse enrollment at its discretion. Students are responsible for providing accurate personal information during registration.'}
+                                : 'Enrollment in any course is subject to availability and payment of the required fees. Nitaq Academy reserves the right to refuse enrollment at its discretion. Students are responsible for providing accurate personal information during registration.'}
                         </p>
                     </section>
 
@@ -78,7 +78,7 @@ const TermsAndConditions = () => {
                         <p>
                             {isAr
                                 ? 'يُتوقع من المتدربين الالتزام بالسلوك المهني والاحترام المتبادل داخل القاعات الحضورية وفي الجلسات الافتراضية عبر الإنترنت. تحتفظ أكاديمية نطاق بالحق في إنهاء تسجيل أي متدرب يخل بقواعد السلوك دون استرداد للرسوم.'
-                                : 'Students are expected to maintain professional conduct during online and offline sessions. NITAQ ACADEMY reserves the right to terminate enrollment for any student who violates our code of conduct without a refund.'}
+                                : 'Students are expected to maintain professional conduct during online and offline sessions. Nitaq Academy reserves the right to terminate enrollment for any student who violates our code of conduct without a refund.'}
                         </p>
                     </section>
 
@@ -89,7 +89,7 @@ const TermsAndConditions = () => {
                         <p>
                             {isAr
                                 ? 'لا تتحمل أكاديمية نطاق (خدمات نطاق للتعليم المساند ذ.م.م) أي مسؤولية عن أي أضرار غير مباشرة أو عرضية أو تبعية تنشأ عن استخدام خدماتها أو المشاركة في برامجها التدريبية خارج نطاق الالتزامات التعاقدية المباشرة.'
-                                : 'NITAQ ACADEMY (Nitaq Supportive Education Services LLC) shall not be held liable for any indirect, incidental, or consequential damages resulting from the use of its services or participation in its training programs.'}
+                                : 'Nitaq Academy (Nitaq Supportive Education Services LLC) shall not be held liable for any indirect, incidental, or consequential damages resulting from the use of its services or participation in its training programs.'}
                         </p>
                     </section>
 

@@ -122,9 +122,9 @@ const BestDigitalMarketingCourse = () => {
                                 </a>
                             </div>
 
-                            <h2>Why NITAQ Academy Offers the Best Digital Marketing Course in UAE</h2>
+                            <h2>Why Nitaq Academy Offers the Best Digital Marketing Course in UAE</h2>
                             <p>
-                                If you are searching for the <strong>best digital marketing course in UAE</strong>, NITAQ Academy stands out for its commitment to student success. Here is why our <Link to="/courses/professional-digital-marketing-course-sharjah-uae" className="inline-link">Professional Digital Marketing Course</Link> is highly rated by students across Sharjah and Dubai:
+                                If you are searching for the <strong>best digital marketing course in UAE</strong>, Nitaq Academy stands out for its commitment to student success. Here is why our <Link to="/courses/professional-digital-marketing-course-sharjah-uae" className="inline-link">Professional Digital Marketing Course</Link> is highly rated by students across Sharjah and Dubai:
                             </p>
                             
                             <ul>

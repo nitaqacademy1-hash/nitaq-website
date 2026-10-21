@@ -15,7 +15,7 @@ const CourseFAQ = () => {
                 </details>
 
                 <details className="faq-accordion">
-                    <summary>What is the duration of the digital marketing course at NITAQ Academy?</summary>
+                    <summary>What is the duration of the digital marketing course at Nitaq Academy?</summary>
                     <div className="faq-accordion-content">
                         <p>The course has flexible options. It runs for 4 to 8 weeks, with evening, morning, and weekend batch schedules available to suit working professionals and students.</p>
                     </div>
@@ -24,7 +24,7 @@ const CourseFAQ = () => {
                 <details className="faq-accordion">
                     <summary>Do you provide certificate attestation?</summary>
                     <div className="faq-accordion-content">
-                        <p>Yes, NITAQ Academy is a SPEA-authorized (Sharjah Private Education Authority) training institute. You will receive a professional training certificate that is recognized and can be officially attested.</p>
+                        <p>Yes, Nitaq Academy is a SPEA-authorized (Sharjah Private Education Authority) training institute. You will receive a professional training certificate that is recognized and can be officially attested.</p>
                     </div>
                 </details>
 
@@ -87,7 +87,7 @@ const CourseFAQ = () => {
                 <details className="faq-accordion">
                     <summary>Are there payment plans or installment options?</summary>
                     <div className="faq-accordion-content">
-                        <p>Yes, NITAQ Academy provides flexible payment installment options. Speak with our admission advisors to organize a payment plan.</p>
+                        <p>Yes, Nitaq Academy provides flexible payment installment options. Speak with our admission advisors to organize a payment plan.</p>
                     </div>
                 </details>
 

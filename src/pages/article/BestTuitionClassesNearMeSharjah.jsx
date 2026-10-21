@@ -70,11 +70,11 @@ const BestTuitionClassesNearMeSharjah = () => {
     const faqs = [
         {
             question: "Where is the best tuition center located near me in Sharjah?",
-            answer: "The premier tuition center in Sharjah is NITAQ Academy, centrally located in Al Majaz 3 at Abu Khamseen Tower - Office : F103, Floor F1 - Al Majaz 3 - Al Majaz - Sharjah - United Arab Emirates. It is within a 2 to 10-minute drive from major Sharjah residential areas including Al Majaz 1, 2, 3, Al Nahda, Al Taawun, Al Qasimia, Abu Shagara, and Al Khan."
+            answer: "The premier tuition center in Sharjah is Nitaq Academy, centrally located in Al Majaz 3 at Abu Khamseen Tower - Office : F103, Floor F1 - Al Majaz 3 - Al Majaz - Sharjah - United Arab Emirates. It is within a 2 to 10-minute drive from major Sharjah residential areas including Al Majaz 1, 2, 3, Al Nahda, Al Taawun, Al Qasimia, Abu Shagara, and Al Khan."
         },
         {
-            question: "Is NITAQ Academy licensed by the Sharjah Private Education Authority (SPEA)?",
-            answer: "Yes, NITAQ Academy is a fully authorized and licensed educational training institute approved by the Sharjah Private Education Authority (SPEA), ensuring strict compliance with UAE teaching standards, accredited tutors, and official curriculum frameworks."
+            question: "Is Nitaq Academy licensed by the Sharjah Private Education Authority (SPEA)?",
+            answer: "Yes, Nitaq Academy is a fully authorized and licensed educational training institute approved by the Sharjah Private Education Authority (SPEA), ensuring strict compliance with UAE teaching standards, accredited tutors, and official curriculum frameworks."
         },
         {
             question: "Which school curricula do you cover in your Sharjah tuition classes?",
@@ -237,7 +237,7 @@ const BestTuitionClassesNearMeSharjah = () => {
                                     <li><a href="#section-2" onClick={(e) => { e.preventDefault(); scrollToSection('section-2'); }} style={{ color: '#1a5c2e', fontWeight: '600', textDecoration: 'none' }}>2. Area-by-Area Guide: Top Sharjah Neighborhoods</a></li>
                                     <li><a href="#section-3" onClick={(e) => { e.preventDefault(); scrollToSection('section-3'); }} style={{ color: '#1a5c2e', fontWeight: '600', textDecoration: 'none' }}>3. Curricula Covered (CBSE, British, IB, American)</a></li>
                                     <li><a href="#section-4" onClick={(e) => { e.preventDefault(); scrollToSection('section-4'); }} style={{ color: '#1a5c2e', fontWeight: '600', textDecoration: 'none' }}>4. Subject-Wise Tutoring Excellence</a></li>
-                                    <li><a href="#section-5" onClick={(e) => { e.preventDefault(); scrollToSection('section-5'); }} style={{ color: '#1a5c2e', fontWeight: '600', textDecoration: 'none' }}>5. What Makes NITAQ Academy the #1 Choice</a></li>
+                                    <li><a href="#section-5" onClick={(e) => { e.preventDefault(); scrollToSection('section-5'); }} style={{ color: '#1a5c2e', fontWeight: '600', textDecoration: 'none' }}>5. What Makes Nitaq Academy the #1 Choice</a></li>
                                     <li><a href="#section-6" onClick={(e) => { e.preventDefault(); scrollToSection('section-6'); }} style={{ color: '#1a5c2e', fontWeight: '600', textDecoration: 'none' }}>6. Frequently Asked Questions</a></li>
                                 </ul>
                             </div>
@@ -276,12 +276,12 @@ const BestTuitionClassesNearMeSharjah = () => {
                             <section id="section-2">
                                 <h2>2. Sharjah Neighborhood Guide: Tuition Hubs & Accessibility</h2>
                                 <p>
-                                    Let’s look at how families across Sharjah’s premier communities access top-rated tuition at <Link to="/academic-excellence">NITAQ Academy</Link>:
+                                    Let’s look at how families across Sharjah’s premier communities access top-rated tuition at <Link to="/academic-excellence">Nitaq Academy</Link>:
                                 </p>
 
                                 <h3>📍 Al Majaz (Al Majaz 1, 2, 3 & Buhaira Corniche)</h3>
                                 <p>
-                                    As Sharjah’s premier family residential hub, Al Majaz is home to thousands of students attending top schools. Located right in <strong>Al Majaz 3 (Abu Khamseen Tower)</strong>, NITAQ Academy is within walking distance or a 2-minute drive for local residents, making evening after-school classes effortless.
+                                    As Sharjah’s premier family residential hub, Al Majaz is home to thousands of students attending top schools. Located right in <strong>Al Majaz 3 (Abu Khamseen Tower)</strong>, Nitaq Academy is within walking distance or a 2-minute drive for local residents, making evening after-school classes effortless.
                                 </p>
 
                                 <h3>📍 Al Nahda Sharjah & Al Taawun</h3>
@@ -311,7 +311,7 @@ const BestTuitionClassesNearMeSharjah = () => {
                             <section id="section-3">
                                 <h2>3. Curricula Covered: Tailored Coaching for Every Educational Board</h2>
                                 <p>
-                                    Every curriculum in the UAE requires a distinct instructional approach. At NITAQ Academy, our subject specialists are trained in the exact specifications of each board:
+                                    Every curriculum in the UAE requires a distinct instructional approach. At Nitaq Academy, our subject specialists are trained in the exact specifications of each board:
                                 </p>
 
                                 <div className="strategy-grid">
@@ -399,7 +399,7 @@ const BestTuitionClassesNearMeSharjah = () => {
 
                             {/* Section 5 */}
                             <section id="section-5">
-                                <h2>5. What Makes NITAQ Academy the Top-Rated Tuition Center in Sharjah</h2>
+                                <h2>5. What Makes Nitaq Academy the Top-Rated Tuition Center in Sharjah</h2>
                                 
                                 <div style={{ background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '12px', padding: '24px', margin: '20px 0', boxShadow: '0 4px 15px rgba(0,0,0,0.03)' }}>
                                     <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '14px' }}>
@@ -501,7 +501,7 @@ const BestTuitionClassesNearMeSharjah = () => {
                                     <MapPin size={20} /> Campus Location
                                 </h3>
                                 <p style={{ fontSize: '0.9rem', color: '#334155', lineHeight: '1.5', marginBottom: '12px' }}>
-                                    <strong>NITAQ Academy</strong><br />
+                                    <strong>Nitaq Academy</strong><br />
                                     Abu Khamseen Tower - Office : F103, Floor F1 - Al Majaz 3 - Al Majaz - Sharjah - United Arab Emirates<br />
                                     Al Majaz 3, Sharjah, UAE<br />
                                     <em>(Near Buhaira Corniche & King Faisal St)</em>

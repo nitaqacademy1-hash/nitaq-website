@@ -175,7 +175,7 @@ const PhoneMockupPortal = () => {
             <div className="sat-portal-header">
               <div className="sat-portal-logo">
                 <span className="sat-portal-logo-icon">N</span>
-                <span>NITAQ ACADEMY</span>
+                <span>Nitaq Academy</span>
               </div>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#64748B" strokeWidth="2">
                 <line x1="3" y1="12" x2="21" y2="12" />
@@ -627,6 +627,11 @@ const SATDiagnosticSection = ({ className = '', showBreadcrumb = false, onStartC
                 <span className="sat-hero-breadcrumb-current">{isAr ? 'التقييم التشخيصي المجاني' : 'Free Diagnostic'}</span>
               </nav>
             )}
+
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '0.8rem', color: '#166534', background: '#dcfce7', border: '1px solid #bbf7d0', padding: '4px 12px', borderRadius: '100px', fontWeight: 700, marginBottom: '14px', width: 'fit-content' }}>
+              <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#22c55e' }} />
+              <time dateTime="2026-10-21">{isAr ? 'محدث للعام الأكاديمي 2026–2027 (أكتوبر 2026)' : 'Updated for 2026–2027 Academic Year (October 2026)'}</time>
+            </div>
 
             <Heading className="sat-hero-heading" id="sat-hero-heading">
               {isAr ? (

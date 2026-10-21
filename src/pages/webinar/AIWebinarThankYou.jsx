@@ -21,7 +21,7 @@ export default function AIWebinarThankYou() {
   return (
     <>
       <Helmet>
-        <title>You're Registered | AI Business Webinar | NITAQ ACADEMY</title>
+        <title>You're Registered | AI Business Webinar | Nitaq Academy</title>
         <meta name="robots" content="noindex, nofollow" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
       </Helmet>
@@ -82,7 +82,7 @@ export default function AIWebinarThankYou() {
               ))}
             </div>
 
-            <Link to="/" className="w-ty__home">← Back to NITAQ ACADEMY</Link>
+            <Link to="/" className="w-ty__home">← Back to Nitaq Academy</Link>
           </div>
         </div>
       </div>

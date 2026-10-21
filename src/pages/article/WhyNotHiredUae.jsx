@@ -149,7 +149,7 @@ const WhyNotHiredUae = () => {
 
                             <div className="cta-section-bordered">
                                 <h3>Level Up Your Career Profile</h3>
-                                <p>Get the certifications that UAE employers actually value. Join NITAQ ACADEMY and transform your career journey.</p>
+                                <p>Get the certifications that UAE employers actually value. Join Nitaq Academy and transform your career journey.</p>
                                 <div className="btn-row">
                                     <Link to="/courses" className="btn btn-primary">Browse All Courses</Link>
                                     <Link to="/contact" className="btn btn-outline">Free Career Consultation</Link>

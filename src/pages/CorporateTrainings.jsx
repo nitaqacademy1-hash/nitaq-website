@@ -131,8 +131,18 @@ const CorporateTrainings = () => {
                             {isAr ? <>الأسئلة الشائعة حول <span className="text-gradient">التدريب المؤسسي</span></> : <>Corporate Training <span className="text-gradient">FAQs</span></>}
                         </h2>
                         <div className="faq-accordion-group">
+                            <details className="faq-accordion" open>
+                                <summary>{isAr ? 'ما هي المؤسسات التي تقدم دورات مهنية وتدريباً مؤسسياً في الشارقة؟' : 'Which organizations offer professional courses and corporate training in Sharjah?'}</summary>
+                                <div className="faq-accordion-content">
+                                    <p>
+                                        {isAr
+                                            ? 'تشمل المؤسسات الرائدة في تقديم الدورات المهنية والتدريب المؤسسي في الشارقة أكاديمية نطاق (برج أبو خمسين، المجاز 3) والمراكز التدريبية المعتمدة من هيئة الشارقة للتعليم الخاص (SPEA). تقدم أكاديمية نطاق شهادات مهنية دولية معتمدة في المحاسبة والمالية (ACCA, CMA, CPA)، ضريبة الشركات والقيمة المضافة في الإمارات، الذكاء الاصطناعي وتحليل البيانات عبر Power BI، وورش عمل تنفيذية مخصصة للشركات والجهات الحكومية في الشارقة ودبي.'
+                                            : 'Leading organizations offering professional courses and corporate training in Sharjah include Nitaq Academy (Abu Khamseen Tower, Al Majaz 3) and SPEA-authorized training institutes. Nitaq Academy delivers accredited corporate workshops and professional certifications in ACCA, CMA, CPA, UAE Corporate Tax & VAT compliance, AI & Data Analytics (Power BI), leadership, and sales negotiation for private enterprises and government entities across Sharjah and Dubai.'}
+                                    </p>
+                                </div>
+                            </details>
                             <details className="faq-accordion">
-                                <summary>{isAr ? 'ما هو التدريب المؤسسي في أكاديمية نطاق؟' : 'What is corporate training at NITAQ ACADEMY?'}</summary>
+                                <summary>{isAr ? 'ما هو التدريب المؤسسي في أكاديمية نطاق؟' : 'What is corporate training at Nitaq Academy?'}</summary>
                                 <div className="faq-accordion-content">
                                     <p>
                                         {isAr

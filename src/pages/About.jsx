@@ -27,7 +27,7 @@ const About = () => {
           <div className="sat-hero-container">
             <div className="sat-hero-content">
               <div className="sat-hero-eyebrow">
-                {isAr ? 'أكاديمية نطاق · المجاز 3، الشارقة · معتمدة من هيئة الشارقة للتعليم الخاص' : 'NITAQ ACADEMY · AL MAJAZ 3, SHARJAH · SPEA AUTHORIZED'}
+                {isAr ? 'أكاديمية نطاق · المجاز 3، الشارقة · معتمدة من هيئة الشارقة للتعليم الخاص' : 'Nitaq Academy · AL MAJAZ 3, SHARJAH · SPEA AUTHORIZED'}
               </div>
 
               <h1 className="sat-hero-heading">
@@ -382,11 +382,11 @@ const About = () => {
               </div>
             </div>
 
-            {/* ── 6. WHY NITAQ ACADEMY SECTION (SAT Architecture) ────────── */}
+            {/* ── 6. WHY Nitaq Academy SECTION (SAT Architecture) ────────── */}
             <section className="sat-why-section" style={{ borderRadius: '20px', border: '1px solid #E4E7EC', background: '#FFFFFF', marginBottom: '48px' }}>
               <div className="sat-why-container" style={{ padding: '48px 40px' }}>
                 <div className="sat-why-header-col">
-                  <div className="sat-why-eyebrow">{isAr ? 'لماذا أكاديمية نطاق؟' : 'WHY NITAQ ACADEMY?'}</div>
+                  <div className="sat-why-eyebrow">{isAr ? 'لماذا أكاديمية نطاق؟' : 'WHY Nitaq Academy?'}</div>
                   <h2 className="sat-why-title">
                     {isAr ? (
                       <>إشراف دقيق. <div>نتائج <span className="accent-green">مثبتة.</span></div></>

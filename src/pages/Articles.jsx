@@ -563,7 +563,7 @@ const Articles = () => {
                         <p>
                             {isAr
                                 ? 'مرحباً بكم في منصة مقالات وأدلة أكاديمية نطاق، المصدر الرائد للطلاب والمهنيين الباحثين عن التميز والنتائج الحقيقية في الشارقة ودولة الإمارات. مقالاتنا مصممة لربط التعليم الأكاديمي بالنجاح المهني الفعلي.'
-                                : 'Welcome to the NITAQ ACADEMY insights portal, the premier resource for students and professionals seeking a training institute in Sharjah that delivers real results. Our expert-curated articles are designed to bridge the gap between classroom learning and career success in the dynamic UAE market.'}
+                                : 'Welcome to the Nitaq Academy insights portal, the premier resource for students and professionals seeking a training institute in Sharjah that delivers real results. Our expert-curated articles are designed to bridge the gap between classroom learning and career success in the dynamic UAE market.'}
                         </p>
                         <p>
                             {isAr

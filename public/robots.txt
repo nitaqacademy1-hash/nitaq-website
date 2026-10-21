@@ -38,5 +38,7 @@ Disallow: /ig/
 Disallow: /temp-landing/
 Disallow: /.git/
 
-# XML Sitemap
+# XML Sitemap & LLM Discovery
 Sitemap: https://www.nitaqacademy.com/sitemap.xml
+# AI Guide
+# https://www.nitaqacademy.com/llms.txt

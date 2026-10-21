@@ -219,7 +219,7 @@ export default function VerifyCertificate() {
             <p style={{ color: '#64748B', fontSize: '0.92rem', marginBottom: '28px', lineHeight: 1.6 }}>
               {isAr
                 ? 'أدخل الرقم التعريفي للشهادة (مثال: NITAQ-12345) المطبوع على شهادة إتمام الدورة الصادرة من أكاديمية نطاق للتحقق الفوري من مصداقيتها واعتمادها.'
-                : 'Enter the official Certificate ID (e.g. NITAQ-12345) printed on your NITAQ ACADEMY course completion certificate to verify its credentials.'}
+                : 'Enter the official Certificate ID (e.g. NITAQ-12345) printed on your Nitaq Academy course completion certificate to verify its credentials.'}
             </p>
             <form onSubmit={handleSearchSubmit} style={{ display: 'flex', gap: '10px', justifyContent: 'center', flexWrap: 'wrap' }}>
               <input
@@ -410,7 +410,7 @@ export default function VerifyCertificate() {
                 <div style={{ borderTop: '1px solid #F1F5F9', paddingTop: '16px', fontSize: '0.78rem', color: '#94A3B8', lineHeight: 1.5 }}>
                   {isAr
                     ? 'يؤكد هذا السجل الرقمي الموثق استيفاء حامل الشهادة لكافة المتطلبات الأكاديمية والعملية المقررة في أكاديمية نطاق وفق معايير هيئة الشارقة للتعليم الخاص.'
-                    : 'This digital record confirms that the recipient has fulfilled all academic and practical training requirements for the specified program at NITAQ ACADEMY.'}
+                    : 'This digital record confirms that the recipient has fulfilled all academic and practical training requirements for the specified program at Nitaq Academy.'}
                 </div>
               </div>
             </div>

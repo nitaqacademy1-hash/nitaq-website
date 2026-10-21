@@ -45,7 +45,7 @@ export default function AdminLogin() {
           </div>
           <div>
             <div style={{ fontWeight: 800, color: '#0F172A', fontSize: '1.05rem', letterSpacing: '-0.02em', lineHeight: 1.2 }}>
-              NITAQ ACADEMY
+              Nitaq Academy
             </div>
             <div style={{ fontSize: '0.75rem', fontWeight: 600, color: '#64748B', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
               NITAQ Portal Admin

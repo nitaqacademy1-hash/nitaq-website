@@ -11,7 +11,7 @@ const WhyNitaq = () => {
             <div className="sat-why-container" style={{ padding: '40px 32px' }}>
                 <div className="sat-why-header-col">
                     <div className="sat-why-eyebrow">
-                        {isAr ? 'لماذا أكاديمية نطاق؟' : 'WHY NITAQ ACADEMY?'}
+                        {isAr ? 'لماذا أكاديمية نطاق؟' : 'WHY Nitaq Academy?'}
                     </div>
                     <h2 className="sat-why-title">
                         {isAr ? 'توجيه تعليمي مركز.' : 'Focused Guidance.'}

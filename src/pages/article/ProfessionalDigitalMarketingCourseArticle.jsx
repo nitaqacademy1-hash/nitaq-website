@@ -60,7 +60,7 @@ const ProfessionalDigitalMarketingCourseArticle = () => {
                     <div className="article-content-wrapper">
                         <div className="article-main-content">
                             <p className="lead-text">
-                                Build in-demand digital marketing skills and learn how modern businesses attract customers, generate leads, increase sales, and grow online. Whether you're a beginner, entrepreneur, student, freelancer, or working professional, this practical Digital Marketing Course at NITAQ Academy will help you understand and apply the strategies used by successful brands and businesses across the UAE and globally.
+                                Build in-demand digital marketing skills and learn how modern businesses attract customers, generate leads, increase sales, and grow online. Whether you're a beginner, entrepreneur, student, freelancer, or working professional, this practical Digital Marketing Course at Nitaq Academy will help you understand and apply the strategies used by successful brands and businesses across the UAE and globally.
                             </p>
 
                             <div className="course-overview-box">
@@ -169,7 +169,7 @@ const ProfessionalDigitalMarketingCourseArticle = () => {
                                 <li>Gain practical knowledge that can be applied immediately</li>
                             </ul>
 
-                            <h2>Why Choose NITAQ Academy?</h2>
+                            <h2>Why Choose Nitaq Academy?</h2>
                             <p>
                                 <strong>Expert-Led Training:</strong> Learn from experienced professionals who understand modern marketing practices.<br/>
                                 <strong>Practical Learning Environment:</strong> Focus on hands-on implementation rather than theory alone.<br/>

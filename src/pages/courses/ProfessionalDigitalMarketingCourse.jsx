@@ -497,10 +497,10 @@ const ProfessionalDigitalMarketingCourse = () => {
                                 In today's digital-first world, traditional advertising channels no longer suffice. Modern customers rely extensively on search engines, social media content, customer reviews, online video, and direct digital messaging to discover and evaluate brands before making a transaction. Consequently, businesses across Sharjah, the wider UAE, and the GCC region are aggressively recruiting skilled marketing practitioners who can establish strong online visibility, manage performance marketing budgets, audit web platforms, and coordinate customer journeys.
                             </p>
                             <p style={{ marginBottom: '20px' }}>
-                                NITAQ Academy's Professional Digital Marketing Course in Sharjah is a comprehensive, hands-on certification program explicitly tailored to align with contemporary business needs. Rather than teaching outdated theories, we focus on real-world practical applications. You will learn the mechanics of how customers think, how search algorithms index content, how bidding systems deploy ad budgets, and how data analytics reveal consumer behaviors. Our training is designed to provide immediate value—equipping you with operational capability from your very first session.
+                                Nitaq Academy's Professional Digital Marketing Course in Sharjah is a comprehensive, hands-on certification program explicitly tailored to align with contemporary business needs. Rather than teaching outdated theories, we focus on real-world practical applications. You will learn the mechanics of how customers think, how search algorithms index content, how bidding systems deploy ad budgets, and how data analytics reveal consumer behaviors. Our training is designed to provide immediate value—equipping you with operational capability from your very first session.
                             </p>
                             <p style={{ marginBottom: '20px' }}>
-                                This program is unique in its integration of advanced artificial intelligence (AI) marketing frameworks. As digital ecosystems evolve, AI tools like ChatGPT, Gemini, and Claude have become standard for content generation, keyword research, automation, and market analysis. By mastering these technologies at NITAQ Academy, you will achieve up to 10x higher productivity, allowing you to design, launch, and optimize high-converting campaigns faster than traditional marketers.
+                                This program is unique in its integration of advanced artificial intelligence (AI) marketing frameworks. As digital ecosystems evolve, AI tools like ChatGPT, Gemini, and Claude have become standard for content generation, keyword research, automation, and market analysis. By mastering these technologies at Nitaq Academy, you will achieve up to 10x higher productivity, allowing you to design, launch, and optimize high-converting campaigns faster than traditional marketers.
                             </p>
                             <p>
                                 We offer complete flexibility with offline classroom sessions at our premium training center in Sharjah (located in the prominent Abu Khamseen Tower, Majaz 3) and live online classes accessible from anywhere in the UAE. Under the direct mentorship of senior industry leaders, you will complete hands-on projects, execute live audits, build professional strategies, and earn a recognized completion certificate that accelerates your career mobility.
@@ -620,7 +620,7 @@ const ProfessionalDigitalMarketingCourse = () => {
                         <div className="dm-section-desc" style={{ marginBottom: 0 }}>
                             <h2>Master <span>AI-Powered</span> Digital Marketing</h2>
                             <p style={{ color: '#d1d5db', fontSize: '1.1rem', lineHeight: '1.8', marginBottom: '30px' }}>
-                                Artificial Intelligence is rewriting the rules of marketing. At NITAQ Academy, we don't just teach traditional SEO and Ads; we teach you how to become an AI-augmented marketer capable of automating workflows, generating content, and scaling campaigns at unprecedented speeds.
+                                Artificial Intelligence is rewriting the rules of marketing. At Nitaq Academy, we don't just teach traditional SEO and Ads; we teach you how to become an AI-augmented marketer capable of automating workflows, generating content, and scaling campaigns at unprecedented speeds.
                             </p>
                             <div className="ai-grid">
                                 <div className="ai-card">
@@ -651,7 +651,7 @@ const ProfessionalDigitalMarketingCourse = () => {
                 <div className="content-card" style={{ marginTop: '50px' }}>
                     <h2 className="dm-section-title">Career Opportunities <span className="text-gradient">& UAE Salary Guide</span></h2>
                     <p className="dm-section-desc">
-                        According to UAE recruitment reports, digital marketing is one of the most in-demand domains. Below is the average salary range in Dubai, Sharjah, and Abu Dhabi for certified professionals who graduate from NITAQ Academy:
+                        According to UAE recruitment reports, digital marketing is one of the most in-demand domains. Below is the average salary range in Dubai, Sharjah, and Abu Dhabi for certified professionals who graduate from Nitaq Academy:
                     </p>
                     
                     <div className="salary-grid">
@@ -704,7 +704,7 @@ const ProfessionalDigitalMarketingCourse = () => {
                     <div className="overview-split">
                         <div className="dm-section-desc" style={{ marginBottom: 0 }}>
                             <p style={{ marginBottom: '30px' }}>
-                                At NITAQ Academy, our goal isn't just to provide a course completion certificate. We are dedicated to ensuring you have the assets and interview readiness to land a role in the UAE marketing sector.
+                                At Nitaq Academy, our goal isn't just to provide a course completion certificate. We are dedicated to ensuring you have the assets and interview readiness to land a role in the UAE marketing sector.
                             </p>
                             
                             <div className="placement-features">
@@ -741,7 +741,7 @@ const ProfessionalDigitalMarketingCourse = () => {
                     
                     <div className="success-stories-grid">
                         <div className="story-card">
-                            <p className="quote">"I joined NITAQ Academy as a fresh graduate. The practical SEO and Meta Ads modules helped me clear my technical interviews easily, and I landed a job as a Digital Executive in Dubai within 2 months of graduation."</p>
+                            <p className="quote">"I joined Nitaq Academy as a fresh graduate. The practical SEO and Meta Ads modules helped me clear my technical interviews easily, and I landed a job as a Digital Executive in Dubai within 2 months of graduation."</p>
                             <div className="author-info">
                                 <strong>Sarah M.</strong>
                                 <span>Alumni, Digital Marketing Executive</span>
@@ -762,7 +762,7 @@ const ProfessionalDigitalMarketingCourse = () => {
                     <div className="cert-box-content">
                         <h2 className="dm-section-title" style={{ marginBottom: '15px' }}>Earn a Attested <span className="text-gradient">Marketing Certificate</span></h2>
                         <p className="dm-section-desc" style={{ marginBottom: '20px' }}>
-                            Upon successful completion of the course curriculum, project assessments, and practical audits, you will receive the **NITAQ Academy Professional Digital Marketing Course Completion Certificate**.
+                            Upon successful completion of the course curriculum, project assessments, and practical audits, you will receive the **Nitaq Academy Professional Digital Marketing Course Completion Certificate**.
                         </p>
                         <ul className="styled-list" style={{ marginBottom: '25px' }}>
                             <li>Add credential directly to your **LinkedIn Profile** to attract recruiters.</li>
@@ -779,7 +779,7 @@ const ProfessionalDigitalMarketingCourse = () => {
                         </a>
                     </div>
                     <div className="cert-box-image">
-                        <img src="/images/whatsapp-img-3.webp" alt="NITAQ Academy Professional Certificate Authority" width="280" height="396" loading="lazy" />
+                        <img src="/images/whatsapp-img-3.webp" alt="Nitaq Academy Professional Certificate Authority" width="280" height="396" loading="lazy" />
                     </div>
                 </div>
 
