@@ -17,8 +17,8 @@ const SpokenEnglish = () => {
         <>
             <SEO />
         <CourseLayout
-            title="Spoken English Course"
-            subtitle="Unlock global opportunities. Improve your fluency, confidence, and professional communication skills."
+            title="Spoken English Course in Sharjah"
+            subtitle="Build conversational fluency, accent confidence, and workplace communication skills at Nitaq Academy in Al Majaz 3, Sharjah."
             infoData={infoData}
         >
             {/* Program Overview */}

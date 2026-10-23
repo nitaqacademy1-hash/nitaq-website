@@ -436,7 +436,7 @@ const SatMathFormulaSheetDesmosGuide = () => {
               <span>SAT Grammar Rules Guide</span>
               <ChevronRight size={14} color="#1a5c2e" />
             </Link>
-            <Link to="/article/how-to-register-for-sat-complete-guide" style={{ padding: '12px 16px', background: 'white', borderRadius: '8px', border: '1px solid #cbd5e1', textDecoration: 'none', color: '#0f172a', fontSize: '0.9rem', fontWeight: 600, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+            <Link to="/article/how-to-register-for-sat-exam-uae-guide" style={{ padding: '12px 16px', background: 'white', borderRadius: '8px', border: '1px solid #cbd5e1', textDecoration: 'none', color: '#0f172a', fontSize: '0.9rem', fontWeight: 600, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
               <span>SAT Registration UAE Guide</span>
               <ChevronRight size={14} color="#1a5c2e" />
             </Link>

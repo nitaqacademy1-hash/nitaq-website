@@ -2,12 +2,12 @@ export const programPaths = ['/sat-preparation-sharjah', '/academic-excellence',
 export const contact = { phone: '+971527569908', mobile: '+971527569908', email: 'info@nitaqacademy.com' };
 export const homeCopy = {
   en: {
-    eyebrow: 'EDUCATION IN AL MAJAZ 3, SHARJAH', title: ['SAT Preparation,', 'School Tuition &', 'Language Training in Sharjah'],
+    eyebrow: 'EDUCATION & TRAINING IN AL MAJAZ 3, SHARJAH', title: ['SAT Prep, School Tuition &', 'Training Courses in Sharjah'],
     lastUpdated: 'Updated: October 2026 • 2026–2027 Academic Year',
-    intro: 'Build academic confidence with structured exam preparation, personalised tutoring and practical language training at Nitaq Academy in Al Majaz 3, Sharjah.',
+    intro: 'Build academic excellence and professional competence with structured SAT preparation, school subject tuition (IGCSE, CBSE, IB), practical language courses, and accredited corporate & finance certifications at Nitaq Academy in Al Majaz 3, Sharjah.',
     explore: 'Explore Our Programs', admissions: 'Speak with Admissions', call: 'Call Admissions', book: 'Start Free SAT Diagnostic', view: 'View Programs',
     trust: ['Diagnostic-led guidance', 'Experienced tutors', 'Small-group learning'],
-    highlights: [['Digital SAT', 'Focused preparation'], ['Subjects', 'Academic support'], ['Al Majaz 3', 'Sharjah, UAE']],
+    highlights: [['SAT & School Tuition', 'IGCSE, CBSE & IB support'], ['Languages & Tech', 'Arabic, English, AI & Finance'], ['Al Majaz 3', 'Sharjah Campus & Online']],
     journey: 'FROM POTENTIAL TO PROGRESS', scroll: 'Scroll to explore', skip: 'Skip to programs', start: 'Your next chapter starts here.',
     stages: [
       ['The foundation', 'Build the foundation for better results.', 'Every meaningful step forward starts with understanding where you are.'],
@@ -110,10 +110,10 @@ export const homeCopy = {
     footerLine: 'A clearer path from potential to progress.', academy: 'Academy', contact: 'Get in touch', about: 'About Nitaq', resources: 'Learning resources', privacy: 'Privacy policy', terms: 'Terms & conditions', rights: 'All rights reserved.', menu: 'Open navigation', close: 'Close navigation', studentAlt: 'Focused university-age student studying at a modern desk with an open book, notebook and laptop',
   },
   ar: {
-    eyebrow: 'التعليم في المجاز 3، الشارقة', title: ['التحضير لاختبار SAT،', 'الدروس المدرسية و', 'تدريب اللغات في الشارقة'],
+    eyebrow: 'التعليم والتدريب المهني في المجاز 3، الشارقة', title: ['تحضير SAT والدروس المدرسية و', 'الدورات المهنية في الشارقة'],
     lastUpdated: 'آخر تحديث: أكتوبر 2026 • العام الأكاديمي 2026–2027',
-    intro: 'ابنِ ثقتك الأكاديمية عبر التحضير المنظّم للاختبارات والدروس المخصصة والتدريب العملي على اللغات في أكاديمية نطاق بالمجاز 3، الشارقة.',
-    explore: 'استكشف برامجنا', admissions: 'تحدث مع القبول', call: 'اتصل بالقبول', book: 'ابدأ تقييم SAT المجاني', view: 'عرض البرامج', trust: ['إرشاد يبدأ بالتقييم', 'مدرسون ذوو خبرة', 'مجموعات صغيرة'], highlights: [['SAT الرقمي', 'تحضير مركّز'], ['المواد الدراسية', 'دعم أكاديمي'], ['المجاز 3', 'الشارقة، الإمارات']],
+    intro: 'ابنِ تفوقك الأكاديمي ومهاراتك المهنية عبر التحضير لاختبار SAT، ودروس التقوية المدرسية (IGCSE وCBSE وIB)، ودورات اللغات، والشهادات المهنية المعتمدة في أكاديمية نطاق بالمجاز 3، الشارقة.',
+    explore: 'استكشف برامجنا', admissions: 'تحدث مع القبول', call: 'اتصل بالقبول', book: 'ابدأ تقييم SAT المجاني', view: 'عرض البرامج', trust: ['إرشاد يبدأ بالتقييم', 'مدرسون ذوو خبرة', 'مجموعات صغيرة'], highlights: [['SAT والدروس المدرسية', 'دعم مناهج IGCSE وCBSE وIB'], ['اللغات والتقنية', 'العربية، الإنجليزية، الذكاء الاصطناعي والمالية'], ['المجاز 3', 'مقر الشارقة وعبر الإنترنت']],
     journey: 'من الإمكانات إلى التقدّم', scroll: 'مرّر للاستكشاف', skip: 'انتقل إلى البرامج', start: 'فصلك القادم يبدأ هنا.',
     stages: [
       ['الأساس', 'ابنِ أساساً لنتائج أفضل.', 'تبدأ كل خطوة مهمة بفهم مستواك الحالي.'], ['التقييم التشخيصي', 'الوضوح أولاً.', 'افهم مستواك الحالي قبل تحديد الخطوة التالية.'], ['خطة تعلّم مخصصة', 'خطة تعلّم مصممة لك.', 'أهدافك ومستواك ومسار واضح يناسبك.'], ['التعلّم المركّز', 'تعلّم بتركيز.', 'افهم بعمق مع مدرسين ذوي خبرة ودعم فردي.'], ['التدريب الموجّه', 'تدرّب بهدف.', 'حوّل الفهم إلى ثقة، سؤالاً بعد سؤال.'], ['متابعة التقدّم', 'تقدّم يمكنك رؤيته.', 'تابع تحسّنك وحدّد أولوياتك من خلال الملاحظات المنتظمة.'], ['خطوتك القادمة', 'هل أنت مستعد لخطوتك التالية؟', 'ابدأ مع أكاديمية نطاق وابنِ مساراً أوضح نحو أهدافك الأكاديمية.'],

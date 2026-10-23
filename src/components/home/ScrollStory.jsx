@@ -36,7 +36,7 @@ export default function ScrollStory({ c }) {
               >
                 {line}
               </span>
-            ))}
+            )).reduce((prev, curr) => [prev, ' ', curr])}
           </h1>
 
           <p className="nh-hero-intro">

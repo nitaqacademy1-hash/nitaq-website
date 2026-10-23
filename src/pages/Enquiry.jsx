@@ -40,7 +40,7 @@ const Enquiry = () => {
                 : 'Share your child’s grade and school curriculum. Our team will schedule an academic diagnostic assessment.';
         }
         return isAr
-            ? 'أدخل بياناتك وسيتواصل معك مستشارنا الأكاديمي في فرع الشارقة أو دبي خلال وقت قصير'
+            ? 'أدخل بياناتك وسيتواصل معك مستشارنا الأكاديمي لمساعدتك وتحديد البرنامج الأنسب'
             : "Fill in your details and our academic admissions team will get back to you shortly";
     };
 

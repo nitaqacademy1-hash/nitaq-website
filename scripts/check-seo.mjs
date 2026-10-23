@@ -1,5 +1,6 @@
 import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
 import { join, relative } from 'node:path';
+import { PUBLISHED_ARABIC_ROUTES } from '../src/i18n/published.js';
 
 const root = new URL('../', import.meta.url).pathname;
 const dist = join(root, 'dist');
@@ -54,10 +55,16 @@ for (const file of walk(dist).filter(file => file === join(dist, 'index.html') |
   assert(inSitemap || noindex, `${path}: indexable page missing from sitemap`);
   assert(!/This page does not exist/i.test(html), `${path}: nonexistent page was prerendered as success`);
   for (const item of schema) { try { JSON.parse(item[1]); } catch { errors.push(`${path}: invalid JSON-LD`); } }
-  if (path === '/' || path === '/ar') {
+  const basePath = path.startsWith('/ar/') ? path.replace(/^\/ar/, '') : (path === '/ar' ? '/' : path);
+  const isArabicPublished = PUBLISHED_ARABIC_ROUTES.includes(basePath) && !noindex;
+  if (isArabicPublished) {
     const pairs = new Map(alternates.map(tag => [attribute(tag, 'hreflang'), attribute(tag, 'href')]));
-    assert(pairs.get('en') === `${site}/` && pairs.get('ar') === `${site}/ar` && pairs.get('x-default') === `${site}/`, `${path}: homepage hreflang is not reciprocal`);
-  } else assert(!alternates.some(tag => attribute(tag, 'hreflang') === 'ar'), `${path}: unreviewed Arabic hreflang target`);
+    const enUrl = `${site}${basePath}`;
+    const arUrl = `${site}${basePath === '/' ? '/ar' : `/ar${basePath}`}`;
+    assert(pairs.get('en') === enUrl && pairs.get('ar') === arUrl && pairs.get('x-default') === enUrl, `${path}: hreflang is not reciprocal with Arabic equivalent`);
+  } else {
+    assert(!alternates.some(tag => attribute(tag, 'hreflang') === 'ar'), `${path}: unreviewed Arabic hreflang target`);
+  }
   if (path.startsWith('/article/') && inSitemap) assert(named(head, 'meta', 'property', 'og:type').some(tag => attribute(tag, 'content') === 'article'), `${path}: article social type missing`);
   if (inSitemap && !/\<main\b|\<article\b/i.test(html)) warnings.push(`${path}: no visible main/article element in initial HTML`);
 }

@@ -18,7 +18,7 @@ const CorporateTrainings = () => {
                             <Link to="/" style={{ color: 'var(--primary-color)', fontWeight: 600 }}>{isAr ? 'الرئيسية' : 'Home'}</Link> /
                             <span>{isAr ? 'التدريب المؤسسي' : 'Corporate Training'}</span>
                         </nav>
-                        <h1>{isAr ? <>التطوير والتمكين <span className="text-gradient">المؤسسي</span></> : <>Corporate <span className="text-gradient">Enablement</span></>}</h1>
+                        <h1>{isAr ? <>التدريب المؤسسي في <span className="text-gradient">الشارقة</span></> : <>Corporate Training in <span className="text-gradient">Sharjah</span></>}</h1>
                         <p>
                             {isAr
                                 ? 'حلول وبرامج تدريبية مخصصة للشركات والمؤسسات تهدف إلى رفع كفاءة فرق العمل، وتعزيز الإنتاجية، وتحقيق التميز التشغيلي في دولة الإمارات.'

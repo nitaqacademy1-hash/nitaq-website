@@ -323,8 +323,8 @@ const textCopy = {
     courses: 'Courses',
     breadcrumbCurrent: 'Language Training',
     heroEyebrow: 'NITAQ LANGUAGE INSTITUTE · AL MAJAZ 3, SHARJAH',
-    heroTitle: 'Language Training &',
-    heroTitleSoft: 'Exam Prep in Sharjah',
+    heroTitle: 'Language Courses',
+    heroTitleSoft: 'in Sharjah',
     heroIntro:
       'Gain real-world fluency, accent confidence, and international certification. Explore structured language levels in English, Arabic, French, German, and Spanish, alongside official coaching for IELTS, TOEFL, and PTE.',
     pills: [
@@ -407,8 +407,8 @@ const textCopy = {
     courses: 'الدورات',
     breadcrumbCurrent: 'تدريب اللغات',
     heroEyebrow: 'معهد نطاق للغات · المجاز 3، الشارقة · مرخص من SPEA',
-    heroTitle: 'تدريب ودورات اللغات',
-    heroTitleSoft: 'واختبارات الكفاءة في الشارقة',
+    heroTitle: 'دورات اللغات',
+    heroTitleSoft: 'في الشارقة',
     heroIntro:
       'اكتسب طلاقة حقيقية وثقة في التحدث وشهادات دولية معتمدة. استكشف مستويات تعليمية متدرجة في الإنجليزية والعربية والفرنسية والألمانية والإسبانية، بالإضافة إلى برامج تدريبية رسمية لاختبارات IELTS وTOEFL وPTE.',
     pills: [

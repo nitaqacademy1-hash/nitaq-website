@@ -366,9 +366,9 @@ export default function ProfessionalCertifications() {
 
               <h1>
                 {isAr ? (
-                  <>طوّر مسارك المهني مع <span className="lt-gradient-text">شهادات مهنية عالمية معتمدة</span></>
+                  <>الشهادات المهنية في <span className="lt-gradient-text">الشارقة</span></>
                 ) : (
-                  <>Fast-Track Your Career with <span className="lt-gradient-text">Global Certifications</span></>
+                  <>Professional Certifications in <span className="lt-gradient-text">Sharjah</span></>
                 )}
               </h1>
 

@@ -17,8 +17,8 @@ const UAECorporateTaxCourse = () => {
         <>
             <SEO />
         <CourseLayout
-            title="UAE Corporate Tax Course"
-            subtitle="Master UAE Corporate Tax framework, compliance, and strategic financial planning for sustainable business growth."
+            title="UAE Corporate Tax Course in Sharjah"
+            subtitle="Master UAE Corporate Tax framework, compliance, and strategic financial planning for sustainable business growth in Al Majaz 3, Sharjah."
             infoData={infoData}
         >
             {/* Program Header */}

@@ -17,8 +17,8 @@ const AICourse = () => {
         <>
             <SEO />
         <CourseLayout
-            title="Basic to Advance A.I Course"
-            subtitle="Master the technologies of the future with our comprehensive Artificial Intelligence training."
+            title="AI Course in Sharjah"
+            subtitle="Master machine learning, generative AI, Python data science, and modern AI tools with hands-on projects in Al Majaz 3, Sharjah."
             infoData={infoData}
         >
             {/* Award Link */}

@@ -17,8 +17,8 @@ const ACCACourse = () => {
         <>
             <SEO />
         <CourseLayout
-            title="ACCA - Association of Chartered Certified Accountants"
-            subtitle="Become a globally recognized finance professional with our comprehensive ACCA preparation program."
+            title="ACCA Course in Sharjah"
+            subtitle="Become a globally recognized finance professional with our comprehensive ACCA preparation program in Al Majaz 3, Sharjah."
             infoData={infoData}
         >
             {/* Program Header */}

@@ -17,8 +17,8 @@ const SpanishCourse = () => {
         <>
             <SEO />
         <CourseLayout
-            title="Spanish Language Course"
-            subtitle="Join over 500 million speakers worldwide. Learn Spanish for travel, business, or personal growth."
+            title="Spanish Language Course in Sharjah"
+            subtitle="Learn Spanish for travel, business, or DELE certification with conversational classes in Al Majaz 3, Sharjah."
             infoData={infoData}
         >
             {/* Program Overview */}

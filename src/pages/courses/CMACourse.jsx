@@ -17,8 +17,8 @@ const CMACourse = () => {
         <>
             <SEO />
         <CourseLayout
-            title="CMA - Certified Management Accountant"
-            subtitle="Elevate your career in management accounting and financial management with our expert-led CMA program."
+            title="CMA Course in Sharjah"
+            subtitle="Elevate your career in management accounting and financial management with our expert-led CMA program in Al Majaz 3, Sharjah."
             infoData={infoData}
         >
             {/* Program Header */}

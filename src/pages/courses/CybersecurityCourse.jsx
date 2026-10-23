@@ -16,8 +16,8 @@ const CybersecurityCourse = () => {
         <>
             <SEO />
             <CourseLayout
-                title="Cybersecurity Foundations & Ethical Hacking"
-                subtitle="CyberShield Program (NITAQ-CS-101) - Learn to think like a hacker before a hacker thinks about you. The most practical cybersecurity program in Sharjah, built for complete beginners."
+                title="Cybersecurity Course in Sharjah"
+                subtitle="CyberShield Program (NITAQ-CS-101) - Practical ethical hacking, network defense, Kali Linux, and threat mitigation in Al Majaz 3, Sharjah."
                 infoData={infoData}
             >
                 {/* Highlights Banner */}

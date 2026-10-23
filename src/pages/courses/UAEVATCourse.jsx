@@ -17,8 +17,8 @@ const UAEVATCourse = () => {
         <>
             <SEO />
         <CourseLayout
-            title="UAE VAT Course"
-            subtitle="Master UAE Value Added Tax (VAT) regulations, compliance, and practical implementation for your business."
+            title="UAE VAT Course in Sharjah"
+            subtitle="Master UAE Value Added Tax (VAT) regulations, compliance, and practical implementation for your business in Al Majaz 3, Sharjah."
             infoData={infoData}
         >
             {/* Program Header */}

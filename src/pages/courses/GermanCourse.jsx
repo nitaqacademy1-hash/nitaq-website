@@ -17,8 +17,8 @@ const GermanCourse = () => {
         <>
             <SEO />
         <CourseLayout
-            title="German Language Course"
-            subtitle="Unlock opportunities in Europe's strongest economy with our expert-led German language programs, designed for students and professionals."
+            title="German Language Course in Sharjah"
+            subtitle="Learn German from A1 to C2 with Goethe-Zertifikat preparation and native-level instruction in Al Majaz 3, Sharjah."
             infoData={infoData}
         >
             {/* Program Overview */}

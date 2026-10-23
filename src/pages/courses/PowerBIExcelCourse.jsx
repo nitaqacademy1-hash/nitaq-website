@@ -17,8 +17,8 @@ const PowerBIExcelCourse = () => {
         <>
             <SEO />
         <CourseLayout
-            title="Power BI & Advanced Excel"
-            subtitle="Transform complex data into actionable business insights with industry-leading analytics and visualization tools."
+            title="Power BI & Advanced Excel Course in Sharjah"
+            subtitle="Master Power BI and Advanced Excel analytics to transform complex data into actionable business dashboards in Al Majaz 3, Sharjah."
             infoData={infoData}
         >
             {/* Program Header */}

@@ -1,115 +1,84 @@
 import React from 'react';
 import { Link } from '../../i18n/Link';
 import { useLanguage } from '../../i18n/context';
-import WhyNitaq from '../../components/WhyNitaq';
 import SEO from '../../components/SEO';
 import SATDiagnosticSection from '../../components/sat/SATDiagnosticSection';
 import SATFaculty from '../../components/sat/SATFaculty';
 import { trackEvent, ANALYTICS_EVENTS } from '../../utils/analytics';
 import { 
   BookOpen, Clock, Calendar, MapPin, Award, CheckCircle2, 
-  ArrowRight, DollarSign, Laptop, Users, HelpCircle, Compass, Sparkles
+  ArrowRight, DollarSign, Laptop, Users, HelpCircle, Compass, Sparkles, Target, TrendingUp, ShieldCheck
 } from 'lucide-react';
 import './sat-course.css';
 
 const SHARJAH_FAQS = [
   {
-    question: 'Looking for SAT classes near me in Sharjah — why choose Nitaq Academy?',
-    questionAr: 'تبحث عن حصص SAT قريبة مني في الشارقة — لماذا تختار أكاديمية نطاق؟',
-    answer: 'Conveniently located at Abu Khamseen Tower in Al Majaz 3, Sharjah, Nitaq Academy is the top choice for students searching for accredited SAT classes near me across Al Majaz, Buhaira Corniche, Al Khan, Al Taawun, Al Nahda, and Muwaileh. Our SPEA-authorized Digital SAT course features small batches (8–12 students), personalized 1-on-1 tutoring, advanced Desmos shortcuts, full-length adaptive Bluebook mock exams, and proven score improvements of 150–250+ points.',
-    answerAr: 'بموقعها الاستراتيجي في برج أبو خمسين بالمجاز 3، الشارقة، تُعد أكاديمية نطاق الوجهة الأولى للطلاب الباحثين عن حصص ودورات SAT قريبة ومعتمدة من هيئة الشارقة للتعليم الخاص. نوفر فصولاً دراسية صغيرة (8-12 طالباً)، وتدريباً فردياً، وحيل آلة Desmos، ونماذج امتحانات محاكاة تكيفية لرفع الدرجات بمقدار 150-250+ نقطة.'
+    question: 'Where can I prepare for the SAT in Sharjah?',
+    questionAr: 'أين يمكنني التحضير لاختبار SAT في الشارقة؟',
+    answer: 'Students in Sharjah can prepare for the SAT at Nitaq Academy, located at Abu Khamseen Tower (Office F103, Floor F1), Al Majaz 3, Sharjah. Authorized by the Sharjah Private Education Authority (SPEA), Nitaq Academy provides structured classroom coaching, authentic computer-based Bluebook mock tests, and 1-on-1 private tutoring. Our center is easily accessible from Al Majaz, Buhaira Corniche, Al Khan, Al Taawun, Al Nahda, and Muwaileh.',
+    answerAr: 'يمكن للطلاب في الشارقة التحضير لاختبار SAT في أكاديمية نطاق، الواقعة في برج أبو خمسين (مكتب F103، الطابق F1)، المجاز 3، الشارقة. المعهد مرخص ومعتمد من هيئة الشارقة للتعليم الخاص (SPEA)، ويوفر فصولاً دراسية تفاعلية مجهزة، واختبارات محاكاة تكيفية بنظام Bluebook، وتدريباً فردياً، بموقع استراتيجي قريب من كورنيش البحيرة، الخان، التعاون، النهدة، ومويلح.'
   },
   {
-    question: 'What is included in the Digital SAT course at Nitaq Academy in Sharjah?',
-    questionAr: 'ما الذي تشمله دورة Digital SAT في أكاديمية نطاق بالشارقة؟',
-    answer: 'Our comprehensive SAT course covers all 8 College Board domains across Reading & Writing and Mathematics. It includes hands-on Desmos graphing calculator masterclasses, weekly timed adaptive mock exams on Bluebook, official question banks, grammar conventions, vocabulary in context, and individual progress scorecards.',
-    answerAr: 'تشمل الدورة تغطية شاملة لجميع مجالات الاختبار الثمانية في القراءة والكتابة والرياضيات، مع تدريب متقدم على آلة Desmos البيانية، وامتحانات محاكاة أسبوعية على تطبيق Bluebook، وبنوك أسئلة رسمية، ومتابعة فردية للأداء.'
+    question: 'How do I start SAT preparation?',
+    questionAr: 'كيف أبدأ التحضير لاختبار SAT؟',
+    answer: 'The ideal first step is taking a diagnostic assessment to determine your current baseline score and pinpoint specific knowledge gaps across the 8 official College Board domains. At Nitaq Academy, students start with our free 24-question diagnostic test (taken online or in-person at Al Majaz 3). Based on your baseline score and target university deadline, our advisors map out a personalized study track.',
+    answerAr: 'الخطوة الأولى المثالية هي خوض تقييم تشخيصي لتحديد درجتك المبدئية والتعرف على نقاط القوة والفجوات المعرفية في مجالات College Board الثمانية. يبدأ طلاب أكاديمية نطاق باختبار تشخيصي مجاني (24 سؤالاً) عبر الإنترنت أو بمقرنا في المجاز 3، ليقوم المستشار الأكاديمي بعدها بوضع خطة تدريبية مخصصة.'
   },
   {
-    question: 'What is the Digital SAT and how is it different from the old SAT?',
-    questionAr: 'ما هو اختبار Digital SAT وكيف يختلف عن اختبار SAT القديم؟',
-    answer: "The Digital SAT is the official computer-based format of the Scholastic Assessment Test, taken on a laptop or tablet using the College Board's Bluebook app. It is multistage adaptive — meaning question difficulty in Module 2 adjusts based on your Module 1 performance. The total exam time is 2 hours and 14 minutes across Reading & Writing and Mathematics.",
-    answerAr: 'اختبار Digital SAT هو النسخة الرقمية الرسمية لاختبار القبول الجامعي، ويُعقد على أجهزة الكمبيوتر المحمولة عبر تطبيق Bluebook التابع لـ College Board. الاختبار تكيفي متعدد المراحل، حيث تتحدد صعوبة أسئلة الوحدة الثانية بناءً على أدائك في الوحدة الأولى. مدة الاختبار ساعتان و14 دقيقة.'
+    question: 'How long does SAT preparation usually take?',
+    questionAr: 'كم يستغرق التحضير لاختبار SAT عادةً؟',
+    answer: 'For most high school students in Sharjah, comprehensive SAT preparation takes between 8 and 12 weeks with 3 sessions per week. This provides sufficient time to master all Math and Reading & Writing concepts, practice Desmos graphing calculator hacks, and sit 4 to 6 full-length adaptive mock exams. For students with imminent test dates or re-takers, an intensive 4-week sprint is also available.',
+    answerAr: 'يستغرق التحضير الشامل لاختبار SAT لمعظم طلاب المدارس الثانوية في الشارقة بين 8 و12 أسبوعاً بمعدل 3 جلسات أسبوعياً. يتيح ذلك وقتاً كافياً لتغطية جميع محاور الرياضيات والقراءة والكتابة، والتدرب على حيل آلة Desmos، وخوض 4 إلى 6 امتحانات محاكاة تكيفية كاملة. كما يتوفر مسار مكثف مدته 4 أسابيع لمن يقترب موعد اختبارهم.'
   },
   {
-    question: 'How much does an SAT preparation course cost in Sharjah?',
-    questionAr: 'كم تبلغ تكلفة دورة التحضير لاختبار SAT في الشارقة؟',
-    answer: 'SAT preparation course fees at Nitaq Academy in Sharjah typically range from AED 1,800 to AED 4,000 depending on the selected course track (Foundation, Comprehensive, or Intensive), batch size, and whether group or 1-on-1 private mentoring is chosen. All materials, diagnostic assessments, and full-length adaptive mock exams are included. Flexible payment plans and group enrollment discounts are available.',
-    answerAr: 'تتراوح رسوم دورات التحضير لاختبار SAT في أكاديمية نطاق بالشارقة عادة بين 1,800 درهم و4,000 درهم إماراتي بحسب المسار المختار (التأسيسي، الشامل، أو المكثف)، وحجم المجموعة، وما إذا كان التدريب جماعياً أو فردياً 1-على-1. تشمل الرسوم كافة المواد التدريبية والتقييمات التشخيصية ونماذج المحاكاة.'
+    question: 'Can I prepare for the SAT while attending school?',
+    questionAr: 'هل يمكنني التحضير لاختبار SAT أثناء الدوام المدرسي؟',
+    answer: 'Yes. Most students at Nitaq Academy balance SAT preparation alongside regular school terms. Our cohorts are structured around school schedules, featuring weekend morning batches on Fridays and Saturdays (9:30 AM – 12:30 PM) and weekday evening batches (Monday to Thursday, 5:00 PM – 8:00 PM). This prevents academic overload while maintaining steady weekly score gains.',
+    answerAr: 'نعم. معظم طلابنا يوفقون بنجاح بين التحضير لـ SAT ودراستهم المدرسية العادية. صُممت جداولنا لتناسب أوقات المدارس، وتتضمن مجموعات نهاية الأسبوع يومي الجمعة والسبت (9:30 صباحاً – 12:30 ظهراً) وفترات مسائية خلال أيام الأسبوع (5:00 مساءً – 8:00 مساءً) لضمان التقدم دون التأثير على الواجبات المدرسية.'
   },
   {
-    question: 'Are weekend SAT classes available in Sharjah?',
-    questionAr: 'هل تتوفر حصص تدريب لاختبار SAT في عطلة نهاية الأسبوع بالشارقة؟',
-    answer: 'Yes. Nitaq Academy offers weekend morning batches on Fridays and Saturdays (9:30 AM – 12:30 PM) specifically designed for school students in Sharjah and Dubai who cannot attend weekday sessions. We also offer weekday evening batches (Monday to Thursday) and flexible 1-on-1 private scheduling.',
-    answerAr: 'نعم. توفر أكاديمية نطاق مجموعات تدريب صباحية في عطلة نهاية الأسبوع يومي الجمعة والسبت (9:30 صباحاً – 12:30 ظهراً) مخصصة لطلاب المدارس. كما تتوفر فترات مسائية خلال أيام الأسبوع وخيارات تدريب فردي بجدول مرن.'
+    question: 'Is SAT Math difficult?',
+    questionAr: 'هل قسم الرياضيات في اختبار SAT صعب؟',
+    answer: 'The Digital SAT Math section is challenging because it tests multi-step algebra, quadratics, non-linear functions, geometry, and trigonometry under time pressure. However, because the built-in Desmos graphing calculator is permitted on all questions, mastering calculator shortcuts, table regressions, and system intersections turns complex questions into quick visual solutions.',
+    answerAr: 'يتميز قسم الرياضيات بصعوبة أسئلته التي تغطي الجبر المتقدم والدوال والتربيعية وحساب المثلثات تحت ضغط الوقت. ولكن نظراً لأن آلة Desmos البيانية مدمجة ومتاحة لجميع الأسئلة، فإن التدرب على حيل الآلة وحل المعادلات بيانياً يختصر زمن الحل بشكل جذري ويجعل المسائل المعقدة في متناول اليد.'
   },
   {
-    question: 'How long does SAT preparation take at Nitaq Academy?',
-    questionAr: 'كم تستغرق دورة التحضير لاختبار SAT في أكاديمية نطاق؟',
-    answer: 'Our standard Comprehensive SAT track runs for 8 to 12 weeks with three 90-minute sessions per week, covering both Math and Reading & Writing. For students with upcoming exam deadlines, our 4-week Intensive crash course provides accelerated daily sessions and targeted mock reviews.',
-    answerAr: 'يمتد المسار الشامل عادة بين 8 و12 أسبوعاً بمعدل 3 جلسات أسبوعياً (90 دقيقة لكل جلسة). كما يتوفر مسار مكثف مدته 4 أسابيع للطلاب الراغبين في تسريع تحضيرهم قبل موعد الاختبار.'
+    question: 'What is the difference between SAT preparation classes and private tutoring?',
+    questionAr: 'ما الفرق بين حصص SAT الجماعية والتدريب الفردي الخاص؟',
+    answer: 'SAT preparation classes at Nitaq Academy are collaborative micro-batches of 8 to 12 students that follow a complete curriculum across Math, Reading, and Writing with peer discussion and timed practice. Private 1-on-1 tutoring provides 100% personalized pacing, flexible scheduling, and targeted focus exclusively on your specific weak domains or high-scoring Module 2 challenges.',
+    answerAr: 'حصص SAT الجماعية في أكاديمية نطاق تكون في مجموعات مصغرة (8-12 طالباً) تتبع منهجاً تدريبياً شاملاً لكافة المجالات مع نقاشات تفاعلية وامتحانات دورية. بينما يمنح التدريب الفردي (1-على-1) تركيزاً مخصصاً بالكامل على وتيرة الطالب ونقاط ضعفه الخاصة مع مرونة كاملة في المواعيد.'
   },
   {
-    question: 'Where is Nitaq Academy located in Sharjah?',
-    questionAr: 'أين يقع مقر أكاديمية نطاق في الشارقة؟',
-    answer: 'Nitaq Academy is located at Abu Khamseen Tower - Office : F103, Floor F1 - Al Majaz 3 - Al Majaz - Sharjah - United Arab Emirates. We are easily accessible for students from Al Majaz, Buhaira Corniche, Al Khan, Al Taawun, Al Nahda, and connecting commuter routes from Dubai.',
-    answerAr: 'يقع مقر أكاديمية نطاق في مكتب F103، الطابق F1، برج أبو خمسين، المجاز 3، الشارقة. موقعنا استراتيجي ويسهل الوصول إليه من كورنيش البحيرة، الخان، التعاون، النهدة، ومداخل دبي.'
+    question: 'Does Nitaq Academy offer an SAT diagnostic assessment?',
+    questionAr: 'هل تقدم أكاديمية نطاق تقييماً تشخيصياً لاختبار SAT؟',
+    answer: 'Yes. Nitaq Academy provides a free 24-question Digital SAT diagnostic assessment measuring baseline readiness across all 8 College Board domains in just 15 to 20 minutes. You receive an immediate composite score projection and domain analysis report to help you select the ideal course track.',
+    answerAr: 'نعم. توفر أكاديمية نطاق تقييماً تشخيصياً مجانياً (24 سؤالاً) يقيس جاهزيتك الفعلية عبر مجالات الاختبار الثمانية خلال 15-20 دقيقة، مع تقرير فوري يوضح تقدير درجتك وتوصيات خطتك الدراسية.'
+  },
+  {
+    question: 'What is the Digital SAT and how is it different from the old paper SAT?',
+    questionAr: 'ما هو اختبار Digital SAT وكيف يختلف عن الاختبار الورقي القديم؟',
+    answer: 'The Digital SAT is the current computer-based format of the Scholastic Assessment Test, taken on a laptop using the College Board Bluebook app. It is multistage adaptive — the difficulty of Module 2 adjusts based on your performance in Module 1. Total testing time is 2 hours and 14 minutes, significantly shorter than the previous 3-hour paper exam.',
+    answerAr: 'اختبار Digital SAT هو النسخة الرقمية الحديثة التي تُعقد عبر تطبيق Bluebook على الحاسوب المحمول. الاختبار تكيفي متعدد المراحل؛ حيث تتكيف صعوبة الوحدة الثانية بناءً على أدائك في الوحدة الأولى. مدة الاختبار ساعتان و14 دقيقة وهو أقصر بكثير من الاختبار الورقي السابق.'
   },
   {
     question: 'What SAT score do I need for UAE universities like AUS and Khalifa University?',
     questionAr: 'ما هي الدرجة المطلوبة في SAT للجامعات في الإمارات مثل الجامعة الأمريكية في الشارقة وجامعة خليفة؟',
-    answer: 'Most UAE universities require 1200+ for competitive admissions. The American University of Sharjah (AUS) generally looks for 1200–1350+ for engineering and business programs. Khalifa University targets 1250–1400+. NYU Abu Dhabi and elite global universities typically expect 1450–1550+. High scores also unlock generous merit scholarship opportunities.',
-    answerAr: 'تطلب معظم الجامعات الرائدة في الإمارات 1200+ للقبول التنافسي. الجامعة الأمريكية في الشارقة تتطلب عموماً 1200–1350+ للهندسة وإدارة الأعمال، وجامعة خليفة 1250–1400+، وجامعة نيويورك أبوظبي 1450–1550+، وتؤهل الدرجات العالية للحصول على منح دراسية مجزية.'
+    answer: 'Most top UAE universities look for competitive SAT scores. The American University of Sharjah (AUS) generally expects 1200–1350+ for engineering and business programs. Khalifa University targets 1250–1400+. Prestigious institutions like NYU Abu Dhabi and elite global universities typically require 1450–1550+. High scores also unlock substantial merit scholarships.',
+    answerAr: 'تتطلب معظم الجامعات الرائدة في الإمارات درجات تنافسية؛ فالجامعة الأمريكية في الشارقة (AUS) تطلب عموماً 1200–1350+ للهندسة وإدارة الأعمال، وجامعة خليفة 1250–1400+، وجامعة نيويورك أبوظبي 1450–1550+، كما تمنح الدرجات العالية فرصاً ممتازة للمنح الدراسية.'
   },
   {
-    question: 'Where are the official SAT exam centers in the UAE?',
-    questionAr: 'أين تقع مراكز اختبار SAT الرسمية في دولة الإمارات؟',
-    answer: 'Official College Board SAT test centers in the UAE are situated in Dubai and Abu Dhabi. Students from Sharjah typically sit the exam at nearby authorized school centers in Dubai. We advise registering at least 6 to 8 weeks in advance on collegeboard.org to secure your preferred date and location.',
-    answerAr: 'تقع مراكز اختبار SAT الرسمية المعتمدة في دبي وأبوظبي، وعادة ما يتقدم طلاب الشارقة للاختبار في المراكز المعتمدة القريبة في دبي. نوصي بالتسجيل مبكراً بـ 6 إلى 8 أسابيع عبر موقع College Board.'
-  },
-  {
-    question: 'Can I start with a diagnostic assessment before enrolling?',
-    questionAr: 'هل يمكنني البدء بتقييم تشخيصي قبل التسجيل في الدورة؟',
-    answer: 'Yes! Nitaq Academy provides a free 24-question Digital SAT diagnostic assessment measuring baseline readiness across all 8 College Board domains in 15–20 minutes. You receive an instant composite score projection and domain report to help you select the ideal course track.',
-    answerAr: 'نعم! توفر أكاديمية نطاق تقييماً تشخيصياً مجانياً (24 سؤالاً) يقيس مستواك عبر جميع مجالات SAT الثمانية خلال 15-20 دقيقة، مع تقرير فوري لتحديد المسار التدريبي الأنسب.'
+    question: 'Can Dubai students access Nitaq Academy SAT preparation?',
+    questionAr: 'هل يمكن لطلاب دبي الاستفادة من دورات SAT في أكاديمية نطاق؟',
+    answer: 'Yes. Dubai students can enroll in our live interactive online SAT classes tailored for UAE schedules, with the additional hybrid option to attend proctored in-person mock exam simulations at our Sharjah campus in Al Majaz 3 (easily accessible via E11 and E311). Explore our dedicated Dubai options at https://www.nitaqacademy.com/sat-preparation-dubai.',
+    answerAr: 'نعم. يستطيع طلاب دبي الانضمام إلى حصصنا التفاعلية المباشرة عبر الإنترنت، مع إمكانية الحضور الهجين للامتحانات التجريبية في مقرنا بالمجاز 3 بالشارقة عبر شارع الاتحاد وطريق الشيخ محمد بن زايد. تفضل بزيارة صفحة تحضير SAT في دبي لمزيد من التفاصيل.'
   }
 ];
 
-const DUBAI_FAQS = [
-  {
-    question: 'How are online SAT classes conducted for Dubai students?',
-    questionAr: 'كيف تُعقد حصص SAT عبر الإنترنت لطلاب دبي؟',
-    answer: 'Classes are conducted live and interactively via high-definition video with shared digital whiteboards, real-time problem-solving, and live Desmos graphing demonstrations. Students actively ask questions and receive full session recordings for review before exams.',
-    answerAr: 'تُعقد الحصص بشكل مباشر وتفاعلي عبر الفيديو عالي الدقة مع ألواح كتابة رقمية مشتركة وتطبيقات مباشرة على آلة Desmos، مع تسجيل الحصص للرجوع إليها لاحقاً.'
-  },
-  {
-    question: 'Can Dubai students attend in-person mock exams at the Sharjah campus?',
-    questionAr: 'هل يمكن لطلاب دبي حضور الامتحانات التجريبية حضورياً في مقر الشارقة؟',
-    answer: 'Yes. We offer a hybrid arrangement where Dubai students attend live online weekday classes and can visit our campus in Al Majaz 3, Sharjah (just 15–20 minutes from northern Dubai) to sit proctored full-length computer-based mock exams under authentic test conditions.',
-    answerAr: 'نعم. نوفر نظاماً هجيناً يتيح لطلاب دبي حضور الدروس عبر الإنترنت مع خيار الحضور الشخصي للامتحانات التجريبية المحاكية في مقرنا بالمجاز 3 في الشارقة.'
-  },
-  {
-    question: 'What batch timings are available for online SAT prep in Dubai?',
-    questionAr: 'ما هي مواعيد المجموعات التدريبية المتاحة عبر الإنترنت لطلاب دبي؟',
-    answer: 'We offer flexible weekday evening batches (Monday to Thursday) and weekend morning sessions (Fridays and Saturdays) tailored to school schedules in Dubai, along with customized 1-on-1 private tutoring slots.',
-    answerAr: 'نوفر فترات مسائية خلال أيام الأسبوع ومجموعات صباحية في عطلة نهاية الأسبوع (الجمعة والسبت) متوافقة مع جداول المدارس في دبي، بالإضافة إلى خيارات التدريب الفردي الخاص.'
-  },
-  {
-    question: 'What are the fees for online Digital SAT courses in Dubai?',
-    questionAr: 'ما هي رسوم دورة Digital SAT عبر الإنترنت لطلاب دبي؟',
-    answer: 'Online SAT preparation course fees typically range from AED 1,800 to AED 4,000 depending on the program track (Foundation, Comprehensive, or Intensive) and batch format. Contact our admissions team on WhatsApp for current cohort schedules and enrollment details.',
-    answerAr: 'تتراوح رسوم دورات SAT عبر الإنترنت بين 1,800 و4,000 درهم إماراتي بحسب المسار المختار، مع توفير خيارات سداد ميسرة واستشارات مجانية عبر واتساب.'
-  }
-];
-
-const SATCourse = ({ locationName = 'Sharjah' }) => {
+const SATCourse = () => {
   const { lang } = useLanguage();
   const isAr = lang === 'ar';
-  const isDubai = locationName === 'Dubai';
-  const locArabic = isDubai ? 'دبي' : 'الشارقة';
 
-  const faqs = isDubai ? DUBAI_FAQS : SHARJAH_FAQS;
-  const faqSchemaData = faqs.map(f => ({
+  const faqSchemaData = SHARJAH_FAQS.map(f => ({
     question: isAr ? f.questionAr : f.question,
     answer: isAr ? f.answerAr : f.answer
   }));
@@ -126,43 +95,37 @@ const SATCourse = ({ locationName = 'Sharjah' }) => {
           <div className="sat-hero-container">
             <div className="sat-hero-content">
               <div className="sat-hero-eyebrow">
-                {isDubai
-                  ? (isAr ? 'مباشر وتفاعلي عبر الإنترنت · دورة وحصص DIGITAL SAT لطلاب دبي والإمارات' : 'LIVE INTERACTIVE ONLINE · DIGITAL SAT COURSE & CLASSES FOR DUBAI & UAE')
-                  : (isAr ? 'معتمد من هيئة الشارقة للتعليم الخاص · دورة وحصص DIGITAL SAT في الشارقة · المجاز 3' : 'SPEA AUTHORIZED · DIGITAL SAT COURSE & CLASSES IN SHARJAH · AL MAJAZ 3')}
+                {isAr 
+                  ? 'معتمد من هيئة الشارقة للتعليم الخاص · المجاز 3، الشارقة' 
+                  : 'SPEA AUTHORIZED · AL MAJAZ 3, SHARJAH · ACCREDITED PREP'}
               </div>
 
               <h1 className="sat-hero-heading">
-                {isDubai
-                  ? (isAr ? 'دورة وحصص Digital SAT عبر الإنترنت لطلاب دبي' : 'Digital SAT Course & Online Classes for Dubai Students')
-                  : (isAr ? 'دورة وحصص Digital SAT في الشارقة' : 'Digital SAT Course & Classes in Sharjah')}
+                {isAr ? 'التحضير لاختبار SAT في الشارقة' : 'SAT Preparation in Sharjah'}
               </h1>
 
               <p className="sat-hero-description">
-                {isDubai
-                  ? (isAr
-                    ? 'دورات وحصص تفاعلية ومباشرة عبر الإنترنت لاختبار Digital SAT لطلاب دبي والإمارات مع خيار الحضور الهجين للامتحانات التجريبية. تدريب تطبيقي على حيل آلة Desmos، ونماذج امتحانات محاكاة تكيفية بنظام Bluebook، وتقييم تشخيصي دقيق للوصول إلى 1500+.'
-                    : 'Master the Digital SAT with our top-rated SAT course and live interactive online SAT classes designed for Dubai and UAE students. Real-time Desmos masterclasses, 1-on-1 tutoring, adaptive Bluebook-format mock exams, diagnostic assessments, and hybrid campus mock test access.')
-                  : (isAr
-                    ? 'تبحث عن أفضل دورة وحصص SAT قريبة منك في الشارقة؟ يقدم معهد أكاديمية نطاق المعتمد من هيئة الشارقة للتعليم الخاص في برج أبو خمسين بالمجاز 3 فصولاً دراسية متقدمة لاختبار Digital SAT. تدريب على صعوبة الاختبار التكيفي، وحيل آلة Desmos، وحصص عطلة نهاية الأسبوع للوصول إلى 1500+.'
-                    : "Searching for top-rated SAT classes near me or a comprehensive SAT course in Sharjah? Nitaq Academy's premier SPEA-authorized Digital SAT coaching at Abu Khamseen Tower, Al Majaz 3 delivers small-batch classroom training, 1-on-1 tutoring, Desmos graphing shortcuts, and adaptive Bluebook mock practice with proven 150–250+ point score gains.")}
+                {isAr
+                  ? 'استعد لاختبار SAT في الشارقة مع أكاديمية نطاق في برج أبو خمسين بالمجاز 3. دورات تدريبية متخصصة، ودعم مكثف للرياضيات والقراءة والكتابة، وحيل آلة Desmos البيانية، واختبارات تجريبية تكيفية بنظام Bluebook.'
+                  : 'Prepare for the SAT in Sharjah with Nitaq Academy at Abu Khamseen Tower, Al Majaz 3. Explore expert SAT preparation classes, Math and English support, Desmos calculator shortcuts, full-length practice tests, and personalized score-improvement guidance.'}
               </p>
 
               <div className="sat-hero-cta-group">
                 <a
                   href={`https://wa.me/971527569908?text=${encodeURIComponent(
                     isAr
-                      ? `مرحباً أكاديمية نطاق، أود الاستفسار عن دورة تحضير SAT (${locArabic})`
-                      : `Hi Nitaq Academy, I am interested in the Digital SAT Preparation course (${locationName})`
+                      ? 'مرحباً أكاديمية نطاق، أود الاستفسار عن التحضير لاختبار SAT في الشارقة'
+                      : 'Hi Nitaq Academy, I am interested in SAT Preparation in Sharjah'
                   )}`}
                   className="sat-btn-primary"
-                  onClick={() => trackEvent(ANALYTICS_EVENTS.WHATSAPP, 'sat_hero_enroll')}
+                  onClick={() => trackEvent(ANALYTICS_EVENTS.WHATSAPP, 'sat_sharjah_hero_enroll')}
                 >
                   {isAr ? 'سجل عبر واتساب ←' : 'Enroll via WhatsApp →'}
                 </a>
                 <Link
                   to="/sat/diagnostic"
                   className="sat-btn-secondary"
-                  onClick={() => trackEvent(ANALYTICS_EVENTS.CLICK, 'sat_hero_diagnostic')}
+                  onClick={() => trackEvent(ANALYTICS_EVENTS.CLICK, 'sat_sharjah_hero_diagnostic')}
                 >
                   {isAr ? 'ابدأ التقييم التشخيصي المجاني' : 'Start Free Diagnostic'}
                 </Link>
@@ -170,9 +133,9 @@ const SATCourse = ({ locationName = 'Sharjah' }) => {
 
               <div className="sat-hero-trust-line">
                 <span className="sat-trust-check-icon">✓</span>
-                {isDubai
-                  ? (isAr ? 'حصص مباشرة عبر الإنترنت · تسجيلات للمراجعة · خيار حضور الامتحانات التجريبية في المقر' : 'Live Online Classes · Recorded Sessions · Optional Hybrid Campus Mocks')
-                  : (isAr ? 'مرخص من هيئة الشارقة للتعليم الخاص · المجاز 3، الشارقة · مجموعات صغيرة (8-12 طالباً)' : 'SPEA Licensed & Attested · Al Majaz 3, Sharjah · Small Batches (8–12 Students)')}
+                {isAr 
+                  ? 'مرخص من هيئة الشارقة للتعليم الخاص · المجاز 3، الشارقة · مجموعات صغيرة (8-12 طالباً)' 
+                  : 'SPEA Licensed & Attested · Al Majaz 3, Sharjah · Small Batches (8–12 Students)'}
               </div>
             </div>
 
@@ -182,8 +145,8 @@ const SATCourse = ({ locationName = 'Sharjah' }) => {
                   src="/images/sat_hero_student_hoodie.webp"
                   srcSet="/images/sat_hero_student_hoodie-480.webp 480w, /images/sat_hero_student_hoodie-720.webp 720w, /images/sat_hero_student_hoodie.webp 1024w"
                   sizes="(max-width: 768px) calc(100vw - 48px), 500px"
-                  alt={`Student preparing for the Digital SAT with Nitaq Academy in ${locationName}`}
-                  title={`Student preparing for the Digital SAT with Nitaq Academy in ${locationName}`}
+                  alt="Student preparing for the SAT with Nitaq Academy in Sharjah"
+                  title="Student preparing for the SAT with Nitaq Academy in Sharjah"
                   width="500"
                   height="500"
                   fetchPriority="high"
@@ -208,18 +171,16 @@ const SATCourse = ({ locationName = 'Sharjah' }) => {
         {/* ── 2. COURSE SNAPSHOT STRIP ──────────────────────────────── */}
         <section className="sat-snapshot-strip">
           <div className="sat-snapshot-container">
-            {/* 1. Programs */}
             <div className="sat-snapshot-item">
               <div className="sat-snapshot-icon-wrapper">
                 <Compass size={22} />
               </div>
               <div>
                 <div className="sat-snapshot-label">{isAr ? 'المسارات' : 'Programs'}</div>
-                <div className="sat-snapshot-value">{isAr ? '3 مسارات محددة بالتشخيص' : 'Foundation · Comprehensive · Intensive'}</div>
+                <div className="sat-snapshot-value">{isAr ? 'تأسيسي · شامل · مكثف' : 'Foundation · Comprehensive · Intensive'}</div>
               </div>
             </div>
 
-            {/* 2. Schedule */}
             <div className="sat-snapshot-item">
               <div className="sat-snapshot-icon-wrapper">
                 <Calendar size={22} />
@@ -230,22 +191,16 @@ const SATCourse = ({ locationName = 'Sharjah' }) => {
               </div>
             </div>
 
-            {/* 3. Format */}
             <div className="sat-snapshot-item">
               <div className="sat-snapshot-icon-wrapper">
-                {isDubai ? <Laptop size={22} /> : <MapPin size={22} />}
+                <MapPin size={22} />
               </div>
               <div>
-                <div className="sat-snapshot-label">{isAr ? 'نمط الدراسة' : 'Format'}</div>
-                <div className="sat-snapshot-value">
-                  {isDubai 
-                    ? (isAr ? 'تفاعلي عبر الإنترنت + هجين' : 'Live Online + Hybrid Mocks')
-                    : (isAr ? 'حضوري في المجاز 3 + عبر الإنترنت' : 'In-Person Al Majaz 3 & Online')}
-                </div>
+                <div className="sat-snapshot-label">{isAr ? 'الموقع' : 'Location'}</div>
+                <div className="sat-snapshot-value">{isAr ? 'برج أبو خمسين، المجاز 3' : 'Abu Khamseen Tower, Al Majaz 3'}</div>
               </div>
             </div>
 
-            {/* 4. Focus Areas */}
             <div className="sat-snapshot-item">
               <div className="sat-snapshot-icon-wrapper">
                 <BookOpen size={22} />
@@ -258,37 +213,30 @@ const SATCourse = ({ locationName = 'Sharjah' }) => {
           </div>
         </section>
 
-        {/* ── 3. DEFINITION BLOCK: WHAT IS THE DIGITAL SAT? ───────────── */}
+        {/* ── 3. SAT PREPARATION CLASSES IN SHARJAH ──────────────────── */}
         <section className="sat-definition-section">
           <div className="sat-section-container">
             <div className="sat-definition-card">
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
-                <span className="sat-guide-tag">{isAr ? 'نظرة عامة على الاختبار' : 'EXAM ESSENTIALS'}</span>
+                <span className="sat-guide-tag">{isAr ? 'فصول التدريب المباشر' : 'IN-PERSON & ADAPTIVE'}</span>
                 <span style={{ color: '#94A3B8' }}>•</span>
                 <span style={{ fontSize: '0.85rem', fontWeight: 600, color: '#475467' }}>
-                  {isAr ? 'دليل College Board Bluebook' : 'College Board Bluebook Format'}
+                  {isAr ? 'مرخص من هيئة الشارقة للتعليم الخاص' : 'SPEA Licensed Training Center'}
                 </span>
               </div>
 
-              <h2 style={{ fontSize: 'clamp(1.5rem, 2.5vw, 2.1rem)', fontWeight: 800, color: '#101828', marginBottom: '16px', lineHeight: 1.25 }}>
-                {isAr 
-                  ? 'ما هو اختبار Digital SAT ولماذا يُعد محورياً للقبول الجامعي والمنح؟'
-                  : 'What is the Digital SAT & Why Does It Matter for University Admissions?'}
+              <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 800, color: '#101828', marginBottom: '18px', lineHeight: 1.25 }}>
+                {isAr ? 'حصص ودورات التحضير لاختبار SAT في الشارقة' : 'SAT Preparation Classes in Sharjah'}
               </h2>
 
               <p style={{ color: '#475467', fontSize: '1.025rem', lineHeight: 1.75, marginBottom: '24px' }}>
                 {isAr ? (
                   <>
-                    اختبار <strong>Digital SAT</strong> (المعروف تاريخياً باختبار تقييم الكفاءة الدراسية Scholastic Assessment Test) هو المعيار الدولي المعتمد للقبول الجامعي والمقدم من مؤسسة College Board الأمريكية عبر تطبيق <strong>Bluebook</strong>. 
-                    يمتد الاختبار لمدة <strong>ساعتين و14 دقيقة</strong>، وينقسم إلى قسمين رئيسيين: <strong>القراءة والكتابة (Reading &amp; Writing)</strong> و<strong>الرياضيات (Mathematics)</strong>، 
-                    وهو اختبار تكيفي رقمي بحيث تحدد دقة إجاباتك في الوحدة الأولى مستوى صعوبة الوحدة الثانية. في دولة الإمارات، يُعد الحصول على درجة 1300+ إلى 1500+ شرطاً رئيسياً للقبول التنافسي 
-                    والحصول على منح التميز الأكاديمي في جامعات كبرى مثل <strong>الجامعة الأمريكية في الشارقة (AUS)</strong>، <strong>جامعة خليفة</strong>، <strong>جامعة نيويورك أبوظبي</strong>، بالإضافة إلى الجامعات العالمية في الولايات المتحدة والمملكة المتحدة وكندا.
+                    تقدم أكاديمية نطاق <strong>حصص التحضير لاختبار SAT في الشارقة</strong> داخل فصول دراسية مجهزة بأحدث الوسائل التفاعلية في <strong>برج أبو خمسين بالمجاز 3</strong>. نركز على معايير اختبار <strong>Digital SAT</strong> التكيفي المعتمد من College Board، مع تقسيم التدريب إلى مجموعات مصغرة من 8 إلى 12 طالباً لضمان الرعاية الفردية والمتابعة اللحظية لكل طالب. تشمل فصولنا تدريباً مباشراً على حيل آلة Desmos البيانية، واستراتيجيات إدارة الوقت، وأحدث تقنيات التعامل مع الأسئلة المعقدة في القسمين.
                   </>
                 ) : (
                   <>
-                    Formerly known as the Scholastic Assessment Test (SAT), the <strong>Digital SAT</strong> is the globally standardized college admissions exam administered electronically via the College Board's official <strong>Bluebook</strong> testing platform. 
-                    Clocking in at <strong>2 hours and 14 minutes</strong>, the exam features two integrated sections: <strong>Reading &amp; Writing</strong> (54 questions / 64 minutes) and <strong>Mathematics</strong> (44 questions / 70 minutes with built-in Desmos graphing calculator access). 
-                    As a multistage adaptive test, your accuracy in Module 1 dictates whether you unlock the higher-scoring Module 2. For high school students in Sharjah, Dubai, and across the UAE, earning a competitive 1300+ to 1500+ score is pivotal for meeting direct entry thresholds and securing prestigious merit scholarships at institutions such as the <strong>American University of Sharjah (AUS)</strong>, <strong>Khalifa University</strong>, <strong>NYU Abu Dhabi</strong>, and leading international universities worldwide.
+                    Nitaq Academy delivers premier <strong>SAT preparation classes in Sharjah</strong> at our purpose-built campus in <strong>Abu Khamseen Tower, Al Majaz 3</strong>. Our classes focus rigorously on the official College Board <strong>Digital SAT</strong> multistage adaptive format. Taught in small micro-cohorts of only 8 to 12 students, every learner receives individualized feedback, strategic pacing guidance, and targeted problem-solving drills designed to systematically eliminate errors across Reading &amp; Writing and Mathematics.
                   </>
                 )}
               </p>
@@ -297,428 +245,407 @@ const SATCourse = ({ locationName = 'Sharjah' }) => {
                 <div className="sat-info-card">
                   <div className="sat-info-card-header">
                     <div className="sat-info-icon-box">
-                      <Sparkles size={22} />
+                      <Users size={22} />
                     </div>
-                    <h3>{isAr ? 'ما الذي نغطيه في أكاديمية نطاق؟' : 'What Nitaq Academy Covers'}</h3>
+                    <h3>{isAr ? 'مجموعات صغيرة وتفاعل مباشر' : 'Small Interactive Cohorts'}</h3>
                   </div>
                   <p>
                     {isAr
-                      ? 'تغطية شاملة لجميع مجالات الاختبار الثمانية: الجبر، والرياضيات المتقدمة، وحل المشكلات، وحساب المثلثات، مع تدريب مكثف على حيل آلة Desmos البيانية، واستراتيجيات الربط النصي وقواعد الإنجليزية المعيارية (SAT grammar rules) وبنوك الأسئلة التكيفية.'
-                      : 'Comprehensive mastery of all 8 College Board domains: Algebra, Advanced Math, Problem-Solving, Geometry & Trig, Craft & Structure, Information & Ideas, and Standard English Conventions (essential SAT grammar rules), paired with expert Desmos graphing shortcuts and structured question practice.'}
+                      ? 'مجموعات تدريبية مصغرة تضمن إمكانية طرح الأسئلة والتفاعل المستمر مع المدرب وتصحيح الأخطاء المفاهيمية فور حدوثها.'
+                      : 'Capped at 8 to 12 students per batch to guarantee active teacher interaction, direct question-and-answer support, and immediate concept clarification.'}
                   </p>
                 </div>
 
                 <div className="sat-info-card">
                   <div className="sat-info-card-header">
                     <div className="sat-info-icon-box">
-                      <Award size={22} />
+                      <Clock size={22} />
                     </div>
-                    <h3>{isAr ? 'منهجية التقييم والتطوير' : 'Diagnostic-Led Score Growth'}</h3>
+                    <h3>{isAr ? 'مواعيد مرنة للمدارس' : 'Weekend & Evening Schedules'}</h3>
                   </div>
                   <p>
                     {isAr
-                      ? 'يبدأ كل طالب بتقييم تشخيصي دقيق لتحديد نقاط القوة ومواطن التحسين، يلي ذلك خطة دراسية مخصصة، وامتحانات محاكاة دورية تحت ظروف الامتحان الحقيقي، وتدريب على وتيرة الوقت.'
-                      : 'Every student begins with a calibrated diagnostic assessment to map precise baseline strengths. Training includes weekly adaptive Bluebook-style drills, timed module pacing, and individualized doubt-clearing sessions.'}
+                      ? 'فترات صباحية في عطلة نهاية الأسبوع (الجمعة والسبت) وفترات مسائية خلال أيام الأسبوع تتناسب تماماً مع جدول طلاب المدارس.'
+                      : 'Weekend morning sessions (Friday & Saturday) and weekday evening slots structured around UAE school calendars to ensure study consistency.'}
                   </p>
                 </div>
-              </div>
-
-              {/* High-Intent SEO Callout: SAT Classes Near Me & SAT Course */}
-              <div style={{ marginTop: '28px', background: '#F0FDF4', border: '1px solid #BBF7D0', borderRadius: '14px', padding: '24px 28px' }}>
-                <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#166534', margin: '0 0 10px 0' }}>
-                  {isAr 
-                    ? 'أفضل دورة وحصص SAT قريبة منك في الشارقة (المجاز 3)' 
-                    : 'Premier Digital SAT Course & In-Person SAT Classes Near Me in Sharjah'}
-                </h3>
-                <p style={{ margin: 0, color: '#15803d', fontSize: '0.98rem', lineHeight: 1.7 }}>
-                  {isAr ? (
-                    <>
-                      إذا كنت تبحث عن <strong>حصص SAT قريبة مني</strong> أو <strong>دورة SAT معتمدة في الشارقة</strong>، فإن موقع أكاديمية نطاق في برج أبو خمسين بالمجاز 3 يوفر سهولة وصول استثنائية لطلاب كورنيش البحيرة، الخان، التعاون، النهدة، ومويلح. نضمن فصولاً دراسية مجهزة بأحدث أدوات Bluebook، ومجموعات صغيرة (8-12 طالباً)، وحصصاً تدريبية مكثفة في عطلة نهاية الأسبوع لرفع درجاتك إلى 1500+.
-                    </>
-                  ) : (
-                    <>
-                      Searching for <strong>SAT classes near me</strong> or the highest-rated <strong>SAT course in Sharjah</strong>? Conveniently located at Abu Khamseen Tower in Al Majaz 3, Nitaq Academy offers effortless neighborhood access for high school students across Al Majaz, Buhaira Corniche, Al Khan, Al Taawun, Al Nahda, and Muwaileh. Unlike generic school tuition, our dedicated <strong>SAT classes</strong> focus exclusively on official College Board adaptive test mechanics, high-speed Desmos graphing hacks, timed module pacing, and targeted score improvement.
-                    </>
-                  )}
-                </p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* ── 4. FEE TRANSPARENCY & WEEKEND SCHEDULE SECTION ─────────── */}
-        <section className="sat-details-section" style={{ background: '#F8FBF9', borderTop: '1px solid #E4E7EC', borderBottom: '1px solid #E4E7EC' }}>
+        {/* ── 4. WHY CHOOSE NITAQ ACADEMY FOR SAT PREPARATION? ───────── */}
+        <section style={{ padding: '80px 0', background: '#F8FBF9', borderTop: '1px solid #E4E7EC', borderBottom: '1px solid #E4E7EC' }}>
           <div className="sat-section-container">
             <div className="sat-section-header-center">
-              <div className="sat-why-eyebrow">{isAr ? 'الرسوم والمواعيد' : 'FEES & BATCH SCHEDULES'}</div>
+              <div className="sat-why-eyebrow">{isAr ? 'التميز والاعتماد' : 'PROVEN EXCELLENCE'}</div>
               <h2 className="sat-why-title" style={{ fontSize: '2.4rem' }}>
-                {isAr ? 'رسوم دورة SAT ومواعيد الحصص في الشارقة' : 'SAT Course Fees & Class Timetables in Sharjah & UAE'}
+                {isAr ? 'لماذا تختار أكاديمية نطاق للتحضير لاختبار SAT؟' : 'Why Choose Nitaq Academy for SAT Preparation?'}
               </h2>
-            </div>
-
-            <div className="sat-grid-2col" style={{ marginTop: '36px' }}>
-              {/* Fee Information Card */}
-              <div className="sat-info-card" style={{ padding: '32px' }}>
-                <div className="sat-info-card-header">
-                  <div className="sat-info-icon-box" style={{ background: '#ECFDF5', color: '#166534' }}>
-                    <DollarSign size={24} />
-                  </div>
-                  <div>
-                    <span style={{ fontSize: '0.8rem', fontWeight: 700, color: '#1E7E34', textTransform: 'uppercase' }}>
-                      {isAr ? 'الرسوم التدريبية' : 'COURSE FEES'}
-                    </span>
-                    <h3 style={{ fontSize: '1.35rem', marginTop: '2px' }}>
-                      {isAr ? 'هيكل رسوم دورة SAT وخيارات السداد' : 'Digital SAT Course Fee Structure in Sharjah & UAE'}
-                    </h3>
-                  </div>
-                </div>
-
-                <p style={{ marginBottom: '16px' }}>
-                  {isAr ? (
-                    <>
-                      تتراوح رسوم دورات وحصص التحضير لاختبار SAT في أكاديمية نطاق عادة بين <strong>1,800 درهم و4,000 درهم إماراتي</strong>، وتعتمد التكلفة الدقيقة على:
-                    </>
-                  ) : (
-                    <>
-                      Digital SAT course fees and class tuition at Nitaq Academy typically range from <strong>AED 1,800 to AED 4,000</strong> depending on:
-                    </>
-                  )}
-                </p>
-
-                <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 20px 0', display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '0.94rem', color: '#334155' }}>
-                  <li style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <CheckCircle2 size={18} color="#1E7E34" />
-                    <span>{isAr ? 'المسار التدريبي المختار: التأسيسي (12 أسبوعاً)، الشامل (8 أسابيع)، أو المكثف (4 أسابيع)' : 'Selected track: Foundation (12 wks), Comprehensive (8 wks), or Intensive (4 wks)'}</span>
-                  </li>
-                  <li style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <CheckCircle2 size={18} color="#1E7E34" />
-                    <span>{isAr ? 'نمط التدريب: مجموعات صغيرة (8-12 طالباً) أو حصص فردية 1-على-1 مخصصة' : 'Delivery format: Small group micro-batches (8–12 students) or 1-on-1 private tutoring'}</span>
-                  </li>
-                  <li style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <CheckCircle2 size={18} color="#1E7E34" />
-                    <span>{isAr ? 'يشمل كافة المواد وبنوك الأسئلة والتقييمات ونماذج الامتحانات المحاكية' : 'Includes all official study materials, adaptive mock test software, and diagnostic scorecards'}</span>
-                  </li>
-                </ul>
-
-                <div style={{ background: '#F1F5F9', borderRadius: '10px', padding: '14px 18px', fontSize: '0.88rem', color: '#475467', marginBottom: '20px' }}>
-                  {isAr
-                    ? '💡 تتوفر خطط سداد ميسرة بالأقساط وخصومات إضافية للأشقاء والتسجيل الجماعي.'
-                    : '💡 Flexible installment plans and sibling/group discounts are available upon enquiry.'}
-                </div>
-
-                <a
-                  href={`https://wa.me/971527569908?text=${encodeURIComponent(
-                    isAr
-                      ? 'مرحباً، أود معرفة جدول الرسوم الحالية والمجموعات القادمة لاختبار SAT'
-                      : 'Hi Nitaq Academy, I would like to enquire about the current SAT course fees and batch schedules'
-                  )}`}
-                  className="sat-btn-secondary"
-                  style={{ width: '100%', textAlign: 'center', display: 'block' }}
-                  onClick={() => trackEvent(ANALYTICS_EVENTS.WHATSAPP, 'sat_fee_enquiry')}
-                >
-                  {isAr ? 'استفسر عن الرسوم عبر واتساب ←' : 'Inquire Exact Fee Quote via WhatsApp →'}
-                </a>
-              </div>
-
-              {/* Weekend & Batch Schedule Card */}
-              <div className="sat-info-card" style={{ padding: '32px' }}>
-                <div className="sat-info-card-header">
-                  <div className="sat-info-icon-box" style={{ background: '#EFF6FF', color: '#1D4ED8' }}>
-                    <Calendar size={24} />
-                  </div>
-                  <div>
-                    <span style={{ fontSize: '0.8rem', fontWeight: 700, color: '#1D4ED8', textTransform: 'uppercase' }}>
-                      {isAr ? 'المواعيد والأوقات' : 'BATCH SCHEDULES'}
-                    </span>
-                    <h3 style={{ fontSize: '1.35rem', marginTop: '2px' }}>
-                      {isAr ? 'حصص عطلة نهاية الأسبوع والفترات المسائية' : 'Weekend SAT Classes & Weekday Evening Batches'}
-                    </h3>
-                  </div>
-                </div>
-
-                <p style={{ marginBottom: '16px' }}>
-                  {isAr ? (
-                    <>
-                      صُممت مواعيد الحصص في أكاديمية نطاق لتلائم الجداول المدرسية المزدحمة لطلاب المرحلة الثانوية:
-                    </>
-                  ) : (
-                    <>
-                      Batches are intentionally scheduled around high school academic timetables in Sharjah and Dubai:
-                    </>
-                  )}
-                </p>
-
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', marginBottom: '20px' }}>
-                  <div style={{ border: '1px solid #E2E8F0', borderRadius: '12px', padding: '16px', background: '#FFFFFF' }}>
-                    <div style={{ fontWeight: 700, color: '#101828', display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
-                      <Clock size={16} color="#1E7E34" />
-                      {isAr ? 'مجموعات عطلة نهاية الأسبوع (الجمعة والسبت)' : 'Weekend Morning Batches (Friday & Saturday)'}
-                    </div>
-                    <div style={{ fontSize: '0.9rem', color: '#475467' }}>
-                      {isAr ? 'صباحاً: 9:30 ص – 12:30 م · مثالي للطلاب من خارج الشارقة ولتفادي ازدحام أيام الأسبوع' : 'Morning slots: 9:30 AM – 12:30 PM. Perfect for high schoolers with heavy weekday commitments.'}
-                    </div>
-                  </div>
-
-                  <div style={{ border: '1px solid #E2E8F0', borderRadius: '12px', padding: '16px', background: '#FFFFFF' }}>
-                    <div style={{ fontWeight: 700, color: '#101828', display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
-                      <Clock size={16} color="#1D4ED8" />
-                      {isAr ? 'مجموعات المساء خلال أيام الأسبوع' : 'Weekday Evening Batches (Mon – Thu)'}
-                    </div>
-                    <div style={{ fontSize: '0.9rem', color: '#475467' }}>
-                      {isAr ? 'مساءً: 5:00 م – 7:30 م (جلسات 90 دقيقة مركزة مرتين إلى ثلاث أسبوعياً)' : 'Evening slots: 5:00 PM – 7:30 PM (90-minute structured sessions 2–3 times weekly).'}
-                    </div>
-                  </div>
-
-                  <div style={{ border: '1px solid #E2E8F0', borderRadius: '12px', padding: '16px', background: '#FFFFFF' }}>
-                    <div style={{ fontWeight: 700, color: '#101828', display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
-                      <Users size={16} color="#7C3AED" />
-                      {isAr ? 'تدريب فردي مخصص 1-على-1' : 'Custom 1-on-1 Private Scheduling'}
-                    </div>
-                    <div style={{ fontSize: '0.9rem', color: '#475467' }}>
-                      {isAr ? 'مواعيد مرنة بالكامل يتم تنسيقها مباشرة بما يتوافق مع مواعيد امتحاناتك المدرسية' : 'Completely customized timings scheduled around your school exams and extracurriculars.'}
-                    </div>
-                  </div>
-                </div>
-
-                <a
-                  href="tel:+971527569908"
-                  className="sat-btn-secondary"
-                  style={{ width: '100%', textAlign: 'center', display: 'block' }}
-                  onClick={() => trackEvent(ANALYTICS_EVENTS.CALL, 'sat_schedule_call')}
-                >
-                  {isAr ? 'اتصل للتحقق من المقاعد المتاحة' : 'Call to Check Next Available Cohort'}
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ── 5. PROGRAM TRACKS ──────────────────────────────────────── */}
-        <section className="sat-programs-section">
-          <div className="sat-section-container">
-            <div className="sat-section-header-center">
-              <div className="sat-why-eyebrow">{isAr ? 'اختيار المسار التدريبي' : 'SAT COURSE TRACKS'}</div>
-              <h2 className="sat-why-title" style={{ fontSize: '2.4rem' }}>
-                {isAr ? 'اختر مسار دورة SAT المناسب لمستواك ودرجتك المستهدفة' : 'Choose Your Ideal Digital SAT Course Track'}
-              </h2>
-            </div>
-
-            <div className="sat-programs-grid">
-              {/* Track 1: Foundation */}
-              <div className="sat-program-card">
-                <div>
-                  <span className="sat-program-duration">{isAr ? 'المهارات الأساسية (12 أسبوعاً)' : 'CORE SKILLS · 12 WEEKS'}</span>
-                  <h3 className="sat-program-title">{isAr ? 'دورة التأسيس (Foundation SAT Course)' : 'Foundation SAT Course (12 Wks)'}</h3>
-                  <p className="sat-program-subtitle">
-                    {isAr ? 'بناء المفاهيم الأساسية وسد الفجوات في الجبر واللغة الإنجليزية.' : 'Build foundational concepts in algebra and reading comprehension.'}
-                  </p>
-                  <ul className="sat-program-list">
-                    <li>{isAr ? 'ترسيخ قواعد الجبر والحساب الذهني' : 'Core algebra & arithmetic fundamentals'}</li>
-                    <li>{isAr ? 'قواعد الإنجليزية المعيارية والمفردات في السياق' : 'Grammar rules & vocabulary in context'}</li>
-                    <li>{isAr ? 'استراتيجيات إدارة الوقت وسرعة الحل' : 'Essential pacing & time allocation methods'}</li>
-                    <li>{isAr ? 'تأهيل كامل للانتقال للمستوى التنافسي 1300+' : 'Targeted baseline jump to 1250–1350'}</li>
-                  </ul>
-                </div>
-                <a
-                  href={`https://wa.me/971527569908?text=${encodeURIComponent(isAr ? 'أود الاستفسار عن المسار التأسيسي لاختبار SAT' : "I'm interested in SAT Foundation Track")}`}
-                  className="sat-btn-secondary"
-                  style={{ width: '100%' }}
-                  onClick={() => trackEvent(ANALYTICS_EVENTS.WHATSAPP, 'sat_track_foundation')}
-                >
-                  {isAr ? 'استفسر عن المسار ←' : 'Enquire Track →'}
-                </a>
-              </div>
-
-              {/* Track 2: Comprehensive (Featured) */}
-              <div className="sat-program-card featured">
-                <div className="sat-featured-badge">{isAr ? 'الأكثر طلباً' : 'MOST POPULAR'}</div>
-                <div>
-                  <span className="sat-program-duration">{isAr ? 'تحضير شامل متكامل (8 أسابيع)' : 'COMPLETE PREPARATION · 8 WEEKS'}</span>
-                  <h3 className="sat-program-title">{isAr ? 'الدورة الشاملة (Comprehensive SAT Course)' : 'Comprehensive SAT Course (8 Wks)'}</h3>
-                  <p className="sat-program-subtitle">
-                    {isAr ? 'جاهزية تامة وتفوق في كلا قسمي الاختبار للوصول إلى 1450+.' : 'Develop complete Digital SAT mastery across all 8 domains.'}
-                  </p>
-                  <ul className="sat-program-list">
-                    <li>{isAr ? 'تغطية شاملة لكافة محاور SAT والآلة الحاسبة Desmos' : 'Complete SAT syllabus with advanced Desmos drills'}</li>
-                    <li>{isAr ? 'بنك أسئلة وتطبيقات تفاعلية مكثفة' : 'Extensive question bank & adaptive modules'}</li>
-                    <li>{isAr ? 'نماذج امتحانات محاكاة كاملة وتتبع الأداء' : 'Full-length Bluebook-style mock exam tracking'}</li>
-                    <li>{isAr ? 'تقارير تحليلية دورية لنقاط القوة والضعف' : 'Detailed performance scorecards & review sessions'}</li>
-                  </ul>
-                </div>
-                <a
-                  href={`https://wa.me/971527569908?text=${encodeURIComponent(isAr ? 'أود التسجيل في المسار الشامل لاختبار SAT' : "I'm interested in SAT Comprehensive Track")}`}
-                  className="sat-btn-primary"
-                  style={{ width: '100%' }}
-                  onClick={() => trackEvent(ANALYTICS_EVENTS.WHATSAPP, 'sat_track_comprehensive')}
-                >
-                  {isAr ? 'سجل في المسار الشامل ←' : 'Enroll in Comprehensive →'}
-                </a>
-              </div>
-
-              {/* Track 3: Intensive */}
-              <div className="sat-program-card">
-                <div>
-                  <span className="sat-program-duration">{isAr ? 'تدريب مكثف سريع (4 أسابيع)' : 'TARGETED SPRINT · 4 WEEKS'}</span>
-                  <h3 className="sat-program-title">{isAr ? 'حصص مكثفة سريعة (Intensive SAT Classes)' : 'Intensive SAT Classes Sprint (4 Wks)'}</h3>
-                  <p className="sat-program-subtitle">
-                    {isAr ? 'تدريب سريع ومكثف لرفع الدرجة لأقصى حد قبل موعد الامتحان.' : 'High-impact score-push for retakers and upcoming test dates.'}
-                  </p>
-                  <ul className="sat-program-list">
-                    <li>{isAr ? 'تدريب معمق على الأسئلة التكيفية الصعبة في الوحدة 2' : 'Hard Module 2 trap elimination & tricky math problems'}</li>
-                    <li>{isAr ? 'جلسات حل يومية تحت توقيت الاختبار الحقيقي' : 'Daily timed practice sets & rapid explanations'}</li>
-                    <li>{isAr ? 'جلسات فردية 1-على-1 لحل المسائل المعقدة' : '1-on-1 personalized doubt-clearing sessions'}</li>
-                    <li>{isAr ? 'استراتيجيات خاصة لكسر حاجز 1500+' : 'Dedicated tactics for 1500+ benchmark scorers'}</li>
-                  </ul>
-                </div>
-                <a
-                  href={`https://wa.me/971527569908?text=${encodeURIComponent(isAr ? 'أود الاستفسار عن المسار المكثف لاختبار SAT' : "I'm interested in SAT Intensive Track")}`}
-                  className="sat-btn-secondary"
-                  style={{ width: '100%' }}
-                  onClick={() => trackEvent(ANALYTICS_EVENTS.WHATSAPP, 'sat_track_intensive')}
-                >
-                  {isAr ? 'استفسر عن المسار ←' : 'Enquire Track →'}
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ── 6. CURRICULUM DOMAINS ──────────────────────────────────── */}
-        <section style={{ padding: '90px 0', background: '#FFFFFF' }}>
-          <div className="sat-section-container">
-            <div className="sat-section-header-center">
-              <div className="sat-why-eyebrow">{isAr ? 'نظرة عامة على المنهج' : 'CURRICULUM OVERVIEW'}</div>
-              <h2 className="sat-why-title" style={{ fontSize: '2.4rem' }}>
-                {isAr ? 'منهج Digital SAT المتكامل عبر 8 مجالات رسمية' : 'Complete Digital SAT 8-Domain Curriculum'}
-              </h2>
-            </div>
-
-            <div className="sat-curriculum-grid">
-              {/* Mathematics Panel */}
-              <div className="sat-curriculum-panel">
-                <h3 className="sat-curriculum-panel-title">
-                  <span>{isAr ? 'قسم الرياضيات' : 'Mathematics'}</span>
-                  <span style={{ fontSize: '0.85rem', color: '#2E7D32', fontWeight: 600 }}>{isAr ? 'آلة Desmos والحساب الذهني' : 'Desmos Shortcuts & Analytical Math'}</span>
-                </h3>
-
-                <div className="sat-domain-row">
-                  <div className="sat-domain-title">{isAr ? 'الجبر (Algebra)' : 'Algebra (Linear equations & systems)'}</div>
-                  <div className="sat-domain-bar-bg"><div className="sat-domain-bar-fill" style={{ width: '100%' }} /></div>
-                </div>
-
-                <div className="sat-domain-row">
-                  <div className="sat-domain-title">{isAr ? 'الرياضيات المتقدمة (Advanced Math)' : 'Advanced Math (Quadratics & polynomials)'}</div>
-                  <div className="sat-domain-bar-bg"><div className="sat-domain-bar-fill" style={{ width: '100%' }} /></div>
-                </div>
-
-                <div className="sat-domain-row">
-                  <div className="sat-domain-title">{isAr ? 'حل المشكلات وتحليل البيانات (Problem-Solving & Data Analysis)' : 'Problem-Solving & Data Analysis'}</div>
-                  <div className="sat-domain-bar-bg"><div className="sat-domain-bar-fill" style={{ width: '100%' }} /></div>
-                </div>
-
-                <div className="sat-domain-row">
-                  <div className="sat-domain-title">{isAr ? 'الهندسة وحساب المثلثات (Geometry & Trigonometry)' : 'Geometry & Trigonometry'}</div>
-                  <div className="sat-domain-bar-bg"><div className="sat-domain-bar-fill" style={{ width: '100%' }} /></div>
-                </div>
-              </div>
-
-              {/* Reading & Writing Panel */}
-              <div className="sat-curriculum-panel">
-                <h3 className="sat-curriculum-panel-title">
-                  <span>{isAr ? 'قسم القراءة والكتابة' : 'Reading & Writing'}</span>
-                  <span style={{ fontSize: '0.85rem', color: '#2E7D32', fontWeight: 600 }}>{isAr ? 'نصوص تكيفية وتحليل بلاغي' : 'Adaptive Passages & Rhetoric'}</span>
-                </h3>
-
-                <div className="sat-domain-row">
-                  <div className="sat-domain-title">{isAr ? 'المعلومات والأفكار (Information & Ideas)' : 'Information & Ideas (Central claims & evidence)'}</div>
-                  <div className="sat-domain-bar-bg"><div className="sat-domain-bar-fill" style={{ width: '100%' }} /></div>
-                </div>
-
-                <div className="sat-domain-row">
-                  <div className="sat-domain-title">{isAr ? 'الصياغة والبناء النصي (Craft & Structure)' : 'Craft & Structure (Words in context & purpose)'}</div>
-                  <div className="sat-domain-bar-bg"><div className="sat-domain-bar-fill" style={{ width: '100%' }} /></div>
-                </div>
-
-                <div className="sat-domain-row">
-                  <div className="sat-domain-title">{isAr ? 'التعبير عن الأفكار (Expression of Ideas)' : 'Expression of Ideas (Transitions & synthesis)'}</div>
-                  <div className="sat-domain-bar-bg"><div className="sat-domain-bar-fill" style={{ width: '100%' }} /></div>
-                </div>
-
-                <div className="sat-domain-row">
-                  <div className="sat-domain-title">{isAr ? 'قواعد الإنجليزية المعيارية (Standard English Conventions)' : 'Standard English Conventions (Grammar & boundaries)'}</div>
-                  <div className="sat-domain-bar-bg"><div className="sat-domain-bar-fill" style={{ width: '100%' }} /></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ── 6.5. DIGITAL SAT SPECIALIST FACULTY (DEMO TEMPLATE) ────── */}
-        <SATFaculty />
-
-        {/* ── 7. CAMPUS LOCATION / HYBRID DELIVERY INFO ─────────────── */}
-        <section style={{ padding: '60px 0', background: '#F8FBF9' }}>
-          <div className="sat-section-container">
-            <div className="sat-info-card" style={{ padding: '36px', background: '#FFFFFF', border: '1.5px solid #BBF7D0' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '14px' }}>
-                <div className="sat-info-icon-box" style={{ background: '#EAF4EC', color: '#1E7E34' }}>
-                  {isDubai ? <Laptop size={24} /> : <MapPin size={24} />}
-                </div>
-                <div>
-                  <h3 style={{ fontSize: '1.3rem' }}>
-                    {isDubai 
-                      ? (isAr ? 'منصة التعلم عبر الإنترنت لطلاب دبي والإمارات' : 'Live Online Platform for Dubai Students with Hybrid Campus Access')
-                      : (isAr ? 'مقر المعهد في المجاز 3، الشارقة — سهولة الوصول والموقع الاستراتيجي' : 'Nitaq Academy Sharjah Campus — Abu Khamseen Tower, Al Majaz 3')}
-                  </h3>
-                </div>
-              </div>
-
-              <p style={{ color: '#475467', lineHeight: 1.7, fontSize: '0.98rem' }}>
-                {isDubai ? (
-                  isAr ? (
-                    <>
-                      يستفيد طلاب دبي من بيئة تعليمية افتراضية تفاعلية بالكامل عبر تدريب SAT مباشر وعالي الدقة عبر الإنترنت مع كبار الأساتذة، بما يشمل حل المسائل التفاعلي وتطبيقات Desmos المباشرة. كما يتاح للطلاب خيار الانضمام للامتحانات التجريبية الحضورية التكيفية في مقرنا بالمجاز 3 في الشارقة، الواقع على بعد 15–20 دقيقة فقط من دبي عبر شارع الاتحاد وطريق الشيخ محمد بن زايد.
-                    </>
-                  ) : (
-                    <>
-                      For families seeking top-tier online SAT preparation in Dubai and digital SAT coaching across the UAE, our live virtual cohorts deliver real-time interactive mentoring directly to your home. Dubai students participate in engaging HD virtual classrooms featuring live digital whiteboards, real-time Desmos problem-solving, and recorded revision sessions. In addition, students have full hybrid access to attend proctored in-person mock exam simulations under authentic testing conditions at our Sharjah campus (Abu Khamseen Tower, Al Majaz 3), located just 15–20 minutes from northern Dubai via E11 / Al Wahda Street.
-                    </>
-                  )
-                ) : (
-                  isAr ? (
-                    <>
-                      يقع معهد أكاديمية نطاق في <strong>مكتب F103، الطابق F1، برج أبو خمسين، المجاز 3، الشارقة</strong>. يُعد معهدنا الخيار المثالي للعائلات التي تبحث عن أفضل دورة SAT في الشارقة أو حصص SAT قريبة مني في منطقة المجاز، كورنيش البحيرة، الخان، التعاون، النهدة، ومويلح، حيث نوفر فصولاً دراسية مجهزة بأحدث التقنيات وبيئة اختبارات محاكاة تكيفية ومجموعات صغيرة معتمدة من هيئة الشارقة للتعليم الخاص.
-                    </>
-                  ) : (
-                    <>
-                      For families seeking the best <strong>SAT course</strong> or accredited <strong>SAT classes in Sharjah</strong>, or searching for trusted <strong>SAT classes near me</strong> across Al Majaz, Buhaira Corniche, Al Khan, Al Taawun, Al Nahda, and Muwaileh, Nitaq Academy provides a premier SPEA-authorized learning environment. Located at <strong>Abu Khamseen Tower - Office : F103, Floor F1 - Al Majaz 3 - Al Majaz - Sharjah - United Arab Emirates</strong>, our center features high-tech classrooms, small interactive cohorts, dedicated study spaces, and distraction-free proctored adaptive testing facilities.
-                    </>
-                  )
-                )}
+              <p style={{ maxWidth: '720px', margin: '14px auto 0', color: '#475467', fontSize: '1.05rem', lineHeight: 1.7 }}>
+                {isAr
+                  ? 'نجمع بين الاعتماد الحكومي الرسمي، وخبرة المدربين المعتمدين، والتقييم التشخيصي المستمر لتحقيق قفزات حقيقية في درجات طلاب الشارقة.'
+                  : 'We combine official SPEA authorization, experienced test mentors, authentic Bluebook mock simulations, and a diagnostic-first methodology to deliver tangible score improvements.'}
               </p>
             </div>
+
+            <div className="sat-programs-grid" style={{ marginTop: '40px' }}>
+              <div className="sat-program-card">
+                <div>
+                  <div className="sat-info-icon-box" style={{ background: '#EAF4EC', color: '#1E7E34', marginBottom: '14px' }}>
+                    <ShieldCheck size={24} />
+                  </div>
+                  <h3 className="sat-program-title">{isAr ? 'معهد معتمد من هيئة الشارقة للتعليم الخاص' : 'SPEA Licensed & Attested'}</h3>
+                  <p className="sat-program-subtitle">
+                    {isAr ? 'أكاديمية نطاق مرخصة رسمياً في الشارقة لتقديم تدريب أكاديمي موثوق بأعلى معايير الجودة التعليمية.' : 'Nitaq Academy is officially licensed by the Sharjah Private Education Authority (SPEA), ensuring verified academic standards.'}
+                  </p>
+                </div>
+              </div>
+
+              <div className="sat-program-card featured">
+                <div className="sat-featured-badge">{isAr ? 'الميزة الأبرز' : 'CORE ADVANTAGE'}</div>
+                <div>
+                  <div className="sat-info-icon-box" style={{ background: '#1E7E34', color: '#FFFFFF', marginBottom: '14px' }}>
+                    <Laptop size={24} />
+                  </div>
+                  <h3 className="sat-program-title">{isAr ? 'تدريب متقدم على آلة Desmos وتطبيق Bluebook' : 'Mastery of Desmos & Bluebook'}</h3>
+                  <p className="sat-program-subtitle">
+                    {isAr ? 'تدريب تطبيقي على حل 80% من مسائل الرياضيات عبر حيل آلة Desmos، مع محاكاة دقيقة لنظام الاختبار التكيفي.' : 'Intensive calculator strategy sessions turning complex algebra into visual solutions, paired with official adaptive mock test mechanics.'}
+                  </p>
+                </div>
+              </div>
+
+              <div className="sat-program-card">
+                <div>
+                  <div className="sat-info-icon-box" style={{ background: '#EAF4EC', color: '#1E7E34', marginBottom: '14px' }}>
+                    <TrendingUp size={24} />
+                  </div>
+                  <h3 className="sat-program-title">{isAr ? 'تحسن ملموس في الدرجات (150–250+ نقطة)' : '150–250+ Point Score Growth'}</h3>
+                  <p className="sat-program-subtitle">
+                    {isAr ? 'خطة تدريبية تتبع أداء الطالب أسبوعياً وتسد الفجوات في الجبر والقواعد اللغوية حتى الوصول إلى الدرجة المستهدفة.' : 'Structured milestone tracking that turns baseline diagnostic gaps into consistent mastery, unlocking competitive UAE university thresholds.'}
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
-        {/* ── 8. DIAGNOSTIC ASSESSMENT BANNER ───────────────────────── */}
-        <section style={{ background: '#FFFFFF', padding: '60px 0', borderTop: '1px solid #E4E7EC', borderBottom: '1px solid #E4E7EC' }}>
+        {/* ── 5. WHAT WILL YOU LEARN IN SAT PREPARATION? ─────────────── */}
+        <section style={{ padding: '80px 0', background: '#FFFFFF' }}>
           <div className="sat-section-container">
-            <SATDiagnosticSection headingLevel="h2" />
+            <div className="sat-section-header-center">
+              <div className="sat-why-eyebrow">{isAr ? 'المنهج المتكامل' : 'DETAILED SYLLABUS'}</div>
+              <h2 className="sat-why-title" style={{ fontSize: '2.4rem' }}>
+                {isAr ? 'ماذا ستتعلم في برنامج التحضير لاختبار SAT؟' : 'What Will You Learn in SAT Preparation?'}
+              </h2>
+              <p style={{ maxWidth: '720px', margin: '14px auto 0', color: '#475467', fontSize: '1.05rem', lineHeight: 1.7 }}>
+                {isAr
+                  ? 'تغطية شاملة وعميقة لجميع مجالات الاختبار الثمانية الرسمية المقررة من College Board مع تدريبات عملية مستمرة.'
+                  : 'Comprehensive coverage of all 8 official College Board domains, divided into targeted Mathematics and Reading & Writing modules.'}
+              </p>
+            </div>
+
+            <div className="sat-curriculum-grid" style={{ marginTop: '40px' }}>
+              {/* SAT Math Preparation */}
+              <div className="sat-curriculum-panel">
+                <h3 className="sat-curriculum-panel-title">
+                  <span>{isAr ? 'التحضير لقسم الرياضيات في اختبار SAT' : 'SAT Math Preparation'}</span>
+                  <span style={{ fontSize: '0.85rem', color: '#2E7D32', fontWeight: 600 }}>
+                    {isAr ? 'آلة Desmos والتحليل الرياضي' : 'Desmos Shortcuts & Problem Solving'}
+                  </span>
+                </h3>
+
+                <p style={{ color: '#475467', fontSize: '0.95rem', lineHeight: 1.65, marginBottom: '20px' }}>
+                  {isAr
+                    ? 'يركز تدريب الرياضيات على حل المسائل المعقدة في أقل وقت ممكن باستخدام استراتيجيات الآلة البيانية وتفكيك المسائل اللفظية:'
+                    : 'Our SAT Math coaching develops mental math speed, algebraic manipulation, and advanced Desmos calculator problem-solving techniques:'}
+                </p>
+
+                <div className="sat-domain-row">
+                  <div className="sat-domain-title">
+                    <strong>{isAr ? 'الجبر (Algebra):' : 'Algebra:'}</strong> {isAr ? 'المعادلات الخطية، أنظمة المعادلات، المتباينات، وتطبيقاتها الحياتية.' : 'Linear equations, systems of linear equations, linear inequalities, and word problems.'}
+                  </div>
+                  <div className="sat-domain-bar-bg"><div className="sat-domain-bar-fill" style={{ width: '100%' }} /></div>
+                </div>
+
+                <div className="sat-domain-row">
+                  <div className="sat-domain-title">
+                    <strong>{isAr ? 'الرياضيات المتقدمة (Advanced Math):' : 'Advanced Math:'}</strong> {isAr ? 'الدوال التربيعية، كثيرات الحدود، المعادلات الأسية والجذرية.' : 'Quadratic equations, polynomials, non-linear functions, and radical expressions.'}
+                  </div>
+                  <div className="sat-domain-bar-bg"><div className="sat-domain-bar-fill" style={{ width: '100%' }} /></div>
+                </div>
+
+                <div className="sat-domain-row">
+                  <div className="sat-domain-title">
+                    <strong>{isAr ? 'حل المشكلات وتحليل البيانات (Problem-Solving):' : 'Problem-Solving & Data Analysis:'}</strong> {isAr ? 'النسب والمعدلات، الاحتمالات، الإحصاء، والرسوم البيانية.' : 'Ratios, rates, percentages, probability, scatterplots, and statistical inferences.'}
+                  </div>
+                  <div className="sat-domain-bar-bg"><div className="sat-domain-bar-fill" style={{ width: '100%' }} /></div>
+                </div>
+
+                <div className="sat-domain-row">
+                  <div className="sat-domain-title">
+                    <strong>{isAr ? 'الهندسة وحساب المثلثات (Geometry & Trig):' : 'Geometry & Trigonometry:'}</strong> {isAr ? 'الدوائر، مساحات وحجوم المجسمات، حساب المثلثات والزوايا.' : 'Lines, angles, triangles, circles, volume, surface area, and right-triangle trigonometry.'}
+                  </div>
+                  <div className="sat-domain-bar-bg"><div className="sat-domain-bar-fill" style={{ width: '100%' }} /></div>
+                </div>
+              </div>
+
+              {/* SAT Reading and Writing Preparation */}
+              <div className="sat-curriculum-panel">
+                <h3 className="sat-curriculum-panel-title">
+                  <span>{isAr ? 'التحضير لقسم القراءة والكتابة في اختبار SAT' : 'SAT Reading and Writing Preparation'}</span>
+                  <span style={{ fontSize: '0.85rem', color: '#2E7D32', fontWeight: 600 }}>
+                    {isAr ? 'نصوص تكيفية وقواعد الإنجليزية' : 'Adaptive Passages & Grammar'}
+                  </span>
+                </h3>
+
+                <p style={{ color: '#475467', fontSize: '0.95rem', lineHeight: 1.65, marginBottom: '20px' }}>
+                  {isAr
+                    ? 'يغطي قسم القراءة والكتابة استيعاب النصوص القصيرة المتنوعة وتحليل الأدلة وقواعد اللغة المعيارية بدقة:'
+                    : 'Our Reading & Writing coaching equips students to analyze short academic passages, evaluate textual arguments, and master grammar conventions:'}
+                </p>
+
+                <div className="sat-domain-row">
+                  <div className="sat-domain-title">
+                    <strong>{isAr ? 'الصياغة والبناء النصي (Craft & Structure):' : 'Craft & Structure:'}</strong> {isAr ? 'المفردات في السياق، تحليل وجهة النظر، والروابط بين النصوص.' : 'Words in context, text structure, author purpose, and cross-textual comparisons.'}
+                  </div>
+                  <div className="sat-domain-bar-bg"><div className="sat-domain-bar-fill" style={{ width: '100%' }} /></div>
+                </div>
+
+                <div className="sat-domain-row">
+                  <div className="sat-domain-title">
+                    <strong>{isAr ? 'المعلومات والأفكار (Information & Ideas):' : 'Information & Ideas:'}</strong> {isAr ? 'الأفكار الرئيسية، الأدلة النصية والبيانية، واستنتاجات النصوص.' : 'Central ideas, textual evidence, quantitative data evidence, and inferences.'}
+                  </div>
+                  <div className="sat-domain-bar-bg"><div className="sat-domain-bar-fill" style={{ width: '100%' }} /></div>
+                </div>
+
+                <div className="sat-domain-row">
+                  <div className="sat-domain-title">
+                    <strong>{isAr ? 'قواعد الإنجليزية المعيارية (Conventions):' : 'Standard English Conventions:'}</strong> {isAr ? 'قواعد النحو، علامات الترقيم، حدود الجمل، وتوافق الفعل والفاعل.' : 'Sentence boundaries, agreement, verb tenses, modifiers, and punctuation rules.'}
+                  </div>
+                  <div className="sat-domain-bar-bg"><div className="sat-domain-bar-fill" style={{ width: '100%' }} /></div>
+                </div>
+
+                <div className="sat-domain-row">
+                  <div className="sat-domain-title">
+                    <strong>{isAr ? 'التعبير عن الأفكار (Expression of Ideas):' : 'Expression of Ideas:'}</strong> {isAr ? 'الربط المنطقي بين الأفكار، أدوات الانتقال، وتحسين الصياغة البلاغية.' : 'Rhetorical synthesis, transitions, concision, and logical flow of ideas.'}
+                  </div>
+                  <div className="sat-domain-bar-bg"><div className="sat-domain-bar-fill" style={{ width: '100%' }} /></div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
-        {/* ── 9. VISIBLE FAQ SECTION WITH ACCORDIONS ─────────────────── */}
+        {/* ── 6. SAT PRACTICE TESTS AND DIAGNOSTIC ASSESSMENT ───────── */}
+        <section style={{ padding: '80px 0', background: '#F8FBF9', borderTop: '1px solid #E4E7EC', borderBottom: '1px solid #E4E7EC' }}>
+          <div className="sat-section-container">
+            <div className="sat-section-header-center">
+              <div className="sat-why-eyebrow">{isAr ? 'التقييم والمحاكاة' : 'ADAPTIVE MOCKS & ASSESSMENT'}</div>
+              <h2 className="sat-why-title" style={{ fontSize: '2.4rem' }}>
+                {isAr ? 'الاختبارات التجريبية والتقييم التشخيصي لاختبار SAT' : 'SAT Practice Tests and Diagnostic Assessment'}
+              </h2>
+              <p style={{ maxWidth: '720px', margin: '14px auto 0', color: '#475467', fontSize: '1.05rem', lineHeight: 1.7 }}>
+                {isAr
+                  ? 'لا نعتمد على التخمين. يبدأ كل طالب بتقييم تشخيصي دقيق ويخوض امتحانات محاكاة تكيفية دورية تحاكي نظام الامتحان الحقيقي تماماً.'
+                  : 'We eliminate guesswork from your exam journey. Every learner begins with a calibrated diagnostic baseline and sits regular Bluebook-style adaptive mock tests.'}
+              </p>
+            </div>
+
+            <div style={{ marginTop: '40px' }}>
+              <SATDiagnosticSection headingLevel="h3" />
+            </div>
+          </div>
+        </section>
+
+        {/* ── 7. SAT PREPARATION FOR BEGINNERS ───────────────────────── */}
+        <section style={{ padding: '80px 0', background: '#FFFFFF' }}>
+          <div className="sat-section-container">
+            <div className="sat-grid-2col" style={{ alignItems: 'center', gap: '48px' }}>
+              <div>
+                <div className="sat-why-eyebrow">{isAr ? 'المسار التأسيسي' : 'STARTING FROM SCRATCH'}</div>
+                <h2 style={{ fontSize: '2.2rem', fontWeight: 800, color: '#101828', marginBottom: '16px', lineHeight: 1.25 }}>
+                  {isAr ? 'التحضير لاختبار SAT للطلاب المبتدئين' : 'SAT Preparation for Beginners'}
+                </h2>
+                <p style={{ color: '#475467', fontSize: '1.025rem', lineHeight: 1.75, marginBottom: '20px' }}>
+                  {isAr ? (
+                    <>
+                      إذا كنت تبدأ الاستعداد لاختبار SAT لأول مرة، فإن دورة التأسيس في أكاديمية نطاق مصممة خصيصاً لتفكيك رهبة الاختبار وبناء المفاهيم خطوة بخطوة. نركز على استعادة أساسيات الجبر، وبناء الحصيلة اللغوية والمفردات في السياق، وإتقان قواعد اللغة الإنجليزية المعيارية، وتدريب الطالب على وتيرة الوقت دون توتر.
+                    </>
+                  ) : (
+                    <>
+                      Starting your SAT journey for the first time? Our Foundation track at Nitaq Academy is structured specifically for students who need to build strong core fundamentals. We reinforce high school algebra basics, establish standard grammar rules, demystify the multistage adaptive testing algorithm, and train students to use the built-in Desmos graphing calculator comfortably from day one.
+                    </>
+                  )}
+                </p>
+                <ul className="sat-program-list" style={{ marginBottom: '24px' }}>
+                  <li>{isAr ? 'سد الفجوات في الحساب والجبر الأساسي' : 'Systematic bridging of foundational algebra gaps'}</li>
+                  <li>{isAr ? 'شرح مبسط لقواعد النحو الإنجليزي الأكثر تكراراً' : 'Clear mastery of high-frequency SAT grammar rules'}</li>
+                  <li>{isAr ? 'بناء استراتيجية إدارة الوقت وتجنب فخاخ الأسئلة' : 'Timed pacing strategies and trap answer elimination'}</li>
+                  <li>{isAr ? 'تأهيل كامل للوصول إلى حاجز 1250–1350+' : 'Calibrated progression toward a 1250–1350+ benchmark'}</li>
+                </ul>
+                <a
+                  href="https://wa.me/971527569908?text=Hi%20Nitaq%20Academy%2C%20I%20am%20a%20beginner%20looking%20for%20SAT%20Foundation%20prep%20in%20Sharjah"
+                  className="sat-btn-primary"
+                  onClick={() => trackEvent(ANALYTICS_EVENTS.WHATSAPP, 'sat_sharjah_beginners')}
+                >
+                  {isAr ? 'استفسر عن مسار المبتدئين ←' : 'Enquire About Foundation Track →'}
+                </a>
+              </div>
+
+              <div style={{ background: '#F8FBF9', border: '1.5px solid #BBF7D0', borderRadius: '20px', padding: '36px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
+                  <div className="sat-info-icon-box" style={{ background: '#EAF4EC', color: '#1E7E34' }}>
+                    <Compass size={24} />
+                  </div>
+                  <h3 style={{ fontSize: '1.25rem', margin: 0, fontWeight: 700, color: '#101828' }}>
+                    {isAr ? 'خطة تدريبية خطوة بخطوة' : 'Structured Step-by-Step Milestones'}
+                  </h3>
+                </div>
+                <p style={{ color: '#475467', lineHeight: 1.7, fontSize: '0.98rem', margin: '0 0 16px 0' }}>
+                  {isAr
+                    ? 'يبدأ الطالب المبتدئ بتحليل دقيق لنقاط الانطلاق، يليه 12 أسبوعاً من الشرح المركز والتطبيق الموجه مع كادر تعليمي متفهم يتابع تطور الطالب أسبوعاً بأسبوع.'
+                    : 'Beginners progress through a calibrated 12-week roadmap. Weekly check-ins ensure that anxiety is replaced with methodical confidence, ensuring steady and visible score growth.'}
+                </p>
+                <div style={{ padding: '16px', background: '#FFFFFF', borderRadius: '12px', border: '1px solid #E4E7EC', fontSize: '0.9rem', color: '#1E7E34', fontWeight: 600 }}>
+                  ✓ {isAr ? 'تشمل كافة المواد والمذكرات ونماذج المحاكاة' : 'Includes all study guides, formula kits & Bluebook mocks'}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── 8. SAT PREPARATION FOR STUDENTS TARGETING HIGHER SCORES ─── */}
+        <section style={{ padding: '80px 0', background: '#F8FBF9', borderTop: '1px solid #E4E7EC', borderBottom: '1px solid #E4E7EC' }}>
+          <div className="sat-section-container">
+            <div className="sat-grid-2col" style={{ alignItems: 'center', gap: '48px' }}>
+              <div style={{ background: '#FFFFFF', border: '1.5px solid #BBF7D0', borderRadius: '20px', padding: '36px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
+                  <div className="sat-info-icon-box" style={{ background: '#1E7E34', color: '#FFFFFF' }}>
+                    <Target size={24} />
+                  </div>
+                  <h3 style={{ fontSize: '1.25rem', margin: 0, fontWeight: 700, color: '#101828' }}>
+                    {isAr ? 'مسار كسر حاجز 1500+' : 'Elite 1500+ Benchmark Tactics'}
+                  </h3>
+                </div>
+                <p style={{ color: '#475467', lineHeight: 1.7, fontSize: '0.98rem', margin: '0 0 16px 0' }}>
+                  {isAr
+                    ? 'في المستويات التنافسية العليا، يصبح الفارق بين 1350 و1500+ مسألة دقة متناهية وسرعة في استبعاد الإجابات الخادعة في الوحدة الثانية التكيفية الصعبة.'
+                    : 'At the elite score tier, the difference between a 1350 and a 1500+ is question selection speed, advanced Desmos manipulation, and mastering tricky Module 2 logic.'}
+                </p>
+                <div style={{ padding: '16px', background: '#F0FDF4', borderRadius: '12px', border: '1px solid #BBF7D0', fontSize: '0.9rem', color: '#166534', fontWeight: 600 }}>
+                  ★ {isAr ? 'تحليل الأخطاء الدقيقة وسرعة الحل' : 'Targeted error audits & sub-60-second math solutions'}
+                </div>
+              </div>
+
+              <div>
+                <div className="sat-why-eyebrow">{isAr ? 'الدرجات التنافسية' : 'HIGH SCORERS & RETAKERS'}</div>
+                <h2 style={{ fontSize: '2.2rem', fontWeight: 800, color: '#101828', marginBottom: '16px', lineHeight: 1.25 }}>
+                  {isAr ? 'التحضير لاختبار SAT للطلاب الساعين لتحقيق درجات عليا' : 'SAT Preparation for Students Targeting Higher Scores'}
+                </h2>
+                <p style={{ color: '#475467', fontSize: '1.025rem', lineHeight: 1.75, marginBottom: '20px' }}>
+                  {isAr ? (
+                    <>
+                      للطلاب الذين يسعون للقبول في تخصصات الهندسة والطب والمنح التنافسية في <strong>الجامعة الأمريكية في الشارقة (AUS)</strong>، <strong>جامعة خليفة</strong>، أو <strong>جامعة نيويورك أبوظبي</strong>، نوفر مساراً متقدماً يركز حصرياً على المسائل الصعبة في الوحدة التكيفية الثانية، وتكتيكات حل أسئلة القراءة التحليلية المعقدة.
+                    </>
+                  ) : (
+                    <>
+                      For competitive high schoolers aiming for elite university admission and full merit scholarships at institutions like the <strong>American University of Sharjah (AUS)</strong>, <strong>Khalifa University</strong>, <strong>NYU Abu Dhabi</strong>, and premier international colleges, our advanced track provides high-intensity coaching focused squarely on hard Module 2 questions and complex textual rhetoric.
+                    </>
+                  )}
+                </p>
+                <ul className="sat-program-list" style={{ marginBottom: '24px' }}>
+                  <li>{isAr ? 'تدريب مكثف على أصعب أسئلة الوحدة الثانية التكيفية' : 'Hard Module 2 trap elimination and complex non-linear problems'}</li>
+                  <li>{isAr ? 'حيل متقدمة في Desmos لحل مسائل الدوال المعقدة' : 'Advanced Desmos regressions, slider hacks & parametric curves'}</li>
+                  <li>{isAr ? 'تحليل بلاغي دقيق لنصوص القراءة والبيانات الكمية' : 'Nuanced textual evidence and cross-passage inference drills'}</li>
+                  <li>{isAr ? 'جلسات مراجعة فردية لتحليل الأخطاء المتكررة' : '1-on-1 error audit sessions to eliminate recurring mistakes'}</li>
+                </ul>
+                <a
+                  href="https://wa.me/971527569908?text=Hi%20Nitaq%20Academy%2C%20I%20am%20targeting%20a%201450%2B%20SAT%20score%20in%20Sharjah"
+                  className="sat-btn-primary"
+                  onClick={() => trackEvent(ANALYTICS_EVENTS.WHATSAPP, 'sat_sharjah_high_scorers')}
+                >
+                  {isAr ? 'تحدث مع مدرب الدرجات العليا ←' : 'Speak to a High-Score Mentor →'}
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── 8.5. SAT FACULTY & MENTORS ─────────────────────────────── */}
+        <SATFaculty />
+
+        {/* ── 9. SAT PREPARATION NEAR AL MAJAZ, SHARJAH ──────────────── */}
+        <section style={{ padding: '80px 0', background: '#FFFFFF' }}>
+          <div className="sat-section-container">
+            <div className="sat-info-card" style={{ padding: '40px', background: '#FFFFFF', border: '1.5px solid #BBF7D0' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '18px' }}>
+                <div className="sat-info-icon-box" style={{ background: '#EAF4EC', color: '#1E7E34' }}>
+                  <MapPin size={24} />
+                </div>
+                <div>
+                  <h2 style={{ fontSize: '1.8rem', fontWeight: 800, color: '#101828', margin: 0 }}>
+                    {isAr ? 'التحضير لاختبار SAT بالقرب من المجاز، الشارقة' : 'SAT Preparation Near Al Majaz, Sharjah'}
+                  </h2>
+                </div>
+              </div>
+
+              <p style={{ color: '#475467', lineHeight: 1.8, fontSize: '1.025rem', marginBottom: '20px' }}>
+                {isAr ? (
+                  <>
+                    يقع مقر أكاديمية نطاق في <strong>مكتب F103، الطابق F1، برج أبو خمسين، المجاز 3، الشارقة</strong>. يُعد معهدنا الوجهة التعليمية المعتمدة والأقرب للطلاب والعائلات الباحثين عن أفضل تحضير لاختبار SAT بالقرب من <strong>المجاز، كورنيش البحيرة، الخان، التعاون، النهدة، ومويلح</strong>. يوفر موقعنا سهولة وصول فائقة، ومواقف سيارات مريحة، وبيئة تعليمية هادئة مجهزة بأحدث أدوات Bluebook.
+                  </>
+                ) : (
+                  <>
+                    Conveniently located at <strong>Abu Khamseen Tower (Office F103, Floor F1), Al Majaz 3, Sharjah</strong>, Nitaq Academy is the premier SPEA-authorized learning center for students and parents searching for <strong>SAT preparation near Al Majaz, Sharjah</strong>. We offer effortless neighborhood access for high school students across <strong>Al Majaz, Buhaira Corniche, Al Khan, Al Taawun, Al Nahda, and Muwaileh</strong>. Our campus features modern high-tech training rooms, distraction-free computer testing labs, and certified master SAT instructors.
+                  </>
+                )}
+              </p>
+
+              <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', alignItems: 'center' }}>
+                <a
+                  href="https://maps.google.com/?q=Abu+Khamseen+Tower+Al+Majaz+3+Sharjah"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="sat-btn-secondary"
+                  style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}
+                >
+                  <MapPin size={16} /> {isAr ? 'عرض الموقع على الخريطة' : 'View on Google Maps'}
+                </a>
+                <Link
+                  to="/contact"
+                  className="sat-btn-primary"
+                >
+                  {isAr ? 'تواصل مع مكتب القبول' : 'Contact Admissions Office'}
+                </Link>
+                <Link
+                  to="/sat-preparation-dubai"
+                  style={{ color: '#166534', fontWeight: 700, textDecoration: 'underline', marginLeft: '12px' }}
+                >
+                  {isAr ? 'هل أنت في دبي؟ استكشف خيارات دبي ←' : 'Reside in Dubai? Explore Dubai SAT Options →'}
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── 10. FREQUENTLY ASKED QUESTIONS ABOUT SAT PREPARATION ───── */}
         <section className="sat-faq-section" style={{ background: '#F8FBF9' }}>
           <div className="sat-section-container">
             <div className="sat-section-header-center">
-              <div className="sat-why-eyebrow">{isAr ? 'الأسئلة الشائعة' : 'FREQUENTLY ASKED QUESTIONS'}</div>
+              <div className="sat-why-eyebrow">{isAr ? 'إجابات شاملة' : 'QUESTIONS & ANSWERS'}</div>
               <h2 className="sat-why-title" style={{ fontSize: '2.4rem' }}>
-                {isAr ? 'كل ما تحتاج لمعرفته عن تحضير SAT' : 'Everything You Need to Know About Digital SAT Prep'}
+                {isAr ? 'الأسئلة الشائعة حول التحضير لاختبار SAT' : 'Frequently Asked Questions About SAT Preparation'}
               </h2>
+              <p style={{ maxWidth: '720px', margin: '14px auto 0', color: '#475467', fontSize: '1.05rem', lineHeight: 1.7 }}>
+                {isAr
+                  ? 'إجابات مباشرة ودقيقة على أهم الاستفسارات التي تهم الطلاب وأولياء الأمور في الشارقة والإمارات.'
+                  : 'Clear, factual answers to the most common questions asked by students and parents in Sharjah and the UAE.'}
+              </p>
             </div>
 
             <div style={{ maxWidth: '880px', margin: '40px auto 0' }}>
-              {faqs.map((faq, index) => (
+              {SHARJAH_FAQS.map((faq, index) => (
                 <details key={index} className="faq-accordion">
                   <summary>
                     <span>{isAr ? faq.questionAr : faq.question}</span>
@@ -733,13 +660,13 @@ const SATCourse = ({ locationName = 'Sharjah' }) => {
           </div>
         </section>
 
-        {/* ── 10. RELATED GUIDES & INTERNAL LINKING ─────────────────── */}
+        {/* ── 11. RELATED RESOURCES & INTERNAL LINKS ─────────────────── */}
         <section className="sat-guides-section" style={{ background: '#FFFFFF', borderTop: '1px solid #E4E7EC' }}>
           <div className="sat-section-container">
             <div className="sat-section-header-center">
               <div className="sat-why-eyebrow">{isAr ? 'مصادر وإرشادات' : 'RESOURCES & GUIDES'}</div>
               <h2 className="sat-why-title" style={{ fontSize: '2.2rem' }}>
-                {isAr ? 'أدلة إرشادية متخصصة لاختبار SAT' : 'Expert Guides to Boost Your SAT Strategy'}
+                {isAr ? 'أدلة إرشادية متخصصة لاختبار SAT' : 'Essential SAT Guides for UAE Students'}
               </h2>
             </div>
 
@@ -755,128 +682,83 @@ const SATCourse = ({ locationName = 'Sharjah' }) => {
                 <span className="sat-guide-link-text">{isAr ? 'خض التقييم الآن ←' : 'Take Diagnostic Now →'}</span>
               </Link>
 
-              <Link to="/article/digital-sat-preparation-guide-sharjah-dubai-uae" className="sat-guide-card">
+              <Link to="/sat-preparation-dubai" className="sat-guide-card">
                 <div>
-                  <div className="sat-guide-tag">{isAr ? 'دليل شامل' : 'PILLAR GUIDE'}</div>
-                  <h3 className="sat-guide-title">{isAr ? 'دليل التحضير لاختبار Digital SAT 2026' : 'Digital SAT Preparation Guide (Sharjah & Dubai)'}</h3>
+                  <div className="sat-guide-tag">{isAr ? 'طلاب دبي' : 'DUBAI STUDENTS'}</div>
+                  <h3 className="sat-guide-title">{isAr ? 'التحضير لاختبار SAT في دبي' : 'SAT Preparation in Dubai'}</h3>
                   <p className="sat-guide-desc">
-                    {isAr ? 'استراتيجيات حل مسائل الرياضيات بحيل Desmos، وإدارة الوقت في الوحدات التكيفية.' : 'Comprehensive roadmap covering adaptive test modules, Desmos calculator shortcuts, and high-yield scoring tactics.'}
+                    {isAr ? 'حصص تفاعلية مباشرة عبر الإنترنت لطلاب دبي مع خيار الحضور الهجين للامتحانات التجريبية في الشارقة.' : 'Live interactive online SAT classes tailored for Dubai students with optional hybrid campus mock exam access.'}
                   </p>
                 </div>
-                <span className="sat-guide-link-text">{isAr ? 'اقرأ الدليل ←' : 'Read Full Guide →'}</span>
+                <span className="sat-guide-link-text">{isAr ? 'استكشف دورة دبي ←' : 'Explore Dubai Course →'}</span>
               </Link>
 
-              <Link to="/article/sat-score-1300-guide" className="sat-guide-card">
+              <Link to="/article/sat-dates-uae-2026-2027-test-dates" className="sat-guide-card">
                 <div>
-                  <div className="sat-guide-tag">{isAr ? 'خطة رفع الدرجات' : 'BENCHMARK STRATEGY'}</div>
-                  <h3 className="sat-guide-title">{isAr ? 'كيف تحقق درجة 1300+ في Digital SAT' : 'How to Score 1300+ on the Digital SAT in UAE'}</h3>
+                  <div className="sat-guide-tag">{isAr ? 'مواعيد الاختبار' : 'TEST DATES'}</div>
+                  <h3 className="sat-guide-title">{isAr ? 'مواعيد اختبار SAT في الإمارات 2026–2027' : 'SAT Dates UAE 2026–2027 Schedule'}</h3>
                   <p className="sat-guide-desc">
-                    {isAr ? 'متطلبات القبول في الجامعات الرائدة في الإمارات (AUS، جامعة خليفة) وخطة دراسية للوصول إلى 1400+.' : 'Detailed error margins, section accuracy targets, and admissions benchmark scores for top UAE universities.'}
+                    {isAr ? 'جدول المواعيد ومواعيد التسجيل النهائي والرسوم بالدرهم الإماراتي ومراكز الاختبار.' : 'Upcoming registration deadlines, late registration rules, exam dates, and AED fee breakdown.'}
                   </p>
                 </div>
-                <span className="sat-guide-link-text">{isAr ? 'استكشف الاستراتيجية ←' : 'Explore Strategy →'}</span>
+                <span className="sat-guide-link-text">{isAr ? 'عرض المواعيد ←' : 'View Test Dates →'}</span>
               </Link>
 
-              <Link to="/article/sat-coaching-sharjah" className="sat-guide-card">
+              <Link to="/article/desmos-sat-guide-math-calculator-strategies" className="sat-guide-card">
                 <div>
-                  <div className="sat-guide-tag">{isAr ? 'دليل اختيار المعهد' : 'COACHING GUIDE'}</div>
-                  <h3 className="sat-guide-title">{isAr ? 'كيف تختار أفضل معهد SAT في الشارقة' : 'How to Choose the Best SAT Coaching in Sharjah'}</h3>
+                  <div className="sat-guide-tag">{isAr ? 'استراتيجيات الآلة' : 'DESMOS GUIDE'}</div>
+                  <h3 className="sat-guide-title">{isAr ? 'دليل آلة Desmos لاختبار SAT' : 'Desmos Calculator Strategies for SAT Math'}</h3>
                   <p className="sat-guide-desc">
-                    {isAr ? 'معايير اختيار مراكز تدريب SAT، وحجم المجموعات، واعتماد هيئة الشارقة للتعليم الخاص.' : 'Key factors for evaluating SAT training institutes, certified faculty, batch sizes, and diagnostic methods.'}
+                    {isAr ? 'طرق حل أنظمة المعادلات والانحدار الخطي واستخدام أشرطة التمرير للحل السريع.' : 'Master linear regressions, system intersections, and constants sliders to solve questions in seconds.'}
                   </p>
                 </div>
-                <span className="sat-guide-link-text">{isAr ? 'اقرأ دليل الاختيار ←' : 'Read Coaching Guide →'}</span>
+                <span className="sat-guide-link-text">{isAr ? 'اقرأ الدليل ←' : 'Read Desmos Guide →'}</span>
               </Link>
 
-              <Link to="/article/common-sat-mistakes" className="sat-guide-card">
+              <Link to="/academic-excellence" className="sat-guide-card">
                 <div>
-                  <div className="sat-guide-tag">{isAr ? 'أخطاء شائعة' : 'EXAM STRATEGY'}</div>
-                  <h3 className="sat-guide-title">{isAr ? 'أخطاء SAT الشائعة وكيفية تجنبها' : 'Common SAT Mistakes UAE Students Make'}</h3>
+                  <div className="sat-guide-tag">{isAr ? 'التقوية المدرسية' : 'SCHOOL TUITION'}</div>
+                  <h3 className="sat-guide-title">{isAr ? 'دروس التقوية المدرسية في الشارقة' : 'School Tuition in Sharjah'}</h3>
                   <p className="sat-guide-desc">
-                    {isAr ? 'تجنب فخاخ الوقت في القراءة، وأخطاء الجبر الأساسية، وضعف استخدام آلة Desmos البيانية.' : 'Pacing traps, algebra oversights, Desmos misuse, and how expert mentorship helps eliminate recurring errors.'}
+                    {isAr ? 'دروس تقوية في الرياضيات والفيزياء والكيمياء والأحياء لمناهج IGCSE وIB وCBSE.' : 'Focused coaching in Maths, Physics, Chemistry, Biology, and English for Class 1–12.'}
                   </p>
                 </div>
-                <span className="sat-guide-link-text">{isAr ? 'تجنب الأخطاء ←' : 'Avoid Mistakes →'}</span>
+                <span className="sat-guide-link-text">{isAr ? 'استكشف الدروس المدرسية ←' : 'Explore School Tuition →'}</span>
               </Link>
-
-              {isDubai ? (
-                <Link to="/sat-preparation-sharjah" className="sat-guide-card">
-                  <div>
-                    <div className="sat-guide-tag">{isAr ? 'حضوري في الشارقة' : 'IN-PERSON CAMPUS'}</div>
-                    <h3 className="sat-guide-title">{isAr ? 'التدريب الحضوري في مقر الشارقة' : 'In-Person SAT Classes at Sharjah Campus'}</h3>
-                    <p className="sat-guide-desc">
-                      {isAr ? 'استكشف فصولنا التدريبية المباشرة في برج أبو خمسين، المجاز 3 بالشارقة.' : 'Looking for classroom coaching? Explore our flagship physical campus at Abu Khamseen Tower, Al Majaz 3.'}
-                    </p>
-                  </div>
-                  <span className="sat-guide-link-text">{isAr ? 'عرض دورة الشارقة ←' : 'View Sharjah Course →'}</span>
-                </Link>
-              ) : (
-                <Link to="/sat-preparation-dubai" className="sat-guide-card">
-                  <div>
-                    <div className="sat-guide-tag">{isAr ? 'عبر الإنترنت لدبي' : 'ONLINE FOR DUBAI'}</div>
-                    <h3 className="sat-guide-title">{isAr ? 'دورات SAT التفاعلية عبر الإنترنت لطلاب دبي' : 'Online Digital SAT Prep for Dubai Students'}</h3>
-                    <p className="sat-guide-desc">
-                      {isAr ? 'حصص تفاعلية مباشرة مع تسجيلات ومتابعة دقيقة للطلاب المقيمين في دبي والإمارات.' : 'Live interactive online cohorts tailored for high school students residing in Dubai and the wider UAE.'}
-                    </p>
-                  </div>
-                  <span className="sat-guide-link-text">{isAr ? 'عرض خيارات دبي ←' : 'View Dubai Options →'}</span>
-                </Link>
-              )}
-            </div>
-
-            <div style={{ marginTop: '36px', textAlign: 'center', fontSize: '0.95rem', color: '#475467', lineHeight: '1.8' }}>
-              {isAr ? (
-                <>
-                  هل تبحث عن المزيد من مصادر الاختبار؟ استكشف <Link to="/article/sat-dates-uae-2026-2027-test-dates" style={{ color: '#166534', fontWeight: 700, textDecoration: 'underline' }}>مواعيد SAT في الإمارات 2026–2027</Link>، أو <Link to="/article/desmos-sat-guide-math-calculator-strategies" style={{ color: '#166534', fontWeight: 700, textDecoration: 'underline' }}>استراتيجيات آلة Desmos</Link>، أو <Link to="/article/bluebook-sat-guide-digital-exam-app" style={{ color: '#166534', fontWeight: 700, textDecoration: 'underline' }}>دليل تطبيق Bluebook</Link>، أو اقرأ <Link to="/article/sat-vs-ielts-guide" style={{ color: '#166534', fontWeight: 700, textDecoration: 'underline' }}>دليل المقارنة بين SAT وIELTS</Link>.
-                </>
-              ) : (
-                <>
-                  Looking for more official exam resources? Explore the <Link to="/article/sat-dates-uae-2026-2027-test-dates" style={{ color: '#166534', fontWeight: 700, textDecoration: 'underline' }}>SAT Dates UAE 2026–2027 Guide</Link>, master the <Link to="/article/desmos-sat-guide-math-calculator-strategies" style={{ color: '#166534', fontWeight: 700, textDecoration: 'underline' }}>Desmos Calculator Strategies</Link>, check the <Link to="/article/bluebook-sat-guide-digital-exam-app" style={{ color: '#166534', fontWeight: 700, textDecoration: 'underline' }}>Bluebook Digital App Guide</Link>, or read our <Link to="/article/sat-vs-ielts-guide" style={{ color: '#166534', fontWeight: 700, textDecoration: 'underline' }}>SAT vs. IELTS comparison guide</Link>.
-                </>
-              )}
             </div>
           </div>
         </section>
 
-        {/* ── 11. FINAL CALL TO ACTION ───────────────────────────────── */}
+        {/* ── 12. FINAL CALL TO ACTION ───────────────────────────────── */}
         <section className="sat-final-cta-section">
           <div className="sat-final-cta-container">
             <h2 className="sat-final-cta-title">
-              {isAr ? 'جاهز لتحقيق قفزة نوعية في درجتك؟' : 'Ready to achieve your target SAT score?'}
+              {isAr ? 'جاهز لبدء التحضير لاختبار SAT في الشارقة؟' : 'Ready to start your SAT preparation in Sharjah?'}
             </h2>
             <p className="sat-final-cta-desc">
               {isAr
-                ? `تحدث مع فريقنا الأكاديمي لاختيار المسار الأنسب لدرجتك المستهدفة في ${locArabic}.`
-                : `Speak with our senior SAT admissions team to choose the right coaching track in ${locationName}.`}
+                ? 'تواصل مع مستشارينا الأكاديميين لحجز تقييمك التشخيصي واختيار المجموعة المناسبة لجدولك الدراسي.'
+                : 'Connect with our admissions team to book your free diagnostic assessment and secure your seat in the upcoming cohort.'}
             </p>
 
             <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
               <a
-                href={`https://wa.me/971527569908?text=${encodeURIComponent(
-                  isAr 
-                    ? `أود التسجيل في دورة تحضير SAT (${locArabic})` 
-                    : `I want to enroll in the Digital SAT preparation course (${locationName})`
-                )}`}
+                href="https://wa.me/971527569908?text=Hi%20Nitaq%20Academy%2C%20I%20want%20to%20enroll%20in%20SAT%20Preparation%20in%20Sharjah"
                 className="sat-btn-cta-white"
-                onClick={() => trackEvent(ANALYTICS_EVENTS.WHATSAPP, 'sat_final_cta_enroll')}
+                onClick={() => trackEvent(ANALYTICS_EVENTS.WHATSAPP, 'sat_sharjah_final_enroll')}
               >
                 {isAr ? 'سجل عبر واتساب ←' : 'Enroll via WhatsApp →'}
               </a>
               <a
                 href="tel:+971527569908"
                 className="sat-btn-cta-outline"
-                onClick={() => trackEvent(ANALYTICS_EVENTS.CALL, 'sat_final_cta_advisor')}
+                onClick={() => trackEvent(ANALYTICS_EVENTS.CALL, 'sat_sharjah_final_call')}
               >
                 {isAr ? 'تحدث مع مستشار أكاديمي' : 'Speak to an Advisor'}
               </a>
             </div>
           </div>
         </section>
-
-        {/* ── 12. GLOBAL WHY NITAQ SECTION ───────────────────────────── */}
-        <div style={{ background: '#FFFFFF', padding: '60px 0 0 0' }}>
-          <WhyNitaq />
-        </div>
       </main>
     </>
   );

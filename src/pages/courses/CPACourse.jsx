@@ -16,8 +16,8 @@ const CPACourse = () => {
         <>
             <SEO />
         <CourseLayout
-            title="CPA - Certified Public Accountant"
-            subtitle="Secure your future in global finance with our comprehensive US CPA preparation program."
+            title="CPA Course in Sharjah"
+            subtitle="Secure your future in global finance with our comprehensive US CPA preparation program in Al Majaz 3, Sharjah."
             infoData={infoData}
         >
             <div className="content-card">

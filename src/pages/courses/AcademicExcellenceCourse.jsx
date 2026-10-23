@@ -392,8 +392,8 @@ const textCopy = {
     courses: 'Courses',
     breadcrumbCurrent: 'Subject Tuition & Academic Excellence',
     heroEyebrow: 'SCHOOL & TERTIARY SUBJECT TUITION · AL MAJAZ 3, SHARJAH',
-    heroTitle: 'School & Tertiary',
-    heroTitleSoft: 'Subject Tuition in Sharjah',
+    heroTitle: 'School Tuition',
+    heroTitleSoft: 'in Sharjah',
     heroIntro:
       'Strengthen core concepts, master challenging board problem sets, and prepare for high-stakes exams. Taught by senior subject matter specialists in micro-batches of 5 to 8 students and 1-on-1 private formats.',
     pills: [
@@ -491,8 +491,8 @@ const textCopy = {
     courses: 'الدورات',
     breadcrumbCurrent: 'الدروس الأكاديمية والتميّز الدراسي',
     heroEyebrow: 'تعليم متميز ودعم أكاديمي للمدارس والجامعات · المجاز 3، الشارقة',
-    heroTitle: 'الدروس الأكاديمية',
-    heroTitleSoft: 'والتميّز الدراسي في الشارقة',
+    heroTitle: 'دروس التقوية المدرسية',
+    heroTitleSoft: 'في الشارقة',
     heroIntro:
       'عزّز استيعاب المفاهيم الأساسية، وحل نماذج الامتحانات الوزارية والدولية السابقة، وتدرّب بثقة للامتحانات المصيرية. نخبة من المدرسين المتخصصين في مجموعات صغيرة (5 إلى 8 طلاب) وجلسات فردية خاصة.',
     pills: [

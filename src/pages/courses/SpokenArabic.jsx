@@ -17,8 +17,8 @@ const SpokenArabic = () => {
         <>
             <SEO />
         <CourseLayout
-            title="Spoken Arabic Course"
-            subtitle="Connect with the local culture and community. Master practical Arabic for daily life and business in the UAE."
+            title="Spoken Arabic Course in Sharjah"
+            subtitle="Master conversational Khaleeji and Modern Standard Arabic for daily life and business in UAE at Nitaq Academy in Al Majaz 3, Sharjah."
             infoData={infoData}
         >
             {/* Program Overview */}

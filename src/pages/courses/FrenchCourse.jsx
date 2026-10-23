@@ -18,8 +18,8 @@ const FrenchCourse = () => {
             <SEO />
         <CourseLayout
 
-            title="French Language Course"
-            subtitle="Master the language of love, culture, and international business with our comprehensive French programs."
+            title="French Language Course in Sharjah"
+            subtitle="Learn French from A1 to C2 with certified instructors and DELF/DALF exam preparation in Al Majaz 3, Sharjah."
             infoData={infoData}
         >
             {/* Program Overview */}
