@@ -142,51 +142,80 @@ const SatMathFormulaSheetDesmosGuide = () => {
   ];
 
   return (
-    <main>
+    <main className="article-details-page sat-guide-page">
       <SEO 
         title="SAT Math Formula Sheet & Desmos Calculator Shortcuts (2026 Guide)"
         description="Master the Digital SAT Math section: official College Board formula reference sheet, 8 unlisted must-memorize formulas, and 6 high-speed Desmos graphing hacks."
         canonicalUrl="https://nitaqacademy.com/article/sat-math-formula-sheet-desmos-calculator-guide"
       />
 
-      {/* Breadcrumb Bar with Clearance */}
-      <div className="breadcrumb-wrapper" style={{ background: '#f8fafc', borderBottom: '1px solid #e2e8f0', padding: '118px 0 16px' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.875rem', color: '#64748b' }}>
-          <Link to="/" style={{ color: '#1a5c2e', textDecoration: 'none', fontWeight: 500 }}>Home</Link>
-          <ChevronRight size={14} />
-          <Link to="/articles" style={{ color: '#1a5c2e', textDecoration: 'none', fontWeight: 500 }}>Articles</Link>
-          <ChevronRight size={14} />
-          <span style={{ color: '#0f172a', fontWeight: 600 }}>SAT Math Formula Sheet &amp; Desmos Guide</span>
+      {/* Breadcrumb Navigation */}
+      <div className="breadcrumb-wrapper">
+        <div className="container">
+          <nav className="article-breadcrumb" aria-label="Breadcrumb">
+            <Link to="/">Home</Link>
+            <ChevronRight size={14} />
+            <Link to="/articles">Articles</Link>
+            <ChevronRight size={14} />
+            <span>SAT Math Formula Sheet &amp; Desmos Guide</span>
+          </nav>
         </div>
       </div>
 
-      <article className="article-container" style={{ maxWidth: '900px', margin: '0 auto', padding: '40px 20px 80px' }}>
-        
-        {/* Safe Header */}
-        <div className="article-header" style={{ marginBottom: '32px' }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', background: '#ecfdf5', color: '#047857', padding: '6px 12px', borderRadius: '20px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '16px' }}>
-            <Zap size={14} />
-            <span>Digital SAT Math • High-Scoring Guide</span>
-          </div>
-
-          <h1 style={{ fontSize: 'clamp(2rem, 4vw, 2.75rem)', fontWeight: 800, color: '#0f172a', lineHeight: 1.25, marginBottom: '16px' }}>
+      <article className="sat-guide-container section-padding">
+        {/* Header */}
+        <div className="article-header" style={{ maxWidth: '900px', margin: '40px auto 32px' }}>
+          <span className="article-category" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+            <Zap size={14} /> Digital SAT Math • High-Scoring Guide
+          </span>
+          <h1 style={{ fontSize: 'clamp(2rem, 4vw, 2.85rem)', lineHeight: 1.25, marginTop: '12px', marginBottom: '16px' }}>
             SAT Math Formula Sheet &amp; Desmos Calculator Shortcuts: The 800-Score Toolkit
           </h1>
+          <p className="lead-text" style={{ fontSize: '1.15rem', color: '#475569', lineHeight: 1.7, marginBottom: '24px' }}>
+            Master the Digital SAT Math section: official College Board formula reference sheet, 8 unlisted must-memorize formulas, and 6 high-speed Desmos graphing hacks.
+          </p>
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap', color: '#64748b', fontSize: '0.9rem', borderBottom: '1px solid #e2e8f0', paddingBottom: '20px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-              <Calendar size={16} />
-              <span>Updated October 2026</span>
+          <div className="article-meta" style={{ display: 'flex', flexWrap: 'wrap', gap: '18px', marginTop: '20px', alignItems: 'center' }}>
+            <div className="meta-item">
+              <div className="author-avatar" style={{ background: '#1a5c2e', color: 'white', fontWeight: 'bold' }}>NA</div>
+              <div className="meta-text">
+                <span className="meta-label">Author</span>
+                <span className="meta-value">Nitaq Academy Academic Editorial</span>
+              </div>
             </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-              <Clock size={16} />
-              <span>10 Min Read • Formula Reference Included</span>
+            <div className="meta-divider"></div>
+            <div className="meta-item">
+              <Calendar size={18} className="meta-icon" />
+              <div className="meta-text">
+                <span className="meta-label">Published</span>
+                <span className="meta-value">October 2026 Edition</span>
+              </div>
             </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-              <Award size={16} />
-              <span>Verified for Bluebook v2.x</span>
+            <div className="meta-divider"></div>
+            <div className="meta-item">
+              <Clock size={18} className="meta-icon" />
+              <div className="meta-text">
+                <span className="meta-label">Reading Time</span>
+                <span className="meta-value">10 min read</span>
+              </div>
+            </div>
+            <div className="meta-divider"></div>
+            <div className="meta-item">
+              <ShieldCheck size={18} className="meta-icon" />
+              <div className="meta-text">
+                <span className="meta-label">Verified</span>
+                <span className="meta-value">College Board Bluebook v2.x</span>
+              </div>
             </div>
           </div>
+        </div>
+
+        {/* Featured Image */}
+        <div className="article-featured-img" style={{ maxWidth: '940px', margin: '0 auto 40px' }}>
+          <img
+            src="/images/sat_v2.webp"
+            alt="Digital SAT Math Formula Sheet and Desmos Calculator Shortcuts"
+          />
         </div>
 
         {/* Executive Summary Box */}

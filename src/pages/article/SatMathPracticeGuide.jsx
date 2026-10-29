@@ -3,7 +3,7 @@ import { Link } from '../../i18n/Link';
 import SEO from '../../components/SEO';
 import { 
   Calculator, CheckCircle2, AlertCircle, Clock, ShieldCheck, 
-  HelpCircle, ArrowRight, Award, Zap, Code, Target, Crosshair, ChevronRight, Sparkles
+  HelpCircle, ArrowRight, Award, Zap, Code, Target, Crosshair, ChevronRight, Sparkles, Calendar
 } from 'lucide-react';
 
 const SatMathPracticeGuide = () => {
@@ -44,44 +44,78 @@ const SatMathPracticeGuide = () => {
   ];
 
   return (
-    <div className="sat-guide-page">
+    <main className="article-details-page sat-guide-page">
       <SEO />
 
-      {/* Breadcrumbs with clearance */}
-      <div className="sat-guide-breadcrumbs-wrap">
-        <div className="sat-guide-container">
-          <nav className="sat-guide-breadcrumbs" aria-label="Breadcrumb">
+      {/* Breadcrumb Navigation */}
+      <div className="breadcrumb-wrapper">
+        <div className="container">
+          <nav className="article-breadcrumb" aria-label="Breadcrumb">
             <Link to="/">Home</Link>
-            <ChevronRight size={14} className="sat-breadcrumb-separator" />
+            <ChevronRight size={14} />
             <Link to="/articles">Articles</Link>
-            <ChevronRight size={14} className="sat-breadcrumb-separator" />
+            <ChevronRight size={14} />
             <span>SAT Math Practice & Traps</span>
           </nav>
         </div>
       </div>
 
-      {/* Hero Header */}
-      <header className="sat-guide-hero">
-        <div className="sat-guide-container">
-          <div className="sat-guide-badge">
-            <Crosshair size={14} />
-            <span>Digital SAT Math Trap Analysis • Practice Guide (2026–2027)</span>
-          </div>
-          <h1>SAT Math Practice: Questions, Strategy & Common Traps</h1>
-          <p className="sat-guide-lead">
-            Master the trickiest question types on the Digital SAT Math section. Learn the algebraic traps College Board sets in Module 2 and how to verify answers using Desmos in seconds.
-          </p>
-          <div className="sat-guide-meta">
-            <span className="sat-meta-item"><Clock size={14} /> 10-Minute Deep Dive</span>
-            <span className="sat-meta-item"><Sparkles size={14} /> 800-Level Trap Strategies</span>
-            <span className="sat-meta-item"><ShieldCheck size={14} /> 800-Level Hard Questions</span>
-          </div>
-        </div>
-      </header>
+      <article className="article-container section-padding">
+        <div className="container">
+          {/* Article Header */}
+          <div className="article-header" style={{ maxWidth: '900px', margin: '0 auto 40px' }}>
+            <span className="article-category" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+              <Crosshair size={14} /> Digital SAT Math Trap Analysis • Practice Guide (2026–2027)
+            </span>
+            <h1 style={{ fontSize: 'clamp(2rem, 4vw, 2.85rem)', lineHeight: 1.25, marginTop: '12px', marginBottom: '16px' }}>
+              SAT Math Practice: Questions, Strategy & Common Traps
+            </h1>
+            <p className="lead-text" style={{ fontSize: '1.15rem', color: '#475569', lineHeight: 1.7, marginBottom: '24px' }}>
+              Master the trickiest question types on the Digital SAT Math section. Learn the algebraic traps College Board sets in Module 2 and how to verify answers using Desmos in seconds.
+            </p>
 
-      {/* Main Content */}
-      <main className="sat-guide-main">
-        <div className="sat-guide-container">
+            <div className="article-meta" style={{ display: 'flex', flexWrap: 'wrap', gap: '18px', marginTop: '20px', alignItems: 'center' }}>
+              <div className="meta-item">
+                <div className="author-avatar" style={{ background: '#1a5c2e', color: 'white', fontWeight: 'bold' }}>NA</div>
+                <div className="meta-text">
+                  <span className="meta-label">Author</span>
+                  <span className="meta-value">Nitaq Academy Academic Editorial</span>
+                </div>
+              </div>
+              <div className="meta-divider"></div>
+              <div className="meta-item">
+                <Calendar size={18} className="meta-icon" />
+                <div className="meta-text">
+                  <span className="meta-label">Published</span>
+                  <span className="meta-value">October 2026 Edition</span>
+                </div>
+              </div>
+              <div className="meta-divider"></div>
+              <div className="meta-item">
+                <Clock size={18} className="meta-icon" />
+                <div className="meta-text">
+                  <span className="meta-label">Reading Time</span>
+                  <span className="meta-value">10 min read</span>
+                </div>
+              </div>
+              <div className="meta-divider"></div>
+              <div className="meta-item">
+                <ShieldCheck size={18} className="meta-icon" />
+                <div className="meta-text">
+                  <span className="meta-label">Level</span>
+                  <span className="meta-value">800-Level Hard Questions</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Featured Image */}
+          <div className="article-featured-img" style={{ maxWidth: '940px', margin: '0 auto 40px' }}>
+            <img src="/images/sat_v2.webp" alt="SAT Math Practice: Questions, Strategy & Common Traps" />
+          </div>
+
+          {/* Main Content */}
+          <div className="sat-guide-container" style={{ maxWidth: '940px', margin: '0 auto' }}>
           {/* Intro Callout */}
           <div className="sat-callout sat-callout-emerald">
             <div className="sat-callout-title">
@@ -195,9 +229,10 @@ const SatMathPracticeGuide = () => {
               Next: Khan Academy SAT vs. Structured Coaching →
             </Link>
           </nav>
+          </div>
         </div>
-      </main>
-    </div>
+      </article>
+    </main>
   );
 };
 

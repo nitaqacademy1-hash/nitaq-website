@@ -85,9 +85,9 @@ const SatDatesUaeGuide = () => {
       <SEO />
 
       {/* Breadcrumb Navigation */}
-      <div className="sat-guide-breadcrumbs-wrap">
-        <div className="sat-guide-container">
-          <nav className="sat-guide-breadcrumbs" aria-label="Breadcrumb">
+      <div className="breadcrumb-wrapper">
+        <div className="container">
+          <nav className="article-breadcrumb" aria-label="Breadcrumb">
             <Link to="/">Home</Link>
             <ChevronRight size={14} />
             <Link to="/articles">Articles</Link>
@@ -97,38 +97,61 @@ const SatDatesUaeGuide = () => {
         </div>
       </div>
 
-      <article className="sat-guide-container">
+      <article className="sat-guide-container section-padding">
         {/* Header */}
-        <header className="sat-guide-header">
-          <span className="sat-guide-category-badge">
+        <div className="article-header" style={{ maxWidth: '900px', margin: '40px auto 32px' }}>
+          <span className="article-category" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
             <Calendar size={14} /> Official SAT Schedule UAE (2026–2027)
           </span>
-          <h1 className="sat-guide-title">
+          <h1 style={{ fontSize: 'clamp(2rem, 4vw, 2.85rem)', lineHeight: 1.25, marginTop: '12px', marginBottom: '16px' }}>
             SAT Dates UAE 2026–2027: Test Dates, Registration Deadlines & Centers
           </h1>
-          <p className="sat-guide-lead">
+          <p className="lead-text" style={{ fontSize: '1.15rem', color: '#475569', lineHeight: 1.7, marginBottom: '24px' }}>
             Complete schedule of upcoming Digital SAT exam dates in the UAE, registration deadlines, Sharjah and Dubai center availability, registration fees in AED, and late registration rules.
           </p>
 
-          <div className="sat-guide-meta-row">
-            <span className="sat-guide-meta-item">
-              <Clock size={15} color="#166534" /> Updated October 2026
-            </span>
-            <span className="sat-guide-meta-item">
-              <MapPin size={15} color="#166534" /> Sharjah & Dubai Test Centers
-            </span>
-            <span className="sat-guide-meta-item">
-              <ShieldCheck size={15} color="#166534" /> College Board Verified
-            </span>
+          <div className="article-meta" style={{ display: 'flex', flexWrap: 'wrap', gap: '18px', marginTop: '20px', alignItems: 'center' }}>
+            <div className="meta-item">
+              <div className="author-avatar" style={{ background: '#1a5c2e', color: 'white', fontWeight: 'bold' }}>NA</div>
+              <div className="meta-text">
+                <span className="meta-label">Author</span>
+                <span className="meta-value">Nitaq Academy Academic Editorial</span>
+              </div>
+            </div>
+            <div className="meta-divider"></div>
+            <div className="meta-item">
+              <Calendar size={18} className="meta-icon" />
+              <div className="meta-text">
+                <span className="meta-label">Published</span>
+                <span className="meta-value">October 2026 Edition</span>
+              </div>
+            </div>
+            <div className="meta-divider"></div>
+            <div className="meta-item">
+              <Clock size={18} className="meta-icon" />
+              <div className="meta-text">
+                <span className="meta-label">Reading Time</span>
+                <span className="meta-value">8 min read</span>
+              </div>
+            </div>
+            <div className="meta-divider"></div>
+            <div className="meta-item">
+              <ShieldCheck size={18} className="meta-icon" />
+              <div className="meta-text">
+                <span className="meta-label">Verified</span>
+                <span className="meta-value">College Board Official</span>
+              </div>
+            </div>
           </div>
-        </header>
+        </div>
 
         {/* Featured Image */}
-        <img
-          src="/images/sat_v2.webp"
-          alt="Digital SAT Dates and Test Centers in UAE - Nitaq Academy"
-          className="sat-guide-featured-img"
-        />
+        <div className="article-featured-img" style={{ maxWidth: '940px', margin: '0 auto 40px' }}>
+          <img
+            src="/images/sat_v2.webp"
+            alt="Digital SAT Dates and Test Centers in UAE - Nitaq Academy"
+          />
+        </div>
 
         <div className="sat-guide-content">
           {/* Urgent Alert Banner */}

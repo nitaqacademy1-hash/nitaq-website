@@ -13,7 +13,7 @@ const SatVsIeltsGuide = () => {
                     <nav className="article-breadcrumb">
                         <Link to="/">Home</Link>
                         <ChevronRight size={14} />
-                        <Link to="/courses">Courses</Link>
+                        <Link to="/articles">Articles</Link>
                         <ChevronRight size={14} />
                         <span>SAT vs IELTS</span>
                     </nav>

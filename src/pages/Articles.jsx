@@ -317,7 +317,7 @@ const articles = [
         id: 16,
         title: "AI Skills Every Student Needs: Preparing for the Future of Work",
         excerpt: "Master the essential AI skills needed for academic success and future careers in the UAE. From prompt engineering to AI ethics for students.",
-        category: "Career & Courses",
+        category: "AI & Technology",
         path: "/article/ai-skills-every-student-needs",
         coursePath: "/ai-course",
         courseLabel: "AI Course",
@@ -364,7 +364,7 @@ const articles = [
         id: 12,
         title: "Best AI Courses in Dubai: Mastering the Future of Innovation",
         excerpt: "Dubai is the global hub for AI. Discover the best AI courses in Dubai and master prompt engineering, Generative AI, and tech automation today.",
-        category: "Career & Courses",
+        category: "AI & Technology",
         path: "/article/best-ai-courses-dubai",
         coursePath: "/ai-course",
         courseLabel: "AI Course",
@@ -441,7 +441,7 @@ const articles = [
         id: 6,
         title: "AI Courses in Sharjah: Why Mastering AI is Essential",
         excerpt: "Future-proof your career with professional AI courses in Sharjah. Master the latest artificial intelligence tools to stay competitive in the UAE's job market.",
-        category: "Career & Courses",
+        category: "AI & Technology",
         path: "/article/ai-courses-sharjah-essential",
         coursePath: "/ai-course",
         courseLabel: "AI Course",
@@ -507,12 +507,15 @@ const articles = [
 
 const CATEGORIES_DATA = [
     { id: "All", en: "All", ar: "الكل" },
+    { id: "AI & Technology", en: "AI & Technology", ar: "الذكاء الاصطناعي والتكنولوجيا" },
+    { id: "SAT Preparation", en: "SAT Preparation", ar: "التحضير لاختبار SAT" },
     { id: "Academic Excellence", en: "Academic Excellence", ar: "التميز الأكاديمي" },
     { id: "Digital Strategy & Growth", en: "Digital Strategy & Growth", ar: "التسويق الرقمي واستراتيجيات النمو" },
-    { id: "SAT Preparation", en: "SAT Preparation", ar: "التحضير لاختبار SAT" },
     { id: "IELTS Training", en: "IELTS Training", ar: "تدريب اختبار IELTS" },
     { id: "Career & Courses", en: "Career & Courses", ar: "المسار المهني والدورات" }
 ];
+
+const AI_KEYWORD_REGEX = /\b(ai|artificial intelligence|generative ai|machine learning|prompt engineering)\b/i;
 
 const Articles = () => {
     const { lang } = useLanguage();
@@ -524,7 +527,39 @@ const Articles = () => {
 
     const filteredArticles = activeCategory === "All" 
         ? articles 
-        : articles.filter(article => article.category === activeCategory);
+        : articles.filter(article => {
+            if (activeCategory === "SAT Preparation") {
+                return (
+                    article.category === "SAT Preparation" ||
+                    article.category.toLowerCase().includes("sat") ||
+                    article.category.includes("Bluebook") ||
+                    article.category.includes("University Admissions") ||
+                    article.title.toLowerCase().includes("sat")
+                );
+            }
+            if (activeCategory === "AI & Technology") {
+                return (
+                    article.category === "AI & Technology" ||
+                    AI_KEYWORD_REGEX.test(article.title) ||
+                    AI_KEYWORD_REGEX.test(article.category) ||
+                    /(?:^|\/|-)ai(?:-|\/|$)/i.test(article.path)
+                );
+            }
+            if (activeCategory === "Career & Courses") {
+                return (
+                    article.category === "Career & Courses" ||
+                    article.category === "AI & Technology"
+                );
+            }
+            if (activeCategory === "Digital Strategy & Growth") {
+                return (
+                    article.category === "Digital Strategy & Growth" ||
+                    article.title.toLowerCase().includes("marketing") ||
+                    article.category.toLowerCase().includes("marketing")
+                );
+            }
+            return article.category === activeCategory;
+        });
 
     const indexOfLastArticle = currentPage * articlesPerPage;
     const indexOfFirstArticle = indexOfLastArticle - articlesPerPage;

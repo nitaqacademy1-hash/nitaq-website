@@ -42,7 +42,7 @@ export default function PageExperience({ children }) {
     };
     const onScroll = () => { if (!frame) frame = requestAnimationFrame(updateProgress); };
     const scan = () => {
-      enabled = !!page.querySelector('.home-repositioned, .course-detail-page, .sat-landing-page, .article-details-page, .articles-page, .listing-hero');
+      enabled = !!page.querySelector('.home-repositioned, .course-detail-page, .sat-landing-page, .article-details-page, .sat-guide-page, .articles-page, .listing-hero');
       if (!enabled) return;
       const candidates = page.querySelectorAll('.home-section > .container, .course-description-area > .content-card, .course-description-area > .outcomes-grid, .sat-landing-page > section > div[class$="container"], .article-main-content > h2, .article-featured-img, .article-card, .course-scroll-card');
       candidates.forEach(element => {

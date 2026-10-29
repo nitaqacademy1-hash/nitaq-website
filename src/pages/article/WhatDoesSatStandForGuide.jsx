@@ -3,7 +3,7 @@ import { Link } from '../../i18n/Link';
 import SEO from '../../components/SEO';
 import { 
   HelpCircle, CheckCircle2, AlertCircle, Clock, ShieldCheck, 
-  ArrowRight, Award, Zap, Laptop, BookOpen, GraduationCap, ChevronRight, Sparkles
+  ArrowRight, Award, Zap, Laptop, BookOpen, GraduationCap, ChevronRight, Sparkles, Calendar
 } from 'lucide-react';
 
 const WhatDoesSatStandForGuide = () => {
@@ -11,44 +11,78 @@ const WhatDoesSatStandForGuide = () => {
   const toggleFaq = (index) => setOpenFaq(openFaq === index ? null : index);
 
   return (
-    <div className="sat-guide-page">
+    <main className="article-details-page sat-guide-page">
       <SEO />
 
-      {/* Breadcrumbs with clearance */}
-      <div className="sat-guide-breadcrumbs-wrap">
-        <div className="sat-guide-container">
-          <nav className="sat-guide-breadcrumbs" aria-label="Breadcrumb">
+      {/* Breadcrumb Navigation */}
+      <div className="breadcrumb-wrapper">
+        <div className="container">
+          <nav className="article-breadcrumb" aria-label="Breadcrumb">
             <Link to="/">Home</Link>
-            <ChevronRight size={14} className="sat-breadcrumb-separator" />
+            <ChevronRight size={14} />
             <Link to="/articles">Articles</Link>
-            <ChevronRight size={14} className="sat-breadcrumb-separator" />
+            <ChevronRight size={14} />
             <span>What Does SAT Stand For?</span>
           </nav>
         </div>
       </div>
 
-      {/* Hero Header */}
-      <header className="sat-guide-hero">
-        <div className="sat-guide-container">
-          <div className="sat-guide-badge">
-            <HelpCircle size={14} />
-            <span>Beginner Explainer • Digital SAT Guide for UAE Families (2026–2027)</span>
-          </div>
-          <h1>What Does SAT Stand For? Digital SAT Explained for UAE Students</h1>
-          <p className="sat-guide-lead">
-            Everything parents and high school students need to know about the Digital SAT: what the acronym means, exam structure, 400–1600 scoring scale, test timing, and why it is critical for UAE university admissions.
-          </p>
-          <div className="sat-guide-meta">
-            <span className="sat-meta-item"><Clock size={14} /> 8-Minute Read</span>
-            <span className="sat-meta-item"><ShieldCheck size={14} /> Official College Board Format</span>
-            <span className="sat-meta-item"><Sparkles size={14} /> Official Testing Guide</span>
-          </div>
-        </div>
-      </header>
+      <article className="article-container section-padding">
+        <div className="container">
+          {/* Article Header */}
+          <div className="article-header" style={{ maxWidth: '900px', margin: '0 auto 40px' }}>
+            <span className="article-category" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+              <HelpCircle size={14} /> Digital SAT Guide for UAE Families (2026–2027)
+            </span>
+            <h1 style={{ fontSize: 'clamp(2rem, 4vw, 2.85rem)', lineHeight: 1.25, marginTop: '12px', marginBottom: '16px' }}>
+              What Does SAT Stand For? Digital SAT Explained for UAE Students
+            </h1>
+            <p className="lead-text" style={{ fontSize: '1.15rem', color: '#475569', lineHeight: 1.7, marginBottom: '24px' }}>
+              Everything parents and high school students need to know about the Digital SAT: what the acronym means, exam structure, 400–1600 scoring scale, test timing, and why it is critical for UAE university admissions.
+            </p>
 
-      {/* Main Content */}
-      <main className="sat-guide-main">
-        <div className="sat-guide-container">
+            <div className="article-meta" style={{ display: 'flex', flexWrap: 'wrap', gap: '18px', marginTop: '20px', alignItems: 'center' }}>
+              <div className="meta-item">
+                <div className="author-avatar" style={{ background: '#1a5c2e', color: 'white', fontWeight: 'bold' }}>NA</div>
+                <div className="meta-text">
+                  <span className="meta-label">Author</span>
+                  <span className="meta-value">Nitaq Academy Academic Editorial</span>
+                </div>
+              </div>
+              <div className="meta-divider"></div>
+              <div className="meta-item">
+                <Calendar size={18} className="meta-icon" />
+                <div className="meta-text">
+                  <span className="meta-label">Published</span>
+                  <span className="meta-value">October 2026 Edition</span>
+                </div>
+              </div>
+              <div className="meta-divider"></div>
+              <div className="meta-item">
+                <Clock size={18} className="meta-icon" />
+                <div className="meta-text">
+                  <span className="meta-label">Reading Time</span>
+                  <span className="meta-value">8 min read</span>
+                </div>
+              </div>
+              <div className="meta-divider"></div>
+              <div className="meta-item">
+                <ShieldCheck size={18} className="meta-icon" />
+                <div className="meta-text">
+                  <span className="meta-label">Format</span>
+                  <span className="meta-value">Official College Board Format</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Featured Image */}
+          <div className="article-featured-img" style={{ maxWidth: '940px', margin: '0 auto 40px' }}>
+            <img src="/images/sat_v2.webp" alt="What Does SAT Stand For? Digital SAT Explained for UAE Students" />
+          </div>
+
+          {/* Main Content */}
+          <div className="sat-guide-container" style={{ maxWidth: '940px', margin: '0 auto' }}>
           {/* The Name Origin Card */}
           <section className="sat-section">
             <div className="sat-card">
@@ -220,9 +254,10 @@ const WhatDoesSatStandForGuide = () => {
               Explore Nitaq SAT Course in Sharjah →
             </Link>
           </nav>
+          </div>
         </div>
-      </main>
-    </div>
+      </article>
+    </main>
   );
 };
 

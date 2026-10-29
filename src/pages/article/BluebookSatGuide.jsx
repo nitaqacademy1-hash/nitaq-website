@@ -3,7 +3,7 @@ import { Link } from '../../i18n/Link';
 import SEO from '../../components/SEO';
 import { 
   Laptop, CheckCircle2, AlertCircle, Clock, ShieldCheck, 
-  HelpCircle, ArrowRight, Award, Zap, Bookmark, Calculator, EyeOff, ChevronRight, Sparkles
+  HelpCircle, ArrowRight, Award, Zap, Bookmark, Calculator, EyeOff, ChevronRight, Sparkles, Calendar
 } from 'lucide-react';
 
 const BluebookSatGuide = () => {
@@ -54,9 +54,9 @@ const BluebookSatGuide = () => {
       <SEO />
 
       {/* Breadcrumb Navigation */}
-      <div className="sat-guide-breadcrumbs-wrap">
-        <div className="sat-guide-container">
-          <nav className="sat-guide-breadcrumbs" aria-label="Breadcrumb">
+      <div className="breadcrumb-wrapper">
+        <div className="container">
+          <nav className="article-breadcrumb" aria-label="Breadcrumb">
             <Link to="/">Home</Link>
             <ChevronRight size={14} />
             <Link to="/articles">Articles</Link>
@@ -66,38 +66,61 @@ const BluebookSatGuide = () => {
         </div>
       </div>
 
-      <article className="sat-guide-container">
+      <article className="sat-guide-container section-padding">
         {/* Header */}
-        <header className="sat-guide-header">
-          <span className="sat-guide-category-badge">
+        <div className="article-header" style={{ maxWidth: '900px', margin: '40px auto 32px' }}>
+          <span className="article-category" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
             <Laptop size={14} /> Official Test Software Guide (2026–2027)
           </span>
-          <h1 className="sat-guide-title">
+          <h1 style={{ fontSize: 'clamp(2rem, 4vw, 2.85rem)', lineHeight: 1.25, marginTop: '12px', marginBottom: '16px' }}>
             Bluebook SAT Guide: How the Digital SAT Test App Works
           </h1>
-          <p className="sat-guide-lead">
+          <p className="lead-text" style={{ fontSize: '1.15rem', color: '#475569', lineHeight: 1.7, marginBottom: '24px' }}>
             Master the official College Board testing application. Explore built-in test tools, adaptive module routing, approved device requirements, and exam-day offline protocols for UAE students.
           </p>
 
-          <div className="sat-guide-meta-row">
-            <span className="sat-guide-meta-item">
-              <Clock size={15} color="#166534" /> 10-Minute Read
-            </span>
-            <span className="sat-guide-meta-item">
-              <ShieldCheck size={15} color="#166534" /> College Board Bluebook Verified
-            </span>
-            <span className="sat-guide-meta-item">
-              <Sparkles size={15} color="#166534" /> Official Testing Software
-            </span>
+          <div className="article-meta" style={{ display: 'flex', flexWrap: 'wrap', gap: '18px', marginTop: '20px', alignItems: 'center' }}>
+            <div className="meta-item">
+              <div className="author-avatar" style={{ background: '#1a5c2e', color: 'white', fontWeight: 'bold' }}>NA</div>
+              <div className="meta-text">
+                <span className="meta-label">Author</span>
+                <span className="meta-value">Nitaq Academy Academic Editorial</span>
+              </div>
+            </div>
+            <div className="meta-divider"></div>
+            <div className="meta-item">
+              <Calendar size={18} className="meta-icon" />
+              <div className="meta-text">
+                <span className="meta-label">Published</span>
+                <span className="meta-value">October 2026 Edition</span>
+              </div>
+            </div>
+            <div className="meta-divider"></div>
+            <div className="meta-item">
+              <Clock size={18} className="meta-icon" />
+              <div className="meta-text">
+                <span className="meta-label">Reading Time</span>
+                <span className="meta-value">10 min read</span>
+              </div>
+            </div>
+            <div className="meta-divider"></div>
+            <div className="meta-item">
+              <ShieldCheck size={18} className="meta-icon" />
+              <div className="meta-text">
+                <span className="meta-label">Verified</span>
+                <span className="meta-value">College Board Bluebook</span>
+              </div>
+            </div>
           </div>
-        </header>
+        </div>
 
         {/* Featured Image */}
-        <img
-          src="/images/sat_v2.webp"
-          alt="College Board Bluebook App Guide for Digital SAT"
-          className="sat-guide-featured-img"
-        />
+        <div className="article-featured-img" style={{ maxWidth: '940px', margin: '0 auto 40px' }}>
+          <img
+            src="/images/sat_v2.webp"
+            alt="College Board Bluebook App Guide for Digital SAT"
+          />
+        </div>
 
         <div className="sat-guide-content">
           {/* Quick Summary Box */}
