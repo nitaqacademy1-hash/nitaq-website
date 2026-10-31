@@ -1,5 +1,59 @@
 export const seoRoutes = [
   {
+    path: "/article/how-to-prepare-for-november-sat-score-calculator",
+    title: "How to Prepare for the November SAT (& December SAT): Study Plan, Practice Tests & Score Calculator | Nitaq Academy",
+    description: "Comprehensive high-scorer roadmap for the November SAT and December SAT: interactive adaptive score calculator, study schedule, official practice test drills, and Desmos speed hacks.",
+    canonical: "https://www.nitaqacademy.com/article/how-to-prepare-for-november-sat-score-calculator",
+    ogTitle: "How to Prepare for the November SAT: Score Calculator & Practice Tests | Nitaq Academy",
+    ogDescription: "Calculate your target 1600 score with our adaptive Digital SAT score calculator. 4-week study plan, Bluebook test drills, and December SAT transition roadmap.",
+    ogImage: "/images/sat_v2.webp",
+    twitterCard: "summary_large_image",
+    datePublished: "2026-10-31T08:00:00+04:00",
+    dateModified: "2026-10-31T08:00:00+04:00",
+    keywords: "november sat, how to prepare for november sat, november sat preparation, december sat, sat score calculator, sat practice test, digital sat score calculator, how to prepare for december sat, sat score chart, bluebook practice test uae",
+    faqSchema: [
+      {
+        question: "When is the November SAT in the UAE for 2026?",
+        answer: "The November Digital SAT takes place on Saturday, November 7, 2026. The regular registration deadline was October 23, 2026, and late registration closes on October 27, 2026."
+      },
+      {
+        question: "How does the Digital SAT Score Calculator work with adaptive routing?",
+        answer: "The Digital SAT uses two-stage adaptive testing. Scoring approximately 18+ correct in Reading Module 1 or 15+ correct in Math Module 1 routes you to the harder Module 2, unlocking scores up to 800 per section. An easier Module 2 routes to a capped score around 590."
+      },
+      {
+        question: "Should I take the November SAT or wait for the December SAT?",
+        answer: "If you are in Grade 12 applying for January university deadlines, taking the November SAT gives you early scores and leaves the December SAT sitting as a strategic backup attempt for superscoring."
+      }
+    ]
+  },
+  {
+    path: "/article/how-to-register-for-november-sat-step-by-step-guide",
+    title: "How to Register for the November SAT: Step-by-Step Registration Guide, Deadlines & Test Centers | Nitaq Academy",
+    description: "Complete step-by-step November SAT registration guide for UAE students: deadlines, Sharjah & Dubai test centers, AED fee breakdown, photo checklist, and Bluebook setup.",
+    canonical: "https://www.nitaqacademy.com/article/how-to-register-for-november-sat-step-by-step-guide",
+    ogTitle: "How to Register for the November SAT in UAE | Nitaq Academy",
+    ogDescription: "Official step-by-step SAT registration guide for UAE students: November & December deadlines, Sharjah/Dubai test centers, photo rules, and fee breakdown.",
+    ogImage: "/images/sat_v2.webp",
+    twitterCard: "summary_large_image",
+    datePublished: "2026-10-31T08:00:00+04:00",
+    dateModified: "2026-10-31T08:00:00+04:00",
+    keywords: "sat registration, how to register for november sat, november sat registration, december sat registration, sat registration step by step guide, sat practice test, college board registration uae, sat registration deadline, sat test centers sharjah dubai, sat fees aed",
+    faqSchema: [
+      {
+        question: "What is the registration deadline for the November SAT in the UAE?",
+        answer: "For the November 7, 2026 test date, regular registration closes on October 23, 2026, and late registration closes on October 27, 2026."
+      },
+      {
+        question: "How much does the November SAT registration cost in AED?",
+        answer: "The standard international fee is USD 111 (approximately AED 408 to AED 410). Late registration incurs an additional USD 34 late fee (totaling ~AED 532)."
+      },
+      {
+        question: "What identification is required at UAE SAT test centers?",
+        answer: "Students must present an original valid physical Emirates ID card or original valid Passport. Digital scans or school ID cards are strictly rejected."
+      }
+    ]
+  },
+  {
     path: "/article/sat-dates-uae-2026-2027-test-dates",
     title: "SAT Dates UAE 2026–2027: October, November & December Test Dates | Nitaq Academy",
     description: "Complete schedule of upcoming Digital SAT exam dates in UAE: registration deadlines, Sharjah & Dubai test center booking, AED fees, and late registration rules.",

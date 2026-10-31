@@ -124,6 +124,8 @@ const SatPrepOptionsUaeComparisonGuide = lazy(() => import('./pages/article/SatP
 const SatUniversityRequirementsGuide = lazy(() => import('./pages/article/SatUniversityRequirementsGuide'));
 const SatEnglishReadingWritingGuide = lazy(() => import('./pages/article/SatEnglishReadingWritingGuide'));
 const WhatDoesSatStandForGuide = lazy(() => import('./pages/article/WhatDoesSatStandForGuide'));
+const NovemberSatPrepScoreCalculatorGuide = lazy(() => import('./pages/article/NovemberSatPrepScoreCalculatorGuide'));
+const HowToRegisterNovemberSatGuide = lazy(() => import('./pages/article/HowToRegisterNovemberSatGuide'));
 
 const TermsAndConditions = lazy(() => import('./pages/legal/TermsAndConditions'));
 const PrivacyPolicy = lazy(() => import('./pages/legal/PrivacyPolicy'));
@@ -327,6 +329,8 @@ function LocalizedRoutes() {
         <Route path="article/sat-requirements-uae-top-universities-harvard" element={<SatUniversityRequirementsGuide />} />
         <Route path="article/sat-english-reading-writing-practice-guide" element={<SatEnglishReadingWritingGuide />} />
         <Route path="article/what-does-sat-stand-for-digital-sat-explained" element={<WhatDoesSatStandForGuide />} />
+        <Route path="article/how-to-prepare-for-november-sat-score-calculator" element={<NovemberSatPrepScoreCalculatorGuide />} />
+        <Route path="article/how-to-register-for-november-sat-step-by-step-guide" element={<HowToRegisterNovemberSatGuide />} />
 
         {/* IG Landing Pages */}
         <Route path="ig/2026-03-29" element={<ResumeGuide />} />

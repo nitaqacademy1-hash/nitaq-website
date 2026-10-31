@@ -6,6 +6,28 @@ import { Calendar, User, ArrowRight, ExternalLink, Filter, Search } from 'lucide
 
 const articles = [
     {
+        id: 46,
+        title: "How to Prepare for the November SAT (& December SAT): Study Plan, Practice Tests & Score Calculator",
+        excerpt: "Comprehensive high-scorer roadmap for the November and December SAT: interactive adaptive score calculator, 4-week sprint schedule, official Bluebook practice test drills, and Desmos speed hacks.",
+        category: "SAT Preparation",
+        path: "/article/how-to-prepare-for-november-sat-score-calculator",
+        coursePath: "/sat/diagnostic",
+        courseLabel: "Take Diagnostic",
+        date: "October 31, 2026",
+        image: "/images/sat_v2.webp"
+    },
+    {
+        id: 45,
+        title: "How to Register for the November SAT: Step-by-Step Registration Guide, Deadlines & Test Centers",
+        excerpt: "Official registration walkthrough for UAE students taking the November SAT or December SAT. Avoid registration traps, compare Sharjah and Dubai test centers, and check fees in AED.",
+        category: "SAT Registration & Prep",
+        path: "/article/how-to-register-for-november-sat-step-by-step-guide",
+        coursePath: "/sat-preparation-sharjah",
+        courseLabel: "SAT Course",
+        date: "October 31, 2026",
+        image: "/images/sat_v2.webp"
+    },
+    {
         id: 44,
         title: "What Does SAT Stand For? Digital SAT Explained for UAE Students",
         excerpt: "Learn what the SAT acronym means, how the 2 hour 14 minute digital exam is structured, scoring scale from 400 to 1600, and why it is critical for UAE university admissions.",

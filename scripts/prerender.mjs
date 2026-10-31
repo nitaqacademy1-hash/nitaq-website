@@ -126,6 +126,8 @@ const ROUTES = [
   '/article/sat-requirements-uae-top-universities-harvard',
   '/article/sat-english-reading-writing-practice-guide',
   '/article/what-does-sat-stand-for-digital-sat-explained',
+  '/article/how-to-prepare-for-november-sat-score-calculator',
+  '/article/how-to-register-for-november-sat-step-by-step-guide',
   '/terms-and-conditions',
 
 
